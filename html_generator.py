@@ -60,11 +60,34 @@ header .subtitle {{
     font-size: 0.95rem;
 }}
 
-header .date-info {{
+header .date-nav {{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
     margin-top: 16px;
+}}
+
+header .date-info {{
     font-size: 1.3rem;
     font-weight: 600;
     color: #58a6ff;
+}}
+
+.nav-btn {{
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 6px 16px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    transition: all 0.2s;
+}}
+
+.nav-btn:hover {{
+    color: #58a6ff;
+    border-color: #58a6ff;
+    background: #161b22;
 }}
 
 header .update-time {{
@@ -267,6 +290,32 @@ header .update-time {{
     border-radius: 4px;
 }}
 
+.card-links {{
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #21262d;
+}}
+
+.card-link {{
+    flex: 1;
+    text-align: center;
+    padding: 5px 8px;
+    font-size: 0.75rem;
+    color: #8b949e;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s;
+}}
+
+.card-link:hover {{
+    color: #58a6ff;
+    border-color: #58a6ff;
+}}
+
 .empty-msg {{
     text-align: center;
     color: #8b949e;
@@ -300,7 +349,11 @@ footer {{
     <header>
         <h1>營收創同期新高</h1>
         <div class="subtitle">自動比對公開資訊觀測站每月營收資料，篩選創近 {compare_years} 年同期新高股票</div>
-        <div class="date-info">{year}/{month:02d}</div>
+        <div class="date-nav">
+            <a class="nav-btn" href="{prev_month_file}" title="上個月">◀ 前一月</a>
+            <span class="date-info">{year}/{month:02d}</span>
+            <a class="nav-btn" href="{next_month_file}" title="下個月">後一月 ▶</a>
+        </div>
         <div class="update-time">{update_time} 更新</div>
     </header>
 
@@ -398,6 +451,10 @@ STOCK_CARD_TEMPLATE = """
                     <span class="tag">創同期新高</span>
                 </div>
                 <div class="detail-row">
+                    <span class="revenue-label">公布日期</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">{publish_date}</span>
+                </div>
+                <div class="detail-row">
                     <span class="revenue-label">年增率</span>
                     <span class="pct-change {yoy_class}">{yoy_display}</span>
                 </div>
@@ -408,6 +465,11 @@ STOCK_CARD_TEMPLATE = """
                 <div class="detail-row">
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+{exceed_pct}%</span>
+                </div>
+                <div class="card-links">
+                    <a href="{mops_url}" target="_blank" class="card-link">營收公告</a>
+                    <a href="{goodinfo_url}" target="_blank" class="card-link">基本資料</a>
+                    <a href="{twse_url}" target="_blank" class="card-link">查證</a>
                 </div>
             </div>"""
 
@@ -424,15 +486,43 @@ def _build_cards(df: pd.DataFrame) -> str:
         mom_val = float(mom) if pd.notna(mom) else 0
         exceed_val = float(exceed) if pd.notna(exceed) else 0
 
+        # 公布日期
+        pub_date = row.get("date", "")
+        if pd.notna(pub_date) and pub_date:
+            pub_date = str(pub_date)[:10]  # 取 YYYY-MM-DD
+        else:
+            pub_date = "N/A"
+
+        # 生成外部連結
+        sid = row.get("stock_id", "")
+        rev_year = int(row.get("revenue_year", 0)) if pd.notna(row.get("revenue_year", None)) else 0
+        rev_month = int(row.get("revenue_month", 0)) if pd.notna(row.get("revenue_month", None)) else 0
+        roc_year = rev_year - 1911  # 西元轉民國
+
+        # MOPS 營收公告 (公開資訊觀測站)
+        mops_url = (
+            f"https://mops.twse.com.tw/mops/web/t05st10_ifrs?"
+            f"encodeURIComponent=1&step=1&firstin=1&off=1&TYPEK=all"
+            f"&year={roc_year}&month={rev_month:02d}&co_id={sid}"
+        )
+        # Goodinfo 基本資料
+        goodinfo_url = f"https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID={sid}"
+        # 證交所/櫃買中心
+        twse_url = f"https://mops.twse.com.tw/mops/web/t146sb05?co_id={sid}"
+
         cards += STOCK_CARD_TEMPLATE.format(
             stock_name=row.get("stock_name", ""),
-            stock_id=row.get("stock_id", ""),
+            stock_id=sid,
             revenue_display=format_revenue(row.get("revenue", 0)),
+            publish_date=pub_date,
             yoy_display=f"{yoy_val:+.2f}%" if yoy_val != 0 else "N/A",
             yoy_class="" if yoy_val >= 0 else "negative",
             mom_display=f"{mom_val:+.2f}%" if mom_val != 0 else "N/A",
             mom_class="" if mom_val >= 0 else "negative",
             exceed_pct=f"{exceed_val:.1f}",
+            mops_url=mops_url,
+            goodinfo_url=goodinfo_url,
+            twse_url=twse_url,
         )
     return cards
 
@@ -482,6 +572,12 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
     otc_sections = _build_industry_sections(df[df["market"] == "otc"]) if otc_count > 0 else '<p class="empty-msg">本分類無資料</p>'
     emerging_sections = _build_industry_sections(df[df["market"] == "emerging"]) if emerging_count > 0 else '<p class="empty-msg">本分類無資料</p>'
 
+    # 計算上/下月檔名
+    prev_y, prev_m = (year, month - 1) if month > 1 else (year - 1, 12)
+    next_y, next_m = (year, month + 1) if month < 12 else (year + 1, 1)
+    prev_month_file = f"{prev_y}_{prev_m:02d}.html"
+    next_month_file = f"{next_y}_{next_m:02d}.html"
+
     html = HTML_TEMPLATE.format(
         year=year,
         month=month,
@@ -492,6 +588,8 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
         otc_count=otc_count,
         emerging_count=emerging_count,
         industry_count=industries,
+        prev_month_file=prev_month_file,
+        next_month_file=next_month_file,
         all_sections=all_sections,
         sii_sections=sii_sections,
         otc_sections=otc_sections,
@@ -503,6 +601,8 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
 def _generate_empty_html(year: int, month: int, compare_years: int = 5) -> str:
     """無資料時的 HTML"""
     empty = '<p class="empty-msg">本期無營收創同期新高資料</p>'
+    prev_y, prev_m = (year, month - 1) if month > 1 else (year - 1, 12)
+    next_y, next_m = (year, month + 1) if month < 12 else (year + 1, 1)
     return HTML_TEMPLATE.format(
         year=year,
         month=month,
@@ -513,6 +613,8 @@ def _generate_empty_html(year: int, month: int, compare_years: int = 5) -> str:
         otc_count=0,
         emerging_count=0,
         industry_count=0,
+        prev_month_file=f"{prev_y}_{prev_m:02d}.html",
+        next_month_file=f"{next_y}_{next_m:02d}.html",
         all_sections=empty,
         sii_sections=empty,
         otc_sections=empty,

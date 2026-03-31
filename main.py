@@ -47,7 +47,8 @@ def main():
         logger.error("無法取得任何營收資料，請檢查網路連線或 MOPS 網站狀態")
         return
 
-    logger.info(f"已取得 {len(history)} 年資料: {sorted(history.keys())}")
+    year_keys = sorted([k for k in history.keys() if isinstance(k, int)])
+    logger.info(f"已取得 {len(year_keys)} 年資料: {year_keys}")
 
     # Step 2: 分析營收創同期新高
     logger.info("Step 2: 分析營收創同期新高...")
@@ -61,8 +62,11 @@ def main():
     # Step 3: 生成 HTML 報表
     logger.info("Step 3: 生成 HTML 報表...")
     html = generate_html(new_highs, year, month, args.years_back)
-    output_path = save_html(html)
-    logger.info(f"報表已輸出: {output_path}")
+    # 儲存為 index.html (最新) 和 {year}_{month}.html (歷史存檔)
+    output_path = save_html(html, "index.html")
+    archive_name = f"{year}_{month:02d}.html"
+    save_html(html, archive_name)
+    logger.info(f"報表已輸出: {output_path} + {archive_name}")
 
     # 自動開啟瀏覽器
     if not args.no_open:
