@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>營收創同期新高 - 2026/02</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px 30px;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+header .subtitle {
+    color: #8b949e;
+    font-size: 0.95rem;
+}
+
+header .date-info {
+    margin-top: 16px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #58a6ff;
+}
+
+header .update-time {
+    color: #6e7681;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+
+.summary {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0 30px;
+    flex-wrap: wrap;
+}
+
+.summary-item {
+    text-align: center;
+}
+
+.summary-item .number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f85149;
+}
+
+.summary-item .label {
+    font-size: 0.85rem;
+    color: #8b949e;
+}
+
+/* ===== 市場分頁 Tab ===== */
+.market-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 0 0 30px;
+    border-bottom: 2px solid #21262d;
+}
+
+.market-tab {
+    padding: 12px 32px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #8b949e;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.market-tab:hover {
+    color: #e6edf3;
+    background: #161b22;
+}
+
+.market-tab.active {
+    color: #58a6ff;
+    border-bottom-color: #58a6ff;
+}
+
+.market-tab .tab-count {
+    display: inline-block;
+    background: #21262d;
+    color: #8b949e;
+    border-radius: 10px;
+    padding: 1px 8px;
+    font-size: 0.75rem;
+    margin-left: 6px;
+    font-weight: 500;
+}
+
+.market-tab.active .tab-count {
+    background: #58a6ff33;
+    color: #58a6ff;
+}
+
+.market-panel {
+    display: none;
+}
+
+.market-panel.active {
+    display: block;
+}
+
+/* ===== 產業區塊 ===== */
+.industry-section {
+    background: #161b22;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    border: 1px solid #21262d;
+}
+
+.industry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: #1c2128;
+    border-bottom: 1px solid #21262d;
+}
+
+.industry-header h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.industry-count {
+    color: #8b949e;
+    font-size: 0.9rem;
+}
+
+.stock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+    padding: 16px;
+}
+
+.stock-card {
+    background: #0d1117;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    padding: 16px;
+    transition: border-color 0.2s;
+}
+
+.stock-card:hover {
+    border-color: #58a6ff;
+}
+
+.stock-card .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.stock-info {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.stock-name {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.stock-id {
+    color: #8b949e;
+    font-size: 0.85rem;
+}
+
+.revenue-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #f85149;
+}
+
+.stock-card .pct-change {
+    color: #f85149;
+    font-size: 0.85rem;
+}
+
+.stock-card .pct-change.negative {
+    color: #3fb950;
+}
+
+.stock-card .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.stock-card .revenue-label {
+    color: #8b949e;
+    font-size: 0.8rem;
+}
+
+.tag {
+    display: inline-block;
+    background: #f8514922;
+    color: #f85149;
+    border: 1px solid #f8514944;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.exceed-tag {
+    background: #f0883e22;
+    color: #f0883e;
+    border-color: #f0883e44;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.empty-msg {
+    text-align: center;
+    color: #8b949e;
+    padding: 60px 20px;
+    font-size: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6e7681;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .stock-grid {
+        grid-template-columns: 1fr;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .market-tab {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>營收創同期新高</h1>
+        <div class="subtitle">自動比對公開資訊觀測站每月營收資料，篩選創近 5 年同期新高股票</div>
+        <div class="date-info">2026/02</div>
+        <div class="update-time">2026-03-31 18:33 更新</div>
+    </header>
+
+    <div class="summary">
+        <div class="summary-item">
+            <div class="number">6</div>
+            <div class="label">創同期新高</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">2</div>
+            <div class="label">上市</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">2</div>
+            <div class="label">上櫃</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">2</div>
+            <div class="label">興櫃</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">5</div>
+            <div class="label">產業別</div>
+        </div>
+    </div>
+
+    <!-- 市場分頁 -->
+    <div class="market-tabs">
+        <div class="market-tab active" data-market="all">全部 <span class="tab-count">6</span></div>
+        <div class="market-tab" data-market="sii">上市 <span class="tab-count">2</span></div>
+        <div class="market-tab" data-market="otc">上櫃 <span class="tab-count">2</span></div>
+        <div class="market-tab" data-market="emerging">興櫃 <span class="tab-count">2</span></div>
+    </div>
+
+    <!-- 全部面板 -->
+    <div class="market-panel active" id="panel-all">
+        
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>半導體業</h2>
+            <span class="industry-count">2檔</span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">台積電</span>
+                        <span class="stock-id">2330</span>
+                    </div>
+                    <div class="revenue-value">30.0億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+25.50%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+3.20%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+15.1%</span>
+                </div>
+            </div>
+            <div class="stock-card">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">聯發科</span>
+                        <span class="stock-id">2454</span>
+                    </div>
+                    <div class="revenue-value">55.0億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+18.30%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change negative">-2.10%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+8.5%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>光電業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">旭信</span>
+                        <span class="stock-id">3627</span>
+                    </div>
+                    <div class="revenue-value">8,000萬</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+60.20%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change negative">-5.00%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+30.1%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>觀光事業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">寶雅</span>
+                        <span class="stock-id">5904</span>
+                    </div>
+                    <div class="revenue-value">23.0億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+30.00%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+12.50%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+20.3%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>資訊服務業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">元達</span>
+                        <span class="stock-id">6275</span>
+                    </div>
+                    <div class="revenue-value">4.5億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+45.20%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+8.70%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+12.0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>電器電纜</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">百和</span>
+                        <span class="stock-id">4578</span>
+                    </div>
+                    <div class="revenue-value">1.2億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+55.00%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+15.30%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+25.0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- 上市面板 -->
+    <div class="market-panel" id="panel-sii">
+        
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>半導體業</h2>
+            <span class="industry-count">2檔</span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">台積電</span>
+                        <span class="stock-id">2330</span>
+                    </div>
+                    <div class="revenue-value">30.0億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+25.50%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+3.20%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+15.1%</span>
+                </div>
+            </div>
+            <div class="stock-card">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">聯發科</span>
+                        <span class="stock-id">2454</span>
+                    </div>
+                    <div class="revenue-value">55.0億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+18.30%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change negative">-2.10%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+8.5%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- 上櫃面板 -->
+    <div class="market-panel" id="panel-otc">
+        
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>觀光事業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">寶雅</span>
+                        <span class="stock-id">5904</span>
+                    </div>
+                    <div class="revenue-value">23.0億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+30.00%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+12.50%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+20.3%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>資訊服務業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">元達</span>
+                        <span class="stock-id">6275</span>
+                    </div>
+                    <div class="revenue-value">4.5億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+45.20%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+8.70%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+12.0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- 興櫃面板 -->
+    <div class="market-panel" id="panel-emerging">
+        
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>光電業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">旭信</span>
+                        <span class="stock-id">3627</span>
+                    </div>
+                    <div class="revenue-value">8,000萬</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+60.20%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change negative">-5.00%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+30.1%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>電器電纜</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">百和</span>
+                        <span class="stock-id">4578</span>
+                    </div>
+                    <div class="revenue-value">1.2億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+55.00%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+15.30%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+25.0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</div>
+<footer>
+    資料來源：公開資訊觀測站 (MOPS) / FinMind | 僅供參考，不構成投資建議
+</footer>
+
+<script>
+document.querySelectorAll('.market-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.market-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.market-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('panel-' + tab.dataset.market).classList.add('active');
+    });
+});
+</script>
+</body>
+</html>

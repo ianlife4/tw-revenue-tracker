@@ -1,0 +1,530 @@
+"""
+HTML 報表生成模組
+生成類似 chengwaye.com 風格的深色主題靜態 HTML 頁面
+支援上市 / 上櫃 / 興櫃 分頁顯示
+"""
+
+import os
+import logging
+from datetime import datetime
+
+import pandas as pd
+
+from config import OUTPUT_DIR
+from analyzer import format_revenue
+
+logger = logging.getLogger(__name__)
+
+MARKET_MAP = {
+    "sii": {"name": "上市", "key": "sii"},
+    "otc": {"name": "上櫃", "key": "otc"},
+    "emerging": {"name": "興櫃", "key": "emerging"},
+}
+
+HTML_TEMPLATE = """<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>營收創同期新高 - {year}/{month:02d}</title>
+<style>
+* {{ margin: 0; padding: 0; box-sizing: border-box; }}
+
+body {{
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+}}
+
+.container {{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}}
+
+header {{
+    text-align: center;
+    padding: 40px 20px 30px;
+}}
+
+header h1 {{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}}
+
+header .subtitle {{
+    color: #8b949e;
+    font-size: 0.95rem;
+}}
+
+header .date-info {{
+    margin-top: 16px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #58a6ff;
+}}
+
+header .update-time {{
+    color: #6e7681;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}}
+
+.summary {{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0 30px;
+    flex-wrap: wrap;
+}}
+
+.summary-item {{
+    text-align: center;
+}}
+
+.summary-item .number {{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f85149;
+}}
+
+.summary-item .label {{
+    font-size: 0.85rem;
+    color: #8b949e;
+}}
+
+/* ===== 市場分頁 Tab ===== */
+.market-tabs {{
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 0 0 30px;
+    border-bottom: 2px solid #21262d;
+}}
+
+.market-tab {{
+    padding: 12px 32px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #8b949e;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    user-select: none;
+}}
+
+.market-tab:hover {{
+    color: #e6edf3;
+    background: #161b22;
+}}
+
+.market-tab.active {{
+    color: #58a6ff;
+    border-bottom-color: #58a6ff;
+}}
+
+.market-tab .tab-count {{
+    display: inline-block;
+    background: #21262d;
+    color: #8b949e;
+    border-radius: 10px;
+    padding: 1px 8px;
+    font-size: 0.75rem;
+    margin-left: 6px;
+    font-weight: 500;
+}}
+
+.market-tab.active .tab-count {{
+    background: #58a6ff33;
+    color: #58a6ff;
+}}
+
+.market-panel {{
+    display: none;
+}}
+
+.market-panel.active {{
+    display: block;
+}}
+
+/* ===== 產業區塊 ===== */
+.industry-section {{
+    background: #161b22;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    border: 1px solid #21262d;
+}}
+
+.industry-header {{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: #1c2128;
+    border-bottom: 1px solid #21262d;
+}}
+
+.industry-header h2 {{
+    font-size: 1.1rem;
+    font-weight: 600;
+}}
+
+.industry-count {{
+    color: #8b949e;
+    font-size: 0.9rem;
+}}
+
+.stock-grid {{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+    padding: 16px;
+}}
+
+.stock-card {{
+    background: #0d1117;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    padding: 16px;
+    transition: border-color 0.2s;
+}}
+
+.stock-card:hover {{
+    border-color: #58a6ff;
+}}
+
+.stock-card .top-row {{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}}
+
+.stock-info {{
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}}
+
+.stock-name {{
+    font-weight: 600;
+    font-size: 1rem;
+}}
+
+.stock-id {{
+    color: #8b949e;
+    font-size: 0.85rem;
+}}
+
+.revenue-value {{
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #f85149;
+}}
+
+.stock-card .pct-change {{
+    color: #f85149;
+    font-size: 0.85rem;
+}}
+
+.stock-card .pct-change.negative {{
+    color: #3fb950;
+}}
+
+.stock-card .detail-row {{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6px;
+}}
+
+.stock-card .revenue-label {{
+    color: #8b949e;
+    font-size: 0.8rem;
+}}
+
+.tag {{
+    display: inline-block;
+    background: #f8514922;
+    color: #f85149;
+    border: 1px solid #f8514944;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}}
+
+.exceed-tag {{
+    background: #f0883e22;
+    color: #f0883e;
+    border-color: #f0883e44;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+}}
+
+.empty-msg {{
+    text-align: center;
+    color: #8b949e;
+    padding: 60px 20px;
+    font-size: 1rem;
+}}
+
+footer {{
+    text-align: center;
+    padding: 40px 20px;
+    color: #6e7681;
+    font-size: 0.8rem;
+}}
+
+@media (max-width: 768px) {{
+    .stock-grid {{
+        grid-template-columns: 1fr;
+    }}
+    header h1 {{
+        font-size: 1.5rem;
+    }}
+    .market-tab {{
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }}
+}}
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>營收創同期新高</h1>
+        <div class="subtitle">自動比對公開資訊觀測站每月營收資料，篩選創近 {compare_years} 年同期新高股票</div>
+        <div class="date-info">{year}/{month:02d}</div>
+        <div class="update-time">{update_time} 更新</div>
+    </header>
+
+    <div class="summary">
+        <div class="summary-item">
+            <div class="number">{total_count}</div>
+            <div class="label">創同期新高</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">{sii_count}</div>
+            <div class="label">上市</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">{otc_count}</div>
+            <div class="label">上櫃</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">{emerging_count}</div>
+            <div class="label">興櫃</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">{industry_count}</div>
+            <div class="label">產業別</div>
+        </div>
+    </div>
+
+    <!-- 市場分頁 -->
+    <div class="market-tabs">
+        <div class="market-tab active" data-market="all">全部 <span class="tab-count">{total_count}</span></div>
+        <div class="market-tab" data-market="sii">上市 <span class="tab-count">{sii_count}</span></div>
+        <div class="market-tab" data-market="otc">上櫃 <span class="tab-count">{otc_count}</span></div>
+        <div class="market-tab" data-market="emerging">興櫃 <span class="tab-count">{emerging_count}</span></div>
+    </div>
+
+    <!-- 全部面板 -->
+    <div class="market-panel active" id="panel-all">
+        {all_sections}
+    </div>
+
+    <!-- 上市面板 -->
+    <div class="market-panel" id="panel-sii">
+        {sii_sections}
+    </div>
+
+    <!-- 上櫃面板 -->
+    <div class="market-panel" id="panel-otc">
+        {otc_sections}
+    </div>
+
+    <!-- 興櫃面板 -->
+    <div class="market-panel" id="panel-emerging">
+        {emerging_sections}
+    </div>
+
+</div>
+<footer>
+    資料來源：公開資訊觀測站 (MOPS) / FinMind | 僅供參考，不構成投資建議
+</footer>
+
+<script>
+document.querySelectorAll('.market-tab').forEach(tab => {{
+    tab.addEventListener('click', () => {{
+        document.querySelectorAll('.market-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.market-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('panel-' + tab.dataset.market).classList.add('active');
+    }});
+}});
+</script>
+</body>
+</html>"""
+
+INDUSTRY_SECTION_TEMPLATE = """
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>{industry}</h2>
+            <span class="industry-count">{count}檔</span>
+        </div>
+        <div class="stock-grid">
+            {cards}
+        </div>
+    </div>"""
+
+STOCK_CARD_TEMPLATE = """
+            <div class="stock-card">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">{stock_name}</span>
+                        <span class="stock-id">{stock_id}</span>
+                    </div>
+                    <div class="revenue-value">{revenue_display}</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change {yoy_class}">{yoy_display}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change {mom_class}">{mom_display}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+{exceed_pct}%</span>
+                </div>
+            </div>"""
+
+
+def _build_cards(df: pd.DataFrame) -> str:
+    """為一組股票 DataFrame 生成卡片 HTML"""
+    cards = ""
+    for _, row in df.iterrows():
+        yoy = row.get("yoy_pct", 0)
+        mom = row.get("mom_pct", 0)
+        exceed = row.get("exceed_pct", 0)
+
+        yoy_val = float(yoy) if pd.notna(yoy) else 0
+        mom_val = float(mom) if pd.notna(mom) else 0
+        exceed_val = float(exceed) if pd.notna(exceed) else 0
+
+        cards += STOCK_CARD_TEMPLATE.format(
+            stock_name=row.get("stock_name", ""),
+            stock_id=row.get("stock_id", ""),
+            revenue_display=format_revenue(row.get("revenue", 0)),
+            yoy_display=f"{yoy_val:+.2f}%" if yoy_val != 0 else "N/A",
+            yoy_class="" if yoy_val >= 0 else "negative",
+            mom_display=f"{mom_val:+.2f}%" if mom_val != 0 else "N/A",
+            mom_class="" if mom_val >= 0 else "negative",
+            exceed_pct=f"{exceed_val:.1f}",
+        )
+    return cards
+
+
+def _build_industry_sections(df: pd.DataFrame) -> str:
+    """依產業分組生成區塊 HTML"""
+    if df.empty:
+        return '<p class="empty-msg">本分類無營收創同期新高資料</p>'
+
+    sections = ""
+    grouped = df.groupby("industry")
+
+    for industry, group in sorted(grouped, key=lambda x: -len(x[1])):
+        cards = _build_cards(group)
+        sections += INDUSTRY_SECTION_TEMPLATE.format(
+            industry=industry,
+            count=len(group),
+            cards=cards,
+        )
+    return sections
+
+
+def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 5) -> str:
+    """生成 HTML 報表
+
+    Args:
+        df: 營收創同期新高的 DataFrame
+        year: 西元年
+        month: 月份
+        compare_years: 比對年數
+
+    Returns:
+        HTML 字串
+    """
+    if df.empty:
+        return _generate_empty_html(year, month, compare_years)
+
+    # 各市場計數
+    sii_count = len(df[df["market"] == "sii"]) if "market" in df.columns else 0
+    otc_count = len(df[df["market"] == "otc"]) if "market" in df.columns else 0
+    emerging_count = len(df[df["market"] == "emerging"]) if "market" in df.columns else 0
+    industries = df["industry"].nunique() if "industry" in df.columns else 0
+
+    # 各面板的產業區塊
+    all_sections = _build_industry_sections(df)
+    sii_sections = _build_industry_sections(df[df["market"] == "sii"]) if sii_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+    otc_sections = _build_industry_sections(df[df["market"] == "otc"]) if otc_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+    emerging_sections = _build_industry_sections(df[df["market"] == "emerging"]) if emerging_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+
+    html = HTML_TEMPLATE.format(
+        year=year,
+        month=month,
+        compare_years=compare_years,
+        update_time=datetime.now().strftime("%Y-%m-%d %H:%M"),
+        total_count=len(df),
+        sii_count=sii_count,
+        otc_count=otc_count,
+        emerging_count=emerging_count,
+        industry_count=industries,
+        all_sections=all_sections,
+        sii_sections=sii_sections,
+        otc_sections=otc_sections,
+        emerging_sections=emerging_sections,
+    )
+    return html
+
+
+def _generate_empty_html(year: int, month: int, compare_years: int = 5) -> str:
+    """無資料時的 HTML"""
+    empty = '<p class="empty-msg">本期無營收創同期新高資料</p>'
+    return HTML_TEMPLATE.format(
+        year=year,
+        month=month,
+        compare_years=compare_years,
+        update_time=datetime.now().strftime("%Y-%m-%d %H:%M"),
+        total_count=0,
+        sii_count=0,
+        otc_count=0,
+        emerging_count=0,
+        industry_count=0,
+        all_sections=empty,
+        sii_sections=empty,
+        otc_sections=empty,
+        emerging_sections=empty,
+    )
+
+
+def save_html(html: str, filename: str = "index.html") -> str:
+    """儲存 HTML 檔案"""
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    path = os.path.join(OUTPUT_DIR, filename)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(html)
+    logger.info(f"報表已輸出: {path}")
+    return path
