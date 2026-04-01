@@ -436,6 +436,69 @@ header .update-time {{
 .legend-dot.prev {{ background: #58a6ff; }}
 .legend-dot.curr {{ background: #f0883e; }}
 
+/* ===== 柱狀圖 Tooltip ===== */
+.chart-tooltip {{
+    position: absolute;
+    background: #1c2128;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    color: #e6edf3;
+    pointer-events: none;
+    z-index: 100;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    line-height: 1.6;
+    opacity: 0;
+    transition: opacity 0.15s;
+}}
+
+.chart-tooltip.visible {{
+    opacity: 1;
+}}
+
+.chart-tooltip .tt-month {{
+    font-weight: 600;
+    color: #58a6ff;
+    margin-bottom: 2px;
+}}
+
+.chart-tooltip .tt-row {{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}}
+
+.chart-tooltip .tt-label {{
+    color: #8b949e;
+}}
+
+.chart-tooltip .tt-val {{
+    font-weight: 600;
+}}
+
+.chart-tooltip .tt-val.prev {{ color: #58a6ff; }}
+.chart-tooltip .tt-val.curr {{ color: #f0883e; }}
+.chart-tooltip .tt-val.yoy-pos {{ color: #f85149; }}
+.chart-tooltip .tt-val.yoy-neg {{ color: #3fb950; }}
+
+.mini-chart {{
+    position: relative;
+}}
+
+.chart-group {{
+    cursor: pointer;
+}}
+
+.chart-group:hover .chart-bar.prev {{
+    background: #79bbff;
+}}
+
+.chart-group:hover .chart-bar.curr {{
+    background: #f5a664;
+}}
+
 /* ===== 搜尋列 ===== */
 .search-bar {{
     display: flex;
@@ -808,6 +871,88 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
         }}
     }}
 }})();
+
+// 柱狀圖 Tooltip (hover + touch)
+(function() {{
+    const tooltip = document.createElement('div');
+    tooltip.className = 'chart-tooltip';
+    document.body.appendChild(tooltip);
+
+    let activeGroup = null;
+
+    function showTooltip(group, x, y) {{
+        const month = group.dataset.month || '';
+        const prev = group.dataset.prev || 'N/A';
+        const curr = group.dataset.curr || 'N/A';
+        const yoy = group.dataset.yoy || 'N/A';
+
+        const yoyNum = parseFloat(yoy);
+        const yoyClass = isNaN(yoyNum) ? '' : (yoyNum >= 0 ? 'yoy-pos' : 'yoy-neg');
+
+        tooltip.innerHTML =
+            '<div class="tt-month">' + month + '</div>' +
+            '<div class="tt-row"><span class="tt-label">本期</span><span class="tt-val curr">' + curr + '</span></div>' +
+            '<div class="tt-row"><span class="tt-label">前期</span><span class="tt-val prev">' + prev + '</span></div>' +
+            '<div class="tt-row"><span class="tt-label">年增</span><span class="tt-val ' + yoyClass + '">' + yoy + '</span></div>';
+
+        // 定位: 優先顯示在上方
+        tooltip.style.display = 'block';
+        tooltip.classList.add('visible');
+
+        const rect = group.getBoundingClientRect();
+        const ttRect = tooltip.getBoundingClientRect();
+        let left = rect.left + rect.width / 2 - ttRect.width / 2;
+        let top = rect.top - ttRect.height - 8;
+
+        // 邊界修正
+        if (left < 4) left = 4;
+        if (left + ttRect.width > window.innerWidth - 4) left = window.innerWidth - ttRect.width - 4;
+        if (top < 4) top = rect.bottom + 8;
+
+        tooltip.style.left = left + window.scrollX + 'px';
+        tooltip.style.top = top + window.scrollY + 'px';
+
+        activeGroup = group;
+    }}
+
+    function hideTooltip() {{
+        tooltip.classList.remove('visible');
+        activeGroup = null;
+    }}
+
+    // Desktop: hover
+    document.addEventListener('mouseover', function(e) {{
+        const group = e.target.closest('.chart-group');
+        if (group) {{
+            showTooltip(group);
+        }}
+    }});
+
+    document.addEventListener('mouseout', function(e) {{
+        const group = e.target.closest('.chart-group');
+        if (group) {{
+            const related = e.relatedTarget;
+            if (!group.contains(related)) {{
+                hideTooltip();
+            }}
+        }}
+    }});
+
+    // Mobile: touch
+    document.addEventListener('touchstart', function(e) {{
+        const group = e.target.closest('.chart-group');
+        if (group) {{
+            e.preventDefault();
+            if (activeGroup === group) {{
+                hideTooltip();
+            }} else {{
+                showTooltip(group);
+            }}
+        }} else if (!e.target.closest('.chart-tooltip')) {{
+            hideTooltip();
+        }}
+    }}, {{ passive: false }});
+}})();
 </script>
 </body>
 </html>"""
@@ -930,13 +1075,20 @@ def _build_chart_html(row: pd.Series, current_year: int, current_month: int = 0)
         target_class = "is-target" if is_target else ""
         label_class = "is-target" if is_target else ""
 
+        # YoY: (本期 - 前期) / 前期 * 100
+        if curr_val > 0 and prev_val > 0:
+            yoy_val = (curr_val - prev_val) / prev_val * 100
+            yoy_str = f"{yoy_val:+.1f}%"
+        else:
+            yoy_str = "N/A"
+
         label = f"{mo}"
 
         bars_html += f"""
-            <div class="chart-group">
+            <div class="chart-group" data-month="{y}/{mo:02d}" data-prev="{format_revenue(prev_val)}" data-curr="{format_revenue(curr_val)}" data-yoy="{yoy_str}">
                 <div class="chart-bars-pair">
-                    <div class="chart-bar prev" style="height:{prev_h:.0f}%" title="前期 {format_revenue(prev_val)}"></div>
-                    <div class="chart-bar curr {target_class}" style="height:{curr_h:.0f}%" title="本期 {format_revenue(curr_val)}"></div>
+                    <div class="chart-bar prev" style="height:{prev_h:.0f}%"></div>
+                    <div class="chart-bar curr {target_class}" style="height:{curr_h:.0f}%"></div>
                 </div>
                 <span class="chart-month-label {label_class}">{label}</span>
             </div>"""
