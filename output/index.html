@@ -76,6 +76,128 @@ header h1 {
     color: #8b949e;
 }
 
+/* ===== 預警清單 ===== */
+.prefiling-section {
+    margin: 20px 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border: 1px solid #f0883e44;
+    border-radius: 10px;
+    padding: 16px 20px;
+}
+
+.pf-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pf-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f0883e;
+}
+
+.pf-summary {
+    font-size: 0.8rem;
+    color: #8b949e;
+}
+
+.pf-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pf-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 14px;
+    background: #0d1117cc;
+    border-left: 3px solid #f0883e;
+    border-radius: 6px;
+    flex-wrap: wrap;
+}
+
+.pf-card-filed {
+    border-left-color: #3fb950;
+    opacity: 0.7;
+}
+
+.pf-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 180px;
+}
+
+.pf-sid {
+    font-weight: 700;
+    color: #58a6ff;
+    font-size: 0.95rem;
+    min-width: 45px;
+}
+
+.pf-name {
+    color: #e6edf3;
+    font-size: 0.9rem;
+}
+
+.pf-badge {
+    font-size: 0.7rem;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.pf-filed {
+    background: #3fb95033;
+    color: #3fb950;
+}
+
+.pf-pending {
+    background: #f0883e33;
+    color: #f0883e;
+}
+
+.pf-mid {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 220px;
+}
+
+.pf-avg {
+    color: #f85149;
+    font-size: 0.9rem;
+}
+
+.pf-avg strong {
+    font-size: 1rem;
+}
+
+.pf-hit {
+    color: #8b949e;
+    font-size: 0.8rem;
+}
+
+.pf-count {
+    color: #6e7681;
+    font-size: 0.75rem;
+}
+
+.pf-right {
+    flex: 1;
+}
+
+.pf-msg {
+    color: #8b949e;
+    font-size: 0.78rem;
+}
+
 /* ===== 搜尋 + 篩選 ===== */
 .filter-bar {
     display: flex;
@@ -472,13 +594,53 @@ footer {
         <div class="monitor-status">
             最新申報：04-01 22:45:01 ·
             <span class="status-active">偵測中 ✓</span>
-            · 最後偵測：04-02 01:47:01
+            · 最後偵測：04-02 02:12:42
         </div>
     </header>
 
     <div class="nav-links">
         <a href="index.html" class="nav-link active">即時申報</a>
         <a href="2026_03.html" class="nav-link">歷史月報</a>
+    </div>
+
+    
+    <div class="prefiling-section">
+        <div class="pf-header">
+            <span class="pf-title">⚡ T-1 預警清單：歷史同期新高後 T+1 容易大漲</span>
+            <span class="pf-summary">共 2 檔 · 已申報 2 檔</span>
+        </div>
+        <div class="pf-cards">
+            <div class="pf-card pf-card-filed">
+                <div class="pf-left">
+                    <span class="pf-sid">6438</span>
+                    <span class="pf-name">迅得</span>
+                    <span class="pf-badge pf-filed">已申報</span>
+                </div>
+                <div class="pf-mid">
+                    <span class="pf-avg">T+1 avg <strong>+5.2%</strong></span>
+                    <span class="pf-hit">正報酬率 67%</span>
+                    <span class="pf-count">(3次)</span>
+                </div>
+                <div class="pf-right">
+                    <span class="pf-msg">歷史 4 次同期新高，T+1 平均 +5.2%，正報酬率 67% (最近: 2025年)</span>
+                </div>
+            </div>
+            <div class="pf-card pf-card-filed">
+                <div class="pf-left">
+                    <span class="pf-sid">2402</span>
+                    <span class="pf-name">毅嘉</span>
+                    <span class="pf-badge pf-filed">已申報</span>
+                </div>
+                <div class="pf-mid">
+                    <span class="pf-avg">T+1 avg <strong>+3.8%</strong></span>
+                    <span class="pf-hit">正報酬率 100%</span>
+                    <span class="pf-count">(3次)</span>
+                </div>
+                <div class="pf-right">
+                    <span class="pf-msg">歷史 4 次同期新高，T+1 平均 +3.8%，正報酬率 100% (最近: 2025年)</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="filter-bar">
@@ -727,7 +889,7 @@ footer {
 
 <footer>
     資料來源：公開資訊觀測站 (MOPS) | 系統每 5 分鐘偵測 | 僅供參考，不構成投資建議<br>
-    最後更新：2026-04-02 01:47:04
+    最後更新：2026-04-02 02:12:44
 </footer>
 
 <script>
