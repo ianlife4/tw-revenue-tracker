@@ -499,7 +499,7 @@ header .update-time {{
     background: #f5a664;
 }}
 
-/* ===== 排序 + 日期篩選工具列 ===== */
+/* ===== 日期篩選 + 工具列 ===== */
 .toolbar {{
     display: flex;
     justify-content: space-between;
@@ -507,48 +507,6 @@ header .update-time {{
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 16px;
-}}
-
-.sort-bar {{
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    flex-wrap: wrap;
-}}
-
-.sort-bar .sort-label {{
-    color: #6e7681;
-    font-size: 0.8rem;
-    margin-right: 4px;
-}}
-
-.sort-btn {{
-    padding: 5px 12px;
-    font-size: 0.78rem;
-    color: #8b949e;
-    background: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s;
-    user-select: none;
-    white-space: nowrap;
-}}
-
-.sort-btn:hover {{
-    color: #e6edf3;
-    border-color: #8b949e;
-}}
-
-.sort-btn.active {{
-    color: #58a6ff;
-    border-color: #58a6ff;
-    background: #58a6ff15;
-}}
-
-.sort-btn .sort-arrow {{
-    font-size: 0.65rem;
-    margin-left: 2px;
 }}
 
 .date-filter {{
@@ -752,7 +710,7 @@ body.compact .industry-header h2 {{
     font-size: 0.95rem;
 }}
 
-/* compact 表頭列 */
+/* compact 表頭列 (可點排序) */
 .compact-header {{
     display: none;
 }}
@@ -766,6 +724,31 @@ body.compact .compact-header {{
     color: #6e7681;
     border-bottom: 1px solid #21262d;
     font-weight: 600;
+}}
+
+body.compact .compact-header .ch-col {{
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s;
+    white-space: nowrap;
+}}
+
+body.compact .compact-header .ch-col:hover {{
+    color: #e6edf3;
+}}
+
+body.compact .compact-header .ch-col.sort-active {{
+    color: #58a6ff;
+}}
+
+body.compact .compact-header .ch-col .sort-arrow {{
+    font-size: 0.6rem;
+    margin-left: 2px;
+    opacity: 0.4;
+}}
+
+body.compact .compact-header .ch-col.sort-active .sort-arrow {{
+    opacity: 1;
 }}
 
 body.compact .compact-header .ch-name {{ min-width: 120px; }}
@@ -855,16 +838,8 @@ footer {{
     </div>
     <div class="search-result-info" id="searchResultInfo"></div>
 
-    <!-- 工具列: 排序 + 日期篩選 + 檢視模式 -->
+    <!-- 工具列: 日期篩選 + 檢視模式 -->
     <div class="toolbar">
-        <div class="sort-bar">
-            <span class="sort-label">排序</span>
-            <div class="sort-btn" data-sort="default">預設</div>
-            <div class="sort-btn" data-sort="rev">營收</div>
-            <div class="sort-btn" data-sort="yoy">年增率</div>
-            <div class="sort-btn" data-sort="mom">月增率</div>
-            <div class="sort-btn" data-sort="exceed">超越同期</div>
-        </div>
         <div class="date-filter">
             <span class="date-label">公布日</span>
             <div class="date-pill" data-date="all">全部</div>
@@ -930,92 +905,69 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
     }});
 }});
 
-// ===== 排序功能 =====
+// ===== 排序 (點 compact 表頭欄位) + 日期篩選 =====
 (function() {{
-    let currentSort = 'default';
-    let sortAsc = false;  // false = 降序 (大到小)
+    let currentSort = null;
+    let sortAsc = false;
+    const attrMap = {{ rev: 'data-rev', yoy: 'data-yoy', mom: 'data-mom', exceed: 'data-exceed' }};
 
-    // 儲存原始 DOM 結構 (每個 panel 各自備份)
-    const panelOriginal = {{}};
-    document.querySelectorAll('.market-panel').forEach(panel => {{
-        panelOriginal[panel.id] = panel.innerHTML;
+    // 點擊 compact 表頭排序
+    document.addEventListener('click', function(e) {{
+        const col = e.target.closest('.ch-col[data-sort]');
+        if (!col) return;
+
+        const sortKey = col.dataset.sort;
+        if (currentSort === sortKey) {{
+            sortAsc = !sortAsc;
+        }} else {{
+            currentSort = sortKey;
+            sortAsc = false;
+        }}
+
+        // 更新所有表頭的箭頭顯示
+        document.querySelectorAll('.ch-col[data-sort]').forEach(c => {{
+            c.classList.remove('sort-active');
+            const arrow = c.querySelector('.sort-arrow');
+            if (arrow) arrow.textContent = '▼';
+        }});
+        // 點到的那欄 + 同 data-sort 的所有表頭都高亮
+        document.querySelectorAll('.ch-col[data-sort="' + sortKey + '"]').forEach(c => {{
+            c.classList.add('sort-active');
+            const arrow = c.querySelector('.sort-arrow');
+            if (arrow) arrow.textContent = sortAsc ? '▲' : '▼';
+        }});
+
+        doSort(sortKey, sortAsc);
     }});
 
-    document.querySelectorAll('.sort-btn').forEach(btn => {{
-        btn.addEventListener('click', () => {{
-            const sortKey = btn.dataset.sort;
+    function doSort(sortKey, asc) {{
+        const attr = attrMap[sortKey];
+        if (!attr) return;
 
-            if (sortKey === 'default') {{
-                // 恢復原始
-                currentSort = 'default';
-                document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
-                document.body.classList.remove('sort-mode');
-                Object.keys(panelOriginal).forEach(id => {{
-                    const panel = document.getElementById(id);
-                    if (panel) panel.innerHTML = panelOriginal[id];
-                }});
-                applyDateFilter();
-                applySearch();
-                return;
-            }}
+        document.body.classList.add('sort-mode');
 
-            if (currentSort === sortKey) {{
-                sortAsc = !sortAsc;
-            }} else {{
-                currentSort = sortKey;
-                sortAsc = false;
-            }}
-
-            // 更新按鈕狀態
-            document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            btn.innerHTML = btn.textContent.replace(/[▲▼]/g, '').trim() +
-                ' <span class="sort-arrow">' + (sortAsc ? '▲' : '▼') + '</span>';
-
-            document.body.classList.add('sort-mode');
-
-            // 對每個 panel 排序
-            const attrMap = {{ rev: 'data-rev', yoy: 'data-yoy', mom: 'data-mom', exceed: 'data-exceed' }};
-            const attr = attrMap[sortKey];
-
-            document.querySelectorAll('.market-panel').forEach(panel => {{
-                const cards = Array.from(panel.querySelectorAll('.stock-card'));
+        // 對當前可見的 panel 排序
+        document.querySelectorAll('.market-panel').forEach(panel => {{
+            const grids = panel.querySelectorAll('.stock-grid');
+            grids.forEach(grid => {{
+                const cards = Array.from(grid.querySelectorAll('.stock-card'));
                 if (cards.length === 0) return;
 
                 cards.sort((a, b) => {{
-                    const va = parseFloat(a.getAttribute(attr)) || -Infinity;
-                    const vb = parseFloat(b.getAttribute(attr)) || -Infinity;
-                    return sortAsc ? (va - vb) : (vb - va);
+                    const va = parseFloat(a.getAttribute(attr));
+                    const vb = parseFloat(b.getAttribute(attr));
+                    const na = isNaN(va) ? -Infinity : va;
+                    const nb = isNaN(vb) ? -Infinity : vb;
+                    return asc ? (na - nb) : (nb - na);
                 }});
 
-                // 放入單一 grid
-                let grid = panel.querySelector('.sorted-grid');
-                if (!grid) {{
-                    // 先恢復原始結構
-                    panel.innerHTML = panelOriginal[panel.id];
-                    // 隱藏所有原始區塊
-                    panel.querySelectorAll('.industry-section').forEach(s => s.style.display = 'none');
-                    panel.querySelectorAll('.empty-msg').forEach(s => s.style.display = 'none');
-                    grid = document.createElement('div');
-                    grid.className = 'stock-grid sorted-grid';
-                    panel.appendChild(grid);
-                }}
-                grid.innerHTML = '';
-
-                // 重新取得 cards (因為 DOM 已重建)
-                const freshCards = Array.from(panel.querySelectorAll('.industry-section .stock-card'));
-                freshCards.sort((a, b) => {{
-                    const va = parseFloat(a.getAttribute(attr)) || -Infinity;
-                    const vb = parseFloat(b.getAttribute(attr)) || -Infinity;
-                    return sortAsc ? (va - vb) : (vb - va);
-                }});
-                freshCards.forEach(c => grid.appendChild(c.cloneNode(true)));
+                cards.forEach(c => grid.appendChild(c));
             }});
-
-            applyDateFilter();
-            applySearch();
         }});
-    }});
+
+        applyDateFilter();
+        applySearch();
+    }}
 
     // ===== 日期篩選 =====
     let currentDate = 'all';
@@ -1068,7 +1020,6 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
         }}
     }}
 
-    // 讓搜尋功能能與日期篩選配合
     window._applyDateFilter = applyDateFilter;
 }})();
 
@@ -1240,10 +1191,10 @@ INDUSTRY_SECTION_TEMPLATE = """
         </div>
         <div class="compact-header">
             <span class="ch-name">股票</span>
-            <span class="ch-rev">營收</span>
-            <span class="ch-pct">年增率</span>
-            <span class="ch-pct">月增率</span>
-            <span class="ch-pct">超越同期</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-pct" data-sort="yoy">年增率 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-pct" data-sort="mom">月增率 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-pct" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
         </div>
         <div class="stock-grid">
             {cards}
