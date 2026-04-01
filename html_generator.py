@@ -499,6 +499,110 @@ header .update-time {{
     background: #f5a664;
 }}
 
+/* ===== 排序 + 日期篩選工具列 ===== */
+.toolbar {{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}}
+
+.sort-bar {{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}}
+
+.sort-bar .sort-label {{
+    color: #6e7681;
+    font-size: 0.8rem;
+    margin-right: 4px;
+}}
+
+.sort-btn {{
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    color: #8b949e;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    white-space: nowrap;
+}}
+
+.sort-btn:hover {{
+    color: #e6edf3;
+    border-color: #8b949e;
+}}
+
+.sort-btn.active {{
+    color: #58a6ff;
+    border-color: #58a6ff;
+    background: #58a6ff15;
+}}
+
+.sort-btn .sort-arrow {{
+    font-size: 0.65rem;
+    margin-left: 2px;
+}}
+
+.date-filter {{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}}
+
+.date-filter .date-label {{
+    color: #6e7681;
+    font-size: 0.8rem;
+    margin-right: 4px;
+}}
+
+.date-pill {{
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    color: #8b949e;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    white-space: nowrap;
+}}
+
+.date-pill:hover {{
+    color: #e6edf3;
+    border-color: #8b949e;
+}}
+
+.date-pill.active {{
+    color: #f0883e;
+    border-color: #f0883e;
+    background: #f0883e15;
+}}
+
+/* 排序模式下隱藏產業分組標題 */
+body.sort-mode .industry-header {{
+    display: none;
+}}
+
+body.sort-mode .industry-section {{
+    background: transparent;
+    border: none;
+    margin-bottom: 0;
+}}
+
+body.sort-mode .stock-grid {{
+    padding: 0;
+}}
+
 /* ===== 搜尋列 ===== */
 .search-bar {{
     display: flex;
@@ -751,10 +855,25 @@ footer {{
     </div>
     <div class="search-result-info" id="searchResultInfo"></div>
 
-    <!-- 檢視模式切換 -->
-    <div class="view-toggle">
-        <div class="view-btn active" data-view="normal">&#9638; 標準</div>
-        <div class="view-btn" data-view="compact">&#9776; 精簡</div>
+    <!-- 工具列: 排序 + 日期篩選 + 檢視模式 -->
+    <div class="toolbar">
+        <div class="sort-bar">
+            <span class="sort-label">排序</span>
+            <div class="sort-btn" data-sort="default">預設</div>
+            <div class="sort-btn" data-sort="rev">營收</div>
+            <div class="sort-btn" data-sort="yoy">年增率</div>
+            <div class="sort-btn" data-sort="mom">月增率</div>
+            <div class="sort-btn" data-sort="exceed">超越同期</div>
+        </div>
+        <div class="date-filter">
+            <span class="date-label">公布日</span>
+            <div class="date-pill" data-date="all">全部</div>
+            {date_pills}
+        </div>
+        <div class="view-toggle">
+            <div class="view-btn active" data-view="normal">&#9638; 標準</div>
+            <div class="view-btn" data-view="compact">&#9776; 精簡</div>
+        </div>
     </div>
 
     <!-- 全部面板 -->
@@ -811,6 +930,148 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
     }});
 }});
 
+// ===== 排序功能 =====
+(function() {{
+    let currentSort = 'default';
+    let sortAsc = false;  // false = 降序 (大到小)
+
+    // 儲存原始 DOM 結構 (每個 panel 各自備份)
+    const panelOriginal = {{}};
+    document.querySelectorAll('.market-panel').forEach(panel => {{
+        panelOriginal[panel.id] = panel.innerHTML;
+    }});
+
+    document.querySelectorAll('.sort-btn').forEach(btn => {{
+        btn.addEventListener('click', () => {{
+            const sortKey = btn.dataset.sort;
+
+            if (sortKey === 'default') {{
+                // 恢復原始
+                currentSort = 'default';
+                document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+                document.body.classList.remove('sort-mode');
+                Object.keys(panelOriginal).forEach(id => {{
+                    const panel = document.getElementById(id);
+                    if (panel) panel.innerHTML = panelOriginal[id];
+                }});
+                applyDateFilter();
+                applySearch();
+                return;
+            }}
+
+            if (currentSort === sortKey) {{
+                sortAsc = !sortAsc;
+            }} else {{
+                currentSort = sortKey;
+                sortAsc = false;
+            }}
+
+            // 更新按鈕狀態
+            document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            btn.innerHTML = btn.textContent.replace(/[▲▼]/g, '').trim() +
+                ' <span class="sort-arrow">' + (sortAsc ? '▲' : '▼') + '</span>';
+
+            document.body.classList.add('sort-mode');
+
+            // 對每個 panel 排序
+            const attrMap = {{ rev: 'data-rev', yoy: 'data-yoy', mom: 'data-mom', exceed: 'data-exceed' }};
+            const attr = attrMap[sortKey];
+
+            document.querySelectorAll('.market-panel').forEach(panel => {{
+                const cards = Array.from(panel.querySelectorAll('.stock-card'));
+                if (cards.length === 0) return;
+
+                cards.sort((a, b) => {{
+                    const va = parseFloat(a.getAttribute(attr)) || -Infinity;
+                    const vb = parseFloat(b.getAttribute(attr)) || -Infinity;
+                    return sortAsc ? (va - vb) : (vb - va);
+                }});
+
+                // 放入單一 grid
+                let grid = panel.querySelector('.sorted-grid');
+                if (!grid) {{
+                    // 先恢復原始結構
+                    panel.innerHTML = panelOriginal[panel.id];
+                    // 隱藏所有原始區塊
+                    panel.querySelectorAll('.industry-section').forEach(s => s.style.display = 'none');
+                    panel.querySelectorAll('.empty-msg').forEach(s => s.style.display = 'none');
+                    grid = document.createElement('div');
+                    grid.className = 'stock-grid sorted-grid';
+                    panel.appendChild(grid);
+                }}
+                grid.innerHTML = '';
+
+                // 重新取得 cards (因為 DOM 已重建)
+                const freshCards = Array.from(panel.querySelectorAll('.industry-section .stock-card'));
+                freshCards.sort((a, b) => {{
+                    const va = parseFloat(a.getAttribute(attr)) || -Infinity;
+                    const vb = parseFloat(b.getAttribute(attr)) || -Infinity;
+                    return sortAsc ? (va - vb) : (vb - va);
+                }});
+                freshCards.forEach(c => grid.appendChild(c.cloneNode(true)));
+            }});
+
+            applyDateFilter();
+            applySearch();
+        }});
+    }});
+
+    // ===== 日期篩選 =====
+    let currentDate = 'all';
+
+    document.addEventListener('click', function(e) {{
+        const pill = e.target.closest('.date-pill');
+        if (!pill) return;
+
+        document.querySelectorAll('.date-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentDate = pill.dataset.date;
+        applyDateFilter();
+    }});
+
+    function applyDateFilter() {{
+        const cards = document.querySelectorAll('.stock-card');
+        cards.forEach(card => {{
+            if (currentDate === 'all') {{
+                card.removeAttribute('data-date-hidden');
+                if (!card.getAttribute('data-search-hidden')) {{
+                    card.style.display = '';
+                }}
+            }} else {{
+                const cardDate = card.dataset.date || '';
+                if (cardDate === currentDate) {{
+                    card.removeAttribute('data-date-hidden');
+                    if (!card.getAttribute('data-search-hidden')) {{
+                        card.style.display = '';
+                    }}
+                }} else {{
+                    card.setAttribute('data-date-hidden', '1');
+                    card.style.display = 'none';
+                }}
+            }}
+        }});
+        updateSectionVisibility();
+    }}
+
+    function updateSectionVisibility() {{
+        document.querySelectorAll('.industry-section').forEach(section => {{
+            const visible = section.querySelectorAll('.stock-card:not([style*="display: none"])');
+            section.style.display = visible.length > 0 ? '' : 'none';
+        }});
+    }}
+
+    function applySearch() {{
+        const input = document.getElementById('stockSearch');
+        if (input && input.value.trim()) {{
+            input.dispatchEvent(new Event('input'));
+        }}
+    }}
+
+    // 讓搜尋功能能與日期篩選配合
+    window._applyDateFilter = applyDateFilter;
+}})();
+
 // 個股搜尋
 (function() {{
     const searchInput = document.getElementById('stockSearch');
@@ -836,10 +1097,16 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
         const sections = document.querySelectorAll('.industry-section');
 
         if (!query) {{
-            // 清除搜尋 → 顯示全部
-            cards.forEach(c => c.style.display = '');
+            // 清除搜尋
+            cards.forEach(c => {{
+                c.removeAttribute('data-search-hidden');
+                if (!c.getAttribute('data-date-hidden')) {{
+                    c.style.display = '';
+                }}
+            }});
             sections.forEach(s => s.style.display = '');
             searchInfo.style.display = 'none';
+            if (window._applyDateFilter) window._applyDateFilter();
             return;
         }}
 
@@ -850,8 +1117,16 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
             const sid = (card.dataset.sid || '').toLowerCase();
             const sname = (card.dataset.sname || '').toLowerCase();
             const match = sid.includes(q) || sname.includes(q);
-            card.style.display = match ? '' : 'none';
-            if (match) matchCount++;
+            if (match) {{
+                card.removeAttribute('data-search-hidden');
+                if (!card.getAttribute('data-date-hidden')) {{
+                    card.style.display = '';
+                    matchCount++;
+                }}
+            }} else {{
+                card.setAttribute('data-search-hidden', '1');
+                card.style.display = 'none';
+            }}
         }});
 
         // 隱藏空的產業區塊
@@ -976,7 +1251,7 @@ INDUSTRY_SECTION_TEMPLATE = """
     </div>"""
 
 STOCK_CARD_TEMPLATE = """
-            <div class="stock-card" data-sid="{stock_id}" data-sname="{stock_name}">
+            <div class="stock-card" data-sid="{stock_id}" data-sname="{stock_name}" data-rev="{revenue_raw}" data-yoy="{yoy_raw}" data-mom="{mom_raw}" data-exceed="{exceed_raw}" data-date="{publish_date}">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">{stock_name}</span>
@@ -1161,10 +1436,16 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
         # 柱狀圖
         chart_html = _build_chart_html(row, current_year, current_month) if current_year > 0 else ""
 
+        revenue_raw = float(row.get("revenue", 0)) if pd.notna(row.get("revenue", 0)) else 0
+
         cards += STOCK_CARD_TEMPLATE.format(
             stock_name=row.get("stock_name", ""),
             stock_id=sid,
             revenue_display=format_revenue(row.get("revenue", 0)),
+            revenue_raw=revenue_raw,
+            yoy_raw=yoy_val,
+            mom_raw=mom_val,
+            exceed_raw=exceed_val,
             publish_date=pub_date,
             yoy_display=f"{yoy_val:+.2f}%" if yoy_val != 0 else "N/A",
             yoy_class="" if yoy_val >= 0 else "negative",
@@ -1197,6 +1478,37 @@ def _build_industry_sections(df: pd.DataFrame, current_year: int = 0, current_mo
     return sections
 
 
+def _build_date_pills(df: pd.DataFrame) -> str:
+    """從資料中提取所有公布日期，生成日期 pill 按鈕"""
+    if "date" not in df.columns and "publish_date" not in df.columns:
+        return ""
+
+    date_col = "publish_date" if "publish_date" in df.columns else "date"
+    dates = df[date_col].dropna().astype(str).str.strip()
+    dates = dates[dates != ""].str[:10]
+
+    # 統計每個日期的筆數
+    date_counts = dates.value_counts().sort_index()
+    if date_counts.empty:
+        return ""
+
+    pills = ""
+    for date_str, count in date_counts.items():
+        # 將 MOPS 民國日期 (115/04/01) 顯示為短日期 (4/1)
+        display = date_str
+        try:
+            parts = str(date_str).replace("-", "/").split("/")
+            if len(parts) == 3:
+                m = int(parts[-2])
+                d = int(parts[-1])
+                display = f"{m}/{d}"
+        except (ValueError, IndexError):
+            pass
+        pills += f'<div class="date-pill" data-date="{date_str}">{display} <span style="font-size:0.65rem;color:#6e7681">({count})</span></div>\n            '
+
+    return pills
+
+
 def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 5) -> str:
     """生成 HTML 報表"""
     if df.empty:
@@ -1216,6 +1528,9 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
     tib_sections = _build_industry_sections(df[df["market"] == "tib"], year, month) if tib_count > 0 else '<p class="empty-msg">本分類無資料</p>'
     emerging_sections = _build_industry_sections(df[df["market"] == "emerging"], year, month) if emerging_count > 0 else '<p class="empty-msg">本分類無資料</p>'
 
+    # 生成公布日期 pills
+    date_pills = _build_date_pills(df)
+
     # 計算上/下月檔名
     prev_y, prev_m = (year, month - 1) if month > 1 else (year - 1, 12)
     next_y, next_m = (year, month + 1) if month < 12 else (year + 1, 1)
@@ -1233,6 +1548,7 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
         tib_count=tib_count,
         emerging_count=emerging_count,
         industry_count=industries,
+        date_pills=date_pills,
         prev_month_file=prev_month_file,
         next_month_file=next_month_file,
         all_sections=all_sections,
@@ -1260,6 +1576,7 @@ def _generate_empty_html(year: int, month: int, compare_years: int = 5) -> str:
         tib_count=0,
         emerging_count=0,
         industry_count=0,
+        date_pills="",
         prev_month_file=f"{prev_y}_{prev_m:02d}.html",
         next_month_file=f"{next_y}_{next_m:02d}.html",
         all_sections=empty,
