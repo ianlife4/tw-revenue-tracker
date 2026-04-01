@@ -436,6 +436,43 @@ header .update-time {{
 .legend-dot.prev {{ background: #58a6ff; }}
 .legend-dot.curr {{ background: #f0883e; }}
 
+/* ===== 搜尋列 ===== */
+.search-bar {{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}}
+
+.search-bar input {{
+    width: 100%;
+    max-width: 480px;
+    padding: 10px 16px 10px 40px;
+    font-size: 0.95rem;
+    color: #e6edf3;
+    background: #161b22 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%238b949e' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242.156a5 5 0 1 1 0-10 5 5 0 0 1 0 10z'/%3E%3C/svg%3E") no-repeat 12px center;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}}
+
+.search-bar input::placeholder {{
+    color: #6e7681;
+}}
+
+.search-bar input:focus {{
+    border-color: #58a6ff;
+    background-color: #0d1117;
+}}
+
+.search-result-info {{
+    text-align: center;
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin: -10px 0 16px;
+    display: none;
+}}
+
 /* ===== 檢視模式切換 ===== */
 .view-toggle {{
     display: flex;
@@ -645,6 +682,12 @@ footer {{
         <div class="market-tab" data-market="emerging">興櫃 <span class="tab-count">{emerging_count}</span></div>
     </div>
 
+    <!-- 搜尋 -->
+    <div class="search-bar">
+        <input type="text" id="stockSearch" placeholder="搜尋股票代號或名稱 (例: 2330 或 台積電)" autocomplete="off">
+    </div>
+    <div class="search-result-info" id="searchResultInfo"></div>
+
     <!-- 檢視模式切換 -->
     <div class="view-toggle">
         <div class="view-btn active" data-view="normal">&#9638; 標準</div>
@@ -704,6 +747,67 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
         }}
     }});
 }});
+
+// 個股搜尋
+(function() {{
+    const searchInput = document.getElementById('stockSearch');
+    const searchInfo = document.getElementById('searchResultInfo');
+    let debounceTimer;
+
+    searchInput.addEventListener('input', function() {{
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => filterCards(this.value.trim()), 150);
+    }});
+
+    // 按 Esc 清除搜尋
+    searchInput.addEventListener('keydown', function(e) {{
+        if (e.key === 'Escape') {{
+            this.value = '';
+            filterCards('');
+            this.blur();
+        }}
+    }});
+
+    function filterCards(query) {{
+        const cards = document.querySelectorAll('.stock-card');
+        const sections = document.querySelectorAll('.industry-section');
+
+        if (!query) {{
+            // 清除搜尋 → 顯示全部
+            cards.forEach(c => c.style.display = '');
+            sections.forEach(s => s.style.display = '');
+            searchInfo.style.display = 'none';
+            return;
+        }}
+
+        const q = query.toLowerCase();
+        let matchCount = 0;
+
+        cards.forEach(card => {{
+            const sid = (card.dataset.sid || '').toLowerCase();
+            const sname = (card.dataset.sname || '').toLowerCase();
+            const match = sid.includes(q) || sname.includes(q);
+            card.style.display = match ? '' : 'none';
+            if (match) matchCount++;
+        }});
+
+        // 隱藏空的產業區塊
+        sections.forEach(section => {{
+            const visibleCards = section.querySelectorAll('.stock-card:not([style*="display: none"])');
+            section.style.display = visibleCards.length > 0 ? '' : 'none';
+        }});
+
+        // 顯示搜尋結果數
+        searchInfo.style.display = 'block';
+        if (matchCount > 0) {{
+            searchInfo.textContent = '找到 ' + matchCount + ' 檔符合「' + query + '」';
+            searchInfo.style.color = '#8b949e';
+        }} else {{
+            searchInfo.textContent = '找不到「' + query + '」相關股票';
+            searchInfo.style.color = '#f85149';
+        }}
+    }}
+}})();
 </script>
 </body>
 </html>"""
@@ -727,7 +831,7 @@ INDUSTRY_SECTION_TEMPLATE = """
     </div>"""
 
 STOCK_CARD_TEMPLATE = """
-            <div class="stock-card">
+            <div class="stock-card" data-sid="{stock_id}" data-sname="{stock_name}">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">{stock_name}</span>
