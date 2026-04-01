@@ -226,11 +226,91 @@ def generate_realtime_html(state: dict, current_df: pd.DataFrame, full_df: pd.Da
     return path
 
 
+def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: pd.DataFrame = None):
+    """生成當期營收創同期新高報表 (歷史月報)"""
+    from analyzer import find_revenue_new_highs
+    from html_generator import generate_html, save_html as save_report
+
+    rev_year = state["period_year"]
+    rev_month = state["period_month"]
+
+    if current_df.empty:
+        return
+
+    # 載入歷史資料
+    if full_df is None and os.path.exists(CACHE_FILE):
+        full_df = pd.read_csv(CACHE_FILE, dtype={"stock_id": str})
+
+    if full_df is None or full_df.empty:
+        logger.warning("無歷史資料，跳過歷史月報生成")
+        return
+
+    # 建立 history dict：同月份各年度資料
+    history = {}
+    hist_month = full_df[full_df["revenue_month"] == rev_month]
+    for y in hist_month["revenue_year"].unique():
+        year_df = hist_month[hist_month["revenue_year"] == y].copy()
+        if not year_df.empty:
+            history[int(y)] = year_df
+
+    # 把當前即時申報資料加入 history 作為當年
+    cur = current_df.copy()
+    cur["revenue_year"] = rev_year
+    cur["revenue_month"] = rev_month
+    history[rev_year] = cur
+
+    logger.info(f"歷史月報比對年份: {sorted(history.keys())}")
+
+    # 載入上月資料 (供月增率計算)
+    prev_m = rev_month - 1 if rev_month > 1 else 12
+    prev_y = rev_year if rev_month > 1 else rev_year - 1
+    prev_df = full_df[(full_df["revenue_year"] == prev_y) & (full_df["revenue_month"] == prev_m)]
+    if not prev_df.empty:
+        history["prev_month"] = prev_df
+
+    # 分析營收創同期新高
+    new_highs = find_revenue_new_highs(history, rev_year)
+    logger.info(f"營收創同期新高: {len(new_highs)} 檔")
+
+    if not new_highs.empty:
+        # 把歷史資料寫入 monthly_json (供柱狀圖)
+        import json as _json
+        for idx, row in new_highs.iterrows():
+            sid = row["stock_id"]
+            stock_hist = full_df[full_df["stock_id"] == sid].copy()
+            # 加入當月即時資料
+            cur_row = current_df[current_df["stock_id"] == sid]
+            if not cur_row.empty:
+                stock_hist = pd.concat([stock_hist, cur_row], ignore_index=True)
+            stock_hist = stock_hist.sort_values(["revenue_year", "revenue_month"])
+            records = []
+            for _, r in stock_hist.iterrows():
+                if pd.notna(r.get("revenue")) and r["revenue"] > 0:
+                    records.append({
+                        "year": int(r["revenue_year"]),
+                        "month": int(r["revenue_month"]),
+                        "revenue": float(r["revenue"]),
+                    })
+            new_highs.at[idx, "monthly_json"] = _json.dumps(records[-24:], ensure_ascii=False)
+
+    # 生成 HTML
+    html = generate_html(new_highs, rev_year, rev_month, compare_years=5)
+    archive_name = f"{rev_year}_{rev_month:02d}.html"
+    save_report(html, archive_name)
+    logger.info(f"歷史月報已生成: {archive_name}")
+
+
 def run_once():
     """執行一次偵測"""
     state, current_df = check_filings()
     if not current_df.empty:
-        generate_realtime_html(state, current_df)
+        # 載入歷史資料 (共用)
+        full_df = None
+        if os.path.exists(CACHE_FILE):
+            full_df = pd.read_csv(CACHE_FILE, dtype={"stock_id": str})
+
+        generate_realtime_html(state, current_df, full_df)
+        generate_period_high_report(state, current_df, full_df)
     else:
         logger.info("無資料，跳過生成 HTML")
     return state

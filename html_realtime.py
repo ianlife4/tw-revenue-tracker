@@ -136,12 +136,8 @@ def generate_realtime_page(state: dict, current_df: pd.DataFrame,
     status_dot = "🟢" if is_monitoring else "⚪"
     status_text = "偵測中 ✓" if is_monitoring else "已停止"
 
-    # 動態計算歷史月報連結 (上個月的報表)
-    if rev_month == 1:
-        hist_year, hist_month = rev_year - 1, 12
-    else:
-        hist_year, hist_month = rev_year, rev_month - 1
-    history_link = f"{hist_year}_{hist_month:02d}.html"
+    # 歷史月報連結 (當期的營收創同期新高報表)
+    history_link = f"{rev_year}_{rev_month:02d}.html"
 
     html = REALTIME_TEMPLATE.format(
         period=period_str,

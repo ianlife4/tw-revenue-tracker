@@ -1,0 +1,3806 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>營收創同期新高 - 2026/03</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px 30px;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+header .subtitle {
+    color: #8b949e;
+    font-size: 0.95rem;
+}
+
+header .date-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 16px;
+}
+
+header .date-info {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #58a6ff;
+}
+
+.nav-btn {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 6px 16px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    color: #58a6ff;
+    border-color: #58a6ff;
+    background: #161b22;
+}
+
+header .update-time {
+    color: #6e7681;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+
+.summary {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0 30px;
+    flex-wrap: wrap;
+}
+
+.summary-item {
+    text-align: center;
+}
+
+.summary-item .number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f85149;
+}
+
+.summary-item .label {
+    font-size: 0.85rem;
+    color: #8b949e;
+}
+
+/* ===== 市場分頁 Tab ===== */
+.market-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 0 0 30px;
+    border-bottom: 2px solid #21262d;
+    flex-wrap: wrap;
+}
+
+.market-tab {
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #8b949e;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.market-tab:hover {
+    color: #e6edf3;
+    background: #161b22;
+}
+
+.market-tab.active {
+    color: #58a6ff;
+    border-bottom-color: #58a6ff;
+}
+
+.market-tab .tab-count {
+    display: inline-block;
+    background: #21262d;
+    color: #8b949e;
+    border-radius: 10px;
+    padding: 1px 8px;
+    font-size: 0.75rem;
+    margin-left: 6px;
+    font-weight: 500;
+}
+
+.market-tab.active .tab-count {
+    background: #58a6ff33;
+    color: #58a6ff;
+}
+
+.market-panel {
+    display: none;
+}
+
+.market-panel.active {
+    display: block;
+}
+
+/* ===== 產業區塊 ===== */
+.industry-section {
+    background: #161b22;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    border: 1px solid #21262d;
+}
+
+.industry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: #1c2128;
+    border-bottom: 1px solid #21262d;
+}
+
+.industry-header h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.industry-count {
+    color: #8b949e;
+    font-size: 0.9rem;
+}
+
+.stock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 12px;
+    padding: 16px;
+}
+
+.stock-card {
+    background: #0d1117;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    padding: 16px;
+    transition: border-color 0.2s;
+}
+
+.stock-card:hover {
+    border-color: #58a6ff;
+}
+
+.stock-card .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.stock-info {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.stock-name {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.stock-id {
+    color: #8b949e;
+    font-size: 0.85rem;
+}
+
+.revenue-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #f85149;
+}
+
+.stock-card .pct-change {
+    color: #f85149;
+    font-size: 0.85rem;
+}
+
+.stock-card .pct-change.negative {
+    color: #3fb950;
+}
+
+.stock-card .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.stock-card .revenue-label {
+    color: #8b949e;
+    font-size: 0.8rem;
+}
+
+.tag {
+    display: inline-block;
+    background: #f8514922;
+    color: #f85149;
+    border: 1px solid #f8514944;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.exceed-tag {
+    background: #f0883e22;
+    color: #f0883e;
+    border-color: #f0883e44;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ===== 備註 ===== */
+.remark-row {
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: #1c2128;
+    border-left: 3px solid #f0883e;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.78rem;
+    color: #d2a8ff;
+    line-height: 1.5;
+}
+
+.remark-icon {
+    color: #f0883e;
+    margin-right: 4px;
+}
+
+.card-links {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #21262d;
+}
+
+.card-link {
+    flex: 1;
+    text-align: center;
+    padding: 5px 8px;
+    font-size: 0.75rem;
+    color: #8b949e;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.card-link:hover {
+    color: #58a6ff;
+    border-color: #58a6ff;
+}
+
+/* ===== 柱狀圖 (MoM 雙柱) ===== */
+.chart-toggle {
+    margin-top: 10px;
+    border-top: 1px solid #21262d;
+}
+
+.chart-toggle summary {
+    cursor: pointer;
+    padding: 8px 0 4px;
+    font-size: 0.8rem;
+    color: #58a6ff;
+    user-select: none;
+    list-style: none;
+}
+
+.chart-toggle summary::-webkit-details-marker {
+    display: none;
+}
+
+.chart-toggle summary::before {
+    content: "\25B6  ";
+    font-size: 0.65rem;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+.chart-toggle[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.mini-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    padding: 12px 2px 4px;
+    height: 160px;
+}
+
+.chart-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    min-width: 0;
+}
+
+.chart-bars-pair {
+    display: flex;
+    align-items: flex-end;
+    gap: 1px;
+    flex: 1;
+    width: 100%;
+    justify-content: center;
+}
+
+.chart-bar {
+    width: 45%;
+    max-width: 14px;
+    border-radius: 2px 2px 0 0;
+    transition: height 0.3s;
+    min-height: 2px;
+}
+
+.chart-bar.prev {
+    background: #58a6ff;
+}
+
+.chart-bar.curr {
+    background: #f0883e;
+}
+
+.chart-bar.curr.is-target {
+    background: #f0883e;
+    box-shadow: 0 0 4px #f0883e88;
+}
+
+.chart-month-label {
+    font-size: 0.55rem;
+    color: #6e7681;
+    margin-top: 3px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.chart-month-label.is-target {
+    color: #f0883e;
+    font-weight: 600;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 8px;
+    padding-bottom: 4px;
+}
+
+.chart-legend span {
+    font-size: 0.7rem;
+    color: #8b949e;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.legend-dot.prev { background: #58a6ff; }
+.legend-dot.curr { background: #f0883e; }
+
+/* ===== 柱狀圖 Tooltip ===== */
+.chart-tooltip {
+    position: absolute;
+    background: #1c2128;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    color: #e6edf3;
+    pointer-events: none;
+    z-index: 100;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    line-height: 1.6;
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+
+.chart-tooltip.visible {
+    opacity: 1;
+}
+
+.chart-tooltip .tt-month {
+    font-weight: 600;
+    color: #58a6ff;
+    margin-bottom: 2px;
+}
+
+.chart-tooltip .tt-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.chart-tooltip .tt-label {
+    color: #8b949e;
+}
+
+.chart-tooltip .tt-val {
+    font-weight: 600;
+}
+
+.chart-tooltip .tt-val.prev { color: #58a6ff; }
+.chart-tooltip .tt-val.curr { color: #f0883e; }
+.chart-tooltip .tt-val.yoy-pos { color: #f85149; }
+.chart-tooltip .tt-val.yoy-neg { color: #3fb950; }
+
+.mini-chart {
+    position: relative;
+}
+
+.chart-group {
+    cursor: pointer;
+}
+
+.chart-group:hover .chart-bar.prev {
+    background: #79bbff;
+}
+
+.chart-group:hover .chart-bar.curr {
+    background: #f5a664;
+}
+
+/* ===== 日期篩選 + 工具列 ===== */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.date-filter {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.date-filter .date-label {
+    color: #6e7681;
+    font-size: 0.8rem;
+    margin-right: 4px;
+}
+
+.date-pill {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    color: #8b949e;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.date-pill:hover {
+    color: #e6edf3;
+    border-color: #8b949e;
+}
+
+.date-pill.active {
+    color: #f0883e;
+    border-color: #f0883e;
+    background: #f0883e15;
+}
+
+/* 排序模式下隱藏產業分組標題 */
+body.sort-mode .industry-header {
+    display: none;
+}
+
+body.sort-mode .industry-section {
+    background: transparent;
+    border: none;
+    margin-bottom: 0;
+}
+
+body.sort-mode .stock-grid {
+    padding: 0;
+}
+
+/* ===== 搜尋列 ===== */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    max-width: 480px;
+    padding: 10px 16px 10px 40px;
+    font-size: 0.95rem;
+    color: #e6edf3;
+    background: #161b22 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%238b949e' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242.156a5 5 0 1 1 0-10 5 5 0 0 1 0 10z'/%3E%3C/svg%3E") no-repeat 12px center;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-bar input::placeholder {
+    color: #6e7681;
+}
+
+.search-bar input:focus {
+    border-color: #58a6ff;
+    background-color: #0d1117;
+}
+
+.search-result-info {
+    text-align: center;
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin: -10px 0 16px;
+    display: none;
+}
+
+/* ===== 檢視模式切換 ===== */
+.view-toggle {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    gap: 4px;
+}
+
+.view-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    color: #8b949e;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.view-btn:hover {
+    color: #e6edf3;
+    border-color: #8b949e;
+}
+
+.view-btn.active {
+    color: #58a6ff;
+    border-color: #58a6ff;
+    background: #58a6ff15;
+}
+
+/* ===== 精簡模式 (表格風格) ===== */
+body.compact .stock-grid {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0;
+}
+
+body.compact .stock-card {
+    display: table-row;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+body.compact .stock-card:hover {
+    background: rgba(88,166,255,0.08);
+    border-color: transparent;
+}
+
+body.compact .stock-card .top-row {
+    display: contents;
+}
+
+body.compact .stock-info {
+    display: table-cell;
+    padding: 8px 12px;
+    vertical-align: middle;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+body.compact .stock-name {
+    font-size: 0.88rem;
+    color: #58a6ff;
+}
+
+body.compact .stock-id {
+    font-size: 0.75rem;
+    color: #6e7681;
+    margin-left: 6px;
+}
+
+body.compact .revenue-value {
+    display: table-cell;
+    padding: 8px 12px;
+    vertical-align: middle;
+    text-align: right;
+    font-size: 0.95rem;
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+    white-space: nowrap;
+}
+
+body.compact .stock-card .detail-row {
+    display: none;
+}
+
+body.compact .stock-card .detail-row:nth-child(4),
+body.compact .stock-card .detail-row:nth-child(5),
+body.compact .stock-card .detail-row:nth-child(6) {
+    display: table-cell;
+    padding: 8px 10px;
+    vertical-align: middle;
+    text-align: right;
+    margin: 0;
+}
+
+body.compact .stock-card .detail-row .revenue-label {
+    display: none;
+}
+
+body.compact .pct-change {
+    font-size: 0.85rem;
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+}
+
+body.compact .exceed-tag {
+    font-size: 0.8rem;
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+body.compact .tag {
+    display: none;
+}
+
+body.compact .card-links {
+    display: none;
+}
+
+body.compact .chart-toggle {
+    display: none;
+}
+
+body.compact .remark-row {
+    display: none;
+}
+
+/* compact 展開狀態 */
+body.compact .stock-card.expanded {
+    display: table-row;
+    background: #161b22;
+}
+
+body.compact .stock-card.expanded + .expanded-detail {
+    display: table-row;
+}
+
+.expanded-detail {
+    display: none;
+}
+
+body.compact .industry-header {
+    padding: 10px 16px;
+}
+
+body.compact .industry-header h2 {
+    font-size: 0.95rem;
+}
+
+/* compact 表頭列 (可點排序) */
+.compact-header {
+    display: none;
+}
+
+body.compact .compact-header {
+    display: table-row;
+    font-size: 0.72rem;
+    color: #6e7681;
+    font-weight: 600;
+    background: #161b22;
+}
+
+body.compact .compact-header .ch-col {
+    display: table-cell;
+    padding: 8px 12px;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s;
+    white-space: nowrap;
+    border-bottom: 2px solid #21262d;
+    vertical-align: middle;
+}
+
+body.compact .compact-header .ch-col:not(.ch-name) {
+    text-align: right;
+    padding-right: 10px;
+}
+
+body.compact .compact-header .ch-col:hover {
+    color: #e6edf3;
+}
+
+body.compact .compact-header .ch-col.sort-active {
+    color: #58a6ff;
+    border-bottom-color: #58a6ff;
+}
+
+body.compact .compact-header .ch-col .sort-arrow {
+    font-size: 0.6rem;
+    margin-left: 2px;
+    opacity: 0.4;
+}
+
+body.compact .compact-header .ch-col.sort-active .sort-arrow {
+    opacity: 1;
+}
+
+/* 行間交替色 */
+body.compact .stock-card:nth-child(even) {
+    background: rgba(22,27,34,0.5);
+}
+
+body.compact .stock-card:nth-child(even):hover {
+    background: rgba(88,166,255,0.08);
+}
+
+@media (max-width: 768px) {
+    body.compact .stock-info {
+        padding: 6px 8px;
+    }
+    body.compact .revenue-value {
+        padding: 6px 8px;
+        font-size: 0.82rem;
+    }
+    body.compact .stock-card .detail-row:nth-child(4),
+    body.compact .stock-card .detail-row:nth-child(5),
+    body.compact .stock-card .detail-row:nth-child(6) {
+        padding: 6px 6px;
+    }
+    body.compact .pct-change {
+        font-size: 0.78rem;
+    }
+    body.compact .compact-header .ch-col {
+        padding: 6px 8px;
+        font-size: 0.65rem;
+    }
+}
+
+.empty-msg {
+    text-align: center;
+    color: #8b949e;
+    padding: 60px 20px;
+    font-size: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6e7681;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .stock-grid {
+        grid-template-columns: 1fr;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .market-tab {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>營收創同期新高</h1>
+        <div class="subtitle">自動比對公開資訊觀測站每月營收資料，篩選創近 5 年同期新高股票</div>
+        <div class="date-nav">
+            <a class="nav-btn" href="2026_02.html" title="上個月">&#9664; 前一月</a>
+            <span class="date-info">2026/03</span>
+            <a class="nav-btn" href="2026_04.html" title="下個月">後一月 &#9654;</a>
+        </div>
+        <div class="update-time">2026-04-01 23:25 更新</div>
+        <div style="margin-top:12px"><a href="index.html" style="color:#58a6ff;text-decoration:none;font-size:0.85rem;padding:4px 12px;border:1px solid #30363d;border-radius:6px;">← 即時申報</a></div>
+    </header>
+
+    <div class="summary">
+        <div class="summary-item">
+            <div class="number">9</div>
+            <div class="label">創同期新高</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">3</div>
+            <div class="label">上市</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">4</div>
+            <div class="label">上櫃</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">0</div>
+            <div class="label">創新板</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">2</div>
+            <div class="label">興櫃</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">6</div>
+            <div class="label">產業別</div>
+        </div>
+    </div>
+
+    <!-- 市場分頁 -->
+    <div class="market-tabs">
+        <div class="market-tab active" data-market="all">全部 <span class="tab-count">9</span></div>
+        <div class="market-tab" data-market="sii">上市 <span class="tab-count">3</span></div>
+        <div class="market-tab" data-market="otc">上櫃 <span class="tab-count">4</span></div>
+        <div class="market-tab" data-market="tib">創新板 <span class="tab-count">0</span></div>
+        <div class="market-tab" data-market="emerging">興櫃 <span class="tab-count">2</span></div>
+    </div>
+
+    <!-- 搜尋 -->
+    <div class="search-bar">
+        <input type="text" id="stockSearch" placeholder="搜尋股票代號或名稱 (例: 2330 或 台積電)" autocomplete="off">
+    </div>
+    <div class="search-result-info" id="searchResultInfo"></div>
+
+    <!-- 工具列 -->
+    <div class="toolbar">
+        
+        <div class="view-toggle">
+            <div class="view-btn active" data-view="normal">&#9638; 標準</div>
+            <div class="view-btn" data-view="compact">&#9776; 精簡</div>
+        </div>
+    </div>
+
+    <!-- 全部面板 -->
+    <div class="market-panel active" id="panel-all">
+        
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>其他電子業</h2>
+            <span class="industry-count">2檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card" data-sid="6438" data-sname="迅得" data-rev="667469000.0" data-yoy="15.662565003647655" data-mom="30.420824532368336" data-exceed="15.66" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">迅得</span>
+                        <span class="stock-id">6438</span>
+                    </div>
+                    <div class="revenue-value">6.7億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+15.66%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+30.42%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+15.7%</span>
+                </div>
+                
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6438" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6438" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_6438.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="4.3億" data-curr="4.8億" data-yoy="+11.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:65%"></div>
+                    <div class="chart-bar curr " style="height:72%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="4.0億" data-curr="5.4億" data-yoy="+34.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:60%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="4.2億" data-curr="6.1億" data-yoy="+46.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:62%"></div>
+                    <div class="chart-bar curr " style="height:92%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="4.3億" data-curr="6.1億" data-yoy="+41.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:64%"></div>
+                    <div class="chart-bar curr " style="height:91%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="4.1億" data-curr="5.3億" data-yoy="+28.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:62%"></div>
+                    <div class="chart-bar curr " style="height:79%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="4.7億" data-curr="5.3億" data-yoy="+12.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:71%"></div>
+                    <div class="chart-bar curr " style="height:80%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="4.2億" data-curr="5.3億" data-yoy="+26.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:62%"></div>
+                    <div class="chart-bar curr " style="height:79%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="4.4億" data-curr="5.7億" data-yoy="+29.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:66%"></div>
+                    <div class="chart-bar curr " style="height:85%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="4.3億" data-curr="5.2億" data-yoy="+21.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:64%"></div>
+                    <div class="chart-bar curr " style="height:78%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="5.1億" data-curr="5.7億" data-yoy="+11.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:76%"></div>
+                    <div class="chart-bar curr " style="height:85%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="4.7億" data-curr="5.1億" data-yoy="+9.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:70%"></div>
+                    <div class="chart-bar curr " style="height:77%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="5.8億" data-curr="6.7億" data-yoy="+15.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:86%"></div>
+                    <div class="chart-bar curr is-target" style="height:100%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+            <div class="stock-card" data-sid="3030" data-sname="德律" data-rev="793160000.0" data-yoy="14.715308873384474" data-mom="5.102331528976817" data-exceed="12.95" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">德律</span>
+                        <span class="stock-id">3030</span>
+                    </div>
+                    <div class="revenue-value">7.9億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+14.72%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+5.10%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+12.9%</span>
+                </div>
+                
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=3030" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=3030" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_3030.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="6.7億" data-curr="6.8億" data-yoy="+1.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:72%"></div>
+                    <div class="chart-bar curr " style="height:73%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="5.4億" data-curr="9.3億" data-yoy="+73.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:58%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="5.2億" data-curr="7.6億" data-yoy="+47.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:55%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="5.4億" data-curr="7.5億" data-yoy="+39.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:58%"></div>
+                    <div class="chart-bar curr " style="height:80%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="5.3億" data-curr="7.6億" data-yoy="+42.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:57%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="5.6億" data-curr="5.6億" data-yoy="+1.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:60%"></div>
+                    <div class="chart-bar curr " style="height:60%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="5.2億" data-curr="5.4億" data-yoy="+4.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:55%"></div>
+                    <div class="chart-bar curr " style="height:58%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="4.5億" data-curr="8.1億" data-yoy="+82.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:48%"></div>
+                    <div class="chart-bar curr " style="height:87%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="5.3億" data-curr="7.3億" data-yoy="+37.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:57%"></div>
+                    <div class="chart-bar curr " style="height:78%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="6.5億" data-curr="8.9億" data-yoy="+38.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:69%"></div>
+                    <div class="chart-bar curr " style="height:96%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="6.0億" data-curr="7.5億" data-yoy="+24.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:65%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="6.9億" data-curr="7.9億" data-yoy="+14.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:74%"></div>
+                    <div class="chart-bar curr is-target" style="height:85%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>數位雲端</h2>
+            <span class="industry-count">2檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card" data-sid="6910" data-sname="德鴻" data-rev="37805000.0" data-yoy="21.6220563634024" data-mom="83.67099062332993" data-exceed="21.62" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">德鴻</span>
+                        <span class="stock-id">6910</span>
+                    </div>
+                    <div class="revenue-value">3,780萬</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+21.62%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+83.67%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+21.6%</span>
+                </div>
+                <div class="remark-row"><span class="remark-icon">&#9432;</span> 無</div>
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6910" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6910" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_6910.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="2,138萬" data-curr="3,062萬" data-yoy="+43.3%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:50%"></div>
+                    <div class="chart-bar curr " style="height:72%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="2,303萬" data-curr="3,347萬" data-yoy="+45.3%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:54%"></div>
+                    <div class="chart-bar curr " style="height:79%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="2,473萬" data-curr="3,700萬" data-yoy="+49.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:58%"></div>
+                    <div class="chart-bar curr " style="height:87%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="2,983萬" data-curr="3,272萬" data-yoy="+9.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:70%"></div>
+                    <div class="chart-bar curr " style="height:77%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="3,013萬" data-curr="3,366萬" data-yoy="+11.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:71%"></div>
+                    <div class="chart-bar curr " style="height:79%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="2,171萬" data-curr="3,890萬" data-yoy="+79.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:51%"></div>
+                    <div class="chart-bar curr " style="height:91%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="2,141萬" data-curr="3,244萬" data-yoy="+51.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:50%"></div>
+                    <div class="chart-bar curr " style="height:76%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="2,361萬" data-curr="3,282萬" data-yoy="+39.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:55%"></div>
+                    <div class="chart-bar curr " style="height:77%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="4,017萬" data-curr="4,255萬" data-yoy="+5.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:94%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="1,605萬" data-curr="2,322萬" data-yoy="+44.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:38%"></div>
+                    <div class="chart-bar curr " style="height:55%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="2,350萬" data-curr="2,058萬" data-yoy="-12.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:55%"></div>
+                    <div class="chart-bar curr " style="height:48%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="3,108萬" data-curr="3,780萬" data-yoy="+21.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:73%"></div>
+                    <div class="chart-bar curr is-target" style="height:89%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+            <div class="stock-card" data-sid="7781" data-sname="昕力資*" data-rev="101116000.0" data-yoy="10.07500462655534" data-mom="79.08681945379193" data-exceed="10.08" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">昕力資*</span>
+                        <span class="stock-id">7781</span>
+                    </div>
+                    <div class="revenue-value">1.0億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+10.08%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+79.09%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+10.1%</span>
+                </div>
+                
+                <div class="card-links">
+                    <a href="https://concords.moneydj.com/z/zu/zue/zuef/zuef_7781_0_2.djhtm" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=7781" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_7781.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="N/A" data-curr="7,080萬" data-yoy="N/A">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:0%"></div>
+                    <div class="chart-bar curr " style="height:30%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="N/A" data-curr="6,200萬" data-yoy="N/A">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:0%"></div>
+                    <div class="chart-bar curr " style="height:26%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="N/A" data-curr="6,535萬" data-yoy="N/A">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:0%"></div>
+                    <div class="chart-bar curr " style="height:28%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="N/A" data-curr="6,234萬" data-yoy="N/A">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:0%"></div>
+                    <div class="chart-bar curr " style="height:27%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="N/A" data-curr="4,414萬" data-yoy="N/A">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:0%"></div>
+                    <div class="chart-bar curr " style="height:19%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="N/A" data-curr="4,721萬" data-yoy="N/A">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:0%"></div>
+                    <div class="chart-bar curr " style="height:20%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="6,281萬" data-curr="6,993萬" data-yoy="+11.3%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:27%"></div>
+                    <div class="chart-bar curr " style="height:30%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="7,458萬" data-curr="4,502萬" data-yoy="-39.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:32%"></div>
+                    <div class="chart-bar curr " style="height:19%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="2.3億" data-curr="7,282萬" data-yoy="-68.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:100%"></div>
+                    <div class="chart-bar curr " style="height:31%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="4,903萬" data-curr="6,453萬" data-yoy="+31.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:21%"></div>
+                    <div class="chart-bar curr " style="height:28%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="3,974萬" data-curr="5,646萬" data-yoy="+42.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:17%"></div>
+                    <div class="chart-bar curr " style="height:24%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="9,186萬" data-curr="1.0億" data-yoy="+10.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:39%"></div>
+                    <div class="chart-bar curr is-target" style="height:43%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>生技醫療業</h2>
+            <span class="industry-count">2檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card" data-sid="6518" data-sname="康科特" data-rev="85311000.0" data-yoy="19.426323599406444" data-mom="26.683199192183185" data-exceed="19.43" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">康科特</span>
+                        <span class="stock-id">6518</span>
+                    </div>
+                    <div class="revenue-value">8,531萬</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+19.43%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+26.68%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+19.4%</span>
+                </div>
+                
+                <div class="card-links">
+                    <a href="https://concords.moneydj.com/z/zu/zue/zuef/zuef_6518_0_2.djhtm" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6518" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_6518.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="7,641萬" data-curr="8,461萬" data-yoy="+10.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:73%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="7,484萬" data-curr="7,893萬" data-yoy="+5.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:72%"></div>
+                    <div class="chart-bar curr " style="height:76%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="7,520萬" data-curr="7,781萬" data-yoy="+3.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:72%"></div>
+                    <div class="chart-bar curr " style="height:74%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="7,580萬" data-curr="8,410萬" data-yoy="+11.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:73%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="7,403萬" data-curr="8,002萬" data-yoy="+8.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:71%"></div>
+                    <div class="chart-bar curr " style="height:77%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="7,262萬" data-curr="7,812萬" data-yoy="+7.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:70%"></div>
+                    <div class="chart-bar curr " style="height:75%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="7,025萬" data-curr="7,422萬" data-yoy="+5.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:67%"></div>
+                    <div class="chart-bar curr " style="height:71%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="8,091萬" data-curr="9,462萬" data-yoy="+16.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:77%"></div>
+                    <div class="chart-bar curr " style="height:91%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="8,290萬" data-curr="1.0億" data-yoy="+26.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:79%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="7,453萬" data-curr="9,414萬" data-yoy="+26.3%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:71%"></div>
+                    <div class="chart-bar curr " style="height:90%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="6,149萬" data-curr="6,734萬" data-yoy="+9.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:59%"></div>
+                    <div class="chart-bar curr " style="height:64%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="7,143萬" data-curr="8,531萬" data-yoy="+19.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:68%"></div>
+                    <div class="chart-bar curr is-target" style="height:82%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+            <div class="stock-card" data-sid="6712" data-sname="長聖" data-rev="70103000.0" data-yoy="15.121110107562195" data-mom="12.722098052772909" data-exceed="15.12" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">長聖</span>
+                        <span class="stock-id">6712</span>
+                    </div>
+                    <div class="revenue-value">7,010萬</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+15.12%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+12.72%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+15.1%</span>
+                </div>
+                
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6712" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6712" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_6712.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="5,603萬" data-curr="6,754萬" data-yoy="+20.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:44%"></div>
+                    <div class="chart-bar curr " style="height:53%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="6,012萬" data-curr="7,246萬" data-yoy="+20.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:47%"></div>
+                    <div class="chart-bar curr " style="height:57%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="6,213萬" data-curr="8,087萬" data-yoy="+30.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:49%"></div>
+                    <div class="chart-bar curr " style="height:63%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="7,021萬" data-curr="8,221萬" data-yoy="+17.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:55%"></div>
+                    <div class="chart-bar curr " style="height:64%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="8,779萬" data-curr="9,054萬" data-yoy="+3.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:69%"></div>
+                    <div class="chart-bar curr " style="height:71%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="9,003萬" data-curr="9,110萬" data-yoy="+1.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:70%"></div>
+                    <div class="chart-bar curr " style="height:71%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="9,909萬" data-curr="1.1億" data-yoy="+12.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:77%"></div>
+                    <div class="chart-bar curr " style="height:87%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="1.2億" data-curr="1.3億" data-yoy="+1.3%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:96%"></div>
+                    <div class="chart-bar curr " style="height:98%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="1.3億" data-curr="1.3億" data-yoy="+0.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:99%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="5,686萬" data-curr="5,820萬" data-yoy="+2.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:44%"></div>
+                    <div class="chart-bar curr " style="height:45%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="6,017萬" data-curr="6,219萬" data-yoy="+3.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:47%"></div>
+                    <div class="chart-bar curr " style="height:49%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="6,090萬" data-curr="7,010萬" data-yoy="+15.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:48%"></div>
+                    <div class="chart-bar curr is-target" style="height:55%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>其他</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card" data-sid="5345" data-sname="馥鴻" data-rev="2616000.0" data-yoy="680.8955223880597" data-mom="-1.8386491557223263" data-exceed="44.61" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">馥鴻</span>
+                        <span class="stock-id">5345</span>
+                    </div>
+                    <div class="revenue-value">262萬</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+680.90%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change negative">-1.84%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+44.6%</span>
+                </div>
+                <div class="remark-row"><span class="remark-icon">&#9432;</span> 主係產品線成熟且結合經銷商銷售動能，導致較去年同期增加。</div>
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=5345" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=5345" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_5345.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="34萬" data-curr="62萬" data-yoy="+81.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:6%"></div>
+                    <div class="chart-bar curr " style="height:12%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="35萬" data-curr="37萬" data-yoy="+5.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:7%"></div>
+                    <div class="chart-bar curr " style="height:7%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="43萬" data-curr="40萬" data-yoy="-7.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:8%"></div>
+                    <div class="chart-bar curr " style="height:7%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="73萬" data-curr="63萬" data-yoy="-14.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:14%"></div>
+                    <div class="chart-bar curr " style="height:12%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="67萬" data-curr="255萬" data-yoy="+281.8%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:12%"></div>
+                    <div class="chart-bar curr " style="height:47%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="57萬" data-curr="385萬" data-yoy="+575.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:11%"></div>
+                    <div class="chart-bar curr " style="height:71%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="74萬" data-curr="335萬" data-yoy="+352.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:14%"></div>
+                    <div class="chart-bar curr " style="height:62%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="88萬" data-curr="426萬" data-yoy="+383.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:16%"></div>
+                    <div class="chart-bar curr " style="height:79%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="89萬" data-curr="539萬" data-yoy="+503.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:17%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="58萬" data-curr="145萬" data-yoy="+151.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:11%"></div>
+                    <div class="chart-bar curr " style="height:27%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="85萬" data-curr="266萬" data-yoy="+214.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:16%"></div>
+                    <div class="chart-bar curr " style="height:49%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="34萬" data-curr="262萬" data-yoy="+680.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:6%"></div>
+                    <div class="chart-bar curr is-target" style="height:49%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>通信網路業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card" data-sid="6486" data-sname="互動" data-rev="198402000.0" data-yoy="77.83693664622997" data-mom="52.74969781425393" data-exceed="9.94" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">互動</span>
+                        <span class="stock-id">6486</span>
+                    </div>
+                    <div class="revenue-value">2.0億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+77.84%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+52.75%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+9.9%</span>
+                </div>
+                <div class="remark-row"><span class="remark-icon">&#9432;</span> 本月營收較去年同期增加50%以上，係因本月認列營收的專案較去年同期增加所致。</div>
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6486" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6486" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_6486.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="1.9億" data-curr="1.0億" data-yoy="-46.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:25%"></div>
+                    <div class="chart-bar curr " style="height:13%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="1.7億" data-curr="1.8億" data-yoy="+5.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:22%"></div>
+                    <div class="chart-bar curr " style="height:23%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="2.8億" data-curr="2.0億" data-yoy="-26.8%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:36%"></div>
+                    <div class="chart-bar curr " style="height:26%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="1.4億" data-curr="1.1億" data-yoy="-21.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:18%"></div>
+                    <div class="chart-bar curr " style="height:14%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="1.4億" data-curr="1.6億" data-yoy="+15.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:18%"></div>
+                    <div class="chart-bar curr " style="height:21%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="3.0億" data-curr="3.3億" data-yoy="+8.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:39%"></div>
+                    <div class="chart-bar curr " style="height:42%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="1.6億" data-curr="1.0億" data-yoy="-38.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:21%"></div>
+                    <div class="chart-bar curr " style="height:13%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="1.9億" data-curr="3.1億" data-yoy="+66.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:24%"></div>
+                    <div class="chart-bar curr " style="height:40%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="5.3億" data-curr="7.8億" data-yoy="+47.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:68%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="1.2億" data-curr="1.4億" data-yoy="+17.3%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:15%"></div>
+                    <div class="chart-bar curr " style="height:18%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="1.9億" data-curr="1.3億" data-yoy="-30.3%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:24%"></div>
+                    <div class="chart-bar curr " style="height:17%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="1.1億" data-curr="2.0億" data-yoy="+77.8%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:14%"></div>
+                    <div class="chart-bar curr is-target" style="height:26%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>電子零組件業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card" data-sid="2402" data-sname="毅嘉" data-rev="1016239000.0" data-yoy="13.4970537912056" data-mom="22.579178261304847" data-exceed="13.5" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">毅嘉</span>
+                        <span class="stock-id">2402</span>
+                    </div>
+                    <div class="revenue-value">10.2億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+13.50%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+22.58%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+13.5%</span>
+                </div>
+                
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=2402" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=2402" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_2402.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="7.5億" data-curr="9.3億" data-yoy="+23.8%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:74%"></div>
+                    <div class="chart-bar curr " style="height:91%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="7.8億" data-curr="9.4億" data-yoy="+20.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:77%"></div>
+                    <div class="chart-bar curr " style="height:92%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="8.5億" data-curr="9.3億" data-yoy="+9.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:84%"></div>
+                    <div class="chart-bar curr " style="height:92%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="8.7億" data-curr="9.4億" data-yoy="+8.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:85%"></div>
+                    <div class="chart-bar curr " style="height:93%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="8.9億" data-curr="9.6億" data-yoy="+7.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:88%"></div>
+                    <div class="chart-bar curr " style="height:94%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="8.7億" data-curr="9.9億" data-yoy="+13.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:86%"></div>
+                    <div class="chart-bar curr " style="height:97%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="8.7億" data-curr="9.4億" data-yoy="+8.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:85%"></div>
+                    <div class="chart-bar curr " style="height:93%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="8.6億" data-curr="8.7億" data-yoy="+1.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:84%"></div>
+                    <div class="chart-bar curr " style="height:86%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="7.9億" data-curr="9.1億" data-yoy="+15.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:78%"></div>
+                    <div class="chart-bar curr " style="height:90%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="7.9億" data-curr="9.7億" data-yoy="+22.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:78%"></div>
+                    <div class="chart-bar curr " style="height:96%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="7.5億" data-curr="8.3億" data-yoy="+10.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:74%"></div>
+                    <div class="chart-bar curr " style="height:82%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="9.0億" data-curr="10.2億" data-yoy="+13.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:88%"></div>
+                    <div class="chart-bar curr is-target" style="height:100%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- 上市面板 -->
+    <div class="market-panel" id="panel-sii">
+        
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>其他電子業</h2>
+            <span class="industry-count">2檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card" data-sid="6438" data-sname="迅得" data-rev="667469000.0" data-yoy="15.662565003647655" data-mom="30.420824532368336" data-exceed="15.66" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">迅得</span>
+                        <span class="stock-id">6438</span>
+                    </div>
+                    <div class="revenue-value">6.7億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+15.66%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+30.42%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+15.7%</span>
+                </div>
+                
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6438" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6438" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_6438.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="4.3億" data-curr="4.8億" data-yoy="+11.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:65%"></div>
+                    <div class="chart-bar curr " style="height:72%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="4.0億" data-curr="5.4億" data-yoy="+34.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:60%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="4.2億" data-curr="6.1億" data-yoy="+46.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:62%"></div>
+                    <div class="chart-bar curr " style="height:92%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="4.3億" data-curr="6.1億" data-yoy="+41.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:64%"></div>
+                    <div class="chart-bar curr " style="height:91%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="4.1億" data-curr="5.3億" data-yoy="+28.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:62%"></div>
+                    <div class="chart-bar curr " style="height:79%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="4.7億" data-curr="5.3億" data-yoy="+12.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:71%"></div>
+                    <div class="chart-bar curr " style="height:80%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="4.2億" data-curr="5.3億" data-yoy="+26.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:62%"></div>
+                    <div class="chart-bar curr " style="height:79%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="4.4億" data-curr="5.7億" data-yoy="+29.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:66%"></div>
+                    <div class="chart-bar curr " style="height:85%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="4.3億" data-curr="5.2億" data-yoy="+21.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:64%"></div>
+                    <div class="chart-bar curr " style="height:78%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="5.1億" data-curr="5.7億" data-yoy="+11.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:76%"></div>
+                    <div class="chart-bar curr " style="height:85%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="4.7億" data-curr="5.1億" data-yoy="+9.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:70%"></div>
+                    <div class="chart-bar curr " style="height:77%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="5.8億" data-curr="6.7億" data-yoy="+15.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:86%"></div>
+                    <div class="chart-bar curr is-target" style="height:100%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+            <div class="stock-card" data-sid="3030" data-sname="德律" data-rev="793160000.0" data-yoy="14.715308873384474" data-mom="5.102331528976817" data-exceed="12.95" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">德律</span>
+                        <span class="stock-id">3030</span>
+                    </div>
+                    <div class="revenue-value">7.9億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+14.72%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+5.10%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+12.9%</span>
+                </div>
+                
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=3030" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=3030" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_3030.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="6.7億" data-curr="6.8億" data-yoy="+1.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:72%"></div>
+                    <div class="chart-bar curr " style="height:73%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="5.4億" data-curr="9.3億" data-yoy="+73.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:58%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="5.2億" data-curr="7.6億" data-yoy="+47.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:55%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="5.4億" data-curr="7.5億" data-yoy="+39.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:58%"></div>
+                    <div class="chart-bar curr " style="height:80%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="5.3億" data-curr="7.6億" data-yoy="+42.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:57%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="5.6億" data-curr="5.6億" data-yoy="+1.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:60%"></div>
+                    <div class="chart-bar curr " style="height:60%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="5.2億" data-curr="5.4億" data-yoy="+4.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:55%"></div>
+                    <div class="chart-bar curr " style="height:58%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="4.5億" data-curr="8.1億" data-yoy="+82.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:48%"></div>
+                    <div class="chart-bar curr " style="height:87%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="5.3億" data-curr="7.3億" data-yoy="+37.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:57%"></div>
+                    <div class="chart-bar curr " style="height:78%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="6.5億" data-curr="8.9億" data-yoy="+38.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:69%"></div>
+                    <div class="chart-bar curr " style="height:96%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="6.0億" data-curr="7.5億" data-yoy="+24.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:65%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="6.9億" data-curr="7.9億" data-yoy="+14.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:74%"></div>
+                    <div class="chart-bar curr is-target" style="height:85%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>電子零組件業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card" data-sid="2402" data-sname="毅嘉" data-rev="1016239000.0" data-yoy="13.4970537912056" data-mom="22.579178261304847" data-exceed="13.5" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">毅嘉</span>
+                        <span class="stock-id">2402</span>
+                    </div>
+                    <div class="revenue-value">10.2億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+13.50%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+22.58%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+13.5%</span>
+                </div>
+                
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=2402" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=2402" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_2402.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="7.5億" data-curr="9.3億" data-yoy="+23.8%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:74%"></div>
+                    <div class="chart-bar curr " style="height:91%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="7.8億" data-curr="9.4億" data-yoy="+20.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:77%"></div>
+                    <div class="chart-bar curr " style="height:92%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="8.5億" data-curr="9.3億" data-yoy="+9.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:84%"></div>
+                    <div class="chart-bar curr " style="height:92%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="8.7億" data-curr="9.4億" data-yoy="+8.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:85%"></div>
+                    <div class="chart-bar curr " style="height:93%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="8.9億" data-curr="9.6億" data-yoy="+7.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:88%"></div>
+                    <div class="chart-bar curr " style="height:94%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="8.7億" data-curr="9.9億" data-yoy="+13.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:86%"></div>
+                    <div class="chart-bar curr " style="height:97%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="8.7億" data-curr="9.4億" data-yoy="+8.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:85%"></div>
+                    <div class="chart-bar curr " style="height:93%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="8.6億" data-curr="8.7億" data-yoy="+1.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:84%"></div>
+                    <div class="chart-bar curr " style="height:86%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="7.9億" data-curr="9.1億" data-yoy="+15.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:78%"></div>
+                    <div class="chart-bar curr " style="height:90%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="7.9億" data-curr="9.7億" data-yoy="+22.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:78%"></div>
+                    <div class="chart-bar curr " style="height:96%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="7.5億" data-curr="8.3億" data-yoy="+10.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:74%"></div>
+                    <div class="chart-bar curr " style="height:82%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="9.0億" data-curr="10.2億" data-yoy="+13.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:88%"></div>
+                    <div class="chart-bar curr is-target" style="height:100%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- 上櫃面板 -->
+    <div class="market-panel" id="panel-otc">
+        
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>其他</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card" data-sid="5345" data-sname="馥鴻" data-rev="2616000.0" data-yoy="680.8955223880597" data-mom="-1.8386491557223263" data-exceed="44.61" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">馥鴻</span>
+                        <span class="stock-id">5345</span>
+                    </div>
+                    <div class="revenue-value">262萬</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+680.90%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change negative">-1.84%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+44.6%</span>
+                </div>
+                <div class="remark-row"><span class="remark-icon">&#9432;</span> 主係產品線成熟且結合經銷商銷售動能，導致較去年同期增加。</div>
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=5345" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=5345" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_5345.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="34萬" data-curr="62萬" data-yoy="+81.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:6%"></div>
+                    <div class="chart-bar curr " style="height:12%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="35萬" data-curr="37萬" data-yoy="+5.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:7%"></div>
+                    <div class="chart-bar curr " style="height:7%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="43萬" data-curr="40萬" data-yoy="-7.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:8%"></div>
+                    <div class="chart-bar curr " style="height:7%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="73萬" data-curr="63萬" data-yoy="-14.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:14%"></div>
+                    <div class="chart-bar curr " style="height:12%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="67萬" data-curr="255萬" data-yoy="+281.8%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:12%"></div>
+                    <div class="chart-bar curr " style="height:47%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="57萬" data-curr="385萬" data-yoy="+575.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:11%"></div>
+                    <div class="chart-bar curr " style="height:71%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="74萬" data-curr="335萬" data-yoy="+352.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:14%"></div>
+                    <div class="chart-bar curr " style="height:62%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="88萬" data-curr="426萬" data-yoy="+383.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:16%"></div>
+                    <div class="chart-bar curr " style="height:79%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="89萬" data-curr="539萬" data-yoy="+503.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:17%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="58萬" data-curr="145萬" data-yoy="+151.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:11%"></div>
+                    <div class="chart-bar curr " style="height:27%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="85萬" data-curr="266萬" data-yoy="+214.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:16%"></div>
+                    <div class="chart-bar curr " style="height:49%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="34萬" data-curr="262萬" data-yoy="+680.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:6%"></div>
+                    <div class="chart-bar curr is-target" style="height:49%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>數位雲端</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card" data-sid="6910" data-sname="德鴻" data-rev="37805000.0" data-yoy="21.6220563634024" data-mom="83.67099062332993" data-exceed="21.62" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">德鴻</span>
+                        <span class="stock-id">6910</span>
+                    </div>
+                    <div class="revenue-value">3,780萬</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+21.62%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+83.67%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+21.6%</span>
+                </div>
+                <div class="remark-row"><span class="remark-icon">&#9432;</span> 無</div>
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6910" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6910" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_6910.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="2,138萬" data-curr="3,062萬" data-yoy="+43.3%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:50%"></div>
+                    <div class="chart-bar curr " style="height:72%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="2,303萬" data-curr="3,347萬" data-yoy="+45.3%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:54%"></div>
+                    <div class="chart-bar curr " style="height:79%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="2,473萬" data-curr="3,700萬" data-yoy="+49.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:58%"></div>
+                    <div class="chart-bar curr " style="height:87%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="2,983萬" data-curr="3,272萬" data-yoy="+9.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:70%"></div>
+                    <div class="chart-bar curr " style="height:77%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="3,013萬" data-curr="3,366萬" data-yoy="+11.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:71%"></div>
+                    <div class="chart-bar curr " style="height:79%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="2,171萬" data-curr="3,890萬" data-yoy="+79.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:51%"></div>
+                    <div class="chart-bar curr " style="height:91%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="2,141萬" data-curr="3,244萬" data-yoy="+51.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:50%"></div>
+                    <div class="chart-bar curr " style="height:76%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="2,361萬" data-curr="3,282萬" data-yoy="+39.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:55%"></div>
+                    <div class="chart-bar curr " style="height:77%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="4,017萬" data-curr="4,255萬" data-yoy="+5.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:94%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="1,605萬" data-curr="2,322萬" data-yoy="+44.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:38%"></div>
+                    <div class="chart-bar curr " style="height:55%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="2,350萬" data-curr="2,058萬" data-yoy="-12.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:55%"></div>
+                    <div class="chart-bar curr " style="height:48%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="3,108萬" data-curr="3,780萬" data-yoy="+21.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:73%"></div>
+                    <div class="chart-bar curr is-target" style="height:89%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>生技醫療業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card" data-sid="6712" data-sname="長聖" data-rev="70103000.0" data-yoy="15.121110107562195" data-mom="12.722098052772909" data-exceed="15.12" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">長聖</span>
+                        <span class="stock-id">6712</span>
+                    </div>
+                    <div class="revenue-value">7,010萬</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+15.12%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+12.72%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+15.1%</span>
+                </div>
+                
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6712" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6712" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_6712.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="5,603萬" data-curr="6,754萬" data-yoy="+20.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:44%"></div>
+                    <div class="chart-bar curr " style="height:53%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="6,012萬" data-curr="7,246萬" data-yoy="+20.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:47%"></div>
+                    <div class="chart-bar curr " style="height:57%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="6,213萬" data-curr="8,087萬" data-yoy="+30.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:49%"></div>
+                    <div class="chart-bar curr " style="height:63%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="7,021萬" data-curr="8,221萬" data-yoy="+17.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:55%"></div>
+                    <div class="chart-bar curr " style="height:64%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="8,779萬" data-curr="9,054萬" data-yoy="+3.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:69%"></div>
+                    <div class="chart-bar curr " style="height:71%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="9,003萬" data-curr="9,110萬" data-yoy="+1.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:70%"></div>
+                    <div class="chart-bar curr " style="height:71%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="9,909萬" data-curr="1.1億" data-yoy="+12.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:77%"></div>
+                    <div class="chart-bar curr " style="height:87%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="1.2億" data-curr="1.3億" data-yoy="+1.3%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:96%"></div>
+                    <div class="chart-bar curr " style="height:98%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="1.3億" data-curr="1.3億" data-yoy="+0.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:99%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="5,686萬" data-curr="5,820萬" data-yoy="+2.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:44%"></div>
+                    <div class="chart-bar curr " style="height:45%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="6,017萬" data-curr="6,219萬" data-yoy="+3.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:47%"></div>
+                    <div class="chart-bar curr " style="height:49%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="6,090萬" data-curr="7,010萬" data-yoy="+15.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:48%"></div>
+                    <div class="chart-bar curr is-target" style="height:55%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>通信網路業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card" data-sid="6486" data-sname="互動" data-rev="198402000.0" data-yoy="77.83693664622997" data-mom="52.74969781425393" data-exceed="9.94" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">互動</span>
+                        <span class="stock-id">6486</span>
+                    </div>
+                    <div class="revenue-value">2.0億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+77.84%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+52.75%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+9.9%</span>
+                </div>
+                <div class="remark-row"><span class="remark-icon">&#9432;</span> 本月營收較去年同期增加50%以上，係因本月認列營收的專案較去年同期增加所致。</div>
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6486" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6486" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_6486.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="1.9億" data-curr="1.0億" data-yoy="-46.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:25%"></div>
+                    <div class="chart-bar curr " style="height:13%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="1.7億" data-curr="1.8億" data-yoy="+5.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:22%"></div>
+                    <div class="chart-bar curr " style="height:23%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="2.8億" data-curr="2.0億" data-yoy="-26.8%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:36%"></div>
+                    <div class="chart-bar curr " style="height:26%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="1.4億" data-curr="1.1億" data-yoy="-21.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:18%"></div>
+                    <div class="chart-bar curr " style="height:14%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="1.4億" data-curr="1.6億" data-yoy="+15.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:18%"></div>
+                    <div class="chart-bar curr " style="height:21%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="3.0億" data-curr="3.3億" data-yoy="+8.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:39%"></div>
+                    <div class="chart-bar curr " style="height:42%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="1.6億" data-curr="1.0億" data-yoy="-38.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:21%"></div>
+                    <div class="chart-bar curr " style="height:13%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="1.9億" data-curr="3.1億" data-yoy="+66.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:24%"></div>
+                    <div class="chart-bar curr " style="height:40%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="5.3億" data-curr="7.8億" data-yoy="+47.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:68%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="1.2億" data-curr="1.4億" data-yoy="+17.3%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:15%"></div>
+                    <div class="chart-bar curr " style="height:18%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="1.9億" data-curr="1.3億" data-yoy="-30.3%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:24%"></div>
+                    <div class="chart-bar curr " style="height:17%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="1.1億" data-curr="2.0億" data-yoy="+77.8%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:14%"></div>
+                    <div class="chart-bar curr is-target" style="height:26%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- 創新板面板 -->
+    <div class="market-panel" id="panel-tib">
+        <p class="empty-msg">本分類無資料</p>
+    </div>
+
+    <!-- 興櫃面板 -->
+    <div class="market-panel" id="panel-emerging">
+        
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>數位雲端</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card" data-sid="7781" data-sname="昕力資*" data-rev="101116000.0" data-yoy="10.07500462655534" data-mom="79.08681945379193" data-exceed="10.08" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">昕力資*</span>
+                        <span class="stock-id">7781</span>
+                    </div>
+                    <div class="revenue-value">1.0億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+10.08%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+79.09%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+10.1%</span>
+                </div>
+                
+                <div class="card-links">
+                    <a href="https://concords.moneydj.com/z/zu/zue/zuef/zuef_7781_0_2.djhtm" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=7781" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_7781.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="N/A" data-curr="7,080萬" data-yoy="N/A">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:0%"></div>
+                    <div class="chart-bar curr " style="height:30%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="N/A" data-curr="6,200萬" data-yoy="N/A">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:0%"></div>
+                    <div class="chart-bar curr " style="height:26%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="N/A" data-curr="6,535萬" data-yoy="N/A">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:0%"></div>
+                    <div class="chart-bar curr " style="height:28%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="N/A" data-curr="6,234萬" data-yoy="N/A">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:0%"></div>
+                    <div class="chart-bar curr " style="height:27%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="N/A" data-curr="4,414萬" data-yoy="N/A">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:0%"></div>
+                    <div class="chart-bar curr " style="height:19%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="N/A" data-curr="4,721萬" data-yoy="N/A">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:0%"></div>
+                    <div class="chart-bar curr " style="height:20%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="6,281萬" data-curr="6,993萬" data-yoy="+11.3%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:27%"></div>
+                    <div class="chart-bar curr " style="height:30%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="7,458萬" data-curr="4,502萬" data-yoy="-39.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:32%"></div>
+                    <div class="chart-bar curr " style="height:19%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="2.3億" data-curr="7,282萬" data-yoy="-68.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:100%"></div>
+                    <div class="chart-bar curr " style="height:31%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="4,903萬" data-curr="6,453萬" data-yoy="+31.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:21%"></div>
+                    <div class="chart-bar curr " style="height:28%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="3,974萬" data-curr="5,646萬" data-yoy="+42.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:17%"></div>
+                    <div class="chart-bar curr " style="height:24%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="9,186萬" data-curr="1.0億" data-yoy="+10.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:39%"></div>
+                    <div class="chart-bar curr is-target" style="height:43%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>生技醫療業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+        </div>
+        <div class="stock-grid">
+            
+            <div class="stock-card" data-sid="6518" data-sname="康科特" data-rev="85311000.0" data-yoy="19.426323599406444" data-mom="26.683199192183185" data-exceed="19.43" data-date="">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">康科特</span>
+                        <span class="stock-id">6518</span>
+                    </div>
+                    <div class="revenue-value">8,531萬</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+19.43%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+26.68%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+19.4%</span>
+                </div>
+                
+                <div class="card-links">
+                    <a href="https://concords.moneydj.com/z/zu/zue/zuef/zuef_6518_0_2.djhtm" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6518" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_6518.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/04" data-prev="7,641萬" data-curr="8,461萬" data-yoy="+10.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:73%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2025/05" data-prev="7,484萬" data-curr="7,893萬" data-yoy="+5.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:72%"></div>
+                    <div class="chart-bar curr " style="height:76%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2025/06" data-prev="7,520萬" data-curr="7,781萬" data-yoy="+3.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:72%"></div>
+                    <div class="chart-bar curr " style="height:74%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2025/07" data-prev="7,580萬" data-curr="8,410萬" data-yoy="+11.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:73%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">7</span>
+            </div>
+            <div class="chart-group" data-month="2025/08" data-prev="7,403萬" data-curr="8,002萬" data-yoy="+8.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:71%"></div>
+                    <div class="chart-bar curr " style="height:77%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="7,262萬" data-curr="7,812萬" data-yoy="+7.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:70%"></div>
+                    <div class="chart-bar curr " style="height:75%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="7,025萬" data-curr="7,422萬" data-yoy="+5.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:67%"></div>
+                    <div class="chart-bar curr " style="height:71%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="8,091萬" data-curr="9,462萬" data-yoy="+16.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:77%"></div>
+                    <div class="chart-bar curr " style="height:91%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="8,290萬" data-curr="1.0億" data-yoy="+26.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:79%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="7,453萬" data-curr="9,414萬" data-yoy="+26.3%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:71%"></div>
+                    <div class="chart-bar curr " style="height:90%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="6,149萬" data-curr="6,734萬" data-yoy="+9.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:59%"></div>
+                    <div class="chart-bar curr " style="height:64%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="7,143萬" data-curr="8,531萬" data-yoy="+19.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:68%"></div>
+                    <div class="chart-bar curr is-target" style="height:82%"></div>
+                </div>
+                <span class="chart-month-label is-target">3</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</div>
+<footer>
+    資料來源：公開資訊觀測站 (MOPS) / FinMind | 僅供參考，不構成投資建議
+</footer>
+
+<script>
+// 市場分頁切換
+document.querySelectorAll('.market-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.market-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.market-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('panel-' + tab.dataset.market).classList.add('active');
+    });
+});
+
+// 檢視模式切換 (標準 / 精簡)
+document.querySelectorAll('.view-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (btn.dataset.view === 'compact') {
+            document.body.classList.add('compact');
+        } else {
+            document.body.classList.remove('compact');
+        }
+    });
+});
+
+// ===== 排序 (點 compact 表頭欄位) + 日期篩選 =====
+(function() {
+    let currentSort = null;
+    let sortAsc = false;
+    const attrMap = { rev: 'data-rev', yoy: 'data-yoy', mom: 'data-mom', exceed: 'data-exceed' };
+
+    // 點擊 compact 表頭排序
+    document.addEventListener('click', function(e) {
+        const col = e.target.closest('.ch-col[data-sort]');
+        if (!col) return;
+
+        const sortKey = col.dataset.sort;
+        if (currentSort === sortKey) {
+            sortAsc = !sortAsc;
+        } else {
+            currentSort = sortKey;
+            sortAsc = false;
+        }
+
+        // 更新所有表頭的箭頭顯示
+        document.querySelectorAll('.ch-col[data-sort]').forEach(c => {
+            c.classList.remove('sort-active');
+            const arrow = c.querySelector('.sort-arrow');
+            if (arrow) arrow.textContent = '▼';
+        });
+        // 點到的那欄 + 同 data-sort 的所有表頭都高亮
+        document.querySelectorAll('.ch-col[data-sort="' + sortKey + '"]').forEach(c => {
+            c.classList.add('sort-active');
+            const arrow = c.querySelector('.sort-arrow');
+            if (arrow) arrow.textContent = sortAsc ? '▲' : '▼';
+        });
+
+        doSort(sortKey, sortAsc);
+    });
+
+    function doSort(sortKey, asc) {
+        const attr = attrMap[sortKey];
+        if (!attr) return;
+
+        document.body.classList.add('sort-mode');
+
+        // 對當前可見的 panel 排序
+        document.querySelectorAll('.market-panel').forEach(panel => {
+            const grids = panel.querySelectorAll('.stock-grid');
+            grids.forEach(grid => {
+                const cards = Array.from(grid.querySelectorAll('.stock-card'));
+                if (cards.length === 0) return;
+
+                cards.sort((a, b) => {
+                    const va = parseFloat(a.getAttribute(attr));
+                    const vb = parseFloat(b.getAttribute(attr));
+                    const na = isNaN(va) ? -Infinity : va;
+                    const nb = isNaN(vb) ? -Infinity : vb;
+                    return asc ? (na - nb) : (nb - na);
+                });
+
+                cards.forEach(c => grid.appendChild(c));
+            });
+        });
+
+        applyDateFilter();
+        applySearch();
+    }
+
+    // ===== 日期篩選 =====
+    let currentDate = 'all';
+
+    document.addEventListener('click', function(e) {
+        const pill = e.target.closest('.date-pill');
+        if (!pill) return;
+
+        document.querySelectorAll('.date-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentDate = pill.dataset.date;
+        applyDateFilter();
+    });
+
+    function applyDateFilter() {
+        const cards = document.querySelectorAll('.stock-card');
+        cards.forEach(card => {
+            if (currentDate === 'all') {
+                card.removeAttribute('data-date-hidden');
+                if (!card.getAttribute('data-search-hidden')) {
+                    card.style.display = '';
+                }
+            } else {
+                const cardDate = card.dataset.date || '';
+                if (cardDate === currentDate) {
+                    card.removeAttribute('data-date-hidden');
+                    if (!card.getAttribute('data-search-hidden')) {
+                        card.style.display = '';
+                    }
+                } else {
+                    card.setAttribute('data-date-hidden', '1');
+                    card.style.display = 'none';
+                }
+            }
+        });
+        updateSectionVisibility();
+    }
+
+    function updateSectionVisibility() {
+        document.querySelectorAll('.industry-section').forEach(section => {
+            const visible = section.querySelectorAll('.stock-card:not([style*="display: none"])');
+            section.style.display = visible.length > 0 ? '' : 'none';
+        });
+    }
+
+    function applySearch() {
+        const input = document.getElementById('stockSearch');
+        if (input && input.value.trim()) {
+            input.dispatchEvent(new Event('input'));
+        }
+    }
+
+    window._applyDateFilter = applyDateFilter;
+})();
+
+// ===== 精簡模式點擊展開卡片 =====
+(function() {
+    let expandedRow = null;
+
+    document.addEventListener('click', function(e) {
+        if (!document.body.classList.contains('compact')) return;
+        if (e.target.closest('a') || e.target.closest('summary') || e.target.closest('.ch-col')) return;
+
+        const card = e.target.closest('.stock-card');
+        if (!card) return;
+
+        // 移除之前的展開行
+        const oldDetail = document.querySelector('.expanded-detail-row');
+        if (oldDetail) {
+            oldDetail.remove();
+            if (expandedRow === card) {
+                card.classList.remove('expanded');
+                expandedRow = null;
+                return;
+            }
+        }
+        if (expandedRow) expandedRow.classList.remove('expanded');
+
+        // 建立展開行
+        card.classList.add('expanded');
+        expandedRow = card;
+
+        const detail = document.createElement('tr');
+        detail.className = 'expanded-detail-row';
+        const td = document.createElement('td');
+        td.colSpan = 5;
+        td.style.padding = '12px 16px';
+        td.style.background = '#161b22';
+        td.style.borderTop = '1px solid #21262d';
+        td.style.borderBottom = '1px solid #21262d';
+
+        // 複製原始卡片的詳細內容
+        const remark = card.querySelector('.remark-row');
+        const chart = card.querySelector('.chart-toggle');
+        const links = card.querySelector('.card-links');
+
+        let html = '';
+        if (remark) html += '<div style="margin-bottom:10px">' + remark.outerHTML + '</div>';
+        if (links) {
+            html += '<div style="display:flex;gap:8px;margin-bottom:10px">';
+            links.querySelectorAll('a').forEach(a => {
+                html += '<a href="' + a.href + '" target="_blank" class="card-link">' + a.textContent + '</a>';
+            });
+            html += '</div>';
+        }
+        if (chart) html += chart.outerHTML;
+
+        td.innerHTML = html;
+        detail.appendChild(td);
+
+        // 插入到卡片後面
+        card.parentNode.insertBefore(detail, card.nextSibling);
+
+        // 開啟 details
+        const det = detail.querySelector('details');
+        if (det) det.open = true;
+    });
+})();
+
+// 個股搜尋
+(function() {
+    const searchInput = document.getElementById('stockSearch');
+    const searchInfo = document.getElementById('searchResultInfo');
+    let debounceTimer;
+
+    searchInput.addEventListener('input', function() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => filterCards(this.value.trim()), 150);
+    });
+
+    // 按 Esc 清除搜尋
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            this.value = '';
+            filterCards('');
+            this.blur();
+        }
+    });
+
+    function filterCards(query) {
+        const cards = document.querySelectorAll('.stock-card');
+        const sections = document.querySelectorAll('.industry-section');
+
+        if (!query) {
+            // 清除搜尋
+            cards.forEach(c => {
+                c.removeAttribute('data-search-hidden');
+                if (!c.getAttribute('data-date-hidden')) {
+                    c.style.display = '';
+                }
+            });
+            sections.forEach(s => s.style.display = '');
+            searchInfo.style.display = 'none';
+            if (window._applyDateFilter) window._applyDateFilter();
+            return;
+        }
+
+        const q = query.toLowerCase();
+        let matchCount = 0;
+
+        cards.forEach(card => {
+            const sid = (card.dataset.sid || '').toLowerCase();
+            const sname = (card.dataset.sname || '').toLowerCase();
+            const match = sid.includes(q) || sname.includes(q);
+            if (match) {
+                card.removeAttribute('data-search-hidden');
+                if (!card.getAttribute('data-date-hidden')) {
+                    card.style.display = '';
+                    matchCount++;
+                }
+            } else {
+                card.setAttribute('data-search-hidden', '1');
+                card.style.display = 'none';
+            }
+        });
+
+        // 隱藏空的產業區塊
+        sections.forEach(section => {
+            const visibleCards = section.querySelectorAll('.stock-card:not([style*="display: none"])');
+            section.style.display = visibleCards.length > 0 ? '' : 'none';
+        });
+
+        // 顯示搜尋結果數
+        searchInfo.style.display = 'block';
+        if (matchCount > 0) {
+            searchInfo.textContent = '找到 ' + matchCount + ' 檔符合「' + query + '」';
+            searchInfo.style.color = '#8b949e';
+        } else {
+            searchInfo.textContent = '找不到「' + query + '」相關股票';
+            searchInfo.style.color = '#f85149';
+        }
+    }
+})();
+
+// 柱狀圖 Tooltip (hover + touch)
+(function() {
+    const tooltip = document.createElement('div');
+    tooltip.className = 'chart-tooltip';
+    document.body.appendChild(tooltip);
+
+    let activeGroup = null;
+
+    function showTooltip(group, x, y) {
+        const month = group.dataset.month || '';
+        const prev = group.dataset.prev || 'N/A';
+        const curr = group.dataset.curr || 'N/A';
+        const yoy = group.dataset.yoy || 'N/A';
+
+        const yoyNum = parseFloat(yoy);
+        const yoyClass = isNaN(yoyNum) ? '' : (yoyNum >= 0 ? 'yoy-pos' : 'yoy-neg');
+
+        tooltip.innerHTML =
+            '<div class="tt-month">' + month + '</div>' +
+            '<div class="tt-row"><span class="tt-label">本期</span><span class="tt-val curr">' + curr + '</span></div>' +
+            '<div class="tt-row"><span class="tt-label">前期</span><span class="tt-val prev">' + prev + '</span></div>' +
+            '<div class="tt-row"><span class="tt-label">年增</span><span class="tt-val ' + yoyClass + '">' + yoy + '</span></div>';
+
+        // 定位: 優先顯示在上方
+        tooltip.style.display = 'block';
+        tooltip.classList.add('visible');
+
+        const rect = group.getBoundingClientRect();
+        const ttRect = tooltip.getBoundingClientRect();
+        let left = rect.left + rect.width / 2 - ttRect.width / 2;
+        let top = rect.top - ttRect.height - 8;
+
+        // 邊界修正
+        if (left < 4) left = 4;
+        if (left + ttRect.width > window.innerWidth - 4) left = window.innerWidth - ttRect.width - 4;
+        if (top < 4) top = rect.bottom + 8;
+
+        tooltip.style.left = left + window.scrollX + 'px';
+        tooltip.style.top = top + window.scrollY + 'px';
+
+        activeGroup = group;
+    }
+
+    function hideTooltip() {
+        tooltip.classList.remove('visible');
+        activeGroup = null;
+    }
+
+    // Desktop: hover
+    document.addEventListener('mouseover', function(e) {
+        const group = e.target.closest('.chart-group');
+        if (group) {
+            showTooltip(group);
+        }
+    });
+
+    document.addEventListener('mouseout', function(e) {
+        const group = e.target.closest('.chart-group');
+        if (group) {
+            const related = e.relatedTarget;
+            if (!group.contains(related)) {
+                hideTooltip();
+            }
+        }
+    });
+
+    // Mobile: touch
+    document.addEventListener('touchstart', function(e) {
+        const group = e.target.closest('.chart-group');
+        if (group) {
+            e.preventDefault();
+            if (activeGroup === group) {
+                hideTooltip();
+            } else {
+                showTooltip(group);
+            }
+        } else if (!e.target.closest('.chart-tooltip')) {
+            hideTooltip();
+        }
+    }, { passive: false });
+})();
+</script>
+</body>
+</html>

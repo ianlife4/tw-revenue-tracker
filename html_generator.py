@@ -889,6 +889,7 @@ footer {{
             <a class="nav-btn" href="{next_month_file}" title="下個月">後一月 &#9654;</a>
         </div>
         <div class="update-time">{update_time} 更新</div>
+        <div style="margin-top:12px"><a href="index.html" style="color:#58a6ff;text-decoration:none;font-size:0.85rem;padding:4px 12px;border:1px solid #30363d;border-radius:6px;">← 即時申報</a></div>
     </header>
 
     <div class="summary">
