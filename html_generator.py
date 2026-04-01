@@ -646,57 +646,91 @@ body.sort-mode .stock-grid {{
     background: #58a6ff15;
 }}
 
-/* ===== 精簡模式 ===== */
+/* ===== 精簡模式 (表格風格) ===== */
 body.compact .stock-grid {{
-    grid-template-columns: 1fr;
-    gap: 4px;
-    padding: 8px;
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0;
 }}
 
 body.compact .stock-card {{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 14px;
-    border-radius: 4px;
+    display: table-row;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.15s;
+}}
+
+body.compact .stock-card:hover {{
+    background: rgba(88,166,255,0.08);
+    border-color: transparent;
 }}
 
 body.compact .stock-card .top-row {{
     display: contents;
-    margin-bottom: 0;
 }}
 
 body.compact .stock-info {{
-    min-width: 120px;
-    gap: 6px;
+    display: table-cell;
+    padding: 8px 12px;
+    vertical-align: middle;
+    white-space: nowrap;
+    min-width: 0;
 }}
 
 body.compact .stock-name {{
-    font-size: 0.9rem;
+    font-size: 0.88rem;
+    color: #58a6ff;
 }}
 
 body.compact .stock-id {{
     font-size: 0.75rem;
+    color: #6e7681;
+    margin-left: 6px;
 }}
 
 body.compact .revenue-value {{
-    font-size: 1rem;
-    min-width: 80px;
+    display: table-cell;
+    padding: 8px 12px;
+    vertical-align: middle;
     text-align: right;
+    font-size: 0.95rem;
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+    white-space: nowrap;
 }}
 
 body.compact .stock-card .detail-row {{
-    margin-top: 0;
-    gap: 4px;
+    display: none;
+}}
+
+body.compact .stock-card .detail-row:nth-child(4),
+body.compact .stock-card .detail-row:nth-child(5),
+body.compact .stock-card .detail-row:nth-child(6) {{
+    display: table-cell;
+    padding: 8px 10px;
+    vertical-align: middle;
+    text-align: right;
+    margin: 0;
 }}
 
 body.compact .stock-card .detail-row .revenue-label {{
     display: none;
 }}
 
-body.compact .stock-card .detail-row:nth-child(2),
-body.compact .stock-card .detail-row:nth-child(3) {{
-    display: none;
+body.compact .pct-change {{
+    font-size: 0.85rem;
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+}}
+
+body.compact .exceed-tag {{
+    font-size: 0.8rem;
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+    background: transparent;
+    border: none;
+    padding: 0;
 }}
 
 body.compact .tag {{
@@ -717,47 +751,16 @@ body.compact .remark-row {{
 
 /* compact 展開狀態 */
 body.compact .stock-card.expanded {{
-    display: block;
-    padding: 16px;
-    border-color: #58a6ff;
+    display: table-row;
+    background: #161b22;
 }}
 
-body.compact .stock-card.expanded .top-row {{
-    display: flex;
-    margin-bottom: 8px;
+body.compact .stock-card.expanded + .expanded-detail {{
+    display: table-row;
 }}
 
-body.compact .stock-card.expanded .detail-row {{
-    display: flex !important;
-    margin-top: 6px;
-}}
-
-body.compact .stock-card.expanded .detail-row .revenue-label {{
-    display: inline !important;
-}}
-
-body.compact .stock-card.expanded .tag {{
-    display: inline-block !important;
-}}
-
-body.compact .stock-card.expanded .card-links {{
-    display: flex !important;
-}}
-
-body.compact .stock-card.expanded .chart-toggle {{
-    display: block !important;
-}}
-
-body.compact .stock-card.expanded .remark-row {{
-    display: block !important;
-}}
-
-body.compact .exceed-tag {{
-    font-size: 0.7rem;
-}}
-
-body.compact .pct-change {{
-    font-size: 0.8rem;
+.expanded-detail {{
+    display: none;
 }}
 
 body.compact .industry-header {{
@@ -774,21 +777,27 @@ body.compact .industry-header h2 {{
 }}
 
 body.compact .compact-header {{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 6px 14px;
-    font-size: 0.7rem;
+    display: table-row;
+    font-size: 0.72rem;
     color: #6e7681;
-    border-bottom: 1px solid #21262d;
     font-weight: 600;
+    background: #161b22;
 }}
 
 body.compact .compact-header .ch-col {{
+    display: table-cell;
+    padding: 8px 12px;
     cursor: pointer;
     user-select: none;
     transition: color 0.2s;
     white-space: nowrap;
+    border-bottom: 2px solid #21262d;
+    vertical-align: middle;
+}}
+
+body.compact .compact-header .ch-col:not(.ch-name) {{
+    text-align: right;
+    padding-right: 10px;
 }}
 
 body.compact .compact-header .ch-col:hover {{
@@ -797,6 +806,7 @@ body.compact .compact-header .ch-col:hover {{
 
 body.compact .compact-header .ch-col.sort-active {{
     color: #58a6ff;
+    border-bottom-color: #58a6ff;
 }}
 
 body.compact .compact-header .ch-col .sort-arrow {{
@@ -809,9 +819,36 @@ body.compact .compact-header .ch-col.sort-active .sort-arrow {{
     opacity: 1;
 }}
 
-body.compact .compact-header .ch-name {{ min-width: 120px; }}
-body.compact .compact-header .ch-rev {{ min-width: 80px; text-align: right; }}
-body.compact .compact-header .ch-pct {{ min-width: 60px; text-align: right; }}
+/* 行間交替色 */
+body.compact .stock-card:nth-child(even) {{
+    background: rgba(22,27,34,0.5);
+}}
+
+body.compact .stock-card:nth-child(even):hover {{
+    background: rgba(88,166,255,0.08);
+}}
+
+@media (max-width: 768px) {{
+    body.compact .stock-info {{
+        padding: 6px 8px;
+    }}
+    body.compact .revenue-value {{
+        padding: 6px 8px;
+        font-size: 0.82rem;
+    }}
+    body.compact .stock-card .detail-row:nth-child(4),
+    body.compact .stock-card .detail-row:nth-child(5),
+    body.compact .stock-card .detail-row:nth-child(6) {{
+        padding: 6px 6px;
+    }}
+    body.compact .pct-change {{
+        font-size: 0.78rem;
+    }}
+    body.compact .compact-header .ch-col {{
+        padding: 6px 8px;
+        font-size: 0.65rem;
+    }}
+}}
 
 .empty-msg {{
     text-align: center;
@@ -1079,15 +1116,65 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
 
 // ===== 精簡模式點擊展開卡片 =====
 (function() {{
+    let expandedRow = null;
+
     document.addEventListener('click', function(e) {{
         if (!document.body.classList.contains('compact')) return;
-        // 不攔截連結和 details/summary 的點擊
         if (e.target.closest('a') || e.target.closest('summary') || e.target.closest('.ch-col')) return;
 
         const card = e.target.closest('.stock-card');
-        if (card) {{
-            card.classList.toggle('expanded');
+        if (!card) return;
+
+        // 移除之前的展開行
+        const oldDetail = document.querySelector('.expanded-detail-row');
+        if (oldDetail) {{
+            oldDetail.remove();
+            if (expandedRow === card) {{
+                card.classList.remove('expanded');
+                expandedRow = null;
+                return;
+            }}
         }}
+        if (expandedRow) expandedRow.classList.remove('expanded');
+
+        // 建立展開行
+        card.classList.add('expanded');
+        expandedRow = card;
+
+        const detail = document.createElement('tr');
+        detail.className = 'expanded-detail-row';
+        const td = document.createElement('td');
+        td.colSpan = 5;
+        td.style.padding = '12px 16px';
+        td.style.background = '#161b22';
+        td.style.borderTop = '1px solid #21262d';
+        td.style.borderBottom = '1px solid #21262d';
+
+        // 複製原始卡片的詳細內容
+        const remark = card.querySelector('.remark-row');
+        const chart = card.querySelector('.chart-toggle');
+        const links = card.querySelector('.card-links');
+
+        let html = '';
+        if (remark) html += '<div style="margin-bottom:10px">' + remark.outerHTML + '</div>';
+        if (links) {{
+            html += '<div style="display:flex;gap:8px;margin-bottom:10px">';
+            links.querySelectorAll('a').forEach(a => {{
+                html += '<a href="' + a.href + '" target="_blank" class="card-link">' + a.textContent + '</a>';
+            }});
+            html += '</div>';
+        }}
+        if (chart) html += chart.outerHTML;
+
+        td.innerHTML = html;
+        detail.appendChild(td);
+
+        // 插入到卡片後面
+        card.parentNode.insertBefore(detail, card.nextSibling);
+
+        // 開啟 details
+        const det = detail.querySelector('details');
+        if (det) det.open = true;
     }});
 }})();
 
@@ -1258,11 +1345,11 @@ INDUSTRY_SECTION_TEMPLATE = """
             <span class="industry-count">{count}檔</span>
         </div>
         <div class="compact-header">
-            <span class="ch-name">股票</span>
-            <span class="ch-col ch-rev" data-sort="rev">營收 <span class="sort-arrow">▼</span></span>
-            <span class="ch-col ch-pct" data-sort="yoy">年增率 <span class="sort-arrow">▼</span></span>
-            <span class="ch-col ch-pct" data-sort="mom">月增率 <span class="sort-arrow">▼</span></span>
-            <span class="ch-col ch-pct" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
         </div>
         <div class="stock-grid">
             {cards}
