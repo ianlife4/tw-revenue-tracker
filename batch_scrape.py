@@ -67,13 +67,20 @@ def fetch_mops_monthly(roc_year: int, month: int, market: str = "sii") -> pd.Dat
         "fileName": fname,
     }
 
+    max_retries = 3
     try:
-        resp = requests.post(
-            MOPS_DL_URL, data=payload, headers=HEADERS,
-            verify=False, timeout=30,
-        )
-        if resp.status_code != 200 or len(resp.content) < 2000:
-            logger.warning(f"  {market} {roc_year}/{month}: 無資料 (status={resp.status_code}, len={len(resp.content)})")
+        resp = None
+        for attempt in range(max_retries):
+            resp = requests.post(
+                MOPS_DL_URL, data=payload, headers=HEADERS,
+                verify=False, timeout=30,
+            )
+            if resp.status_code == 200 and len(resp.content) >= 2000:
+                break
+            if attempt < max_retries - 1:
+                time.sleep(random.uniform(1.5, 3.0))
+        if resp is None or resp.status_code != 200 or len(resp.content) < 2000:
+            logger.warning(f"  {market} {roc_year}/{month}: 無資料 (status={resp.status_code if resp else 'N/A'}, len={len(resp.content) if resp else 0})")
             return pd.DataFrame()
 
         resp.encoding = "utf-8-sig"
