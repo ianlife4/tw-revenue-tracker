@@ -436,6 +436,138 @@ header .update-time {{
 .legend-dot.prev {{ background: #58a6ff; }}
 .legend-dot.curr {{ background: #f0883e; }}
 
+/* ===== 檢視模式切換 ===== */
+.view-toggle {{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    gap: 4px;
+}}
+
+.view-btn {{
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    color: #8b949e;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}}
+
+.view-btn:hover {{
+    color: #e6edf3;
+    border-color: #8b949e;
+}}
+
+.view-btn.active {{
+    color: #58a6ff;
+    border-color: #58a6ff;
+    background: #58a6ff15;
+}}
+
+/* ===== 精簡模式 ===== */
+body.compact .stock-grid {{
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 8px;
+}}
+
+body.compact .stock-card {{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px;
+    border-radius: 4px;
+}}
+
+body.compact .stock-card .top-row {{
+    display: contents;
+    margin-bottom: 0;
+}}
+
+body.compact .stock-info {{
+    min-width: 120px;
+    gap: 6px;
+}}
+
+body.compact .stock-name {{
+    font-size: 0.9rem;
+}}
+
+body.compact .stock-id {{
+    font-size: 0.75rem;
+}}
+
+body.compact .revenue-value {{
+    font-size: 1rem;
+    min-width: 80px;
+    text-align: right;
+}}
+
+body.compact .stock-card .detail-row {{
+    margin-top: 0;
+    gap: 4px;
+}}
+
+body.compact .stock-card .detail-row .revenue-label {{
+    display: none;
+}}
+
+body.compact .stock-card .detail-row:nth-child(2),
+body.compact .stock-card .detail-row:nth-child(3) {{
+    display: none;
+}}
+
+body.compact .tag {{
+    display: none;
+}}
+
+body.compact .card-links {{
+    display: none;
+}}
+
+body.compact .chart-toggle {{
+    display: none;
+}}
+
+body.compact .exceed-tag {{
+    font-size: 0.7rem;
+}}
+
+body.compact .pct-change {{
+    font-size: 0.8rem;
+}}
+
+body.compact .industry-header {{
+    padding: 10px 16px;
+}}
+
+body.compact .industry-header h2 {{
+    font-size: 0.95rem;
+}}
+
+/* compact 表頭列 */
+.compact-header {{
+    display: none;
+}}
+
+body.compact .compact-header {{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 14px;
+    font-size: 0.7rem;
+    color: #6e7681;
+    border-bottom: 1px solid #21262d;
+    font-weight: 600;
+}}
+
+body.compact .compact-header .ch-name {{ min-width: 120px; }}
+body.compact .compact-header .ch-rev {{ min-width: 80px; text-align: right; }}
+body.compact .compact-header .ch-pct {{ min-width: 60px; text-align: right; }}
+
 .empty-msg {{
     text-align: center;
     color: #8b949e;
@@ -513,6 +645,12 @@ footer {{
         <div class="market-tab" data-market="emerging">興櫃 <span class="tab-count">{emerging_count}</span></div>
     </div>
 
+    <!-- 檢視模式切換 -->
+    <div class="view-toggle">
+        <div class="view-btn active" data-view="normal">&#9638; 標準</div>
+        <div class="view-btn" data-view="compact">&#9776; 精簡</div>
+    </div>
+
     <!-- 全部面板 -->
     <div class="market-panel active" id="panel-all">
         {all_sections}
@@ -544,12 +682,26 @@ footer {{
 </footer>
 
 <script>
+// 市場分頁切換
 document.querySelectorAll('.market-tab').forEach(tab => {{
     tab.addEventListener('click', () => {{
         document.querySelectorAll('.market-tab').forEach(t => t.classList.remove('active'));
         document.querySelectorAll('.market-panel').forEach(p => p.classList.remove('active'));
         tab.classList.add('active');
         document.getElementById('panel-' + tab.dataset.market).classList.add('active');
+    }});
+}});
+
+// 檢視模式切換 (標準 / 精簡)
+document.querySelectorAll('.view-btn').forEach(btn => {{
+    btn.addEventListener('click', () => {{
+        document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (btn.dataset.view === 'compact') {{
+            document.body.classList.add('compact');
+        }} else {{
+            document.body.classList.remove('compact');
+        }}
     }});
 }});
 </script>
@@ -561,6 +713,13 @@ INDUSTRY_SECTION_TEMPLATE = """
         <div class="industry-header">
             <h2>{industry}</h2>
             <span class="industry-count">{count}檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             {cards}

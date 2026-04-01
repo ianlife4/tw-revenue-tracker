@@ -410,6 +410,138 @@ header .update-time {
 .legend-dot.prev { background: #58a6ff; }
 .legend-dot.curr { background: #f0883e; }
 
+/* ===== 檢視模式切換 ===== */
+.view-toggle {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    gap: 4px;
+}
+
+.view-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    color: #8b949e;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.view-btn:hover {
+    color: #e6edf3;
+    border-color: #8b949e;
+}
+
+.view-btn.active {
+    color: #58a6ff;
+    border-color: #58a6ff;
+    background: #58a6ff15;
+}
+
+/* ===== 精簡模式 ===== */
+body.compact .stock-grid {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 8px;
+}
+
+body.compact .stock-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px;
+    border-radius: 4px;
+}
+
+body.compact .stock-card .top-row {
+    display: contents;
+    margin-bottom: 0;
+}
+
+body.compact .stock-info {
+    min-width: 120px;
+    gap: 6px;
+}
+
+body.compact .stock-name {
+    font-size: 0.9rem;
+}
+
+body.compact .stock-id {
+    font-size: 0.75rem;
+}
+
+body.compact .revenue-value {
+    font-size: 1rem;
+    min-width: 80px;
+    text-align: right;
+}
+
+body.compact .stock-card .detail-row {
+    margin-top: 0;
+    gap: 4px;
+}
+
+body.compact .stock-card .detail-row .revenue-label {
+    display: none;
+}
+
+body.compact .stock-card .detail-row:nth-child(2),
+body.compact .stock-card .detail-row:nth-child(3) {
+    display: none;
+}
+
+body.compact .tag {
+    display: none;
+}
+
+body.compact .card-links {
+    display: none;
+}
+
+body.compact .chart-toggle {
+    display: none;
+}
+
+body.compact .exceed-tag {
+    font-size: 0.7rem;
+}
+
+body.compact .pct-change {
+    font-size: 0.8rem;
+}
+
+body.compact .industry-header {
+    padding: 10px 16px;
+}
+
+body.compact .industry-header h2 {
+    font-size: 0.95rem;
+}
+
+/* compact 表頭列 */
+.compact-header {
+    display: none;
+}
+
+body.compact .compact-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 14px;
+    font-size: 0.7rem;
+    color: #6e7681;
+    border-bottom: 1px solid #21262d;
+    font-weight: 600;
+}
+
+body.compact .compact-header .ch-name { min-width: 120px; }
+body.compact .compact-header .ch-rev { min-width: 80px; text-align: right; }
+body.compact .compact-header .ch-pct { min-width: 60px; text-align: right; }
+
 .empty-msg {
     text-align: center;
     color: #8b949e;
@@ -448,7 +580,7 @@ footer {
             <span class="date-info">2026/02</span>
             <a class="nav-btn" href="2026_03.html" title="下個月">後一月 &#9654;</a>
         </div>
-        <div class="update-time">2026-04-01 10:43 更新</div>
+        <div class="update-time">2026-04-01 11:09 更新</div>
     </header>
 
     <div class="summary">
@@ -487,6 +619,12 @@ footer {
         <div class="market-tab" data-market="emerging">興櫃 <span class="tab-count">0</span></div>
     </div>
 
+    <!-- 檢視模式切換 -->
+    <div class="view-toggle">
+        <div class="view-btn active" data-view="normal">&#9638; 標準</div>
+        <div class="view-btn" data-view="compact">&#9776; 精簡</div>
+    </div>
+
     <!-- 全部面板 -->
     <div class="market-panel active" id="panel-all">
         
@@ -494,6 +632,13 @@ footer {
         <div class="industry-header">
             <h2>電子工業</h2>
             <span class="industry-count">16檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -2552,6 +2697,13 @@ footer {
             <h2>食品工業</h2>
             <span class="industry-count">8檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -3585,6 +3737,13 @@ footer {
             <h2>半導體業</h2>
             <span class="industry-count">7檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -4490,6 +4649,13 @@ footer {
             <h2>汽車工業</h2>
             <span class="industry-count">5檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -5138,6 +5304,13 @@ footer {
         <div class="industry-header">
             <h2>鋼鐵工業</h2>
             <span class="industry-count">5檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -5788,6 +5961,13 @@ footer {
             <h2>電機機械</h2>
             <span class="industry-count">4檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -6309,6 +6489,13 @@ footer {
             <h2>其他</h2>
             <span class="industry-count">3檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -6701,6 +6888,13 @@ footer {
         <div class="industry-header">
             <h2>其他電子業</h2>
             <span class="industry-count">3檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -7095,6 +7289,13 @@ footer {
             <h2>生技醫療業</h2>
             <span class="industry-count">3檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -7487,6 +7688,13 @@ footer {
         <div class="industry-header">
             <h2>觀光餐旅</h2>
             <span class="industry-count">3檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -7881,6 +8089,13 @@ footer {
             <h2>電腦及週邊設備業</h2>
             <span class="industry-count">3檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -8274,6 +8489,13 @@ footer {
             <h2>光電業</h2>
             <span class="industry-count">2檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -8538,6 +8760,13 @@ footer {
         <div class="industry-header">
             <h2>其他電子類</h2>
             <span class="industry-count">2檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -8804,6 +9033,13 @@ footer {
             <h2>化學生技醫療</h2>
             <span class="industry-count">2檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -9068,6 +9304,13 @@ footer {
         <div class="industry-header">
             <h2>數位雲端類</h2>
             <span class="industry-count">2檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -9334,6 +9577,13 @@ footer {
             <h2>電子零組件業</h2>
             <span class="industry-count">2檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -9599,6 +9849,13 @@ footer {
             <h2>化學工業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -9735,6 +9992,13 @@ footer {
         <div class="industry-header">
             <h2>建材營造</h2>
             <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -9873,6 +10137,13 @@ footer {
             <h2>綠能環保類</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -10009,6 +10280,13 @@ footer {
         <div class="industry-header">
             <h2>通信網路業</h2>
             <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -10147,6 +10425,13 @@ footer {
             <h2>運動休閒類</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -10283,6 +10568,13 @@ footer {
         <div class="industry-header">
             <h2>電器電纜</h2>
             <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -10425,6 +10717,13 @@ footer {
         <div class="industry-header">
             <h2>電子工業</h2>
             <span class="industry-count">16檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -12483,6 +12782,13 @@ footer {
             <h2>食品工業</h2>
             <span class="industry-count">6檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -13260,6 +13566,13 @@ footer {
             <h2>半導體業</h2>
             <span class="industry-count">5檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -13908,6 +14221,13 @@ footer {
         <div class="industry-header">
             <h2>汽車工業</h2>
             <span class="industry-count">5檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -14558,6 +14878,13 @@ footer {
             <h2>鋼鐵工業</h2>
             <span class="industry-count">4檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -15079,6 +15406,13 @@ footer {
             <h2>其他</h2>
             <span class="industry-count">3檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -15471,6 +15805,13 @@ footer {
         <div class="industry-header">
             <h2>其他電子業</h2>
             <span class="industry-count">3檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -15865,6 +16206,13 @@ footer {
             <h2>化學生技醫療</h2>
             <span class="industry-count">2檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -16129,6 +16477,13 @@ footer {
         <div class="industry-header">
             <h2>電子零組件業</h2>
             <span class="industry-count">2檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -16395,6 +16750,13 @@ footer {
             <h2>電機機械</h2>
             <span class="industry-count">2檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -16659,6 +17021,13 @@ footer {
         <div class="industry-header">
             <h2>電腦及週邊設備業</h2>
             <span class="industry-count">2檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -16925,6 +17294,13 @@ footer {
             <h2>光電業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -17061,6 +17437,13 @@ footer {
         <div class="industry-header">
             <h2>化學工業</h2>
             <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -17199,6 +17582,13 @@ footer {
             <h2>建材營造</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -17335,6 +17725,13 @@ footer {
         <div class="industry-header">
             <h2>觀光餐旅</h2>
             <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -17473,6 +17870,13 @@ footer {
             <h2>通信網路業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -17609,6 +18013,13 @@ footer {
         <div class="industry-header">
             <h2>電器電纜</h2>
             <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -17751,6 +18162,13 @@ footer {
         <div class="industry-header">
             <h2>其他電子類</h2>
             <span class="industry-count">2檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -18017,6 +18435,13 @@ footer {
             <h2>半導體業</h2>
             <span class="industry-count">2檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -18281,6 +18706,13 @@ footer {
         <div class="industry-header">
             <h2>數位雲端類</h2>
             <span class="industry-count">2檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -18547,6 +18979,13 @@ footer {
             <h2>觀光餐旅</h2>
             <span class="industry-count">2檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -18811,6 +19250,13 @@ footer {
         <div class="industry-header">
             <h2>電機機械</h2>
             <span class="industry-count">2檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -19077,6 +19523,13 @@ footer {
             <h2>食品工業</h2>
             <span class="industry-count">2檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -19342,6 +19795,13 @@ footer {
             <h2>光電業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -19478,6 +19938,13 @@ footer {
         <div class="industry-header">
             <h2>生技醫療業</h2>
             <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -19616,6 +20083,13 @@ footer {
             <h2>綠能環保類</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -19753,6 +20227,13 @@ footer {
             <h2>運動休閒類</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -19889,6 +20370,13 @@ footer {
         <div class="industry-header">
             <h2>鋼鐵工業</h2>
             <span class="industry-count">1檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -20031,6 +20519,13 @@ footer {
         <div class="industry-header">
             <h2>生技醫療業</h2>
             <span class="industry-count">2檔</span>
+        </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
         </div>
         <div class="stock-grid">
             
@@ -20297,6 +20792,13 @@ footer {
             <h2>電腦及週邊設備業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-name">股票</span>
+            <span class="ch-rev">營收</span>
+            <span class="ch-pct">年增率</span>
+            <span class="ch-pct">月增率</span>
+            <span class="ch-pct">超越同期</span>
+        </div>
         <div class="stock-grid">
             
             <div class="stock-card">
@@ -20442,12 +20944,26 @@ footer {
 </footer>
 
 <script>
+// 市場分頁切換
 document.querySelectorAll('.market-tab').forEach(tab => {
     tab.addEventListener('click', () => {
         document.querySelectorAll('.market-tab').forEach(t => t.classList.remove('active'));
         document.querySelectorAll('.market-panel').forEach(p => p.classList.remove('active'));
         tab.classList.add('active');
         document.getElementById('panel-' + tab.dataset.market).classList.add('active');
+    });
+});
+
+// 檢視模式切換 (標準 / 精簡)
+document.querySelectorAll('.view-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (btn.dataset.view === 'compact') {
+            document.body.classList.add('compact');
+        } else {
+            document.body.classList.remove('compact');
+        }
     });
 });
 </script>
