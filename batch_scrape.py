@@ -43,6 +43,7 @@ COL_MAP = {
     "營業收入-去年同月增減(%)": "yoy_pct",
     "出表日期": "publish_date",
     "資料年月": "period",
+    "備註": "remark",
 }
 
 

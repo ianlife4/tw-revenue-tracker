@@ -294,6 +294,23 @@ header .update-time {{
     border-radius: 4px;
 }}
 
+/* ===== 備註 ===== */
+.remark-row {{
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: #1c2128;
+    border-left: 3px solid #f0883e;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.78rem;
+    color: #d2a8ff;
+    line-height: 1.5;
+}}
+
+.remark-icon {{
+    color: #f0883e;
+    margin-right: 4px;
+}}
+
 .card-links {{
     display: flex;
     gap: 8px;
@@ -694,6 +711,47 @@ body.compact .chart-toggle {{
     display: none;
 }}
 
+body.compact .remark-row {{
+    display: none;
+}}
+
+/* compact 展開狀態 */
+body.compact .stock-card.expanded {{
+    display: block;
+    padding: 16px;
+    border-color: #58a6ff;
+}}
+
+body.compact .stock-card.expanded .top-row {{
+    display: flex;
+    margin-bottom: 8px;
+}}
+
+body.compact .stock-card.expanded .detail-row {{
+    display: flex !important;
+    margin-top: 6px;
+}}
+
+body.compact .stock-card.expanded .detail-row .revenue-label {{
+    display: inline !important;
+}}
+
+body.compact .stock-card.expanded .tag {{
+    display: inline-block !important;
+}}
+
+body.compact .stock-card.expanded .card-links {{
+    display: flex !important;
+}}
+
+body.compact .stock-card.expanded .chart-toggle {{
+    display: block !important;
+}}
+
+body.compact .stock-card.expanded .remark-row {{
+    display: block !important;
+}}
+
 body.compact .exceed-tag {{
     font-size: 0.7rem;
 }}
@@ -838,13 +896,9 @@ footer {{
     </div>
     <div class="search-result-info" id="searchResultInfo"></div>
 
-    <!-- 工具列: 日期篩選 + 檢視模式 -->
+    <!-- 工具列 -->
     <div class="toolbar">
-        <div class="date-filter">
-            <span class="date-label">公布日</span>
-            <div class="date-pill" data-date="all">全部</div>
-            {date_pills}
-        </div>
+        {date_filter_html}
         <div class="view-toggle">
             <div class="view-btn active" data-view="normal">&#9638; 標準</div>
             <div class="view-btn" data-view="compact">&#9776; 精簡</div>
@@ -1021,6 +1075,20 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
     }}
 
     window._applyDateFilter = applyDateFilter;
+}})();
+
+// ===== 精簡模式點擊展開卡片 =====
+(function() {{
+    document.addEventListener('click', function(e) {{
+        if (!document.body.classList.contains('compact')) return;
+        // 不攔截連結和 details/summary 的點擊
+        if (e.target.closest('a') || e.target.closest('summary') || e.target.closest('.ch-col')) return;
+
+        const card = e.target.closest('.stock-card');
+        if (card) {{
+            card.classList.toggle('expanded');
+        }}
+    }});
 }})();
 
 // 個股搜尋
@@ -1214,10 +1282,7 @@ STOCK_CARD_TEMPLATE = """
                     <span class="revenue-label">當月營收</span>
                     <span class="tag">創同期新高</span>
                 </div>
-                <div class="detail-row">
-                    <span class="revenue-label">公布日期</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">{publish_date}</span>
-                </div>
+                {date_row_html}
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
                     <span class="pct-change {yoy_class}">{yoy_display}</span>
@@ -1230,6 +1295,7 @@ STOCK_CARD_TEMPLATE = """
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+{exceed_pct}%</span>
                 </div>
+                {remark_html}
                 <div class="card-links">
                     <a href="{revenue_url}" target="_blank" class="card-link">營收公告</a>
                     <a href="{goodinfo_url}" target="_blank" class="card-link">基本資料</a>
@@ -1369,12 +1435,12 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
         mom_val = float(mom) if pd.notna(mom) else 0
         exceed_val = float(exceed) if pd.notna(exceed) else 0
 
-        # 公布日期
+        # 公布日期 (MOPS CSV 只有出表日期，非個股公告日)
         pub_date = row.get("date", "")
         if pd.notna(pub_date) and pub_date:
             pub_date = str(pub_date)[:10]
         else:
-            pub_date = "N/A"
+            pub_date = ""
 
         # 生成外部連結
         sid = str(row.get("stock_id", ""))
@@ -1389,6 +1455,22 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
 
         revenue_raw = float(row.get("revenue", 0)) if pd.notna(row.get("revenue", 0)) else 0
 
+        # 備註 (MOPS 營收變動原因)
+        remark = row.get("remark", "")
+        if pd.notna(remark) and str(remark).strip() and str(remark).strip() != "-":
+            remark_text = str(remark).strip()
+            remark_html = f'<div class="remark-row"><span class="remark-icon">&#9432;</span> {remark_text}</div>'
+        else:
+            remark_html = ""
+
+        # 公布日期行 (只有真正有多個不同日期時才顯示)
+        date_row_html = ""
+        if pub_date and hasattr(df, '_show_date') and df._show_date:
+            date_row_html = f"""<div class="detail-row">
+                    <span class="revenue-label">公布日期</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">{pub_date}</span>
+                </div>"""
+
         cards += STOCK_CARD_TEMPLATE.format(
             stock_name=row.get("stock_name", ""),
             stock_id=sid,
@@ -1398,11 +1480,13 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
             mom_raw=mom_val,
             exceed_raw=exceed_val,
             publish_date=pub_date,
+            date_row_html=date_row_html,
             yoy_display=f"{yoy_val:+.2f}%" if yoy_val != 0 else "N/A",
             yoy_class="" if yoy_val >= 0 else "negative",
             mom_display=f"{mom_val:+.2f}%" if mom_val != 0 else "N/A",
             mom_class="" if mom_val >= 0 else "negative",
             exceed_pct=f"{exceed_val:.1f}",
+            remark_html=remark_html,
             revenue_url=revenue_url,
             goodinfo_url=goodinfo_url,
             verify_url=verify_url,
@@ -1472,21 +1556,47 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
     emerging_count = len(df[df["market"] == "emerging"]) if "market" in df.columns else 0
     industries = df["industry"].nunique() if "industry" in df.columns else 0
 
+    # 判斷公布日期是否有多個不同值 (MOPS CSV 通常全部同一天，非個股真實公告日)
+    show_date = False
+    if "date" in df.columns:
+        unique_dates = df["date"].dropna().astype(str).str.strip().unique()
+        unique_dates = [d for d in unique_dates if d and d != "N/A"]
+        show_date = len(unique_dates) > 1
+    df._show_date = show_date
+
     # 各面板的產業區塊
     all_sections = _build_industry_sections(df, year, month)
-    sii_sections = _build_industry_sections(df[df["market"] == "sii"], year, month) if sii_count > 0 else '<p class="empty-msg">本分類無資料</p>'
-    otc_sections = _build_industry_sections(df[df["market"] == "otc"], year, month) if otc_count > 0 else '<p class="empty-msg">本分類無資料</p>'
-    tib_sections = _build_industry_sections(df[df["market"] == "tib"], year, month) if tib_count > 0 else '<p class="empty-msg">本分類無資料</p>'
-    emerging_sections = _build_industry_sections(df[df["market"] == "emerging"], year, month) if emerging_count > 0 else '<p class="empty-msg">本分類無資料</p>'
 
-    # 生成公布日期 pills
-    date_pills = _build_date_pills(df)
+    def _market_sections(market_key):
+        sub = df[df["market"] == market_key].copy()
+        if sub.empty:
+            return '<p class="empty-msg">本分類無資料</p>'
+        sub._show_date = show_date
+        return _build_industry_sections(sub, year, month)
+
+    sii_sections = _market_sections("sii") if sii_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+    otc_sections = _market_sections("otc") if otc_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+    tib_sections = _market_sections("tib") if tib_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+    emerging_sections = _market_sections("emerging") if emerging_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+
+    # 生成公布日期 pills (只有多日期時才顯示)
+    date_pills = _build_date_pills(df) if show_date else ""
 
     # 計算上/下月檔名
     prev_y, prev_m = (year, month - 1) if month > 1 else (year - 1, 12)
     next_y, next_m = (year, month + 1) if month < 12 else (year + 1, 1)
     prev_month_file = f"{prev_y}_{prev_m:02d}.html"
     next_month_file = f"{next_y}_{next_m:02d}.html"
+
+    # 日期篩選區塊 (只有多日期時才顯示)
+    if date_pills:
+        date_filter_html = f"""<div class="date-filter">
+            <span class="date-label">公布日</span>
+            <div class="date-pill" data-date="all">全部</div>
+            {date_pills}
+        </div>"""
+    else:
+        date_filter_html = ""
 
     html = HTML_TEMPLATE.format(
         year=year,
@@ -1499,7 +1609,7 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
         tib_count=tib_count,
         emerging_count=emerging_count,
         industry_count=industries,
-        date_pills=date_pills,
+        date_filter_html=date_filter_html,
         prev_month_file=prev_month_file,
         next_month_file=next_month_file,
         all_sections=all_sections,
@@ -1527,7 +1637,7 @@ def _generate_empty_html(year: int, month: int, compare_years: int = 5) -> str:
         tib_count=0,
         emerging_count=0,
         industry_count=0,
-        date_pills="",
+        date_filter_html="",
         prev_month_file=f"{prev_y}_{prev_m:02d}.html",
         next_month_file=f"{next_y}_{next_m:02d}.html",
         all_sections=empty,
