@@ -68,28 +68,32 @@ def find_revenue_new_highs(
         * 100
     ).round(2)
 
-    # 計算年增率 (與去年同月比)
-    prev_year = current_year - 1
-    if prev_year in history:
-        prev_df = history[prev_year][["stock_id", "revenue"]].copy()
-        prev_df.columns = ["stock_id", "prev_year_revenue"]
-        new_highs = new_highs.merge(prev_df, on="stock_id", how="left")
-        new_highs["yoy_pct"] = (
-            (new_highs["revenue"] - new_highs["prev_year_revenue"])
-            / new_highs["prev_year_revenue"]
-            * 100
-        ).round(2)
+    # 計算年增率 (與去年同月比) — 只在沒有現成 yoy_pct 時才計算
+    if "yoy_pct" not in new_highs.columns or new_highs["yoy_pct"].isna().all():
+        prev_year = current_year - 1
+        if prev_year in history:
+            prev_df = history[prev_year][["stock_id", "revenue"]].copy()
+            prev_df.columns = ["stock_id", "py_revenue"]
+            new_highs = new_highs.merge(prev_df, on="stock_id", how="left")
+            new_highs["yoy_pct"] = (
+                (new_highs["revenue"] - new_highs["py_revenue"])
+                / new_highs["py_revenue"]
+                * 100
+            ).round(2)
+            new_highs = new_highs.drop(columns=["py_revenue"], errors="ignore")
 
-    # 計算月增率 (與上個月比)
-    if "prev_month" in history:
-        pm_df = history["prev_month"][["stock_id", "revenue"]].copy()
-        pm_df.columns = ["stock_id", "prev_month_revenue"]
-        new_highs = new_highs.merge(pm_df, on="stock_id", how="left")
-        new_highs["mom_pct"] = (
-            (new_highs["revenue"] - new_highs["prev_month_revenue"])
-            / new_highs["prev_month_revenue"]
-            * 100
-        ).round(2)
+    # 計算月增率 (與上個月比) — 只在沒有現成 mom_pct 時才計算
+    if "mom_pct" not in new_highs.columns or new_highs["mom_pct"].isna().all():
+        if "prev_month" in history:
+            pm_df = history["prev_month"][["stock_id", "revenue"]].copy()
+            pm_df.columns = ["stock_id", "pm_revenue"]
+            new_highs = new_highs.merge(pm_df, on="stock_id", how="left")
+            new_highs["mom_pct"] = (
+                (new_highs["revenue"] - new_highs["pm_revenue"])
+                / new_highs["pm_revenue"]
+                * 100
+            ).round(2)
+            new_highs = new_highs.drop(columns=["pm_revenue"], errors="ignore")
 
     # 使用 FinMind 提供的產業分類，或回退到 "其他"
     if "industry" not in new_highs.columns:
