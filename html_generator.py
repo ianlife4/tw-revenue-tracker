@@ -1,10 +1,12 @@
 """
 HTML 報表生成模組
 生成類似 chengwaye.com 風格的深色主題靜態 HTML 頁面
-支援上市 / 上櫃 / 興櫃 分頁顯示
+支援上市 / 上櫃 / 創新板 / 興櫃 分頁顯示
+每張卡片含可展開的歷年同期營收柱狀圖
 """
 
 import os
+import json
 import logging
 from datetime import datetime
 
@@ -18,6 +20,7 @@ logger = logging.getLogger(__name__)
 MARKET_MAP = {
     "sii": {"name": "上市", "key": "sii"},
     "otc": {"name": "上櫃", "key": "otc"},
+    "tib": {"name": "創新板", "key": "tib"},
     "emerging": {"name": "興櫃", "key": "emerging"},
 }
 
@@ -126,10 +129,11 @@ header .update-time {{
     gap: 0;
     margin: 0 0 30px;
     border-bottom: 2px solid #21262d;
+    flex-wrap: wrap;
 }}
 
 .market-tab {{
-    padding: 12px 32px;
+    padding: 12px 24px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
@@ -203,7 +207,7 @@ header .update-time {{
 
 .stock-grid {{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 12px;
     padding: 16px;
 }}
@@ -316,6 +320,99 @@ header .update-time {{
     border-color: #58a6ff;
 }}
 
+/* ===== 柱狀圖 ===== */
+.chart-toggle {{
+    margin-top: 10px;
+    border-top: 1px solid #21262d;
+}}
+
+.chart-toggle summary {{
+    cursor: pointer;
+    padding: 8px 0 4px;
+    font-size: 0.8rem;
+    color: #58a6ff;
+    user-select: none;
+    list-style: none;
+}}
+
+.chart-toggle summary::-webkit-details-marker {{
+    display: none;
+}}
+
+.chart-toggle summary::before {{
+    content: "\\25B6  ";
+    font-size: 0.65rem;
+    transition: transform 0.2s;
+    display: inline-block;
+}}
+
+.chart-toggle[open] summary::before {{
+    transform: rotate(90deg);
+}}
+
+.mini-chart {{
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    padding: 12px 4px 4px;
+    height: 140px;
+}}
+
+.chart-col {{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+    min-width: 0;
+}}
+
+.chart-bar {{
+    width: 100%;
+    max-width: 40px;
+    border-radius: 3px 3px 0 0;
+    background: #30363d;
+    transition: height 0.3s;
+    position: relative;
+    min-height: 2px;
+}}
+
+.chart-bar.current {{
+    background: #f85149;
+}}
+
+.chart-bar-val {{
+    font-size: 0.6rem;
+    color: #8b949e;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    text-align: center;
+}}
+
+.chart-bar.current + .chart-bar-val,
+.chart-col:has(.chart-bar.current) .chart-bar-val {{
+    color: #f85149;
+}}
+
+.chart-year {{
+    font-size: 0.6rem;
+    color: #6e7681;
+    margin-top: 3px;
+}}
+
+.chart-col.is-current .chart-bar-val {{
+    color: #f85149;
+    font-weight: 600;
+}}
+
+.chart-col.is-current .chart-year {{
+    color: #f85149;
+}}
+
 .empty-msg {{
     text-align: center;
     color: #8b949e;
@@ -338,8 +435,8 @@ footer {{
         font-size: 1.5rem;
     }}
     .market-tab {{
-        padding: 10px 18px;
-        font-size: 0.9rem;
+        padding: 10px 14px;
+        font-size: 0.85rem;
     }}
 }}
 </style>
@@ -350,9 +447,9 @@ footer {{
         <h1>營收創同期新高</h1>
         <div class="subtitle">自動比對公開資訊觀測站每月營收資料，篩選創近 {compare_years} 年同期新高股票</div>
         <div class="date-nav">
-            <a class="nav-btn" href="{prev_month_file}" title="上個月">◀ 前一月</a>
+            <a class="nav-btn" href="{prev_month_file}" title="上個月">&#9664; 前一月</a>
             <span class="date-info">{year}/{month:02d}</span>
-            <a class="nav-btn" href="{next_month_file}" title="下個月">後一月 ▶</a>
+            <a class="nav-btn" href="{next_month_file}" title="下個月">後一月 &#9654;</a>
         </div>
         <div class="update-time">{update_time} 更新</div>
     </header>
@@ -371,6 +468,10 @@ footer {{
             <div class="label">上櫃</div>
         </div>
         <div class="summary-item">
+            <div class="number">{tib_count}</div>
+            <div class="label">創新板</div>
+        </div>
+        <div class="summary-item">
             <div class="number">{emerging_count}</div>
             <div class="label">興櫃</div>
         </div>
@@ -385,6 +486,7 @@ footer {{
         <div class="market-tab active" data-market="all">全部 <span class="tab-count">{total_count}</span></div>
         <div class="market-tab" data-market="sii">上市 <span class="tab-count">{sii_count}</span></div>
         <div class="market-tab" data-market="otc">上櫃 <span class="tab-count">{otc_count}</span></div>
+        <div class="market-tab" data-market="tib">創新板 <span class="tab-count">{tib_count}</span></div>
         <div class="market-tab" data-market="emerging">興櫃 <span class="tab-count">{emerging_count}</span></div>
     </div>
 
@@ -401,6 +503,11 @@ footer {{
     <!-- 上櫃面板 -->
     <div class="market-panel" id="panel-otc">
         {otc_sections}
+    </div>
+
+    <!-- 創新板面板 -->
+    <div class="market-panel" id="panel-tib">
+        {tib_sections}
     </div>
 
     <!-- 興櫃面板 -->
@@ -467,14 +574,82 @@ STOCK_CARD_TEMPLATE = """
                     <span class="exceed-tag">+{exceed_pct}%</span>
                 </div>
                 <div class="card-links">
-                    <a href="{mops_url}" target="_blank" class="card-link">營收公告</a>
+                    <a href="{revenue_url}" target="_blank" class="card-link">營收公告</a>
                     <a href="{goodinfo_url}" target="_blank" class="card-link">基本資料</a>
-                    <a href="{twse_url}" target="_blank" class="card-link">查證</a>
+                    <a href="{verify_url}" target="_blank" class="card-link">查證</a>
                 </div>
+                {chart_html}
             </div>"""
 
 
-def _build_cards(df: pd.DataFrame) -> str:
+def _build_chart_html(row: pd.Series, current_year: int) -> str:
+    """為單一股票生成歷年同期營收柱狀圖 HTML"""
+    # 收集所有 rev_YYYY 欄位
+    rev_data = {}
+    for col in row.index:
+        if col.startswith("rev_") and col[4:].isdigit():
+            year = int(col[4:])
+            val = row[col]
+            if pd.notna(val) and val > 0:
+                rev_data[year] = float(val)
+
+    if len(rev_data) < 2:
+        return ""  # 不足兩年資料就不顯示圖表
+
+    # 按年份排序
+    years = sorted(rev_data.keys())
+    max_rev = max(rev_data.values())
+    if max_rev == 0:
+        return ""
+
+    bars_html = ""
+    for y in years:
+        val = rev_data[y]
+        pct = (val / max_rev) * 100
+        height = max(pct, 3)  # 最小高度 3%
+        is_current = "is-current" if y == current_year else ""
+        bar_class = "current" if y == current_year else ""
+        display_val = format_revenue(val)
+        bars_html += f"""
+            <div class="chart-col {is_current}">
+                <span class="chart-bar-val">{display_val}</span>
+                <div class="chart-bar {bar_class}" style="height:{height:.0f}%"></div>
+                <span class="chart-year">{y}</span>
+            </div>"""
+
+    return f"""
+                <details class="chart-toggle">
+                    <summary>歷年同期營收比較</summary>
+                    <div class="mini-chart">{bars_html}
+                    </div>
+                </details>"""
+
+
+def _get_external_urls(sid: str, market: str, rev_year: int, rev_month: int) -> tuple[str, str, str]:
+    """生成外部連結 URL
+
+    Returns:
+        (revenue_url, goodinfo_url, verify_url)
+    """
+    roc_year = rev_year - 1911
+
+    # Goodinfo 基本資料
+    goodinfo_url = f"https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID={sid}"
+
+    # 營收公告 - 使用 Goodinfo 月營收頁面 (MOPS 需要 POST 不支援直開)
+    revenue_url = f"https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID={sid}"
+
+    # 查證 - 使用 MoneyDJ 個股頁面
+    verify_url = f"https://concords.moneydj.com/z/zc/zca/zca_{sid}.djhtm"
+
+    # 興櫃股票用 MoneyDJ 興櫃版面
+    if market == "emerging":
+        revenue_url = f"https://concords.moneydj.com/z/zu/zue/zuef/zuef_{sid}_0_2.djhtm"
+
+    return revenue_url, goodinfo_url, verify_url
+
+
+def _build_cards(df: pd.DataFrame, current_year: int = 0) -> str:
     """為一組股票 DataFrame 生成卡片 HTML"""
     cards = ""
     for _, row in df.iterrows():
@@ -489,26 +664,20 @@ def _build_cards(df: pd.DataFrame) -> str:
         # 公布日期
         pub_date = row.get("date", "")
         if pd.notna(pub_date) and pub_date:
-            pub_date = str(pub_date)[:10]  # 取 YYYY-MM-DD
+            pub_date = str(pub_date)[:10]
         else:
             pub_date = "N/A"
 
         # 生成外部連結
-        sid = row.get("stock_id", "")
+        sid = str(row.get("stock_id", ""))
+        market = str(row.get("market", ""))
         rev_year = int(row.get("revenue_year", 0)) if pd.notna(row.get("revenue_year", None)) else 0
         rev_month = int(row.get("revenue_month", 0)) if pd.notna(row.get("revenue_month", None)) else 0
-        roc_year = rev_year - 1911  # 西元轉民國
 
-        # MOPS 營收公告 (公開資訊觀測站)
-        mops_url = (
-            f"https://mops.twse.com.tw/mops/web/t05st10_ifrs?"
-            f"encodeURIComponent=1&step=1&firstin=1&off=1&TYPEK=all"
-            f"&year={roc_year}&month={rev_month:02d}&co_id={sid}"
-        )
-        # Goodinfo 基本資料
-        goodinfo_url = f"https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID={sid}"
-        # 證交所/櫃買中心
-        twse_url = f"https://mops.twse.com.tw/mops/web/t146sb05?co_id={sid}"
+        revenue_url, goodinfo_url, verify_url = _get_external_urls(sid, market, rev_year, rev_month)
+
+        # 柱狀圖
+        chart_html = _build_chart_html(row, current_year) if current_year > 0 else ""
 
         cards += STOCK_CARD_TEMPLATE.format(
             stock_name=row.get("stock_name", ""),
@@ -520,14 +689,15 @@ def _build_cards(df: pd.DataFrame) -> str:
             mom_display=f"{mom_val:+.2f}%" if mom_val != 0 else "N/A",
             mom_class="" if mom_val >= 0 else "negative",
             exceed_pct=f"{exceed_val:.1f}",
-            mops_url=mops_url,
+            revenue_url=revenue_url,
             goodinfo_url=goodinfo_url,
-            twse_url=twse_url,
+            verify_url=verify_url,
+            chart_html=chart_html,
         )
     return cards
 
 
-def _build_industry_sections(df: pd.DataFrame) -> str:
+def _build_industry_sections(df: pd.DataFrame, current_year: int = 0) -> str:
     """依產業分組生成區塊 HTML"""
     if df.empty:
         return '<p class="empty-msg">本分類無營收創同期新高資料</p>'
@@ -536,7 +706,7 @@ def _build_industry_sections(df: pd.DataFrame) -> str:
     grouped = df.groupby("industry")
 
     for industry, group in sorted(grouped, key=lambda x: -len(x[1])):
-        cards = _build_cards(group)
+        cards = _build_cards(group, current_year)
         sections += INDUSTRY_SECTION_TEMPLATE.format(
             industry=industry,
             count=len(group),
@@ -546,31 +716,23 @@ def _build_industry_sections(df: pd.DataFrame) -> str:
 
 
 def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 5) -> str:
-    """生成 HTML 報表
-
-    Args:
-        df: 營收創同期新高的 DataFrame
-        year: 西元年
-        month: 月份
-        compare_years: 比對年數
-
-    Returns:
-        HTML 字串
-    """
+    """生成 HTML 報表"""
     if df.empty:
         return _generate_empty_html(year, month, compare_years)
 
     # 各市場計數
     sii_count = len(df[df["market"] == "sii"]) if "market" in df.columns else 0
     otc_count = len(df[df["market"] == "otc"]) if "market" in df.columns else 0
+    tib_count = len(df[df["market"] == "tib"]) if "market" in df.columns else 0
     emerging_count = len(df[df["market"] == "emerging"]) if "market" in df.columns else 0
     industries = df["industry"].nunique() if "industry" in df.columns else 0
 
     # 各面板的產業區塊
-    all_sections = _build_industry_sections(df)
-    sii_sections = _build_industry_sections(df[df["market"] == "sii"]) if sii_count > 0 else '<p class="empty-msg">本分類無資料</p>'
-    otc_sections = _build_industry_sections(df[df["market"] == "otc"]) if otc_count > 0 else '<p class="empty-msg">本分類無資料</p>'
-    emerging_sections = _build_industry_sections(df[df["market"] == "emerging"]) if emerging_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+    all_sections = _build_industry_sections(df, year)
+    sii_sections = _build_industry_sections(df[df["market"] == "sii"], year) if sii_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+    otc_sections = _build_industry_sections(df[df["market"] == "otc"], year) if otc_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+    tib_sections = _build_industry_sections(df[df["market"] == "tib"], year) if tib_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+    emerging_sections = _build_industry_sections(df[df["market"] == "emerging"], year) if emerging_count > 0 else '<p class="empty-msg">本分類無資料</p>'
 
     # 計算上/下月檔名
     prev_y, prev_m = (year, month - 1) if month > 1 else (year - 1, 12)
@@ -586,6 +748,7 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
         total_count=len(df),
         sii_count=sii_count,
         otc_count=otc_count,
+        tib_count=tib_count,
         emerging_count=emerging_count,
         industry_count=industries,
         prev_month_file=prev_month_file,
@@ -593,6 +756,7 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
         all_sections=all_sections,
         sii_sections=sii_sections,
         otc_sections=otc_sections,
+        tib_sections=tib_sections,
         emerging_sections=emerging_sections,
     )
     return html
@@ -611,6 +775,7 @@ def _generate_empty_html(year: int, month: int, compare_years: int = 5) -> str:
         total_count=0,
         sii_count=0,
         otc_count=0,
+        tib_count=0,
         emerging_count=0,
         industry_count=0,
         prev_month_file=f"{prev_y}_{prev_m:02d}.html",
@@ -618,6 +783,7 @@ def _generate_empty_html(year: int, month: int, compare_years: int = 5) -> str:
         all_sections=empty,
         sii_sections=empty,
         otc_sections=empty,
+        tib_sections=empty,
         emerging_sections=empty,
     )
 

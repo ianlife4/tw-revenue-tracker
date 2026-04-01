@@ -102,6 +102,15 @@ def find_revenue_new_highs(
 
     new_highs["compare_years"] = len(past_years)
 
+    # 附加歷年同期營收資料 (供柱狀圖使用)
+    for year_key, year_df in history.items():
+        if isinstance(year_key, int):
+            col_name = f"rev_{year_key}"
+            year_rev = year_df[["stock_id", "revenue"]].copy()
+            year_rev.columns = ["stock_id", col_name]
+            year_rev = year_rev.drop_duplicates("stock_id", keep="first")
+            new_highs = new_highs.merge(year_rev, on="stock_id", how="left")
+
     logger.info(f"共 {len(new_highs)} 檔營收創同期新高 (比對 {len(past_years)} 年)")
     return new_highs.reset_index(drop=True)
 

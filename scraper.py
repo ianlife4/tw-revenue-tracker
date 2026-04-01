@@ -27,7 +27,9 @@ FINMIND_API = "https://api.finmindtrade.com/api/v4/data"
 
 
 def get_stock_list() -> pd.DataFrame:
-    """取得所有上市、上櫃、興櫃股票清單 (從 FinMind)"""
+    """取得所有上市、上櫃、興櫃股票清單 (從 FinMind)
+    自動識別創新板股票 (industry_category == '創新板股票' 或名稱以 -創 結尾)
+    """
     cache_path = os.path.join(DATA_DIR, "stock_list.csv")
 
     # 快取一天
@@ -51,12 +53,36 @@ def get_stock_list() -> pd.DataFrame:
     # 只保留純數字代號 (排除 ETF 等)
     df = df[df["stock_id"].str.match(r"^\d{4}$")].copy()
 
+    # --- 識別創新板股票 ---
+    # 方法1: industry_category 為 "創新板股票"
+    tib_ids_cat = set(df[df["industry_category"] == "創新板股票"]["stock_id"].unique())
+    # 方法2: 名稱以「創」結尾 (e.g. 鴻華先進-創, 錼創科技-KY創)
+    tib_ids_name = set(df[df["stock_name"].str.endswith("創", na=False)]["stock_id"].unique())
+    tib_ids = tib_ids_cat | tib_ids_name
+    logger.info(f"偵測到 {len(tib_ids)} 檔創新板股票: {sorted(tib_ids)}")
+
+    # 去除 industry_category == "創新板股票" 的重複列 (保留實際產業分類的那列)
+    df_tib_rows = df[df["industry_category"] == "創新板股票"]
+    df = df[df["industry_category"] != "創新板股票"].copy()
+
+    # 如果有 TIB 股票只有 "創新板股票" 列沒有其他產業列，補回來
+    missing_tib = tib_ids - set(df["stock_id"].unique())
+    if missing_tib:
+        df = pd.concat([df, df_tib_rows[df_tib_rows["stock_id"].isin(missing_tib)]], ignore_index=True)
+
+    # 標記創新板
+    df["is_tib"] = df["stock_id"].isin(tib_ids)
+
+    # 去除重複 stock_id (保留最新日期的)
+    df = df.sort_values("date", ascending=False).drop_duplicates("stock_id", keep="first")
+
     os.makedirs(DATA_DIR, exist_ok=True)
     df.to_csv(cache_path, index=False, encoding="utf-8-sig")
-    n_twse = len(df[df['type'] == 'twse'])
+    n_twse = len(df[(df['type'] == 'twse') & (~df['is_tib'])])
     n_tpex = len(df[df['type'] == 'tpex'])
     n_emerging = len(df[df['type'] == 'emerging'])
-    logger.info(f"股票清單: {len(df)} 檔 (上市 {n_twse}, 上櫃 {n_tpex}, 興櫃 {n_emerging})")
+    n_tib = len(df[df['is_tib']])
+    logger.info(f"股票清單: {len(df)} 檔 (上市 {n_twse}, 上櫃 {n_tpex}, 興櫃 {n_emerging}, 創新板 {n_tib})")
     return df
 
 
@@ -138,8 +164,12 @@ def scrape_all_revenue(target_month: int, current_year: int, years_back: int = 5
             target_df = df[df["revenue_month"] == target_month].copy()
             if not target_df.empty:
                 target_df["stock_name"] = row.get("stock_name", "")
-                type_map = {"twse": "sii", "tpex": "otc", "emerging": "emerging"}
-                target_df["market"] = type_map.get(row.get("type", ""), "otc")
+                # 判斷市場別 (創新板優先)
+                if row.get("is_tib", False):
+                    target_df["market"] = "tib"
+                else:
+                    type_map = {"twse": "sii", "tpex": "otc", "emerging": "emerging"}
+                    target_df["market"] = type_map.get(row.get("type", ""), "otc")
                 target_df["industry"] = row.get("industry_category", "")
                 all_frames.append(target_df)
 
