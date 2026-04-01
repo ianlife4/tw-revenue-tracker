@@ -52,7 +52,7 @@ def fetch_mops_monthly(roc_year: int, month: int, market: str = "sii") -> pd.Dat
     Args:
         roc_year: 民國年
         month: 月份
-        market: 'sii' (上市) 或 'otc' (上櫃)
+        market: 'sii' (上市), 'otc' (上櫃), 'rotc' (興櫃)
 
     Returns:
         DataFrame with standardized columns
@@ -92,7 +92,9 @@ def fetch_mops_monthly(roc_year: int, month: int, market: str = "sii") -> pd.Dat
         western_year = roc_year + 1911
         df["revenue_year"] = western_year
         df["revenue_month"] = month
-        df["market"] = market
+        # rotc → emerging (內部統一用 emerging 代表興櫃)
+        market_internal = "emerging" if market == "rotc" else market
+        df["market"] = market_internal
         df["stock_id"] = df["stock_id"].astype(str).str.strip()
         df["date"] = df.get("publish_date", "")
 
@@ -166,7 +168,7 @@ def scrape_all_months(end_year: int, end_month: int, months_back: int = 12, year
     # 過濾掉不合理的年份
     periods_needed = {(y, m) for y, m in periods_needed if y >= 2018 and 1 <= m <= 12}
 
-    logger.info(f"需要抓取 {len(periods_needed)} 個月份 x 2 市場 = {len(periods_needed)*2} 次下載")
+    logger.info(f"需要抓取 {len(periods_needed)} 個月份 x 3 市場 = {len(periods_needed)*3} 次下載")
 
     # 檢查快取
     cached_df = None
@@ -177,13 +179,14 @@ def scrape_all_months(end_year: int, end_month: int, months_back: int = 12, year
             row = grp.iloc[0]
             cached_periods.add((int(row["revenue_year"]), int(row["revenue_month"]), row["market"]))
 
-    # 計算還缺哪些
+    # 計算還缺哪些 (上市 sii + 上櫃 otc + 興櫃 rotc)
+    # 注意: 快取中興櫃存為 "emerging"，但 MOPS 路徑用 "rotc"
     missing = []
     for y, m in sorted(periods_needed):
         roc = y - 1911
-        for mkt in ["sii", "otc"]:
-            if (y, m, mkt) not in cached_periods:
-                missing.append((roc, m, mkt, y))
+        for mops_mkt, cache_mkt in [("sii", "sii"), ("otc", "otc"), ("rotc", "emerging")]:
+            if (y, m, cache_mkt) not in cached_periods:
+                missing.append((roc, m, mops_mkt, y))
 
     if not missing:
         logger.info("全部命中快取，無需下載")
