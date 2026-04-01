@@ -320,7 +320,7 @@ header .update-time {{
     border-color: #58a6ff;
 }}
 
-/* ===== 柱狀圖 ===== */
+/* ===== 柱狀圖 (MoM 雙柱) ===== */
 .chart-toggle {{
     margin-top: 10px;
     border-top: 1px solid #21262d;
@@ -353,65 +353,88 @@ header .update-time {{
 .mini-chart {{
     display: flex;
     align-items: flex-end;
-    gap: 6px;
-    padding: 12px 4px 4px;
-    height: 140px;
+    gap: 2px;
+    padding: 12px 2px 4px;
+    height: 160px;
 }}
 
-.chart-col {{
+.chart-group {{
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
-    justify-content: flex-end;
     min-width: 0;
 }}
 
-.chart-bar {{
+.chart-bars-pair {{
+    display: flex;
+    align-items: flex-end;
+    gap: 1px;
+    flex: 1;
     width: 100%;
-    max-width: 40px;
-    border-radius: 3px 3px 0 0;
-    background: #30363d;
+    justify-content: center;
+}}
+
+.chart-bar {{
+    width: 45%;
+    max-width: 14px;
+    border-radius: 2px 2px 0 0;
     transition: height 0.3s;
-    position: relative;
     min-height: 2px;
 }}
 
-.chart-bar.current {{
-    background: #f85149;
+.chart-bar.prev {{
+    background: #58a6ff;
 }}
 
-.chart-bar-val {{
-    font-size: 0.6rem;
-    color: #8b949e;
-    margin-bottom: 2px;
+.chart-bar.curr {{
+    background: #f0883e;
+}}
+
+.chart-bar.curr.is-target {{
+    background: #f0883e;
+    box-shadow: 0 0 4px #f0883e88;
+}}
+
+.chart-month-label {{
+    font-size: 0.55rem;
+    color: #6e7681;
+    margin-top: 3px;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
     text-align: center;
 }}
 
-.chart-bar.current + .chart-bar-val,
-.chart-col:has(.chart-bar.current) .chart-bar-val {{
-    color: #f85149;
-}}
-
-.chart-year {{
-    font-size: 0.6rem;
-    color: #6e7681;
-    margin-top: 3px;
-}}
-
-.chart-col.is-current .chart-bar-val {{
-    color: #f85149;
+.chart-month-label.is-target {{
+    color: #f0883e;
     font-weight: 600;
 }}
 
-.chart-col.is-current .chart-year {{
-    color: #f85149;
+.chart-legend {{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 8px;
+    padding-bottom: 4px;
 }}
+
+.chart-legend span {{
+    font-size: 0.7rem;
+    color: #8b949e;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}}
+
+.legend-dot {{
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    display: inline-block;
+}}
+
+.legend-dot.prev {{ background: #58a6ff; }}
+.legend-dot.curr {{ background: #f0883e; }}
 
 .empty-msg {{
     text-align: center;
@@ -582,46 +605,90 @@ STOCK_CARD_TEMPLATE = """
             </div>"""
 
 
-def _build_chart_html(row: pd.Series, current_year: int) -> str:
-    """為單一股票生成歷年同期營收柱狀圖 HTML"""
-    # 收集所有 rev_YYYY 欄位
-    rev_data = {}
-    for col in row.index:
-        if col.startswith("rev_") and col[4:].isdigit():
-            year = int(col[4:])
-            val = row[col]
-            if pd.notna(val) and val > 0:
-                rev_data[year] = float(val)
+def _build_chart_html(row: pd.Series, current_year: int, current_month: int = 0) -> str:
+    """為單一股票生成近 12 個月 MoM 雙柱圖 HTML (前期 vs 本期)"""
+    import json as _json
 
-    if len(rev_data) < 2:
-        return ""  # 不足兩年資料就不顯示圖表
+    monthly_json = row.get("monthly_json", "[]")
+    if pd.isna(monthly_json) or not monthly_json:
+        return ""
 
-    # 按年份排序
-    years = sorted(rev_data.keys())
-    max_rev = max(rev_data.values())
+    try:
+        monthly = _json.loads(monthly_json)
+    except (ValueError, TypeError):
+        return ""
+
+    if len(monthly) < 2:
+        return ""
+
+    # 建立查詢表 {(year, month): revenue}
+    rev_map = {}
+    for m in monthly:
+        key = (m.get("year", 0), m.get("month", 0))
+        rev_map[key] = m.get("revenue", 0)
+
+    # 產生近 12 個月的列表 (含當月)
+    months_list = []
+    y, mo = current_year, current_month
+    for _ in range(12):
+        months_list.append((y, mo))
+        mo -= 1
+        if mo == 0:
+            mo = 12
+            y -= 1
+    months_list.reverse()
+
+    # 找所有數值的最大值 (本期+前期)
+    all_vals = []
+    for (y, mo) in months_list:
+        curr_val = rev_map.get((y, mo), 0)
+        prev_val = rev_map.get((y - 1, mo), 0)
+        if curr_val > 0:
+            all_vals.append(curr_val)
+        if prev_val > 0:
+            all_vals.append(prev_val)
+
+    if not all_vals:
+        return ""
+
+    max_rev = max(all_vals)
     if max_rev == 0:
         return ""
 
     bars_html = ""
-    for y in years:
-        val = rev_data[y]
-        pct = (val / max_rev) * 100
-        height = max(pct, 3)  # 最小高度 3%
-        is_current = "is-current" if y == current_year else ""
-        bar_class = "current" if y == current_year else ""
-        display_val = format_revenue(val)
+    for (y, mo) in months_list:
+        curr_val = rev_map.get((y, mo), 0)
+        prev_val = rev_map.get((y - 1, mo), 0)
+
+        curr_h = max((curr_val / max_rev) * 100, 2) if curr_val > 0 else 0
+        prev_h = max((prev_val / max_rev) * 100, 2) if prev_val > 0 else 0
+
+        is_target = (y == current_year and mo == current_month)
+        target_class = "is-target" if is_target else ""
+        label_class = "is-target" if is_target else ""
+
+        label = f"{mo}"
+
         bars_html += f"""
-            <div class="chart-col {is_current}">
-                <span class="chart-bar-val">{display_val}</span>
-                <div class="chart-bar {bar_class}" style="height:{height:.0f}%"></div>
-                <span class="chart-year">{y}</span>
+            <div class="chart-group">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:{prev_h:.0f}%" title="前期 {format_revenue(prev_val)}"></div>
+                    <div class="chart-bar curr {target_class}" style="height:{curr_h:.0f}%" title="本期 {format_revenue(curr_val)}"></div>
+                </div>
+                <span class="chart-month-label {label_class}">{label}</span>
             </div>"""
+
+    legend = """
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>"""
 
     return f"""
                 <details class="chart-toggle">
-                    <summary>歷年同期營收比較</summary>
+                    <summary>近 12 個月營收走勢</summary>
                     <div class="mini-chart">{bars_html}
-                    </div>
+                    </div>{legend}
                 </details>"""
 
 
@@ -649,7 +716,7 @@ def _get_external_urls(sid: str, market: str, rev_year: int, rev_month: int) -> 
     return revenue_url, goodinfo_url, verify_url
 
 
-def _build_cards(df: pd.DataFrame, current_year: int = 0) -> str:
+def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0) -> str:
     """為一組股票 DataFrame 生成卡片 HTML"""
     cards = ""
     for _, row in df.iterrows():
@@ -677,7 +744,7 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0) -> str:
         revenue_url, goodinfo_url, verify_url = _get_external_urls(sid, market, rev_year, rev_month)
 
         # 柱狀圖
-        chart_html = _build_chart_html(row, current_year) if current_year > 0 else ""
+        chart_html = _build_chart_html(row, current_year, current_month) if current_year > 0 else ""
 
         cards += STOCK_CARD_TEMPLATE.format(
             stock_name=row.get("stock_name", ""),
@@ -697,7 +764,7 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0) -> str:
     return cards
 
 
-def _build_industry_sections(df: pd.DataFrame, current_year: int = 0) -> str:
+def _build_industry_sections(df: pd.DataFrame, current_year: int = 0, current_month: int = 0) -> str:
     """依產業分組生成區塊 HTML"""
     if df.empty:
         return '<p class="empty-msg">本分類無營收創同期新高資料</p>'
@@ -706,7 +773,7 @@ def _build_industry_sections(df: pd.DataFrame, current_year: int = 0) -> str:
     grouped = df.groupby("industry")
 
     for industry, group in sorted(grouped, key=lambda x: -len(x[1])):
-        cards = _build_cards(group, current_year)
+        cards = _build_cards(group, current_year, current_month)
         sections += INDUSTRY_SECTION_TEMPLATE.format(
             industry=industry,
             count=len(group),
@@ -728,11 +795,11 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
     industries = df["industry"].nunique() if "industry" in df.columns else 0
 
     # 各面板的產業區塊
-    all_sections = _build_industry_sections(df, year)
-    sii_sections = _build_industry_sections(df[df["market"] == "sii"], year) if sii_count > 0 else '<p class="empty-msg">本分類無資料</p>'
-    otc_sections = _build_industry_sections(df[df["market"] == "otc"], year) if otc_count > 0 else '<p class="empty-msg">本分類無資料</p>'
-    tib_sections = _build_industry_sections(df[df["market"] == "tib"], year) if tib_count > 0 else '<p class="empty-msg">本分類無資料</p>'
-    emerging_sections = _build_industry_sections(df[df["market"] == "emerging"], year) if emerging_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+    all_sections = _build_industry_sections(df, year, month)
+    sii_sections = _build_industry_sections(df[df["market"] == "sii"], year, month) if sii_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+    otc_sections = _build_industry_sections(df[df["market"] == "otc"], year, month) if otc_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+    tib_sections = _build_industry_sections(df[df["market"] == "tib"], year, month) if tib_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+    emerging_sections = _build_industry_sections(df[df["market"] == "emerging"], year, month) if emerging_count > 0 else '<p class="empty-msg">本分類無資料</p>'
 
     # 計算上/下月檔名
     prev_y, prev_m = (year, month - 1) if month > 1 else (year - 1, 12)
