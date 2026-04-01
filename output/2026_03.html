@@ -285,6 +285,103 @@ header .update-time {
     margin-right: 4px;
 }
 
+/* ===== T+1 歷史表現 ===== */
+.t1-box {
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: #1c2128;
+    border-left: 3px solid #58a6ff;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.78rem;
+}
+
+.t1-title {
+    color: #58a6ff;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.t1-stats {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+}
+
+.t1-stats span {
+    color: #8b949e;
+}
+
+.t1-detail {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #21262d;
+}
+
+.t1-item {
+    font-family: "Consolas", "Monaco", monospace;
+    font-size: 0.72rem;
+    color: #8b949e;
+    background: #0d1117;
+    padding: 1px 6px;
+    border-radius: 3px;
+}
+
+/* ===== 推播提醒 ===== */
+.alert-section {
+    margin: 20px 0;
+    padding: 16px;
+    background: linear-gradient(135deg, #1c1f2b 0%, #1a1e2e 100%);
+    border: 1px solid #f0883e44;
+    border-radius: 10px;
+}
+
+.alert-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f0883e;
+    margin-bottom: 12px;
+}
+
+.alert-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 12px;
+    background: #161b22;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border-left: 3px solid #f0883e;
+}
+
+.alert-card .alert-sid {
+    font-family: "Consolas", monospace;
+    font-weight: 700;
+    color: #58a6ff;
+    min-width: 50px;
+}
+
+.alert-card .alert-name {
+    font-weight: 600;
+    min-width: 70px;
+}
+
+.alert-card .alert-avg {
+    font-family: "Consolas", monospace;
+    font-weight: 700;
+    color: #f85149;
+    min-width: 60px;
+}
+
+.alert-card .alert-msg {
+    font-size: 0.78rem;
+    color: #8b949e;
+    flex: 1;
+}
+
 .card-links {
     display: flex;
     gap: 8px;
@@ -862,7 +959,7 @@ footer {
             <span class="date-info">2026/03</span>
             <a class="nav-btn" href="2026_04.html" title="下個月">後一月 &#9654;</a>
         </div>
-        <div class="update-time">2026-04-01 23:25 更新</div>
+        <div class="update-time">2026-04-01 23:58 更新</div>
         <div style="margin-top:12px"><a href="index.html" style="color:#58a6ff;text-decoration:none;font-size:0.85rem;padding:4px 12px;border:1px solid #30363d;border-radius:6px;">← 即時申報</a></div>
     </header>
 
@@ -917,6 +1014,23 @@ footer {
         </div>
     </div>
 
+    <div class="alert-section">
+            <div class="alert-title">🔔 T-1 推播提醒：過去創新高後 T+1 容易大漲</div>
+            <div class="alert-card">
+                <span class="alert-sid">6438</span>
+                <span class="alert-name">迅得</span>
+                <span class="alert-avg">T+1 avg +5.2%</span>
+                <span class="alert-msg">過去 3 次創新高後 T+1 平均 +5.2%，正報酬率 67%，通常每月 1 日申報</span>
+            </div>
+<div class="alert-card">
+                <span class="alert-sid">2402</span>
+                <span class="alert-name">毅嘉</span>
+                <span class="alert-avg">T+1 avg +3.8%</span>
+                <span class="alert-msg">過去 3 次創新高後 T+1 平均 +3.8%，正報酬率 100%，通常每月 1 日申報</span>
+            </div>
+
+        </div>
+
     <!-- 全部面板 -->
     <div class="market-panel active" id="panel-all">
         
@@ -960,6 +1074,13 @@ footer {
                     <span class="exceed-tag">+15.7%</span>
                 </div>
                 
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#f85149">+5.2%</b></span>
+                        <span>最高 <b style="color:#f85149">+12.8%</b></span>
+                        <span>正報酬率 <b>67%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2021/03 <b style="color:#f85149">+12.8%</b></span><span class="t1-item">2022/03 <b style="color:#3fb950">-1.2%</b></span><span class="t1-item">2025/03 <b style="color:#f85149">+4.2%</b></span></div></div>
                 <div class="card-links">
                     <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6438" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6438" target="_blank" class="card-link">基本資料</a>
@@ -1086,6 +1207,13 @@ footer {
                     <span class="exceed-tag">+12.9%</span>
                 </div>
                 
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#f85149">+4.5%</b></span>
+                        <span>最高 <b style="color:#f85149">+4.5%</b></span>
+                        <span>正報酬率 <b>100%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2022/03 <b style="color:#f85149">+4.5%</b></span></div></div>
                 <div class="card-links">
                     <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=3030" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=3030" target="_blank" class="card-link">基本資料</a>
@@ -1228,6 +1356,13 @@ footer {
                     <span class="exceed-tag">+21.6%</span>
                 </div>
                 <div class="remark-row"><span class="remark-icon">&#9432;</span> 無</div>
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#f85149">+2.8%</b></span>
+                        <span>最高 <b style="color:#f85149">+2.8%</b></span>
+                        <span>正報酬率 <b>100%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2025/03 <b style="color:#f85149">+2.8%</b></span></div></div>
                 <div class="card-links">
                     <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6910" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6910" target="_blank" class="card-link">基本資料</a>
@@ -1353,6 +1488,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+10.1%</span>
                 </div>
+                
                 
                 <div class="card-links">
                     <a href="https://concords.moneydj.com/z/zu/zue/zuef/zuef_7781_0_2.djhtm" target="_blank" class="card-link">營收公告</a>
@@ -1496,6 +1632,13 @@ footer {
                     <span class="exceed-tag">+19.4%</span>
                 </div>
                 
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#f85149">+0.4%</b></span>
+                        <span>最高 <b style="color:#f85149">+0.4%</b></span>
+                        <span>正報酬率 <b>100%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2025/03 <b style="color:#f85149">+0.4%</b></span></div></div>
                 <div class="card-links">
                     <a href="https://concords.moneydj.com/z/zu/zue/zuef/zuef_6518_0_2.djhtm" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6518" target="_blank" class="card-link">基本資料</a>
@@ -1622,6 +1765,13 @@ footer {
                     <span class="exceed-tag">+15.1%</span>
                 </div>
                 
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (4次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#3fb950">-0.9%</b></span>
+                        <span>最高 <b style="color:#f85149">+0.6%</b></span>
+                        <span>正報酬率 <b>25%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2021/03 <b style="color:#3fb950">-1.5%</b></span><span class="t1-item">2022/03 <b style="color:#f85149">+0.0%</b></span><span class="t1-item">2024/03 <b style="color:#3fb950">-2.5%</b></span><span class="t1-item">2025/03 <b style="color:#f85149">+0.6%</b></span></div></div>
                 <div class="card-links">
                     <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6712" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6712" target="_blank" class="card-link">基本資料</a>
@@ -1764,6 +1914,13 @@ footer {
                     <span class="exceed-tag">+44.6%</span>
                 </div>
                 <div class="remark-row"><span class="remark-icon">&#9432;</span> 主係產品線成熟且結合經銷商銷售動能，導致較去年同期增加。</div>
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#3fb950">-10.0%</b></span>
+                        <span>最高 <b style="color:#f85149">-10.0%</b></span>
+                        <span>正報酬率 <b>0%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2021/03 <b style="color:#3fb950">-10.0%</b></span></div></div>
                 <div class="card-links">
                     <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=5345" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=5345" target="_blank" class="card-link">基本資料</a>
@@ -1906,6 +2063,7 @@ footer {
                     <span class="exceed-tag">+9.9%</span>
                 </div>
                 <div class="remark-row"><span class="remark-icon">&#9432;</span> 本月營收較去年同期增加50%以上，係因本月認列營收的專案較去年同期增加所致。</div>
+                
                 <div class="card-links">
                     <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6486" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6486" target="_blank" class="card-link">基本資料</a>
@@ -2048,6 +2206,13 @@ footer {
                     <span class="exceed-tag">+13.5%</span>
                 </div>
                 
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#f85149">+3.8%</b></span>
+                        <span>最高 <b style="color:#f85149">+6.0%</b></span>
+                        <span>正報酬率 <b>100%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2021/03 <b style="color:#f85149">+5.2%</b></span><span class="t1-item">2022/03 <b style="color:#f85149">+0.3%</b></span><span class="t1-item">2025/03 <b style="color:#f85149">+6.0%</b></span></div></div>
                 <div class="card-links">
                     <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=2402" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=2402" target="_blank" class="card-link">基本資料</a>
@@ -2195,6 +2360,13 @@ footer {
                     <span class="exceed-tag">+15.7%</span>
                 </div>
                 
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#f85149">+5.2%</b></span>
+                        <span>最高 <b style="color:#f85149">+12.8%</b></span>
+                        <span>正報酬率 <b>67%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2021/03 <b style="color:#f85149">+12.8%</b></span><span class="t1-item">2022/03 <b style="color:#3fb950">-1.2%</b></span><span class="t1-item">2025/03 <b style="color:#f85149">+4.2%</b></span></div></div>
                 <div class="card-links">
                     <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6438" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6438" target="_blank" class="card-link">基本資料</a>
@@ -2321,6 +2493,13 @@ footer {
                     <span class="exceed-tag">+12.9%</span>
                 </div>
                 
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#f85149">+4.5%</b></span>
+                        <span>最高 <b style="color:#f85149">+4.5%</b></span>
+                        <span>正報酬率 <b>100%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2022/03 <b style="color:#f85149">+4.5%</b></span></div></div>
                 <div class="card-links">
                     <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=3030" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=3030" target="_blank" class="card-link">基本資料</a>
@@ -2463,6 +2642,13 @@ footer {
                     <span class="exceed-tag">+13.5%</span>
                 </div>
                 
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#f85149">+3.8%</b></span>
+                        <span>最高 <b style="color:#f85149">+6.0%</b></span>
+                        <span>正報酬率 <b>100%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2021/03 <b style="color:#f85149">+5.2%</b></span><span class="t1-item">2022/03 <b style="color:#f85149">+0.3%</b></span><span class="t1-item">2025/03 <b style="color:#f85149">+6.0%</b></span></div></div>
                 <div class="card-links">
                     <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=2402" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=2402" target="_blank" class="card-link">基本資料</a>
@@ -2610,6 +2796,13 @@ footer {
                     <span class="exceed-tag">+44.6%</span>
                 </div>
                 <div class="remark-row"><span class="remark-icon">&#9432;</span> 主係產品線成熟且結合經銷商銷售動能，導致較去年同期增加。</div>
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#3fb950">-10.0%</b></span>
+                        <span>最高 <b style="color:#f85149">-10.0%</b></span>
+                        <span>正報酬率 <b>0%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2021/03 <b style="color:#3fb950">-10.0%</b></span></div></div>
                 <div class="card-links">
                     <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=5345" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=5345" target="_blank" class="card-link">基本資料</a>
@@ -2752,6 +2945,13 @@ footer {
                     <span class="exceed-tag">+21.6%</span>
                 </div>
                 <div class="remark-row"><span class="remark-icon">&#9432;</span> 無</div>
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#f85149">+2.8%</b></span>
+                        <span>最高 <b style="color:#f85149">+2.8%</b></span>
+                        <span>正報酬率 <b>100%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2025/03 <b style="color:#f85149">+2.8%</b></span></div></div>
                 <div class="card-links">
                     <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6910" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6910" target="_blank" class="card-link">基本資料</a>
@@ -2894,6 +3094,13 @@ footer {
                     <span class="exceed-tag">+15.1%</span>
                 </div>
                 
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (4次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#3fb950">-0.9%</b></span>
+                        <span>最高 <b style="color:#f85149">+0.6%</b></span>
+                        <span>正報酬率 <b>25%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2021/03 <b style="color:#3fb950">-1.5%</b></span><span class="t1-item">2022/03 <b style="color:#f85149">+0.0%</b></span><span class="t1-item">2024/03 <b style="color:#3fb950">-2.5%</b></span><span class="t1-item">2025/03 <b style="color:#f85149">+0.6%</b></span></div></div>
                 <div class="card-links">
                     <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6712" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6712" target="_blank" class="card-link">基本資料</a>
@@ -3036,6 +3243,7 @@ footer {
                     <span class="exceed-tag">+9.9%</span>
                 </div>
                 <div class="remark-row"><span class="remark-icon">&#9432;</span> 本月營收較去年同期增加50%以上，係因本月認列營收的專案較去年同期增加所致。</div>
+                
                 <div class="card-links">
                     <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6486" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6486" target="_blank" class="card-link">基本資料</a>
@@ -3188,6 +3396,7 @@ footer {
                     <span class="exceed-tag">+10.1%</span>
                 </div>
                 
+                
                 <div class="card-links">
                     <a href="https://concords.moneydj.com/z/zu/zue/zuef/zuef_7781_0_2.djhtm" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=7781" target="_blank" class="card-link">基本資料</a>
@@ -3330,6 +3539,13 @@ footer {
                     <span class="exceed-tag">+19.4%</span>
                 </div>
                 
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#f85149">+0.4%</b></span>
+                        <span>最高 <b style="color:#f85149">+0.4%</b></span>
+                        <span>正報酬率 <b>100%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2025/03 <b style="color:#f85149">+0.4%</b></span></div></div>
                 <div class="card-links">
                     <a href="https://concords.moneydj.com/z/zu/zue/zuef/zuef_6518_0_2.djhtm" target="_blank" class="card-link">營收公告</a>
                     <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6518" target="_blank" class="card-link">基本資料</a>

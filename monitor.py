@@ -293,8 +293,34 @@ def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: 
                     })
             new_highs.at[idx, "monthly_json"] = _json.dumps(records[-24:], ensure_ascii=False)
 
+    # T+1 歷史分析
+    t1_results = []
+    early_alerts = []
+    if not new_highs.empty:
+        from t1_analysis import analyze_all_period_highs, generate_early_alerts
+        logger.info("開始 T+1 歷史股價分析...")
+        t1_results = analyze_all_period_highs(new_highs, full_df, state, rev_month)
+        early_alerts = generate_early_alerts(t1_results)
+        logger.info(f"T+1 分析完成: {sum(1 for r in t1_results if r.get('count',0)>0)} 檔有歷史資料")
+        if early_alerts:
+            logger.info(f"🔔 T-1 推播提醒: {len(early_alerts)} 檔")
+
+        # 把 T+1 資料寫入 new_highs DataFrame
+        t1_map = {r["stock_id"]: r for r in t1_results}
+        for idx, row in new_highs.iterrows():
+            sid = row["stock_id"]
+            t1 = t1_map.get(sid, {})
+            new_highs.at[idx, "t1_avg"] = t1.get("avg_t1", None)
+            new_highs.at[idx, "t1_hit_rate"] = t1.get("hit_rate", None)
+            new_highs.at[idx, "t1_count"] = t1.get("count", 0)
+            new_highs.at[idx, "t1_max"] = t1.get("max_t1", None)
+            new_highs.at[idx, "t1_detail_json"] = _json.dumps(
+                t1.get("historical_highs", []), ensure_ascii=False
+            )
+
     # 生成 HTML
-    html = generate_html(new_highs, rev_year, rev_month, compare_years=5)
+    html = generate_html(new_highs, rev_year, rev_month, compare_years=5,
+                         early_alerts=early_alerts)
     archive_name = f"{rev_year}_{rev_month:02d}.html"
     save_report(html, archive_name)
     logger.info(f"歷史月報已生成: {archive_name}")

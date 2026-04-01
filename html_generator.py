@@ -311,6 +311,103 @@ header .update-time {{
     margin-right: 4px;
 }}
 
+/* ===== T+1 歷史表現 ===== */
+.t1-box {{
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: #1c2128;
+    border-left: 3px solid #58a6ff;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.78rem;
+}}
+
+.t1-title {{
+    color: #58a6ff;
+    font-weight: 600;
+    margin-bottom: 4px;
+}}
+
+.t1-stats {{
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+}}
+
+.t1-stats span {{
+    color: #8b949e;
+}}
+
+.t1-detail {{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #21262d;
+}}
+
+.t1-item {{
+    font-family: "Consolas", "Monaco", monospace;
+    font-size: 0.72rem;
+    color: #8b949e;
+    background: #0d1117;
+    padding: 1px 6px;
+    border-radius: 3px;
+}}
+
+/* ===== 推播提醒 ===== */
+.alert-section {{
+    margin: 20px 0;
+    padding: 16px;
+    background: linear-gradient(135deg, #1c1f2b 0%, #1a1e2e 100%);
+    border: 1px solid #f0883e44;
+    border-radius: 10px;
+}}
+
+.alert-title {{
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f0883e;
+    margin-bottom: 12px;
+}}
+
+.alert-card {{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 12px;
+    background: #161b22;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border-left: 3px solid #f0883e;
+}}
+
+.alert-card .alert-sid {{
+    font-family: "Consolas", monospace;
+    font-weight: 700;
+    color: #58a6ff;
+    min-width: 50px;
+}}
+
+.alert-card .alert-name {{
+    font-weight: 600;
+    min-width: 70px;
+}}
+
+.alert-card .alert-avg {{
+    font-family: "Consolas", monospace;
+    font-weight: 700;
+    color: #f85149;
+    min-width: 60px;
+}}
+
+.alert-card .alert-msg {{
+    font-size: 0.78rem;
+    color: #8b949e;
+    flex: 1;
+}}
+
 .card-links {{
     display: flex;
     gap: 8px;
@@ -943,6 +1040,8 @@ footer {{
         </div>
     </div>
 
+    {alert_html}
+
     <!-- 全部面板 -->
     <div class="market-panel active" id="panel-all">
         {all_sections}
@@ -1384,6 +1483,7 @@ STOCK_CARD_TEMPLATE = """
                     <span class="exceed-tag">+{exceed_pct}%</span>
                 </div>
                 {remark_html}
+                {t1_html}
                 <div class="card-links">
                     <a href="{revenue_url}" target="_blank" class="card-link">營收公告</a>
                     <a href="{goodinfo_url}" target="_blank" class="card-link">基本資料</a>
@@ -1559,6 +1659,38 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
                     <span style="color:#58a6ff;font-size:0.85rem;">{pub_date}</span>
                 </div>"""
 
+        # T+1 歷史表現
+        t1_html = ""
+        t1_count = int(row.get("t1_count", 0)) if pd.notna(row.get("t1_count", 0)) else 0
+        if t1_count > 0:
+            t1_avg = float(row.get("t1_avg", 0))
+            t1_hit = float(row.get("t1_hit_rate", 0))
+            t1_max = float(row.get("t1_max", 0))
+            avg_color = "#f85149" if t1_avg >= 0 else "#3fb950"
+            t1_html = f'''<div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 ({t1_count}次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:{avg_color}">{t1_avg:+.1f}%</b></span>
+                        <span>最高 <b style="color:#f85149">{t1_max:+.1f}%</b></span>
+                        <span>正報酬率 <b>{t1_hit:.0f}%</b></span>
+                    </div>'''
+            # 歷史明細
+            try:
+                import json as _j
+                details = _j.loads(row.get("t1_detail_json", "[]"))
+                if details:
+                    t1_html += '<div class="t1-detail">'
+                    for d in details:
+                        pct = d.get("t1_pct", 0)
+                        color = "#f85149" if pct >= 0 else "#3fb950"
+                        t1_html += (f'<span class="t1-item">'
+                                    f'{d.get("year")}/{d.get("month"):02d} '
+                                    f'<b style="color:{color}">{pct:+.1f}%</b></span>')
+                    t1_html += '</div>'
+            except Exception:
+                pass
+            t1_html += '</div>'
+
         cards += STOCK_CARD_TEMPLATE.format(
             stock_name=row.get("stock_name", ""),
             stock_id=sid,
@@ -1575,6 +1707,7 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
             mom_class="" if mom_val >= 0 else "negative",
             exceed_pct=f"{exceed_val:.1f}",
             remark_html=remark_html,
+            t1_html=t1_html,
             revenue_url=revenue_url,
             goodinfo_url=goodinfo_url,
             verify_url=verify_url,
@@ -1632,7 +1765,8 @@ def _build_date_pills(df: pd.DataFrame) -> str:
     return pills
 
 
-def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 5) -> str:
+def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 5,
+                   early_alerts: list = None) -> str:
     """生成 HTML 報表"""
     if df.empty:
         return _generate_empty_html(year, month, compare_years)
@@ -1686,6 +1820,22 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
     else:
         date_filter_html = ""
 
+    # 推播提醒區塊
+    alert_html = ""
+    if early_alerts:
+        alert_cards = ""
+        for a in early_alerts:
+            alert_cards += f"""<div class="alert-card">
+                <span class="alert-sid">{a['stock_id']}</span>
+                <span class="alert-name">{a['stock_name']}</span>
+                <span class="alert-avg">T+1 avg {a['avg_t1']:+.1f}%</span>
+                <span class="alert-msg">{a['alert_msg']}</span>
+            </div>\n"""
+        alert_html = f"""<div class="alert-section">
+            <div class="alert-title">🔔 T-1 推播提醒：過去創新高後 T+1 容易大漲</div>
+            {alert_cards}
+        </div>"""
+
     html = HTML_TEMPLATE.format(
         year=year,
         month=month,
@@ -1698,6 +1848,7 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
         emerging_count=emerging_count,
         industry_count=industries,
         date_filter_html=date_filter_html,
+        alert_html=alert_html,
         prev_month_file=prev_month_file,
         next_month_file=next_month_file,
         all_sections=all_sections,
@@ -1726,6 +1877,7 @@ def _generate_empty_html(year: int, month: int, compare_years: int = 5) -> str:
         emerging_count=0,
         industry_count=0,
         date_filter_html="",
+        alert_html="",
         prev_month_file=f"{prev_y}_{prev_m:02d}.html",
         next_month_file=f"{next_y}_{next_m:02d}.html",
         all_sections=empty,
