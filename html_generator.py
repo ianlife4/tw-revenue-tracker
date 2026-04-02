@@ -1182,8 +1182,8 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
                     card.style.display = '';
                 }}
             }} else {{
-                const cardDate = card.dataset.date || '';
-                if (cardDate === currentDate) {{
+                const cardDate = card.dataset.filingDate || card.dataset.date || '';
+                if (cardDate === currentDate || cardDate.startsWith(currentDate)) {{
                     card.removeAttribute('data-date-hidden');
                     if (!card.getAttribute('data-search-hidden')) {{
                         card.style.display = '';
@@ -1457,7 +1457,7 @@ INDUSTRY_SECTION_TEMPLATE = """
     </div>"""
 
 STOCK_CARD_TEMPLATE = """
-            <div class="stock-card" data-sid="{stock_id}" data-sname="{stock_name}" data-rev="{revenue_raw}" data-yoy="{yoy_raw}" data-mom="{mom_raw}" data-exceed="{exceed_raw}" data-date="{publish_date}">
+            <div class="stock-card" data-sid="{stock_id}" data-sname="{stock_name}" data-rev="{revenue_raw}" data-yoy="{yoy_raw}" data-mom="{mom_raw}" data-exceed="{exceed_raw}" data-date="{publish_date}" data-filing-date="{filing_date}">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">{stock_name}</span>
@@ -1651,12 +1651,32 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
         else:
             remark_html = ""
 
-        # 公布日期行 (只有真正有多個不同日期時才顯示)
+        # 申報日期行 — 優先用 first_seen (精確)，否則用 publish_date
+        first_seen = row.get("first_seen", "")
+        if pd.notna(first_seen) and str(first_seen).strip():
+            filing_display = str(first_seen).strip()
+            # first_seen format: "04-01 22:45" → extract date part "4/1"
+            try:
+                parts = filing_display.split(" ")[0].split("-")
+                filing_short = f"{int(parts[0])}/{int(parts[1])}"
+            except (ValueError, IndexError):
+                filing_short = filing_display
+        elif pub_date:
+            filing_display = pub_date
+            try:
+                parts = str(pub_date).replace("-", "/").split("/")
+                filing_short = f"{int(parts[-2])}/{int(parts[-1])}"
+            except (ValueError, IndexError):
+                filing_short = pub_date
+        else:
+            filing_display = ""
+            filing_short = ""
+
         date_row_html = ""
-        if pub_date and hasattr(df, '_show_date') and df._show_date:
+        if filing_display:
             date_row_html = f"""<div class="detail-row">
-                    <span class="revenue-label">公布日期</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">{pub_date}</span>
+                    <span class="revenue-label">申報時間</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">{filing_display}</span>
                 </div>"""
 
         # T+1 歷史表現
@@ -1701,6 +1721,7 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
             exceed_raw=exceed_val,
             publish_date=pub_date,
             date_row_html=date_row_html,
+            filing_date=filing_short,
             yoy_display=f"{yoy_val:+.2f}%" if yoy_val != 0 else "N/A",
             yoy_class="" if yoy_val >= 0 else "negative",
             mom_display=f"{mom_val:+.2f}%" if mom_val != 0 else "N/A",
@@ -1735,13 +1756,18 @@ def _build_industry_sections(df: pd.DataFrame, current_year: int = 0, current_mo
 
 
 def _build_date_pills(df: pd.DataFrame) -> str:
-    """從資料中提取所有公布日期，生成日期 pill 按鈕"""
-    if "date" not in df.columns and "publish_date" not in df.columns:
+    """從資料中提取申報日期（first_seen），生成日期 pill 按鈕"""
+    # 優先用 first_seen，否則用 date / publish_date
+    if "first_seen" in df.columns:
+        # first_seen format: "04-01 22:45" → extract "04-01"
+        dates = df["first_seen"].dropna().astype(str).str.strip()
+        dates = dates[dates != ""].str[:5]  # "04-01"
+    elif "date" in df.columns or "publish_date" in df.columns:
+        date_col = "publish_date" if "publish_date" in df.columns else "date"
+        dates = df[date_col].dropna().astype(str).str.strip()
+        dates = dates[dates != ""].str[:10]
+    else:
         return ""
-
-    date_col = "publish_date" if "publish_date" in df.columns else "date"
-    dates = df[date_col].dropna().astype(str).str.strip()
-    dates = dates[dates != ""].str[:10]
 
     # 統計每個日期的筆數
     date_counts = dates.value_counts().sort_index()
@@ -1750,13 +1776,13 @@ def _build_date_pills(df: pd.DataFrame) -> str:
 
     pills = ""
     for date_str, count in date_counts.items():
-        # 將 MOPS 民國日期 (115/04/01) 顯示為短日期 (4/1)
+        # "04-01" → "4/1"
         display = date_str
         try:
-            parts = str(date_str).replace("-", "/").split("/")
-            if len(parts) == 3:
-                m = int(parts[-2])
-                d = int(parts[-1])
+            parts = str(date_str).replace("-", "/").replace("/", "-").split("-")
+            if len(parts) >= 2:
+                m = int(parts[0]) if len(parts[0]) <= 2 else int(parts[-2])
+                d = int(parts[1]) if len(parts[0]) <= 2 else int(parts[-1])
                 display = f"{m}/{d}"
         except (ValueError, IndexError):
             pass
@@ -1778,9 +1804,9 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
     emerging_count = len(df[df["market"] == "emerging"]) if "market" in df.columns else 0
     industries = df["industry"].nunique() if "industry" in df.columns else 0
 
-    # 判斷公布日期是否有多個不同值 (MOPS CSV 通常全部同一天，非個股真實公告日)
-    show_date = False
-    if "date" in df.columns:
+    # 永遠顯示申報日期 (有 first_seen 就用)
+    show_date = "first_seen" in df.columns
+    if not show_date and "date" in df.columns:
         unique_dates = df["date"].dropna().astype(str).str.strip().unique()
         unique_dates = [d for d in unique_dates if d and d != "N/A"]
         show_date = len(unique_dates) > 1
@@ -1801,8 +1827,8 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
     tib_sections = _market_sections("tib") if tib_count > 0 else '<p class="empty-msg">本分類無資料</p>'
     emerging_sections = _market_sections("emerging") if emerging_count > 0 else '<p class="empty-msg">本分類無資料</p>'
 
-    # 生成公布日期 pills (只有多日期時才顯示)
-    date_pills = _build_date_pills(df) if show_date else ""
+    # 生成申報日期 pills
+    date_pills = _build_date_pills(df)
 
     # 計算上/下月檔名
     prev_y, prev_m = (year, month - 1) if month > 1 else (year - 1, 12)
@@ -1813,8 +1839,8 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
     # 日期篩選區塊 (只有多日期時才顯示)
     if date_pills:
         date_filter_html = f"""<div class="date-filter">
-            <span class="date-label">公布日</span>
-            <div class="date-pill" data-date="all">全部</div>
+            <span class="date-label">📅 申報日</span>
+            <div class="date-pill active" data-date="all">全部</div>
             {date_pills}
         </div>"""
     else:

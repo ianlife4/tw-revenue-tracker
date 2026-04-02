@@ -213,6 +213,7 @@ def check_filings():
 def generate_realtime_html(state: dict, current_df: pd.DataFrame, full_df: pd.DataFrame = None):
     """生成即時營收頁面"""
     from html_realtime import generate_realtime_page
+    from t1_analysis import generate_prefiling_alerts
     rev_year = state["period_year"]
     rev_month = state["period_month"]
 
@@ -220,7 +221,26 @@ def generate_realtime_html(state: dict, current_df: pd.DataFrame, full_df: pd.Da
     if full_df is None and os.path.exists(CACHE_FILE):
         full_df = pd.read_csv(CACHE_FILE, dtype={"stock_id": str})
 
-    html = generate_realtime_page(state, current_df, full_df, rev_year, rev_month)
+    # 生成預警清單 (申報前就能看到)
+    prefiling_alerts = []
+    if full_df is not None and not full_df.empty:
+        # 已申報且創新高的 stock_id (從歷史月報取)
+        filed_high_ids = set()
+        # 從 current_df 找出已申報的 stock_id
+        if not current_df.empty:
+            filed_high_ids = set(current_df["stock_id"].unique())
+        try:
+            prefiling_alerts = generate_prefiling_alerts(
+                full_df, rev_month, filed_ids=filed_high_ids
+            )
+            if prefiling_alerts:
+                logger.info(f"📋 預警清單: {len(prefiling_alerts)} 檔 "
+                           f"(已申報: {sum(1 for a in prefiling_alerts if a['filed'])})")
+        except Exception as e:
+            logger.warning(f"預警清單生成失敗: {e}")
+
+    html = generate_realtime_page(state, current_df, full_df, rev_year, rev_month,
+                                   prefiling_alerts=prefiling_alerts)
     path = save_html(html, "index.html")
     logger.info(f"即時頁面已更新: {path}")
     return path
@@ -273,6 +293,13 @@ def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: 
     logger.info(f"營收創同期新高: {len(new_highs)} 檔")
 
     if not new_highs.empty:
+        # 注入 first_seen (個股申報時間) 從 monitor_state
+        stocks_state = state.get("stocks", {})
+        for idx, row in new_highs.iterrows():
+            sid = str(row["stock_id"])
+            fs = stocks_state.get(sid, {}).get("first_seen", "")
+            new_highs.at[idx, "first_seen"] = fs
+
         # 把歷史資料寫入 monthly_json (供柱狀圖)
         import json as _json
         for idx, row in new_highs.iterrows():
