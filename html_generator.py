@@ -846,6 +846,40 @@ body.compact .remark-row {{
     display: none;
 }}
 
+/* compact T+1: 作為表格欄位顯示 */
+body.compact .t1-box {{
+    display: table-cell;
+    padding: 4px 10px;
+    vertical-align: middle;
+    margin: 0;
+    border-left: none;
+    border-radius: 0;
+    background: transparent;
+    max-width: 320px;
+}}
+
+body.compact .t1-title {{
+    font-size: 0.72rem;
+    margin-bottom: 2px;
+}}
+
+body.compact .t1-stats {{
+    gap: 8px;
+    margin-bottom: 2px;
+    font-size: 0.72rem;
+}}
+
+body.compact .t1-detail {{
+    gap: 4px;
+    margin-top: 2px;
+    padding-top: 2px;
+}}
+
+body.compact .t1-item {{
+    font-size: 0.65rem;
+    padding: 0px 4px;
+}}
+
 /* compact 展開狀態 */
 body.compact .stock-card.expanded {{
     display: table-row;
@@ -858,6 +892,28 @@ body.compact .stock-card.expanded + .expanded-detail {{
 
 .expanded-detail {{
     display: none;
+}}
+
+/* 展開行內的元素恢復顯示 */
+.expanded-detail-row .chart-toggle {{
+    display: block !important;
+}}
+
+.expanded-detail-row .t1-box {{
+    display: block !important;
+    max-width: 100%;
+    background: #1c2128;
+    border-left: 3px solid #58a6ff;
+    border-radius: 0 4px 4px 0;
+    padding: 8px 10px;
+}}
+
+.expanded-detail-row .remark-row {{
+    display: block !important;
+}}
+
+.expanded-detail-row .card-links {{
+    display: flex !important;
 }}
 
 body.compact .industry-header {{
@@ -1244,7 +1300,7 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
         const detail = document.createElement('tr');
         detail.className = 'expanded-detail-row';
         const td = document.createElement('td');
-        td.colSpan = 5;
+        td.colSpan = 7;
         td.style.padding = '12px 16px';
         td.style.background = '#161b22';
         td.style.borderTop = '1px solid #21262d';
@@ -1252,11 +1308,13 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
 
         // 複製原始卡片的詳細內容
         const remark = card.querySelector('.remark-row');
+        const t1box = card.querySelector('.t1-box');
         const chart = card.querySelector('.chart-toggle');
         const links = card.querySelector('.card-links');
 
         let html = '';
         if (remark) html += '<div style="margin-bottom:10px">' + remark.outerHTML + '</div>';
+        if (t1box) html += '<div style="margin-bottom:10px">' + t1box.outerHTML + '</div>';
         if (links) {{
             html += '<div style="display:flex;gap:8px;margin-bottom:10px">';
             links.querySelectorAll('a').forEach(a => {{
@@ -1450,6 +1508,7 @@ INDUSTRY_SECTION_TEMPLATE = """
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             {cards}

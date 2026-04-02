@@ -820,6 +820,40 @@ body.compact .remark-row {
     display: none;
 }
 
+/* compact T+1: 作為表格欄位顯示 */
+body.compact .t1-box {
+    display: table-cell;
+    padding: 4px 10px;
+    vertical-align: middle;
+    margin: 0;
+    border-left: none;
+    border-radius: 0;
+    background: transparent;
+    max-width: 320px;
+}
+
+body.compact .t1-title {
+    font-size: 0.72rem;
+    margin-bottom: 2px;
+}
+
+body.compact .t1-stats {
+    gap: 8px;
+    margin-bottom: 2px;
+    font-size: 0.72rem;
+}
+
+body.compact .t1-detail {
+    gap: 4px;
+    margin-top: 2px;
+    padding-top: 2px;
+}
+
+body.compact .t1-item {
+    font-size: 0.65rem;
+    padding: 0px 4px;
+}
+
 /* compact 展開狀態 */
 body.compact .stock-card.expanded {
     display: table-row;
@@ -832,6 +866,28 @@ body.compact .stock-card.expanded + .expanded-detail {
 
 .expanded-detail {
     display: none;
+}
+
+/* 展開行內的元素恢復顯示 */
+.expanded-detail-row .chart-toggle {
+    display: block !important;
+}
+
+.expanded-detail-row .t1-box {
+    display: block !important;
+    max-width: 100%;
+    background: #1c2128;
+    border-left: 3px solid #58a6ff;
+    border-radius: 0 4px 4px 0;
+    padding: 8px 10px;
+}
+
+.expanded-detail-row .remark-row {
+    display: block !important;
+}
+
+.expanded-detail-row .card-links {
+    display: flex !important;
 }
 
 body.compact .industry-header {
@@ -959,7 +1015,7 @@ footer {
             <span class="date-info">2026/03</span>
             <a class="nav-btn" href="2026_04.html" title="下個月">後一月 &#9654;</a>
         </div>
-        <div class="update-time">2026-04-03 00:44 更新</div>
+        <div class="update-time">2026-04-03 01:29 更新</div>
         <div style="margin-top:12px"><a href="index.html" style="color:#58a6ff;text-decoration:none;font-size:0.85rem;padding:4px 12px;border:1px solid #30363d;border-radius:6px;">← 即時申報</a></div>
     </header>
 
@@ -1011,7 +1067,7 @@ footer {
             <span class="date-label">📅 申報日</span>
             <div class="date-pill active" data-date="all">全部</div>
             <div class="date-pill" data-date="04-01">4/1 <span style="font-size:0.65rem;color:#6e7681">(9)</span></div>
-            <div class="date-pill" data-date="04-03">4/3 <span style="font-size:0.65rem;color:#6e7681">(31)</span></div>
+            <div class="date-pill" data-date="04-02">4/2 <span style="font-size:0.65rem;color:#6e7681">(31)</span></div>
             
         </div>
         <div class="view-toggle">
@@ -1063,10 +1119,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="7427" data-sname="華上生醫" data-rev="720000.0" data-yoy="612.8712871287129" data-mom="26.984126984126984" data-exceed="612.87" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="7427" data-sname="華上生醫" data-rev="720000.0" data-yoy="612.8712871287129" data-mom="26.984126984126984" data-exceed="612.87" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">華上生醫</span>
@@ -1080,7 +1137,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -1202,7 +1259,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="4743" data-sname="合一" data-rev="14375000.0" data-yoy="128.7555697008275" data-mom="51.89137785291632" data-exceed="22.79" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="4743" data-sname="合一" data-rev="14375000.0" data-yoy="128.7555697008275" data-mom="51.89137785291632" data-exceed="22.79" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">合一</span>
@@ -1216,7 +1273,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -1338,7 +1395,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="4132" data-sname="國鼎" data-rev="7482000.0" data-yoy="33.179067283730866" data-mom="97.15415019762844" data-exceed="2.03" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="4132" data-sname="國鼎" data-rev="7482000.0" data-yoy="33.179067283730866" data-mom="97.15415019762844" data-exceed="2.03" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">國鼎</span>
@@ -1352,7 +1409,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -1604,7 +1661,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="6491" data-sname="晶碩" data-rev="669212000.0" data-yoy="18.18710031771485" data-mom="20.16066622256617" data-exceed="13.13" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6491" data-sname="晶碩" data-rev="669212000.0" data-yoy="18.18710031771485" data-mom="20.16066622256617" data-exceed="13.13" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">晶碩</span>
@@ -1618,7 +1675,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -1876,7 +1933,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="4153" data-sname="鈺緯" data-rev="89330000.0" data-yoy="14.590281697367748" data-mom="38.95499867780422" data-exceed="9.32" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="4153" data-sname="鈺緯" data-rev="89330000.0" data-yoy="14.590281697367748" data-mom="38.95499867780422" data-exceed="9.32" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">鈺緯</span>
@@ -1890,7 +1947,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -2012,7 +2069,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="4128" data-sname="中天" data-rev="169648000.0" data-yoy="7.731484127437719" data-mom="11.634762810346984" data-exceed="7.73" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="4128" data-sname="中天" data-rev="169648000.0" data-yoy="7.731484127437719" data-mom="11.634762810346984" data-exceed="7.73" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">中天</span>
@@ -2026,7 +2083,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -2148,7 +2205,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="4116" data-sname="明基醫" data-rev="448916000.0" data-yoy="5.4679754347550285" data-mom="17.545586895273207" data-exceed="5.47" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="4116" data-sname="明基醫" data-rev="448916000.0" data-yoy="5.4679754347550285" data-mom="17.545586895273207" data-exceed="5.47" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">明基醫</span>
@@ -2162,7 +2219,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -2297,10 +2354,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="6584" data-sname="南俊國際" data-rev="312165000.0" data-yoy="52.71513135365198" data-mom="23.894665819971426" data-exceed="52.72" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6584" data-sname="南俊國際" data-rev="312165000.0" data-yoy="52.71513135365198" data-mom="23.894665819971426" data-exceed="52.72" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">南俊國際</span>
@@ -2314,7 +2372,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -2436,7 +2494,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="3689" data-sname="湧德" data-rev="730004000.0" data-yoy="41.79846081527841" data-mom="53.23759884295751" data-exceed="15.35" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="3689" data-sname="湧德" data-rev="730004000.0" data-yoy="41.79846081527841" data-mom="53.23759884295751" data-exceed="15.35" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">湧德</span>
@@ -2450,7 +2508,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -2572,7 +2630,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="8109" data-sname="博大" data-rev="181798000.0" data-yoy="27.246257113060032" data-mom="50.56358441343327" data-exceed="5.95" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="8109" data-sname="博大" data-rev="181798000.0" data-yoy="27.246257113060032" data-mom="50.56358441343327" data-exceed="5.95" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">博大</span>
@@ -2586,7 +2644,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -2708,7 +2766,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="6781" data-sname="AES-KY" data-rev="1505534000.0" data-yoy="25.64408351157894" data-mom="1.437544047357563" data-exceed="14.7" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6781" data-sname="AES-KY" data-rev="1505534000.0" data-yoy="25.64408351157894" data-mom="1.437544047357563" data-exceed="14.7" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">AES-KY</span>
@@ -2722,7 +2780,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -2980,7 +3038,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="3023" data-sname="信邦" data-rev="2906066000.0" data-yoy="7.547231258303634" data-mom="11.333244708055693" data-exceed="0.26" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="3023" data-sname="信邦" data-rev="2906066000.0" data-yoy="7.547231258303634" data-mom="11.333244708055693" data-exceed="0.26" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">信邦</span>
@@ -2994,7 +3052,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -3129,10 +3187,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="2408" data-sname="南亞科" data-rev="18169760000.0" data-yoy="560.0385857042545" data-mom="16.41920797499408" data-exceed="169.55" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="2408" data-sname="南亞科" data-rev="18169760000.0" data-yoy="560.0385857042545" data-mom="16.41920797499408" data-exceed="169.55" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">南亞科</span>
@@ -3146,7 +3205,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -3268,7 +3327,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="3006" data-sname="晶豪科" data-rev="3025805000.0" data-yoy="188.11181286950625" data-mom="44.43803729185572" data-exceed="58.42" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="3006" data-sname="晶豪科" data-rev="3025805000.0" data-yoy="188.11181286950625" data-mom="44.43803729185572" data-exceed="58.42" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">晶豪科</span>
@@ -3282,7 +3341,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -3404,7 +3463,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="6693" data-sname="廣閎科" data-rev="193378000.0" data-yoy="111.904840176644" data-mom="26.13445871463887" data-exceed="53.68" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6693" data-sname="廣閎科" data-rev="193378000.0" data-yoy="111.904840176644" data-mom="26.13445871463887" data-exceed="53.68" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">廣閎科</span>
@@ -3418,7 +3477,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -3540,7 +3599,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="3189" data-sname="景碩" data-rev="3939324000.0" data-yoy="25.056277045282904" data-mom="22.931501984561024" data-exceed="5.19" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="3189" data-sname="景碩" data-rev="3939324000.0" data-yoy="25.056277045282904" data-mom="22.931501984561024" data-exceed="5.19" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">景碩</span>
@@ -3554,7 +3613,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -3689,6 +3748,7 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
@@ -3822,7 +3882,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="2419" data-sname="仲琦" data-rev="1007693000.0" data-yoy="54.961270946520536" data-mom="100.6033870097605" data-exceed="1.57" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="2419" data-sname="仲琦" data-rev="1007693000.0" data-yoy="54.961270946520536" data-mom="100.6033870097605" data-exceed="1.57" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">仲琦</span>
@@ -3836,7 +3896,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -3958,7 +4018,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="2439" data-sname="美律" data-rev="3908500000.0" data-yoy="24.04868764200853" data-mom="24.306668702134697" data-exceed="24.05" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="2439" data-sname="美律" data-rev="3908500000.0" data-yoy="24.04868764200853" data-mom="24.306668702134697" data-exceed="24.05" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">美律</span>
@@ -3972,7 +4032,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -4094,7 +4154,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="3564" data-sname="其陽" data-rev="204278000.0" data-yoy="9.420379129149236" data-mom="29.98835514886956" data-exceed="9.42" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="3564" data-sname="其陽" data-rev="204278000.0" data-yoy="9.420379129149236" data-mom="29.98835514886956" data-exceed="9.42" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">其陽</span>
@@ -4108,7 +4168,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -4243,10 +4303,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="6739" data-sname="竹陞科技" data-rev="100094000.0" data-yoy="87.84296062755696" data-mom="7.463872366923622" data-exceed="87.84" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6739" data-sname="竹陞科技" data-rev="100094000.0" data-yoy="87.84296062755696" data-mom="7.463872366923622" data-exceed="87.84" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">竹陞科技</span>
@@ -4260,7 +4321,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -4667,6 +4728,7 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
@@ -4806,7 +4868,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="6565" data-sname="物聯" data-rev="30323000.0" data-yoy="19.95806630271382" data-mom="99.58533535180676" data-exceed="12.96" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6565" data-sname="物聯" data-rev="30323000.0" data-yoy="19.95806630271382" data-mom="99.58533535180676" data-exceed="12.96" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">物聯</span>
@@ -4820,7 +4882,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -5085,10 +5147,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="8374" data-sname="羅昇" data-rev="553636000.0" data-yoy="43.63963739576685" data-mom="61.17261757470779" data-exceed="41.12" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="8374" data-sname="羅昇" data-rev="553636000.0" data-yoy="43.63963739576685" data-mom="61.17261757470779" data-exceed="41.12" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">羅昇</span>
@@ -5102,7 +5165,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -5224,7 +5287,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="1590" data-sname="亞德客-KY" data-rev="4139710000.0" data-yoy="18.089564943541248" data-mom="90.64590660551448" data-exceed="18.09" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="1590" data-sname="亞德客-KY" data-rev="4139710000.0" data-yoy="18.089564943541248" data-mom="90.64590660551448" data-exceed="18.09" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">亞德客-KY</span>
@@ -5238,7 +5301,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -5360,7 +5423,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="4587" data-sname="寶元數控" data-rev="107575000.0" data-yoy="6.8781544330962125" data-mom="105.04145620890117" data-exceed="6.88" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="4587" data-sname="寶元數控" data-rev="107575000.0" data-yoy="6.8781544330962125" data-mom="105.04145620890117" data-exceed="6.88" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">寶元數控</span>
@@ -5374,7 +5437,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -5509,10 +5572,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="6516" data-sname="勤崴國際" data-rev="60780000.0" data-yoy="75.91386645827906" data-mom="-2.1366351618980146" data-exceed="15.17" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6516" data-sname="勤崴國際" data-rev="60780000.0" data-yoy="75.91386645827906" data-mom="-2.1366351618980146" data-exceed="15.17" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">勤崴國際</span>
@@ -5526,7 +5590,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -5642,7 +5706,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="6112" data-sname="邁達特" data-rev="2231109000.0" data-yoy="40.11564156766106" data-mom="21.541877602250075" data-exceed="40.12" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6112" data-sname="邁達特" data-rev="2231109000.0" data-yoy="40.11564156766106" data-mom="21.541877602250075" data-exceed="40.12" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">邁達特</span>
@@ -5656,7 +5720,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -5791,10 +5855,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="5234" data-sname="達興材料" data-rev="423556000.0" data-yoy="5.520206876965007" data-mom="15.72536687058232" data-exceed="2.48" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="5234" data-sname="達興材料" data-rev="423556000.0" data-yoy="5.520206876965007" data-mom="15.72536687058232" data-exceed="2.48" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">達興材料</span>
@@ -5808,7 +5873,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -5943,6 +6008,7 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
@@ -6095,10 +6161,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="2633" data-sname="台灣高鐵" data-rev="4795095000.0" data-yoy="4.454737467640367" data-mom="2.623294790970442" data-exceed="4.45" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="2633" data-sname="台灣高鐵" data-rev="4795095000.0" data-yoy="4.454737467640367" data-mom="2.623294790970442" data-exceed="4.45" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">台灣高鐵</span>
@@ -6112,7 +6179,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -6247,10 +6314,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="5863" data-sname="瑞興銀" data-rev="143850000.0" data-yoy="22.811211378712724" data-mom="10.08058036226727" data-exceed="22.81" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="5863" data-sname="瑞興銀" data-rev="143850000.0" data-yoy="22.811211378712724" data-mom="10.08058036226727" data-exceed="22.81" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">瑞興銀</span>
@@ -6264,7 +6332,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -6399,10 +6467,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="3004" data-sname="豐達科" data-rev="452769000.0" data-yoy="31.17313547856268" data-mom="25.128232055803053" data-exceed="31.17" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="3004" data-sname="豐達科" data-rev="452769000.0" data-yoy="31.17313547856268" data-mom="25.128232055803053" data-exceed="31.17" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">豐達科</span>
@@ -6416,7 +6485,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -6551,10 +6620,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="7562" data-sname="博來科技" data-rev="64063000.0" data-yoy="20.19324577861164" data-mom="12.170822244011768" data-exceed="2.59" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="7562" data-sname="博來科技" data-rev="64063000.0" data-yoy="20.19324577861164" data-mom="12.170822244011768" data-exceed="2.59" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">博來科技</span>
@@ -6568,7 +6638,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -6702,10 +6772,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="2408" data-sname="南亞科" data-rev="18169760000.0" data-yoy="560.0385857042545" data-mom="16.41920797499408" data-exceed="169.55" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="2408" data-sname="南亞科" data-rev="18169760000.0" data-yoy="560.0385857042545" data-mom="16.41920797499408" data-exceed="169.55" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">南亞科</span>
@@ -6719,7 +6790,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -6841,7 +6912,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="3006" data-sname="晶豪科" data-rev="3025805000.0" data-yoy="188.11181286950625" data-mom="44.43803729185572" data-exceed="58.42" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="3006" data-sname="晶豪科" data-rev="3025805000.0" data-yoy="188.11181286950625" data-mom="44.43803729185572" data-exceed="58.42" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">晶豪科</span>
@@ -6855,7 +6926,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -6977,7 +7048,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="3189" data-sname="景碩" data-rev="3939324000.0" data-yoy="25.056277045282904" data-mom="22.931501984561024" data-exceed="5.19" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="3189" data-sname="景碩" data-rev="3939324000.0" data-yoy="25.056277045282904" data-mom="22.931501984561024" data-exceed="5.19" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">景碩</span>
@@ -6991,7 +7062,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -7126,10 +7197,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="6781" data-sname="AES-KY" data-rev="1505534000.0" data-yoy="25.64408351157894" data-mom="1.437544047357563" data-exceed="14.7" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6781" data-sname="AES-KY" data-rev="1505534000.0" data-yoy="25.64408351157894" data-mom="1.437544047357563" data-exceed="14.7" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">AES-KY</span>
@@ -7143,7 +7215,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -7401,7 +7473,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="3023" data-sname="信邦" data-rev="2906066000.0" data-yoy="7.547231258303634" data-mom="11.333244708055693" data-exceed="0.26" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="3023" data-sname="信邦" data-rev="2906066000.0" data-yoy="7.547231258303634" data-mom="11.333244708055693" data-exceed="0.26" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">信邦</span>
@@ -7415,7 +7487,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -7550,6 +7622,7 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
@@ -7838,10 +7911,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="2419" data-sname="仲琦" data-rev="1007693000.0" data-yoy="54.961270946520536" data-mom="100.6033870097605" data-exceed="1.57" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="2419" data-sname="仲琦" data-rev="1007693000.0" data-yoy="54.961270946520536" data-mom="100.6033870097605" data-exceed="1.57" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">仲琦</span>
@@ -7855,7 +7929,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -7977,7 +8051,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="2439" data-sname="美律" data-rev="3908500000.0" data-yoy="24.04868764200853" data-mom="24.306668702134697" data-exceed="24.05" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="2439" data-sname="美律" data-rev="3908500000.0" data-yoy="24.04868764200853" data-mom="24.306668702134697" data-exceed="24.05" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">美律</span>
@@ -7991,7 +8065,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -8126,10 +8200,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="8374" data-sname="羅昇" data-rev="553636000.0" data-yoy="43.63963739576685" data-mom="61.17261757470779" data-exceed="41.12" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="8374" data-sname="羅昇" data-rev="553636000.0" data-yoy="43.63963739576685" data-mom="61.17261757470779" data-exceed="41.12" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">羅昇</span>
@@ -8143,7 +8218,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -8265,7 +8340,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="1590" data-sname="亞德客-KY" data-rev="4139710000.0" data-yoy="18.089564943541248" data-mom="90.64590660551448" data-exceed="18.09" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="1590" data-sname="亞德客-KY" data-rev="4139710000.0" data-yoy="18.089564943541248" data-mom="90.64590660551448" data-exceed="18.09" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">亞德客-KY</span>
@@ -8279,7 +8354,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -8414,10 +8489,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="5234" data-sname="達興材料" data-rev="423556000.0" data-yoy="5.520206876965007" data-mom="15.72536687058232" data-exceed="2.48" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="5234" data-sname="達興材料" data-rev="423556000.0" data-yoy="5.520206876965007" data-mom="15.72536687058232" data-exceed="2.48" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">達興材料</span>
@@ -8431,7 +8507,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -8566,10 +8642,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="6491" data-sname="晶碩" data-rev="669212000.0" data-yoy="18.18710031771485" data-mom="20.16066622256617" data-exceed="13.13" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6491" data-sname="晶碩" data-rev="669212000.0" data-yoy="18.18710031771485" data-mom="20.16066622256617" data-exceed="13.13" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">晶碩</span>
@@ -8583,7 +8660,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -8718,10 +8795,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="2633" data-sname="台灣高鐵" data-rev="4795095000.0" data-yoy="4.454737467640367" data-mom="2.623294790970442" data-exceed="4.45" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="2633" data-sname="台灣高鐵" data-rev="4795095000.0" data-yoy="4.454737467640367" data-mom="2.623294790970442" data-exceed="4.45" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">台灣高鐵</span>
@@ -8735,7 +8813,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -8870,10 +8948,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="6112" data-sname="邁達特" data-rev="2231109000.0" data-yoy="40.11564156766106" data-mom="21.541877602250075" data-exceed="40.12" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6112" data-sname="邁達特" data-rev="2231109000.0" data-yoy="40.11564156766106" data-mom="21.541877602250075" data-exceed="40.12" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">邁達特</span>
@@ -8887,7 +8966,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -9022,10 +9101,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="3004" data-sname="豐達科" data-rev="452769000.0" data-yoy="31.17313547856268" data-mom="25.128232055803053" data-exceed="31.17" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="3004" data-sname="豐達科" data-rev="452769000.0" data-yoy="31.17313547856268" data-mom="25.128232055803053" data-exceed="31.17" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">豐達科</span>
@@ -9039,7 +9119,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -9179,10 +9259,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="4743" data-sname="合一" data-rev="14375000.0" data-yoy="128.7555697008275" data-mom="51.89137785291632" data-exceed="22.79" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="4743" data-sname="合一" data-rev="14375000.0" data-yoy="128.7555697008275" data-mom="51.89137785291632" data-exceed="22.79" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">合一</span>
@@ -9196,7 +9277,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -9454,7 +9535,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="4153" data-sname="鈺緯" data-rev="89330000.0" data-yoy="14.590281697367748" data-mom="38.95499867780422" data-exceed="9.32" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="4153" data-sname="鈺緯" data-rev="89330000.0" data-yoy="14.590281697367748" data-mom="38.95499867780422" data-exceed="9.32" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">鈺緯</span>
@@ -9468,7 +9549,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -9590,7 +9671,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="4128" data-sname="中天" data-rev="169648000.0" data-yoy="7.731484127437719" data-mom="11.634762810346984" data-exceed="7.73" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="4128" data-sname="中天" data-rev="169648000.0" data-yoy="7.731484127437719" data-mom="11.634762810346984" data-exceed="7.73" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">中天</span>
@@ -9604,7 +9685,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -9726,7 +9807,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="4116" data-sname="明基醫" data-rev="448916000.0" data-yoy="5.4679754347550285" data-mom="17.545586895273207" data-exceed="5.47" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="4116" data-sname="明基醫" data-rev="448916000.0" data-yoy="5.4679754347550285" data-mom="17.545586895273207" data-exceed="5.47" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">明基醫</span>
@@ -9740,7 +9821,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -9875,10 +9956,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="6584" data-sname="南俊國際" data-rev="312165000.0" data-yoy="52.71513135365198" data-mom="23.894665819971426" data-exceed="52.72" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6584" data-sname="南俊國際" data-rev="312165000.0" data-yoy="52.71513135365198" data-mom="23.894665819971426" data-exceed="52.72" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">南俊國際</span>
@@ -9892,7 +9974,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -10014,7 +10096,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="3689" data-sname="湧德" data-rev="730004000.0" data-yoy="41.79846081527841" data-mom="53.23759884295751" data-exceed="15.35" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="3689" data-sname="湧德" data-rev="730004000.0" data-yoy="41.79846081527841" data-mom="53.23759884295751" data-exceed="15.35" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">湧德</span>
@@ -10028,7 +10110,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -10150,7 +10232,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="8109" data-sname="博大" data-rev="181798000.0" data-yoy="27.246257113060032" data-mom="50.56358441343327" data-exceed="5.95" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="8109" data-sname="博大" data-rev="181798000.0" data-yoy="27.246257113060032" data-mom="50.56358441343327" data-exceed="5.95" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">博大</span>
@@ -10164,7 +10246,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -10299,6 +10381,7 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
@@ -10432,7 +10515,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="3564" data-sname="其陽" data-rev="204278000.0" data-yoy="9.420379129149236" data-mom="29.98835514886956" data-exceed="9.42" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="3564" data-sname="其陽" data-rev="204278000.0" data-yoy="9.420379129149236" data-mom="29.98835514886956" data-exceed="9.42" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">其陽</span>
@@ -10446,7 +10529,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -10581,6 +10664,7 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
@@ -10733,10 +10817,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="6739" data-sname="竹陞科技" data-rev="100094000.0" data-yoy="87.84296062755696" data-mom="7.463872366923622" data-exceed="87.84" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6739" data-sname="竹陞科技" data-rev="100094000.0" data-yoy="87.84296062755696" data-mom="7.463872366923622" data-exceed="87.84" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">竹陞科技</span>
@@ -10750,7 +10835,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -10885,10 +10970,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="6693" data-sname="廣閎科" data-rev="193378000.0" data-yoy="111.904840176644" data-mom="26.13445871463887" data-exceed="53.68" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6693" data-sname="廣閎科" data-rev="193378000.0" data-yoy="111.904840176644" data-mom="26.13445871463887" data-exceed="53.68" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">廣閎科</span>
@@ -10902,7 +10988,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -11037,6 +11123,7 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
@@ -11189,10 +11276,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="6516" data-sname="勤崴國際" data-rev="60780000.0" data-yoy="75.91386645827906" data-mom="-2.1366351618980146" data-exceed="15.17" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6516" data-sname="勤崴國際" data-rev="60780000.0" data-yoy="75.91386645827906" data-mom="-2.1366351618980146" data-exceed="15.17" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">勤崴國際</span>
@@ -11206,7 +11294,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -11345,10 +11433,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="7427" data-sname="華上生醫" data-rev="720000.0" data-yoy="612.8712871287129" data-mom="26.984126984126984" data-exceed="612.87" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="7427" data-sname="華上生醫" data-rev="720000.0" data-yoy="612.8712871287129" data-mom="26.984126984126984" data-exceed="612.87" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">華上生醫</span>
@@ -11362,7 +11451,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -11484,7 +11573,7 @@ footer {
                     </div>
                 </details>
             </div>
-            <div class="stock-card" data-sid="4132" data-sname="國鼎" data-rev="7482000.0" data-yoy="33.179067283730866" data-mom="97.15415019762844" data-exceed="2.03" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="4132" data-sname="國鼎" data-rev="7482000.0" data-yoy="33.179067283730866" data-mom="97.15415019762844" data-exceed="2.03" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">國鼎</span>
@@ -11498,7 +11587,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -11763,10 +11852,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="6565" data-sname="物聯" data-rev="30323000.0" data-yoy="19.95806630271382" data-mom="99.58533535180676" data-exceed="12.96" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="6565" data-sname="物聯" data-rev="30323000.0" data-yoy="19.95806630271382" data-mom="99.58533535180676" data-exceed="12.96" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">物聯</span>
@@ -11780,7 +11870,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -12045,10 +12135,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="5863" data-sname="瑞興銀" data-rev="143850000.0" data-yoy="22.811211378712724" data-mom="10.08058036226727" data-exceed="22.81" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="5863" data-sname="瑞興銀" data-rev="143850000.0" data-yoy="22.811211378712724" data-mom="10.08058036226727" data-exceed="22.81" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">瑞興銀</span>
@@ -12062,7 +12153,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -12197,10 +12288,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="4587" data-sname="寶元數控" data-rev="107575000.0" data-yoy="6.8781544330962125" data-mom="105.04145620890117" data-exceed="6.88" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="4587" data-sname="寶元數控" data-rev="107575000.0" data-yoy="6.8781544330962125" data-mom="105.04145620890117" data-exceed="6.88" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">寶元數控</span>
@@ -12214,7 +12306,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -12349,10 +12441,11 @@ footer {
             <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
             <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">
             
-            <div class="stock-card" data-sid="7562" data-sname="博來科技" data-rev="64063000.0" data-yoy="20.19324577861164" data-mom="12.170822244011768" data-exceed="2.59" data-date="" data-filing-date="4/3">
+            <div class="stock-card" data-sid="7562" data-sname="博來科技" data-rev="64063000.0" data-yoy="20.19324577861164" data-mom="12.170822244011768" data-exceed="2.59" data-date="" data-filing-date="4/2">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">博來科技</span>
@@ -12366,7 +12459,7 @@ footer {
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">04-03 00:43</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">04-02 16:29</span>
                 </div>
                 <div class="detail-row">
                     <span class="revenue-label">年增率</span>
@@ -12663,7 +12756,7 @@ document.querySelectorAll('.view-btn').forEach(btn => {
         const detail = document.createElement('tr');
         detail.className = 'expanded-detail-row';
         const td = document.createElement('td');
-        td.colSpan = 5;
+        td.colSpan = 7;
         td.style.padding = '12px 16px';
         td.style.background = '#161b22';
         td.style.borderTop = '1px solid #21262d';
@@ -12671,11 +12764,13 @@ document.querySelectorAll('.view-btn').forEach(btn => {
 
         // 複製原始卡片的詳細內容
         const remark = card.querySelector('.remark-row');
+        const t1box = card.querySelector('.t1-box');
         const chart = card.querySelector('.chart-toggle');
         const links = card.querySelector('.card-links');
 
         let html = '';
         if (remark) html += '<div style="margin-bottom:10px">' + remark.outerHTML + '</div>';
+        if (t1box) html += '<div style="margin-bottom:10px">' + t1box.outerHTML + '</div>';
         if (links) {
             html += '<div style="display:flex;gap:8px;margin-bottom:10px">';
             links.querySelectorAll('a').forEach(a => {
