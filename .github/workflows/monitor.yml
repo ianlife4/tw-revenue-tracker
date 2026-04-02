@@ -1,6 +1,9 @@
 name: Revenue Monitor
 
 on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/monitor.yml']
   schedule:
     # 每月 1~12 日，每 10 分鐘偵測 (UTC+8 → UTC 需減 8)
     # 台灣時間 08:00~24:00 → UTC 00:00~16:00
