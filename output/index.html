@@ -76,128 +76,6 @@ header h1 {
     color: #8b949e;
 }
 
-/* ===== 預警清單 ===== */
-.prefiling-section {
-    margin: 20px 0;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    border: 1px solid #f0883e44;
-    border-radius: 10px;
-    padding: 16px 20px;
-}
-
-.pf-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.pf-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #f0883e;
-}
-
-.pf-summary {
-    font-size: 0.8rem;
-    color: #8b949e;
-}
-
-.pf-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.pf-card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 10px 14px;
-    background: #0d1117cc;
-    border-left: 3px solid #f0883e;
-    border-radius: 6px;
-    flex-wrap: wrap;
-}
-
-.pf-card-filed {
-    border-left-color: #3fb950;
-    opacity: 0.7;
-}
-
-.pf-left {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    min-width: 180px;
-}
-
-.pf-sid {
-    font-weight: 700;
-    color: #58a6ff;
-    font-size: 0.95rem;
-    min-width: 45px;
-}
-
-.pf-name {
-    color: #e6edf3;
-    font-size: 0.9rem;
-}
-
-.pf-badge {
-    font-size: 0.7rem;
-    padding: 1px 6px;
-    border-radius: 4px;
-    font-weight: 600;
-}
-
-.pf-filed {
-    background: #3fb95033;
-    color: #3fb950;
-}
-
-.pf-pending {
-    background: #f0883e33;
-    color: #f0883e;
-}
-
-.pf-mid {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-width: 220px;
-}
-
-.pf-avg {
-    color: #f85149;
-    font-size: 0.9rem;
-}
-
-.pf-avg strong {
-    font-size: 1rem;
-}
-
-.pf-hit {
-    color: #8b949e;
-    font-size: 0.8rem;
-}
-
-.pf-count {
-    color: #6e7681;
-    font-size: 0.75rem;
-}
-
-.pf-right {
-    flex: 1;
-}
-
-.pf-msg {
-    color: #8b949e;
-    font-size: 0.78rem;
-}
-
 /* ===== 搜尋 + 篩選 ===== */
 .filter-bar {
     display: flex;
@@ -589,298 +467,18 @@ footer {
         <h1>營收即時追蹤</h1>
         <div class="period-info">
             營收期間：<span class="highlight">2026/03</span> |
-            已申報 <span class="highlight">17</span> 家
+            已申報 <span class="highlight">94</span> 家
         </div>
         <div class="monitor-status">
-            最新申報：04-01 22:45:01 ·
+            最新申報：04-02 16:29:04 ·
             <span class="status-active">偵測中 ✓</span>
-            · 最後偵測：04-02 08:43:18
+            · 最後偵測：04-02 16:29:04
         </div>
     </header>
 
     <div class="nav-links">
         <a href="index.html" class="nav-link active">即時申報</a>
         <a href="2026_03.html" class="nav-link">歷史月報</a>
-    </div>
-
-    
-    <div class="prefiling-section">
-        <div class="pf-header">
-            <span class="pf-title">⚡ T-1 預警清單：歷史同期新高後 T+1 容易大漲</span>
-            <span class="pf-summary">共 18 檔 · 已申報 2 檔</span>
-        </div>
-        <div class="pf-cards">
-            <div class="pf-card pf-card-filed">
-                <div class="pf-left">
-                    <span class="pf-sid">6438</span>
-                    <span class="pf-name">迅得</span>
-                    <span class="pf-badge pf-filed">已申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+5.2%</strong></span>
-                    <span class="pf-hit">正報酬率 67%</span>
-                    <span class="pf-count">(3次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 4 次同期新高，T+1 平均 +5.2%，正報酬率 67% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card pf-card-filed">
-                <div class="pf-left">
-                    <span class="pf-sid">2402</span>
-                    <span class="pf-name">毅嘉</span>
-                    <span class="pf-badge pf-filed">已申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+3.8%</strong></span>
-                    <span class="pf-hit">正報酬率 100%</span>
-                    <span class="pf-count">(3次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 4 次同期新高，T+1 平均 +3.8%，正報酬率 100% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">1519</span>
-                    <span class="pf-name">華城</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+4.2%</strong></span>
-                    <span class="pf-hit">正報酬率 75%</span>
-                    <span class="pf-count">(4次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 4 次同期新高，T+1 平均 +4.2%，正報酬率 75% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">6612</span>
-                    <span class="pf-name">奈米醫材</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+3.7%</strong></span>
-                    <span class="pf-hit">正報酬率 80%</span>
-                    <span class="pf-count">(5次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 5 次同期新高，T+1 平均 +3.7%，正報酬率 80% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">3017</span>
-                    <span class="pf-name">奇鋐</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+3.7%</strong></span>
-                    <span class="pf-hit">正報酬率 75%</span>
-                    <span class="pf-count">(4次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 4 次同期新高，T+1 平均 +3.7%，正報酬率 75% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">1736</span>
-                    <span class="pf-name">喬山</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+3.3%</strong></span>
-                    <span class="pf-hit">正報酬率 100%</span>
-                    <span class="pf-count">(4次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 4 次同期新高，T+1 平均 +3.3%，正報酬率 100% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">2618</span>
-                    <span class="pf-name">長榮航</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+3.2%</strong></span>
-                    <span class="pf-hit">正報酬率 80%</span>
-                    <span class="pf-count">(5次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 5 次同期新高，T+1 平均 +3.2%，正報酬率 80% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">2610</span>
-                    <span class="pf-name">華航</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+3.2%</strong></span>
-                    <span class="pf-hit">正報酬率 80%</span>
-                    <span class="pf-count">(5次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 5 次同期新高，T+1 平均 +3.2%，正報酬率 80% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">8210</span>
-                    <span class="pf-name">勤誠</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+3.2%</strong></span>
-                    <span class="pf-hit">正報酬率 50%</span>
-                    <span class="pf-count">(4次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 4 次同期新高，T+1 平均 +3.2%，正報酬率 50% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">2364</span>
-                    <span class="pf-name">倫飛</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+3.1%</strong></span>
-                    <span class="pf-hit">正報酬率 50%</span>
-                    <span class="pf-count">(4次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 4 次同期新高，T+1 平均 +3.1%，正報酬率 50% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">1615</span>
-                    <span class="pf-name">大山</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+2.9%</strong></span>
-                    <span class="pf-hit">正報酬率 100%</span>
-                    <span class="pf-count">(4次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 4 次同期新高，T+1 平均 +2.9%，正報酬率 100% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">3617</span>
-                    <span class="pf-name">碩天</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+2.6%</strong></span>
-                    <span class="pf-hit">正報酬率 75%</span>
-                    <span class="pf-count">(4次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 4 次同期新高，T+1 平均 +2.6%，正報酬率 75% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">3231</span>
-                    <span class="pf-name">緯創</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+2.2%</strong></span>
-                    <span class="pf-hit">正報酬率 50%</span>
-                    <span class="pf-count">(4次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 4 次同期新高，T+1 平均 +2.2%，正報酬率 50% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">2612</span>
-                    <span class="pf-name">中航</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+2.1%</strong></span>
-                    <span class="pf-hit">正報酬率 75%</span>
-                    <span class="pf-count">(4次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 4 次同期新高，T+1 平均 +2.1%，正報酬率 75% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">9958</span>
-                    <span class="pf-name">世紀鋼</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+2.0%</strong></span>
-                    <span class="pf-hit">正報酬率 75%</span>
-                    <span class="pf-count">(4次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 4 次同期新高，T+1 平均 +2.0%，正報酬率 75% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">1795</span>
-                    <span class="pf-name">美時</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+2.0%</strong></span>
-                    <span class="pf-hit">正報酬率 50%</span>
-                    <span class="pf-count">(4次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 4 次同期新高，T+1 平均 +2.0%，正報酬率 50% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">8936</span>
-                    <span class="pf-name">國統</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+1.9%</strong></span>
-                    <span class="pf-hit">正報酬率 80%</span>
-                    <span class="pf-count">(5次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 5 次同期新高，T+1 平均 +1.9%，正報酬率 80% (最近: 2025年)</span>
-                </div>
-            </div>
-            <div class="pf-card ">
-                <div class="pf-left">
-                    <span class="pf-sid">6235</span>
-                    <span class="pf-name">華孚</span>
-                    <span class="pf-badge pf-pending">待申報</span>
-                </div>
-                <div class="pf-mid">
-                    <span class="pf-avg">T+1 avg <strong>+1.6%</strong></span>
-                    <span class="pf-hit">正報酬率 60%</span>
-                    <span class="pf-count">(5次)</span>
-                </div>
-                <div class="pf-right">
-                    <span class="pf-msg">歷史 5 次同期新高，T+1 平均 +1.6%，正報酬率 60% (最近: 2025年)</span>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="filter-bar">
@@ -918,70 +516,934 @@ footer {
             </thead>
             <tbody id="tableBody">
                 
-        <tr class="stock-row" data-sid="2402" data-sname="毅嘉" data-rev="1016239000.0"
-            data-yoy="13.4970537912056" data-mom="22.579178261304847" data-ytd="15.587064289023836"
-            data-seen="04-01 22:45" data-market="sii"
-            data-chart='[{"year": 2020, "month": 3, "revenue": 511528000.0}, {"year": 2020, "month": 4, "revenue": 425864000.0}, {"year": 2020, "month": 5, "revenue": 301665000.0}, {"year": 2020, "month": 6, "revenue": 331444000.0}, {"year": 2020, "month": 7, "revenue": 426346000.0}, {"year": 2020, "month": 8, "revenue": 480357000.0}, {"year": 2020, "month": 9, "revenue": 637721000.0}, {"year": 2020, "month": 10, "revenue": 610697000.0}, {"year": 2020, "month": 11, "revenue": 605210000.0}, {"year": 2020, "month": 12, "revenue": 555278000.0}, {"year": 2021, "month": 1, "revenue": 568689000.0}, {"year": 2021, "month": 2, "revenue": 503017000.0}, {"year": 2021, "month": 3, "revenue": 539899000.0}, {"year": 2021, "month": 5, "revenue": 559379000.0}, {"year": 2021, "month": 6, "revenue": 543471000.0}, {"year": 2021, "month": 7, "revenue": 558712000.0}, {"year": 2021, "month": 8, "revenue": 545468000.0}, {"year": 2021, "month": 9, "revenue": 505797000.0}, {"year": 2021, "month": 10, "revenue": 526857000.0}, {"year": 2021, "month": 11, "revenue": 544117000.0}, {"year": 2021, "month": 12, "revenue": 539192000.0}, {"year": 2022, "month": 1, "revenue": 592276000.0}, {"year": 2022, "month": 2, "revenue": 519604000.0}, {"year": 2022, "month": 5, "revenue": 564451000.0}, {"year": 2022, "month": 6, "revenue": 568393000.0}, {"year": 2022, "month": 7, "revenue": 600851000.0}, {"year": 2022, "month": 8, "revenue": 701975000.0}, {"year": 2022, "month": 9, "revenue": 778752000.0}, {"year": 2022, "month": 10, "revenue": 753760000.0}, {"year": 2022, "month": 12, "revenue": 618101000.0}, {"year": 2023, "month": 1, "revenue": 604289000.0}, {"year": 2023, "month": 2, "revenue": 593451000.0}, {"year": 2023, "month": 3, "revenue": 725229000.0}, {"year": 2023, "month": 4, "revenue": 674782000.0}, {"year": 2023, "month": 5, "revenue": 702948000.0}, {"year": 2023, "month": 6, "revenue": 695330000.0}, {"year": 2023, "month": 7, "revenue": 776515000.0}, {"year": 2023, "month": 8, "revenue": 794886000.0}, {"year": 2023, "month": 9, "revenue": 799507000.0}, {"year": 2023, "month": 11, "revenue": 753142000.0}, {"year": 2023, "month": 12, "revenue": 691870000.0}, {"year": 2024, "month": 1, "revenue": 682231000.0}, {"year": 2024, "month": 2, "revenue": 632740000.0}, {"year": 2024, "month": 3, "revenue": 684470000.0}, {"year": 2024, "month": 4, "revenue": 750949000.0}, {"year": 2024, "month": 5, "revenue": 777840000.0}, {"year": 2024, "month": 6, "revenue": 854372000.0}, {"year": 2024, "month": 8, "revenue": 892629000.0}, {"year": 2024, "month": 9, "revenue": 870663000.0}, {"year": 2024, "month": 10, "revenue": 865963000.0}, {"year": 2024, "month": 11, "revenue": 857898000.0}, {"year": 2024, "month": 12, "revenue": 791757000.0}, {"year": 2025, "month": 1, "revenue": 793961000.0}, {"year": 2025, "month": 2, "revenue": 749482000.0}, {"year": 2025, "month": 3, "revenue": 895388000.0}, {"year": 2025, "month": 4, "revenue": 929651000.0}, {"year": 2025, "month": 6, "revenue": 932475000.0}, {"year": 2025, "month": 7, "revenue": 940752000.0}, {"year": 2025, "month": 8, "revenue": 956315000.0}, {"year": 2025, "month": 9, "revenue": 987975000.0}, {"year": 2025, "month": 10, "revenue": 941070000.0}, {"year": 2025, "month": 11, "revenue": 871529000.0}, {"year": 2025, "month": 12, "revenue": 912232000.0}, {"year": 2026, "month": 1, "revenue": 973685000.0}, {"year": 2022, "month": 3, "revenue": 640160000.0}, {"year": 2022, "month": 4, "revenue": 551831000.0}, {"year": 2022, "month": 11, "revenue": 764036000.0}, {"year": 2023, "month": 10, "revenue": 750880000.0}, {"year": 2024, "month": 7, "revenue": 867790000.0}, {"year": 2025, "month": 5, "revenue": 938145000.0}, {"year": 2026, "month": 2, "revenue": 829047000.0}, {"year": 2021, "month": 4, "revenue": 543979000.0}]'>
-            <td class="col-id">2402</td>
-            <td class="col-name">毅嘉 <span class="market-badge">上市</span></td>
-            <td class="col-seen">04-01 22:45</td>
-            <td class="col-rev">1,016.2</td>
-            <td class="col-pct"><span style="color:#f85149">22.58%</span></td>
-            <td class="col-pct"><span style="color:#f85149">13.50%</span></td>
-            <td class="col-pct"><span style="color:#f85149">15.59%</span></td>
+        <tr class="stock-row" data-sid="1437" data-sname="勤益控" data-rev="53168000.0"
+            data-yoy="-21.551037270929854" data-mom="-2.045027451269391" data-ytd="-9.051563980050554"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">1437</td>
+            <td class="col-name">勤益控 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">53.17</td>
+            <td class="col-pct"><span style="color:#3fb950">-2.05%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-21.55%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-9.05%</span></td>
         </tr>
-        <tr class="stock-row" data-sid="6712" data-sname="長聖" data-rev="70103000.0"
-            data-yoy="15.121110107562195" data-mom="12.722098052772909" data-ytd="7.063128077156539"
-            data-seen="04-01 22:45" data-market="otc"
-            data-chart='[{"year": 2020, "month": 3, "revenue": 2210000.0}, {"year": 2020, "month": 4, "revenue": 3828000.0}, {"year": 2020, "month": 5, "revenue": 2043000.0}, {"year": 2020, "month": 6, "revenue": 3748000.0}, {"year": 2020, "month": 7, "revenue": 6081000.0}, {"year": 2020, "month": 8, "revenue": 9381000.0}, {"year": 2020, "month": 9, "revenue": 11676000.0}, {"year": 2020, "month": 10, "revenue": 8086000.0}, {"year": 2020, "month": 11, "revenue": 5133000.0}, {"year": 2020, "month": 12, "revenue": 12859000.0}, {"year": 2021, "month": 1, "revenue": 13879000.0}, {"year": 2021, "month": 2, "revenue": 15650000.0}, {"year": 2021, "month": 3, "revenue": 19463000.0}, {"year": 2021, "month": 4, "revenue": 24002000.0}, {"year": 2021, "month": 5, "revenue": 30145000.0}, {"year": 2021, "month": 7, "revenue": 44311000.0}, {"year": 2021, "month": 8, "revenue": 48813000.0}, {"year": 2021, "month": 9, "revenue": 50589000.0}, {"year": 2021, "month": 10, "revenue": 51170000.0}, {"year": 2021, "month": 11, "revenue": 51422000.0}, {"year": 2021, "month": 12, "revenue": 52498000.0}, {"year": 2022, "month": 1, "revenue": 53091000.0}, {"year": 2022, "month": 2, "revenue": 32026000.0}, {"year": 2022, "month": 3, "revenue": 38538000.0}, {"year": 2022, "month": 4, "revenue": 44128000.0}, {"year": 2022, "month": 5, "revenue": 53231000.0}, {"year": 2022, "month": 6, "revenue": 55103000.0}, {"year": 2022, "month": 7, "revenue": 56518000.0}, {"year": 2022, "month": 8, "revenue": 57021000.0}, {"year": 2022, "month": 9, "revenue": 58112000.0}, {"year": 2022, "month": 11, "revenue": 60105000.0}, {"year": 2022, "month": 12, "revenue": 60512000.0}, {"year": 2023, "month": 1, "revenue": 33183000.0}, {"year": 2023, "month": 2, "revenue": 39044000.0}, {"year": 2023, "month": 3, "revenue": 44656000.0}, {"year": 2023, "month": 4, "revenue": 48613000.0}, {"year": 2023, "month": 5, "revenue": 54022000.0}, {"year": 2023, "month": 6, "revenue": 57304000.0}, {"year": 2023, "month": 7, "revenue": 60604000.0}, {"year": 2023, "month": 8, "revenue": 78804000.0}, {"year": 2023, "month": 10, "revenue": 87514000.0}, {"year": 2023, "month": 11, "revenue": 87601000.0}, {"year": 2023, "month": 12, "revenue": 81055000.0}, {"year": 2024, "month": 1, "revenue": 53502000.0}, {"year": 2024, "month": 2, "revenue": 54895000.0}, {"year": 2024, "month": 3, "revenue": 55081000.0}, {"year": 2024, "month": 4, "revenue": 56032000.0}, {"year": 2024, "month": 5, "revenue": 60120000.0}, {"year": 2024, "month": 6, "revenue": 62127000.0}, {"year": 2024, "month": 8, "revenue": 87789000.0}, {"year": 2024, "month": 9, "revenue": 90026000.0}, {"year": 2024, "month": 10, "revenue": 99087000.0}, {"year": 2024, "month": 11, "revenue": 123484000.0}, {"year": 2024, "month": 12, "revenue": 127118000.0}, {"year": 2025, "month": 1, "revenue": 56856000.0}, {"year": 2025, "month": 2, "revenue": 60173000.0}, {"year": 2025, "month": 3, "revenue": 60895000.0}, {"year": 2025, "month": 5, "revenue": 72460000.0}, {"year": 2025, "month": 6, "revenue": 80874000.0}, {"year": 2025, "month": 7, "revenue": 82211000.0}, {"year": 2025, "month": 8, "revenue": 90537000.0}, {"year": 2025, "month": 9, "revenue": 91104000.0}, {"year": 2025, "month": 10, "revenue": 111130000.0}, {"year": 2025, "month": 11, "revenue": 125029000.0}, {"year": 2025, "month": 12, "revenue": 128011000.0}, {"year": 2026, "month": 1, "revenue": 58197000.0}, {"year": 2021, "month": 6, "revenue": 36900000.0}, {"year": 2022, "month": 10, "revenue": 59126000.0}, {"year": 2023, "month": 9, "revenue": 87189000.0}, {"year": 2024, "month": 7, "revenue": 70210000.0}, {"year": 2025, "month": 4, "revenue": 67544000.0}, {"year": 2026, "month": 2, "revenue": 62191000.0}]'>
-            <td class="col-id">6712</td>
-            <td class="col-name">長聖 <span class="market-badge">上櫃</span></td>
-            <td class="col-seen">04-01 22:45</td>
-            <td class="col-rev">70.10</td>
-            <td class="col-pct"><span style="color:#f85149">12.72%</span></td>
-            <td class="col-pct"><span style="color:#f85149">15.12%</span></td>
-            <td class="col-pct"><span style="color:#f85149">7.06%</span></td>
+        <tr class="stock-row" data-sid="3066" data-sname="李洲" data-rev="22234000.0"
+            data-yoy="-7.731252853052247" data-mom="39.25842415132156" data-ytd="21.354309415483563"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">3066</td>
+            <td class="col-name">李洲 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">22.23</td>
+            <td class="col-pct"><span style="color:#f85149">39.26%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-7.73%</span></td>
+            <td class="col-pct"><span style="color:#f85149">21.35%</span></td>
         </tr>
-        <tr class="stock-row" data-sid="6610" data-sname="安成生技" data-rev="0.0"
+        <tr class="stock-row" data-sid="6584" data-sname="南俊國際" data-rev="312165000.0"
+            data-yoy="52.71513135365198" data-mom="23.894665819971426" data-ytd="73.53725427393202"
+            data-seen="04-02 16:29" data-market="otc" data-remark="主係雲端CSP客戶的GB系列AI伺服器導軌持續出貨以及通用型伺服器導軌出貨增溫所致"
+            data-chart='[]'>
+            <td class="col-id">6584</td>
+            <td class="col-name">南俊國際 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">312.2</td>
+            <td class="col-pct"><span style="color:#f85149">23.89%</span></td>
+            <td class="col-pct"><span style="color:#f85149">52.72%</span></td>
+            <td class="col-pct"><span style="color:#f85149">73.54%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6538" data-sname="倉和" data-rev="124129000.0"
+            data-yoy="-23.941495815002263" data-mom="28.886189245034213" data-ytd="-27.05458372684173"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">6538</td>
+            <td class="col-name">倉和 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">124.1</td>
+            <td class="col-pct"><span style="color:#f85149">28.89%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-23.94%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-27.05%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6516" data-sname="勤崴國際" data-rev="60780000.0"
+            data-yoy="75.91386645827906" data-mom="-2.1366351618980146" data-ytd="34.7481374651592"
+            data-seen="04-02 16:29" data-market="otc" data-remark="本月差異主要係電商服務及其他及導航軟體與車載營收成長。"
+            data-chart='[]'>
+            <td class="col-id">6516</td>
+            <td class="col-name">勤崴國際 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">60.78</td>
+            <td class="col-pct"><span style="color:#3fb950">-2.14%</span></td>
+            <td class="col-pct"><span style="color:#f85149">75.91%</span></td>
+            <td class="col-pct"><span style="color:#f85149">34.75%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6492" data-sname="生華科" data-rev="80000.0"
+            data-yoy="-3.614457831325301" data-mom="0.0" data-ytd="-4.0"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">6492</td>
+            <td class="col-name">生華科 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">0.08</td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-3.61%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-4.00%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6121" data-sname="新普" data-rev="6866112000.0"
+            data-yoy="4.6246032642160895" data-mom="21.26755555900941" data-ytd="0.503043411825294"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">6121</td>
+            <td class="col-name">新普 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">6,866.1</td>
+            <td class="col-pct"><span style="color:#f85149">21.27%</span></td>
+            <td class="col-pct"><span style="color:#f85149">4.62%</span></td>
+            <td class="col-pct"><span style="color:#f85149">0.50%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6103" data-sname="合邦" data-rev="8436000.0"
+            data-yoy="-10.767928918976096" data-mom="-0.4366812227074236" data-ytd="-2.978723404255319"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">6103</td>
+            <td class="col-name">合邦 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">8.44</td>
+            <td class="col-pct"><span style="color:#3fb950">-0.44%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-10.77%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-2.98%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="5490" data-sname="同亨" data-rev="139530000.0"
+            data-yoy="-11.650171912694946" data-mom="-11.344791435016043" data-ytd="4.690316130916621"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">5490</td>
+            <td class="col-name">同亨 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">139.5</td>
+            <td class="col-pct"><span style="color:#3fb950">-11.34%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-11.65%</span></td>
+            <td class="col-pct"><span style="color:#f85149">4.69%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="4972" data-sname="湯石照明" data-rev="67302000.0"
+            data-yoy="-32.036717258929386" data-mom="10.725038250826712" data-ytd="-3.796149771495189"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">4972</td>
+            <td class="col-name">湯石照明 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">67.30</td>
+            <td class="col-pct"><span style="color:#f85149">10.73%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-32.04%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-3.80%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="4743" data-sname="合一" data-rev="14375000.0"
+            data-yoy="128.7555697008275" data-mom="51.89137785291632" data-ytd="45.21156362771146"
+            data-seen="04-02 16:29" data-market="otc" data-remark="本月營收增加，主係客戶需求增加。"
+            data-chart='[]'>
+            <td class="col-id">4743</td>
+            <td class="col-name">合一 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">14.38</td>
+            <td class="col-pct"><span style="color:#f85149">51.89%</span></td>
+            <td class="col-pct"><span style="color:#f85149">128.76%</span></td>
+            <td class="col-pct"><span style="color:#f85149">45.21%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="4702" data-sname="中美實" data-rev="3921000.0"
+            data-yoy="-54.03821357402415" data-mom="-54.936214228249625" data-ytd="5.21968517557516"
+            data-seen="04-02 16:29" data-market="otc" data-remark="本月營收較去年同期增減變動達50％以上，主要是外銷銷售量減少所致。"
+            data-chart='[]'>
+            <td class="col-id">4702</td>
+            <td class="col-name">中美實 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">3.92</td>
+            <td class="col-pct"><span style="color:#3fb950">-54.94%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-54.04%</span></td>
+            <td class="col-pct"><span style="color:#f85149">5.22%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="4153" data-sname="鈺緯" data-rev="89330000.0"
+            data-yoy="14.590281697367748" data-mom="38.95499867780422" data-ytd="7.623967939742166"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">4153</td>
+            <td class="col-name">鈺緯 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">89.33</td>
+            <td class="col-pct"><span style="color:#f85149">38.95%</span></td>
+            <td class="col-pct"><span style="color:#f85149">14.59%</span></td>
+            <td class="col-pct"><span style="color:#f85149">7.62%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="4128" data-sname="中天" data-rev="169648000.0"
+            data-yoy="7.731484127437719" data-mom="11.634762810346984" data-ytd="9.89541343895685"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">4128</td>
+            <td class="col-name">中天 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">169.6</td>
+            <td class="col-pct"><span style="color:#f85149">11.63%</span></td>
+            <td class="col-pct"><span style="color:#f85149">7.73%</span></td>
+            <td class="col-pct"><span style="color:#f85149">9.90%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="1452" data-sname="宏益" data-rev="161166000.0"
+            data-yoy="40.43988218686279" data-mom="114.18547165297824" data-ytd="-6.214616645815124"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">1452</td>
+            <td class="col-name">宏益 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">161.2</td>
+            <td class="col-pct"><span style="color:#f85149">114.19%</span></td>
+            <td class="col-pct"><span style="color:#f85149">40.44%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-6.21%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="3689" data-sname="湧德" data-rev="730004000.0"
+            data-yoy="41.79846081527841" data-mom="53.23759884295751" data-ytd="29.36159254238747"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">3689</td>
+            <td class="col-name">湧德 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">730.0</td>
+            <td class="col-pct"><span style="color:#f85149">53.24%</span></td>
+            <td class="col-pct"><span style="color:#f85149">41.80%</span></td>
+            <td class="col-pct"><span style="color:#f85149">29.36%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="3625" data-sname="西勝" data-rev="45820000.0"
+            data-yoy="14.30424587137654" data-mom="35.97246127366609" data-ytd="15.037529528309076"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">3625</td>
+            <td class="col-name">西勝 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">45.82</td>
+            <td class="col-pct"><span style="color:#f85149">35.97%</span></td>
+            <td class="col-pct"><span style="color:#f85149">14.30%</span></td>
+            <td class="col-pct"><span style="color:#f85149">15.04%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="3564" data-sname="其陽" data-rev="204278000.0"
+            data-yoy="9.420379129149236" data-mom="29.98835514886956" data-ytd="11.757787305080244"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">3564</td>
+            <td class="col-name">其陽 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">204.3</td>
+            <td class="col-pct"><span style="color:#f85149">29.99%</span></td>
+            <td class="col-pct"><span style="color:#f85149">9.42%</span></td>
+            <td class="col-pct"><span style="color:#f85149">11.76%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="3511" data-sname="矽瑪" data-rev="173726000.0"
+            data-yoy="7.858792559664241" data-mom="54.80703255183968" data-ytd="1.1161328185060626"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">3511</td>
+            <td class="col-name">矽瑪 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">173.7</td>
+            <td class="col-pct"><span style="color:#f85149">54.81%</span></td>
+            <td class="col-pct"><span style="color:#f85149">7.86%</span></td>
+            <td class="col-pct"><span style="color:#f85149">1.12%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6693" data-sname="廣閎科" data-rev="193378000.0"
+            data-yoy="111.904840176644" data-mom="26.13445871463887" data-ytd="64.22001078421675"
+            data-seen="04-02 16:29" data-market="otc" data-remark="新品導入量產"
+            data-chart='[]'>
+            <td class="col-id">6693</td>
+            <td class="col-name">廣閎科 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">193.4</td>
+            <td class="col-pct"><span style="color:#f85149">26.13%</span></td>
+            <td class="col-pct"><span style="color:#f85149">111.90%</span></td>
+            <td class="col-pct"><span style="color:#f85149">64.22%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6739" data-sname="竹陞科技" data-rev="100094000.0"
+            data-yoy="87.84296062755696" data-mom="7.463872366923622" data-ytd="92.26243211621568"
+            data-seen="04-02 16:29" data-market="otc" data-remark="因客戶產線升級需求"
+            data-chart='[]'>
+            <td class="col-id">6739</td>
+            <td class="col-name">竹陞科技 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">100.1</td>
+            <td class="col-pct"><span style="color:#f85149">7.46%</span></td>
+            <td class="col-pct"><span style="color:#f85149">87.84%</span></td>
+            <td class="col-pct"><span style="color:#f85149">92.26%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6844" data-sname="諾貝兒" data-rev="283355000.0"
+            data-yoy="0.5040186710364837" data-mom="-0.3856538185704442" data-ytd="-2.545838764693384"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">6844</td>
+            <td class="col-name">諾貝兒 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">283.4</td>
+            <td class="col-pct"><span style="color:#3fb950">-0.39%</span></td>
+            <td class="col-pct"><span style="color:#f85149">0.50%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-2.55%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6704" data-sname="國璽幹細胞" data-rev="11055000.0"
+            data-yoy="-29.59943959752913" data-mom="0.0633598841419261" data-ytd="-29.49127288207748"
+            data-seen="04-02 16:29" data-market="emerging"
+            data-chart='[]'>
+            <td class="col-id">6704</td>
+            <td class="col-name">國璽幹細胞 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">11.05</td>
+            <td class="col-pct"><span style="color:#f85149">0.06%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-29.60%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-29.49%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="7876" data-sname="鼎晉生技" data-rev="0.0"
             data-yoy="0" data-mom="0" data-ytd="0"
-            data-seen="04-01 22:45" data-market="emerging" data-remark="本公司為新藥研發生技公司，目前尚未有新藥商品化"
-            data-chart='[{"year": 2020, "month": 3, "revenue": 0.0}, {"year": 2020, "month": 4, "revenue": 0.0}, {"year": 2020, "month": 5, "revenue": 0.0}, {"year": 2020, "month": 6, "revenue": 0.0}, {"year": 2020, "month": 7, "revenue": 0.0}, {"year": 2020, "month": 8, "revenue": 0.0}, {"year": 2020, "month": 9, "revenue": 0.0}, {"year": 2020, "month": 10, "revenue": 0.0}, {"year": 2020, "month": 11, "revenue": 0.0}, {"year": 2020, "month": 12, "revenue": 0.0}, {"year": 2021, "month": 1, "revenue": 0.0}, {"year": 2021, "month": 2, "revenue": 66397000.0}, {"year": 2021, "month": 3, "revenue": 0.0}, {"year": 2021, "month": 4, "revenue": 0.0}, {"year": 2021, "month": 7, "revenue": 0.0}, {"year": 2021, "month": 8, "revenue": 0.0}, {"year": 2021, "month": 9, "revenue": 0.0}, {"year": 2021, "month": 10, "revenue": 0.0}, {"year": 2021, "month": 11, "revenue": 0.0}, {"year": 2021, "month": 12, "revenue": 0.0}, {"year": 2022, "month": 1, "revenue": 0.0}, {"year": 2022, "month": 2, "revenue": 0.0}, {"year": 2022, "month": 4, "revenue": 0.0}, {"year": 2022, "month": 5, "revenue": 0.0}, {"year": 2022, "month": 6, "revenue": 0.0}, {"year": 2022, "month": 7, "revenue": 0.0}, {"year": 2022, "month": 8, "revenue": 0.0}, {"year": 2022, "month": 9, "revenue": 0.0}, {"year": 2022, "month": 10, "revenue": 0.0}, {"year": 2022, "month": 11, "revenue": 0.0}, {"year": 2022, "month": 12, "revenue": 0.0}, {"year": 2023, "month": 1, "revenue": 0.0}, {"year": 2023, "month": 2, "revenue": 0.0}, {"year": 2023, "month": 3, "revenue": 0.0}, {"year": 2023, "month": 4, "revenue": 0.0}, {"year": 2023, "month": 5, "revenue": 0.0}, {"year": 2023, "month": 6, "revenue": 0.0}, {"year": 2023, "month": 7, "revenue": 0.0}, {"year": 2023, "month": 9, "revenue": 0.0}, {"year": 2023, "month": 10, "revenue": 0.0}, {"year": 2023, "month": 11, "revenue": 0.0}, {"year": 2023, "month": 12, "revenue": 0.0}, {"year": 2024, "month": 1, "revenue": 0.0}, {"year": 2024, "month": 2, "revenue": 0.0}, {"year": 2024, "month": 3, "revenue": 0.0}, {"year": 2024, "month": 5, "revenue": 0.0}, {"year": 2024, "month": 7, "revenue": 0.0}, {"year": 2024, "month": 8, "revenue": 0.0}, {"year": 2024, "month": 9, "revenue": 0.0}, {"year": 2024, "month": 10, "revenue": 0.0}, {"year": 2024, "month": 11, "revenue": 0.0}, {"year": 2024, "month": 12, "revenue": 0.0}, {"year": 2025, "month": 1, "revenue": 0.0}, {"year": 2025, "month": 2, "revenue": 0.0}, {"year": 2025, "month": 3, "revenue": 0.0}, {"year": 2025, "month": 5, "revenue": 0.0}, {"year": 2025, "month": 6, "revenue": 0.0}, {"year": 2025, "month": 7, "revenue": 0.0}, {"year": 2025, "month": 8, "revenue": 0.0}, {"year": 2025, "month": 9, "revenue": 0.0}, {"year": 2025, "month": 10, "revenue": 0.0}, {"year": 2025, "month": 11, "revenue": 0.0}, {"year": 2025, "month": 12, "revenue": 0.0}, {"year": 2026, "month": 2, "revenue": 0.0}, {"year": 2021, "month": 5, "revenue": 0.0}, {"year": 2021, "month": 6, "revenue": 0.0}, {"year": 2022, "month": 3, "revenue": 0.0}, {"year": 2023, "month": 8, "revenue": 0.0}, {"year": 2024, "month": 4, "revenue": 0.0}, {"year": 2024, "month": 6, "revenue": 0.0}, {"year": 2025, "month": 4, "revenue": 0.0}, {"year": 2026, "month": 1, "revenue": 0.0}]'>
-            <td class="col-id">6610</td>
-            <td class="col-name">安成生技 <span class="market-badge">興櫃</span></td>
-            <td class="col-seen">04-01 22:45</td>
+            data-seen="04-02 16:29" data-market="emerging" data-remark="係屬新藥研發階段，尚無營收。"
+            data-chart='[]'>
+            <td class="col-id">7876</td>
+            <td class="col-name">鼎晉生技 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
             <td class="col-rev">-</td>
             <td class="col-pct"><span style="color:#6e7681">-</span></td>
             <td class="col-pct"><span style="color:#6e7681">-</span></td>
             <td class="col-pct"><span style="color:#6e7681">-</span></td>
         </tr>
-        <tr class="stock-row" data-sid="6586" data-sname="醣基" data-rev="31000.0"
-            data-yoy="0.0" data-mom="-3.125" data-ytd="429.4736842105263"
-            data-seen="04-01 22:45" data-market="emerging" data-remark="係依據IFRS15 會計原則，自114年01月起依合約期限認列前期授權金攤銷數。"
-            data-chart='[{"year": 2020, "month": 3, "revenue": 0.0}, {"year": 2020, "month": 4, "revenue": 60000.0}, {"year": 2020, "month": 5, "revenue": 0.0}, {"year": 2020, "month": 6, "revenue": 60000.0}, {"year": 2020, "month": 7, "revenue": 0.0}, {"year": 2020, "month": 8, "revenue": 0.0}, {"year": 2020, "month": 9, "revenue": 0.0}, {"year": 2020, "month": 10, "revenue": 0.0}, {"year": 2020, "month": 11, "revenue": 0.0}, {"year": 2020, "month": 12, "revenue": 0.0}, {"year": 2021, "month": 1, "revenue": 0.0}, {"year": 2021, "month": 2, "revenue": 0.0}, {"year": 2021, "month": 3, "revenue": 0.0}, {"year": 2021, "month": 4, "revenue": 0.0}, {"year": 2021, "month": 7, "revenue": 0.0}, {"year": 2021, "month": 8, "revenue": 702000.0}, {"year": 2021, "month": 9, "revenue": 2868000.0}, {"year": 2021, "month": 10, "revenue": 0.0}, {"year": 2021, "month": 11, "revenue": 0.0}, {"year": 2021, "month": 12, "revenue": 0.0}, {"year": 2022, "month": 1, "revenue": 0.0}, {"year": 2022, "month": 2, "revenue": 0.0}, {"year": 2022, "month": 4, "revenue": 0.0}, {"year": 2022, "month": 5, "revenue": 0.0}, {"year": 2022, "month": 6, "revenue": 0.0}, {"year": 2022, "month": 7, "revenue": 0.0}, {"year": 2022, "month": 8, "revenue": 0.0}, {"year": 2022, "month": 9, "revenue": 60000.0}, {"year": 2022, "month": 10, "revenue": 0.0}, {"year": 2022, "month": 11, "revenue": 0.0}, {"year": 2022, "month": 12, "revenue": 0.0}, {"year": 2023, "month": 1, "revenue": 0.0}, {"year": 2023, "month": 2, "revenue": 0.0}, {"year": 2023, "month": 3, "revenue": 0.0}, {"year": 2023, "month": 4, "revenue": 0.0}, {"year": 2023, "month": 5, "revenue": 0.0}, {"year": 2023, "month": 6, "revenue": 0.0}, {"year": 2023, "month": 7, "revenue": 0.0}, {"year": 2023, "month": 9, "revenue": 0.0}, {"year": 2023, "month": 10, "revenue": 0.0}, {"year": 2023, "month": 11, "revenue": 0.0}, {"year": 2023, "month": 12, "revenue": 0.0}, {"year": 2024, "month": 1, "revenue": 0.0}, {"year": 2024, "month": 2, "revenue": 0.0}, {"year": 2024, "month": 3, "revenue": 0.0}, {"year": 2024, "month": 5, "revenue": 0.0}, {"year": 2024, "month": 7, "revenue": 0.0}, {"year": 2024, "month": 8, "revenue": 108000.0}, {"year": 2024, "month": 9, "revenue": 0.0}, {"year": 2024, "month": 10, "revenue": 708000.0}, {"year": 2024, "month": 11, "revenue": 1430000.0}, {"year": 2024, "month": 12, "revenue": 252000.0}, {"year": 2025, "month": 1, "revenue": 32000.0}, {"year": 2025, "month": 2, "revenue": 32000.0}, {"year": 2025, "month": 3, "revenue": 31000.0}, {"year": 2025, "month": 5, "revenue": 127000.0}, {"year": 2025, "month": 6, "revenue": 458000.0}, {"year": 2025, "month": 7, "revenue": 32000.0}, {"year": 2025, "month": 8, "revenue": 560000.0}, {"year": 2025, "month": 9, "revenue": 32000.0}, {"year": 2025, "month": 10, "revenue": 32000.0}, {"year": 2025, "month": 11, "revenue": 31000.0}, {"year": 2025, "month": 12, "revenue": 32000.0}, {"year": 2026, "month": 2, "revenue": 32000.0}, {"year": 2021, "month": 5, "revenue": 0.0}, {"year": 2021, "month": 6, "revenue": 0.0}, {"year": 2022, "month": 3, "revenue": 0.0}, {"year": 2023, "month": 8, "revenue": 0.0}, {"year": 2024, "month": 4, "revenue": 357000.0}, {"year": 2024, "month": 6, "revenue": 725000.0}, {"year": 2025, "month": 4, "revenue": 32000.0}, {"year": 2026, "month": 1, "revenue": 440000.0}]'>
-            <td class="col-id">6586</td>
-            <td class="col-name">醣基 <span class="market-badge">興櫃</span></td>
-            <td class="col-seen">04-01 22:45</td>
-            <td class="col-rev">0.03</td>
-            <td class="col-pct"><span style="color:#3fb950">-3.12%</span></td>
-            <td class="col-pct"><span style="color:#6e7681">-</span></td>
-            <td class="col-pct"><span style="color:#f85149">429.47%</span></td>
+        <tr class="stock-row" data-sid="7812" data-sname="稜研科技*" data-rev="21329000.0"
+            data-yoy="-47.00211206361038" data-mom="104.35949027498324" data-ytd="-45.98178352044059"
+            data-seen="04-02 16:29" data-market="emerging"
+            data-chart='[]'>
+            <td class="col-id">7812</td>
+            <td class="col-name">稜研科技* <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">21.33</td>
+            <td class="col-pct"><span style="color:#f85149">104.36%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-47.00%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-45.98%</span></td>
         </tr>
-        <tr class="stock-row" data-sid="6518" data-sname="康科特" data-rev="85311000.0"
-            data-yoy="19.426323599406444" data-mom="26.683199192183185" data-ytd="18.96218457014774"
-            data-seen="04-01 22:45" data-market="emerging"
-            data-chart='[{"year": 2020, "month": 3, "revenue": 66336000.0}, {"year": 2020, "month": 4, "revenue": 60415000.0}, {"year": 2020, "month": 5, "revenue": 61572000.0}, {"year": 2020, "month": 6, "revenue": 66475000.0}, {"year": 2020, "month": 7, "revenue": 70064000.0}, {"year": 2020, "month": 8, "revenue": 74705000.0}, {"year": 2020, "month": 9, "revenue": 66028000.0}, {"year": 2020, "month": 10, "revenue": 70826000.0}, {"year": 2020, "month": 11, "revenue": 79261000.0}, {"year": 2020, "month": 12, "revenue": 74238000.0}, {"year": 2021, "month": 1, "revenue": 76469000.0}, {"year": 2021, "month": 2, "revenue": 42296000.0}, {"year": 2021, "month": 3, "revenue": 58893000.0}, {"year": 2021, "month": 4, "revenue": 68664000.0}, {"year": 2021, "month": 7, "revenue": 55708000.0}, {"year": 2021, "month": 8, "revenue": 56309000.0}, {"year": 2021, "month": 9, "revenue": 61094000.0}, {"year": 2021, "month": 10, "revenue": 65338000.0}, {"year": 2021, "month": 11, "revenue": 73339000.0}, {"year": 2021, "month": 12, "revenue": 67939000.0}, {"year": 2022, "month": 1, "revenue": 67065000.0}, {"year": 2022, "month": 2, "revenue": 64881000.0}, {"year": 2022, "month": 4, "revenue": 76456000.0}, {"year": 2022, "month": 5, "revenue": 89950000.0}, {"year": 2022, "month": 6, "revenue": 81303000.0}, {"year": 2022, "month": 7, "revenue": 68209000.0}, {"year": 2022, "month": 8, "revenue": 71702000.0}, {"year": 2022, "month": 9, "revenue": 75976000.0}, {"year": 2022, "month": 10, "revenue": 72920000.0}, {"year": 2022, "month": 11, "revenue": 76402000.0}, {"year": 2022, "month": 12, "revenue": 79748000.0}, {"year": 2023, "month": 1, "revenue": 64373000.0}, {"year": 2023, "month": 2, "revenue": 62935000.0}, {"year": 2023, "month": 3, "revenue": 70710000.0}, {"year": 2023, "month": 4, "revenue": 64651000.0}, {"year": 2023, "month": 5, "revenue": 69087000.0}, {"year": 2023, "month": 6, "revenue": 71674000.0}, {"year": 2023, "month": 7, "revenue": 66813000.0}, {"year": 2023, "month": 9, "revenue": 68448000.0}, {"year": 2023, "month": 10, "revenue": 70739000.0}, {"year": 2023, "month": 11, "revenue": 73576000.0}, {"year": 2023, "month": 12, "revenue": 76867000.0}, {"year": 2024, "month": 1, "revenue": 83587000.0}, {"year": 2024, "month": 2, "revenue": 55640000.0}, {"year": 2024, "month": 3, "revenue": 67654000.0}, {"year": 2024, "month": 5, "revenue": 74841000.0}, {"year": 2024, "month": 7, "revenue": 75799000.0}, {"year": 2024, "month": 8, "revenue": 74028000.0}, {"year": 2024, "month": 9, "revenue": 72617000.0}, {"year": 2024, "month": 10, "revenue": 70252000.0}, {"year": 2024, "month": 11, "revenue": 80910000.0}, {"year": 2024, "month": 12, "revenue": 82902000.0}, {"year": 2025, "month": 1, "revenue": 74533000.0}, {"year": 2025, "month": 2, "revenue": 61488000.0}, {"year": 2025, "month": 3, "revenue": 71434000.0}, {"year": 2025, "month": 5, "revenue": 78932000.0}, {"year": 2025, "month": 6, "revenue": 77806000.0}, {"year": 2025, "month": 7, "revenue": 84104000.0}, {"year": 2025, "month": 8, "revenue": 80015000.0}, {"year": 2025, "month": 9, "revenue": 78120000.0}, {"year": 2025, "month": 10, "revenue": 74219000.0}, {"year": 2025, "month": 11, "revenue": 94619000.0}, {"year": 2025, "month": 12, "revenue": 104469000.0}, {"year": 2026, "month": 2, "revenue": 67342000.0}, {"year": 2021, "month": 5, "revenue": 61641000.0}, {"year": 2021, "month": 6, "revenue": 50064000.0}, {"year": 2022, "month": 3, "revenue": 63451000.0}, {"year": 2023, "month": 8, "revenue": 73329000.0}, {"year": 2024, "month": 4, "revenue": 76410000.0}, {"year": 2024, "month": 6, "revenue": 75205000.0}, {"year": 2025, "month": 4, "revenue": 84612000.0}, {"year": 2026, "month": 1, "revenue": 94140000.0}]'>
-            <td class="col-id">6518</td>
-            <td class="col-name">康科特 <span class="market-badge">興櫃</span></td>
-            <td class="col-seen">04-01 22:45</td>
-            <td class="col-rev">85.31</td>
-            <td class="col-pct"><span style="color:#f85149">26.68%</span></td>
-            <td class="col-pct"><span style="color:#f85149">19.43%</span></td>
-            <td class="col-pct"><span style="color:#f85149">18.96%</span></td>
+        <tr class="stock-row" data-sid="7562" data-sname="博來科技" data-rev="64063000.0"
+            data-yoy="20.19324577861164" data-mom="12.170822244011768" data-ytd="20.272260176577284"
+            data-seen="04-02 16:29" data-market="emerging"
+            data-chart='[]'>
+            <td class="col-id">7562</td>
+            <td class="col-name">博來科技 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">64.06</td>
+            <td class="col-pct"><span style="color:#f85149">12.17%</span></td>
+            <td class="col-pct"><span style="color:#f85149">20.19%</span></td>
+            <td class="col-pct"><span style="color:#f85149">20.27%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="7530" data-sname="鋒魁科技" data-rev="20772000.0"
+            data-yoy="54.26661715558856" data-mom="3.0050580184468907" data-ytd="73.93549719833707"
+            data-seen="04-02 16:29" data-market="emerging" data-remark="由於半導體產業在過年前提升產能，進而產生連鎖效應，使得設備使用頻率提高，幫浦維修需求隨之上升，因此維修業務明顯成長。"
+            data-chart='[]'>
+            <td class="col-id">7530</td>
+            <td class="col-name">鋒魁科技 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">20.77</td>
+            <td class="col-pct"><span style="color:#f85149">3.01%</span></td>
+            <td class="col-pct"><span style="color:#f85149">54.27%</span></td>
+            <td class="col-pct"><span style="color:#f85149">73.94%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="7427" data-sname="華上生醫" data-rev="720000.0"
+            data-yoy="612.8712871287129" data-mom="26.984126984126984" data-ytd="232.0408163265306"
+            data-seen="04-02 16:29" data-market="emerging" data-remark="114/12/1國產新成分新藥剋必達(Kepida/tucidinostat)健保給付生效，銷售收入所致。"
+            data-chart='[]'>
+            <td class="col-id">7427</td>
+            <td class="col-name">華上生醫 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">0.72</td>
+            <td class="col-pct"><span style="color:#f85149">26.98%</span></td>
+            <td class="col-pct"><span style="color:#f85149">612.87%</span></td>
+            <td class="col-pct"><span style="color:#f85149">232.04%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6926" data-sname="聖安生醫" data-rev="0.0"
+            data-yoy="0" data-mom="-100.0" data-ytd="0"
+            data-seen="04-02 16:29" data-market="emerging" data-remark="本年累計營收較去年增加，主因係115年1月及2月有技術授權收入，前期無此情事。"
+            data-chart='[]'>
+            <td class="col-id">6926</td>
+            <td class="col-name">聖安生醫 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">-</td>
+            <td class="col-pct"><span style="color:#3fb950">-100.00%</span></td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6827" data-sname="巨生醫" data-rev="0.0"
+            data-yoy="0" data-mom="0" data-ytd="0"
+            data-seen="04-02 16:29" data-market="emerging" data-remark="無"
+            data-chart='[]'>
+            <td class="col-id">6827</td>
+            <td class="col-name">巨生醫 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">-</td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6634" data-sname="欣耀" data-rev="0.0"
+            data-yoy="0" data-mom="0" data-ytd="0"
+            data-seen="04-02 16:29" data-market="emerging" data-remark="本月無依完工百分比法認列之勞務收入。"
+            data-chart='[]'>
+            <td class="col-id">6634</td>
+            <td class="col-name">欣耀 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">-</td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="8083" data-sname="瑞穎" data-rev="135246000.0"
+            data-yoy="31.69548960037392" data-mom="30.29605294848698" data-ytd="22.849747029062243"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">8083</td>
+            <td class="col-name">瑞穎 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">135.2</td>
+            <td class="col-pct"><span style="color:#f85149">30.30%</span></td>
+            <td class="col-pct"><span style="color:#f85149">31.70%</span></td>
+            <td class="col-pct"><span style="color:#f85149">22.85%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6580" data-sname="台睿" data-rev="447000.0"
+            data-yoy="-87.61086474501109" data-mom="132.8125" data-ytd="-80.8695652173913"
+            data-seen="04-02 16:29" data-market="emerging" data-remark="差異係銷售硒保健食品之營收"
+            data-chart='[]'>
+            <td class="col-id">6580</td>
+            <td class="col-name">台睿 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">0.45</td>
+            <td class="col-pct"><span style="color:#f85149">132.81%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-87.61%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-80.87%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6565" data-sname="物聯" data-rev="30323000.0"
+            data-yoy="19.95806630271382" data-mom="99.58533535180676" data-ytd="-6.960243528415464"
+            data-seen="04-02 16:29" data-market="emerging"
+            data-chart='[]'>
+            <td class="col-id">6565</td>
+            <td class="col-name">物聯 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">30.32</td>
+            <td class="col-pct"><span style="color:#f85149">99.59%</span></td>
+            <td class="col-pct"><span style="color:#f85149">19.96%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-6.96%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="5863" data-sname="瑞興銀" data-rev="143850000.0"
+            data-yoy="22.811211378712724" data-mom="10.08058036226727" data-ytd="-8.445580367176982"
+            data-seen="04-02 16:29" data-market="emerging"
+            data-chart='[]'>
+            <td class="col-id">5863</td>
+            <td class="col-name">瑞興銀 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">143.8</td>
+            <td class="col-pct"><span style="color:#f85149">10.08%</span></td>
+            <td class="col-pct"><span style="color:#f85149">22.81%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-8.45%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="4587" data-sname="寶元數控" data-rev="107575000.0"
+            data-yoy="6.8781544330962125" data-mom="105.04145620890117" data-ytd="10.369929190655814"
+            data-seen="04-02 16:29" data-market="emerging"
+            data-chart='[]'>
+            <td class="col-id">4587</td>
+            <td class="col-name">寶元數控 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">107.6</td>
+            <td class="col-pct"><span style="color:#f85149">105.04%</span></td>
+            <td class="col-pct"><span style="color:#f85149">6.88%</span></td>
+            <td class="col-pct"><span style="color:#f85149">10.37%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="4132" data-sname="國鼎" data-rev="7482000.0"
+            data-yoy="33.179067283730866" data-mom="97.15415019762844" data-ytd="13.352272727272728"
+            data-seen="04-02 16:29" data-market="emerging"
+            data-chart='[]'>
+            <td class="col-id">4132</td>
+            <td class="col-name">國鼎 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">7.48</td>
+            <td class="col-pct"><span style="color:#f85149">97.15%</span></td>
+            <td class="col-pct"><span style="color:#f85149">33.18%</span></td>
+            <td class="col-pct"><span style="color:#f85149">13.35%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="8109" data-sname="博大" data-rev="181798000.0"
+            data-yoy="27.246257113060032" data-mom="50.56358441343327" data-ytd="20.633091470907672"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">8109</td>
+            <td class="col-name">博大 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">181.8</td>
+            <td class="col-pct"><span style="color:#f85149">50.56%</span></td>
+            <td class="col-pct"><span style="color:#f85149">27.25%</span></td>
+            <td class="col-pct"><span style="color:#f85149">20.63%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="8086" data-sname="宏捷科" data-rev="431994000.0"
+            data-yoy="47.94568400143838" data-mom="15.83689295396224" data-ytd="58.380995078768215"
+            data-seen="04-02 16:29" data-market="otc" data-remark="因客戶需求增加"
+            data-chart='[]'>
+            <td class="col-id">8086</td>
+            <td class="col-name">宏捷科 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">432.0</td>
+            <td class="col-pct"><span style="color:#f85149">15.84%</span></td>
+            <td class="col-pct"><span style="color:#f85149">47.95%</span></td>
+            <td class="col-pct"><span style="color:#f85149">58.38%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="3213" data-sname="茂訊" data-rev="277382000.0"
+            data-yoy="57.231770360964994" data-mom="44.10277989911112" data-ytd="-4.581260636638023"
+            data-seen="04-02 16:29" data-market="otc" data-remark="系統事業部 157,810 仟元/通路事業部 119,572 仟元"
+            data-chart='[]'>
+            <td class="col-id">3213</td>
+            <td class="col-name">茂訊 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">277.4</td>
+            <td class="col-pct"><span style="color:#f85149">44.10%</span></td>
+            <td class="col-pct"><span style="color:#f85149">57.23%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-4.58%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="4116" data-sname="明基醫" data-rev="448916000.0"
+            data-yoy="5.4679754347550285" data-mom="17.545586895273207" data-ytd="7.8707089330416835"
+            data-seen="04-02 16:29" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">4116</td>
+            <td class="col-name">明基醫 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">448.9</td>
+            <td class="col-pct"><span style="color:#f85149">17.55%</span></td>
+            <td class="col-pct"><span style="color:#f85149">5.47%</span></td>
+            <td class="col-pct"><span style="color:#f85149">7.87%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="8466" data-sname="美吉吉-KY" data-rev="117250000.0"
+            data-yoy="-64.13616328827796" data-mom="-45.34563930452617" data-ytd="-28.697234151639275"
+            data-seen="04-02 16:29" data-market="sii" data-remark="近期關稅再次調整以及受中東地緣政治衝突升溫，終端客戶基於成本與市場不確定性考量， 調整下單與備貨節奏，影響本月營收。"
+            data-chart='[]'>
+            <td class="col-id">8466</td>
+            <td class="col-name">美吉吉-KY <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">117.2</td>
+            <td class="col-pct"><span style="color:#3fb950">-45.35%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-64.14%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-28.70%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="2439" data-sname="美律" data-rev="3908500000.0"
+            data-yoy="24.04868764200853" data-mom="24.306668702134697" data-ytd="23.86133775164812"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">2439</td>
+            <td class="col-name">美律 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">3,908.5</td>
+            <td class="col-pct"><span style="color:#f85149">24.31%</span></td>
+            <td class="col-pct"><span style="color:#f85149">24.05%</span></td>
+            <td class="col-pct"><span style="color:#f85149">23.86%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="3530" data-sname="晶相光" data-rev="193389000.0"
+            data-yoy="52.42963324952117" data-mom="44.06320070918287" data-ytd="56.39813572284028"
+            data-seen="04-02 16:29" data-market="sii" data-remark="因監控系列產品營收較去年同期大幅成長所致。"
+            data-chart='[]'>
+            <td class="col-id">3530</td>
+            <td class="col-name">晶相光 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">193.4</td>
+            <td class="col-pct"><span style="color:#f85149">44.06%</span></td>
+            <td class="col-pct"><span style="color:#f85149">52.43%</span></td>
+            <td class="col-pct"><span style="color:#f85149">56.40%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="3380" data-sname="明泰" data-rev="2497667000.0"
+            data-yoy="50.486978851290246" data-mom="93.78930323534728" data-ytd="17.470433172316262"
+            data-seen="04-02 16:29" data-market="sii" data-remark="主係市場需求提升，致公司營收成長"
+            data-chart='[]'>
+            <td class="col-id">3380</td>
+            <td class="col-name">明泰 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">2,497.7</td>
+            <td class="col-pct"><span style="color:#f85149">93.79%</span></td>
+            <td class="col-pct"><span style="color:#f85149">50.49%</span></td>
+            <td class="col-pct"><span style="color:#f85149">17.47%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="3168" data-sname="眾福科" data-rev="339151000.0"
+            data-yoy="10.675964964951898" data-mom="30.575276434533528" data-ytd="6.52585058011916"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">3168</td>
+            <td class="col-name">眾福科 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">339.2</td>
+            <td class="col-pct"><span style="color:#f85149">30.58%</span></td>
+            <td class="col-pct"><span style="color:#f85149">10.68%</span></td>
+            <td class="col-pct"><span style="color:#f85149">6.53%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="3025" data-sname="星通" data-rev="46161000.0"
+            data-yoy="85.78845689446993" data-mom="29.632957960066275" data-ytd="40.44042567674888"
+            data-seen="04-02 16:29" data-market="sii" data-remark="美洲出貨增加"
+            data-chart='[]'>
+            <td class="col-id">3025</td>
+            <td class="col-name">星通 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">46.16</td>
+            <td class="col-pct"><span style="color:#f85149">29.63%</span></td>
+            <td class="col-pct"><span style="color:#f85149">85.79%</span></td>
+            <td class="col-pct"><span style="color:#f85149">40.44%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="3023" data-sname="信邦" data-rev="2906066000.0"
+            data-yoy="7.547231258303634" data-mom="11.333244708055693" data-ytd="1.2418587402103278"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">3023</td>
+            <td class="col-name">信邦 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">2,906.1</td>
+            <td class="col-pct"><span style="color:#f85149">11.33%</span></td>
+            <td class="col-pct"><span style="color:#f85149">7.55%</span></td>
+            <td class="col-pct"><span style="color:#f85149">1.24%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="3006" data-sname="晶豪科" data-rev="3025805000.0"
+            data-yoy="188.11181286950625" data-mom="44.43803729185572" data-ytd="150.3294079957009"
+            data-seen="04-02 16:29" data-market="sii" data-remark="本期營收較前期成長係因產品市場需求復甦"
+            data-chart='[]'>
+            <td class="col-id">3006</td>
+            <td class="col-name">晶豪科 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">3,025.8</td>
+            <td class="col-pct"><span style="color:#f85149">44.44%</span></td>
+            <td class="col-pct"><span style="color:#f85149">188.11%</span></td>
+            <td class="col-pct"><span style="color:#f85149">150.33%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="3004" data-sname="豐達科" data-rev="452769000.0"
+            data-yoy="31.17313547856268" data-mom="25.128232055803053" data-ytd="28.66173569808966"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">3004</td>
+            <td class="col-name">豐達科 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">452.8</td>
+            <td class="col-pct"><span style="color:#f85149">25.13%</span></td>
+            <td class="col-pct"><span style="color:#f85149">31.17%</span></td>
+            <td class="col-pct"><span style="color:#f85149">28.66%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="2633" data-sname="台灣高鐵" data-rev="4795095000.0"
+            data-yoy="4.454737467640367" data-mom="2.623294790970442" data-ytd="3.865254574784984"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">2633</td>
+            <td class="col-name">台灣高鐵 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">4,795.1</td>
+            <td class="col-pct"><span style="color:#f85149">2.62%</span></td>
+            <td class="col-pct"><span style="color:#f85149">4.45%</span></td>
+            <td class="col-pct"><span style="color:#f85149">3.87%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="2419" data-sname="仲琦" data-rev="1007693000.0"
+            data-yoy="54.961270946520536" data-mom="100.6033870097605" data-ytd="9.463608080692993"
+            data-seen="04-02 16:29" data-market="sii" data-remark="配合客戶需求出貨量增加"
+            data-chart='[]'>
+            <td class="col-id">2419</td>
+            <td class="col-name">仲琦 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">1,007.7</td>
+            <td class="col-pct"><span style="color:#f85149">100.60%</span></td>
+            <td class="col-pct"><span style="color:#f85149">54.96%</span></td>
+            <td class="col-pct"><span style="color:#f85149">9.46%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="4956" data-sname="光鋐" data-rev="140934000.0"
+            data-yoy="12.59677071432566" data-mom="47.96997217701717" data-ytd="15.27039764829933"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">4956</td>
+            <td class="col-name">光鋐 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">140.9</td>
+            <td class="col-pct"><span style="color:#f85149">47.97%</span></td>
+            <td class="col-pct"><span style="color:#f85149">12.60%</span></td>
+            <td class="col-pct"><span style="color:#f85149">15.27%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="2408" data-sname="南亞科" data-rev="18169760000.0"
+            data-yoy="560.0385857042545" data-mom="16.41920797499408" data-ytd="582.9068133568171"
+            data-seen="04-02 16:29" data-market="sii" data-remark="受市場需求復甦影響。"
+            data-chart='[]'>
+            <td class="col-id">2408</td>
+            <td class="col-name">南亞科 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">18,169.8</td>
+            <td class="col-pct"><span style="color:#f85149">16.42%</span></td>
+            <td class="col-pct"><span style="color:#f85149">560.04%</span></td>
+            <td class="col-pct"><span style="color:#f85149">582.91%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="2397" data-sname="友通" data-rev="1143374000.0"
+            data-yoy="29.080307298046364" data-mom="44.12574040389907" data-ytd="18.53584985362019"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">2397</td>
+            <td class="col-name">友通 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">1,143.4</td>
+            <td class="col-pct"><span style="color:#f85149">44.13%</span></td>
+            <td class="col-pct"><span style="color:#f85149">29.08%</span></td>
+            <td class="col-pct"><span style="color:#f85149">18.54%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="2241" data-sname="艾姆勒" data-rev="69468000.0"
+            data-yoy="3.533690030850858" data-mom="-10.369653570737372" data-ytd="23.691605797892915"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">2241</td>
+            <td class="col-name">艾姆勒 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">69.47</td>
+            <td class="col-pct"><span style="color:#3fb950">-10.37%</span></td>
+            <td class="col-pct"><span style="color:#f85149">3.53%</span></td>
+            <td class="col-pct"><span style="color:#f85149">23.69%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="1713" data-sname="國化" data-rev="53239000.0"
+            data-yoy="23.30407392824884" data-mom="86.48288906791832" data-ytd="3.2840647075574827"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">1713</td>
+            <td class="col-name">國化 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">53.24</td>
+            <td class="col-pct"><span style="color:#f85149">86.48%</span></td>
+            <td class="col-pct"><span style="color:#f85149">23.30%</span></td>
+            <td class="col-pct"><span style="color:#f85149">3.28%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="1611" data-sname="中電" data-rev="91782000.0"
+            data-yoy="-6.823142442362162" data-mom="40.50057405281286" data-ytd="-10.904861743507205"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">1611</td>
+            <td class="col-name">中電 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">91.78</td>
+            <td class="col-pct"><span style="color:#f85149">40.50%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-6.82%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-10.90%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="1590" data-sname="亞德客-KY" data-rev="4139710000.0"
+            data-yoy="18.089564943541248" data-mom="90.64590660551448" data-ytd="23.683329333456687"
+            data-seen="04-02 16:29" data-market="sii" data-remark="本月營業收入換算匯率為4.6039492;本年累計營業收入換算匯率為4.5680006。"
+            data-chart='[]'>
+            <td class="col-id">1590</td>
+            <td class="col-name">亞德客-KY <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">4,139.7</td>
+            <td class="col-pct"><span style="color:#f85149">90.65%</span></td>
+            <td class="col-pct"><span style="color:#f85149">18.09%</span></td>
+            <td class="col-pct"><span style="color:#f85149">23.68%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="1477" data-sname="聚陽" data-rev="3130764000.0"
+            data-yoy="-9.35227302339183" data-mom="6.562367680475322" data-ytd="-10.348064973901954"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">1477</td>
+            <td class="col-name">聚陽 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">3,130.8</td>
+            <td class="col-pct"><span style="color:#f85149">6.56%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-9.35%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-10.35%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="1454" data-sname="台富" data-rev="111197000.0"
+            data-yoy="-26.22083919424613" data-mom="49.205646351608834" data-ytd="-27.29121920716561"
+            data-seen="04-02 16:29" data-market="sii" data-remark="無"
+            data-chart='[]'>
+            <td class="col-id">1454</td>
+            <td class="col-name">台富 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">111.2</td>
+            <td class="col-pct"><span style="color:#f85149">49.21%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-26.22%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-27.29%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="3591" data-sname="艾笛森" data-rev="201467000.0"
+            data-yoy="11.625342826273652" data-mom="12.708180653534804" data-ytd="1.5463098590565711"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">3591</td>
+            <td class="col-name">艾笛森 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">201.5</td>
+            <td class="col-pct"><span style="color:#f85149">12.71%</span></td>
+            <td class="col-pct"><span style="color:#f85149">11.63%</span></td>
+            <td class="col-pct"><span style="color:#f85149">1.55%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="3189" data-sname="景碩" data-rev="3939324000.0"
+            data-yoy="25.056277045282904" data-mom="22.931501984561024" data-ytd="28.83172632505095"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">3189</td>
+            <td class="col-name">景碩 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">3,939.3</td>
+            <td class="col-pct"><span style="color:#f85149">22.93%</span></td>
+            <td class="col-pct"><span style="color:#f85149">25.06%</span></td>
+            <td class="col-pct"><span style="color:#f85149">28.83%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="4961" data-sname="天鈺" data-rev="1830710000.0"
+            data-yoy="2.0559361812434847" data-mom="38.34219992140979" data-ytd="-3.433469305093771"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">4961</td>
+            <td class="col-name">天鈺 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">1,830.7</td>
+            <td class="col-pct"><span style="color:#f85149">38.34%</span></td>
+            <td class="col-pct"><span style="color:#f85149">2.06%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-3.43%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="5234" data-sname="達興材料" data-rev="423556000.0"
+            data-yoy="5.520206876965007" data-mom="15.72536687058232" data-ytd="8.61064624826298"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">5234</td>
+            <td class="col-name">達興材料 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">423.6</td>
+            <td class="col-pct"><span style="color:#f85149">15.73%</span></td>
+            <td class="col-pct"><span style="color:#f85149">5.52%</span></td>
+            <td class="col-pct"><span style="color:#f85149">8.61%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="8374" data-sname="羅昇" data-rev="553636000.0"
+            data-yoy="43.63963739576685" data-mom="61.17261757470779" data-ytd="28.371998341594235"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">8374</td>
+            <td class="col-name">羅昇 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">553.6</td>
+            <td class="col-pct"><span style="color:#f85149">61.17%</span></td>
+            <td class="col-pct"><span style="color:#f85149">43.64%</span></td>
+            <td class="col-pct"><span style="color:#f85149">28.37%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="8215" data-sname="明基材" data-rev="1605730000.0"
+            data-yoy="-3.1402085188214657" data-mom="19.920895659492857" data-ytd="-0.747363988072042"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">8215</td>
+            <td class="col-name">明基材 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">1,605.7</td>
+            <td class="col-pct"><span style="color:#f85149">19.92%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-3.14%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-0.75%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6838" data-sname="台新藥" data-rev="44113000.0"
+            data-yoy="0" data-mom="3272.553516819572" data-ytd="7546.801346801347"
+            data-seen="04-02 16:29" data-market="sii" data-remark="認列授權收入"
+            data-chart='[]'>
+            <td class="col-id">6838</td>
+            <td class="col-name">台新藥 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">44.11</td>
+            <td class="col-pct"><span style="color:#f85149">3272.55%</span></td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+            <td class="col-pct"><span style="color:#f85149">7546.80%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6781" data-sname="AES-KY" data-rev="1505534000.0"
+            data-yoy="25.64408351157894" data-mom="1.437544047357563" data-ytd="31.744962109666748"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">6781</td>
+            <td class="col-name">AES-KY <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">1,505.5</td>
+            <td class="col-pct"><span style="color:#f85149">1.44%</span></td>
+            <td class="col-pct"><span style="color:#f85149">25.64%</span></td>
+            <td class="col-pct"><span style="color:#f85149">31.74%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6491" data-sname="晶碩" data-rev="669212000.0"
+            data-yoy="18.18710031771485" data-mom="20.16066622256617" data-ytd="18.334997386255026"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">6491</td>
+            <td class="col-name">晶碩 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">669.2</td>
+            <td class="col-pct"><span style="color:#f85149">20.16%</span></td>
+            <td class="col-pct"><span style="color:#f85149">18.19%</span></td>
+            <td class="col-pct"><span style="color:#f85149">18.33%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6235" data-sname="華孚" data-rev="549898000.0"
+            data-yoy="-6.823322889961655" data-mom="18.292995110366324" data-ytd="12.737921239580508"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">6235</td>
+            <td class="col-name">華孚 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">549.9</td>
+            <td class="col-pct"><span style="color:#f85149">18.29%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-6.82%</span></td>
+            <td class="col-pct"><span style="color:#f85149">12.74%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6205" data-sname="詮欣" data-rev="100179000.0"
+            data-yoy="-16.669578020113292" data-mom="45.29645529964611" data-ytd="-20.431938418855147"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">6205</td>
+            <td class="col-name">詮欣 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">100.2</td>
+            <td class="col-pct"><span style="color:#f85149">45.30%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-16.67%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-20.43%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6164" data-sname="華興" data-rev="64570000.0"
+            data-yoy="-26.98592186351557" data-mom="26.313112541325143" data-ytd="-11.864707348402062"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">6164</td>
+            <td class="col-name">華興 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">64.57</td>
+            <td class="col-pct"><span style="color:#f85149">26.31%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-26.99%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-11.86%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6112" data-sname="邁達特" data-rev="2231109000.0"
+            data-yoy="40.11564156766106" data-mom="21.541877602250075" data-ytd="27.36882851262932"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">6112</td>
+            <td class="col-name">邁達特 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">2,231.1</td>
+            <td class="col-pct"><span style="color:#f85149">21.54%</span></td>
+            <td class="col-pct"><span style="color:#f85149">40.12%</span></td>
+            <td class="col-pct"><span style="color:#f85149">27.37%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="7878" data-sname="藥祇" data-rev="0.0"
+            data-yoy="0" data-mom="0" data-ytd="0"
+            data-seen="04-02 16:29" data-market="emerging" data-remark="尚無營收"
+            data-chart='[]'>
+            <td class="col-id">7878</td>
+            <td class="col-name">藥祇 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">-</td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="5225" data-sname="東科-KY" data-rev="981230000.0"
+            data-yoy="-2.247871575243526" data-mom="62.35100630720663" data-ytd="-13.695238272143843"
+            data-seen="04-02 16:29" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">5225</td>
+            <td class="col-name">東科-KY <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">981.2</td>
+            <td class="col-pct"><span style="color:#f85149">62.35%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-2.25%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-13.70%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="5222" data-sname="全訊" data-rev="19287000.0"
+            data-yoy="-76.71861231486064" data-mom="-74.71386430678466" data-ytd="-33.30005142430305"
+            data-seen="04-02 16:29" data-market="sii" data-remark="客戶訂單交期安排所致"
+            data-chart='[]'>
+            <td class="col-id">5222</td>
+            <td class="col-name">全訊 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-02 16:29</td>
+            <td class="col-rev">19.29</td>
+            <td class="col-pct"><span style="color:#3fb950">-74.71%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-76.72%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-33.30%</span></td>
         </tr>
         <tr class="stock-row" data-sid="4194" data-sname="禾生技" data-rev="0.0"
             data-yoy="0" data-mom="0" data-ytd="0"
             data-seen="04-01 22:45" data-market="emerging" data-remark="本司112/11/13依分割計劃,將「台灣代理經銷」及「歐洲自有品牌醫材」業務分割予禾麗陽公司,故營收為零。"
-            data-chart='[{"year": 2020, "month": 3, "revenue": 6897000.0}, {"year": 2020, "month": 4, "revenue": 21419000.0}, {"year": 2020, "month": 5, "revenue": 20308000.0}, {"year": 2020, "month": 6, "revenue": 14474000.0}, {"year": 2020, "month": 7, "revenue": 12922000.0}, {"year": 2020, "month": 8, "revenue": 27585000.0}, {"year": 2020, "month": 9, "revenue": 11962000.0}, {"year": 2020, "month": 10, "revenue": 5340000.0}, {"year": 2020, "month": 11, "revenue": 31515000.0}, {"year": 2020, "month": 12, "revenue": 22740000.0}, {"year": 2021, "month": 1, "revenue": 24879000.0}, {"year": 2021, "month": 2, "revenue": 15160000.0}, {"year": 2021, "month": 3, "revenue": 3809000.0}, {"year": 2021, "month": 4, "revenue": 45492000.0}, {"year": 2021, "month": 7, "revenue": 24222000.0}, {"year": 2021, "month": 8, "revenue": 9348000.0}, {"year": 2021, "month": 9, "revenue": 17680000.0}, {"year": 2021, "month": 10, "revenue": 19213000.0}, {"year": 2021, "month": 11, "revenue": 2603000.0}, {"year": 2021, "month": 12, "revenue": 23962000.0}, {"year": 2022, "month": 1, "revenue": 11314000.0}, {"year": 2022, "month": 2, "revenue": 14561000.0}, {"year": 2022, "month": 4, "revenue": 56673000.0}, {"year": 2022, "month": 5, "revenue": 35879000.0}, {"year": 2022, "month": 6, "revenue": 19632000.0}, {"year": 2022, "month": 7, "revenue": 8938000.0}, {"year": 2022, "month": 8, "revenue": 17608000.0}, {"year": 2022, "month": 9, "revenue": 3359000.0}, {"year": 2022, "month": 10, "revenue": 28994000.0}, {"year": 2022, "month": 11, "revenue": 39522000.0}, {"year": 2022, "month": 12, "revenue": 26269000.0}, {"year": 2023, "month": 1, "revenue": 3657000.0}, {"year": 2023, "month": 2, "revenue": 23034000.0}, {"year": 2023, "month": 3, "revenue": 6820000.0}, {"year": 2023, "month": 4, "revenue": 27069000.0}, {"year": 2023, "month": 5, "revenue": 12592000.0}, {"year": 2023, "month": 6, "revenue": 12687000.0}, {"year": 2023, "month": 7, "revenue": 37291000.0}, {"year": 2023, "month": 9, "revenue": 37909000.0}, {"year": 2023, "month": 10, "revenue": 20361000.0}, {"year": 2023, "month": 11, "revenue": 13333000.0}, {"year": 2023, "month": 12, "revenue": 11060000.0}, {"year": 2024, "month": 1, "revenue": 5134000.0}, {"year": 2024, "month": 2, "revenue": 7842000.0}, {"year": 2024, "month": 3, "revenue": 18266000.0}, {"year": 2024, "month": 5, "revenue": 8083000.0}, {"year": 2024, "month": 7, "revenue": 11106000.0}, {"year": 2024, "month": 8, "revenue": 13958000.0}, {"year": 2024, "month": 9, "revenue": 16029000.0}, {"year": 2024, "month": 10, "revenue": 6413000.0}, {"year": 2024, "month": 11, "revenue": 0.0}, {"year": 2024, "month": 12, "revenue": 0.0}, {"year": 2025, "month": 1, "revenue": 0.0}, {"year": 2025, "month": 2, "revenue": 0.0}, {"year": 2025, "month": 3, "revenue": 0.0}, {"year": 2025, "month": 5, "revenue": 0.0}, {"year": 2025, "month": 6, "revenue": 0.0}, {"year": 2025, "month": 7, "revenue": 0.0}, {"year": 2025, "month": 8, "revenue": 0.0}, {"year": 2025, "month": 9, "revenue": 0.0}, {"year": 2025, "month": 10, "revenue": 0.0}, {"year": 2025, "month": 11, "revenue": 0.0}, {"year": 2025, "month": 12, "revenue": 0.0}, {"year": 2026, "month": 2, "revenue": 0.0}, {"year": 2021, "month": 5, "revenue": 21597000.0}, {"year": 2021, "month": 6, "revenue": 9115000.0}, {"year": 2022, "month": 3, "revenue": 7493000.0}, {"year": 2023, "month": 8, "revenue": 31077000.0}, {"year": 2024, "month": 4, "revenue": 25248000.0}, {"year": 2024, "month": 6, "revenue": 6686000.0}, {"year": 2025, "month": 4, "revenue": 0.0}, {"year": 2026, "month": 1, "revenue": 0.0}]'>
+            data-chart='[]'>
             <td class="col-id">4194</td>
             <td class="col-name">禾生技 <span class="market-badge">興櫃</span></td>
             <td class="col-seen">04-01 22:45</td>
@@ -993,7 +1455,7 @@ footer {
         <tr class="stock-row" data-sid="6910" data-sname="德鴻" data-rev="37805000.0"
             data-yoy="21.6220563634024" data-mom="83.67099062332993" data-ytd="15.543505960302404"
             data-seen="04-01 22:45" data-market="otc" data-remark="無"
-            data-chart='[{"year": 2022, "month": 7, "revenue": 30210000.0}, {"year": 2022, "month": 8, "revenue": 26674000.0}, {"year": 2022, "month": 9, "revenue": 27410000.0}, {"year": 2022, "month": 11, "revenue": 27315000.0}, {"year": 2022, "month": 12, "revenue": 47981000.0}, {"year": 2023, "month": 1, "revenue": 21312000.0}, {"year": 2023, "month": 2, "revenue": 20190000.0}, {"year": 2023, "month": 3, "revenue": 26762000.0}, {"year": 2023, "month": 4, "revenue": 28092000.0}, {"year": 2023, "month": 5, "revenue": 26488000.0}, {"year": 2023, "month": 6, "revenue": 22763000.0}, {"year": 2023, "month": 7, "revenue": 26538000.0}, {"year": 2023, "month": 8, "revenue": 21638000.0}, {"year": 2023, "month": 10, "revenue": 21605000.0}, {"year": 2023, "month": 11, "revenue": 34062000.0}, {"year": 2023, "month": 12, "revenue": 34129000.0}, {"year": 2024, "month": 1, "revenue": 19710000.0}, {"year": 2024, "month": 2, "revenue": 18533000.0}, {"year": 2024, "month": 3, "revenue": 22575000.0}, {"year": 2024, "month": 4, "revenue": 21377000.0}, {"year": 2024, "month": 5, "revenue": 23031000.0}, {"year": 2024, "month": 6, "revenue": 24728000.0}, {"year": 2024, "month": 8, "revenue": 30127000.0}, {"year": 2024, "month": 9, "revenue": 21711000.0}, {"year": 2024, "month": 10, "revenue": 21408000.0}, {"year": 2024, "month": 11, "revenue": 23614000.0}, {"year": 2024, "month": 12, "revenue": 40169000.0}, {"year": 2025, "month": 1, "revenue": 16046000.0}, {"year": 2025, "month": 2, "revenue": 23504000.0}, {"year": 2025, "month": 3, "revenue": 31084000.0}, {"year": 2025, "month": 5, "revenue": 33472000.0}, {"year": 2025, "month": 6, "revenue": 37004000.0}, {"year": 2025, "month": 7, "revenue": 32717000.0}, {"year": 2025, "month": 8, "revenue": 33656000.0}, {"year": 2025, "month": 9, "revenue": 38903000.0}, {"year": 2025, "month": 10, "revenue": 32445000.0}, {"year": 2025, "month": 11, "revenue": 32822000.0}, {"year": 2025, "month": 12, "revenue": 42552000.0}, {"year": 2026, "month": 1, "revenue": 23225000.0}, {"year": 2022, "month": 10, "revenue": 34375000.0}, {"year": 2023, "month": 9, "revenue": 28955000.0}, {"year": 2024, "month": 7, "revenue": 29831000.0}, {"year": 2025, "month": 4, "revenue": 30623000.0}, {"year": 2026, "month": 2, "revenue": 20583000.0}]'>
+            data-chart='[]'>
             <td class="col-id">6910</td>
             <td class="col-name">德鴻 <span class="market-badge">上櫃</span></td>
             <td class="col-seen">04-01 22:45</td>
@@ -1002,46 +1464,10 @@ footer {
             <td class="col-pct"><span style="color:#f85149">21.62%</span></td>
             <td class="col-pct"><span style="color:#f85149">15.54%</span></td>
         </tr>
-        <tr class="stock-row" data-sid="6785" data-sname="昱展新藥" data-rev="250000.0"
-            data-yoy="0" data-mom="0" data-ytd="0"
-            data-seen="04-01 22:45" data-market="otc" data-remark="一次性委託服務合約"
-            data-chart='[{"year": 2020, "month": 6, "revenue": 0.0}, {"year": 2020, "month": 7, "revenue": 0.0}, {"year": 2020, "month": 8, "revenue": 0.0}, {"year": 2020, "month": 9, "revenue": 0.0}, {"year": 2020, "month": 10, "revenue": 600000.0}, {"year": 2020, "month": 11, "revenue": 0.0}, {"year": 2020, "month": 12, "revenue": 0.0}, {"year": 2021, "month": 1, "revenue": 0.0}, {"year": 2021, "month": 2, "revenue": 0.0}, {"year": 2021, "month": 3, "revenue": 0.0}, {"year": 2021, "month": 4, "revenue": 0.0}, {"year": 2021, "month": 5, "revenue": 0.0}, {"year": 2021, "month": 7, "revenue": 0.0}, {"year": 2021, "month": 8, "revenue": 0.0}, {"year": 2021, "month": 9, "revenue": 0.0}, {"year": 2021, "month": 10, "revenue": 0.0}, {"year": 2021, "month": 11, "revenue": 0.0}, {"year": 2021, "month": 12, "revenue": 0.0}, {"year": 2022, "month": 1, "revenue": 0.0}, {"year": 2022, "month": 2, "revenue": 0.0}, {"year": 2022, "month": 3, "revenue": 0.0}, {"year": 2022, "month": 4, "revenue": 0.0}, {"year": 2022, "month": 5, "revenue": 0.0}, {"year": 2022, "month": 6, "revenue": 0.0}, {"year": 2022, "month": 7, "revenue": 0.0}, {"year": 2022, "month": 8, "revenue": 0.0}, {"year": 2022, "month": 9, "revenue": 0.0}, {"year": 2022, "month": 11, "revenue": 0.0}, {"year": 2022, "month": 12, "revenue": 800000.0}, {"year": 2023, "month": 1, "revenue": 0.0}, {"year": 2023, "month": 2, "revenue": 0.0}, {"year": 2023, "month": 3, "revenue": 0.0}, {"year": 2023, "month": 4, "revenue": 0.0}, {"year": 2023, "month": 5, "revenue": 0.0}, {"year": 2023, "month": 6, "revenue": 0.0}, {"year": 2023, "month": 7, "revenue": 0.0}, {"year": 2023, "month": 8, "revenue": 0.0}, {"year": 2023, "month": 10, "revenue": 0.0}, {"year": 2023, "month": 11, "revenue": 0.0}, {"year": 2023, "month": 12, "revenue": 468472000.0}, {"year": 2024, "month": 1, "revenue": 0.0}, {"year": 2024, "month": 2, "revenue": 0.0}, {"year": 2024, "month": 3, "revenue": 0.0}, {"year": 2024, "month": 4, "revenue": 0.0}, {"year": 2024, "month": 5, "revenue": 0.0}, {"year": 2024, "month": 6, "revenue": 0.0}, {"year": 2024, "month": 8, "revenue": 0.0}, {"year": 2024, "month": 9, "revenue": 5817000.0}, {"year": 2024, "month": 10, "revenue": 0.0}, {"year": 2024, "month": 11, "revenue": 0.0}, {"year": 2024, "month": 12, "revenue": 0.0}, {"year": 2025, "month": 1, "revenue": 0.0}, {"year": 2025, "month": 2, "revenue": 0.0}, {"year": 2025, "month": 3, "revenue": 0.0}, {"year": 2025, "month": 5, "revenue": 1253000.0}, {"year": 2025, "month": 6, "revenue": 0.0}, {"year": 2025, "month": 7, "revenue": 0.0}, {"year": 2025, "month": 8, "revenue": 0.0}, {"year": 2025, "month": 9, "revenue": 0.0}, {"year": 2025, "month": 10, "revenue": 500000.0}, {"year": 2025, "month": 11, "revenue": 0.0}, {"year": 2025, "month": 12, "revenue": 1000000.0}, {"year": 2026, "month": 1, "revenue": 0.0}, {"year": 2021, "month": 6, "revenue": 0.0}, {"year": 2022, "month": 10, "revenue": 0.0}, {"year": 2023, "month": 9, "revenue": 800000.0}, {"year": 2024, "month": 7, "revenue": 0.0}, {"year": 2025, "month": 4, "revenue": 0.0}, {"year": 2026, "month": 2, "revenue": 0.0}]'>
-            <td class="col-id">6785</td>
-            <td class="col-name">昱展新藥 <span class="market-badge">上櫃</span></td>
-            <td class="col-seen">04-01 22:45</td>
-            <td class="col-rev">0.25</td>
-            <td class="col-pct"><span style="color:#6e7681">-</span></td>
-            <td class="col-pct"><span style="color:#6e7681">-</span></td>
-            <td class="col-pct"><span style="color:#6e7681">-</span></td>
-        </tr>
-        <tr class="stock-row" data-sid="6486" data-sname="互動" data-rev="198402000.0"
-            data-yoy="77.83693664622997" data-mom="52.74969781425393" data-ytd="12.225478140921425"
-            data-seen="04-01 22:45" data-market="otc" data-remark="本月營收較去年同期增加50%以上，係因本月認列營收的專案較去年同期增加所致。"
-            data-chart='[{"year": 2020, "month": 3, "revenue": 180464000.0}, {"year": 2020, "month": 4, "revenue": 118675000.0}, {"year": 2020, "month": 5, "revenue": 145882000.0}, {"year": 2020, "month": 6, "revenue": 127649000.0}, {"year": 2020, "month": 7, "revenue": 100530000.0}, {"year": 2020, "month": 8, "revenue": 96085000.0}, {"year": 2020, "month": 9, "revenue": 89976000.0}, {"year": 2020, "month": 10, "revenue": 127505000.0}, {"year": 2020, "month": 11, "revenue": 437393000.0}, {"year": 2020, "month": 12, "revenue": 266867000.0}, {"year": 2021, "month": 1, "revenue": 165292000.0}, {"year": 2021, "month": 2, "revenue": 89602000.0}, {"year": 2021, "month": 3, "revenue": 102024000.0}, {"year": 2021, "month": 4, "revenue": 101815000.0}, {"year": 2021, "month": 5, "revenue": 127904000.0}, {"year": 2021, "month": 7, "revenue": 71703000.0}, {"year": 2021, "month": 8, "revenue": 151872000.0}, {"year": 2021, "month": 9, "revenue": 154846000.0}, {"year": 2021, "month": 10, "revenue": 133510000.0}, {"year": 2021, "month": 11, "revenue": 193330000.0}, {"year": 2021, "month": 12, "revenue": 403333000.0}, {"year": 2022, "month": 1, "revenue": 117252000.0}, {"year": 2022, "month": 2, "revenue": 114765000.0}, {"year": 2022, "month": 3, "revenue": 110702000.0}, {"year": 2022, "month": 4, "revenue": 81278000.0}, {"year": 2022, "month": 5, "revenue": 124860000.0}, {"year": 2022, "month": 6, "revenue": 228532000.0}, {"year": 2022, "month": 7, "revenue": 108320000.0}, {"year": 2022, "month": 8, "revenue": 171179000.0}, {"year": 2022, "month": 9, "revenue": 106836000.0}, {"year": 2022, "month": 11, "revenue": 166307000.0}, {"year": 2022, "month": 12, "revenue": 578417000.0}, {"year": 2023, "month": 1, "revenue": 98085000.0}, {"year": 2023, "month": 2, "revenue": 104691000.0}, {"year": 2023, "month": 3, "revenue": 130100000.0}, {"year": 2023, "month": 4, "revenue": 137808000.0}, {"year": 2023, "month": 5, "revenue": 141220000.0}, {"year": 2023, "month": 6, "revenue": 193723000.0}, {"year": 2023, "month": 7, "revenue": 94406000.0}, {"year": 2023, "month": 8, "revenue": 146703000.0}, {"year": 2023, "month": 10, "revenue": 110803000.0}, {"year": 2023, "month": 11, "revenue": 483471000.0}, {"year": 2023, "month": 12, "revenue": 472817000.0}, {"year": 2024, "month": 1, "revenue": 182992000.0}, {"year": 2024, "month": 2, "revenue": 100392000.0}, {"year": 2024, "month": 3, "revenue": 149534000.0}, {"year": 2024, "month": 4, "revenue": 194647000.0}, {"year": 2024, "month": 5, "revenue": 170201000.0}, {"year": 2024, "month": 6, "revenue": 277080000.0}, {"year": 2024, "month": 8, "revenue": 140179000.0}, {"year": 2024, "month": 9, "revenue": 299994000.0}, {"year": 2024, "month": 10, "revenue": 164340000.0}, {"year": 2024, "month": 11, "revenue": 188800000.0}, {"year": 2024, "month": 12, "revenue": 526258000.0}, {"year": 2025, "month": 1, "revenue": 116155000.0}, {"year": 2025, "month": 2, "revenue": 186228000.0}, {"year": 2025, "month": 3, "revenue": 111564000.0}, {"year": 2025, "month": 5, "revenue": 180299000.0}, {"year": 2025, "month": 6, "revenue": 202873000.0}, {"year": 2025, "month": 7, "revenue": 107144000.0}, {"year": 2025, "month": 8, "revenue": 161150000.0}, {"year": 2025, "month": 9, "revenue": 325048000.0}, {"year": 2025, "month": 10, "revenue": 101745000.0}, {"year": 2025, "month": 11, "revenue": 313380000.0}, {"year": 2025, "month": 12, "revenue": 777057000.0}, {"year": 2026, "month": 1, "revenue": 136265000.0}, {"year": 2021, "month": 6, "revenue": 170103000.0}, {"year": 2022, "month": 10, "revenue": 139755000.0}, {"year": 2023, "month": 9, "revenue": 128733000.0}, {"year": 2024, "month": 7, "revenue": 136821000.0}, {"year": 2025, "month": 4, "revenue": 103454000.0}, {"year": 2026, "month": 2, "revenue": 129887000.0}]'>
-            <td class="col-id">6486</td>
-            <td class="col-name">互動 <span class="market-badge">上櫃</span></td>
-            <td class="col-seen">04-01 22:45</td>
-            <td class="col-rev">198.4</td>
-            <td class="col-pct"><span style="color:#f85149">52.75%</span></td>
-            <td class="col-pct"><span style="color:#f85149">77.84%</span></td>
-            <td class="col-pct"><span style="color:#f85149">12.23%</span></td>
-        </tr>
-        <tr class="stock-row" data-sid="3030" data-sname="德律" data-rev="793160000.0"
-            data-yoy="14.715308873384474" data-mom="5.102331528976817" data-ytd="25.812929783479824"
-            data-seen="04-01 22:45" data-market="sii"
-            data-chart='[{"year": 2020, "month": 3, "revenue": 558310000.0}, {"year": 2020, "month": 4, "revenue": 480595000.0}, {"year": 2020, "month": 5, "revenue": 504503000.0}, {"year": 2020, "month": 6, "revenue": 502006000.0}, {"year": 2020, "month": 7, "revenue": 464128000.0}, {"year": 2020, "month": 8, "revenue": 480124000.0}, {"year": 2020, "month": 9, "revenue": 414314000.0}, {"year": 2020, "month": 10, "revenue": 296054000.0}, {"year": 2020, "month": 11, "revenue": 336307000.0}, {"year": 2020, "month": 12, "revenue": 310162000.0}, {"year": 2021, "month": 1, "revenue": 527856000.0}, {"year": 2021, "month": 2, "revenue": 331623000.0}, {"year": 2021, "month": 3, "revenue": 488294000.0}, {"year": 2021, "month": 5, "revenue": 471836000.0}, {"year": 2021, "month": 6, "revenue": 518559000.0}, {"year": 2021, "month": 7, "revenue": 477441000.0}, {"year": 2021, "month": 8, "revenue": 505310000.0}, {"year": 2021, "month": 9, "revenue": 402550000.0}, {"year": 2021, "month": 10, "revenue": 452765000.0}, {"year": 2021, "month": 11, "revenue": 420505000.0}, {"year": 2021, "month": 12, "revenue": 447613000.0}, {"year": 2022, "month": 1, "revenue": 716031000.0}, {"year": 2022, "month": 2, "revenue": 502934000.0}, {"year": 2022, "month": 5, "revenue": 674655000.0}, {"year": 2022, "month": 6, "revenue": 626504000.0}, {"year": 2022, "month": 7, "revenue": 439496000.0}, {"year": 2022, "month": 8, "revenue": 593191000.0}, {"year": 2022, "month": 9, "revenue": 505278000.0}, {"year": 2022, "month": 10, "revenue": 588016000.0}, {"year": 2022, "month": 12, "revenue": 348640000.0}, {"year": 2023, "month": 1, "revenue": 255147000.0}, {"year": 2023, "month": 2, "revenue": 285687000.0}, {"year": 2023, "month": 3, "revenue": 626077000.0}, {"year": 2023, "month": 4, "revenue": 280596000.0}, {"year": 2023, "month": 5, "revenue": 345380000.0}, {"year": 2023, "month": 6, "revenue": 310090000.0}, {"year": 2023, "month": 7, "revenue": 252839000.0}, {"year": 2023, "month": 8, "revenue": 426203000.0}, {"year": 2023, "month": 9, "revenue": 348103000.0}, {"year": 2023, "month": 11, "revenue": 310517000.0}, {"year": 2023, "month": 12, "revenue": 713612000.0}, {"year": 2024, "month": 1, "revenue": 465868000.0}, {"year": 2024, "month": 2, "revenue": 410992000.0}, {"year": 2024, "month": 3, "revenue": 633795000.0}, {"year": 2024, "month": 4, "revenue": 671922000.0}, {"year": 2024, "month": 5, "revenue": 538326000.0}, {"year": 2024, "month": 6, "revenue": 516752000.0}, {"year": 2024, "month": 8, "revenue": 529815000.0}, {"year": 2024, "month": 9, "revenue": 557973000.0}, {"year": 2024, "month": 10, "revenue": 515132000.0}, {"year": 2024, "month": 11, "revenue": 446146000.0}, {"year": 2024, "month": 12, "revenue": 530902000.0}, {"year": 2025, "month": 1, "revenue": 645065000.0}, {"year": 2025, "month": 2, "revenue": 604032000.0}, {"year": 2025, "month": 3, "revenue": 691416000.0}, {"year": 2025, "month": 4, "revenue": 684370000.0}, {"year": 2025, "month": 6, "revenue": 760276000.0}, {"year": 2025, "month": 7, "revenue": 747841000.0}, {"year": 2025, "month": 8, "revenue": 756253000.0}, {"year": 2025, "month": 9, "revenue": 563585000.0}, {"year": 2025, "month": 10, "revenue": 538870000.0}, {"year": 2025, "month": 11, "revenue": 812853000.0}, {"year": 2025, "month": 12, "revenue": 729676000.0}, {"year": 2026, "month": 1, "revenue": 893601000.0}, {"year": 2022, "month": 3, "revenue": 702208000.0}, {"year": 2022, "month": 4, "revenue": 538739000.0}, {"year": 2022, "month": 11, "revenue": 473140000.0}, {"year": 2023, "month": 10, "revenue": 280850000.0}, {"year": 2024, "month": 7, "revenue": 538186000.0}, {"year": 2025, "month": 5, "revenue": 933199000.0}, {"year": 2026, "month": 2, "revenue": 754655000.0}, {"year": 2021, "month": 4, "revenue": 562339000.0}]'>
-            <td class="col-id">3030</td>
-            <td class="col-name">德律 <span class="market-badge">上市</span></td>
-            <td class="col-seen">04-01 22:45</td>
-            <td class="col-rev">793.2</td>
-            <td class="col-pct"><span style="color:#f85149">5.10%</span></td>
-            <td class="col-pct"><span style="color:#f85149">14.72%</span></td>
-            <td class="col-pct"><span style="color:#f85149">25.81%</span></td>
-        </tr>
         <tr class="stock-row" data-sid="6158" data-sname="禾昌" data-rev="164199000.0"
             data-yoy="1.725376980931022" data-mom="60.36937922412783" data-ytd="-6.02026515968864"
             data-seen="04-01 22:45" data-market="otc"
-            data-chart='[{"year": 2020, "month": 3, "revenue": 137769000.0}, {"year": 2020, "month": 4, "revenue": 181171000.0}, {"year": 2020, "month": 5, "revenue": 168283000.0}, {"year": 2020, "month": 6, "revenue": 169841000.0}, {"year": 2020, "month": 7, "revenue": 192142000.0}, {"year": 2020, "month": 8, "revenue": 202428000.0}, {"year": 2020, "month": 9, "revenue": 218639000.0}, {"year": 2020, "month": 10, "revenue": 178081000.0}, {"year": 2020, "month": 11, "revenue": 184062000.0}, {"year": 2020, "month": 12, "revenue": 189561000.0}, {"year": 2021, "month": 1, "revenue": 199342000.0}, {"year": 2021, "month": 2, "revenue": 151709000.0}, {"year": 2021, "month": 3, "revenue": 195771000.0}, {"year": 2021, "month": 4, "revenue": 200322000.0}, {"year": 2021, "month": 5, "revenue": 202563000.0}, {"year": 2021, "month": 7, "revenue": 184924000.0}, {"year": 2021, "month": 8, "revenue": 180906000.0}, {"year": 2021, "month": 9, "revenue": 170020000.0}, {"year": 2021, "month": 10, "revenue": 154164000.0}, {"year": 2021, "month": 11, "revenue": 173991000.0}, {"year": 2021, "month": 12, "revenue": 184017000.0}, {"year": 2022, "month": 1, "revenue": 203869000.0}, {"year": 2022, "month": 2, "revenue": 144611000.0}, {"year": 2022, "month": 3, "revenue": 210291000.0}, {"year": 2022, "month": 4, "revenue": 193503000.0}, {"year": 2022, "month": 5, "revenue": 176336000.0}, {"year": 2022, "month": 6, "revenue": 180758000.0}, {"year": 2022, "month": 7, "revenue": 156892000.0}, {"year": 2022, "month": 8, "revenue": 161358000.0}, {"year": 2022, "month": 9, "revenue": 148652000.0}, {"year": 2022, "month": 11, "revenue": 137142000.0}, {"year": 2022, "month": 12, "revenue": 124975000.0}, {"year": 2023, "month": 1, "revenue": 113808000.0}, {"year": 2023, "month": 2, "revenue": 115712000.0}, {"year": 2023, "month": 3, "revenue": 159587000.0}, {"year": 2023, "month": 4, "revenue": 147938000.0}, {"year": 2023, "month": 5, "revenue": 165388000.0}, {"year": 2023, "month": 6, "revenue": 154270000.0}, {"year": 2023, "month": 7, "revenue": 158628000.0}, {"year": 2023, "month": 8, "revenue": 177418000.0}, {"year": 2023, "month": 10, "revenue": 130822000.0}, {"year": 2023, "month": 11, "revenue": 135338000.0}, {"year": 2023, "month": 12, "revenue": 131271000.0}, {"year": 2024, "month": 1, "revenue": 162383000.0}, {"year": 2024, "month": 2, "revenue": 120505000.0}, {"year": 2024, "month": 3, "revenue": 153127000.0}, {"year": 2024, "month": 4, "revenue": 178972000.0}, {"year": 2024, "month": 5, "revenue": 171437000.0}, {"year": 2024, "month": 6, "revenue": 160724000.0}, {"year": 2024, "month": 8, "revenue": 177110000.0}, {"year": 2024, "month": 9, "revenue": 175940000.0}, {"year": 2024, "month": 10, "revenue": 137292000.0}, {"year": 2024, "month": 11, "revenue": 144973000.0}, {"year": 2024, "month": 12, "revenue": 147571000.0}, {"year": 2025, "month": 1, "revenue": 149683000.0}, {"year": 2025, "month": 2, "revenue": 129166000.0}, {"year": 2025, "month": 3, "revenue": 161414000.0}, {"year": 2025, "month": 5, "revenue": 152676000.0}, {"year": 2025, "month": 6, "revenue": 146610000.0}, {"year": 2025, "month": 7, "revenue": 157025000.0}, {"year": 2025, "month": 8, "revenue": 152034000.0}, {"year": 2025, "month": 9, "revenue": 175126000.0}, {"year": 2025, "month": 10, "revenue": 127361000.0}, {"year": 2025, "month": 11, "revenue": 150434000.0}, {"year": 2025, "month": 12, "revenue": 140719000.0}, {"year": 2026, "month": 1, "revenue": 147171000.0}, {"year": 2021, "month": 6, "revenue": 196440000.0}, {"year": 2022, "month": 10, "revenue": 120274000.0}, {"year": 2023, "month": 9, "revenue": 159029000.0}, {"year": 2024, "month": 7, "revenue": 185369000.0}, {"year": 2025, "month": 4, "revenue": 174043000.0}, {"year": 2026, "month": 2, "revenue": 102388000.0}]'>
+            data-chart='[]'>
             <td class="col-id">6158</td>
             <td class="col-name">禾昌 <span class="market-badge">上櫃</span></td>
             <td class="col-seen">04-01 22:45</td>
@@ -1050,70 +1476,22 @@ footer {
             <td class="col-pct"><span style="color:#f85149">1.73%</span></td>
             <td class="col-pct"><span style="color:#3fb950">-6.02%</span></td>
         </tr>
-        <tr class="stock-row" data-sid="5508" data-sname="永信建" data-rev="360005000.0"
-            data-yoy="-32.81571045466337" data-mom="43.02258136282736" data-ytd="-18.65352694814831"
+        <tr class="stock-row" data-sid="6712" data-sname="長聖" data-rev="70103000.0"
+            data-yoy="15.121110107562195" data-mom="12.722098052772909" data-ytd="7.063128077156539"
             data-seen="04-01 22:45" data-market="otc"
-            data-chart='[{"year": 2020, "month": 3, "revenue": 152390000.0}, {"year": 2020, "month": 4, "revenue": 160981000.0}, {"year": 2020, "month": 5, "revenue": 120561000.0}, {"year": 2020, "month": 6, "revenue": 341962000.0}, {"year": 2020, "month": 7, "revenue": 253354000.0}, {"year": 2020, "month": 8, "revenue": 246812000.0}, {"year": 2020, "month": 9, "revenue": 434482000.0}, {"year": 2020, "month": 10, "revenue": 302686000.0}, {"year": 2020, "month": 11, "revenue": 281353000.0}, {"year": 2020, "month": 12, "revenue": 640944000.0}, {"year": 2021, "month": 1, "revenue": 134693000.0}, {"year": 2021, "month": 2, "revenue": 378095000.0}, {"year": 2021, "month": 3, "revenue": 384123000.0}, {"year": 2021, "month": 4, "revenue": 558305000.0}, {"year": 2021, "month": 5, "revenue": 372898000.0}, {"year": 2021, "month": 7, "revenue": 378705000.0}, {"year": 2021, "month": 8, "revenue": 220254000.0}, {"year": 2021, "month": 9, "revenue": 447618000.0}, {"year": 2021, "month": 10, "revenue": 437390000.0}, {"year": 2021, "month": 11, "revenue": 749204000.0}, {"year": 2021, "month": 12, "revenue": 1283806000.0}, {"year": 2022, "month": 1, "revenue": 211247000.0}, {"year": 2022, "month": 2, "revenue": 333384000.0}, {"year": 2022, "month": 3, "revenue": 601435000.0}, {"year": 2022, "month": 4, "revenue": 180955000.0}, {"year": 2022, "month": 5, "revenue": 195987000.0}, {"year": 2022, "month": 6, "revenue": 95626000.0}, {"year": 2022, "month": 7, "revenue": 69067000.0}, {"year": 2022, "month": 8, "revenue": 389315000.0}, {"year": 2022, "month": 9, "revenue": 1166758000.0}, {"year": 2022, "month": 11, "revenue": 330518000.0}, {"year": 2022, "month": 12, "revenue": 269382000.0}, {"year": 2023, "month": 1, "revenue": 79058000.0}, {"year": 2023, "month": 2, "revenue": 177272000.0}, {"year": 2023, "month": 3, "revenue": 506120000.0}, {"year": 2023, "month": 4, "revenue": 426130000.0}, {"year": 2023, "month": 5, "revenue": 708826000.0}, {"year": 2023, "month": 6, "revenue": 667998000.0}, {"year": 2023, "month": 7, "revenue": 497028000.0}, {"year": 2023, "month": 8, "revenue": 579393000.0}, {"year": 2023, "month": 10, "revenue": 1066968000.0}, {"year": 2023, "month": 11, "revenue": 1335771000.0}, {"year": 2023, "month": 12, "revenue": 1117515000.0}, {"year": 2024, "month": 1, "revenue": 1069129000.0}, {"year": 2024, "month": 2, "revenue": 982064000.0}, {"year": 2024, "month": 3, "revenue": 1024460000.0}, {"year": 2024, "month": 4, "revenue": 1007648000.0}, {"year": 2024, "month": 5, "revenue": 1005459000.0}, {"year": 2024, "month": 6, "revenue": 920505000.0}, {"year": 2024, "month": 8, "revenue": 506323000.0}, {"year": 2024, "month": 9, "revenue": 1436003000.0}, {"year": 2024, "month": 10, "revenue": 377549000.0}, {"year": 2024, "month": 11, "revenue": 387473000.0}, {"year": 2024, "month": 12, "revenue": 237002000.0}, {"year": 2025, "month": 1, "revenue": 119802000.0}, {"year": 2025, "month": 2, "revenue": 254061000.0}, {"year": 2025, "month": 3, "revenue": 535847000.0}, {"year": 2025, "month": 5, "revenue": 119446000.0}, {"year": 2025, "month": 6, "revenue": 117702000.0}, {"year": 2025, "month": 7, "revenue": 101775000.0}, {"year": 2025, "month": 8, "revenue": 43458000.0}, {"year": 2025, "month": 9, "revenue": 304807000.0}, {"year": 2025, "month": 10, "revenue": 172624000.0}, {"year": 2025, "month": 11, "revenue": 262400000.0}, {"year": 2025, "month": 12, "revenue": 342581000.0}, {"year": 2026, "month": 1, "revenue": 128300000.0}, {"year": 2021, "month": 6, "revenue": 692197000.0}, {"year": 2022, "month": 10, "revenue": 289122000.0}, {"year": 2023, "month": 9, "revenue": 1064997000.0}, {"year": 2024, "month": 7, "revenue": 1081860000.0}, {"year": 2025, "month": 4, "revenue": 159252000.0}, {"year": 2026, "month": 2, "revenue": 251712000.0}]'>
-            <td class="col-id">5508</td>
-            <td class="col-name">永信建 <span class="market-badge">上櫃</span></td>
+            data-chart='[]'>
+            <td class="col-id">6712</td>
+            <td class="col-name">長聖 <span class="market-badge">上櫃</span></td>
             <td class="col-seen">04-01 22:45</td>
-            <td class="col-rev">360.0</td>
-            <td class="col-pct"><span style="color:#f85149">43.02%</span></td>
-            <td class="col-pct"><span style="color:#3fb950">-32.82%</span></td>
-            <td class="col-pct"><span style="color:#3fb950">-18.65%</span></td>
-        </tr>
-        <tr class="stock-row" data-sid="5345" data-sname="馥鴻" data-rev="2616000.0"
-            data-yoy="680.8955223880597" data-mom="-1.8386491557223263" data-ytd="282.3963657013061"
-            data-seen="04-01 22:45" data-market="otc" data-remark="主係產品線成熟且結合經銷商銷售動能，導致較去年同期增加。"
-            data-chart='[{"year": 2020, "month": 3, "revenue": 201000.0}, {"year": 2020, "month": 4, "revenue": 563000.0}, {"year": 2020, "month": 5, "revenue": 969000.0}, {"year": 2020, "month": 6, "revenue": 6994000.0}, {"year": 2020, "month": 7, "revenue": 4841000.0}, {"year": 2020, "month": 8, "revenue": 1501000.0}, {"year": 2020, "month": 9, "revenue": 1784000.0}, {"year": 2020, "month": 10, "revenue": 3667000.0}, {"year": 2020, "month": 11, "revenue": 2827000.0}, {"year": 2020, "month": 12, "revenue": 7461000.0}, {"year": 2021, "month": 1, "revenue": 1446000.0}, {"year": 2021, "month": 2, "revenue": 1860000.0}, {"year": 2021, "month": 3, "revenue": 1809000.0}, {"year": 2021, "month": 4, "revenue": 806000.0}, {"year": 2021, "month": 5, "revenue": 1853000.0}, {"year": 2021, "month": 7, "revenue": 1966000.0}, {"year": 2021, "month": 8, "revenue": 951000.0}, {"year": 2021, "month": 9, "revenue": 309000.0}, {"year": 2021, "month": 10, "revenue": 240000.0}, {"year": 2021, "month": 11, "revenue": 293000.0}, {"year": 2021, "month": 12, "revenue": 588000.0}, {"year": 2022, "month": 1, "revenue": 566000.0}, {"year": 2022, "month": 2, "revenue": 461000.0}, {"year": 2022, "month": 3, "revenue": 1039000.0}, {"year": 2022, "month": 4, "revenue": 1048000.0}, {"year": 2022, "month": 5, "revenue": 707000.0}, {"year": 2022, "month": 6, "revenue": 550000.0}, {"year": 2022, "month": 7, "revenue": 336000.0}, {"year": 2022, "month": 8, "revenue": 286000.0}, {"year": 2022, "month": 9, "revenue": 296000.0}, {"year": 2022, "month": 11, "revenue": 485000.0}, {"year": 2022, "month": 12, "revenue": 551000.0}, {"year": 2023, "month": 1, "revenue": 605000.0}, {"year": 2023, "month": 2, "revenue": 308000.0}, {"year": 2023, "month": 3, "revenue": 565000.0}, {"year": 2023, "month": 4, "revenue": 347000.0}, {"year": 2023, "month": 5, "revenue": 404000.0}, {"year": 2023, "month": 6, "revenue": 437000.0}, {"year": 2023, "month": 7, "revenue": 547000.0}, {"year": 2023, "month": 8, "revenue": 498000.0}, {"year": 2023, "month": 10, "revenue": 643000.0}, {"year": 2023, "month": 11, "revenue": 573000.0}, {"year": 2023, "month": 12, "revenue": 490000.0}, {"year": 2024, "month": 1, "revenue": 279000.0}, {"year": 2024, "month": 2, "revenue": 387000.0}, {"year": 2024, "month": 3, "revenue": 328000.0}, {"year": 2024, "month": 4, "revenue": 344000.0}, {"year": 2024, "month": 5, "revenue": 353000.0}, {"year": 2024, "month": 6, "revenue": 431000.0}, {"year": 2024, "month": 8, "revenue": 669000.0}, {"year": 2024, "month": 9, "revenue": 571000.0}, {"year": 2024, "month": 10, "revenue": 740000.0}, {"year": 2024, "month": 11, "revenue": 880000.0}, {"year": 2024, "month": 12, "revenue": 893000.0}, {"year": 2025, "month": 1, "revenue": 578000.0}, {"year": 2025, "month": 2, "revenue": 847000.0}, {"year": 2025, "month": 3, "revenue": 335000.0}, {"year": 2025, "month": 5, "revenue": 371000.0}, {"year": 2025, "month": 6, "revenue": 397000.0}, {"year": 2025, "month": 7, "revenue": 626000.0}, {"year": 2025, "month": 8, "revenue": 2554000.0}, {"year": 2025, "month": 9, "revenue": 3854000.0}, {"year": 2025, "month": 10, "revenue": 3348000.0}, {"year": 2025, "month": 11, "revenue": 4255000.0}, {"year": 2025, "month": 12, "revenue": 5393000.0}, {"year": 2026, "month": 1, "revenue": 1453000.0}, {"year": 2021, "month": 6, "revenue": 638000.0}, {"year": 2022, "month": 10, "revenue": 238000.0}, {"year": 2023, "month": 9, "revenue": 864000.0}, {"year": 2024, "month": 7, "revenue": 732000.0}, {"year": 2025, "month": 4, "revenue": 623000.0}, {"year": 2026, "month": 2, "revenue": 2665000.0}]'>
-            <td class="col-id">5345</td>
-            <td class="col-name">馥鴻 <span class="market-badge">上櫃</span></td>
-            <td class="col-seen">04-01 22:45</td>
-            <td class="col-rev">2.62</td>
-            <td class="col-pct"><span style="color:#3fb950">-1.84%</span></td>
-            <td class="col-pct"><span style="color:#f85149">680.90%</span></td>
-            <td class="col-pct"><span style="color:#f85149">282.40%</span></td>
-        </tr>
-        <tr class="stock-row" data-sid="5315" data-sname="光聯" data-rev="163834000.0"
-            data-yoy="-3.839178283198826" data-mom="21.45118127163688" data-ytd="-6.684587849518151"
-            data-seen="04-01 22:45" data-market="otc"
-            data-chart='[{"year": 2020, "month": 3, "revenue": 131302000.0}, {"year": 2020, "month": 4, "revenue": 115633000.0}, {"year": 2020, "month": 5, "revenue": 132631000.0}, {"year": 2020, "month": 6, "revenue": 135353000.0}, {"year": 2020, "month": 7, "revenue": 158657000.0}, {"year": 2020, "month": 8, "revenue": 170233000.0}, {"year": 2020, "month": 9, "revenue": 174204000.0}, {"year": 2020, "month": 10, "revenue": 174887000.0}, {"year": 2020, "month": 11, "revenue": 175619000.0}, {"year": 2020, "month": 12, "revenue": 177786000.0}, {"year": 2021, "month": 1, "revenue": 180155000.0}, {"year": 2021, "month": 2, "revenue": 150526000.0}, {"year": 2021, "month": 3, "revenue": 181338000.0}, {"year": 2021, "month": 4, "revenue": 182363000.0}, {"year": 2021, "month": 5, "revenue": 183182000.0}, {"year": 2021, "month": 7, "revenue": 185122000.0}, {"year": 2021, "month": 8, "revenue": 173791000.0}, {"year": 2021, "month": 9, "revenue": 175674000.0}, {"year": 2021, "month": 10, "revenue": 176291000.0}, {"year": 2021, "month": 11, "revenue": 150203000.0}, {"year": 2021, "month": 12, "revenue": 151485000.0}, {"year": 2022, "month": 1, "revenue": 152306000.0}, {"year": 2022, "month": 2, "revenue": 140933000.0}, {"year": 2022, "month": 3, "revenue": 155268000.0}, {"year": 2022, "month": 4, "revenue": 168400000.0}, {"year": 2022, "month": 5, "revenue": 166983000.0}, {"year": 2022, "month": 6, "revenue": 169042000.0}, {"year": 2022, "month": 7, "revenue": 170659000.0}, {"year": 2022, "month": 8, "revenue": 150382000.0}, {"year": 2022, "month": 9, "revenue": 171041000.0}, {"year": 2022, "month": 11, "revenue": 169903000.0}, {"year": 2022, "month": 12, "revenue": 161075000.0}, {"year": 2023, "month": 1, "revenue": 144192000.0}, {"year": 2023, "month": 2, "revenue": 153360000.0}, {"year": 2023, "month": 3, "revenue": 156691000.0}, {"year": 2023, "month": 4, "revenue": 157728000.0}, {"year": 2023, "month": 5, "revenue": 151543000.0}, {"year": 2023, "month": 6, "revenue": 153547000.0}, {"year": 2023, "month": 7, "revenue": 132463000.0}, {"year": 2023, "month": 8, "revenue": 120387000.0}, {"year": 2023, "month": 10, "revenue": 96349000.0}, {"year": 2023, "month": 11, "revenue": 95247000.0}, {"year": 2023, "month": 12, "revenue": 96155000.0}, {"year": 2024, "month": 1, "revenue": 98105000.0}, {"year": 2024, "month": 2, "revenue": 85090000.0}, {"year": 2024, "month": 3, "revenue": 114164000.0}, {"year": 2024, "month": 4, "revenue": 127134000.0}, {"year": 2024, "month": 5, "revenue": 138367000.0}, {"year": 2024, "month": 6, "revenue": 123195000.0}, {"year": 2024, "month": 8, "revenue": 137185000.0}, {"year": 2024, "month": 9, "revenue": 130635000.0}, {"year": 2024, "month": 10, "revenue": 149202000.0}, {"year": 2024, "month": 11, "revenue": 160245000.0}, {"year": 2024, "month": 12, "revenue": 167598000.0}, {"year": 2025, "month": 1, "revenue": 150715000.0}, {"year": 2025, "month": 2, "revenue": 178133000.0}, {"year": 2025, "month": 3, "revenue": 170375000.0}, {"year": 2025, "month": 5, "revenue": 170459000.0}, {"year": 2025, "month": 6, "revenue": 162260000.0}, {"year": 2025, "month": 7, "revenue": 133795000.0}, {"year": 2025, "month": 8, "revenue": 175216000.0}, {"year": 2025, "month": 9, "revenue": 173462000.0}, {"year": 2025, "month": 10, "revenue": 177407000.0}, {"year": 2025, "month": 11, "revenue": 176965000.0}, {"year": 2025, "month": 12, "revenue": 161232000.0}, {"year": 2026, "month": 1, "revenue": 167121000.0}, {"year": 2021, "month": 6, "revenue": 184008000.0}, {"year": 2022, "month": 10, "revenue": 172689000.0}, {"year": 2023, "month": 9, "revenue": 100161000.0}, {"year": 2024, "month": 7, "revenue": 124641000.0}, {"year": 2025, "month": 4, "revenue": 173474000.0}, {"year": 2026, "month": 2, "revenue": 134897000.0}]'>
-            <td class="col-id">5315</td>
-            <td class="col-name">光聯 <span class="market-badge">上櫃</span></td>
-            <td class="col-seen">04-01 22:45</td>
-            <td class="col-rev">163.8</td>
-            <td class="col-pct"><span style="color:#f85149">21.45%</span></td>
-            <td class="col-pct"><span style="color:#3fb950">-3.84%</span></td>
-            <td class="col-pct"><span style="color:#3fb950">-6.68%</span></td>
-        </tr>
-        <tr class="stock-row" data-sid="3228" data-sname="金麗科" data-rev="26376000.0"
-            data-yoy="10.954063604240282" data-mom="5.394389834572045" data-ytd="0.8575645167723664"
-            data-seen="04-01 22:45" data-market="otc"
-            data-chart='[{"year": 2020, "month": 3, "revenue": 27616000.0}, {"year": 2020, "month": 4, "revenue": 22027000.0}, {"year": 2020, "month": 5, "revenue": 20867000.0}, {"year": 2020, "month": 6, "revenue": 19550000.0}, {"year": 2020, "month": 7, "revenue": 20293000.0}, {"year": 2020, "month": 8, "revenue": 29900000.0}, {"year": 2020, "month": 9, "revenue": 43031000.0}, {"year": 2020, "month": 10, "revenue": 40314000.0}, {"year": 2020, "month": 11, "revenue": 48243000.0}, {"year": 2020, "month": 12, "revenue": 58777000.0}, {"year": 2021, "month": 1, "revenue": 59123000.0}, {"year": 2021, "month": 2, "revenue": 60761000.0}, {"year": 2021, "month": 3, "revenue": 66533000.0}, {"year": 2021, "month": 4, "revenue": 73076000.0}, {"year": 2021, "month": 5, "revenue": 79303000.0}, {"year": 2021, "month": 7, "revenue": 48961000.0}, {"year": 2021, "month": 8, "revenue": 20522000.0}, {"year": 2021, "month": 9, "revenue": 20767000.0}, {"year": 2021, "month": 10, "revenue": 21850000.0}, {"year": 2021, "month": 11, "revenue": 21924000.0}, {"year": 2021, "month": 12, "revenue": 92913000.0}, {"year": 2022, "month": 1, "revenue": 75456000.0}, {"year": 2022, "month": 2, "revenue": 74800000.0}, {"year": 2022, "month": 3, "revenue": 27772000.0}, {"year": 2022, "month": 4, "revenue": 23141000.0}, {"year": 2022, "month": 5, "revenue": 29591000.0}, {"year": 2022, "month": 6, "revenue": 51464000.0}, {"year": 2022, "month": 7, "revenue": 30381000.0}, {"year": 2022, "month": 8, "revenue": 20811000.0}, {"year": 2022, "month": 9, "revenue": 15178000.0}, {"year": 2022, "month": 11, "revenue": 20930000.0}, {"year": 2022, "month": 12, "revenue": 20223000.0}, {"year": 2023, "month": 1, "revenue": 19218000.0}, {"year": 2023, "month": 2, "revenue": 29505000.0}, {"year": 2023, "month": 3, "revenue": 27859000.0}, {"year": 2023, "month": 4, "revenue": 29363000.0}, {"year": 2023, "month": 5, "revenue": 20285000.0}, {"year": 2023, "month": 6, "revenue": 27493000.0}, {"year": 2023, "month": 7, "revenue": 25108000.0}, {"year": 2023, "month": 8, "revenue": 24010000.0}, {"year": 2023, "month": 10, "revenue": 25528000.0}, {"year": 2023, "month": 11, "revenue": 25123000.0}, {"year": 2023, "month": 12, "revenue": 22055000.0}, {"year": 2024, "month": 1, "revenue": 47631000.0}, {"year": 2024, "month": 2, "revenue": 24354000.0}, {"year": 2024, "month": 3, "revenue": 37674000.0}, {"year": 2024, "month": 4, "revenue": 35623000.0}, {"year": 2024, "month": 5, "revenue": 69412000.0}, {"year": 2024, "month": 6, "revenue": 54757000.0}, {"year": 2024, "month": 8, "revenue": 31350000.0}, {"year": 2024, "month": 9, "revenue": 24068000.0}, {"year": 2024, "month": 10, "revenue": 20286000.0}, {"year": 2024, "month": 11, "revenue": 20702000.0}, {"year": 2024, "month": 12, "revenue": 23927000.0}, {"year": 2025, "month": 1, "revenue": 30746000.0}, {"year": 2025, "month": 2, "revenue": 20695000.0}, {"year": 2025, "month": 3, "revenue": 23772000.0}, {"year": 2025, "month": 5, "revenue": 20871000.0}, {"year": 2025, "month": 6, "revenue": 22110000.0}, {"year": 2025, "month": 7, "revenue": 26871000.0}, {"year": 2025, "month": 8, "revenue": 25981000.0}, {"year": 2025, "month": 9, "revenue": 27748000.0}, {"year": 2025, "month": 10, "revenue": 26078000.0}, {"year": 2025, "month": 11, "revenue": 20231000.0}, {"year": 2025, "month": 12, "revenue": 26513000.0}, {"year": 2026, "month": 1, "revenue": 24456000.0}, {"year": 2021, "month": 6, "revenue": 52641000.0}, {"year": 2022, "month": 10, "revenue": 26267000.0}, {"year": 2023, "month": 9, "revenue": 26229000.0}, {"year": 2024, "month": 7, "revenue": 34912000.0}, {"year": 2025, "month": 4, "revenue": 37370000.0}, {"year": 2026, "month": 2, "revenue": 25026000.0}]'>
-            <td class="col-id">3228</td>
-            <td class="col-name">金麗科 <span class="market-badge">上櫃</span></td>
-            <td class="col-seen">04-01 22:45</td>
-            <td class="col-rev">26.38</td>
-            <td class="col-pct"><span style="color:#f85149">5.39%</span></td>
-            <td class="col-pct"><span style="color:#f85149">10.95%</span></td>
-            <td class="col-pct"><span style="color:#f85149">0.86%</span></td>
-        </tr>
-        <tr class="stock-row" data-sid="6438" data-sname="迅得" data-rev="667469000.0"
-            data-yoy="15.662565003647655" data-mom="30.420824532368336" data-ytd="12.203828652126155"
-            data-seen="04-01 22:45" data-market="sii"
-            data-chart='[{"year": 2020, "month": 3, "revenue": 318847000.0}, {"year": 2020, "month": 4, "revenue": 300501000.0}, {"year": 2020, "month": 5, "revenue": 297878000.0}, {"year": 2020, "month": 6, "revenue": 262153000.0}, {"year": 2020, "month": 7, "revenue": 232962000.0}, {"year": 2020, "month": 8, "revenue": 297430000.0}, {"year": 2020, "month": 9, "revenue": 366433000.0}, {"year": 2020, "month": 10, "revenue": 307027000.0}, {"year": 2020, "month": 11, "revenue": 359977000.0}, {"year": 2020, "month": 12, "revenue": 323760000.0}, {"year": 2021, "month": 1, "revenue": 344169000.0}, {"year": 2021, "month": 2, "revenue": 264469000.0}, {"year": 2021, "month": 3, "revenue": 418273000.0}, {"year": 2021, "month": 5, "revenue": 380486000.0}, {"year": 2021, "month": 6, "revenue": 489291000.0}, {"year": 2021, "month": 7, "revenue": 501989000.0}, {"year": 2021, "month": 8, "revenue": 420838000.0}, {"year": 2021, "month": 9, "revenue": 462699000.0}, {"year": 2021, "month": 10, "revenue": 428760000.0}, {"year": 2021, "month": 11, "revenue": 414858000.0}, {"year": 2021, "month": 12, "revenue": 429966000.0}, {"year": 2022, "month": 1, "revenue": 435310000.0}, {"year": 2022, "month": 2, "revenue": 344105000.0}, {"year": 2022, "month": 5, "revenue": 463869000.0}, {"year": 2022, "month": 6, "revenue": 566749000.0}, {"year": 2022, "month": 7, "revenue": 480168000.0}, {"year": 2022, "month": 8, "revenue": 547588000.0}, {"year": 2022, "month": 9, "revenue": 575986000.0}, {"year": 2022, "month": 10, "revenue": 466239000.0}, {"year": 2022, "month": 12, "revenue": 536605000.0}, {"year": 2023, "month": 1, "revenue": 532206000.0}, {"year": 2023, "month": 2, "revenue": 523147000.0}, {"year": 2023, "month": 3, "revenue": 513138000.0}, {"year": 2023, "month": 4, "revenue": 573467000.0}, {"year": 2023, "month": 5, "revenue": 512432000.0}, {"year": 2023, "month": 6, "revenue": 535189000.0}, {"year": 2023, "month": 7, "revenue": 372246000.0}, {"year": 2023, "month": 8, "revenue": 420736000.0}, {"year": 2023, "month": 9, "revenue": 444987000.0}, {"year": 2023, "month": 11, "revenue": 463624000.0}, {"year": 2023, "month": 12, "revenue": 495678000.0}, {"year": 2024, "month": 1, "revenue": 426902000.0}, {"year": 2024, "month": 2, "revenue": 371845000.0}, {"year": 2024, "month": 3, "revenue": 474554000.0}, {"year": 2024, "month": 4, "revenue": 432873000.0}, {"year": 2024, "month": 5, "revenue": 400188000.0}, {"year": 2024, "month": 6, "revenue": 416529000.0}, {"year": 2024, "month": 8, "revenue": 413016000.0}, {"year": 2024, "month": 9, "revenue": 473940000.0}, {"year": 2024, "month": 10, "revenue": 416041000.0}, {"year": 2024, "month": 11, "revenue": 441453000.0}, {"year": 2024, "month": 12, "revenue": 426527000.0}, {"year": 2025, "month": 1, "revenue": 508820000.0}, {"year": 2025, "month": 2, "revenue": 469109000.0}, {"year": 2025, "month": 3, "revenue": 577083000.0}, {"year": 2025, "month": 4, "revenue": 481472000.0}, {"year": 2025, "month": 6, "revenue": 612058000.0}, {"year": 2025, "month": 7, "revenue": 605495000.0}, {"year": 2025, "month": 8, "revenue": 529101000.0}, {"year": 2025, "month": 9, "revenue": 531460000.0}, {"year": 2025, "month": 10, "revenue": 525839000.0}, {"year": 2025, "month": 11, "revenue": 570456000.0}, {"year": 2025, "month": 12, "revenue": 518657000.0}, {"year": 2026, "month": 1, "revenue": 565533000.0}, {"year": 2022, "month": 3, "revenue": 460111000.0}, {"year": 2022, "month": 4, "revenue": 416473000.0}, {"year": 2022, "month": 11, "revenue": 468597000.0}, {"year": 2023, "month": 10, "revenue": 423444000.0}, {"year": 2024, "month": 7, "revenue": 427192000.0}, {"year": 2025, "month": 5, "revenue": 537887000.0}, {"year": 2026, "month": 2, "revenue": 511781000.0}, {"year": 2021, "month": 4, "revenue": 349823000.0}]'>
-            <td class="col-id">6438</td>
-            <td class="col-name">迅得 <span class="market-badge">上市</span></td>
-            <td class="col-seen">04-01 22:45</td>
-            <td class="col-rev">667.5</td>
-            <td class="col-pct"><span style="color:#f85149">30.42%</span></td>
-            <td class="col-pct"><span style="color:#f85149">15.66%</span></td>
-            <td class="col-pct"><span style="color:#f85149">12.20%</span></td>
+            <td class="col-rev">70.10</td>
+            <td class="col-pct"><span style="color:#f85149">12.72%</span></td>
+            <td class="col-pct"><span style="color:#f85149">15.12%</span></td>
+            <td class="col-pct"><span style="color:#f85149">7.06%</span></td>
         </tr>
         <tr class="stock-row" data-sid="7781" data-sname="昕力資*" data-rev="101116000.0"
             data-yoy="10.07500462655534" data-mom="79.08681945379193" data-ytd="22.96117499211099"
             data-seen="04-01 22:45" data-market="emerging"
-            data-chart='[{"year": 2024, "month": 10, "revenue": 62810000.0}, {"year": 2024, "month": 11, "revenue": 74583000.0}, {"year": 2024, "month": 12, "revenue": 234463000.0}, {"year": 2025, "month": 1, "revenue": 49030000.0}, {"year": 2025, "month": 2, "revenue": 39740000.0}, {"year": 2025, "month": 3, "revenue": 91861000.0}, {"year": 2025, "month": 5, "revenue": 61998000.0}, {"year": 2025, "month": 6, "revenue": 65347000.0}, {"year": 2025, "month": 7, "revenue": 62337000.0}, {"year": 2025, "month": 8, "revenue": 44143000.0}, {"year": 2025, "month": 9, "revenue": 47208000.0}, {"year": 2025, "month": 10, "revenue": 69934000.0}, {"year": 2025, "month": 11, "revenue": 45017000.0}, {"year": 2025, "month": 12, "revenue": 72824000.0}, {"year": 2026, "month": 2, "revenue": 56462000.0}, {"year": 2025, "month": 4, "revenue": 70797000.0}, {"year": 2026, "month": 1, "revenue": 64528000.0}]'>
+            data-chart='[]'>
             <td class="col-id">7781</td>
             <td class="col-name">昕力資* <span class="market-badge">興櫃</span></td>
             <td class="col-seen">04-01 22:45</td>
@@ -1122,6 +1500,150 @@ footer {
             <td class="col-pct"><span style="color:#f85149">10.08%</span></td>
             <td class="col-pct"><span style="color:#f85149">22.96%</span></td>
         </tr>
+        <tr class="stock-row" data-sid="3228" data-sname="金麗科" data-rev="26376000.0"
+            data-yoy="10.954063604240282" data-mom="5.394389834572045" data-ytd="0.8575645167723664"
+            data-seen="04-01 22:45" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">3228</td>
+            <td class="col-name">金麗科 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-01 22:45</td>
+            <td class="col-rev">26.38</td>
+            <td class="col-pct"><span style="color:#f85149">5.39%</span></td>
+            <td class="col-pct"><span style="color:#f85149">10.95%</span></td>
+            <td class="col-pct"><span style="color:#f85149">0.86%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6785" data-sname="昱展新藥" data-rev="250000.0"
+            data-yoy="0" data-mom="0" data-ytd="0"
+            data-seen="04-01 22:45" data-market="otc" data-remark="一次性委託服務合約"
+            data-chart='[]'>
+            <td class="col-id">6785</td>
+            <td class="col-name">昱展新藥 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-01 22:45</td>
+            <td class="col-rev">0.25</td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6438" data-sname="迅得" data-rev="667469000.0"
+            data-yoy="15.662565003647655" data-mom="30.420824532368336" data-ytd="12.203828652126155"
+            data-seen="04-01 22:45" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">6438</td>
+            <td class="col-name">迅得 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-01 22:45</td>
+            <td class="col-rev">667.5</td>
+            <td class="col-pct"><span style="color:#f85149">30.42%</span></td>
+            <td class="col-pct"><span style="color:#f85149">15.66%</span></td>
+            <td class="col-pct"><span style="color:#f85149">12.20%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="2402" data-sname="毅嘉" data-rev="1016239000.0"
+            data-yoy="13.4970537912056" data-mom="22.579178261304847" data-ytd="15.587064289023836"
+            data-seen="04-01 22:45" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">2402</td>
+            <td class="col-name">毅嘉 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-01 22:45</td>
+            <td class="col-rev">1,016.2</td>
+            <td class="col-pct"><span style="color:#f85149">22.58%</span></td>
+            <td class="col-pct"><span style="color:#f85149">13.50%</span></td>
+            <td class="col-pct"><span style="color:#f85149">15.59%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="5345" data-sname="馥鴻" data-rev="2616000.0"
+            data-yoy="680.8955223880597" data-mom="-1.8386491557223263" data-ytd="282.3963657013061"
+            data-seen="04-01 22:45" data-market="otc" data-remark="主係產品線成熟且結合經銷商銷售動能，導致較去年同期增加。"
+            data-chart='[]'>
+            <td class="col-id">5345</td>
+            <td class="col-name">馥鴻 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-01 22:45</td>
+            <td class="col-rev">2.62</td>
+            <td class="col-pct"><span style="color:#3fb950">-1.84%</span></td>
+            <td class="col-pct"><span style="color:#f85149">680.90%</span></td>
+            <td class="col-pct"><span style="color:#f85149">282.40%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="3030" data-sname="德律" data-rev="793160000.0"
+            data-yoy="14.715308873384474" data-mom="5.102331528976817" data-ytd="25.812929783479824"
+            data-seen="04-01 22:45" data-market="sii"
+            data-chart='[]'>
+            <td class="col-id">3030</td>
+            <td class="col-name">德律 <span class="market-badge">上市</span></td>
+            <td class="col-seen">04-01 22:45</td>
+            <td class="col-rev">793.2</td>
+            <td class="col-pct"><span style="color:#f85149">5.10%</span></td>
+            <td class="col-pct"><span style="color:#f85149">14.72%</span></td>
+            <td class="col-pct"><span style="color:#f85149">25.81%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6610" data-sname="安成生技" data-rev="0.0"
+            data-yoy="0" data-mom="0" data-ytd="0"
+            data-seen="04-01 22:45" data-market="emerging" data-remark="本公司為新藥研發生技公司，目前尚未有新藥商品化"
+            data-chart='[]'>
+            <td class="col-id">6610</td>
+            <td class="col-name">安成生技 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-01 22:45</td>
+            <td class="col-rev">-</td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6586" data-sname="醣基" data-rev="31000.0"
+            data-yoy="0.0" data-mom="-3.125" data-ytd="429.4736842105263"
+            data-seen="04-01 22:45" data-market="emerging" data-remark="係依據IFRS15 會計原則，自114年01月起依合約期限認列前期授權金攤銷數。"
+            data-chart='[]'>
+            <td class="col-id">6586</td>
+            <td class="col-name">醣基 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-01 22:45</td>
+            <td class="col-rev">0.03</td>
+            <td class="col-pct"><span style="color:#3fb950">-3.12%</span></td>
+            <td class="col-pct"><span style="color:#6e7681">-</span></td>
+            <td class="col-pct"><span style="color:#f85149">429.47%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="5508" data-sname="永信建" data-rev="360005000.0"
+            data-yoy="-32.81571045466337" data-mom="43.02258136282736" data-ytd="-18.65352694814831"
+            data-seen="04-01 22:45" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">5508</td>
+            <td class="col-name">永信建 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-01 22:45</td>
+            <td class="col-rev">360.0</td>
+            <td class="col-pct"><span style="color:#f85149">43.02%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-32.82%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-18.65%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6486" data-sname="互動" data-rev="198402000.0"
+            data-yoy="77.83693664622997" data-mom="52.74969781425393" data-ytd="12.225478140921425"
+            data-seen="04-01 22:45" data-market="otc" data-remark="本月營收較去年同期增加50%以上，係因本月認列營收的專案較去年同期增加所致。"
+            data-chart='[]'>
+            <td class="col-id">6486</td>
+            <td class="col-name">互動 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-01 22:45</td>
+            <td class="col-rev">198.4</td>
+            <td class="col-pct"><span style="color:#f85149">52.75%</span></td>
+            <td class="col-pct"><span style="color:#f85149">77.84%</span></td>
+            <td class="col-pct"><span style="color:#f85149">12.23%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="5315" data-sname="光聯" data-rev="163834000.0"
+            data-yoy="-3.839178283198826" data-mom="21.45118127163688" data-ytd="-6.684587849518151"
+            data-seen="04-01 22:45" data-market="otc"
+            data-chart='[]'>
+            <td class="col-id">5315</td>
+            <td class="col-name">光聯 <span class="market-badge">上櫃</span></td>
+            <td class="col-seen">04-01 22:45</td>
+            <td class="col-rev">163.8</td>
+            <td class="col-pct"><span style="color:#f85149">21.45%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-3.84%</span></td>
+            <td class="col-pct"><span style="color:#3fb950">-6.68%</span></td>
+        </tr>
+        <tr class="stock-row" data-sid="6518" data-sname="康科特" data-rev="85311000.0"
+            data-yoy="19.426323599406444" data-mom="26.683199192183185" data-ytd="18.96218457014774"
+            data-seen="04-01 22:45" data-market="emerging"
+            data-chart='[]'>
+            <td class="col-id">6518</td>
+            <td class="col-name">康科特 <span class="market-badge">興櫃</span></td>
+            <td class="col-seen">04-01 22:45</td>
+            <td class="col-rev">85.31</td>
+            <td class="col-pct"><span style="color:#f85149">26.68%</span></td>
+            <td class="col-pct"><span style="color:#f85149">19.43%</span></td>
+            <td class="col-pct"><span style="color:#f85149">18.96%</span></td>
+        </tr>
             </tbody>
         </table>
     </div>
@@ -1129,7 +1651,7 @@ footer {
 
 <footer>
     資料來源：公開資訊觀測站 (MOPS) | 系統每 5 分鐘偵測 | 僅供參考，不構成投資建議<br>
-    最後更新：2026-04-02 08:43:19
+    最後更新：2026-04-02 16:29:06
 </footer>
 
 <script>
