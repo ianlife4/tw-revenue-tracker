@@ -51,7 +51,7 @@ def get_stock_list() -> pd.DataFrame:
     # 保留上市 (twse)、上櫃 (tpex)、興櫃 (emerging)
     df = df[df["type"].isin(["twse", "tpex", "emerging"])].copy()
     # 只保留純數字代號 (排除 ETF 等)
-    df = df[df["stock_id"].str.match(r"^\d{4}$")].copy()
+    df = df[df["stock_id"].str.match(r"^\d{3,6}$")].copy()
 
     # --- 識別創新板股票 ---
     # 方法1: industry_category 為 "創新板股票"

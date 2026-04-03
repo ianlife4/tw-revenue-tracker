@@ -121,7 +121,7 @@ def fetch_mops_monthly(roc_year: int, month: int, market: str = "sii") -> pd.Dat
                 )
 
         # 只保留4碼數字代號 (過濾合計列等)
-        df = df[df["stock_id"].str.match(r"^\d{4}$", na=False)].copy()
+        df = df[df["stock_id"].str.match(r"^\d{3,6}$", na=False)].copy()
 
         return df
 
@@ -192,7 +192,7 @@ def scrape_all_months(end_year: int, end_month: int, months_back: int = 12, year
     missing = []
     for y, m in sorted(periods_needed):
         roc = y - 1911
-        for mops_mkt, cache_mkt in [("sii", "sii"), ("otc", "otc"), ("rotc", "emerging")]:
+        for mops_mkt, cache_mkt in [("sii", "sii"), ("otc", "otc"), ("rotc", "emerging"), ("pub", "pub")]:
             if (y, m, cache_mkt) not in cached_periods:
                 missing.append((roc, m, mops_mkt, y))
 

@@ -31,7 +31,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 MOPS_DL_URL = "https://mopsov.twse.com.tw/server-java/FileDownLoad"
-MARKETS = ["sii", "otc", "rotc"]
+MARKETS = ["sii", "otc", "rotc", "pub"]
 STATE_FILE = os.path.join(DATA_DIR, "monitor_state.json")
 CACHE_FILE = os.path.join(DATA_DIR, "all_revenue_mops.csv")
 
@@ -108,7 +108,8 @@ def fetch_current_month(roc_year: int, month: int, market: str) -> pd.DataFrame:
                 western_year = roc_year + 1911
                 df["revenue_year"] = western_year
                 df["revenue_month"] = month
-                market_internal = "emerging" if market == "rotc" else market
+                market_map = {"rotc": "emerging", "pub": "pub"}
+                market_internal = market_map.get(market, market)
                 df["market"] = market_internal
                 df["stock_id"] = df["stock_id"].astype(str).str.strip()
 
@@ -125,7 +126,7 @@ def fetch_current_month(roc_year: int, month: int, market: str) -> pd.DataFrame:
                             df[col].astype(str).str.replace(",", ""), errors="coerce"
                         )
 
-                df = df[df["stock_id"].str.match(r"^\d{4}$", na=False)].copy()
+                df = df[df["stock_id"].str.match(r"^\d{3,6}$", na=False)].copy()
                 return df
 
             if attempt < max_retries - 1:
