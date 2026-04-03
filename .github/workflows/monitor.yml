@@ -35,8 +35,16 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Pre-check (doctor)
+        run: python doctor.py --ci
+
       - name: Run monitor
+        id: monitor
         run: python monitor.py
+
+      - name: Diagnose failure (doctor)
+        if: failure() && steps.monitor.outcome == 'failure'
+        run: python doctor.py --ci-diagnose
 
       - name: Commit and push changes
         run: |
