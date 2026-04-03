@@ -471,9 +471,24 @@
       "first_seen": "04-02 16:29",
       "market": "sii",
       "stock_name": "美律"
+    },
+    "8046": {
+      "first_seen": "04-03 10:29",
+      "market": "sii",
+      "stock_name": "南電"
+    },
+    "6510": {
+      "first_seen": "04-03 10:29",
+      "market": "otc",
+      "stock_name": "精測"
+    },
+    "1560": {
+      "first_seen": "04-03 10:29",
+      "market": "sii",
+      "stock_name": "中砂"
     }
   },
-  "last_check": "04-03 18:16:40",
-  "last_new_filing": "04-02 16:29:04",
-  "total_filed": 94
+  "last_check": "04-03 10:29:37",
+  "last_new_filing": "04-03 10:29:37",
+  "total_filed": 97
 }
