@@ -17,7 +17,7 @@ permissions:
 
 concurrency:
   group: "monitor"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   monitor:
@@ -55,6 +55,10 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "auto: update revenue filings $(date -u +%Y-%m-%d\ %H:%M)"
-            git pull --rebase || true
-            git push
+            # 嘗試 rebase，失敗就 abort 再 merge
+            if ! git pull --rebase; then
+              git rebase --abort 2>/dev/null || true
+              git pull --no-rebase --no-edit || true
+            fi
+            git push || echo "Push failed, will retry next run"
           fi
