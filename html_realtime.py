@@ -64,7 +64,8 @@ def _build_chart_data(stock_id: str, full_df: pd.DataFrame, rev_year: int, rev_m
 
 
 def generate_realtime_page(state: dict, current_df: pd.DataFrame,
-                           full_df: pd.DataFrame, rev_year: int, rev_month: int) -> str:
+                           full_df: pd.DataFrame, rev_year: int, rev_month: int,
+                           prefiling_alerts: list = None) -> str:
     """生成即時營收頁面"""
 
     now = datetime.now()
@@ -139,6 +140,41 @@ def generate_realtime_page(state: dict, current_df: pd.DataFrame,
     # 歷史月報連結 (當期的營收創同期新高報表)
     history_link = f"{rev_year}_{rev_month:02d}.html"
 
+    # 建立預警清單 HTML
+    prefiling_html = ""
+    if prefiling_alerts:
+        cards = ""
+        for a in prefiling_alerts:
+            filed_badge = '<span class="pf-badge pf-filed">已申報</span>' if a["filed"] else '<span class="pf-badge pf-pending">待申報</span>'
+            cards += f"""
+            <div class="pf-card {'pf-card-filed' if a['filed'] else ''}">
+                <div class="pf-left">
+                    <span class="pf-sid">{a['stock_id']}</span>
+                    <span class="pf-name">{a['stock_name']}</span>
+                    {filed_badge}
+                </div>
+                <div class="pf-mid">
+                    <span class="pf-avg">T+1 avg <strong>+{a['avg_t1']:.1f}%</strong></span>
+                    <span class="pf-hit">正報酬率 {a['hit_rate']:.0f}%</span>
+                    <span class="pf-count">({a['count']}次)</span>
+                </div>
+                <div class="pf-right">
+                    <span class="pf-msg">{a['alert_msg']}</span>
+                </div>
+            </div>"""
+
+        filed_count = sum(1 for a in prefiling_alerts if a["filed"])
+        total_count = len(prefiling_alerts)
+        prefiling_html = f"""
+    <div class="prefiling-section">
+        <div class="pf-header">
+            <span class="pf-title">⚡ T-1 預警清單：歷史同期新高後 T+1 容易大漲</span>
+            <span class="pf-summary">共 {total_count} 檔 · 已申報 {filed_count} 檔</span>
+        </div>
+        <div class="pf-cards">{cards}
+        </div>
+    </div>"""
+
     html = REALTIME_TEMPLATE.format(
         period=period_str,
         total_filed=total_filed,
@@ -152,6 +188,7 @@ def generate_realtime_page(state: dict, current_df: pd.DataFrame,
         rev_year=rev_year,
         rev_month=rev_month,
         history_link=history_link,
+        prefiling_alerts=prefiling_html,
     )
     return html
 
@@ -232,6 +269,128 @@ header h1 {{
 .stat-item .stat-label {{
     font-size: 0.8rem;
     color: #8b949e;
+}}
+
+/* ===== 預警清單 ===== */
+.prefiling-section {{
+    margin: 20px 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border: 1px solid #f0883e44;
+    border-radius: 10px;
+    padding: 16px 20px;
+}}
+
+.pf-header {{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+}}
+
+.pf-title {{
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f0883e;
+}}
+
+.pf-summary {{
+    font-size: 0.8rem;
+    color: #8b949e;
+}}
+
+.pf-cards {{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}}
+
+.pf-card {{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 14px;
+    background: #0d1117cc;
+    border-left: 3px solid #f0883e;
+    border-radius: 6px;
+    flex-wrap: wrap;
+}}
+
+.pf-card-filed {{
+    border-left-color: #3fb950;
+    opacity: 0.7;
+}}
+
+.pf-left {{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 180px;
+}}
+
+.pf-sid {{
+    font-weight: 700;
+    color: #58a6ff;
+    font-size: 0.95rem;
+    min-width: 45px;
+}}
+
+.pf-name {{
+    color: #e6edf3;
+    font-size: 0.9rem;
+}}
+
+.pf-badge {{
+    font-size: 0.7rem;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}}
+
+.pf-filed {{
+    background: #3fb95033;
+    color: #3fb950;
+}}
+
+.pf-pending {{
+    background: #f0883e33;
+    color: #f0883e;
+}}
+
+.pf-mid {{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 220px;
+}}
+
+.pf-avg {{
+    color: #f85149;
+    font-size: 0.9rem;
+}}
+
+.pf-avg strong {{
+    font-size: 1rem;
+}}
+
+.pf-hit {{
+    color: #8b949e;
+    font-size: 0.8rem;
+}}
+
+.pf-count {{
+    color: #6e7681;
+    font-size: 0.75rem;
+}}
+
+.pf-right {{
+    flex: 1;
+}}
+
+.pf-msg {{
+    color: #8b949e;
+    font-size: 0.78rem;
 }}
 
 /* ===== 搜尋 + 篩選 ===== */
@@ -638,6 +797,8 @@ footer {{
         <a href="index.html" class="nav-link active">即時申報</a>
         <a href="{history_link}" class="nav-link">歷史月報</a>
     </div>
+
+    {prefiling_alerts}
 
     <div class="filter-bar">
         <input type="text" class="search-input" id="searchInput"

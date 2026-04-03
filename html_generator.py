@@ -747,6 +747,7 @@ body.sort-mode .stock-grid {{
 body.compact .stock-grid {{
     display: table;
     width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
     padding: 0;
 }}
@@ -775,7 +776,8 @@ body.compact .stock-info {{
     padding: 8px 12px;
     vertical-align: middle;
     white-space: nowrap;
-    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }}
 
 body.compact .stock-name {{
@@ -797,6 +799,8 @@ body.compact .revenue-value {{
     font-size: 0.95rem;
     font-family: "Consolas", "Monaco", "Courier New", monospace;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }}
 
 body.compact .stock-card .detail-row {{
@@ -811,6 +815,9 @@ body.compact .stock-card .detail-row:nth-child(6) {{
     vertical-align: middle;
     text-align: right;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }}
 
 body.compact .stock-card .detail-row .revenue-label {{
@@ -855,7 +862,7 @@ body.compact .t1-box {{
     border-left: none;
     border-radius: 0;
     background: transparent;
-    max-width: 320px;
+    overflow: hidden;
 }}
 
 body.compact .t1-title {{
@@ -947,6 +954,13 @@ body.compact .compact-header .ch-col {{
     border-bottom: 2px solid #21262d;
     vertical-align: middle;
 }}
+
+body.compact .compact-header .ch-name {{ width: 12%; }}
+body.compact .compact-header .ch-rev {{ width: 11%; }}
+body.compact .compact-header .ch-yoy {{ width: 9%; }}
+body.compact .compact-header .ch-mom {{ width: 9%; }}
+body.compact .compact-header .ch-exceed {{ width: 9%; }}
+body.compact .compact-header .ch-t1 {{ width: auto; }}
 
 body.compact .compact-header .ch-col:not(.ch-name) {{
     text-align: right;
@@ -1505,9 +1519,9 @@ INDUSTRY_SECTION_TEMPLATE = """
         <div class="compact-header">
             <span class="ch-col ch-name">股票</span>
             <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-            <span class="ch-col" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-            <span class="ch-col" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-            <span class="ch-col" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
             <span class="ch-col ch-t1">T+1 歷史</span>
         </div>
         <div class="stock-grid">

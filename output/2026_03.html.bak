@@ -960,12 +960,12 @@ body.compact .compact-header .ch-col.sort-active .sort-arrow {
     opacity: 1;
 }
 
-/* 行間交替色 (compact-header 是第一個子元素，stock-card 從第二個開始) */
-body.compact .stock-card:nth-child(odd) {
+/* 行間交替色 */
+body.compact .stock-card:nth-child(even) {
     background: rgba(22,27,34,0.5);
 }
 
-body.compact .stock-card:nth-child(odd):hover {
+body.compact .stock-card:nth-child(even):hover {
     background: rgba(88,166,255,0.08);
 }
 
@@ -1127,16 +1127,15 @@ footer {
             <h2>生技醫療業</h2>
             <span class="industry-count">9檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="7427" data-sname="華上生醫" data-rev="720000.0" data-yoy="612.8712871287129" data-mom="26.984126984126984" data-exceed="612.87" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -2363,16 +2362,15 @@ footer {
             <h2>電子零組件業</h2>
             <span class="industry-count">6檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6584" data-sname="南俊國際" data-rev="312165000.0" data-yoy="52.71513135365198" data-mom="23.894665819971426" data-exceed="52.72" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -3197,16 +3195,15 @@ footer {
             <h2>半導體業</h2>
             <span class="industry-count">4檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="2408" data-sname="南亞科" data-rev="18169760000.0" data-yoy="560.0385857042545" data-mom="16.41920797499408" data-exceed="169.55" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -3759,16 +3756,15 @@ footer {
             <h2>通信網路業</h2>
             <span class="industry-count">4檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6486" data-sname="互動" data-rev="198402000.0" data-yoy="77.83693664622997" data-mom="52.74969781425393" data-exceed="9.94" data-date="" data-filing-date="4/1">
                 <div class="top-row">
@@ -4315,16 +4311,15 @@ footer {
             <h2>其他電子業</h2>
             <span class="industry-count">3檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6739" data-sname="竹陞科技" data-rev="100094000.0" data-yoy="87.84296062755696" data-mom="7.463872366923622" data-exceed="87.84" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -4741,16 +4736,15 @@ footer {
             <h2>數位雲端</h2>
             <span class="industry-count">3檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6910" data-sname="德鴻" data-rev="37805000.0" data-yoy="21.6220563634024" data-mom="83.67099062332993" data-exceed="21.62" data-date="" data-filing-date="4/1">
                 <div class="top-row">
@@ -5161,16 +5155,15 @@ footer {
             <h2>電機機械</h2>
             <span class="industry-count">3檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="8374" data-sname="羅昇" data-rev="553636000.0" data-yoy="43.63963739576685" data-mom="61.17261757470779" data-exceed="41.12" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -5587,16 +5580,15 @@ footer {
             <h2>資訊服務業</h2>
             <span class="industry-count">2檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6516" data-sname="勤崴國際" data-rev="60780000.0" data-yoy="75.91386645827906" data-mom="-2.1366351618980146" data-exceed="15.17" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -5871,16 +5863,15 @@ footer {
             <h2>光電業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="5234" data-sname="達興材料" data-rev="423556000.0" data-yoy="5.520206876965007" data-mom="15.72536687058232" data-exceed="2.48" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -6025,16 +6016,15 @@ footer {
             <h2>其他</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="5345" data-sname="馥鴻" data-rev="2616000.0" data-yoy="680.8955223880597" data-mom="-1.8386491557223263" data-exceed="44.61" data-date="" data-filing-date="4/1">
                 <div class="top-row">
@@ -6179,16 +6169,15 @@ footer {
             <h2>航運業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="2633" data-sname="台灣高鐵" data-rev="4795095000.0" data-yoy="4.454737467640367" data-mom="2.623294790970442" data-exceed="4.45" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -6333,16 +6322,15 @@ footer {
             <h2>金融業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="5863" data-sname="瑞興銀" data-rev="143850000.0" data-yoy="22.811211378712724" data-mom="10.08058036226727" data-exceed="22.81" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -6487,16 +6475,15 @@ footer {
             <h2>鋼鐵工業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="3004" data-sname="豐達科" data-rev="452769000.0" data-yoy="31.17313547856268" data-mom="25.128232055803053" data-exceed="31.17" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -6641,16 +6628,15 @@ footer {
             <h2>電腦及週邊設備業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="7562" data-sname="博來科技" data-rev="64063000.0" data-yoy="20.19324577861164" data-mom="12.170822244011768" data-exceed="2.59" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -6794,16 +6780,15 @@ footer {
             <h2>半導體業</h2>
             <span class="industry-count">3檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="2408" data-sname="南亞科" data-rev="18169760000.0" data-yoy="560.0385857042545" data-mom="16.41920797499408" data-exceed="169.55" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -7220,16 +7205,15 @@ footer {
             <h2>電子零組件業</h2>
             <span class="industry-count">3檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6781" data-sname="AES-KY" data-rev="1505534000.0" data-yoy="25.64408351157894" data-mom="1.437544047357563" data-exceed="14.7" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -7646,16 +7630,15 @@ footer {
             <h2>其他電子業</h2>
             <span class="industry-count">2檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6438" data-sname="迅得" data-rev="667469000.0" data-yoy="15.662565003647655" data-mom="30.420824532368336" data-exceed="15.66" data-date="" data-filing-date="4/1">
                 <div class="top-row">
@@ -7936,16 +7919,15 @@ footer {
             <h2>通信網路業</h2>
             <span class="industry-count">2檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="2419" data-sname="仲琦" data-rev="1007693000.0" data-yoy="54.961270946520536" data-mom="100.6033870097605" data-exceed="1.57" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -8226,16 +8208,15 @@ footer {
             <h2>電機機械</h2>
             <span class="industry-count">2檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="8374" data-sname="羅昇" data-rev="553636000.0" data-yoy="43.63963739576685" data-mom="61.17261757470779" data-exceed="41.12" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -8516,16 +8497,15 @@ footer {
             <h2>光電業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="5234" data-sname="達興材料" data-rev="423556000.0" data-yoy="5.520206876965007" data-mom="15.72536687058232" data-exceed="2.48" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -8670,16 +8650,15 @@ footer {
             <h2>生技醫療業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6491" data-sname="晶碩" data-rev="669212000.0" data-yoy="18.18710031771485" data-mom="20.16066622256617" data-exceed="13.13" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -8824,16 +8803,15 @@ footer {
             <h2>航運業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="2633" data-sname="台灣高鐵" data-rev="4795095000.0" data-yoy="4.454737467640367" data-mom="2.623294790970442" data-exceed="4.45" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -8978,16 +8956,15 @@ footer {
             <h2>資訊服務業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6112" data-sname="邁達特" data-rev="2231109000.0" data-yoy="40.11564156766106" data-mom="21.541877602250075" data-exceed="40.12" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -9132,16 +9109,15 @@ footer {
             <h2>鋼鐵工業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="3004" data-sname="豐達科" data-rev="452769000.0" data-yoy="31.17313547856268" data-mom="25.128232055803053" data-exceed="31.17" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -9291,16 +9267,15 @@ footer {
             <h2>生技醫療業</h2>
             <span class="industry-count">5檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="4743" data-sname="合一" data-rev="14375000.0" data-yoy="128.7555697008275" data-mom="51.89137785291632" data-exceed="22.79" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -9989,16 +9964,15 @@ footer {
             <h2>電子零組件業</h2>
             <span class="industry-count">3檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6584" data-sname="南俊國際" data-rev="312165000.0" data-yoy="52.71513135365198" data-mom="23.894665819971426" data-exceed="52.72" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -10415,16 +10389,15 @@ footer {
             <h2>通信網路業</h2>
             <span class="industry-count">2檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6486" data-sname="互動" data-rev="198402000.0" data-yoy="77.83693664622997" data-mom="52.74969781425393" data-exceed="9.94" data-date="" data-filing-date="4/1">
                 <div class="top-row">
@@ -10699,16 +10672,15 @@ footer {
             <h2>其他</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="5345" data-sname="馥鴻" data-rev="2616000.0" data-yoy="680.8955223880597" data-mom="-1.8386491557223263" data-exceed="44.61" data-date="" data-filing-date="4/1">
                 <div class="top-row">
@@ -10853,16 +10825,15 @@ footer {
             <h2>其他電子業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6739" data-sname="竹陞科技" data-rev="100094000.0" data-yoy="87.84296062755696" data-mom="7.463872366923622" data-exceed="87.84" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -11007,16 +10978,15 @@ footer {
             <h2>半導體業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6693" data-sname="廣閎科" data-rev="193378000.0" data-yoy="111.904840176644" data-mom="26.13445871463887" data-exceed="53.68" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -11161,16 +11131,15 @@ footer {
             <h2>數位雲端</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6910" data-sname="德鴻" data-rev="37805000.0" data-yoy="21.6220563634024" data-mom="83.67099062332993" data-exceed="21.62" data-date="" data-filing-date="4/1">
                 <div class="top-row">
@@ -11315,16 +11284,15 @@ footer {
             <h2>資訊服務業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6516" data-sname="勤崴國際" data-rev="60780000.0" data-yoy="75.91386645827906" data-mom="-2.1366351618980146" data-exceed="15.17" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -11473,16 +11441,15 @@ footer {
             <h2>生技醫療業</h2>
             <span class="industry-count">3檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="7427" data-sname="華上生醫" data-rev="720000.0" data-yoy="612.8712871287129" data-mom="26.984126984126984" data-exceed="612.87" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -11893,16 +11860,15 @@ footer {
             <h2>數位雲端</h2>
             <span class="industry-count">2檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="6565" data-sname="物聯" data-rev="30323000.0" data-yoy="19.95806630271382" data-mom="99.58533535180676" data-exceed="12.96" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -12177,16 +12143,15 @@ footer {
             <h2>金融業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="5863" data-sname="瑞興銀" data-rev="143850000.0" data-yoy="22.811211378712724" data-mom="10.08058036226727" data-exceed="22.81" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -12331,16 +12296,15 @@ footer {
             <h2>電機機械</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="4587" data-sname="寶元數控" data-rev="107575000.0" data-yoy="6.8781544330962125" data-mom="105.04145620890117" data-exceed="6.88" data-date="" data-filing-date="4/2">
                 <div class="top-row">
@@ -12485,16 +12449,15 @@ footer {
             <h2>電腦及週邊設備業</h2>
             <span class="industry-count">1檔</span>
         </div>
+        <div class="compact-header">
+            <span class="ch-col ch-name">股票</span>
+            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+            <span class="ch-col ch-t1">T+1 歷史</span>
+        </div>
         <div class="stock-grid">
-            <div class="compact-header">
-                <span class="ch-col ch-name">股票</span>
-                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
-            </div>
-
             
             <div class="stock-card" data-sid="7562" data-sname="博來科技" data-rev="64063000.0" data-yoy="20.19324577861164" data-mom="12.170822244011768" data-exceed="2.59" data-date="" data-filing-date="4/2">
                 <div class="top-row">

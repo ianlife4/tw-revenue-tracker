@@ -362,3 +362,91 @@ def generate_early_alerts(t1_results: list[dict], threshold_avg: float = 2.0,
 
     alerts.sort(key=lambda x: x["avg_t1"], reverse=True)
     return alerts
+
+
+# ─────────────── 預警清單 (申報前) ───────────────
+
+def generate_prefiling_alerts(full_df: pd.DataFrame, target_month: int,
+                               filed_ids: set = None,
+                               threshold_avg: float = 1.5,
+                               threshold_hit_rate: float = 50.0,
+                               min_count: int = 2) -> list[dict]:
+    """從已有的 T+1 快取中生成預警清單（不觸發新的股價抓取）。
+
+    只用已快取的 T+1 資料，快取會隨著每次申報偵測自然累積。
+    標記已申報 / 未申報狀態。
+
+    Args:
+        full_df: 完整歷史營收 DataFrame
+        target_month: 營收月份
+        filed_ids: 已申報的 stock_id 集合
+        threshold_avg: 平均 T+1 報酬門檻
+        threshold_hit_rate: 正報酬率門檻
+        min_count: 最少歷史新高次數
+
+    Returns:
+        [{stock_id, stock_name, market, avg_t1, hit_rate, count,
+          last_high_year, filed, ...}, ...]
+    """
+    if filed_ids is None:
+        filed_ids = set()
+
+    # 載入 T+1 快取
+    cache = {}
+    if os.path.exists(T1_CACHE_FILE):
+        try:
+            with open(T1_CACHE_FILE, "r", encoding="utf-8") as f:
+                cache = json.load(f)
+        except Exception:
+            return []
+
+    if not cache:
+        return []
+
+    month_data = full_df[full_df["revenue_month"] == target_month].copy()
+    alerts = []
+
+    # 只掃描快取中已有 T+1 資料的股票
+    for cache_key, t1 in cache.items():
+        if not cache_key.endswith(f"_{target_month}"):
+            continue
+
+        sid = cache_key.replace(f"_{target_month}", "")
+
+        if t1.get("count", 0) < min_count:
+            continue
+        if t1.get("avg_t1", -999) < threshold_avg:
+            continue
+        if t1.get("hit_rate", 0) < threshold_hit_rate:
+            continue
+
+        # 取得股票基本資訊
+        stock_rows = month_data[month_data["stock_id"] == sid]
+        if stock_rows.empty:
+            continue
+        latest = stock_rows.sort_values("revenue_year").iloc[-1]
+        sname = str(latest.get("stock_name", ""))
+        market = str(latest.get("market", "sii"))
+
+        # 找最近一次創新高的年份
+        highs = find_historical_period_highs(sid, full_df, target_month)
+        last_high_year = highs[-1]["year"] if highs else 0
+
+        alerts.append({
+            "stock_id": sid,
+            "stock_name": sname,
+            "market": market,
+            "avg_t1": t1["avg_t1"],
+            "median_t1": t1.get("median_t1", 0),
+            "max_t1": t1.get("max_t1", 0),
+            "hit_rate": t1["hit_rate"],
+            "count": t1["count"],
+            "high_count": len(highs),
+            "last_high_year": last_high_year,
+            "filed": sid in filed_ids,
+            "alert_msg": f"歷史 {len(highs)} 次同期新高，T+1 平均 +{t1['avg_t1']:.1f}%，"
+                         f"正報酬率 {t1['hit_rate']:.0f}% (最近: {last_high_year}年)",
+        })
+
+    alerts.sort(key=lambda x: (not x["filed"], -x["avg_t1"]))
+    return alerts
