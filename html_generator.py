@@ -356,51 +356,7 @@ header .update-time {{
     border-radius: 3px;
 }}
 
-/* ===== 推播提醒 ===== */
-.alert-section {{
-    margin: 20px 0;
-    padding: 16px;
-    background: linear-gradient(135deg, #1c1f2b 0%, #1a1e2e 100%);
-    border: 1px solid #f0883e44;
-    border-radius: 10px;
-}}
-
-.alert-title {{
-    font-size: 1rem;
-    font-weight: 700;
-    color: #f0883e;
-    margin-bottom: 12px;
-}}
-
-.alert-card {{
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 10px 12px;
-    background: #161b22;
-    border-radius: 6px;
-    margin-bottom: 8px;
-    border-left: 3px solid #f0883e;
-}}
-
-.alert-card .alert-sid {{
-    font-family: "Consolas", monospace;
-    font-weight: 700;
-    color: #58a6ff;
-    min-width: 50px;
-}}
-
-.alert-card .alert-name {{
-    font-weight: 600;
-    min-width: 70px;
-}}
-
-.alert-card .alert-avg {{
-    font-family: "Consolas", monospace;
-    font-weight: 700;
-    color: #f85149;
-    min-width: 60px;
-}}
+/* (推播提醒已停用) */
 
 .alert-card .alert-msg {{
     font-size: 0.78rem;
@@ -858,6 +814,7 @@ body.compact .t1-box {{
     display: table-cell;
     padding: 4px 10px;
     vertical-align: middle;
+    text-align: left;
     margin: 0;
     border-left: none;
     border-radius: 0;
@@ -955,14 +912,14 @@ body.compact .compact-header .ch-col {{
     vertical-align: middle;
 }}
 
-body.compact .compact-header .ch-name {{ width: 12%; }}
-body.compact .compact-header .ch-rev {{ width: 11%; }}
-body.compact .compact-header .ch-yoy {{ width: 9%; }}
-body.compact .compact-header .ch-mom {{ width: 9%; }}
-body.compact .compact-header .ch-exceed {{ width: 9%; }}
-body.compact .compact-header .ch-t1 {{ width: auto; }}
+body.compact .compact-header .ch-name {{ width: 14%; }}
+body.compact .compact-header .ch-rev {{ width: 12%; }}
+body.compact .compact-header .ch-yoy {{ width: 10%; }}
+body.compact .compact-header .ch-mom {{ width: 10%; }}
+body.compact .compact-header .ch-exceed {{ width: 10%; }}
+body.compact .compact-header .ch-t1 {{ width: 44%; text-align: left; padding-left: 10px; }}
 
-body.compact .compact-header .ch-col:not(.ch-name) {{
+body.compact .compact-header .ch-col:not(.ch-name):not(.ch-t1) {{
     text-align: right;
     padding-right: 10px;
 }}
@@ -986,12 +943,12 @@ body.compact .compact-header .ch-col.sort-active .sort-arrow {{
     opacity: 1;
 }}
 
-/* 行間交替色 */
-body.compact .stock-card:nth-child(even) {{
+/* 行間交替色 (compact-header 是第一個子元素，stock-card 從第二個開始) */
+body.compact .stock-card:nth-child(odd) {{
     background: rgba(22,27,34,0.5);
 }}
 
-body.compact .stock-card:nth-child(even):hover {{
+body.compact .stock-card:nth-child(odd):hover {{
     background: rgba(88,166,255,0.08);
 }}
 
@@ -1516,15 +1473,15 @@ INDUSTRY_SECTION_TEMPLATE = """
             <h2>{industry}</h2>
             <span class="industry-count">{count}檔</span>
         </div>
-        <div class="compact-header">
-            <span class="ch-col ch-name">股票</span>
-            <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
-            <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
-            <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
-            <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-            <span class="ch-col ch-t1">T+1 歷史</span>
-        </div>
         <div class="stock-grid">
+            <div class="compact-header">
+                <span class="ch-col ch-name">股票</span>
+                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-t1">T+1 歷史</span>
+            </div>
             {cards}
         </div>
     </div>"""
@@ -1859,7 +1816,7 @@ def _build_date_pills(df: pd.DataFrame) -> str:
                 display = f"{m}/{d}"
         except (ValueError, IndexError):
             pass
-        pills += f'<div class="date-pill" data-date="{date_str}">{display} <span style="font-size:0.65rem;color:#6e7681">({count})</span></div>\n            '
+        pills += f'<div class="date-pill" data-date="{display}">{display} <span style="font-size:0.65rem;color:#6e7681">({count})</span></div>\n            '
 
     return pills
 
@@ -1919,21 +1876,8 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
     else:
         date_filter_html = ""
 
-    # 推播提醒區塊
+    # 推播提醒區塊 (已停用)
     alert_html = ""
-    if early_alerts:
-        alert_cards = ""
-        for a in early_alerts:
-            alert_cards += f"""<div class="alert-card">
-                <span class="alert-sid">{a['stock_id']}</span>
-                <span class="alert-name">{a['stock_name']}</span>
-                <span class="alert-avg">T+1 avg {a['avg_t1']:+.1f}%</span>
-                <span class="alert-msg">{a['alert_msg']}</span>
-            </div>\n"""
-        alert_html = f"""<div class="alert-section">
-            <div class="alert-title">🔔 T-1 推播提醒：過去創新高後 T+1 容易大漲</div>
-            {alert_cards}
-        </div>"""
 
     html = HTML_TEMPLATE.format(
         year=year,
