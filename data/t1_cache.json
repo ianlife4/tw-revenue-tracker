@@ -9782,5 +9782,87 @@
     "stock_name": "明基醫",
     "market": "otc",
     "current_filing_date": "2026-04-02"
+  },
+  "1560_3": {
+    "stock_id": "1560",
+    "historical_highs": [
+      {
+        "t_date": "2021-04-01",
+        "t_close": 64.03,
+        "t1_date": "2021-04-07",
+        "t1_close": 63.5,
+        "t1_pct": -0.83,
+        "year": 2021,
+        "month": 3,
+        "revenue": 521795000.0
+      },
+      {
+        "t_date": "2022-04-01",
+        "t_close": 121.22,
+        "t1_date": "2022-04-06",
+        "t1_close": 123.07,
+        "t1_pct": 1.53,
+        "year": 2022,
+        "month": 3,
+        "revenue": 583052000.0
+      },
+      {
+        "t_date": "2025-04-02",
+        "t_close": 223.02,
+        "t1_date": "2025-04-07",
+        "t1_close": 200.77,
+        "t1_pct": -9.98,
+        "year": 2025,
+        "month": 3,
+        "revenue": 601745000.0
+      }
+    ],
+    "avg_t1": -3.09,
+    "median_t1": -0.83,
+    "max_t1": 1.53,
+    "min_t1": -9.98,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 3,
+    "cached_at": "2026-04-03T18:55:12.327902",
+    "stock_name": "中砂",
+    "market": "sii",
+    "current_filing_date": "2026-04-03"
+  },
+  "6510_3": {
+    "stock_id": "6510",
+    "historical_highs": [
+      {
+        "t_date": "2021-04-01",
+        "t_close": 833.38,
+        "t1_date": "2021-04-07",
+        "t1_close": 836.13,
+        "t1_pct": 0.33,
+        "year": 2021,
+        "month": 3,
+        "revenue": 351405000.0
+      },
+      {
+        "t_date": "2025-04-02",
+        "t_close": 662.76,
+        "t1_date": "2025-04-07",
+        "t1_close": 597.37,
+        "t1_pct": -9.87,
+        "year": 2025,
+        "month": 3,
+        "revenue": 388372000.0
+      }
+    ],
+    "avg_t1": -4.77,
+    "median_t1": 0.33,
+    "max_t1": 0.33,
+    "min_t1": -9.87,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 3,
+    "cached_at": "2026-04-03T18:55:13.630721",
+    "stock_name": "精測",
+    "market": "otc",
+    "current_filing_date": "2026-04-03"
   }
 }
