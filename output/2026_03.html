@@ -1051,37 +1051,27 @@ footer {
     }
 }
 
-/* Compact mode column alignment fix */
-body.compact .stock-grid {
-    display: table !important;
-    width: 100% !important;
-    table-layout: fixed !important;
-}
-body.compact .compact-header {
-    display: table-row;
-}
-body.compact .compact-header .ch-col {
-    display: table-cell;
-    padding: 8px 12px;
-}
+
+body.compact .stock-card > .card-name { width: 14%; }
+body.compact .stock-card > .compact-rev { width: 18%; text-align: right; padding-right: 10px; }
+body.compact .stock-card > .compact-yoy { width: 14%; text-align: right; padding-right: 10px; }
+body.compact .stock-card > .compact-mom { width: 14%; text-align: right; padding-right: 10px; }
+body.compact .stock-card > .compact-exceed { width: 14%; text-align: right; padding-right: 10px; }
+
+
+/* Compact column fix (v2) */
+body.compact .stock-grid { display: table !important; width: 100% !important; table-layout: fixed !important; }
 body.compact .compact-header .ch-name { width: 14%; }
-body.compact .compact-header .ch-rev { width: 18%; text-align: right; padding-right: 10px; }
-body.compact .compact-header .ch-col:not(.ch-name):not(.ch-rev) { text-align: right; padding-right: 10px; }
-body.compact .stock-card {
-    display: table-row !important;
-}
-body.compact .stock-card > .card-name,
-body.compact .stock-card > .compact-rev,
-body.compact .stock-card > .compact-yoy,
-body.compact .stock-card > .compact-mom,
-body.compact .stock-card > .compact-exceed,
-body.compact .stock-card > .t1-box {
-    display: table-cell !important;
-    vertical-align: middle !important;
-}
-body.compact .stock-card:nth-child(odd) { background: rgba(22,27,34,0.5); }
-body.compact .stock-card:nth-child(odd):hover { background: rgba(88,166,255,0.08); }
-body.compact .stock-card:nth-child(even) { background: transparent; }
+body.compact .compact-header .ch-rev { width: 18%; }
+body.compact .compact-header .ch-yoy { width: 14%; }
+body.compact .compact-header .ch-mom { width: 14%; }
+body.compact .compact-header .ch-beat { width: 14%; }
+body.compact .compact-header .ch-col:not(.ch-name) { text-align: right; padding-right: 10px; }
+body.compact .stock-card > .card-name { width: 14%; }
+body.compact .stock-card > .compact-rev { width: 18%; text-align: right; padding-right: 10px; }
+body.compact .stock-card > .compact-yoy { width: 14%; text-align: right; padding-right: 10px; }
+body.compact .stock-card > .compact-mom { width: 14%; text-align: right; padding-right: 10px; }
+body.compact .stock-card > .compact-exceed { width: 14%; text-align: right; padding-right: 10px; }
 
 </style>
 </head>
@@ -1195,7 +1185,6 @@ body.compact .stock-card:nth-child(even) { background: transparent; }
             <span class="industry-count">6檔</span>
         </div>
         <div class="stock-grid">
-            <div class="stock-grid">
             <div class="compact-header">
                 <span class="ch-col ch-name">股票</span>
                 <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
@@ -9666,21 +9655,17 @@ document.querySelectorAll('.view-btn').forEach(btn => {
     }, { passive: false });
 })();
 
-// Month Picker
+
+
+// Month Picker toggle
 (function() {
     var btn = document.getElementById('monthPickerBtn');
     var dd = document.getElementById('monthDropdown');
     if (!btn || !dd) return;
-    btn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        dd.classList.toggle('show');
-    });
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.month-picker-wrap')) {
-            dd.classList.remove('show');
-        }
-    });
+    btn.addEventListener('click', function(e) { e.stopPropagation(); dd.classList.toggle('show'); });
+    document.addEventListener('click', function(e) { if (!e.target.closest('.month-picker-wrap')) dd.classList.remove('show'); });
 })();
+
 </script>
 </body>
 </html>
