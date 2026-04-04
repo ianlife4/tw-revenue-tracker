@@ -1095,6 +1095,7 @@ footer {{
         </div>
         <div class="update-time">{update_time} 更新</div>
         <div style="margin-top:12px"><a href="index.html" style="color:#58a6ff;text-decoration:none;font-size:0.85rem;padding:4px 12px;border:1px solid #30363d;border-radius:6px;">← 即時申報</a></div>
+        {incomplete_banner}
     </header>
 
     <div class="summary">
@@ -1954,7 +1955,8 @@ def _build_month_picker(current_year: int, current_month: int) -> str:
 
 
 def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 5,
-                   early_alerts: list = None) -> str:
+                   early_alerts: list = None,
+                   filed_count: int = 0, filed_complete: bool = True) -> str:
     """生成 HTML 報表"""
     if df.empty:
         return _generate_empty_html(year, month, compare_years)
@@ -2014,6 +2016,18 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
     # 月份選擇器
     month_picker_html = _build_month_picker(year, month)
 
+    # 資料不完整提示
+    if not filed_complete and filed_count > 0:
+        incomplete_banner = (
+            f'<div style="background:#2d1b00;border:1px solid #6e4000;border-radius:8px;'
+            f'padding:10px 16px;margin:12px auto;max-width:700px;text-align:center;'
+            f'color:#f0b040;font-size:0.9rem;">'
+            f'⚠ 申報進行中（已申報 {filed_count} 家），資料尚未完整，僅供參考'
+            f'</div>'
+        )
+    else:
+        incomplete_banner = ""
+
     html = HTML_TEMPLATE.format(
         year=year,
         month=month,
@@ -2030,6 +2044,7 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
         prev_month_file=prev_month_file,
         next_month_file=next_month_file,
         month_picker_html=month_picker_html,
+        incomplete_banner=incomplete_banner,
         all_sections=all_sections,
         sii_sections=sii_sections,
         otc_sections=otc_sections,
@@ -2060,6 +2075,7 @@ def _generate_empty_html(year: int, month: int, compare_years: int = 5) -> str:
         prev_month_file=f"{prev_y}_{prev_m:02d}.html",
         next_month_file=f"{next_y}_{next_m:02d}.html",
         month_picker_html=_build_month_picker(year, month),
+        incomplete_banner="",
         all_sections=empty,
         sii_sections=empty,
         otc_sections=empty,

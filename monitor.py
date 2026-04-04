@@ -247,7 +247,7 @@ def generate_realtime_html(state: dict, current_df: pd.DataFrame, full_df: pd.Da
     return path
 
 
-MIN_FILED_FOR_REPORT = 1000  # 至少 1000 家申報才生成月報
+FILED_COMPLETE_THRESHOLD = 1500  # 超過此數視為申報完成
 
 def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: pd.DataFrame = None):
     """生成當期營收創同期新高報表 (歷史月報)"""
@@ -260,11 +260,7 @@ def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: 
     if current_df.empty:
         return
 
-    # 申報數不足時不生成月報（避免資料不完整造成誤導）
     filed_count = len(current_df["stock_id"].unique())
-    if filed_count < MIN_FILED_FOR_REPORT:
-        logger.info(f"申報數 {filed_count} < {MIN_FILED_FOR_REPORT}，暫不生成歷史月報")
-        return
 
     # 載入歷史資料
     if full_df is None and os.path.exists(CACHE_FILE):
@@ -356,7 +352,9 @@ def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: 
 
     # 生成 HTML
     html = generate_html(new_highs, rev_year, rev_month, compare_years=5,
-                         early_alerts=early_alerts)
+                         early_alerts=early_alerts,
+                         filed_count=filed_count,
+                         filed_complete=(filed_count >= FILED_COMPLETE_THRESHOLD))
     archive_name = f"{rev_year}_{rev_month:02d}.html"
     save_report(html, archive_name)
     logger.info(f"歷史月報已生成: {archive_name}")
