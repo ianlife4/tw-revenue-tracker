@@ -93,6 +93,82 @@ header .date-info {{
     background: #161b22;
 }}
 
+/* Month Picker */
+.month-picker-wrap {{
+    position: relative;
+    display: inline-block;
+}}
+.month-picker-btn {{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #58a6ff;
+    cursor: pointer;
+    padding: 4px 12px;
+    border-radius: 6px;
+    transition: background 0.2s;
+    user-select: none;
+}}
+.month-picker-btn:hover {{
+    background: rgba(88,166,255,0.1);
+}}
+.month-picker-btn::after {{
+    content: " ▾";
+    font-size: 0.8rem;
+}}
+.month-dropdown {{
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1c2128;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 12px;
+    z-index: 999;
+    min-width: 220px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}}
+.month-dropdown.show {{
+    display: block;
+}}
+.month-dropdown-year {{
+    color: #8b949e;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 8px 4px;
+    border-bottom: 1px solid #21262d;
+    margin-bottom: 4px;
+}}
+.month-dropdown-grid {{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+}}
+.month-dropdown-item {{
+    display: block;
+    padding: 6px 4px;
+    text-align: center;
+    color: #c9d1d9;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    transition: all 0.15s;
+}}
+.month-dropdown-item:hover {{
+    background: rgba(88,166,255,0.15);
+    color: #58a6ff;
+}}
+.month-dropdown-item.active {{
+    background: #58a6ff;
+    color: #0d1117;
+    font-weight: 600;
+}}
+.month-dropdown-item.disabled {{
+    color: #30363d;
+    pointer-events: none;
+}}
+
 header .update-time {{
     color: #6e7681;
     font-size: 0.8rem;
@@ -1009,7 +1085,12 @@ footer {{
         <div class="subtitle">自動比對公開資訊觀測站每月營收資料，篩選創近 {compare_years} 年同期新高股票</div>
         <div class="date-nav">
             <a class="nav-btn" href="{prev_month_file}" title="上個月">&#9664; 前一月</a>
-            <span class="date-info">{year}/{month:02d}</span>
+            <div class="month-picker-wrap">
+                <span class="month-picker-btn" id="monthPickerBtn">{year}/{month:02d}</span>
+                <div class="month-dropdown" id="monthDropdown">
+                    {month_picker_html}
+                </div>
+            </div>
             <a class="nav-btn" href="{next_month_file}" title="下個月">後一月 &#9654;</a>
         </div>
         <div class="update-time">{update_time} 更新</div>
@@ -1463,6 +1544,22 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
         }}
     }}, {{ passive: false }});
 }})();
+
+// Month Picker
+(function() {{
+    var btn = document.getElementById('monthPickerBtn');
+    var dd = document.getElementById('monthDropdown');
+    if (!btn || !dd) return;
+    btn.addEventListener('click', function(e) {{
+        e.stopPropagation();
+        dd.classList.toggle('show');
+    }});
+    document.addEventListener('click', function(e) {{
+        if (!e.target.closest('.month-picker-wrap')) {{
+            dd.classList.remove('show');
+        }}
+    }});
+}})();
 </script>
 </body>
 </html>"""
@@ -1821,6 +1918,41 @@ def _build_date_pills(df: pd.DataFrame) -> str:
     return pills
 
 
+def _build_month_picker(current_year: int, current_month: int) -> str:
+    """生成月份選擇器的下拉 HTML，掃描 output 目錄取得可用月份"""
+    available = set()
+    if os.path.isdir(OUTPUT_DIR):
+        for f in os.listdir(OUTPUT_DIR):
+            if f.endswith(".html") and "_" in f and f != "index.html":
+                parts = f.replace(".html", "").replace(".bak", "").split("_")
+                if len(parts) == 2:
+                    try:
+                        available.add((int(parts[0]), int(parts[1])))
+                    except ValueError:
+                        pass
+    # 加入當前月份（即將生成）
+    available.add((current_year, current_month))
+
+    if not available:
+        return ""
+
+    years = sorted(set(y for y, m in available), reverse=True)
+    html_parts = []
+    for yr in years:
+        html_parts.append(f'<div class="month-dropdown-year">{yr}</div>')
+        html_parts.append('<div class="month-dropdown-grid">')
+        for mo in range(1, 13):
+            fname = f"{yr}_{mo:02d}.html"
+            if (yr, mo) in available:
+                active = " active" if yr == current_year and mo == current_month else ""
+                html_parts.append(f'<a class="month-dropdown-item{active}" href="{fname}">{mo}月</a>')
+            else:
+                html_parts.append(f'<span class="month-dropdown-item disabled">{mo}月</span>')
+        html_parts.append('</div>')
+
+    return "\n".join(html_parts)
+
+
 def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 5,
                    early_alerts: list = None) -> str:
     """生成 HTML 報表"""
@@ -1879,6 +2011,9 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
     # 推播提醒區塊 (已停用)
     alert_html = ""
 
+    # 月份選擇器
+    month_picker_html = _build_month_picker(year, month)
+
     html = HTML_TEMPLATE.format(
         year=year,
         month=month,
@@ -1894,6 +2029,7 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
         alert_html=alert_html,
         prev_month_file=prev_month_file,
         next_month_file=next_month_file,
+        month_picker_html=month_picker_html,
         all_sections=all_sections,
         sii_sections=sii_sections,
         otc_sections=otc_sections,
@@ -1923,6 +2059,7 @@ def _generate_empty_html(year: int, month: int, compare_years: int = 5) -> str:
         alert_html="",
         prev_month_file=f"{prev_y}_{prev_m:02d}.html",
         next_month_file=f"{next_y}_{next_m:02d}.html",
+        month_picker_html=_build_month_picker(year, month),
         all_sections=empty,
         sii_sections=empty,
         otc_sections=empty,

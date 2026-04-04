@@ -376,13 +376,9 @@ def main():
         shutil.copy2(latest_file, index_file)
         logger.info(f"已複製 {latest_y}_{latest_m:02d}.html → index.html")
 
-    # 摘要
-    logger.info("===== 摘要 =====")
-    for y, m, cnt in summary:
-        logger.info(f"  {y}/{m:02d}: {cnt} 檔創同期新高")
-    total = sum(c for _, _, c in summary)
-    logger.info(f"  共生成 {len(summary)} 個月報表，合計 {total} 檔次新高")
-    logger.info("===== 完成 =====")
+    logger.info("===== 批次完成 =====")
+    for y, m, c in summary:
+        logger.info(f"  {y}/{m:02d}: {c} 檔新高")
 
 
 if __name__ == "__main__":
