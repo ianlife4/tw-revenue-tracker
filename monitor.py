@@ -247,6 +247,8 @@ def generate_realtime_html(state: dict, current_df: pd.DataFrame, full_df: pd.Da
     return path
 
 
+MIN_FILED_FOR_REPORT = 1000  # 至少 1000 家申報才生成月報
+
 def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: pd.DataFrame = None):
     """生成當期營收創同期新高報表 (歷史月報)"""
     from analyzer import find_revenue_new_highs
@@ -256,6 +258,12 @@ def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: 
     rev_month = state["period_month"]
 
     if current_df.empty:
+        return
+
+    # 申報數不足時不生成月報（避免資料不完整造成誤導）
+    filed_count = len(current_df["stock_id"].unique())
+    if filed_count < MIN_FILED_FOR_REPORT:
+        logger.info(f"申報數 {filed_count} < {MIN_FILED_FOR_REPORT}，暫不生成歷史月報")
         return
 
     # 載入歷史資料
