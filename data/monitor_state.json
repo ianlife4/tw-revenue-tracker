@@ -566,9 +566,29 @@
       "first_seen": "04-03 16:41",
       "market": "pub",
       "stock_name": "富隆"
+    },
+    "3008": {
+      "first_seen": "04-05 01:44",
+      "market": "sii",
+      "stock_name": "大立光"
+    },
+    "3081": {
+      "first_seen": "04-05 01:44",
+      "market": "otc",
+      "stock_name": "聯亞"
+    },
+    "2417": {
+      "first_seen": "04-05 01:44",
+      "market": "sii",
+      "stock_name": "圓剛"
+    },
+    "3669": {
+      "first_seen": "04-05 01:44",
+      "market": "sii",
+      "stock_name": "圓展"
     }
   },
-  "last_check": "04-04 17:01:41",
-  "last_new_filing": "04-03 16:41:16",
-  "total_filed": 113
+  "last_check": "04-05 01:44:04",
+  "last_new_filing": "04-05 01:44:04",
+  "total_filed": 117
 }
