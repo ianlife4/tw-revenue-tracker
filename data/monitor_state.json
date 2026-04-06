@@ -666,9 +666,29 @@
       "first_seen": "04-06 08:04",
       "market": "emerging",
       "stock_name": "為昇科"
+    },
+    "5289": {
+      "first_seen": "04-06 10:36",
+      "market": "otc",
+      "stock_name": "宜鼎"
+    },
+    "1799": {
+      "first_seen": "04-06 10:36",
+      "market": "otc",
+      "stock_name": "易威"
+    },
+    "2231": {
+      "first_seen": "04-06 10:36",
+      "market": "sii",
+      "stock_name": "為升"
+    },
+    "5344": {
+      "first_seen": "04-06 10:36",
+      "market": "otc",
+      "stock_name": "立衛"
     }
   },
-  "last_check": "04-06 09:21:34",
-  "last_new_filing": "04-06 08:04:54",
-  "total_filed": 133
+  "last_check": "04-06 10:36:47",
+  "last_new_filing": "04-06 10:36:47",
+  "total_filed": 137
 }
