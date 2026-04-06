@@ -888,7 +888,7 @@ body.compact .remark-row {{
     vertical-align: middle;
     text-align: left;
     font-size: 0.72rem;
-    color: #7a828a;
+    color: #9198a1;
     width: 34%;
     white-space: nowrap;
     overflow: hidden;
