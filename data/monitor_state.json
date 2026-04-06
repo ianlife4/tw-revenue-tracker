@@ -631,9 +631,24 @@
       "first_seen": "04-05 12:37",
       "market": "pub",
       "stock_name": "元富證券"
+    },
+    "7752": {
+      "first_seen": "04-06 04:31",
+      "market": "emerging",
+      "stock_name": "世紀樺欣"
+    },
+    "2072": {
+      "first_seen": "04-06 04:31",
+      "market": "sii",
+      "stock_name": "世紀風電"
+    },
+    "9958": {
+      "first_seen": "04-06 04:31",
+      "market": "sii",
+      "stock_name": "世紀鋼"
     }
   },
-  "last_check": "04-06 01:45:27",
-  "last_new_filing": "04-05 12:37:52",
-  "total_filed": 126
+  "last_check": "04-06 04:31:51",
+  "last_new_filing": "04-06 04:31:51",
+  "total_filed": 129
 }
