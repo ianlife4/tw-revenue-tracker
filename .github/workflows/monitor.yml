@@ -47,18 +47,35 @@ jobs:
         run: python doctor.py --ci-diagnose
 
       - name: Commit and push changes
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -f output/ data/monitor_state.json data/t1_cache.json data/all_revenue_mops.csv
           if git diff --staged --quiet; then
             echo "No changes to commit"
+            echo "changed=false" >> $GITHUB_OUTPUT
           else
             git commit -m "auto: update revenue filings $(date -u +%Y-%m-%d\ %H:%M)"
-            # 嘗試 rebase，失敗就 abort 再 merge
             if ! git pull --rebase; then
               git rebase --abort 2>/dev/null || true
               git pull --no-rebase --no-edit || true
             fi
             git push || echo "Push failed, will retry next run"
+            echo "changed=true" >> $GITHUB_OUTPUT
           fi
+
+      # 直接部署 GitHub Pages（不依賴另一個 workflow）
+      - name: Setup Pages
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'output'
+
+      - name: Deploy to GitHub Pages
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/deploy-pages@v4
