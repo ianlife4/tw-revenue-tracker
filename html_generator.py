@@ -881,32 +881,27 @@ body.compact .chart-toggle {{
     display: none;
 }}
 
+/* compact: 備註作為表格欄位顯示 */
 body.compact .remark-row {{
-    display: none;
-}}
-
-/* compact T+1: 作為表格欄位顯示 */
-body.compact .t1-box {{
-    display: table-cell;
+    display: table-cell !important;
     padding: 4px 10px;
     vertical-align: middle;
     text-align: left;
-    margin: 0;
-    border-left: none;
-    border-radius: 0;
-    background: transparent;
+    font-size: 0.75rem;
+    color: #8b949e;
+    width: 30%;
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 0;
+}}
+body.compact .remark-row .remark-icon {{
+    display: none;
 }}
 
-body.compact .t1-title {{
-    font-size: 0.72rem;
-    margin-bottom: 2px;
-}}
-
-body.compact .t1-stats {{
-    gap: 8px;
-    margin-bottom: 2px;
-    font-size: 0.72rem;
+/* compact: 隱藏 T+1 */
+body.compact .t1-box {{
+    display: none;
 }}
 
 body.compact .t1-detail {{
@@ -988,14 +983,14 @@ body.compact .compact-header .ch-col {{
     vertical-align: middle;
 }}
 
-body.compact .compact-header .ch-name {{ width: 14%; }}
-body.compact .compact-header .ch-rev {{ width: 12%; }}
-body.compact .compact-header .ch-yoy {{ width: 10%; }}
-body.compact .compact-header .ch-mom {{ width: 10%; }}
-body.compact .compact-header .ch-exceed {{ width: 10%; }}
-body.compact .compact-header .ch-t1 {{ width: 44%; text-align: left; padding-left: 10px; }}
+body.compact .compact-header .ch-name {{ width: 16%; }}
+body.compact .compact-header .ch-rev {{ width: 14%; }}
+body.compact .compact-header .ch-yoy {{ width: 12%; }}
+body.compact .compact-header .ch-mom {{ width: 12%; }}
+body.compact .compact-header .ch-exceed {{ width: 12%; }}
+body.compact .compact-header .ch-remark {{ width: 34%; text-align: left; padding-left: 10px; }}
 
-body.compact .compact-header .ch-col:not(.ch-name):not(.ch-t1) {{
+body.compact .compact-header .ch-col:not(.ch-name):not(.ch-remark) {{
     text-align: right;
     padding-right: 10px;
 }}
@@ -1353,21 +1348,17 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
         const detail = document.createElement('tr');
         detail.className = 'expanded-detail-row';
         const td = document.createElement('td');
-        td.colSpan = 7;
+        td.colSpan = 6;
         td.style.padding = '12px 16px';
         td.style.background = '#161b22';
         td.style.borderTop = '1px solid #21262d';
         td.style.borderBottom = '1px solid #21262d';
 
         // 複製原始卡片的詳細內容
-        const remark = card.querySelector('.remark-row');
-        const t1box = card.querySelector('.t1-box');
         const chart = card.querySelector('.chart-toggle');
         const links = card.querySelector('.card-links');
 
         let html = '';
-        if (remark) html += '<div style="margin-bottom:10px">' + remark.outerHTML + '</div>';
-        if (t1box) html += '<div style="margin-bottom:10px">' + t1box.outerHTML + '</div>';
         if (links) {{
             html += '<div style="display:flex;gap:8px;margin-bottom:10px">';
             links.querySelectorAll('a').forEach(a => {{
@@ -1578,7 +1569,7 @@ INDUSTRY_SECTION_TEMPLATE = """
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             {cards}
         </div>
@@ -1771,13 +1762,13 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
 
         revenue_raw = float(row.get("revenue", 0)) if pd.notna(row.get("revenue", 0)) else 0
 
-        # 備註 (MOPS 營收變動原因)
+        # 備註 (MOPS 營收變動原因) — 永遠輸出 remark-row（compact 模式需要空 cell 對齊）
         remark = row.get("remark", "")
         if pd.notna(remark) and str(remark).strip() and str(remark).strip() != "-":
             remark_text = str(remark).strip()
             remark_html = f'<div class="remark-row"><span class="remark-icon">&#9432;</span> {remark_text}</div>'
         else:
-            remark_html = ""
+            remark_html = '<div class="remark-row"></div>'
 
         # 申報日期行 — 優先用 first_seen (精確)，否則用 publish_date
         first_seen = row.get("first_seen", "")

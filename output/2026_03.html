@@ -855,32 +855,27 @@ body.compact .chart-toggle {
     display: none;
 }
 
+/* compact: 備註作為表格欄位顯示 */
 body.compact .remark-row {
-    display: none;
-}
-
-/* compact T+1: 作為表格欄位顯示 */
-body.compact .t1-box {
-    display: table-cell;
+    display: table-cell !important;
     padding: 4px 10px;
     vertical-align: middle;
     text-align: left;
-    margin: 0;
-    border-left: none;
-    border-radius: 0;
-    background: transparent;
+    font-size: 0.75rem;
+    color: #8b949e;
+    width: 30%;
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 0;
+}
+body.compact .remark-row .remark-icon {
+    display: none;
 }
 
-body.compact .t1-title {
-    font-size: 0.72rem;
-    margin-bottom: 2px;
-}
-
-body.compact .t1-stats {
-    gap: 8px;
-    margin-bottom: 2px;
-    font-size: 0.72rem;
+/* compact: 隱藏 T+1 */
+body.compact .t1-box {
+    display: none;
 }
 
 body.compact .t1-detail {
@@ -962,14 +957,14 @@ body.compact .compact-header .ch-col {
     vertical-align: middle;
 }
 
-body.compact .compact-header .ch-name { width: 14%; }
-body.compact .compact-header .ch-rev { width: 12%; }
-body.compact .compact-header .ch-yoy { width: 10%; }
-body.compact .compact-header .ch-mom { width: 10%; }
-body.compact .compact-header .ch-exceed { width: 10%; }
-body.compact .compact-header .ch-t1 { width: 44%; text-align: left; padding-left: 10px; }
+body.compact .compact-header .ch-name { width: 16%; }
+body.compact .compact-header .ch-rev { width: 14%; }
+body.compact .compact-header .ch-yoy { width: 12%; }
+body.compact .compact-header .ch-mom { width: 12%; }
+body.compact .compact-header .ch-exceed { width: 12%; }
+body.compact .compact-header .ch-remark { width: 34%; text-align: left; padding-left: 10px; }
 
-body.compact .compact-header .ch-col:not(.ch-name):not(.ch-t1) {
+body.compact .compact-header .ch-col:not(.ch-name):not(.ch-remark) {
     text-align: right;
     padding-right: 10px;
 }
@@ -1096,7 +1091,7 @@ footer {
             </div>
             <a class="nav-btn" href="2026_04.html" title="下個月">後一月 &#9654;</a>
         </div>
-        <div class="update-time">2026-04-06 12:59 更新</div>
+        <div class="update-time">2026-04-06 21:03 更新</div>
         <div style="margin-top:12px"><a href="index.html" style="color:#58a6ff;text-decoration:none;font-size:0.85rem;padding:4px 12px;border:1px solid #30363d;border-radius:6px;">← 即時申報</a></div>
         <div style="background:#2d1b00;border:1px solid #6e4000;border-radius:8px;padding:10px 16px;margin:12px auto;max-width:700px;text-align:center;color:#f0b040;font-size:0.9rem;">⚠ 申報進行中（已申報 143 家），資料尚未完整，僅供參考</div>
     </header>
@@ -1178,7 +1173,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="7427" data-sname="華上生醫" data-rev="720000.0" data-yoy="612.8712871287129" data-mom="26.984126984126984" data-exceed="612.87" data-date="" data-filing-date="4/2">
@@ -1617,7 +1612,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+2.0%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 
                 <div class="card-links">
                     <a href="https://concords.moneydj.com/z/zu/zue/zuef/zuef_4132_0_2.djhtm" target="_blank" class="card-link">營收公告</a>
@@ -1883,7 +1878,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+19.4%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
                     <div class="t1-stats">
@@ -2019,7 +2014,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+13.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -2155,7 +2150,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+15.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (4次創新高)</div>
                     <div class="t1-stats">
@@ -2291,7 +2286,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+9.3%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
                     <div class="t1-stats">
@@ -2427,7 +2422,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+7.7%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
                     <div class="t1-stats">
@@ -2563,7 +2558,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+5.5%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -2699,7 +2694,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+0.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -2821,7 +2816,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="6584" data-sname="南俊國際" data-rev="312165000.0" data-yoy="52.71513135365198" data-mom="23.894665819971426" data-exceed="52.72" data-date="" data-filing-date="4/2">
@@ -2988,7 +2983,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+15.3%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -3124,7 +3119,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+6.0%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -3260,7 +3255,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+14.7%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
                     <div class="t1-stats">
@@ -3396,7 +3391,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+15.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -3532,7 +3527,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+15.0%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -3668,7 +3663,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+13.8%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -3804,7 +3799,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+13.5%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -3940,7 +3935,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+0.3%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -4062,7 +4057,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="2408" data-sname="南亞科" data-rev="18169760000.0" data-yoy="560.0385857042545" data-mom="16.41920797499408" data-exceed="169.55" data-date="" data-filing-date="4/2">
@@ -4637,7 +4632,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+25.5%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -4773,7 +4768,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+5.2%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -4895,7 +4890,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="3081" data-sname="聯亞" data-rev="343319000.0" data-yoy="89.34634178625399" data-mom="18.26352049603858" data-exceed="53.89" data-date="" data-filing-date="4/5">
@@ -5328,7 +5323,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+24.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -5464,7 +5459,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+9.4%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -5586,7 +5581,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="6739" data-sname="竹陞科技" data-rev="100094000.0" data-yoy="87.84296062755696" data-mom="7.463872366923622" data-exceed="87.84" data-date="" data-filing-date="4/2">
@@ -5753,7 +5748,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+45.6%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -5889,7 +5884,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+15.7%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -6025,7 +6020,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+12.9%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
                     <div class="t1-stats">
@@ -6147,7 +6142,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="8374" data-sname="羅昇" data-rev="553636000.0" data-yoy="43.63963739576685" data-mom="61.17261757470779" data-exceed="41.12" data-date="" data-filing-date="4/2">
@@ -6178,7 +6173,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+41.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -6314,7 +6309,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+31.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -6586,7 +6581,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+6.9%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -6708,7 +6703,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="6910" data-sname="德鴻" data-rev="37805000.0" data-yoy="21.6220563634024" data-mom="83.67099062332993" data-exceed="21.62" data-date="" data-filing-date="4/1">
@@ -6875,7 +6870,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+13.0%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -7011,7 +7006,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+10.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 
                 <div class="card-links">
                     <a href="https://concords.moneydj.com/z/zu/zue/zuef/zuef_7781_0_2.djhtm" target="_blank" class="card-link">營收公告</a>
@@ -7127,7 +7122,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="6516" data-sname="勤崴國際" data-rev="60780000.0" data-yoy="75.91386645827906" data-mom="-2.1366351618980146" data-exceed="15.17" data-date="" data-filing-date="4/2">
@@ -7288,7 +7283,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+40.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -7410,7 +7405,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="3004" data-sname="豐達科" data-rev="452769000.0" data-yoy="31.17313547856268" data-mom="25.128232055803053" data-exceed="31.17" data-date="" data-filing-date="4/2">
@@ -7441,7 +7436,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+31.2%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -7577,7 +7572,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+23.8%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (4次創新高)</div>
                     <div class="t1-stats">
@@ -7699,7 +7694,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="5289" data-sname="宜鼎" data-rev="5672453000.0" data-yoy="484.7799260836173" data-mom="35.74738739454512" data-exceed="484.78" data-date="" data-filing-date="4/6">
@@ -7866,7 +7861,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+2.6%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 
                 <div class="card-links">
                     <a href="https://concords.moneydj.com/z/zu/zue/zuef/zuef_7562_0_2.djhtm" target="_blank" class="card-link">營收公告</a>
@@ -7982,7 +7977,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="5234" data-sname="達興材料" data-rev="423556000.0" data-yoy="5.520206876965007" data-mom="15.72536687058232" data-exceed="2.48" data-date="" data-filing-date="4/2">
@@ -8013,7 +8008,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+2.5%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
                     <div class="t1-stats">
@@ -8135,7 +8130,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="5345" data-sname="馥鴻" data-rev="2616000.0" data-yoy="680.8955223880597" data-mom="-1.8386491557223263" data-exceed="44.61" data-date="" data-filing-date="4/1">
@@ -8288,7 +8283,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="7794" data-sname="宏碁智新" data-rev="90417000.0" data-yoy="72.38703527168732" data-mom="16.50474177919802" data-exceed="72.39" data-date="" data-filing-date="4/6">
@@ -8435,7 +8430,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="2072" data-sname="世紀風電" data-rev="1435546000.0" data-yoy="65.77873088351285" data-mom="7.417761262602756" data-exceed="65.78" data-date="" data-filing-date="4/6">
@@ -8588,7 +8583,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="2633" data-sname="台灣高鐵" data-rev="4795095000.0" data-yoy="4.454737467640367" data-mom="2.623294790970442" data-exceed="4.45" data-date="" data-filing-date="4/2">
@@ -8619,7 +8614,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+4.5%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (4次創新高)</div>
                     <div class="t1-stats">
@@ -8741,7 +8736,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="5863" data-sname="瑞興銀" data-rev="143850000.0" data-yoy="22.811211378712724" data-mom="10.08058036226727" data-exceed="22.81" data-date="" data-filing-date="4/2">
@@ -8772,7 +8767,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+22.8%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -8899,7 +8894,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="6781" data-sname="AES-KY" data-rev="1505534000.0" data-yoy="25.64408351157894" data-mom="1.437544047357563" data-exceed="14.7" data-date="" data-filing-date="4/2">
@@ -8930,7 +8925,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+14.7%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
                     <div class="t1-stats">
@@ -9066,7 +9061,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+15.0%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -9202,7 +9197,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+13.8%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -9338,7 +9333,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+13.5%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -9474,7 +9469,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+0.3%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -9596,7 +9591,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="2408" data-sname="南亞科" data-rev="18169760000.0" data-yoy="560.0385857042545" data-mom="16.41920797499408" data-exceed="169.55" data-date="" data-filing-date="4/2">
@@ -10035,7 +10030,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+5.2%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -10157,7 +10152,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="2317" data-sname="鴻海" data-rev="803737716000.0" data-yoy="45.5718066726945" data-mom="34.89756795445274" data-exceed="45.57" data-date="" data-filing-date="4/5">
@@ -10188,7 +10183,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+45.6%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -10324,7 +10319,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+15.7%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -10460,7 +10455,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+12.9%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
                     <div class="t1-stats">
@@ -10582,7 +10577,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="6446" data-sname="藥華藥" data-rev="1940196000.0" data-yoy="64.35054632565397" data-mom="21.22785159710932" data-exceed="64.35" data-date="" data-filing-date="4/5">
@@ -10749,7 +10744,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+13.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -10885,7 +10880,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+0.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -11007,7 +11002,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="8374" data-sname="羅昇" data-rev="553636000.0" data-yoy="43.63963739576685" data-mom="61.17261757470779" data-exceed="41.12" data-date="" data-filing-date="4/2">
@@ -11038,7 +11033,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+41.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -11174,7 +11169,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+31.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -11432,7 +11427,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="2419" data-sname="仲琦" data-rev="1007693000.0" data-yoy="54.961270946520536" data-mom="100.6033870097605" data-exceed="1.57" data-date="" data-filing-date="4/2">
@@ -11599,7 +11594,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+24.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -11721,7 +11716,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="3004" data-sname="豐達科" data-rev="452769000.0" data-yoy="31.17313547856268" data-mom="25.128232055803053" data-exceed="31.17" data-date="" data-filing-date="4/2">
@@ -11752,7 +11747,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+31.2%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -11888,7 +11883,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+23.8%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (4次創新高)</div>
                     <div class="t1-stats">
@@ -12010,7 +12005,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="5234" data-sname="達興材料" data-rev="423556000.0" data-yoy="5.520206876965007" data-mom="15.72536687058232" data-exceed="2.48" data-date="" data-filing-date="4/2">
@@ -12041,7 +12036,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+2.5%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
                     <div class="t1-stats">
@@ -12163,7 +12158,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="2072" data-sname="世紀風電" data-rev="1435546000.0" data-yoy="65.77873088351285" data-mom="7.417761262602756" data-exceed="65.78" data-date="" data-filing-date="4/6">
@@ -12316,7 +12311,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="2633" data-sname="台灣高鐵" data-rev="4795095000.0" data-yoy="4.454737467640367" data-mom="2.623294790970442" data-exceed="4.45" data-date="" data-filing-date="4/2">
@@ -12347,7 +12342,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+4.5%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (4次創新高)</div>
                     <div class="t1-stats">
@@ -12469,7 +12464,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="6112" data-sname="邁達特" data-rev="2231109000.0" data-yoy="40.11564156766106" data-mom="21.541877602250075" data-exceed="40.12" data-date="" data-filing-date="4/2">
@@ -12500,7 +12495,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+40.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -12627,7 +12622,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="4743" data-sname="合一" data-rev="14375000.0" data-yoy="128.7555697008275" data-mom="51.89137785291632" data-exceed="22.79" data-date="" data-filing-date="4/2">
@@ -12930,7 +12925,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+15.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (4次創新高)</div>
                     <div class="t1-stats">
@@ -13066,7 +13061,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+9.3%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
                     <div class="t1-stats">
@@ -13202,7 +13197,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+7.7%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
                     <div class="t1-stats">
@@ -13338,7 +13333,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+5.5%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -13460,7 +13455,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="6584" data-sname="南俊國際" data-rev="312165000.0" data-yoy="52.71513135365198" data-mom="23.894665819971426" data-exceed="52.72" data-date="" data-filing-date="4/2">
@@ -13627,7 +13622,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+15.3%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -13763,7 +13758,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+6.0%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -13899,7 +13894,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+15.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -14021,7 +14016,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="3081" data-sname="聯亞" data-rev="343319000.0" data-yoy="89.34634178625399" data-mom="18.26352049603858" data-exceed="53.89" data-date="" data-filing-date="4/5">
@@ -14318,7 +14313,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+9.4%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -14440,7 +14435,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="6693" data-sname="廣閎科" data-rev="193378000.0" data-yoy="111.904840176644" data-mom="26.13445871463887" data-exceed="53.68" data-date="" data-filing-date="4/2">
@@ -14607,7 +14602,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+25.5%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -14729,7 +14724,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="5345" data-sname="馥鴻" data-rev="2616000.0" data-yoy="680.8955223880597" data-mom="-1.8386491557223263" data-exceed="44.61" data-date="" data-filing-date="4/1">
@@ -14882,7 +14877,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="6739" data-sname="竹陞科技" data-rev="100094000.0" data-yoy="87.84296062755696" data-mom="7.463872366923622" data-exceed="87.84" data-date="" data-filing-date="4/2">
@@ -15035,7 +15030,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="6910" data-sname="德鴻" data-rev="37805000.0" data-yoy="21.6220563634024" data-mom="83.67099062332993" data-exceed="21.62" data-date="" data-filing-date="4/1">
@@ -15188,7 +15183,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="6516" data-sname="勤崴國際" data-rev="60780000.0" data-yoy="75.91386645827906" data-mom="-2.1366351618980146" data-exceed="15.17" data-date="" data-filing-date="4/2">
@@ -15335,7 +15330,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="5289" data-sname="宜鼎" data-rev="5672453000.0" data-yoy="484.7799260836173" data-mom="35.74738739454512" data-exceed="484.78" data-date="" data-filing-date="4/6">
@@ -15498,7 +15493,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="7427" data-sname="華上生醫" data-rev="720000.0" data-yoy="612.8712871287129" data-mom="26.984126984126984" data-exceed="612.87" data-date="" data-filing-date="4/2">
@@ -15665,7 +15660,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+2.0%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 
                 <div class="card-links">
                     <a href="https://concords.moneydj.com/z/zu/zue/zuef/zuef_4132_0_2.djhtm" target="_blank" class="card-link">營收公告</a>
@@ -15795,7 +15790,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+19.4%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (1次創新高)</div>
                     <div class="t1-stats">
@@ -15917,7 +15912,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="6565" data-sname="物聯" data-rev="30323000.0" data-yoy="19.95806630271382" data-mom="99.58533535180676" data-exceed="12.96" data-date="" data-filing-date="4/3">
@@ -15948,7 +15943,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+13.0%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -16084,7 +16079,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+10.1%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 
                 <div class="card-links">
                     <a href="https://concords.moneydj.com/z/zu/zue/zuef/zuef_7781_0_2.djhtm" target="_blank" class="card-link">營收公告</a>
@@ -16200,7 +16195,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="7794" data-sname="宏碁智新" data-rev="90417000.0" data-yoy="72.38703527168732" data-mom="16.50474177919802" data-exceed="72.39" data-date="" data-filing-date="4/6">
@@ -16347,7 +16342,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="5863" data-sname="瑞興銀" data-rev="143850000.0" data-yoy="22.811211378712724" data-mom="10.08058036226727" data-exceed="22.81" data-date="" data-filing-date="4/2">
@@ -16378,7 +16373,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+22.8%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
                     <div class="t1-stats">
@@ -16500,7 +16495,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="4587" data-sname="寶元數控" data-rev="107575000.0" data-yoy="6.8781544330962125" data-mom="105.04145620890117" data-exceed="6.88" data-date="" data-filing-date="4/2">
@@ -16531,7 +16526,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+6.9%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 <div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 (2次創新高)</div>
                     <div class="t1-stats">
@@ -16653,7 +16648,7 @@ footer {
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
-                <span class="ch-col ch-t1">T+1 歷史</span>
+                <span class="ch-col ch-remark">備註</span>
             </div>
             
             <div class="stock-card" data-sid="7562" data-sname="博來科技" data-rev="64063000.0" data-yoy="20.19324577861164" data-mom="12.170822244011768" data-exceed="2.59" data-date="" data-filing-date="4/2">
@@ -16684,7 +16679,7 @@ footer {
                     <span class="revenue-label">超越歷史同期</span>
                     <span class="exceed-tag">+2.6%</span>
                 </div>
-                
+                <div class="remark-row"></div>
                 
                 <div class="card-links">
                     <a href="https://concords.moneydj.com/z/zu/zue/zuef/zuef_7562_0_2.djhtm" target="_blank" class="card-link">營收公告</a>
@@ -16967,21 +16962,17 @@ document.querySelectorAll('.view-btn').forEach(btn => {
         const detail = document.createElement('tr');
         detail.className = 'expanded-detail-row';
         const td = document.createElement('td');
-        td.colSpan = 7;
+        td.colSpan = 6;
         td.style.padding = '12px 16px';
         td.style.background = '#161b22';
         td.style.borderTop = '1px solid #21262d';
         td.style.borderBottom = '1px solid #21262d';
 
         // 複製原始卡片的詳細內容
-        const remark = card.querySelector('.remark-row');
-        const t1box = card.querySelector('.t1-box');
         const chart = card.querySelector('.chart-toggle');
         const links = card.querySelector('.card-links');
 
         let html = '';
-        if (remark) html += '<div style="margin-bottom:10px">' + remark.outerHTML + '</div>';
-        if (t1box) html += '<div style="margin-bottom:10px">' + t1box.outerHTML + '</div>';
         if (links) {
             html += '<div style="display:flex;gap:8px;margin-bottom:10px">';
             links.querySelectorAll('a').forEach(a => {
