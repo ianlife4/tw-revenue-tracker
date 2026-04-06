@@ -656,9 +656,19 @@
       "first_seen": "04-06 06:17",
       "market": "sii",
       "stock_name": "全漢"
+    },
+    "6943": {
+      "first_seen": "04-06 08:04",
+      "market": "pub",
+      "stock_name": "明緯企業"
+    },
+    "2252": {
+      "first_seen": "04-06 08:04",
+      "market": "emerging",
+      "stock_name": "為昇科"
     }
   },
-  "last_check": "04-06 06:17:43",
-  "last_new_filing": "04-06 06:17:43",
-  "total_filed": 131
+  "last_check": "04-06 08:04:54",
+  "last_new_filing": "04-06 08:04:54",
+  "total_filed": 133
 }
