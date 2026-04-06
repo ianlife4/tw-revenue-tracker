@@ -10290,5 +10290,41 @@
     "stock_name": "和康生",
     "market": "sii",
     "current_filing_date": "2026-04-06"
+  },
+  "6555_3": {
+    "stock_id": "6555",
+    "historical_highs": [
+      {
+        "t_date": "2021-04-01",
+        "t_close": 52.1,
+        "t1_date": "2021-04-07",
+        "t1_close": 54.1,
+        "t1_pct": 3.84,
+        "year": 2021,
+        "month": 3,
+        "revenue": 59198000.0
+      },
+      {
+        "t_date": "2022-04-06",
+        "t_close": 61.7,
+        "t1_date": "2022-04-07",
+        "t1_close": 60.4,
+        "t1_pct": -2.11,
+        "year": 2022,
+        "month": 3,
+        "revenue": 98171000.0
+      }
+    ],
+    "avg_t1": 0.86,
+    "median_t1": 3.84,
+    "max_t1": 3.84,
+    "min_t1": -2.11,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 6,
+    "cached_at": "2026-04-06T14:36:43.485052",
+    "stock_name": "榮炭",
+    "market": "emerging",
+    "current_filing_date": "2026-04-06"
   }
 }
