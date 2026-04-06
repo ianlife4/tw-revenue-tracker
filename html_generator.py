@@ -887,13 +887,18 @@ body.compact .remark-row {{
     padding: 4px 10px;
     vertical-align: middle;
     text-align: left;
-    font-size: 0.75rem;
-    color: #8b949e;
-    width: 30%;
+    font-size: 0.72rem;
+    color: #7a828a;
+    width: 34%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 0;
+    background: transparent !important;
+    border-left: none !important;
+    border-radius: 0 !important;
+    margin: 0;
+    letter-spacing: -0.01em;
 }}
 body.compact .remark-row .remark-icon {{
     display: none;
@@ -1766,7 +1771,7 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
         remark = row.get("remark", "")
         if pd.notna(remark) and str(remark).strip() and str(remark).strip() != "-":
             remark_text = str(remark).strip()
-            remark_html = f'<div class="remark-row"><span class="remark-icon">&#9432;</span> {remark_text}</div>'
+            remark_html = f'<div class="remark-row" title="{remark_text}"><span class="remark-icon">&#9432;</span> {remark_text}</div>'
         else:
             remark_html = '<div class="remark-row"></div>'
 
