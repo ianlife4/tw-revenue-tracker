@@ -13344,5 +13344,87 @@
     "stock_name": "普鴻",
     "market": "otc",
     "current_filing_date": "2026-04-07"
+  },
+  "2363_3": {
+    "stock_id": "2363",
+    "historical_highs": [
+      {
+        "t_date": "2021-04-07",
+        "t_close": 20.39,
+        "t1_date": "2021-04-08",
+        "t1_close": 21.14,
+        "t1_pct": 3.64,
+        "year": 2021,
+        "month": 3,
+        "revenue": 21869000.0
+      },
+      {
+        "t_date": "2025-04-07",
+        "t_close": 48.01,
+        "t1_date": "2025-04-08",
+        "t1_close": 43.26,
+        "t1_pct": -9.91,
+        "year": 2025,
+        "month": 3,
+        "revenue": 193776000.0
+      }
+    ],
+    "avg_t1": -3.13,
+    "median_t1": 3.64,
+    "max_t1": 3.64,
+    "min_t1": -9.91,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 7,
+    "cached_at": "2026-04-07T11:40:50.035360",
+    "stock_name": "矽統",
+    "market": "sii",
+    "current_filing_date": "2026-04-07"
+  },
+  "3357_3": {
+    "stock_id": "3357",
+    "historical_highs": [
+      {
+        "t_date": "2021-04-07",
+        "t_close": 153.29,
+        "t1_date": "2021-04-08",
+        "t1_close": 151.73,
+        "t1_pct": -1.02,
+        "year": 2021,
+        "month": 3,
+        "revenue": 519345000.0
+      },
+      {
+        "t_date": "2022-04-07",
+        "t_close": 94.35,
+        "t1_date": "2022-04-08",
+        "t1_close": 95.55,
+        "t1_pct": 1.27,
+        "year": 2022,
+        "month": 3,
+        "revenue": 540449000.0
+      },
+      {
+        "t_date": "2025-04-07",
+        "t_close": 98.1,
+        "t1_date": "2025-04-08",
+        "t1_close": 90.0,
+        "t1_pct": -8.26,
+        "year": 2025,
+        "month": 3,
+        "revenue": 585349000.0
+      }
+    ],
+    "avg_t1": -2.67,
+    "median_t1": -1.02,
+    "max_t1": 1.27,
+    "min_t1": -8.26,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 7,
+    "cached_at": "2026-04-07T11:40:52.491150",
+    "stock_name": "臺慶科",
+    "market": "otc",
+    "current_filing_date": "2026-04-07"
   }
 }
