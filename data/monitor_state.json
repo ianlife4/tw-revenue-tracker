@@ -2196,9 +2196,19 @@
       "first_seen": "04-07 11:40",
       "market": "otc",
       "stock_name": "晶宏"
+    },
+    "7888": {
+      "first_seen": "04-07 12:42",
+      "market": "emerging",
+      "stock_name": "麗寶新藥"
+    },
+    "1725": {
+      "first_seen": "04-07 12:42",
+      "market": "sii",
+      "stock_name": "元禎"
     }
   },
-  "last_check": "04-07 11:40:04",
-  "last_new_filing": "04-07 11:40:04",
-  "total_filed": 438
+  "last_check": "04-07 12:42:07",
+  "last_new_filing": "04-07 12:42:07",
+  "total_filed": 440
 }
