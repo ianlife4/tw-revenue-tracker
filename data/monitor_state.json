@@ -856,9 +856,29 @@
       "first_seen": "04-07 04:14",
       "market": "otc",
       "stock_name": "光明"
+    },
+    "646": {
+      "first_seen": "04-07 05:57",
+      "market": "pub",
+      "stock_name": "大昌證券"
+    },
+    "4966": {
+      "first_seen": "04-07 05:57",
+      "market": "otc",
+      "stock_name": "譜瑞-KY"
+    },
+    "9984": {
+      "first_seen": "04-07 05:57",
+      "market": "pub",
+      "stock_name": "全聯有線"
+    },
+    "6867": {
+      "first_seen": "04-07 05:57",
+      "market": "emerging",
+      "stock_name": "坦德科技"
     }
   },
-  "last_check": "04-07 04:14:57",
-  "last_new_filing": "04-07 04:14:57",
-  "total_filed": 170
+  "last_check": "04-07 05:57:21",
+  "last_new_filing": "04-07 05:57:21",
+  "total_filed": 174
 }
