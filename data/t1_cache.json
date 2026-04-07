@@ -3290,7 +3290,10 @@
     "hit_rate": 20.0,
     "count": 5,
     "typical_filing_day": 10,
-    "cached_at": "2026-04-02T08:36:54.826809"
+    "cached_at": "2026-04-02T08:36:54.826809",
+    "stock_name": "鈊象",
+    "market": "otc",
+    "current_filing_date": "2026-04-07"
   },
   "3491_3": {
     "stock_id": "3491",
@@ -13425,6 +13428,42 @@
     "cached_at": "2026-04-07T11:40:52.491150",
     "stock_name": "臺慶科",
     "market": "otc",
+    "current_filing_date": "2026-04-07"
+  },
+  "4771_3": {
+    "stock_id": "4771",
+    "historical_highs": [
+      {
+        "t_date": "2024-04-03",
+        "t_close": 337.56,
+        "t1_date": "2024-04-08",
+        "t1_close": 334.21,
+        "t1_pct": -0.99,
+        "year": 2024,
+        "month": 3,
+        "revenue": 227046000.0
+      },
+      {
+        "t_date": "2025-04-07",
+        "t_close": 184.62,
+        "t1_date": "2025-04-08",
+        "t1_close": 170.57,
+        "t1_pct": -7.61,
+        "year": 2025,
+        "month": 3,
+        "revenue": 294579000.0
+      }
+    ],
+    "avg_t1": -4.3,
+    "median_t1": -0.99,
+    "max_t1": -0.99,
+    "min_t1": -7.61,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 7,
+    "cached_at": "2026-04-07T14:17:33.742577",
+    "stock_name": "望隼",
+    "market": "sii",
     "current_filing_date": "2026-04-07"
   }
 }
