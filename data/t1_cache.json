@@ -16923,5 +16923,179 @@
     "stock_name": "展碁國際",
     "market": "sii",
     "current_filing_date": "2026-04-08"
+  },
+  "6787_3": {
+    "stock_id": "6787",
+    "historical_highs": [
+      {
+        "t_date": "2022-04-08",
+        "t_close": 30.25,
+        "t1_date": "2022-04-11",
+        "t1_close": 30.0,
+        "t1_pct": -0.83,
+        "year": 2022,
+        "month": 3,
+        "revenue": 6779000.0
+      },
+      {
+        "t_date": "2024-04-08",
+        "t_close": 21.65,
+        "t1_date": "2024-04-09",
+        "t1_close": 22.0,
+        "t1_pct": 1.62,
+        "year": 2024,
+        "month": 3,
+        "revenue": 10185000.0
+      }
+    ],
+    "avg_t1": 0.4,
+    "median_t1": 1.62,
+    "max_t1": 1.62,
+    "min_t1": -0.83,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 8,
+    "cached_at": "2026-04-08T11:47:31.289551",
+    "stock_name": "晶瑞光",
+    "market": "emerging",
+    "current_filing_date": "2026-04-08"
+  },
+  "3010_3": {
+    "stock_id": "3010",
+    "historical_highs": [
+      {
+        "t_date": "2021-04-08",
+        "t_close": 61.59,
+        "t1_date": "2021-04-09",
+        "t1_close": 61.08,
+        "t1_pct": -0.84,
+        "year": 2021,
+        "month": 3,
+        "revenue": 5913640000.0
+      },
+      {
+        "t_date": "2022-04-08",
+        "t_close": 84.46,
+        "t1_date": "2022-04-11",
+        "t1_close": 82.09,
+        "t1_pct": -2.8,
+        "year": 2022,
+        "month": 3,
+        "revenue": 7040557000.0
+      }
+    ],
+    "avg_t1": -1.82,
+    "median_t1": -0.84,
+    "max_t1": -0.84,
+    "min_t1": -2.8,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 8,
+    "cached_at": "2026-04-08T11:47:32.763099",
+    "stock_name": "華立",
+    "market": "sii",
+    "current_filing_date": "2026-04-08"
+  },
+  "6217_3": {
+    "stock_id": "6217",
+    "historical_highs": [
+      {
+        "t_date": "2021-04-08",
+        "t_close": 36.61,
+        "t1_date": "2021-04-09",
+        "t1_close": 36.18,
+        "t1_pct": -1.18,
+        "year": 2021,
+        "month": 3,
+        "revenue": 228401000.0
+      },
+      {
+        "t_date": "2022-04-08",
+        "t_close": 53.31,
+        "t1_date": "2022-04-11",
+        "t1_close": 50.47,
+        "t1_pct": -5.32,
+        "year": 2022,
+        "month": 3,
+        "revenue": 284717000.0
+      },
+      {
+        "t_date": "2025-04-08",
+        "t_close": 23.65,
+        "t1_date": "2025-04-09",
+        "t1_close": 21.3,
+        "t1_pct": -9.94,
+        "year": 2025,
+        "month": 3,
+        "revenue": 310764000.0
+      }
+    ],
+    "avg_t1": -5.48,
+    "median_t1": -5.32,
+    "max_t1": -1.18,
+    "min_t1": -9.94,
+    "hit_rate": 0.0,
+    "count": 3,
+    "typical_filing_day": 8,
+    "cached_at": "2026-04-08T11:47:34.809987",
+    "stock_name": "中探針",
+    "market": "otc",
+    "current_filing_date": "2026-04-08"
+  },
+  "4166_3": {
+    "stock_id": "4166",
+    "historical_highs": [
+      {
+        "t_date": "2021-04-08",
+        "t_close": 17.7,
+        "t1_date": "2021-04-09",
+        "t1_close": 17.1,
+        "t1_pct": -3.39,
+        "year": 2021,
+        "month": 3,
+        "revenue": 36789000.0
+      },
+      {
+        "t_date": "2022-04-08",
+        "t_close": 19.9,
+        "t1_date": "2022-04-11",
+        "t1_close": 19.7,
+        "t1_pct": -1.01,
+        "year": 2022,
+        "month": 3,
+        "revenue": 45531000.0
+      },
+      {
+        "t_date": "2023-04-07",
+        "t_close": 23.55,
+        "t1_date": "2023-04-10",
+        "t1_close": 23.5,
+        "t1_pct": -0.21,
+        "year": 2023,
+        "month": 3,
+        "revenue": 60574000.0
+      },
+      {
+        "t_date": "2024-04-08",
+        "t_close": 21.7,
+        "t1_date": "2024-04-09",
+        "t1_close": 21.95,
+        "t1_pct": 1.15,
+        "year": 2024,
+        "month": 3,
+        "revenue": 98990000.0
+      }
+    ],
+    "avg_t1": -0.87,
+    "median_t1": -0.21,
+    "max_t1": 1.15,
+    "min_t1": -3.39,
+    "hit_rate": 25.0,
+    "count": 4,
+    "typical_filing_day": 8,
+    "cached_at": "2026-04-08T11:47:37.483829",
+    "stock_name": "友霖",
+    "market": "otc",
+    "current_filing_date": "2026-04-08"
   }
 }
