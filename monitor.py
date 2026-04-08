@@ -284,6 +284,37 @@ def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: 
     cur["revenue_month"] = rev_month
     history[rev_year] = cur
 
+    # 用 MOPS prev_year_revenue 補充歷史 CSV 缺少的股票
+    # (新上市/轉市場的股票在歷史 CSV 中可能沒有去年同月資料)
+    prev_year = rev_year - 1
+    if "prev_year_revenue" in cur.columns:
+        hist_ids = set()
+        for y, df in history.items():
+            if isinstance(y, int) and y < rev_year:
+                hist_ids.update(df["stock_id"].unique())
+
+        supplement_rows = []
+        for _, row in cur.iterrows():
+            sid = row["stock_id"]
+            prev_rev = row.get("prev_year_revenue")
+            if sid not in hist_ids and pd.notna(prev_rev) and prev_rev > 0:
+                supplement_rows.append({
+                    "stock_id": sid,
+                    "stock_name": row.get("stock_name", ""),
+                    "revenue": prev_rev,
+                    "revenue_year": prev_year,
+                    "revenue_month": rev_month,
+                    "market": row.get("market", ""),
+                    "industry": row.get("industry", ""),
+                })
+        if supplement_rows:
+            sup_df = pd.DataFrame(supplement_rows)
+            if prev_year in history:
+                history[prev_year] = pd.concat([history[prev_year], sup_df], ignore_index=True)
+            else:
+                history[prev_year] = sup_df
+            logger.info(f"用 MOPS prev_year_revenue 補充 {len(supplement_rows)} 檔去年同月資料")
+
     logger.info(f"歷史月報比對年份: {sorted(history.keys())}")
 
     # 載入上月資料 (供月增率計算)
