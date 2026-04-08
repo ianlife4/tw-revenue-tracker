@@ -2451,9 +2451,789 @@
       "first_seen": "04-08 06:00",
       "market": "otc",
       "stock_name": "揚秦"
+    },
+    "7770": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "君曜"
+    },
+    "6170": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "統振"
+    },
+    "6606": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "建德工業"
+    },
+    "6416": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "瑞祺電通"
+    },
+    "6196": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "帆宣"
+    },
+    "3518": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "柏騰"
+    },
+    "2102": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "泰豐"
+    },
+    "6152": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "百一"
+    },
+    "7725": {
+      "first_seen": "04-08 07:43",
+      "market": "emerging",
+      "stock_name": "列特博"
+    },
+    "6768": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "志強-KY"
+    },
+    "3297": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "杭特"
+    },
+    "4551": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "智伸科"
+    },
+    "6955": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "邦睿生技-創"
+    },
+    "3259": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "鑫創"
+    },
+    "2477": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "美隆電"
+    },
+    "8255": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "朋程"
+    },
+    "5292": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "華懋"
+    },
+    "8058": {
+      "first_seen": "04-08 07:43",
+      "market": "emerging",
+      "stock_name": "耐特"
+    },
+    "8424": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "惠普"
+    },
+    "3512": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "皇龍"
+    },
+    "6506": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "雙邦"
+    },
+    "6908": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "宏碁遊戲-創"
+    },
+    "8049": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "晶采"
+    },
+    "2032": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "新鋼"
+    },
+    "3060": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "銘異"
+    },
+    "5443": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "均豪"
+    },
+    "3117": {
+      "first_seen": "04-08 07:43",
+      "market": "emerging",
+      "stock_name": "年程"
+    },
+    "6720": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "久昌"
+    },
+    "4744": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "皇將"
+    },
+    "5852": {
+      "first_seen": "04-08 07:43",
+      "market": "pub",
+      "stock_name": "元大銀行"
+    },
+    "8928": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "鉅明"
+    },
+    "3054": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "立萬利"
+    },
+    "3416": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "融程電"
+    },
+    "5309": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "系統電"
+    },
+    "7894": {
+      "first_seen": "04-08 07:43",
+      "market": "pub",
+      "stock_name": "瀚軒"
+    },
+    "7836": {
+      "first_seen": "04-08 07:43",
+      "market": "emerging",
+      "stock_name": "智生活"
+    },
+    "6166": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "凌華"
+    },
+    "4207": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "環泰"
+    },
+    "6949": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "沛爾生醫-創"
+    },
+    "1582": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "信錦"
+    },
+    "8411": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "福貞-KY"
+    },
+    "4402": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "郡都開發"
+    },
+    "8069": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "元太"
+    },
+    "6559": {
+      "first_seen": "04-08 07:43",
+      "market": "emerging",
+      "stock_name": "研晶"
+    },
+    "7763": {
+      "first_seen": "04-08 07:43",
+      "market": "emerging",
+      "stock_name": "崇舜"
+    },
+    "1773": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "勝一"
+    },
+    "2065": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "世豐"
+    },
+    "6127": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "九豪"
+    },
+    "1476": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "儒鴻"
+    },
+    "8415": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "大國鋼"
+    },
+    "7715": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "裕山"
+    },
+    "2489": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "瑞軒"
+    },
+    "3149": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "正達"
+    },
+    "4971": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "IET-KY"
+    },
+    "3617": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "碩天"
+    },
+    "6669": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "緯穎"
+    },
+    "2460": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "建通"
+    },
+    "6982": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "大井泵浦"
+    },
+    "8021": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "尖點"
+    },
+    "5227": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "立凱-KY"
+    },
+    "2025": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "千興"
+    },
+    "7704": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "明遠精密"
+    },
+    "1591": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "駿吉-KY"
+    },
+    "6588": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "東典光電"
+    },
+    "6174": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "安碁"
+    },
+    "3526": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "凡甲"
+    },
+    "4952": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "凌通"
+    },
+    "3046": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "建碁"
+    },
+    "8299": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "群聯"
+    },
+    "6670": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "復盛應用"
+    },
+    "3217": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "優群"
+    },
+    "4406": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "新昕纖"
+    },
+    "6624": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "萬年清"
+    },
+    "2115": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "六暉-KY"
+    },
+    "7917": {
+      "first_seen": "04-08 07:43",
+      "market": "pub",
+      "stock_name": "源傑"
+    },
+    "3369": {
+      "first_seen": "04-08 07:43",
+      "market": "pub",
+      "stock_name": "鐵研"
+    },
+    "6830": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "汎銓"
+    },
+    "4931": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "新盛力"
+    },
+    "6578": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "達邦蛋白"
+    },
+    "9802": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "鈺齊-KY"
+    },
+    "1733": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "五鼎"
+    },
+    "6465": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "威潤"
+    },
+    "4129": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "聯合"
+    },
+    "1906": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "寶隆"
+    },
+    "2108": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "南帝"
+    },
+    "6228": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "全譜"
+    },
+    "1711": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "永光"
+    },
+    "6906": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "現觀科"
+    },
+    "2462": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "良得電"
+    },
+    "5248": {
+      "first_seen": "04-08 07:43",
+      "market": "emerging",
+      "stock_name": "景傳"
+    },
+    "2034": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "允強"
+    },
+    "5487": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "通泰"
+    },
+    "6527": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "明達醫"
+    },
+    "4186": {
+      "first_seen": "04-08 07:43",
+      "market": "emerging",
+      "stock_name": "尖端醫"
+    },
+    "8042": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "金山電"
+    },
+    "4571": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "鈞興-KY"
+    },
+    "3014": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "聯陽"
+    },
+    "4942": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "嘉彰"
+    },
+    "8277": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "商丞"
+    },
+    "7819": {
+      "first_seen": "04-08 07:43",
+      "market": "emerging",
+      "stock_name": "精誠金融"
+    },
+    "4933": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "友輝"
+    },
+    "6834": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "天二科技"
+    },
+    "8391": {
+      "first_seen": "04-08 07:43",
+      "market": "pub",
+      "stock_name": "森霸電力"
+    },
+    "1806": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "冠軍"
+    },
+    "6214": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "精誠"
+    },
+    "6875": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "國邑*"
+    },
+    "6813": {
+      "first_seen": "04-08 07:43",
+      "market": "pub",
+      "stock_name": "富動科"
+    },
+    "6467": {
+      "first_seen": "04-08 07:43",
+      "market": "emerging",
+      "stock_name": "泰合"
+    },
+    "3227": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "原相"
+    },
+    "3034": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "聯詠"
+    },
+    "6206": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "飛捷"
+    },
+    "3231": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "緯創"
+    },
+    "6183": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "關貿"
+    },
+    "6840": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "東研信超"
+    },
+    "2048": {
+      "first_seen": "04-08 07:43",
+      "market": "pub",
+      "stock_name": "中龍鋼鐵"
+    },
+    "4174": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "浩鼎"
+    },
+    "6865": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "偉康科技"
+    },
+    "5843": {
+      "first_seen": "04-08 07:43",
+      "market": "pub",
+      "stock_name": "兆豐銀行"
+    },
+    "3585": {
+      "first_seen": "04-08 07:43",
+      "market": "emerging",
+      "stock_name": "聯致"
+    },
+    "6673": {
+      "first_seen": "04-08 07:43",
+      "market": "emerging",
+      "stock_name": "和詮"
+    },
+    "6674": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "鋐寶科技"
+    },
+    "6703": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "軒郁"
+    },
+    "2465": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "麗臺"
+    },
+    "2450": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "神腦"
+    },
+    "4927": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "泰鼎-KY"
+    },
+    "9942": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "茂順"
+    },
+    "6603": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "富強鑫"
+    },
+    "2103": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "台橡"
+    },
+    "6782": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "視陽"
+    },
+    "4584": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "君帆"
+    },
+    "7856": {
+      "first_seen": "04-08 07:43",
+      "market": "emerging",
+      "stock_name": "漢測"
+    },
+    "2049": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "上銀"
+    },
+    "2041": {
+      "first_seen": "04-08 07:43",
+      "market": "pub",
+      "stock_name": "燁茂實業"
+    },
+    "5276": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "達輝-KY"
+    },
+    "3541": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "西柏"
+    },
+    "1417": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "嘉裕"
+    },
+    "6186": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "新潤"
+    },
+    "3438": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "類比科"
+    },
+    "6967": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "汎瑋材料"
+    },
+    "3206": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "志豐"
+    },
+    "1909": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "榮成"
+    },
+    "9951": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "皇田"
+    },
+    "2035": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "唐榮公司"
+    },
+    "3592": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "瑞鼎"
+    },
+    "6884": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "海柏特"
+    },
+    "3550": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "聯穎"
+    },
+    "1539": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "巨庭"
+    },
+    "8081": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "致新"
+    },
+    "6640": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "均華"
+    },
+    "8298": {
+      "first_seen": "04-08 07:43",
+      "market": "emerging",
+      "stock_name": "威睿"
+    },
+    "6921": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "嘉雨思-創"
+    },
+    "8940": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "新天地"
+    },
+    "2382": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "廣達"
+    },
+    "1593": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "祺驊"
+    },
+    "8937": {
+      "first_seen": "04-08 07:43",
+      "market": "otc",
+      "stock_name": "合騏"
+    },
+    "1453": {
+      "first_seen": "04-08 07:43",
+      "market": "sii",
+      "stock_name": "大將"
     }
   },
-  "last_check": "04-08 06:00:30",
-  "last_new_filing": "04-08 06:00:30",
-  "total_filed": 489
+  "last_check": "04-08 07:43:33",
+  "last_new_filing": "04-08 07:43:33",
+  "total_filed": 645
 }
