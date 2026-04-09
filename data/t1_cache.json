@@ -23413,5 +23413,51 @@
     "stock_name": "全科",
     "market": "sii",
     "current_filing_date": "2026-04-09"
+  },
+  "2515_3": {
+    "stock_id": "2515",
+    "historical_highs": [
+      {
+        "t_date": "2021-04-09",
+        "t_close": 7.29,
+        "t1_date": "2021-04-12",
+        "t1_close": 7.47,
+        "t1_pct": 2.42,
+        "year": 2021,
+        "month": 3,
+        "revenue": 1232070000.0
+      },
+      {
+        "t_date": "2023-04-07",
+        "t_close": 8.1,
+        "t1_date": "2023-04-10",
+        "t1_close": 8.1,
+        "t1_pct": 0.0,
+        "year": 2023,
+        "month": 3,
+        "revenue": 1413002000.0
+      },
+      {
+        "t_date": "2024-04-09",
+        "t_close": 15.23,
+        "t1_date": "2024-04-10",
+        "t1_close": 14.68,
+        "t1_pct": -3.61,
+        "year": 2024,
+        "month": 3,
+        "revenue": 1935939000.0
+      }
+    ],
+    "avg_t1": -0.4,
+    "median_t1": 0.0,
+    "max_t1": 2.42,
+    "min_t1": -3.61,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 9,
+    "cached_at": "2026-04-09T13:04:27.847138",
+    "stock_name": "中工",
+    "market": "sii",
+    "current_filing_date": "2026-04-09"
   }
 }

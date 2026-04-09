@@ -7591,9 +7591,29 @@
       "first_seen": "04-09 11:55",
       "market": "sii",
       "stock_name": "宏旭-KY"
+    },
+    "7793": {
+      "first_seen": "04-09 13:03",
+      "market": "pub",
+      "stock_name": "上峰"
+    },
+    "6451": {
+      "first_seen": "04-09 13:03",
+      "market": "sii",
+      "stock_name": "訊芯-KY"
+    },
+    "2515": {
+      "first_seen": "04-09 13:03",
+      "market": "sii",
+      "stock_name": "中工"
+    },
+    "5870": {
+      "first_seen": "04-09 13:03",
+      "market": "pub",
+      "stock_name": "花旗台灣"
     }
   },
-  "last_check": "04-09 11:55:36",
-  "last_new_filing": "04-09 11:55:36",
-  "total_filed": 1497
+  "last_check": "04-09 13:03:48",
+  "last_new_filing": "04-09 13:03:48",
+  "total_filed": 1501
 }
