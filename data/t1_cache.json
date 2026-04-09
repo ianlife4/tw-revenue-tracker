@@ -18227,5 +18227,113 @@
     "stock_name": "達明",
     "market": "sii",
     "current_filing_date": "2026-04-07"
+  },
+  "8423_3": {
+    "stock_id": "8423",
+    "historical_highs": [
+      {
+        "t_date": "2021-04-09",
+        "t_close": 11.75,
+        "t1_date": "2021-04-12",
+        "t1_close": 11.85,
+        "t1_pct": 0.85,
+        "year": 2021,
+        "month": 3,
+        "revenue": 29388000.0
+      },
+      {
+        "t_date": "2024-04-09",
+        "t_close": 20.02,
+        "t1_date": "2024-04-10",
+        "t1_close": 20.02,
+        "t1_pct": 0.0,
+        "year": 2024,
+        "month": 3,
+        "revenue": 32412000.0
+      }
+    ],
+    "avg_t1": 0.42,
+    "median_t1": 0.85,
+    "max_t1": 0.85,
+    "min_t1": 0.0,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 9,
+    "cached_at": "2026-04-09T04:09:02.986119",
+    "stock_name": "保綠-KY",
+    "market": "otc",
+    "current_filing_date": "2026-04-09"
+  },
+  "4738_3": {
+    "stock_id": "4738",
+    "historical_highs": [
+      {
+        "t_date": "2021-04-09",
+        "t_close": 10.95,
+        "t1_date": "2021-04-12",
+        "t1_close": 11.75,
+        "t1_pct": 7.31,
+        "year": 2021,
+        "month": 3,
+        "revenue": 25515000.0
+      },
+      {
+        "t_date": "2022-04-08",
+        "t_close": 6.9,
+        "t1_date": "2022-04-11",
+        "t1_close": 6.9,
+        "t1_pct": 0.0,
+        "year": 2022,
+        "month": 3,
+        "revenue": 27623000.0
+      },
+      {
+        "t_date": "2025-04-09",
+        "t_close": 5.1,
+        "t1_date": "2025-04-10",
+        "t1_close": 5.8,
+        "t1_pct": 13.73,
+        "year": 2025,
+        "month": 3,
+        "revenue": 29557000.0
+      }
+    ],
+    "avg_t1": 7.01,
+    "median_t1": 7.31,
+    "max_t1": 13.73,
+    "min_t1": 0.0,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 9,
+    "cached_at": "2026-04-09T04:09:07.732535",
+    "stock_name": "大同精化",
+    "market": "emerging",
+    "current_filing_date": "2026-04-09"
+  },
+  "9926_3": {
+    "stock_id": "9926",
+    "historical_highs": [
+      {
+        "t_date": "2024-04-09",
+        "t_close": 51.44,
+        "t1_date": "2024-04-10",
+        "t1_close": 51.16,
+        "t1_pct": -0.54,
+        "year": 2024,
+        "month": 3,
+        "revenue": 230776000.0
+      }
+    ],
+    "avg_t1": -0.54,
+    "median_t1": -0.54,
+    "max_t1": -0.54,
+    "min_t1": -0.54,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 9,
+    "cached_at": "2026-04-09T04:09:10.475003",
+    "stock_name": "新海",
+    "market": "sii",
+    "current_filing_date": "2026-04-09"
   }
 }
