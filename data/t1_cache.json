@@ -23233,5 +23233,185 @@
     "stock_name": "桂田文創",
     "market": "otc",
     "current_filing_date": "2026-04-09"
+  },
+  "2949_3": {
+    "stock_id": "2949",
+    "historical_highs": [
+      {
+        "t_date": "2024-04-09",
+        "t_close": 83.33,
+        "t1_date": "2024-04-10",
+        "t1_close": 82.57,
+        "t1_pct": -0.91,
+        "year": 2024,
+        "month": 3,
+        "revenue": 357506000.0
+      },
+      {
+        "t_date": "2025-04-09",
+        "t_close": 61.41,
+        "t1_date": "2025-04-10",
+        "t1_close": 66.23,
+        "t1_pct": 7.85,
+        "year": 2025,
+        "month": 3,
+        "revenue": 439725000.0
+      }
+    ],
+    "avg_t1": 3.47,
+    "median_t1": 7.85,
+    "max_t1": 7.85,
+    "min_t1": -0.91,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 9,
+    "cached_at": "2026-04-09T11:56:15.780309",
+    "stock_name": "欣新網",
+    "market": "otc",
+    "current_filing_date": "2026-04-09"
+  },
+  "6870_3": {
+    "stock_id": "6870",
+    "historical_highs": [
+      {
+        "t_date": "2024-04-09",
+        "t_close": 123.67,
+        "t1_date": "2024-04-10",
+        "t1_close": 123.21,
+        "t1_pct": -0.37,
+        "year": 2024,
+        "month": 3,
+        "revenue": 53639000.0
+      },
+      {
+        "t_date": "2025-04-09",
+        "t_close": 149.74,
+        "t1_date": "2025-04-10",
+        "t1_close": 164.47,
+        "t1_pct": 9.84,
+        "year": 2025,
+        "month": 3,
+        "revenue": 66741000.0
+      }
+    ],
+    "avg_t1": 4.74,
+    "median_t1": 9.84,
+    "max_t1": 9.84,
+    "min_t1": -0.37,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 9,
+    "cached_at": "2026-04-09T11:56:19.334625",
+    "stock_name": "騰雲",
+    "market": "otc",
+    "current_filing_date": "2026-04-09"
+  },
+  "3479_3": {
+    "stock_id": "3479",
+    "historical_highs": [
+      {
+        "t_date": "2022-04-08",
+        "t_close": 50.29,
+        "t1_date": "2022-04-11",
+        "t1_close": 49.55,
+        "t1_pct": -1.47,
+        "year": 2022,
+        "month": 3,
+        "revenue": 678441000.0
+      },
+      {
+        "t_date": "2023-04-07",
+        "t_close": 87.87,
+        "t1_date": "2023-04-10",
+        "t1_close": 83.13,
+        "t1_pct": -5.39,
+        "year": 2023,
+        "month": 3,
+        "revenue": 802967000.0
+      }
+    ],
+    "avg_t1": -3.43,
+    "median_t1": -1.47,
+    "max_t1": -1.47,
+    "min_t1": -5.39,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 9,
+    "cached_at": "2026-04-09T11:56:20.788539",
+    "stock_name": "安勤",
+    "market": "otc",
+    "current_filing_date": "2026-04-09"
+  },
+  "6968_3": {
+    "stock_id": "6968",
+    "historical_highs": [
+      {
+        "t_date": "2025-04-09",
+        "t_close": 53.7,
+        "t1_date": "2025-04-10",
+        "t1_close": 58.92,
+        "t1_pct": 9.71,
+        "year": 2025,
+        "month": 3,
+        "revenue": 252918000.0
+      }
+    ],
+    "avg_t1": 9.71,
+    "median_t1": 9.71,
+    "max_t1": 9.71,
+    "min_t1": 9.71,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 9,
+    "cached_at": "2026-04-09T11:56:21.374184",
+    "stock_name": "萬達寵物",
+    "market": "otc",
+    "current_filing_date": "2026-04-09"
+  },
+  "3209_3": {
+    "stock_id": "3209",
+    "historical_highs": [
+      {
+        "t_date": "2021-04-09",
+        "t_close": 17.98,
+        "t1_date": "2021-04-12",
+        "t1_close": 18.01,
+        "t1_pct": 0.17,
+        "year": 2021,
+        "month": 3,
+        "revenue": 3887979000.0
+      },
+      {
+        "t_date": "2022-04-08",
+        "t_close": 26.55,
+        "t1_date": "2022-04-11",
+        "t1_close": 26.24,
+        "t1_pct": -1.17,
+        "year": 2022,
+        "month": 3,
+        "revenue": 4729619000.0
+      },
+      {
+        "t_date": "2023-04-07",
+        "t_close": 32.72,
+        "t1_date": "2023-04-10",
+        "t1_close": 32.64,
+        "t1_pct": -0.24,
+        "year": 2023,
+        "month": 3,
+        "revenue": 6572794000.0
+      }
+    ],
+    "avg_t1": -0.41,
+    "median_t1": -0.24,
+    "max_t1": 0.17,
+    "min_t1": -1.17,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 9,
+    "cached_at": "2026-04-09T11:56:25.388072",
+    "stock_name": "全科",
+    "market": "sii",
+    "current_filing_date": "2026-04-09"
   }
 }
