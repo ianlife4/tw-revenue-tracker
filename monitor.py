@@ -180,6 +180,22 @@ def check_filings():
         return state, pd.DataFrame()
 
     current_df = pd.concat(all_dfs, ignore_index=True)
+
+    # 標記創新板 (TIB)：從 stock_list.csv 讀取 is_tib 欄位
+    sl_path = os.path.join(DATA_DIR, "stock_list.csv")
+    if os.path.exists(sl_path):
+        try:
+            sl = pd.read_csv(sl_path, dtype={"stock_id": str})
+            tib_ids = set(sl[sl.get("is_tib", pd.Series(dtype=bool)) == True]["stock_id"].unique())
+            if not tib_ids:
+                tib_ids = set(sl[sl["stock_name"].str.endswith("創", na=False)]["stock_id"].unique())
+            if tib_ids:
+                mask = current_df["stock_id"].isin(tib_ids)
+                current_df.loc[mask, "market"] = "tib"
+                logger.info(f"標記 {mask.sum()} 檔創新板股票")
+        except Exception as e:
+            logger.warning(f"TIB 標記失敗: {e}")
+
     current_ids = set(current_df["stock_id"].unique())
     known_ids = set(state["stocks"].keys())
 
