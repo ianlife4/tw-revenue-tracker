@@ -4361,9 +4361,39 @@
       "first_seen": "04-09 01:22",
       "market": "sii",
       "stock_name": "泰福-KY"
+    },
+    "8390": {
+      "first_seen": "04-09 02:25",
+      "market": "otc",
+      "stock_name": "金益鼎"
+    },
+    "8999": {
+      "first_seen": "04-09 02:25",
+      "market": "emerging",
+      "stock_name": "台灣積層"
+    },
+    "3184": {
+      "first_seen": "04-09 02:25",
+      "market": "emerging",
+      "stock_name": "微邦"
+    },
+    "7891": {
+      "first_seen": "04-09 02:25",
+      "market": "emerging",
+      "stock_name": "博研醫藥"
+    },
+    "2712": {
+      "first_seen": "04-09 02:25",
+      "market": "sii",
+      "stock_name": "遠雄來"
+    },
+    "4168": {
+      "first_seen": "04-09 02:25",
+      "market": "otc",
+      "stock_name": "醣聯"
     }
   },
-  "last_check": "04-09 01:22:06",
-  "last_new_filing": "04-09 01:22:06",
-  "total_filed": 871
+  "last_check": "04-09 02:25:04",
+  "last_new_filing": "04-09 02:25:04",
+  "total_filed": 877
 }
