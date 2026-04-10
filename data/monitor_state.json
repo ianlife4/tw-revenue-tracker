@@ -12956,9 +12956,19 @@
       "first_seen": "04-10 21:21",
       "market": "emerging",
       "stock_name": "路易莎咖啡"
+    },
+    "4530": {
+      "first_seen": "04-10 22:53",
+      "market": "otc",
+      "stock_name": "宏易"
+    },
+    "6039": {
+      "first_seen": "04-10 22:53",
+      "market": "pub",
+      "stock_name": "將來銀行"
     }
   },
-  "last_check": "04-10 21:21:04",
-  "last_new_filing": "04-10 21:21:04",
-  "total_filed": 2572
+  "last_check": "04-10 22:53:05",
+  "last_new_filing": "04-10 22:53:05",
+  "total_filed": 2574
 }

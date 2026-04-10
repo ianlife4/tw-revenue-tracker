@@ -32101,5 +32101,41 @@
     "stock_name": "路易莎咖啡",
     "market": "emerging",
     "current_filing_date": "2026-04-10"
+  },
+  "4530_3": {
+    "stock_id": "4530",
+    "historical_highs": [
+      {
+        "t_date": "2021-04-09",
+        "t_close": 31.7,
+        "t1_date": "2021-04-12",
+        "t1_close": 33.1,
+        "t1_pct": 4.42,
+        "year": 2021,
+        "month": 3,
+        "revenue": 16373000.0
+      },
+      {
+        "t_date": "2025-04-10",
+        "t_close": 25.36,
+        "t1_date": "2025-04-11",
+        "t1_close": 27.88,
+        "t1_pct": 9.94,
+        "year": 2025,
+        "month": 3,
+        "revenue": 20637000.0
+      }
+    ],
+    "avg_t1": 7.18,
+    "median_t1": 9.94,
+    "max_t1": 9.94,
+    "min_t1": 4.42,
+    "hit_rate": 100.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-04-10T14:53:57.340663",
+    "stock_name": "宏易",
+    "market": "otc",
+    "current_filing_date": "2026-04-10"
   }
 }
