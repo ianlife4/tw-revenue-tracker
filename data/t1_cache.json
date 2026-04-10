@@ -2149,7 +2149,10 @@
     "hit_rate": 60.0,
     "count": 5,
     "typical_filing_day": 10,
-    "cached_at": "2026-04-02T08:35:37.247928"
+    "cached_at": "2026-04-10T13:22:23.314794",
+    "stock_name": "遠傳",
+    "market": "sii",
+    "current_filing_date": "2026-04-10"
   },
   "5203_3": {
     "stock_id": "5203",
@@ -32051,6 +32054,52 @@
     "cached_at": "2026-04-10T11:03:51.625842",
     "stock_name": "南僑",
     "market": "sii",
+    "current_filing_date": "2026-04-10"
+  },
+  "2758_3": {
+    "stock_id": "2758",
+    "historical_highs": [
+      {
+        "t_date": "2023-04-10",
+        "t_close": 129.5,
+        "t1_date": "2023-04-11",
+        "t1_close": 130.4,
+        "t1_pct": 0.69,
+        "year": 2023,
+        "month": 3,
+        "revenue": 196150000.0
+      },
+      {
+        "t_date": "2024-04-10",
+        "t_close": 131.49,
+        "t1_date": "2024-04-11",
+        "t1_close": 131.03,
+        "t1_pct": -0.35,
+        "year": 2024,
+        "month": 3,
+        "revenue": 199611000.0
+      },
+      {
+        "t_date": "2025-04-10",
+        "t_close": 99.9,
+        "t1_date": "2025-04-11",
+        "t1_close": 98.44,
+        "t1_pct": -1.46,
+        "year": 2025,
+        "month": 3,
+        "revenue": 232459000.0
+      }
+    ],
+    "avg_t1": -0.37,
+    "median_t1": -0.35,
+    "max_t1": 0.69,
+    "min_t1": -1.46,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-04-10T13:22:16.422800",
+    "stock_name": "路易莎咖啡",
+    "market": "emerging",
     "current_filing_date": "2026-04-10"
   }
 }
