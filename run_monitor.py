@@ -37,8 +37,8 @@ def git_push():
         subprocess.run(["git", "add", "output/index.html", "data/monitor_state.json"], check=True)
 
         # git commit
-        from datetime import datetime
-        msg = f"auto: update revenue filings {datetime.now().strftime('%m-%d %H:%M')}"
+        from datetime import datetime, timezone, timedelta
+        msg = f"auto: update revenue filings {datetime.now(timezone(timedelta(hours=8))).strftime('%m-%d %H:%M')}"
         subprocess.run(["git", "commit", "-m", msg], check=True)
 
         # git push

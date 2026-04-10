@@ -6,7 +6,7 @@
 
 import json
 import logging
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 import pandas as pd
 
@@ -68,7 +68,7 @@ def generate_realtime_page(state: dict, current_df: pd.DataFrame,
                            prefiling_alerts: list = None) -> str:
     """生成即時營收頁面"""
 
-    now = datetime.now()
+    now = datetime.now(timezone(timedelta(hours=8)))
     period_str = f"{rev_year}/{rev_month:02d}"
     total_filed = state.get("total_filed", 0)
     last_check = state.get("last_check", "")

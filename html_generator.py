@@ -8,7 +8,7 @@ HTML 報表生成模組
 import os
 import json
 import logging
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 import pandas as pd
 
@@ -2028,7 +2028,7 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
         year=year,
         month=month,
         compare_years=compare_years,
-        update_time=datetime.now().strftime("%Y-%m-%d %H:%M"),
+        update_time=datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m-%d %H:%M"),
         total_count=len(df),
         sii_count=sii_count,
         otc_count=otc_count,
@@ -2059,7 +2059,7 @@ def _generate_empty_html(year: int, month: int, compare_years: int = 5) -> str:
         year=year,
         month=month,
         compare_years=compare_years,
-        update_time=datetime.now().strftime("%Y-%m-%d %H:%M"),
+        update_time=datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m-%d %H:%M"),
         total_count=0,
         sii_count=0,
         otc_count=0,

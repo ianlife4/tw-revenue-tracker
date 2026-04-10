@@ -17,7 +17,9 @@ import time
 import random
 import logging
 import urllib3
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
+
+TW_TZ = timezone(timedelta(hours=8))
 
 import requests
 import pandas as pd
@@ -142,7 +144,7 @@ def fetch_current_month(roc_year: int, month: int, market: str) -> pd.DataFrame:
 
 def check_filings():
     """主偵測邏輯：檢查 MOPS 新申報"""
-    now = datetime.now()
+    now = datetime.now(TW_TZ)
     rev_year, rev_month = get_current_period()
     roc_year = rev_year - 1911
 
