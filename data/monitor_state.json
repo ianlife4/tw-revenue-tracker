@@ -1,8 +1,29 @@
 {
   "period_year": 2026,
   "period_month": 4,
-  "stocks": {},
-  "last_check": "05-02 13:14:47",
-  "last_new_filing": "",
-  "total_filed": 0
+  "stocks": {
+    "6235": {
+      "first_seen": "05-02 15:50",
+      "market": "sii",
+      "stock_name": "華孚"
+    },
+    "3004": {
+      "first_seen": "05-02 15:50",
+      "market": "sii",
+      "stock_name": "豐達科"
+    },
+    "6491": {
+      "first_seen": "05-02 15:50",
+      "market": "sii",
+      "stock_name": "晶碩"
+    },
+    "2402": {
+      "first_seen": "05-02 15:50",
+      "market": "sii",
+      "stock_name": "毅嘉"
+    }
+  },
+  "last_check": "05-02 15:50:36",
+  "last_new_filing": "05-02 15:50:36",
+  "total_filed": 4
 }
