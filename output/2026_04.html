@@ -777,29 +777,18 @@ body.compact .stock-card .top-row {
     display: contents;
 }
 
-/* 申報日 / 產業 cell — 只在 compact 模式顯示 */
-.filing-cell, .industry-cell {
+/* 申報日 cell — 只在 compact 模式顯示 */
+.filing-cell {
     display: none;
 }
 body.compact .filing-cell {
     display: table-cell;
     padding: 8px 10px;
     vertical-align: middle;
-    text-align: left;
-    font-size: 0.78rem;
+    text-align: center;
+    font-size: 0.8rem;
     color: #58a6ff;
     font-family: "Consolas", "Monaco", "Courier New", monospace;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-body.compact .industry-cell {
-    display: table-cell;
-    padding: 8px 10px;
-    vertical-align: middle;
-    text-align: left;
-    font-size: 0.78rem;
-    color: #8b949e;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -990,14 +979,13 @@ body.compact .compact-header .ch-col {
     vertical-align: middle;
 }
 
-body.compact .compact-header .ch-name { width: 12%; }
-body.compact .compact-header .ch-filing { width: 7%; text-align: left; padding-left: 10px; }
-body.compact .compact-header .ch-industry { width: 11%; text-align: left; padding-left: 10px; }
-body.compact .compact-header .ch-rev { width: 12%; }
-body.compact .compact-header .ch-yoy { width: 10%; }
-body.compact .compact-header .ch-mom { width: 10%; }
-body.compact .compact-header .ch-exceed { width: 10%; }
-body.compact .compact-header .ch-remark { width: 28%; text-align: left; padding-left: 10px; }
+body.compact .compact-header .ch-name { width: 14%; }
+body.compact .compact-header .ch-filing { width: 8%; text-align: center; }
+body.compact .compact-header .ch-rev { width: 13%; }
+body.compact .compact-header .ch-yoy { width: 11%; }
+body.compact .compact-header .ch-mom { width: 11%; }
+body.compact .compact-header .ch-exceed { width: 11%; }
+body.compact .compact-header .ch-remark { width: 32%; text-align: left; padding-left: 10px; }
 
 body.compact .compact-header .ch-col:not(.ch-name):not(.ch-remark) {
     text-align: right;
@@ -1052,11 +1040,9 @@ body.compact .stock-card:nth-child(odd):hover {
         padding: 6px 8px;
         font-size: 0.65rem;
     }
-    /* 行動版隱藏申報日/產業欄省空間 */
+    /* 行動版隱藏申報日欄省空間 */
     body.compact .filing-cell,
-    body.compact .industry-cell,
-    body.compact .compact-header .ch-filing,
-    body.compact .compact-header .ch-industry {
+    body.compact .compact-header .ch-filing {
         display: none;
     }
     body.compact .compact-header .ch-name { width: 18%; }
@@ -1139,7 +1125,7 @@ footer {
             </div>
             <a class="nav-btn" href="2026_05.html" title="下個月">後一月 &#9654;</a>
         </div>
-        <div class="update-time">2026-05-04 12:15 更新</div>
+        <div class="update-time">2026-05-04 13:38 更新</div>
         <div style="margin-top:12px"><a href="index.html" style="color:#58a6ff;text-decoration:none;font-size:0.85rem;padding:4px 12px;border:1px solid #30363d;border-radius:6px;">← 即時申報</a></div>
         <div style="background:#2d1b00;border:1px solid #6e4000;border-radius:8px;padding:10px 16px;margin:12px auto;max-width:700px;text-align:center;color:#f0b040;font-size:0.9rem;">⚠ 申報進行中（已申報 10 家），資料尚未完整，僅供參考</div>
     </header>
@@ -1216,7 +1202,6 @@ footer {
             <div class="compact-header">
                 <span class="ch-col ch-name">股票</span>
                 <span class="ch-col ch-filing">申報日</span>
-                <span class="ch-col ch-industry">產業</span>
                 <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
@@ -1231,7 +1216,6 @@ footer {
                         <span class="stock-id">8046</span>
                     </div>
                     <div class="filing-cell">5/3</div>
-                    <div class="industry-cell">電子零組件業</div>
                     <div class="revenue-value">44.5億</div>
                 </div>
                 <div class="detail-row">
@@ -1369,7 +1353,6 @@ footer {
                         <span class="stock-id">2402</span>
                     </div>
                     <div class="filing-cell">5/2</div>
-                    <div class="industry-cell">電子零組件業</div>
                     <div class="revenue-value">10.7億</div>
                 </div>
                 <div class="detail-row">
@@ -1511,7 +1494,6 @@ footer {
             <div class="compact-header">
                 <span class="ch-col ch-name">股票</span>
                 <span class="ch-col ch-filing">申報日</span>
-                <span class="ch-col ch-industry">產業</span>
                 <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
@@ -1526,7 +1508,6 @@ footer {
                         <span class="stock-id">6491</span>
                     </div>
                     <div class="filing-cell">5/2</div>
-                    <div class="industry-cell">生技醫療業</div>
                     <div class="revenue-value">6.7億</div>
                 </div>
                 <div class="detail-row">
@@ -1668,7 +1649,6 @@ footer {
             <div class="compact-header">
                 <span class="ch-col ch-name">股票</span>
                 <span class="ch-col ch-filing">申報日</span>
-                <span class="ch-col ch-industry">產業</span>
                 <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
@@ -1683,7 +1663,6 @@ footer {
                         <span class="stock-id">3004</span>
                     </div>
                     <div class="filing-cell">5/2</div>
-                    <div class="industry-cell">鋼鐵工業</div>
                     <div class="revenue-value">4.2億</div>
                 </div>
                 <div class="detail-row">
@@ -1825,7 +1804,6 @@ footer {
             <div class="compact-header">
                 <span class="ch-col ch-name">股票</span>
                 <span class="ch-col ch-filing">申報日</span>
-                <span class="ch-col ch-industry">產業</span>
                 <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
@@ -1840,7 +1818,6 @@ footer {
                         <span class="stock-id">6475</span>
                     </div>
                     <div class="filing-cell">5/4</div>
-                    <div class="industry-cell">電子工業</div>
                     <div class="revenue-value">7,441萬</div>
                 </div>
                 <div class="detail-row">
@@ -1981,7 +1958,6 @@ footer {
             <div class="compact-header">
                 <span class="ch-col ch-name">股票</span>
                 <span class="ch-col ch-filing">申報日</span>
-                <span class="ch-col ch-industry">產業</span>
                 <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
@@ -1996,7 +1972,6 @@ footer {
                         <span class="stock-id">8046</span>
                     </div>
                     <div class="filing-cell">5/3</div>
-                    <div class="industry-cell">電子零組件業</div>
                     <div class="revenue-value">44.5億</div>
                 </div>
                 <div class="detail-row">
@@ -2134,7 +2109,6 @@ footer {
                         <span class="stock-id">2402</span>
                     </div>
                     <div class="filing-cell">5/2</div>
-                    <div class="industry-cell">電子零組件業</div>
                     <div class="revenue-value">10.7億</div>
                 </div>
                 <div class="detail-row">
@@ -2276,7 +2250,6 @@ footer {
             <div class="compact-header">
                 <span class="ch-col ch-name">股票</span>
                 <span class="ch-col ch-filing">申報日</span>
-                <span class="ch-col ch-industry">產業</span>
                 <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
@@ -2291,7 +2264,6 @@ footer {
                         <span class="stock-id">6491</span>
                     </div>
                     <div class="filing-cell">5/2</div>
-                    <div class="industry-cell">生技醫療業</div>
                     <div class="revenue-value">6.7億</div>
                 </div>
                 <div class="detail-row">
@@ -2433,7 +2405,6 @@ footer {
             <div class="compact-header">
                 <span class="ch-col ch-name">股票</span>
                 <span class="ch-col ch-filing">申報日</span>
-                <span class="ch-col ch-industry">產業</span>
                 <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
@@ -2448,7 +2419,6 @@ footer {
                         <span class="stock-id">3004</span>
                     </div>
                     <div class="filing-cell">5/2</div>
-                    <div class="industry-cell">鋼鐵工業</div>
                     <div class="revenue-value">4.2億</div>
                 </div>
                 <div class="detail-row">
