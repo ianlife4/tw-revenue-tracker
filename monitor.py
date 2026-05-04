@@ -153,8 +153,18 @@ def check_filings():
     # 載入狀態
     state = load_state()
 
-    # 如果營收期間變了，重置狀態
+    # 如果營收期間變了，先把舊期間的 state 存檔再重置
     if state["period_year"] != rev_year or state["period_month"] != rev_month:
+        if state.get("period_year") and state.get("period_month") and state.get("stocks"):
+            old_y = state["period_year"]
+            old_m = state["period_month"]
+            archive_path = os.path.join(DATA_DIR, f"monitor_state_{old_y}_{old_m:02d}.json")
+            try:
+                with open(archive_path, "w", encoding="utf-8") as f:
+                    json.dump(state, f, ensure_ascii=False, indent=2)
+                logger.info(f"歸檔舊期間 state: {archive_path} ({len(state.get('stocks',{}))} 檔)")
+            except Exception as e:
+                logger.warning(f"歸檔失敗: {e}")
         logger.info(f"新營收期間 {rev_year}/{rev_month:02d}，重置監控狀態")
         state = {
             "period_year": rev_year,

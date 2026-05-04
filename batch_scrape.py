@@ -219,9 +219,17 @@ def scrape_all_months(end_year: int, end_month: int, months_back: int = 12, year
         return pd.DataFrame(), recent_months
 
     result = pd.concat(all_frames, ignore_index=True)
-    result = result.drop_duplicates(
-        subset=["stock_id", "revenue_year", "revenue_month", "market"], keep="last"
+    # 保留 publish_date 最早的版本 (真實申報日，不是重抓的下載日)
+    # 先按 publish_date 排序，再 drop_duplicates 保留 first
+    result["_pub_sort"] = pd.to_datetime(
+        result["publish_date"].astype(str).str.replace(r"^(\d+)/", lambda m: str(int(m.group(1))+1911)+"/", regex=True),
+        format="%Y/%m/%d", errors="coerce"
     )
+    result = result.sort_values("_pub_sort", na_position="last")
+    result = result.drop_duplicates(
+        subset=["stock_id", "revenue_year", "revenue_month", "market"], keep="first"
+    )
+    result = result.drop(columns=["_pub_sort"])
 
     # 標記創新板
     sl_path = os.path.join(DATA_DIR, "stock_list.csv")
