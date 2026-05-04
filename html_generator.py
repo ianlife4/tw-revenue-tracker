@@ -1149,6 +1149,10 @@ footer {{
             <div class="label">興櫃</div>
         </div>
         <div class="summary-item">
+            <div class="number">{pub_count}</div>
+            <div class="label">公發</div>
+        </div>
+        <div class="summary-item">
             <div class="number">{industry_count}</div>
             <div class="label">產業別</div>
         </div>
@@ -1161,6 +1165,7 @@ footer {{
         <div class="market-tab" data-market="otc">上櫃 <span class="tab-count">{otc_count}</span></div>
         <div class="market-tab" data-market="tib">創新板 <span class="tab-count">{tib_count}</span></div>
         <div class="market-tab" data-market="emerging">興櫃 <span class="tab-count">{emerging_count}</span></div>
+        <div class="market-tab" data-market="pub">公發 <span class="tab-count">{pub_count}</span></div>
     </div>
 
     <!-- 搜尋 -->
@@ -1203,6 +1208,11 @@ footer {{
     <!-- 興櫃面板 -->
     <div class="market-panel" id="panel-emerging">
         {emerging_sections}
+    </div>
+
+    <!-- 公發面板 -->
+    <div class="market-panel" id="panel-pub">
+        {pub_sections}
     </div>
 
 </div>
@@ -1994,6 +2004,7 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
     otc_count = len(df[df["market"] == "otc"]) if "market" in df.columns else 0
     tib_count = len(df[df["market"] == "tib"]) if "market" in df.columns else 0
     emerging_count = len(df[df["market"] == "emerging"]) if "market" in df.columns else 0
+    pub_count = len(df[df["market"] == "pub"]) if "market" in df.columns else 0
     industries = df["industry"].nunique() if "industry" in df.columns else 0
 
     # 永遠顯示申報日期 (有 first_seen 就用)
@@ -2018,6 +2029,7 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
     otc_sections = _market_sections("otc") if otc_count > 0 else '<p class="empty-msg">本分類無資料</p>'
     tib_sections = _market_sections("tib") if tib_count > 0 else '<p class="empty-msg">本分類無資料</p>'
     emerging_sections = _market_sections("emerging") if emerging_count > 0 else '<p class="empty-msg">本分類無資料</p>'
+    pub_sections = _market_sections("pub") if pub_count > 0 else '<p class="empty-msg">本分類無資料</p>'
 
     # 生成申報日期 pills
     date_pills = _build_date_pills(df)
@@ -2066,6 +2078,7 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
         otc_count=otc_count,
         tib_count=tib_count,
         emerging_count=emerging_count,
+        pub_count=pub_count,
         industry_count=industries,
         date_filter_html=date_filter_html,
         alert_html=alert_html,
@@ -2078,6 +2091,7 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
         otc_sections=otc_sections,
         tib_sections=tib_sections,
         emerging_sections=emerging_sections,
+        pub_sections=pub_sections,
     )
     return html
 
@@ -2097,6 +2111,7 @@ def _generate_empty_html(year: int, month: int, compare_years: int = 5) -> str:
         otc_count=0,
         tib_count=0,
         emerging_count=0,
+        pub_count=0,
         industry_count=0,
         date_filter_html="",
         alert_html="",
@@ -2109,6 +2124,7 @@ def _generate_empty_html(year: int, month: int, compare_years: int = 5) -> str:
         otc_sections=empty,
         tib_sections=empty,
         emerging_sections=empty,
+        pub_sections=empty,
     )
 
 
