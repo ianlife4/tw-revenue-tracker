@@ -156,9 +156,29 @@
       "first_seen": "05-04 18:27",
       "market": "sii",
       "stock_name": "迅得"
+    },
+    "7530": {
+      "first_seen": "05-04 19:53",
+      "market": "emerging",
+      "stock_name": "鋒魁科技"
+    },
+    "6838": {
+      "first_seen": "05-04 19:53",
+      "market": "sii",
+      "stock_name": "台新藥"
+    },
+    "4749": {
+      "first_seen": "05-04 19:53",
+      "market": "otc",
+      "stock_name": "新應材"
+    },
+    "2241": {
+      "first_seen": "05-04 19:53",
+      "market": "sii",
+      "stock_name": "艾姆勒"
     }
   },
-  "last_check": "05-04 18:27:06",
-  "last_new_filing": "05-04 18:27:06",
-  "total_filed": 31
+  "last_check": "05-04 19:53:29",
+  "last_new_filing": "05-04 19:53:29",
+  "total_filed": 35
 }
