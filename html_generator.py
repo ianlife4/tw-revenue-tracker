@@ -803,6 +803,34 @@ body.compact .stock-card .top-row {{
     display: contents;
 }}
 
+/* 申報日 / 產業 cell — 只在 compact 模式顯示 */
+.filing-cell, .industry-cell {{
+    display: none;
+}}
+body.compact .filing-cell {{
+    display: table-cell;
+    padding: 8px 10px;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 0.78rem;
+    color: #58a6ff;
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}}
+body.compact .industry-cell {{
+    display: table-cell;
+    padding: 8px 10px;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 0.78rem;
+    color: #8b949e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}}
+
 body.compact .stock-info {{
     display: table-cell;
     padding: 8px 12px;
@@ -988,12 +1016,14 @@ body.compact .compact-header .ch-col {{
     vertical-align: middle;
 }}
 
-body.compact .compact-header .ch-name {{ width: 16%; }}
-body.compact .compact-header .ch-rev {{ width: 14%; }}
-body.compact .compact-header .ch-yoy {{ width: 12%; }}
-body.compact .compact-header .ch-mom {{ width: 12%; }}
-body.compact .compact-header .ch-exceed {{ width: 12%; }}
-body.compact .compact-header .ch-remark {{ width: 34%; text-align: left; padding-left: 10px; }}
+body.compact .compact-header .ch-name {{ width: 12%; }}
+body.compact .compact-header .ch-filing {{ width: 7%; text-align: left; padding-left: 10px; }}
+body.compact .compact-header .ch-industry {{ width: 11%; text-align: left; padding-left: 10px; }}
+body.compact .compact-header .ch-rev {{ width: 12%; }}
+body.compact .compact-header .ch-yoy {{ width: 10%; }}
+body.compact .compact-header .ch-mom {{ width: 10%; }}
+body.compact .compact-header .ch-exceed {{ width: 10%; }}
+body.compact .compact-header .ch-remark {{ width: 28%; text-align: left; padding-left: 10px; }}
 
 body.compact .compact-header .ch-col:not(.ch-name):not(.ch-remark) {{
     text-align: right;
@@ -1048,6 +1078,19 @@ body.compact .stock-card:nth-child(odd):hover {{
         padding: 6px 8px;
         font-size: 0.65rem;
     }}
+    /* 行動版隱藏申報日/產業欄省空間 */
+    body.compact .filing-cell,
+    body.compact .industry-cell,
+    body.compact .compact-header .ch-filing,
+    body.compact .compact-header .ch-industry {{
+        display: none;
+    }}
+    body.compact .compact-header .ch-name {{ width: 18%; }}
+    body.compact .compact-header .ch-rev {{ width: 14%; }}
+    body.compact .compact-header .ch-yoy {{ width: 12%; }}
+    body.compact .compact-header .ch-mom {{ width: 12%; }}
+    body.compact .compact-header .ch-exceed {{ width: 12%; }}
+    body.compact .compact-header .ch-remark {{ width: 32%; }}
 }}
 
 .empty-msg {{
@@ -1570,6 +1613,8 @@ INDUSTRY_SECTION_TEMPLATE = """
         <div class="stock-grid">
             <div class="compact-header">
                 <span class="ch-col ch-name">股票</span>
+                <span class="ch-col ch-filing">申報日</span>
+                <span class="ch-col ch-industry">產業</span>
                 <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
@@ -1581,12 +1626,14 @@ INDUSTRY_SECTION_TEMPLATE = """
     </div>"""
 
 STOCK_CARD_TEMPLATE = """
-            <div class="stock-card" data-sid="{stock_id}" data-sname="{stock_name}" data-rev="{revenue_raw}" data-yoy="{yoy_raw}" data-mom="{mom_raw}" data-exceed="{exceed_raw}" data-date="{publish_date}" data-filing-date="{filing_date}">
+            <div class="stock-card" data-sid="{stock_id}" data-sname="{stock_name}" data-rev="{revenue_raw}" data-yoy="{yoy_raw}" data-mom="{mom_raw}" data-exceed="{exceed_raw}" data-date="{publish_date}" data-filing-date="{filing_date}" data-industry="{industry}">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">{stock_name}</span>
                         <span class="stock-id">{stock_id}</span>
                     </div>
+                    <div class="filing-cell">{filing_date}</div>
+                    <div class="industry-cell">{industry}</div>
                     <div class="revenue-value">{revenue_display}</div>
                 </div>
                 <div class="detail-row">
@@ -1846,6 +1893,7 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
             publish_date=pub_date,
             date_row_html=date_row_html,
             filing_date=filing_short,
+            industry=row.get("industry", ""),
             yoy_display=f"{yoy_val:+.2f}%" if yoy_val != 0 else "N/A",
             yoy_class="" if yoy_val >= 0 else "negative",
             mom_display=f"{mom_val:+.2f}%" if mom_val != 0 else "N/A",
