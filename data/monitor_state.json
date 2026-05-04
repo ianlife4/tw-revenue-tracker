@@ -26,9 +26,24 @@
       "first_seen": "05-03 12:26",
       "market": "sii",
       "stock_name": "南電"
+    },
+    "1435": {
+      "first_seen": "05-04 11:34",
+      "market": "sii",
+      "stock_name": "中福"
+    },
+    "6772": {
+      "first_seen": "05-04 11:34",
+      "market": "pub",
+      "stock_name": "錫安生技"
+    },
+    "6475": {
+      "first_seen": "05-04 11:34",
+      "market": "pub",
+      "stock_name": "智賦科"
     }
   },
-  "last_check": "05-04 06:50:33",
-  "last_new_filing": "05-03 12:26:50",
-  "total_filed": 5
+  "last_check": "05-04 11:34:15",
+  "last_new_filing": "05-04 11:34:15",
+  "total_filed": 8
 }
