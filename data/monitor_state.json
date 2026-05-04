@@ -51,9 +51,49 @@
       "first_seen": "05-04 12:15",
       "market": "pub",
       "stock_name": "宏芯科技"
+    },
+    "3051": {
+      "first_seen": "05-04 16:35",
+      "market": "sii",
+      "stock_name": "力特"
+    },
+    "5508": {
+      "first_seen": "05-04 16:35",
+      "market": "otc",
+      "stock_name": "永信建"
+    },
+    "6510": {
+      "first_seen": "05-04 16:35",
+      "market": "otc",
+      "stock_name": "精測"
+    },
+    "4161": {
+      "first_seen": "05-04 16:35",
+      "market": "otc",
+      "stock_name": "聿新科"
+    },
+    "3228": {
+      "first_seen": "05-04 16:35",
+      "market": "otc",
+      "stock_name": "金麗科"
+    },
+    "6712": {
+      "first_seen": "05-04 16:35",
+      "market": "otc",
+      "stock_name": "長聖"
+    },
+    "6910": {
+      "first_seen": "05-04 16:35",
+      "market": "otc",
+      "stock_name": "德鴻"
+    },
+    "2408": {
+      "first_seen": "05-04 16:35",
+      "market": "sii",
+      "stock_name": "南亞科"
     }
   },
-  "last_check": "05-04 13:38:29",
-  "last_new_filing": "05-04 12:15:19",
-  "total_filed": 10
+  "last_check": "05-04 16:35:36",
+  "last_new_filing": "05-04 16:35:36",
+  "total_filed": 18
 }
