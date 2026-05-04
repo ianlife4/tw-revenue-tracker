@@ -803,29 +803,18 @@ body.compact .stock-card .top-row {{
     display: contents;
 }}
 
-/* 申報日 / 產業 cell — 只在 compact 模式顯示 */
-.filing-cell, .industry-cell {{
+/* 申報日 cell — 只在 compact 模式顯示 */
+.filing-cell {{
     display: none;
 }}
 body.compact .filing-cell {{
     display: table-cell;
     padding: 8px 10px;
     vertical-align: middle;
-    text-align: left;
-    font-size: 0.78rem;
+    text-align: center;
+    font-size: 0.8rem;
     color: #58a6ff;
     font-family: "Consolas", "Monaco", "Courier New", monospace;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}}
-body.compact .industry-cell {{
-    display: table-cell;
-    padding: 8px 10px;
-    vertical-align: middle;
-    text-align: left;
-    font-size: 0.78rem;
-    color: #8b949e;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1016,14 +1005,13 @@ body.compact .compact-header .ch-col {{
     vertical-align: middle;
 }}
 
-body.compact .compact-header .ch-name {{ width: 12%; }}
-body.compact .compact-header .ch-filing {{ width: 7%; text-align: left; padding-left: 10px; }}
-body.compact .compact-header .ch-industry {{ width: 11%; text-align: left; padding-left: 10px; }}
-body.compact .compact-header .ch-rev {{ width: 12%; }}
-body.compact .compact-header .ch-yoy {{ width: 10%; }}
-body.compact .compact-header .ch-mom {{ width: 10%; }}
-body.compact .compact-header .ch-exceed {{ width: 10%; }}
-body.compact .compact-header .ch-remark {{ width: 28%; text-align: left; padding-left: 10px; }}
+body.compact .compact-header .ch-name {{ width: 14%; }}
+body.compact .compact-header .ch-filing {{ width: 8%; text-align: center; }}
+body.compact .compact-header .ch-rev {{ width: 13%; }}
+body.compact .compact-header .ch-yoy {{ width: 11%; }}
+body.compact .compact-header .ch-mom {{ width: 11%; }}
+body.compact .compact-header .ch-exceed {{ width: 11%; }}
+body.compact .compact-header .ch-remark {{ width: 32%; text-align: left; padding-left: 10px; }}
 
 body.compact .compact-header .ch-col:not(.ch-name):not(.ch-remark) {{
     text-align: right;
@@ -1078,11 +1066,9 @@ body.compact .stock-card:nth-child(odd):hover {{
         padding: 6px 8px;
         font-size: 0.65rem;
     }}
-    /* 行動版隱藏申報日/產業欄省空間 */
+    /* 行動版隱藏申報日欄省空間 */
     body.compact .filing-cell,
-    body.compact .industry-cell,
-    body.compact .compact-header .ch-filing,
-    body.compact .compact-header .ch-industry {{
+    body.compact .compact-header .ch-filing {{
         display: none;
     }}
     body.compact .compact-header .ch-name {{ width: 18%; }}
@@ -1614,7 +1600,6 @@ INDUSTRY_SECTION_TEMPLATE = """
             <div class="compact-header">
                 <span class="ch-col ch-name">股票</span>
                 <span class="ch-col ch-filing">申報日</span>
-                <span class="ch-col ch-industry">產業</span>
                 <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
                 <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
@@ -1633,7 +1618,6 @@ STOCK_CARD_TEMPLATE = """
                         <span class="stock-id">{stock_id}</span>
                     </div>
                     <div class="filing-cell">{filing_date}</div>
-                    <div class="industry-cell">{industry}</div>
                     <div class="revenue-value">{revenue_display}</div>
                 </div>
                 <div class="detail-row">
