@@ -775,6 +775,37 @@ body.sort-mode .stock-grid {{
     background: #58a6ff15;
 }}
 
+/* ===== XQ 自選股匯出按鈕 ===== */
+.export-btn {{
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    color: #56d364;
+    background: #161b22;
+    border: 1px solid #56d36450;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    margin-right: 8px;
+    font-family: inherit;
+}}
+
+.export-btn:hover {{
+    color: #fff;
+    border-color: #56d364;
+    background: #56d36420;
+}}
+
+.export-btn:active {{
+    transform: translateY(1px);
+}}
+
+.export-btn .count-badge {{
+    color: #8b949e;
+    margin-left: 4px;
+    font-size: 0.7rem;
+}}
+
 /* ===== 精簡模式 (表格風格) ===== */
 body.compact .stock-grid {{
     display: table;
@@ -1178,6 +1209,7 @@ footer {{
     <div class="toolbar">
         {date_filter_html}
         <div class="view-toggle">
+            <button class="export-btn" id="exportXqCsv" type="button" title="匯出當前篩選結果為 XQ 自選股 CSV (代號.TW,股名)">&#128229; 匯出 XQ 自選股<span class="count-badge" id="exportCount"></span></button>
             <div class="view-btn active" data-view="normal">&#9638; 標準</div>
             <div class="view-btn" data-view="compact">&#9776; 精簡</div>
         </div>
@@ -1595,6 +1627,91 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
             dd.classList.remove('show');
         }}
     }});
+}})();
+
+// XQ 自選股 CSV 匯出
+// 格式: 代號.TW,股名 (參考 XQ 操盤高手「修改商品 → 匯入 CSV」)
+// 取「當前可見」股票 — 尊重市場 tab + 日期 pill + 搜尋
+(function() {{
+    var btn = document.getElementById('exportXqCsv');
+    var countBadge = document.getElementById('exportCount');
+    if (!btn) return;
+
+    function getVisibleStocks() {{
+        var panel = document.querySelector('.market-panel.active');
+        if (!panel) return [];
+        var cards = panel.querySelectorAll('.stock-card');
+        var seen = {{}};
+        var list = [];
+        for (var i = 0; i < cards.length; i++) {{
+            var c = cards[i];
+            // 過濾掉被 display:none 隱藏的卡片
+            if (c.style.display === 'none') continue;
+            // 過濾掉父層產業區塊被隱藏的卡片
+            var section = c.closest('.industry-section');
+            if (section && section.style.display === 'none') continue;
+            var sid = (c.dataset.sid || '').trim();
+            var sname = (c.dataset.sname || '').trim();
+            if (!sid || seen[sid]) continue;
+            seen[sid] = 1;
+            list.push({{ sid: sid, sname: sname }});
+        }}
+        return list;
+    }}
+
+    function getActiveMarketLabel() {{
+        var panel = document.querySelector('.market-panel.active');
+        if (!panel) return 'all';
+        return (panel.id || '').replace('panel-', '') || 'all';
+    }}
+
+    function todayTw() {{
+        var d = new Date(Date.now() + 8 * 3600 * 1000);
+        return d.toISOString().slice(0, 10);
+    }}
+
+    function updateCount() {{
+        if (!countBadge) return;
+        var n = getVisibleStocks().length;
+        countBadge.textContent = n > 0 ? '(' + n + ')' : '';
+    }}
+
+    btn.addEventListener('click', function() {{
+        var stocks = getVisibleStocks();
+        if (stocks.length === 0) {{
+            alert('目前沒有可匯出的股票（請確認分頁與篩選條件）');
+            return;
+        }}
+        // CSV: 代號.TW,股名 — 一行一檔, BOM 讓 Excel 用 UTF-8 開
+        var lines = stocks.map(function(s) {{ return s.sid + '.TW,' + s.sname; }});
+        var BOM = String.fromCharCode(0xFEFF);
+        var csv = BOM + lines.join('\\r\\n') + '\\r\\n';
+        var blob = new Blob([csv], {{ type: 'text/csv;charset=utf-8' }});
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'XQ自選股_營收創新高_' + getActiveMarketLabel() + '_' + todayTw() + '.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function() {{ URL.revokeObjectURL(url); }}, 100);
+    }});
+
+    // 初次計算
+    updateCount();
+
+    // filter 變動時即時更新數量
+    document.addEventListener('click', function(e) {{
+        if (e.target.closest('.market-tab') || e.target.closest('.date-pill')) {{
+            setTimeout(updateCount, 60);
+        }}
+    }});
+    var search = document.getElementById('stockSearch');
+    if (search) {{
+        search.addEventListener('input', function() {{
+            setTimeout(updateCount, 60);
+        }});
+    }}
 }})();
 </script>
 </body>
