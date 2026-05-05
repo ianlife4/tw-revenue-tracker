@@ -926,9 +926,29 @@
       "first_seen": "05-05 19:18",
       "market": "emerging",
       "stock_name": "瑞興銀"
+    },
+    "6844": {
+      "first_seen": "05-06 01:28",
+      "market": "otc",
+      "stock_name": "諾貝兒"
+    },
+    "6531": {
+      "first_seen": "05-06 01:28",
+      "market": "sii",
+      "stock_name": "愛普*"
+    },
+    "4771": {
+      "first_seen": "05-06 01:28",
+      "market": "sii",
+      "stock_name": "望隼"
+    },
+    "7781": {
+      "first_seen": "05-06 01:28",
+      "market": "emerging",
+      "stock_name": "昕力資*"
     }
   },
-  "last_check": "05-05 19:18:36",
-  "last_new_filing": "05-05 19:18:36",
-  "total_filed": 185
+  "last_check": "05-06 01:28:18",
+  "last_new_filing": "05-06 01:28:18",
+  "total_filed": 189
 }

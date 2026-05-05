@@ -34979,5 +34979,67 @@
     "stock_name": "艾笛森",
     "market": "sii",
     "current_filing_date": "2026-05-05"
+  },
+  "6531_4": {
+    "stock_id": "6531",
+    "historical_highs": [
+      {
+        "t_date": "2021-05-06",
+        "t_close": 276.55,
+        "t1_date": "2021-05-07",
+        "t1_close": 297.89,
+        "t1_pct": 7.72,
+        "year": 2021,
+        "month": 4,
+        "revenue": 518317000.0
+      }
+    ],
+    "avg_t1": 7.72,
+    "median_t1": 7.72,
+    "max_t1": 7.72,
+    "min_t1": 7.72,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 6,
+    "cached_at": "2026-05-05T17:28:28.323642",
+    "stock_name": "愛普*",
+    "market": "sii",
+    "current_filing_date": "2026-05-06"
+  },
+  "4771_4": {
+    "stock_id": "4771",
+    "historical_highs": [
+      {
+        "t_date": "2024-05-06",
+        "t_close": 304.52,
+        "t1_date": "2024-05-07",
+        "t1_close": 301.65,
+        "t1_pct": -0.94,
+        "year": 2024,
+        "month": 4,
+        "revenue": 251239000.0
+      },
+      {
+        "t_date": "2025-05-06",
+        "t_close": 195.77,
+        "t1_date": "2025-05-07",
+        "t1_close": 194.31,
+        "t1_pct": -0.74,
+        "year": 2025,
+        "month": 4,
+        "revenue": 285329000.0
+      }
+    ],
+    "avg_t1": -0.84,
+    "median_t1": -0.74,
+    "max_t1": -0.74,
+    "min_t1": -0.94,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 6,
+    "cached_at": "2026-05-05T17:28:30.289076",
+    "stock_name": "望隼",
+    "market": "sii",
+    "current_filing_date": "2026-05-06"
   }
 }
