@@ -35251,5 +35251,41 @@
     "stock_name": "金益鼎",
     "market": "otc",
     "current_filing_date": "2026-05-06"
+  },
+  "4738_4": {
+    "stock_id": "4738",
+    "historical_highs": [
+      {
+        "t_date": "2021-05-06",
+        "t_close": 8.55,
+        "t1_date": "2021-05-07",
+        "t1_close": 8.73,
+        "t1_pct": 2.11,
+        "year": 2021,
+        "month": 4,
+        "revenue": 26281000.0
+      },
+      {
+        "t_date": "2025-05-06",
+        "t_close": 5.31,
+        "t1_date": "2025-05-07",
+        "t1_close": 5.31,
+        "t1_pct": 0.0,
+        "year": 2025,
+        "month": 4,
+        "revenue": 26668000.0
+      }
+    ],
+    "avg_t1": 1.05,
+    "median_t1": 2.11,
+    "max_t1": 2.11,
+    "min_t1": 0.0,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 6,
+    "cached_at": "2026-05-06T05:33:43.275190",
+    "stock_name": "大同精化",
+    "market": "emerging",
+    "current_filing_date": "2026-05-06"
   }
 }
