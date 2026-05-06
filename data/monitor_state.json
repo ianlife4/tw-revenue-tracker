@@ -1936,9 +1936,29 @@
       "first_seen": "05-06 19:51",
       "market": "otc",
       "stock_name": "新昕纖"
+    },
+    "6920": {
+      "first_seen": "05-06 22:24",
+      "market": "emerging",
+      "stock_name": "恆勁科技"
+    },
+    "3168": {
+      "first_seen": "05-06 22:24",
+      "market": "sii",
+      "stock_name": "眾福科"
+    },
+    "2352": {
+      "first_seen": "05-06 22:24",
+      "market": "sii",
+      "stock_name": "佳世達"
+    },
+    "6243": {
+      "first_seen": "05-06 22:24",
+      "market": "sii",
+      "stock_name": "迅杰"
     }
   },
-  "last_check": "05-06 19:51:36",
-  "last_new_filing": "05-06 19:51:36",
-  "total_filed": 387
+  "last_check": "05-06 22:24:59",
+  "last_new_filing": "05-06 22:24:59",
+  "total_filed": 391
 }
