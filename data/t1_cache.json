@@ -38263,5 +38263,133 @@
     "stock_name": "恆勁科技",
     "market": "emerging",
     "current_filing_date": "2026-05-06"
+  },
+  "5493_4": {
+    "stock_id": "5493",
+    "historical_highs": [
+      {
+        "t_date": "2021-05-07",
+        "t_close": 33.52,
+        "t1_date": "2021-05-10",
+        "t1_close": 32.8,
+        "t1_pct": -2.16,
+        "year": 2021,
+        "month": 4,
+        "revenue": 246711000.0
+      },
+      {
+        "t_date": "2022-05-06",
+        "t_close": 40.74,
+        "t1_date": "2022-05-09",
+        "t1_close": 39.26,
+        "t1_pct": -3.63,
+        "year": 2022,
+        "month": 4,
+        "revenue": 290097000.0
+      },
+      {
+        "t_date": "2024-05-07",
+        "t_close": 90.95,
+        "t1_date": "2024-05-08",
+        "t1_close": 86.8,
+        "t1_pct": -4.55,
+        "year": 2024,
+        "month": 4,
+        "revenue": 324846000.0
+      },
+      {
+        "t_date": "2025-05-07",
+        "t_close": 68.63,
+        "t1_date": "2025-05-08",
+        "t1_close": 69.12,
+        "t1_pct": 0.71,
+        "year": 2025,
+        "month": 4,
+        "revenue": 447266000.0
+      }
+    ],
+    "avg_t1": -2.41,
+    "median_t1": -2.16,
+    "max_t1": 0.71,
+    "min_t1": -4.55,
+    "hit_rate": 25.0,
+    "count": 4,
+    "typical_filing_day": 7,
+    "cached_at": "2026-05-07T04:11:08.256688",
+    "stock_name": "三聯",
+    "market": "otc",
+    "current_filing_date": "2026-05-07"
+  },
+  "1731_4": {
+    "stock_id": "1731",
+    "historical_highs": [
+      {
+        "t_date": "2021-05-07",
+        "t_close": 15.13,
+        "t1_date": "2021-05-10",
+        "t1_close": 15.32,
+        "t1_pct": 1.28,
+        "year": 2021,
+        "month": 4,
+        "revenue": 116540000.0
+      },
+      {
+        "t_date": "2025-05-07",
+        "t_close": 21.67,
+        "t1_date": "2025-05-08",
+        "t1_close": 21.62,
+        "t1_pct": -0.22,
+        "year": 2025,
+        "month": 4,
+        "revenue": 124776000.0
+      }
+    ],
+    "avg_t1": 0.53,
+    "median_t1": 1.28,
+    "max_t1": 1.28,
+    "min_t1": -0.22,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 7,
+    "cached_at": "2026-05-07T04:11:10.616319",
+    "stock_name": "美吾華",
+    "market": "sii",
+    "current_filing_date": "2026-05-07"
+  },
+  "4420_4": {
+    "stock_id": "4420",
+    "historical_highs": [
+      {
+        "t_date": "2021-05-07",
+        "t_close": 11.7,
+        "t1_date": "2021-05-10",
+        "t1_close": 11.97,
+        "t1_pct": 2.32,
+        "year": 2021,
+        "month": 4,
+        "revenue": 84825000.0
+      },
+      {
+        "t_date": "2025-05-07",
+        "t_close": 49.06,
+        "t1_date": "2025-05-08",
+        "t1_close": 49.34,
+        "t1_pct": 0.57,
+        "year": 2025,
+        "month": 4,
+        "revenue": 91908000.0
+      }
+    ],
+    "avg_t1": 1.44,
+    "median_t1": 2.32,
+    "max_t1": 2.32,
+    "min_t1": 0.57,
+    "hit_rate": 100.0,
+    "count": 2,
+    "typical_filing_day": 7,
+    "cached_at": "2026-05-07T04:11:13.457432",
+    "stock_name": "光明",
+    "market": "otc",
+    "current_filing_date": "2026-05-07"
   }
 }
