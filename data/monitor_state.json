@@ -3831,9 +3831,19 @@
       "first_seen": "05-07 22:24",
       "market": "otc",
       "stock_name": "騰雲"
+    },
+    "7879": {
+      "first_seen": "05-08 01:51",
+      "market": "emerging",
+      "stock_name": "益材科技"
+    },
+    "8115": {
+      "first_seen": "05-08 01:51",
+      "market": "pub",
+      "stock_name": "帝聞"
     }
   },
-  "last_check": "05-07 22:24:36",
-  "last_new_filing": "05-07 22:24:36",
-  "total_filed": 749
+  "last_check": "05-08 01:51:37",
+  "last_new_filing": "05-08 01:51:37",
+  "total_filed": 751
 }
