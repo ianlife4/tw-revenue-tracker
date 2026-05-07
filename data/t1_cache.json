@@ -42743,5 +42743,31 @@
     "stock_name": "精成科",
     "market": "sii",
     "current_filing_date": "2026-05-07"
+  },
+  "4991_4": {
+    "stock_id": "4991",
+    "historical_highs": [
+      {
+        "t_date": "2024-05-08",
+        "t_close": 32.85,
+        "t1_date": "2024-05-09",
+        "t1_close": 33.8,
+        "t1_pct": 2.89,
+        "year": 2024,
+        "month": 4,
+        "revenue": 168894000.0
+      }
+    ],
+    "avg_t1": 2.89,
+    "median_t1": 2.89,
+    "max_t1": 2.89,
+    "min_t1": 2.89,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 8,
+    "cached_at": "2026-05-07T23:03:33.539560",
+    "stock_name": "環宇-KY",
+    "market": "otc",
+    "current_filing_date": "2026-05-08"
   }
 }
