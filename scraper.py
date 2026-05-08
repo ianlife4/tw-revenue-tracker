@@ -56,8 +56,9 @@ def get_stock_list() -> pd.DataFrame:
     # --- 識別創新板股票 ---
     # 方法1: industry_category 為 "創新板股票"
     tib_ids_cat = set(df[df["industry_category"] == "創新板股票"]["stock_id"].unique())
-    # 方法2: 名稱以「創」結尾 (e.g. 鴻華先進-創, 錼創科技-KY創)
-    tib_ids_name = set(df[df["stock_name"].str.endswith("創", na=False)]["stock_id"].unique())
+    # 方法2: 名稱以 "-創" 或 "-KY創" 結尾 (e.g. 鴻華先進-創, 錼創科技-KY創)
+    # 注意: 必須有連字號，否則會誤抓緯創(3231)、群創(3481)、鈺創(5351)、矽創(8016) 等一般上市/上櫃股
+    tib_ids_name = set(df[df["stock_name"].str.endswith(("-創", "-KY創"), na=False)]["stock_id"].unique())
     tib_ids = tib_ids_cat | tib_ids_name
     logger.info(f"偵測到 {len(tib_ids)} 檔創新板股票: {sorted(tib_ids)}")
 

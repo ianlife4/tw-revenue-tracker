@@ -237,8 +237,9 @@ def scrape_all_months(end_year: int, end_month: int, months_back: int = 12, year
         sl = pd.read_csv(sl_path, dtype={"stock_id": str})
         tib_ids = set(sl[sl.get("is_tib", pd.Series(dtype=bool)) == True]["stock_id"].unique())
         if not tib_ids:
-            # fallback: 名稱以「創」結尾
-            tib_ids = set(sl[sl["stock_name"].str.endswith("創", na=False)]["stock_id"].unique())
+            # fallback: 名稱以 "-創" 或 "-KY創" 結尾 (必須有連字號)
+            # 否則會誤抓緯創(3231)、群創(3481) 等一般上市股
+            tib_ids = set(sl[sl["stock_name"].str.endswith(("-創", "-KY創"), na=False)]["stock_id"].unique())
         if tib_ids:
             result.loc[result["stock_id"].isin(tib_ids), "market"] = "tib"
             logger.info(f"標記 {len(tib_ids)} 檔創新板股票")

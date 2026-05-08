@@ -200,7 +200,8 @@ def check_filings():
             sl = pd.read_csv(sl_path, dtype={"stock_id": str})
             tib_ids = set(sl[sl.get("is_tib", pd.Series(dtype=bool)) == True]["stock_id"].unique())
             if not tib_ids:
-                tib_ids = set(sl[sl["stock_name"].str.endswith("創", na=False)]["stock_id"].unique())
+                # 必須有連字號，否則會誤抓緯創(3231)、群創(3481) 等一般上市股
+                tib_ids = set(sl[sl["stock_name"].str.endswith(("-創", "-KY創"), na=False)]["stock_id"].unique())
             if tib_ids:
                 mask = current_df["stock_id"].isin(tib_ids)
                 current_df.loc[mask, "market"] = "tib"
