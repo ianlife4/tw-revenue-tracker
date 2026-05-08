@@ -43353,5 +43353,113 @@
     "stock_name": "保綠-KY",
     "market": "otc",
     "current_filing_date": "2026-05-08"
+  },
+  "6020_4": {
+    "stock_id": "6020",
+    "historical_highs": [
+      {
+        "t_date": "2021-05-07",
+        "t_close": 20.07,
+        "t1_date": "2021-05-10",
+        "t1_close": 21.11,
+        "t1_pct": 5.18,
+        "year": 2021,
+        "month": 4,
+        "revenue": 157335000.0
+      }
+    ],
+    "avg_t1": 5.18,
+    "median_t1": 5.18,
+    "max_t1": 5.18,
+    "min_t1": 5.18,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 8,
+    "cached_at": "2026-05-08T04:56:54.071369",
+    "stock_name": "大展證",
+    "market": "otc",
+    "current_filing_date": "2026-05-08"
+  },
+  "6240_4": {
+    "stock_id": "6240",
+    "historical_highs": [
+      {
+        "t_date": "2023-05-08",
+        "t_close": 23.15,
+        "t1_date": "2023-05-09",
+        "t1_close": 22.65,
+        "t1_pct": -2.16,
+        "year": 2023,
+        "month": 4,
+        "revenue": 3634000.0
+      }
+    ],
+    "avg_t1": -2.16,
+    "median_t1": -2.16,
+    "max_t1": -2.16,
+    "min_t1": -2.16,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 8,
+    "cached_at": "2026-05-08T04:57:02.025138",
+    "stock_name": "松崗",
+    "market": "otc",
+    "current_filing_date": "2026-05-08"
+  },
+  "9925_4": {
+    "stock_id": "9925",
+    "historical_highs": [
+      {
+        "t_date": "2021-05-07",
+        "t_close": 30.02,
+        "t1_date": "2021-05-10",
+        "t1_close": 30.18,
+        "t1_pct": 0.52,
+        "year": 2021,
+        "month": 4,
+        "revenue": 602931000.0
+      },
+      {
+        "t_date": "2022-05-06",
+        "t_close": 32.66,
+        "t1_date": "2022-05-09",
+        "t1_close": 32.37,
+        "t1_pct": -0.88,
+        "year": 2022,
+        "month": 4,
+        "revenue": 629106000.0
+      },
+      {
+        "t_date": "2024-05-08",
+        "t_close": 37.97,
+        "t1_date": "2024-05-09",
+        "t1_close": 37.97,
+        "t1_pct": 0.0,
+        "year": 2024,
+        "month": 4,
+        "revenue": 643461000.0
+      },
+      {
+        "t_date": "2025-05-08",
+        "t_close": 39.56,
+        "t1_date": "2025-05-09",
+        "t1_close": 39.56,
+        "t1_pct": 0.0,
+        "year": 2025,
+        "month": 4,
+        "revenue": 663600000.0
+      }
+    ],
+    "avg_t1": -0.09,
+    "median_t1": 0.0,
+    "max_t1": 0.52,
+    "min_t1": -0.88,
+    "hit_rate": 25.0,
+    "count": 4,
+    "typical_filing_day": 8,
+    "cached_at": "2026-05-08T04:57:13.008480",
+    "stock_name": "新保",
+    "market": "sii",
+    "current_filing_date": "2026-05-08"
   }
 }
