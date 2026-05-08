@@ -57327,5 +57327,189 @@
     "stock_name": "富味鄉",
     "market": "emerging",
     "current_filing_date": "2026-05-08"
+  },
+  "5386_4": {
+    "stock_id": "5386",
+    "historical_highs": [
+      {
+        "t_date": "2021-05-07",
+        "t_close": 38.66,
+        "t1_date": "2021-05-10",
+        "t1_close": 40.0,
+        "t1_pct": 3.47,
+        "year": 2021,
+        "month": 4,
+        "revenue": 187826000.0
+      },
+      {
+        "t_date": "2022-05-06",
+        "t_close": 27.29,
+        "t1_date": "2022-05-09",
+        "t1_close": 26.75,
+        "t1_pct": -1.98,
+        "year": 2022,
+        "month": 4,
+        "revenue": 312025000.0
+      },
+      {
+        "t_date": "2025-05-08",
+        "t_close": 58.37,
+        "t1_date": "2025-05-09",
+        "t1_close": 59.51,
+        "t1_pct": 1.94,
+        "year": 2025,
+        "month": 4,
+        "revenue": 501804000.0
+      }
+    ],
+    "avg_t1": 1.14,
+    "median_t1": 1.94,
+    "max_t1": 3.47,
+    "min_t1": -1.98,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 8,
+    "cached_at": "2026-05-08T14:01:13.935151",
+    "stock_name": "青雲",
+    "market": "otc",
+    "current_filing_date": "2026-05-08"
+  },
+  "6796_4": {
+    "stock_id": "6796",
+    "historical_highs": [
+      {
+        "t_date": "2022-05-06",
+        "t_close": 58.6,
+        "t1_date": "2022-05-09",
+        "t1_close": 57.67,
+        "t1_pct": -1.59,
+        "year": 2022,
+        "month": 4,
+        "revenue": 40785000.0
+      },
+      {
+        "t_date": "2023-05-08",
+        "t_close": 87.79,
+        "t1_date": "2023-05-09",
+        "t1_close": 85.88,
+        "t1_pct": -2.17,
+        "year": 2023,
+        "month": 4,
+        "revenue": 49163000.0
+      }
+    ],
+    "avg_t1": -1.88,
+    "median_t1": -1.59,
+    "max_t1": -1.59,
+    "min_t1": -2.17,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 8,
+    "cached_at": "2026-05-08T14:01:27.525715",
+    "stock_name": "晉弘",
+    "market": "sii",
+    "current_filing_date": "2026-05-08"
+  },
+  "5278_4": {
+    "stock_id": "5278",
+    "historical_highs": [
+      {
+        "t_date": "2021-05-07",
+        "t_close": 6.78,
+        "t1_date": "2021-05-10",
+        "t1_close": 6.88,
+        "t1_pct": 1.52,
+        "year": 2021,
+        "month": 4,
+        "revenue": 116527000.0
+      },
+      {
+        "t_date": "2022-05-06",
+        "t_close": 10.13,
+        "t1_date": "2022-05-09",
+        "t1_close": 9.62,
+        "t1_pct": -5.11,
+        "year": 2022,
+        "month": 4,
+        "revenue": 141679000.0
+      },
+      {
+        "t_date": "2023-05-08",
+        "t_close": 12.07,
+        "t1_date": "2023-05-09",
+        "t1_close": 12.01,
+        "t1_pct": -0.57,
+        "year": 2023,
+        "month": 4,
+        "revenue": 150391000.0
+      },
+      {
+        "t_date": "2024-05-08",
+        "t_close": 17.33,
+        "t1_date": "2024-05-09",
+        "t1_close": 17.65,
+        "t1_pct": 1.85,
+        "year": 2024,
+        "month": 4,
+        "revenue": 174022000.0
+      },
+      {
+        "t_date": "2025-05-08",
+        "t_close": 29.4,
+        "t1_date": "2025-05-09",
+        "t1_close": 30.04,
+        "t1_pct": 2.17,
+        "year": 2025,
+        "month": 4,
+        "revenue": 189619000.0
+      }
+    ],
+    "avg_t1": -0.03,
+    "median_t1": 1.52,
+    "max_t1": 2.17,
+    "min_t1": -5.11,
+    "hit_rate": 60.0,
+    "count": 5,
+    "typical_filing_day": 8,
+    "cached_at": "2026-05-08T14:01:31.384828",
+    "stock_name": "尚凡*",
+    "market": "otc",
+    "current_filing_date": "2026-05-08"
+  },
+  "6914_4": {
+    "stock_id": "6914",
+    "historical_highs": [
+      {
+        "t_date": "2024-05-08",
+        "t_close": 218.48,
+        "t1_date": "2024-05-09",
+        "t1_close": 218.48,
+        "t1_pct": 0.0,
+        "year": 2024,
+        "month": 4,
+        "revenue": 375546000.0
+      },
+      {
+        "t_date": "2025-05-08",
+        "t_close": 133.71,
+        "t1_date": "2025-05-09",
+        "t1_close": 134.19,
+        "t1_pct": 0.36,
+        "year": 2025,
+        "month": 4,
+        "revenue": 445825000.0
+      }
+    ],
+    "avg_t1": 0.18,
+    "median_t1": 0.36,
+    "max_t1": 0.36,
+    "min_t1": 0.0,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 8,
+    "cached_at": "2026-05-08T14:01:38.167087",
+    "stock_name": "阜爾運通",
+    "market": "sii",
+    "current_filing_date": "2026-05-08"
   }
 }
