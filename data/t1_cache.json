@@ -57537,5 +57537,51 @@
     "stock_name": "竣邦-KY",
     "market": "otc",
     "current_filing_date": "2026-05-08"
+  },
+  "1235_4": {
+    "stock_id": "1235",
+    "historical_highs": [
+      {
+        "t_date": "2023-05-09",
+        "t_close": 48.04,
+        "t1_date": "2023-05-10",
+        "t1_close": 48.73,
+        "t1_pct": 1.44,
+        "year": 2023,
+        "month": 4,
+        "revenue": 2232000.0
+      },
+      {
+        "t_date": "2024-05-09",
+        "t_close": 64.87,
+        "t1_date": "2024-05-10",
+        "t1_close": 65.42,
+        "t1_pct": 0.85,
+        "year": 2024,
+        "month": 4,
+        "revenue": 9192000.0
+      },
+      {
+        "t_date": "2025-05-09",
+        "t_close": 85.07,
+        "t1_date": "2025-05-12",
+        "t1_close": 83.42,
+        "t1_pct": -1.94,
+        "year": 2025,
+        "month": 4,
+        "revenue": 14427000.0
+      }
+    ],
+    "avg_t1": 0.12,
+    "median_t1": 0.85,
+    "max_t1": 1.44,
+    "min_t1": -1.94,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 9,
+    "cached_at": "2026-05-08T17:25:15.975000",
+    "stock_name": "興泰",
+    "market": "sii",
+    "current_filing_date": "2026-05-09"
   }
 }
