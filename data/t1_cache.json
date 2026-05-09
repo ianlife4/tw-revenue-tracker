@@ -57629,5 +57629,41 @@
     "stock_name": "南港",
     "market": "sii",
     "current_filing_date": "2026-05-09"
+  },
+  "2230_4": {
+    "stock_id": "2230",
+    "historical_highs": [
+      {
+        "t_date": "2021-05-07",
+        "t_close": 12.01,
+        "t1_date": "2021-05-10",
+        "t1_close": 12.3,
+        "t1_pct": 2.39,
+        "year": 2021,
+        "month": 4,
+        "revenue": 54586000.0
+      },
+      {
+        "t_date": "2024-05-09",
+        "t_close": 140.33,
+        "t1_date": "2024-05-10",
+        "t1_close": 133.35,
+        "t1_pct": -4.97,
+        "year": 2024,
+        "month": 4,
+        "revenue": 120453000.0
+      }
+    ],
+    "avg_t1": -1.29,
+    "median_t1": 2.39,
+    "max_t1": 2.39,
+    "min_t1": -4.97,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 9,
+    "cached_at": "2026-05-09T05:26:20.519658",
+    "stock_name": "泰茂",
+    "market": "otc",
+    "current_filing_date": "2026-05-09"
   }
 }
