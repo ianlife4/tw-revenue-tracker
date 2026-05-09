@@ -10656,9 +10656,24 @@
       "first_seen": "05-09 01:24",
       "market": "sii",
       "stock_name": "興泰"
+    },
+    "4168": {
+      "first_seen": "05-09 12:02",
+      "market": "otc",
+      "stock_name": "醣聯"
+    },
+    "2101": {
+      "first_seen": "05-09 12:02",
+      "market": "sii",
+      "stock_name": "南港"
+    },
+    "3131": {
+      "first_seen": "05-09 12:02",
+      "market": "otc",
+      "stock_name": "弘塑"
     }
   },
-  "last_check": "05-09 06:59:33",
-  "last_new_filing": "05-09 01:24:08",
-  "total_filed": 2114
+  "last_check": "05-09 12:02:13",
+  "last_new_filing": "05-09 12:02:13",
+  "total_filed": 2117
 }
