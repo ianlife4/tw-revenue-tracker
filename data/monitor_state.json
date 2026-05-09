@@ -10701,9 +10701,24 @@
       "first_seen": "05-09 16:01",
       "market": "emerging",
       "stock_name": "利統"
+    },
+    "3362": {
+      "first_seen": "05-09 21:26",
+      "market": "otc",
+      "stock_name": "先進光"
+    },
+    "2711": {
+      "first_seen": "05-09 21:26",
+      "market": "pub",
+      "stock_name": "凱撒飯店"
+    },
+    "8071": {
+      "first_seen": "05-09 21:26",
+      "market": "otc",
+      "stock_name": "能率網通"
     }
   },
-  "last_check": "05-09 19:01:10",
-  "last_new_filing": "05-09 16:01:46",
-  "total_filed": 2123
+  "last_check": "05-09 21:26:06",
+  "last_new_filing": "05-09 21:26:06",
+  "total_filed": 2126
 }
