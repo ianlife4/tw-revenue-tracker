@@ -10681,9 +10681,29 @@
       "first_seen": "05-09 13:25",
       "market": "otc",
       "stock_name": "劍湖山"
+    },
+    "7455": {
+      "first_seen": "05-09 16:01",
+      "market": "emerging",
+      "stock_name": "樺緯物聯"
+    },
+    "8991": {
+      "first_seen": "05-09 16:01",
+      "market": "pub",
+      "stock_name": "三大有線電視"
+    },
+    "8453": {
+      "first_seen": "05-09 16:01",
+      "market": "pub",
+      "stock_name": "全國數位"
+    },
+    "1293": {
+      "first_seen": "05-09 16:01",
+      "market": "emerging",
+      "stock_name": "利統"
     }
   },
-  "last_check": "05-09 13:25:32",
-  "last_new_filing": "05-09 13:25:32",
-  "total_filed": 2119
+  "last_check": "05-09 16:01:46",
+  "last_new_filing": "05-09 16:01:46",
+  "total_filed": 2123
 }
