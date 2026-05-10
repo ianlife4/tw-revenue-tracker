@@ -10821,9 +10821,34 @@
       "first_seen": "05-10 19:02",
       "market": "otc",
       "stock_name": "德宏"
+    },
+    "2340": {
+      "first_seen": "05-10 21:27",
+      "market": "sii",
+      "stock_name": "台亞"
+    },
+    "6689": {
+      "first_seen": "05-10 21:27",
+      "market": "sii",
+      "stock_name": "伊雲谷"
+    },
+    "1340": {
+      "first_seen": "05-10 21:27",
+      "market": "sii",
+      "stock_name": "勝悅-KY"
+    },
+    "2920": {
+      "first_seen": "05-10 21:27",
+      "market": "pub",
+      "stock_name": "海景"
+    },
+    "2911": {
+      "first_seen": "05-10 21:27",
+      "market": "sii",
+      "stock_name": "麗嬰房"
     }
   },
-  "last_check": "05-10 19:02:39",
-  "last_new_filing": "05-10 19:02:39",
-  "total_filed": 2147
+  "last_check": "05-10 21:27:41",
+  "last_new_filing": "05-10 21:27:41",
+  "total_filed": 2152
 }
