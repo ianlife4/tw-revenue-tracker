@@ -10856,9 +10856,19 @@
       "first_seen": "05-10 22:57",
       "market": "otc",
       "stock_name": "三一東林"
+    },
+    "1528": {
+      "first_seen": "05-11 01:00",
+      "market": "sii",
+      "stock_name": "恩德"
+    },
+    "6555": {
+      "first_seen": "05-11 01:00",
+      "market": "emerging",
+      "stock_name": "榮炭"
     }
   },
-  "last_check": "05-10 22:57:23",
-  "last_new_filing": "05-10 22:57:23",
-  "total_filed": 2154
+  "last_check": "05-11 01:00:21",
+  "last_new_filing": "05-11 01:00:21",
+  "total_filed": 2156
 }
