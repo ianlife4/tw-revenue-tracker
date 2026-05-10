@@ -10766,9 +10766,24 @@
       "first_seen": "05-10 12:30",
       "market": "sii",
       "stock_name": "安普新"
+    },
+    "7731": {
+      "first_seen": "05-10 13:41",
+      "market": "emerging",
+      "stock_name": "火星生技*"
+    },
+    "4577": {
+      "first_seen": "05-10 13:41",
+      "market": "otc",
+      "stock_name": "達航科技"
+    },
+    "7753": {
+      "first_seen": "05-10 13:41",
+      "market": "otc",
+      "stock_name": "星亞"
     }
   },
-  "last_check": "05-10 12:30:07",
-  "last_new_filing": "05-10 12:30:07",
-  "total_filed": 2136
+  "last_check": "05-10 13:41:01",
+  "last_new_filing": "05-10 13:41:01",
+  "total_filed": 2139
 }
