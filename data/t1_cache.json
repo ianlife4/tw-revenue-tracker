@@ -57737,5 +57737,31 @@
     "stock_name": "金橋",
     "market": "sii",
     "current_filing_date": "2026-05-10"
+  },
+  "6997_4": {
+    "stock_id": "6997",
+    "historical_highs": [
+      {
+        "t_date": "2025-05-09",
+        "t_close": 103.88,
+        "t1_date": "2025-05-12",
+        "t1_close": 106.27,
+        "t1_pct": 2.29,
+        "year": 2025,
+        "month": 4,
+        "revenue": 352747000.0
+      }
+    ],
+    "avg_t1": 2.29,
+    "median_t1": 2.29,
+    "max_t1": 2.29,
+    "min_t1": 2.29,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 11,
+    "cached_at": "2026-05-10T22:54:22.059792",
+    "stock_name": "博弘",
+    "market": "otc",
+    "current_filing_date": "2026-05-11"
   }
 }

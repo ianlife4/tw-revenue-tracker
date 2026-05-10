@@ -10866,9 +10866,19 @@
       "first_seen": "05-11 01:00",
       "market": "emerging",
       "stock_name": "榮炭"
+    },
+    "6997": {
+      "first_seen": "05-11 06:53",
+      "market": "otc",
+      "stock_name": "博弘"
+    },
+    "5872": {
+      "first_seen": "05-11 06:53",
+      "market": "pub",
+      "stock_name": "匯豐台灣"
     }
   },
-  "last_check": "05-11 01:00:21",
-  "last_new_filing": "05-11 01:00:21",
-  "total_filed": 2156
+  "last_check": "05-11 06:53:29",
+  "last_new_filing": "05-11 06:53:29",
+  "total_filed": 2158
 }
