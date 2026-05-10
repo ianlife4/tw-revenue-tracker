@@ -10731,9 +10731,44 @@
       "first_seen": "05-10 01:00",
       "market": "otc",
       "stock_name": "漢達"
+    },
+    "3685": {
+      "first_seen": "05-10 12:30",
+      "market": "otc",
+      "stock_name": "元創精密"
+    },
+    "7825": {
+      "first_seen": "05-10 12:30",
+      "market": "emerging",
+      "stock_name": "和亞智慧"
+    },
+    "7786": {
+      "first_seen": "05-10 12:30",
+      "market": "sii",
+      "stock_name": "東方風能"
+    },
+    "6939": {
+      "first_seen": "05-10 12:30",
+      "market": "emerging",
+      "stock_name": "啟弘生技"
+    },
+    "4586": {
+      "first_seen": "05-10 12:30",
+      "market": "pub",
+      "stock_name": "能海電能"
+    },
+    "6957": {
+      "first_seen": "05-10 12:30",
+      "market": "sii",
+      "stock_name": "裕慶-KY"
+    },
+    "6743": {
+      "first_seen": "05-10 12:30",
+      "market": "sii",
+      "stock_name": "安普新"
     }
   },
-  "last_check": "05-10 06:52:21",
-  "last_new_filing": "05-10 01:00:05",
-  "total_filed": 2129
+  "last_check": "05-10 12:30:07",
+  "last_new_filing": "05-10 12:30:07",
+  "total_filed": 2136
 }
