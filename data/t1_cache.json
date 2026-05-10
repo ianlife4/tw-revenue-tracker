@@ -57701,5 +57701,41 @@
     "stock_name": "元創精密",
     "market": "otc",
     "current_filing_date": "2026-05-10"
+  },
+  "6133_4": {
+    "stock_id": "6133",
+    "historical_highs": [
+      {
+        "t_date": "2022-05-10",
+        "t_close": 8.13,
+        "t1_date": "2022-05-11",
+        "t1_close": 8.07,
+        "t1_pct": -0.82,
+        "year": 2022,
+        "month": 4,
+        "revenue": 108442000.0
+      },
+      {
+        "t_date": "2025-05-09",
+        "t_close": 14.5,
+        "t1_date": "2025-05-12",
+        "t1_close": 14.85,
+        "t1_pct": 2.37,
+        "year": 2025,
+        "month": 4,
+        "revenue": 125015000.0
+      }
+    ],
+    "avg_t1": 0.78,
+    "median_t1": 2.37,
+    "max_t1": 2.37,
+    "min_t1": -0.82,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-05-10T11:03:49.738638",
+    "stock_name": "金橋",
+    "market": "sii",
+    "current_filing_date": "2026-05-10"
   }
 }

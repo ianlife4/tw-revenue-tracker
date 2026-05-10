@@ -10806,9 +10806,24 @@
       "first_seen": "05-10 16:12",
       "market": "emerging",
       "stock_name": "經貿聯網"
+    },
+    "6133": {
+      "first_seen": "05-10 19:02",
+      "market": "sii",
+      "stock_name": "金橋"
+    },
+    "7911": {
+      "first_seen": "05-10 19:02",
+      "market": "emerging",
+      "stock_name": "阿波羅電力"
+    },
+    "5475": {
+      "first_seen": "05-10 19:02",
+      "market": "otc",
+      "stock_name": "德宏"
     }
   },
-  "last_check": "05-10 16:12:56",
-  "last_new_filing": "05-10 16:12:56",
-  "total_filed": 2144
+  "last_check": "05-10 19:02:39",
+  "last_new_filing": "05-10 19:02:39",
+  "total_filed": 2147
 }
