@@ -57763,5 +57763,261 @@
     "stock_name": "博弘",
     "market": "otc",
     "current_filing_date": "2026-05-11"
+  },
+  "6005_4": {
+    "stock_id": "6005",
+    "historical_highs": [
+      {
+        "t_date": "2021-05-11",
+        "t_close": 12.54,
+        "t1_date": "2021-05-12",
+        "t1_close": 11.46,
+        "t1_pct": -8.64,
+        "year": 2021,
+        "month": 4,
+        "revenue": 1130686000.0
+      },
+      {
+        "t_date": "2024-05-10",
+        "t_close": 21.88,
+        "t1_date": "2024-05-13",
+        "t1_close": 21.7,
+        "t1_pct": -0.81,
+        "year": 2024,
+        "month": 4,
+        "revenue": 1282699000.0
+      }
+    ],
+    "avg_t1": -4.73,
+    "median_t1": -0.81,
+    "max_t1": -0.81,
+    "min_t1": -8.64,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 11,
+    "cached_at": "2026-05-11T06:04:12.677518",
+    "stock_name": "群益證",
+    "market": "sii",
+    "current_filing_date": "2026-05-11"
+  },
+  "4503_4": {
+    "stock_id": "4503",
+    "historical_highs": [
+      {
+        "t_date": "2023-05-11",
+        "t_close": 62.0,
+        "t1_date": "2023-05-12",
+        "t1_close": 59.6,
+        "t1_pct": -3.87,
+        "year": 2023,
+        "month": 4,
+        "revenue": 19273000.0
+      },
+      {
+        "t_date": "2024-05-10",
+        "t_close": 56.4,
+        "t1_date": "2024-05-13",
+        "t1_close": 55.1,
+        "t1_pct": -2.3,
+        "year": 2024,
+        "month": 4,
+        "revenue": 20138000.0
+      },
+      {
+        "t_date": "2025-05-09",
+        "t_close": 54.5,
+        "t1_date": "2025-05-12",
+        "t1_close": 54.7,
+        "t1_pct": 0.37,
+        "year": 2025,
+        "month": 4,
+        "revenue": 50636000.0
+      }
+    ],
+    "avg_t1": -1.93,
+    "median_t1": -2.3,
+    "max_t1": 0.37,
+    "min_t1": -3.87,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 11,
+    "cached_at": "2026-05-11T06:04:21.035356",
+    "stock_name": "金雨",
+    "market": "otc",
+    "current_filing_date": "2026-05-11"
+  },
+  "7708_4": {
+    "stock_id": "7708",
+    "historical_highs": [
+      {
+        "t_date": "2025-05-09",
+        "t_close": 87.78,
+        "t1_date": "2025-05-12",
+        "t1_close": 87.88,
+        "t1_pct": 0.11,
+        "year": 2025,
+        "month": 4,
+        "revenue": 206011000.0
+      }
+    ],
+    "avg_t1": 0.11,
+    "median_t1": 0.11,
+    "max_t1": 0.11,
+    "min_t1": 0.11,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 11,
+    "cached_at": "2026-05-11T06:04:28.465245",
+    "stock_name": "全家餐飲",
+    "market": "otc",
+    "current_filing_date": "2026-05-11"
+  },
+  "3551_4": {
+    "stock_id": "3551",
+    "historical_highs": [
+      {
+        "t_date": "2021-05-11",
+        "t_close": 42.97,
+        "t1_date": "2021-05-12",
+        "t1_close": 41.02,
+        "t1_pct": -4.54,
+        "year": 2021,
+        "month": 4,
+        "revenue": 172872000.0
+      },
+      {
+        "t_date": "2022-05-11",
+        "t_close": 54.28,
+        "t1_date": "2022-05-12",
+        "t1_close": 53.93,
+        "t1_pct": -0.63,
+        "year": 2022,
+        "month": 4,
+        "revenue": 201463000.0
+      },
+      {
+        "t_date": "2024-05-10",
+        "t_close": 100.44,
+        "t1_date": "2024-05-13",
+        "t1_close": 100.92,
+        "t1_pct": 0.47,
+        "year": 2024,
+        "month": 4,
+        "revenue": 212587000.0
+      },
+      {
+        "t_date": "2025-05-09",
+        "t_close": 115.59,
+        "t1_date": "2025-05-12",
+        "t1_close": 116.57,
+        "t1_pct": 0.85,
+        "year": 2025,
+        "month": 4,
+        "revenue": 246242000.0
+      }
+    ],
+    "avg_t1": -0.96,
+    "median_t1": 0.47,
+    "max_t1": 0.85,
+    "min_t1": -4.54,
+    "hit_rate": 50.0,
+    "count": 4,
+    "typical_filing_day": 11,
+    "cached_at": "2026-05-11T06:04:32.386972",
+    "stock_name": "世禾",
+    "market": "otc",
+    "current_filing_date": "2026-05-11"
+  },
+  "5309_4": {
+    "stock_id": "5309",
+    "historical_highs": [
+      {
+        "t_date": "2021-05-11",
+        "t_close": 29.56,
+        "t1_date": "2021-05-12",
+        "t1_close": 26.63,
+        "t1_pct": -9.9,
+        "year": 2021,
+        "month": 4,
+        "revenue": 176206000.0
+      },
+      {
+        "t_date": "2022-05-11",
+        "t_close": 37.29,
+        "t1_date": "2022-05-12",
+        "t1_close": 36.47,
+        "t1_pct": -2.19,
+        "year": 2022,
+        "month": 4,
+        "revenue": 268563000.0
+      },
+      {
+        "t_date": "2025-05-09",
+        "t_close": 35.35,
+        "t1_date": "2025-05-12",
+        "t1_close": 35.75,
+        "t1_pct": 1.11,
+        "year": 2025,
+        "month": 4,
+        "revenue": 283380000.0
+      }
+    ],
+    "avg_t1": -3.66,
+    "median_t1": -2.19,
+    "max_t1": 1.11,
+    "min_t1": -9.9,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 11,
+    "cached_at": "2026-05-11T06:04:36.374011",
+    "stock_name": "系統電",
+    "market": "otc",
+    "current_filing_date": "2026-05-11"
+  },
+  "4506_4": {
+    "stock_id": "4506",
+    "historical_highs": [
+      {
+        "t_date": "2023-05-11",
+        "t_close": 66.52,
+        "t1_date": "2023-05-12",
+        "t1_close": 66.88,
+        "t1_pct": 0.53,
+        "year": 2023,
+        "month": 4,
+        "revenue": 388003000.0
+      },
+      {
+        "t_date": "2024-05-10",
+        "t_close": 109.57,
+        "t1_date": "2024-05-13",
+        "t1_close": 107.26,
+        "t1_pct": -2.11,
+        "year": 2024,
+        "month": 4,
+        "revenue": 441392000.0
+      },
+      {
+        "t_date": "2025-05-09",
+        "t_close": 106.58,
+        "t1_date": "2025-05-12",
+        "t1_close": 105.14,
+        "t1_pct": -1.35,
+        "year": 2025,
+        "month": 4,
+        "revenue": 495376000.0
+      }
+    ],
+    "avg_t1": -0.98,
+    "median_t1": -1.35,
+    "max_t1": 0.53,
+    "min_t1": -2.11,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 11,
+    "cached_at": "2026-05-11T06:04:41.042476",
+    "stock_name": "崇友",
+    "market": "otc",
+    "current_filing_date": "2026-05-11"
   }
 }
