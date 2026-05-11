@@ -32537,7 +32537,7 @@
     "hit_rate": 100.0,
     "count": 2,
     "typical_filing_day": 4,
-    "cached_at": "2026-05-04T11:53:34.829004",
+    "cached_at": "2026-05-11T15:21:29.530864",
     "stock_name": "馥鴻",
     "market": "otc",
     "current_filing_date": "2026-05-04"
@@ -32563,7 +32563,7 @@
     "hit_rate": 100.0,
     "count": 1,
     "typical_filing_day": 4,
-    "cached_at": "2026-05-04T11:53:36.428280",
+    "cached_at": "2026-05-11T15:21:37.683770",
     "stock_name": "艾姆勒",
     "market": "sii",
     "current_filing_date": "2026-05-04"
@@ -32600,16 +32600,26 @@
         "year": 2025,
         "month": 4,
         "revenue": 684370000.0
+      },
+      {
+        "t_date": "2026-05-04",
+        "t_close": 376.5,
+        "t1_date": "2026-05-05",
+        "t1_close": 414.0,
+        "t1_pct": 9.96,
+        "year": 2026,
+        "month": 4,
+        "revenue": 1112168000.0
       }
     ],
-    "avg_t1": -3.69,
-    "median_t1": -1.64,
-    "max_t1": 0.45,
+    "avg_t1": -0.27,
+    "median_t1": 0.45,
+    "max_t1": 9.96,
     "min_t1": -9.87,
-    "hit_rate": 33.3,
-    "count": 3,
+    "hit_rate": 50.0,
+    "count": 4,
     "typical_filing_day": 4,
-    "cached_at": "2026-05-04T11:53:38.398863",
+    "cached_at": "2026-05-11T15:21:40.498722",
     "stock_name": "德律",
     "market": "sii",
     "current_filing_date": "2026-05-04"
@@ -32646,16 +32656,26 @@
         "year": 2023,
         "month": 4,
         "revenue": 573467000.0
+      },
+      {
+        "t_date": "2026-05-04",
+        "t_close": 177.0,
+        "t1_date": "2026-05-05",
+        "t1_close": 181.0,
+        "t1_pct": 2.26,
+        "year": 2026,
+        "month": 4,
+        "revenue": 638366000.0
       }
     ],
-    "avg_t1": -1.1,
-    "median_t1": -0.43,
-    "max_t1": 0.0,
+    "avg_t1": -0.26,
+    "median_t1": 0.0,
+    "max_t1": 2.26,
     "min_t1": -2.86,
-    "hit_rate": 0.0,
-    "count": 3,
+    "hit_rate": 25.0,
+    "count": 4,
     "typical_filing_day": 4,
-    "cached_at": "2026-05-04T11:53:40.126161",
+    "cached_at": "2026-05-11T15:21:47.466220",
     "stock_name": "迅得",
     "market": "sii",
     "current_filing_date": "2026-05-04"
@@ -32701,7 +32721,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 4,
-    "cached_at": "2026-05-04T11:53:42.400759",
+    "cached_at": "2026-05-11T15:21:53.544632",
     "stock_name": "康科特",
     "market": "emerging",
     "current_filing_date": "2026-05-04"
@@ -32718,16 +32738,26 @@
         "year": 2025,
         "month": 4,
         "revenue": 330858000.0
+      },
+      {
+        "t_date": "2026-05-04",
+        "t_close": 886.0,
+        "t1_date": "2026-05-05",
+        "t1_close": 869.0,
+        "t1_pct": -1.92,
+        "year": 2026,
+        "month": 4,
+        "revenue": 343253000.0
       }
     ],
-    "avg_t1": -2.59,
-    "median_t1": -2.59,
-    "max_t1": -2.59,
+    "avg_t1": -2.25,
+    "median_t1": -1.92,
+    "max_t1": -1.92,
     "min_t1": -2.59,
     "hit_rate": 0.0,
-    "count": 1,
+    "count": 2,
     "typical_filing_day": 4,
-    "cached_at": "2026-05-04T11:53:43.026935",
+    "cached_at": "2026-05-11T15:22:08.145279",
     "stock_name": "牧德",
     "market": "sii",
     "current_filing_date": "2026-05-04"
@@ -62104,6 +62134,52 @@
     "cached_at": "2026-05-11T10:44:46.235414",
     "stock_name": "禾聯碩",
     "market": "sii",
+    "current_filing_date": "2026-05-11"
+  },
+  "2758_4": {
+    "stock_id": "2758",
+    "historical_highs": [
+      {
+        "t_date": "2023-05-11",
+        "t_close": 159.17,
+        "t1_date": "2023-05-12",
+        "t1_close": 155.58,
+        "t1_pct": -2.26,
+        "year": 2023,
+        "month": 4,
+        "revenue": 183238000.0
+      },
+      {
+        "t_date": "2024-05-10",
+        "t_close": 131.49,
+        "t1_date": "2024-05-13",
+        "t1_close": 129.16,
+        "t1_pct": -1.77,
+        "year": 2024,
+        "month": 4,
+        "revenue": 196538000.0
+      },
+      {
+        "t_date": "2025-05-09",
+        "t_close": 101.37,
+        "t1_date": "2025-05-12",
+        "t1_close": 99.9,
+        "t1_pct": -1.44,
+        "year": 2025,
+        "month": 4,
+        "revenue": 231173000.0
+      }
+    ],
+    "avg_t1": -1.82,
+    "median_t1": -1.77,
+    "max_t1": -1.44,
+    "min_t1": -2.26,
+    "hit_rate": 0.0,
+    "count": 3,
+    "typical_filing_day": 11,
+    "cached_at": "2026-05-11T15:21:58.971075",
+    "stock_name": "路易莎咖啡",
+    "market": "emerging",
     "current_filing_date": "2026-05-11"
   }
 }
