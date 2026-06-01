@@ -1,8 +1,29 @@
 {
   "period_year": 2026,
   "period_month": 5,
-  "stocks": {},
-  "last_check": "06-01 13:22:24",
-  "last_new_filing": "",
-  "total_filed": 0
+  "stocks": {
+    "3572": {
+      "first_seen": "06-01 15:03",
+      "market": "pub",
+      "stock_name": "宏芯科技"
+    },
+    "5508": {
+      "first_seen": "06-01 15:03",
+      "market": "otc",
+      "stock_name": "永信建"
+    },
+    "849": {
+      "first_seen": "06-01 15:03",
+      "market": "pub",
+      "stock_name": "京城證券"
+    },
+    "6785": {
+      "first_seen": "06-01 15:03",
+      "market": "otc",
+      "stock_name": "昱展新藥"
+    }
+  },
+  "last_check": "06-01 15:03:57",
+  "last_new_filing": "06-01 15:03:57",
+  "total_filed": 4
 }
