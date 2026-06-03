@@ -371,9 +371,39 @@
       "first_seen": "06-03 13:23",
       "market": "pub",
       "stock_name": "陽明山"
+    },
+    "646": {
+      "first_seen": "06-03 14:57",
+      "market": "pub",
+      "stock_name": "大昌證券"
+    },
+    "4974": {
+      "first_seen": "06-03 14:57",
+      "market": "otc",
+      "stock_name": "亞泰"
+    },
+    "2511": {
+      "first_seen": "06-03 14:57",
+      "market": "sii",
+      "stock_name": "太子"
+    },
+    "8392": {
+      "first_seen": "06-03 14:57",
+      "market": "pub",
+      "stock_name": "星能電力"
+    },
+    "8046": {
+      "first_seen": "06-03 14:57",
+      "market": "sii",
+      "stock_name": "南電"
+    },
+    "1437": {
+      "first_seen": "06-03 14:57",
+      "market": "sii",
+      "stock_name": "勤益控"
     }
   },
-  "last_check": "06-03 13:23:57",
-  "last_new_filing": "06-03 13:23:57",
-  "total_filed": 74
+  "last_check": "06-03 14:57:30",
+  "last_new_filing": "06-03 14:57:30",
+  "total_filed": 80
 }
