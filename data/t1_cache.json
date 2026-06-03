@@ -62971,5 +62971,127 @@
     "stock_name": "明基醫",
     "market": "otc",
     "current_filing_date": "2026-06-02"
+  },
+  "3097_5": {
+    "stock_id": "3097",
+    "historical_highs": [
+      {
+        "t_date": "2021-06-03",
+        "t_close": 13.43,
+        "t1_date": "2021-06-04",
+        "t1_close": 13.43,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 5,
+        "revenue": 199850000.0
+      },
+      {
+        "t_date": "2022-06-02",
+        "t_close": 19.02,
+        "t1_date": "2022-06-06",
+        "t1_close": 18.8,
+        "t1_pct": -1.14,
+        "year": 2022,
+        "month": 5,
+        "revenue": 209404000.0
+      },
+      {
+        "t_date": "2023-06-02",
+        "t_close": 24.67,
+        "t1_date": "2023-06-05",
+        "t1_close": 25.03,
+        "t1_pct": 1.45,
+        "year": 2023,
+        "month": 5,
+        "revenue": 210887000.0
+      },
+      {
+        "t_date": "2024-06-03",
+        "t_close": 25.73,
+        "t1_date": "2024-06-04",
+        "t1_close": 25.69,
+        "t1_pct": -0.18,
+        "year": 2024,
+        "month": 5,
+        "revenue": 212912000.0
+      },
+      {
+        "t_date": "2025-06-03",
+        "t_close": 23.23,
+        "t1_date": "2025-06-04",
+        "t1_close": 24.38,
+        "t1_pct": 4.97,
+        "year": 2025,
+        "month": 5,
+        "revenue": 270740000.0
+      }
+    ],
+    "avg_t1": 1.02,
+    "median_t1": 0.0,
+    "max_t1": 4.97,
+    "min_t1": -1.14,
+    "hit_rate": 40.0,
+    "count": 5,
+    "typical_filing_day": 3,
+    "cached_at": "2026-06-03T05:24:07.668281",
+    "stock_name": "拍檔",
+    "market": "emerging",
+    "current_filing_date": "2026-06-03"
+  },
+  "1731_5": {
+    "stock_id": "1731",
+    "historical_highs": [
+      {
+        "t_date": "2021-06-03",
+        "t_close": 16.02,
+        "t1_date": "2021-06-04",
+        "t1_close": 16.36,
+        "t1_pct": 2.17,
+        "year": 2021,
+        "month": 5,
+        "revenue": 99623000.0
+      },
+      {
+        "t_date": "2023-06-02",
+        "t_close": 21.17,
+        "t1_date": "2023-06-05",
+        "t1_close": 21.78,
+        "t1_pct": 2.86,
+        "year": 2023,
+        "month": 5,
+        "revenue": 104374000.0
+      },
+      {
+        "t_date": "2024-06-03",
+        "t_close": 22.67,
+        "t1_date": "2024-06-04",
+        "t1_close": 22.8,
+        "t1_pct": 0.6,
+        "year": 2024,
+        "month": 5,
+        "revenue": 118803000.0
+      },
+      {
+        "t_date": "2025-06-03",
+        "t_close": 21.67,
+        "t1_date": "2025-06-04",
+        "t1_close": 21.67,
+        "t1_pct": 0.0,
+        "year": 2025,
+        "month": 5,
+        "revenue": 121211000.0
+      }
+    ],
+    "avg_t1": 1.41,
+    "median_t1": 2.17,
+    "max_t1": 2.86,
+    "min_t1": 0.0,
+    "hit_rate": 75.0,
+    "count": 4,
+    "typical_filing_day": 3,
+    "cached_at": "2026-06-03T05:24:10.276725",
+    "stock_name": "美吾華",
+    "market": "sii",
+    "current_filing_date": "2026-06-03"
   }
 }

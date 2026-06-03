@@ -326,9 +326,54 @@
       "first_seen": "06-03 00:41",
       "market": "emerging",
       "stock_name": "安成生技"
+    },
+    "4108": {
+      "first_seen": "06-03 13:23",
+      "market": "sii",
+      "stock_name": "懷特"
+    },
+    "8942": {
+      "first_seen": "06-03 13:23",
+      "market": "otc",
+      "stock_name": "森鉅"
+    },
+    "4406": {
+      "first_seen": "06-03 13:23",
+      "market": "otc",
+      "stock_name": "新昕纖"
+    },
+    "560": {
+      "first_seen": "06-03 13:23",
+      "market": "pub",
+      "stock_name": "永興"
+    },
+    "1435": {
+      "first_seen": "06-03 13:23",
+      "market": "sii",
+      "stock_name": "中福"
+    },
+    "1731": {
+      "first_seen": "06-03 13:23",
+      "market": "sii",
+      "stock_name": "美吾華"
+    },
+    "3097": {
+      "first_seen": "06-03 13:23",
+      "market": "emerging",
+      "stock_name": "拍檔"
+    },
+    "5867": {
+      "first_seen": "06-03 13:23",
+      "market": "pub",
+      "stock_name": "康和期"
+    },
+    "8968": {
+      "first_seen": "06-03 13:23",
+      "market": "pub",
+      "stock_name": "陽明山"
     }
   },
-  "last_check": "06-03 07:49:42",
-  "last_new_filing": "06-03 00:41:21",
-  "total_filed": 65
+  "last_check": "06-03 13:23:57",
+  "last_new_filing": "06-03 13:23:57",
+  "total_filed": 74
 }
