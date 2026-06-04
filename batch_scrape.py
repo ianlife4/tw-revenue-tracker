@@ -183,9 +183,36 @@ def scrape_all_months(end_year: int, end_month: int, months_back: int = 12, year
     cached_periods = set()
     if os.path.exists(cache_path):
         cached_df = pd.read_csv(cache_path, dtype={"stock_id": str})
-        for _, grp in cached_df.groupby(["revenue_year", "revenue_month", "market"]):
-            row = grp.iloc[0]
-            cached_periods.add((int(row["revenue_year"]), int(row["revenue_month"]), row["market"]))
+        # 強制重抓：最近 2 個月 + 當期 (避免 incomplete data 被卡死)
+        # 如果一個 (年/月/市場) 的紀錄少於 100 筆，視為不完整，重抓
+        FORCE_REFRESH_MONTHS = {(end_year, end_month)}
+        # 上個月
+        if end_month > 1:
+            FORCE_REFRESH_MONTHS.add((end_year, end_month - 1))
+        else:
+            FORCE_REFRESH_MONTHS.add((end_year - 1, 12))
+        # 上上個月
+        if end_month > 2:
+            FORCE_REFRESH_MONTHS.add((end_year, end_month - 2))
+        elif end_month == 2:
+            FORCE_REFRESH_MONTHS.add((end_year - 1, 12))
+        else:
+            FORCE_REFRESH_MONTHS.add((end_year - 1, 11))
+
+        for (y, m, mkt), grp in cached_df.groupby(["revenue_year", "revenue_month", "market"]):
+            y, m = int(y), int(m)
+            # 強制刷新近 3 月，或紀錄太少 (incomplete) 也跳過 cache
+            if (y, m) in FORCE_REFRESH_MONTHS:
+                logger.info(f"強制重抓 {y}/{m:02d} {mkt} (cached={len(grp)})")
+                continue
+            cached_periods.add((y, m, mkt))
+        # 從 cached_df 刪掉要強制重抓的部分
+        cached_df = cached_df[
+            ~cached_df.apply(
+                lambda r: (int(r["revenue_year"]), int(r["revenue_month"])) in FORCE_REFRESH_MONTHS,
+                axis=1
+            )
+        ].copy()
 
     # 計算還缺哪些 (上市 sii + 上櫃 otc + 興櫃 rotc)
     # 注意: 快取中興櫃存為 "emerging"，但 MOPS 路徑用 "rotc"
