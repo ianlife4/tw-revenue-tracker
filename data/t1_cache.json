@@ -63523,5 +63523,41 @@
     "stock_name": "牧德",
     "market": "sii",
     "current_filing_date": "2026-06-03"
+  },
+  "6705_5": {
+    "stock_id": "6705",
+    "historical_highs": [
+      {
+        "t_date": "2021-06-04",
+        "t_close": 24.08,
+        "t1_date": "2021-06-07",
+        "t1_close": 24.08,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 5,
+        "revenue": 32418000.0
+      },
+      {
+        "t_date": "2022-06-02",
+        "t_close": 24.25,
+        "t1_date": "2022-06-06",
+        "t1_close": 24.51,
+        "t1_pct": 1.08,
+        "year": 2022,
+        "month": 5,
+        "revenue": 40208000.0
+      }
+    ],
+    "avg_t1": 0.54,
+    "median_t1": 1.08,
+    "max_t1": 1.08,
+    "min_t1": 0.0,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 4,
+    "cached_at": "2026-06-04T05:19:03.460169",
+    "stock_name": "振躍精密",
+    "market": "emerging",
+    "current_filing_date": "2026-06-04"
   }
 }
