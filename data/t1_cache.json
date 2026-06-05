@@ -69677,5 +69677,185 @@
     "stock_name": "創惟",
     "market": "otc",
     "current_filing_date": "2026-06-05"
+  },
+  "6693_5": {
+    "stock_id": "6693",
+    "historical_highs": [
+      {
+        "t_date": "2021-06-04",
+        "t_close": 67.55,
+        "t1_date": "2021-06-07",
+        "t1_close": 67.55,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 5,
+        "revenue": 95741000.0
+      },
+      {
+        "t_date": "2022-06-02",
+        "t_close": 85.79,
+        "t1_date": "2022-06-06",
+        "t1_close": 92.63,
+        "t1_pct": 7.97,
+        "year": 2022,
+        "month": 5,
+        "revenue": 127380000.0
+      }
+    ],
+    "avg_t1": 3.98,
+    "median_t1": 7.97,
+    "max_t1": 7.97,
+    "min_t1": 0.0,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 5,
+    "cached_at": "2026-06-05T15:13:59.797371",
+    "stock_name": "廣閎科",
+    "market": "otc",
+    "current_filing_date": "2026-06-05"
+  },
+  "6531_5": {
+    "stock_id": "6531",
+    "historical_highs": [
+      {
+        "t_date": "2021-06-04",
+        "t_close": 313.79,
+        "t1_date": "2021-06-07",
+        "t1_close": 315.6,
+        "t1_pct": 0.58,
+        "year": 2021,
+        "month": 5,
+        "revenue": 515235000.0
+      }
+    ],
+    "avg_t1": 0.58,
+    "median_t1": 0.58,
+    "max_t1": 0.58,
+    "min_t1": 0.58,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 5,
+    "cached_at": "2026-06-05T15:14:00.383000",
+    "stock_name": "愛普*",
+    "market": "sii",
+    "current_filing_date": "2026-06-05"
+  },
+  "4587_5": {
+    "stock_id": "4587",
+    "historical_highs": [
+      {
+        "t_date": "2023-06-05",
+        "t_close": 28.05,
+        "t1_date": "2023-06-06",
+        "t1_close": 29.0,
+        "t1_pct": 3.39,
+        "year": 2023,
+        "month": 5,
+        "revenue": 71914000.0
+      },
+      {
+        "t_date": "2024-06-05",
+        "t_close": 38.65,
+        "t1_date": "2024-06-06",
+        "t1_close": 40.0,
+        "t1_pct": 3.49,
+        "year": 2024,
+        "month": 5,
+        "revenue": 77193000.0
+      }
+    ],
+    "avg_t1": 3.44,
+    "median_t1": 3.49,
+    "max_t1": 3.49,
+    "min_t1": 3.39,
+    "hit_rate": 100.0,
+    "count": 2,
+    "typical_filing_day": 5,
+    "cached_at": "2026-06-05T15:14:02.103695",
+    "stock_name": "寶元數控",
+    "market": "emerging",
+    "current_filing_date": "2026-06-05"
+  },
+  "6217_5": {
+    "stock_id": "6217",
+    "historical_highs": [
+      {
+        "t_date": "2021-06-04",
+        "t_close": 30.25,
+        "t1_date": "2021-06-07",
+        "t1_close": 30.25,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 5,
+        "revenue": 216602000.0
+      },
+      {
+        "t_date": "2022-06-02",
+        "t_close": 56.59,
+        "t1_date": "2022-06-06",
+        "t1_close": 57.21,
+        "t1_pct": 1.1,
+        "year": 2022,
+        "month": 5,
+        "revenue": 354030000.0
+      }
+    ],
+    "avg_t1": 0.55,
+    "median_t1": 1.1,
+    "max_t1": 1.1,
+    "min_t1": 0.0,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 5,
+    "cached_at": "2026-06-05T15:14:03.558024",
+    "stock_name": "中探針",
+    "market": "otc",
+    "current_filing_date": "2026-06-05"
+  },
+  "6493_5": {
+    "stock_id": "6493",
+    "historical_highs": [
+      {
+        "t_date": "2021-06-04",
+        "t_close": 21.48,
+        "t1_date": "2021-06-07",
+        "t1_close": 21.48,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 5,
+        "revenue": 24076000.0
+      },
+      {
+        "t_date": "2022-06-02",
+        "t_close": 20.2,
+        "t1_date": "2022-06-06",
+        "t1_close": 20.02,
+        "t1_pct": -0.9,
+        "year": 2022,
+        "month": 5,
+        "revenue": 35064000.0
+      },
+      {
+        "t_date": "2025-06-05",
+        "t_close": 17.65,
+        "t1_date": "2025-06-06",
+        "t1_close": 17.31,
+        "t1_pct": -1.96,
+        "year": 2025,
+        "month": 5,
+        "revenue": 35071000.0
+      }
+    ],
+    "avg_t1": -0.95,
+    "median_t1": -0.9,
+    "max_t1": 0.0,
+    "min_t1": -1.96,
+    "hit_rate": 0.0,
+    "count": 3,
+    "typical_filing_day": 5,
+    "cached_at": "2026-06-05T15:14:07.172806",
+    "stock_name": "雷虎生",
+    "market": "emerging",
+    "current_filing_date": "2026-06-05"
   }
 }
