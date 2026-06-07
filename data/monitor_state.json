@@ -3046,9 +3046,19 @@
       "first_seen": "06-07 22:02",
       "market": "otc",
       "stock_name": "越峰"
+    },
+    "6209": {
+      "first_seen": "06-08 01:22",
+      "market": "sii",
+      "stock_name": "今國光"
+    },
+    "7846": {
+      "first_seen": "06-08 01:22",
+      "market": "emerging",
+      "stock_name": "德揚"
     }
   },
-  "last_check": "06-07 22:02:35",
-  "last_new_filing": "06-07 22:02:35",
-  "total_filed": 596
+  "last_check": "06-08 01:22:37",
+  "last_new_filing": "06-08 01:22:37",
+  "total_filed": 598
 }

@@ -69903,5 +69903,41 @@
     "stock_name": "鈺邦",
     "market": "sii",
     "current_filing_date": "2026-06-06"
+  },
+  "6209_5": {
+    "stock_id": "6209",
+    "historical_highs": [
+      {
+        "t_date": "2021-06-08",
+        "t_close": 31.75,
+        "t1_date": "2021-06-09",
+        "t1_close": 31.38,
+        "t1_pct": -1.17,
+        "year": 2021,
+        "month": 5,
+        "revenue": 295331000.0
+      },
+      {
+        "t_date": "2022-06-08",
+        "t_close": 29.61,
+        "t1_date": "2022-06-09",
+        "t1_close": 29.94,
+        "t1_pct": 1.11,
+        "year": 2022,
+        "month": 5,
+        "revenue": 335185000.0
+      }
+    ],
+    "avg_t1": -0.03,
+    "median_t1": 1.11,
+    "max_t1": 1.11,
+    "min_t1": -1.17,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 8,
+    "cached_at": "2026-06-07T17:23:02.303851",
+    "stock_name": "今國光",
+    "market": "sii",
+    "current_filing_date": "2026-06-08"
   }
 }
