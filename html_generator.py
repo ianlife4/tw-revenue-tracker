@@ -1656,7 +1656,7 @@ INDUSTRY_SECTION_TEMPLATE = """
     </div>"""
 
 STOCK_CARD_TEMPLATE = """
-            <div class="stock-card" data-sid="{stock_id}" data-sname="{stock_name}" data-rev="{revenue_raw}" data-yoy="{yoy_raw}" data-mom="{mom_raw}" data-exceed="{exceed_raw}" data-date="{publish_date}" data-filing-date="{filing_date}" data-industry="{industry}">
+            <div class="stock-card" data-sid="{stock_id}" data-sname="{stock_name}" data-market="{market}" data-rev="{revenue_raw}" data-yoy="{yoy_raw}" data-mom="{mom_raw}" data-exceed="{exceed_raw}" data-date="{publish_date}" data-filing-date="{filing_date}" data-industry="{industry}">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">{stock_name}</span>
@@ -1914,6 +1914,7 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
         cards += STOCK_CARD_TEMPLATE.format(
             stock_name=row.get("stock_name", ""),
             stock_id=sid,
+            market=market,
             revenue_display=format_revenue(row.get("revenue", 0)),
             revenue_raw=revenue_raw,
             yoy_raw=yoy_val,

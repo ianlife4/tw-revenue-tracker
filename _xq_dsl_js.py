@@ -63,7 +63,8 @@ function buildXqDsl(stocks){
   // FileContentSymbolList_0 content: "1," + GUID + ";" + big5(組合名) + ",{code}.TW,..."
   var guid = newGuid();
   var head = asciiBytes('1,' + guid + ';');
-  var tailStr = ',' + stocks.map(function(s){ return s.code + '.TW'; }).join(',');
+  // 字尾: 興櫃 .TE / 其餘 .TW (由呼叫端在 s.suffix 帶入)
+  var tailStr = ',' + stocks.map(function(s){ return s.code + (s.suffix || '.TW'); }).join(',');
   var tail = asciiBytes(tailStr);
   var fcsl = concatBytes([head, GROUP_BIG5, tail]);
   var fcslLen = fcsl.length;
@@ -160,6 +161,7 @@ function buildXqDsl(stocks){
 EXPORT_JS = (
     r"""
 // XQ 自選股 .dsl 匯出 (XQ 原生 CFB/OLE2,組合名「營收」)
+// xq-export-v2: 興櫃(emerging)字尾 .TE / 公發(pub)不匯出 / 其餘 .TW
 // 取「當前可見」股票 — 尊重市場 tab + 日期 pill + 搜尋
 // .dsl 匯入 XQ 會「取代」同名商品組合,不像 CSV 是 append 累積重複
 (function() {
@@ -170,6 +172,7 @@ EXPORT_JS = (
     function getVisibleStocks() {
         var panel = document.querySelector('.market-panel.active');
         if (!panel) return [];
+        var activeMarket = (panel.id || '').replace('panel-', '') || 'all';
         var cards = panel.querySelectorAll('.stock-card');
         var seen = {};
         var list = [];
@@ -183,8 +186,15 @@ EXPORT_JS = (
             var sid = (c.dataset.sid || '').trim();
             var sname = (c.dataset.sname || '').trim();
             if (!sid || seen[sid]) continue;
+            // 市場: 優先卡片自身 data-market;舊檔無此屬性時,非「全部」面板退回當前面板
+            var market = (c.dataset.market || '').trim();
+            if (!market && activeMarket !== 'all') market = activeMarket;
+            // 公發 (pub) 不匯出
+            if (market === 'pub') continue;
             seen[sid] = 1;
-            list.push({ sid: sid, sname: sname });
+            // 興櫃 (emerging) 用 .TE,其餘 (上市/上櫃/創新板) 用 .TW
+            var suffix = (market === 'emerging') ? '.TE' : '.TW';
+            list.push({ sid: sid, sname: sname, suffix: suffix });
         }
         return list;
     }
@@ -214,7 +224,7 @@ EXPORT_JS = (
             alert('目前沒有可匯出的股票（請確認分頁與篩選條件）');
             return;
         }
-        var dslStocks = stocks.map(function(s) { return { code: s.sid }; });
+        var dslStocks = stocks.map(function(s) { return { code: s.sid, suffix: s.suffix }; });
         var dsl = buildXqDsl(dslStocks);
         var blob = new Blob([dsl], { type: 'application/octet-stream' });
         var url = URL.createObjectURL(blob);
