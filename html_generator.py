@@ -14,6 +14,7 @@ import pandas as pd
 
 from config import OUTPUT_DIR
 from analyzer import format_revenue
+from _xq_dsl_js import EXPORT_BUTTON_HTML, EXPORT_JS
 
 logger = logging.getLogger(__name__)
 
@@ -1209,7 +1210,7 @@ footer {{
     <div class="toolbar">
         {date_filter_html}
         <div class="view-toggle">
-            <button class="export-btn" id="exportXqCsv" type="button" title="匯出當前篩選結果為 XQ 自選股 CSV (代號.TW,股名)">&#128229; 匯出 XQ 自選股<span class="count-badge" id="exportCount"></span></button>
+            {xq_export_button}
             <div class="view-btn active" data-view="normal">&#9638; 標準</div>
             <div class="view-btn" data-view="compact">&#9776; 精簡</div>
         </div>
@@ -1629,90 +1630,7 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
     }});
 }})();
 
-// XQ 自選股 CSV 匯出
-// 格式: 代號.TW,股名 (參考 XQ 操盤高手「修改商品 → 匯入 CSV」)
-// 取「當前可見」股票 — 尊重市場 tab + 日期 pill + 搜尋
-(function() {{
-    var btn = document.getElementById('exportXqCsv');
-    var countBadge = document.getElementById('exportCount');
-    if (!btn) return;
-
-    function getVisibleStocks() {{
-        var panel = document.querySelector('.market-panel.active');
-        if (!panel) return [];
-        var cards = panel.querySelectorAll('.stock-card');
-        var seen = {{}};
-        var list = [];
-        for (var i = 0; i < cards.length; i++) {{
-            var c = cards[i];
-            // 過濾掉被 display:none 隱藏的卡片
-            if (c.style.display === 'none') continue;
-            // 過濾掉父層產業區塊被隱藏的卡片
-            var section = c.closest('.industry-section');
-            if (section && section.style.display === 'none') continue;
-            var sid = (c.dataset.sid || '').trim();
-            var sname = (c.dataset.sname || '').trim();
-            if (!sid || seen[sid]) continue;
-            seen[sid] = 1;
-            list.push({{ sid: sid, sname: sname }});
-        }}
-        return list;
-    }}
-
-    function getActiveMarketLabel() {{
-        var panel = document.querySelector('.market-panel.active');
-        if (!panel) return 'all';
-        return (panel.id || '').replace('panel-', '') || 'all';
-    }}
-
-    function todayTw() {{
-        var d = new Date(Date.now() + 8 * 3600 * 1000);
-        return d.toISOString().slice(0, 10);
-    }}
-
-    function updateCount() {{
-        if (!countBadge) return;
-        var n = getVisibleStocks().length;
-        countBadge.textContent = n > 0 ? '(' + n + ')' : '';
-    }}
-
-    btn.addEventListener('click', function() {{
-        var stocks = getVisibleStocks();
-        if (stocks.length === 0) {{
-            alert('目前沒有可匯出的股票（請確認分頁與篩選條件）');
-            return;
-        }}
-        // CSV: 代號.TW,股名 — 一行一檔, BOM 讓 Excel 用 UTF-8 開
-        var lines = stocks.map(function(s) {{ return s.sid + '.TW,' + s.sname; }});
-        var BOM = String.fromCharCode(0xFEFF);
-        var csv = BOM + lines.join('\\r\\n') + '\\r\\n';
-        var blob = new Blob([csv], {{ type: 'text/csv;charset=utf-8' }});
-        var url = URL.createObjectURL(blob);
-        var a = document.createElement('a');
-        a.href = url;
-        a.download = 'XQ自選股_營收創新高_' + getActiveMarketLabel() + '_' + todayTw() + '.csv';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        setTimeout(function() {{ URL.revokeObjectURL(url); }}, 100);
-    }});
-
-    // 初次計算
-    updateCount();
-
-    // filter 變動時即時更新數量
-    document.addEventListener('click', function(e) {{
-        if (e.target.closest('.market-tab') || e.target.closest('.date-pill')) {{
-            setTimeout(updateCount, 60);
-        }}
-    }});
-    var search = document.getElementById('stockSearch');
-    if (search) {{
-        search.addEventListener('input', function() {{
-            setTimeout(updateCount, 60);
-        }});
-    }}
-}})();
+{xq_export_js}
 </script>
 </body>
 </html>"""
@@ -2186,6 +2104,7 @@ def generate_html(df: pd.DataFrame, year: int, month: int, compare_years: int = 
         incomplete_banner = ""
 
     html = HTML_TEMPLATE.format(
+        xq_export_button=EXPORT_BUTTON_HTML, xq_export_js=EXPORT_JS,
         year=year,
         month=month,
         compare_years=compare_years,
@@ -2219,6 +2138,7 @@ def _generate_empty_html(year: int, month: int, compare_years: int = 5) -> str:
     prev_y, prev_m = (year, month - 1) if month > 1 else (year - 1, 12)
     next_y, next_m = (year, month + 1) if month < 12 else (year + 1, 1)
     return HTML_TEMPLATE.format(
+        xq_export_button=EXPORT_BUTTON_HTML, xq_export_js=EXPORT_JS,
         year=year,
         month=month,
         compare_years=compare_years,

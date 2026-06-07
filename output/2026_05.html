@@ -1222,7 +1222,7 @@ footer {
             
         </div>
         <div class="view-toggle">
-            <button class="export-btn" id="exportXqCsv" type="button" title="匯出當前篩選結果為 XQ 自選股 CSV (代號.TW,股名)">&#128229; 匯出 XQ 自選股<span class="count-badge" id="exportCount"></span></button>
+            <button class="export-btn" id="exportXqCsv" type="button" title="匯出當前篩選結果為 XQ 原生 .dsl 檔（組合名「營收」，匯入 XQ 會取代同名商品組合，不會 append 累積重複）">&#128229; 匯出 XQ .dsl<span class="count-badge" id="exportCount"></span></button>
             <div class="view-btn active" data-view="normal">&#9638; 標準</div>
             <div class="view-btn" data-view="compact">&#9776; 精簡</div>
         </div>
@@ -69898,9 +69898,10 @@ document.querySelectorAll('.view-btn').forEach(btn => {
     });
 })();
 
-// XQ 自選股 CSV 匯出
-// 格式: 代號.TW,股名 (參考 XQ 操盤高手「修改商品 → 匯入 CSV」)
+
+// XQ 自選股 .dsl 匯出 (XQ 原生 CFB/OLE2,組合名「營收」)
 // 取「當前可見」股票 — 尊重市場 tab + 日期 pill + 搜尋
+// .dsl 匯入 XQ 會「取代」同名商品組合,不像 CSV 是 append 累積重複
 (function() {
     var btn = document.getElementById('exportXqCsv');
     var countBadge = document.getElementById('exportCount');
@@ -69945,21 +69946,158 @@ document.querySelectorAll('.view-btn').forEach(btn => {
         countBadge.textContent = n > 0 ? '(' + n + ')' : '';
     }
 
+// ---- XQ .dsl (CFB / OLE2) builder ----
+var SEC = 512, MINI = 64, MINI_CUTOFF = 4096;
+var FREE = 0xFFFFFFFF, EOC = 0xFFFFFFFE, FATSECT = 0xFFFFFFFD;
+// 「營收」Big5 = C0 E7 A6 AC (TextEncoder 不支援 Big5,直接寫死)
+var GROUP_BIG5 = new Uint8Array([0xC0, 0xE7, 0xA6, 0xAC]);
+
+function asciiBytes(s){
+  var o = new Uint8Array(s.length);
+  for (var i = 0; i < s.length; i++) o[i] = s.charCodeAt(i) & 0xFF;
+  return o;
+}
+function concatBytes(arrs){
+  var total = 0;
+  for (var i = 0; i < arrs.length; i++) total += arrs[i].length;
+  var out = new Uint8Array(total), off = 0;
+  for (var j = 0; j < arrs.length; j++) { out.set(arrs[j], off); off += arrs[j].length; }
+  return out;
+}
+function newGuid(){
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) return crypto.randomUUID().toUpperCase();
+  var hex = '0123456789ABCDEF', g = '';
+  for (var i = 0; i < 32; i++) g += hex[Math.floor(Math.random()*16)];
+  return g.slice(0,8)+'-'+g.slice(8,12)+'-'+g.slice(12,16)+'-'+g.slice(16,20)+'-'+g.slice(20,32);
+}
+function writeDirEntry(view, bytes, off, name, etype, color, left, right, child, startSec, size){
+  // UTF-16-LE name + null terminator, in first 64 bytes
+  var nameLen = (name.length + 1) * 2;
+  for (var i = 0; i < name.length; i++) {
+    var c = name.charCodeAt(i);
+    bytes[off + i*2] = c & 0xFF;
+    bytes[off + i*2 + 1] = (c >> 8) & 0xFF;
+  }
+  view.setUint16(off + 64, nameLen, true);
+  bytes[off + 66] = etype;
+  bytes[off + 67] = color;
+  view.setInt32(off + 68, left, true);
+  view.setInt32(off + 72, right, true);
+  view.setInt32(off + 76, child, true);
+  // CLSID (80-95), state (96-99), times (100-115): all zero, already
+  view.setUint32(off + 116, startSec >>> 0, true);
+  view.setUint32(off + 120, size >>> 0, true);  // lower 32
+  view.setUint32(off + 124, 0, true);           // upper 32 (v3 unused)
+}
+function buildXqDsl(stocks){
+  // FileContentSymbolList_0 content: "1," + GUID + ";" + big5(組合名) + ",{code}.TW,..."
+  var guid = newGuid();
+  var head = asciiBytes('1,' + guid + ';');
+  var tailStr = ',' + stocks.map(function(s){ return s.code + '.TW'; }).join(',');
+  var tail = asciiBytes(tailStr);
+  var fcsl = concatBytes([head, GROUP_BIG5, tail]);
+  var fcslLen = fcsl.length;
+  var fcslInMini = fcslLen < MINI_CUTOFF;
+
+  // Mini sectors used: _SSHeader_ (1) + FileHeadFileCount (1) + FCSL (if mini)
+  var fcslMiniSecs = fcslInMini ? Math.ceil(fcslLen / MINI) : 0;
+  var miniSecs = 2 + fcslMiniSecs;
+  var miniStreamBytes = miniSecs * MINI;
+  var miniStreamRegular = Math.ceil(miniStreamBytes / SEC);
+
+  var fcslRegularSecs = fcslInMini ? 0 : Math.ceil(fcslLen / SEC);
+  var miniStreamFirstSec = 3;
+  var fcslFirstSec = fcslInMini ? -1 : miniStreamFirstSec + miniStreamRegular;
+  var totalSecs = 3 + miniStreamRegular + fcslRegularSecs;
+  var fileSize = (1 + totalSecs) * SEC;
+
+  var buf = new Uint8Array(fileSize);
+  var view = new DataView(buf.buffer);
+
+  // --- Header (0..511) ---
+  buf.set([0xD0,0xCF,0x11,0xE0,0xA1,0xB1,0x1A,0xE1], 0);
+  view.setUint16(24, 0x003E, true);
+  view.setUint16(26, 0x0003, true);
+  view.setUint16(28, 0xFFFE, true);
+  view.setUint16(30, 9, true);
+  view.setUint16(32, 6, true);
+  view.setUint32(40, 0, true);
+  view.setUint32(44, 1, true);                // num_fat_sectors
+  view.setUint32(48, 1, true);                // first_dir_sector
+  view.setUint32(56, MINI_CUTOFF, true);
+  view.setUint32(60, 2, true);                // first_mini_fat_sector
+  view.setUint32(64, 1, true);                // num_mini_fat_sectors
+  view.setUint32(68, FREE, true);             // no DIFAT
+  view.setUint32(76, 0, true);                // DIFAT[0] = FAT at sector 0
+  for (var k = 1; k < 109; k++) view.setUint32(76 + k*4, FREE, true);
+
+  // --- FAT (sector 0 -> file 0x200) ---
+  var fatOff = SEC;
+  for (var i = 0; i < 128; i++) view.setUint32(fatOff + i*4, FREE, true);
+  view.setUint32(fatOff + 0*4, FATSECT, true);
+  view.setUint32(fatOff + 1*4, EOC, true);
+  view.setUint32(fatOff + 2*4, EOC, true);
+  for (var i2 = 0; i2 < miniStreamRegular; i2++) {
+    var cur = 3 + i2;
+    view.setUint32(fatOff + cur*4, i2 === miniStreamRegular - 1 ? EOC : cur + 1, true);
+  }
+  if (!fcslInMini) {
+    for (var i3 = 0; i3 < fcslRegularSecs; i3++) {
+      var c2 = fcslFirstSec + i3;
+      view.setUint32(fatOff + c2*4, i3 === fcslRegularSecs - 1 ? EOC : c2 + 1, true);
+    }
+  }
+
+  // --- Directory (sector 1 -> file 0x400) ---
+  var dirOff = SEC * 2;
+  // BST: Root.child = idx 2 (FileHeadFileCount), L = _SSHeader_(1), R = FCSL(3)
+  writeDirEntry(view, buf, dirOff + 0*128, 'Root Entry', 5, 0, -1, -1, 2, miniStreamFirstSec, miniSecs * MINI);
+  writeDirEntry(view, buf, dirOff + 1*128, '_SSHeader_', 2, 0, -1, -1, -1, 0, 36);
+  writeDirEntry(view, buf, dirOff + 2*128, 'FileHeadFileCount', 2, 1, 1, 3, -1, 1, 4);
+  var fcslStart = fcslInMini ? 2 : fcslFirstSec;
+  writeDirEntry(view, buf, dirOff + 3*128, 'FileContentSymbolList_0', 2, 0, -1, -1, -1, fcslStart, fcslLen);
+
+  // --- Mini FAT (sector 2 -> file 0x600) ---
+  var mfatOff = SEC * 3;
+  for (var m = 0; m < 128; m++) view.setUint32(mfatOff + m*4, FREE, true);
+  view.setUint32(mfatOff + 0*4, EOC, true);
+  view.setUint32(mfatOff + 1*4, EOC, true);
+  if (fcslInMini) {
+    for (var n = 0; n < fcslMiniSecs; n++) {
+      var mc = 2 + n;
+      view.setUint32(mfatOff + mc*4, n === fcslMiniSecs - 1 ? EOC : mc + 1, true);
+    }
+  }
+
+  // --- Mini stream (regular sector 3+) ---
+  var miniStreamOff = SEC * (1 + miniStreamFirstSec);
+  // _SSHeader_ at mini sec 0: 00 00 00 00 Test + zeros (36B)
+  buf[miniStreamOff + 4] = 0x54; buf[miniStreamOff + 5] = 0x65;
+  buf[miniStreamOff + 6] = 0x73; buf[miniStreamOff + 7] = 0x74;
+  // FileHeadFileCount at mini sec 1: uint32 LE = 1
+  buf[miniStreamOff + MINI] = 1;
+  // FCSL at mini sec 2+ if mini
+  if (fcslInMini) buf.set(fcsl, miniStreamOff + 2 * MINI);
+
+  // --- FCSL regular sectors ---
+  if (!fcslInMini) buf.set(fcsl, SEC * (1 + fcslFirstSec));
+
+  return buf;
+}
+
     btn.addEventListener('click', function() {
         var stocks = getVisibleStocks();
         if (stocks.length === 0) {
             alert('目前沒有可匯出的股票（請確認分頁與篩選條件）');
             return;
         }
-        // CSV: 代號.TW,股名 — 一行一檔, BOM 讓 Excel 用 UTF-8 開
-        var lines = stocks.map(function(s) { return s.sid + '.TW,' + s.sname; });
-        var BOM = String.fromCharCode(0xFEFF);
-        var csv = BOM + lines.join('\r\n') + '\r\n';
-        var blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+        var dslStocks = stocks.map(function(s) { return { code: s.sid }; });
+        var dsl = buildXqDsl(dslStocks);
+        var blob = new Blob([dsl], { type: 'application/octet-stream' });
         var url = URL.createObjectURL(blob);
         var a = document.createElement('a');
         a.href = url;
-        a.download = 'XQ自選股_營收創新高_' + getActiveMarketLabel() + '_' + todayTw() + '.csv';
+        a.download = 'XQ自選股_營收_' + getActiveMarketLabel() + '_' + todayTw() + '.dsl';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -69982,6 +70120,7 @@ document.querySelectorAll('.view-btn').forEach(btn => {
         });
     }
 })();
+
 </script>
 </body>
 </html>
