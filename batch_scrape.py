@@ -181,38 +181,29 @@ def scrape_all_months(end_year: int, end_month: int, months_back: int = 12, year
     # 檢查快取
     cached_df = None
     cached_periods = set()
+    # 強制重抓：最近 3 個月 (當期 + 前 2 月) — 但 NOT 從 cache 刪除
+    # 採取「先抓成功，後合併」策略；若 MOPS 失敗則保留舊資料
+    FORCE_REFRESH_MONTHS = {(end_year, end_month)}
+    if end_month > 1:
+        FORCE_REFRESH_MONTHS.add((end_year, end_month - 1))
+    else:
+        FORCE_REFRESH_MONTHS.add((end_year - 1, 12))
+    if end_month > 2:
+        FORCE_REFRESH_MONTHS.add((end_year, end_month - 2))
+    elif end_month == 2:
+        FORCE_REFRESH_MONTHS.add((end_year - 1, 12))
+    else:
+        FORCE_REFRESH_MONTHS.add((end_year - 1, 11))
+
     if os.path.exists(cache_path):
         cached_df = pd.read_csv(cache_path, dtype={"stock_id": str})
-        # 強制重抓：最近 2 個月 + 當期 (避免 incomplete data 被卡死)
-        # 如果一個 (年/月/市場) 的紀錄少於 100 筆，視為不完整，重抓
-        FORCE_REFRESH_MONTHS = {(end_year, end_month)}
-        # 上個月
-        if end_month > 1:
-            FORCE_REFRESH_MONTHS.add((end_year, end_month - 1))
-        else:
-            FORCE_REFRESH_MONTHS.add((end_year - 1, 12))
-        # 上上個月
-        if end_month > 2:
-            FORCE_REFRESH_MONTHS.add((end_year, end_month - 2))
-        elif end_month == 2:
-            FORCE_REFRESH_MONTHS.add((end_year - 1, 12))
-        else:
-            FORCE_REFRESH_MONTHS.add((end_year - 1, 11))
-
         for (y, m, mkt), grp in cached_df.groupby(["revenue_year", "revenue_month", "market"]):
             y, m = int(y), int(m)
-            # 強制刷新近 3 月，或紀錄太少 (incomplete) 也跳過 cache
             if (y, m) in FORCE_REFRESH_MONTHS:
                 logger.info(f"強制重抓 {y}/{m:02d} {mkt} (cached={len(grp)})")
                 continue
             cached_periods.add((y, m, mkt))
-        # 從 cached_df 刪掉要強制重抓的部分
-        cached_df = cached_df[
-            ~cached_df.apply(
-                lambda r: (int(r["revenue_year"]), int(r["revenue_month"])) in FORCE_REFRESH_MONTHS,
-                axis=1
-            )
-        ].copy()
+        # 不刪除 cached_df 中的 FORCE_REFRESH 月份！等新資料拿到後再合併
 
     # 計算還缺哪些 (上市 sii + 上櫃 otc + 興櫃 rotc)
     # 注意: 快取中興櫃存為 "emerging"，但 MOPS 路徑用 "rotc"
@@ -246,17 +237,36 @@ def scrape_all_months(end_year: int, end_month: int, months_back: int = 12, year
         return pd.DataFrame(), recent_months
 
     result = pd.concat(all_frames, ignore_index=True)
-    # 保留 publish_date 最早的版本 (真實申報日，不是重抓的下載日)
-    # 先按 publish_date 排序，再 drop_duplicates 保留 first
     result["_pub_sort"] = pd.to_datetime(
         result["publish_date"].astype(str).str.replace(r"^(\d+)/", lambda m: str(int(m.group(1))+1911)+"/", regex=True),
         format="%Y/%m/%d", errors="coerce"
     )
-    result = result.sort_values("_pub_sort", na_position="last")
-    result = result.drop_duplicates(
+    # 把資料分兩塊處理：
+    # 1. FORCE_REFRESH 月份 (近 3 月)：新抓的資料優先 → 用 _src_order 標記後 keep=last
+    # 2. 其他月份：保留最早 publish_date → sort by _pub_sort, keep=first
+    is_force = result.apply(
+        lambda r: (int(r["revenue_year"]), int(r["revenue_month"])) in FORCE_REFRESH_MONTHS,
+        axis=1
+    )
+    force_part = result[is_force].copy()
+    other_part = result[~is_force].copy()
+
+    # FORCE_REFRESH 部分：用順序 (後到的覆蓋) — pd.concat 中新下載的在後面
+    force_part["_src_order"] = range(len(force_part))
+    force_part = force_part.sort_values("_src_order")
+    force_part = force_part.drop_duplicates(
+        subset=["stock_id", "revenue_year", "revenue_month", "market"], keep="last"
+    )
+    force_part = force_part.drop(columns=["_src_order", "_pub_sort"])
+
+    # 其他月份：保留最早 publish_date
+    other_part = other_part.sort_values("_pub_sort", na_position="last")
+    other_part = other_part.drop_duplicates(
         subset=["stock_id", "revenue_year", "revenue_month", "market"], keep="first"
     )
-    result = result.drop(columns=["_pub_sort"])
+    other_part = other_part.drop(columns=["_pub_sort"])
+
+    result = pd.concat([other_part, force_part], ignore_index=True)
 
     # 標記創新板
     sl_path = os.path.join(DATA_DIR, "stock_list.csv")
@@ -270,6 +280,18 @@ def scrape_all_months(end_year: int, end_month: int, months_back: int = 12, year
         if tib_ids:
             result.loc[result["stock_id"].isin(tib_ids), "market"] = "tib"
             logger.info(f"標記 {len(tib_ids)} 檔創新板股票")
+
+    # 安全檢查：若任何 FORCE_REFRESH 月份的新資料比舊資料少很多，視為失敗，保留舊資料
+    if cached_df is not None and not cached_df.empty:
+        for y, m in FORCE_REFRESH_MONTHS:
+            new_count = len(result[(result["revenue_year"]==y) & (result["revenue_month"]==m)])
+            old_count = len(cached_df[(cached_df["revenue_year"]==y) & (cached_df["revenue_month"]==m)])
+            # 新資料 < 舊資料 50% 視為下載失敗，沿用舊資料
+            if old_count > 100 and new_count < old_count * 0.5:
+                logger.warning(f"⚠ {y}/{m:02d}: 新抓 {new_count} 筆遠少於舊 {old_count} 筆，視為下載失敗，保留舊資料")
+                result = result[~((result["revenue_year"]==y) & (result["revenue_month"]==m))]
+                old_data = cached_df[(cached_df["revenue_year"]==y) & (cached_df["revenue_month"]==m)]
+                result = pd.concat([result, old_data], ignore_index=True)
 
     os.makedirs(DATA_DIR, exist_ok=True)
     result.to_csv(cache_path, index=False, encoding="utf-8-sig")
