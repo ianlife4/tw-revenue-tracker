@@ -76895,5 +76895,31 @@
     "stock_name": "勤誠",
     "market": "sii",
     "current_filing_date": "2026-06-09"
+  },
+  "4991_5": {
+    "stock_id": "4991",
+    "historical_highs": [
+      {
+        "t_date": "2024-06-07",
+        "t_close": 43.3,
+        "t1_date": "2024-06-11",
+        "t1_close": 44.25,
+        "t1_pct": 2.19,
+        "year": 2024,
+        "month": 5,
+        "revenue": 169456000.0
+      }
+    ],
+    "avg_t1": 2.19,
+    "median_t1": 2.19,
+    "max_t1": 2.19,
+    "min_t1": 2.19,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 9,
+    "cached_at": "2026-06-08T23:15:00.988770",
+    "stock_name": "環宇-KY",
+    "market": "otc",
+    "current_filing_date": "2026-06-09"
   }
 }
