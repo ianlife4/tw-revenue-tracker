@@ -745,6 +745,15 @@ body.sort-mode .stock-grid {{
     display: none;
 }}
 
+/* ===== YoY+MoM 都正篩選 ===== */
+.stock-card.growth-filtered {{
+    display: none !important;
+}}
+
+.growth-filter:hover {{
+    background: rgba(88,166,255,0.08);
+}}
+
 /* ===== 檢視模式切換 ===== */
 .view-toggle {{
     display: flex;
@@ -1209,6 +1218,12 @@ footer {{
     <!-- 工具列 -->
     <div class="toolbar">
         {date_filter_html}
+        <div class="filter-toggle" style="display:flex;gap:8px;align-items:center;">
+            <label class="growth-filter" style="display:flex;align-items:center;gap:6px;cursor:pointer;padding:6px 12px;border:1px solid #30363d;border-radius:6px;font-size:0.85rem;color:#8b949e;">
+                <input type="checkbox" id="growthFilter" style="cursor:pointer;">
+                <span>YoY+MoM 都正</span>
+            </label>
+        </div>
         <div class="view-toggle">
             {xq_export_button}
             <div class="view-btn active" data-view="normal">&#9638; 標準</div>
@@ -1276,6 +1291,77 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
         }}
     }});
 }});
+
+// ===== YoY+MoM 都正成長 篩選 =====
+(function() {{
+    const filterCheckbox = document.getElementById('growthFilter');
+    if (!filterCheckbox) return;
+
+    function applyGrowthFilter() {{
+        const onlyPositive = filterCheckbox.checked;
+        // 對所有 stock-card 套用 .growth-filtered class
+        document.querySelectorAll('.stock-card').forEach(card => {{
+            const yoy = parseFloat(card.dataset.yoy || '0');
+            const mom = parseFloat(card.dataset.mom || '0');
+            if (onlyPositive && (yoy <= 0 || mom <= 0 || isNaN(yoy) || isNaN(mom))) {{
+                card.classList.add('growth-filtered');
+            }} else {{
+                card.classList.remove('growth-filtered');
+            }}
+        }});
+
+        // 更新各市場/總計 tab-count（只算未被篩掉的）
+        function countVisible(panelId) {{
+            const panel = document.getElementById(panelId);
+            if (!panel) return 0;
+            return panel.querySelectorAll('.stock-card:not(.growth-filtered)').length;
+        }}
+        const counts = {{
+            all: countVisible('panel-all'),
+            sii: countVisible('panel-sii'),
+            otc: countVisible('panel-otc'),
+            tib: countVisible('panel-tib'),
+            emerging: countVisible('panel-emerging'),
+            pub: countVisible('panel-pub'),
+        }};
+        document.querySelectorAll('.market-tab').forEach(tab => {{
+            const mkt = tab.dataset.market;
+            const cnt = counts[mkt];
+            if (cnt !== undefined) {{
+                const span = tab.querySelector('.tab-count');
+                if (span) span.textContent = cnt;
+            }}
+        }});
+
+        // 隱藏空的產業區塊
+        document.querySelectorAll('.industry-section').forEach(sec => {{
+            const grid = sec.querySelector('.stock-grid');
+            if (!grid) return;
+            const visible = grid.querySelectorAll('.stock-card:not(.growth-filtered)').length;
+            sec.style.display = (onlyPositive && visible === 0) ? 'none' : '';
+            // 更新產業 count
+            const cntSpan = sec.querySelector('.industry-count');
+            if (cntSpan && onlyPositive) {{
+                cntSpan.textContent = visible + '檔';
+            }} else if (cntSpan) {{
+                const total = grid.querySelectorAll('.stock-card').length;
+                cntSpan.textContent = total + '檔';
+            }}
+        }});
+
+        // 視覺反饋
+        const label = filterCheckbox.closest('.growth-filter');
+        if (onlyPositive) {{
+            label.style.borderColor = '#58a6ff';
+            label.style.color = '#58a6ff';
+        }} else {{
+            label.style.borderColor = '#30363d';
+            label.style.color = '#8b949e';
+        }}
+    }}
+
+    filterCheckbox.addEventListener('change', applyGrowthFilter);
+}})();
 
 // ===== 排序 (點 compact 表頭欄位) + 日期篩選 =====
 (function() {{
