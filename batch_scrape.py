@@ -347,6 +347,33 @@ def generate_month_report(full_df: pd.DataFrame, year: int, month: int, years_ba
 
     logger.info(f"  {year}/{month:02d}: {len(new_highs)} 檔新高")
 
+    # 注入 first_seen (從 monitor_state) — 真實申報日，優先於 publish_date
+    # 1. 試當前 monitor_state.json (若 period 匹配)
+    # 2. 試歸檔 monitor_state_{year}_{month}.json
+    import json as _j
+    state_files = [
+        os.path.join(DATA_DIR, f"monitor_state_{year}_{month:02d}.json"),
+        os.path.join(DATA_DIR, "monitor_state.json"),
+    ]
+    stocks_state = {}
+    for sf in state_files:
+        if os.path.exists(sf):
+            try:
+                with open(sf, encoding="utf-8") as f:
+                    st = _j.load(f)
+                if st.get("period_year") == year and st.get("period_month") == month:
+                    stocks_state = st.get("stocks", {})
+                    logger.info(f"  載入 {sf} → {len(stocks_state)} 檔 first_seen")
+                    break
+            except Exception as e:
+                logger.warning(f"  讀取 {sf} 失敗: {e}")
+    if stocks_state:
+        for idx, row in new_highs.iterrows():
+            sid = str(row["stock_id"])
+            fs = stocks_state.get(sid, {}).get("first_seen", "")
+            if fs:
+                new_highs.at[idx, "first_seen"] = fs
+
     # MOPS 已有 yoy/mom，但 analyzer 也會計算，用 MOPS 的回填空值
     cur_df = full_df[
         (full_df["revenue_month"] == month) &
