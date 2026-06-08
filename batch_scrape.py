@@ -336,6 +336,38 @@ def generate_month_report(full_df: pd.DataFrame, year: int, month: int, years_ba
     if not prev_df.empty:
         history["prev_month"] = prev_df
 
+    # 用 MOPS prev_year_revenue 補充歷史資料中缺少的股票
+    # (新上市/新加入公發市場的股票，可能在 history 中沒有去年同月資料)
+    prev_year = year - 1
+    cur_year_df = history[year]
+    if "prev_year_revenue" in cur_year_df.columns:
+        hist_ids = set()
+        for y, df in history.items():
+            if isinstance(y, int) and y < year:
+                hist_ids.update(df["stock_id"].unique())
+
+        supplement_rows = []
+        for _, row in cur_year_df.iterrows():
+            sid = row["stock_id"]
+            prev_rev = row.get("prev_year_revenue")
+            if sid not in hist_ids and pd.notna(prev_rev) and prev_rev > 0:
+                supplement_rows.append({
+                    "stock_id": sid,
+                    "stock_name": row.get("stock_name", ""),
+                    "revenue": prev_rev,
+                    "revenue_year": prev_year,
+                    "revenue_month": month,
+                    "market": row.get("market", ""),
+                    "industry": row.get("industry", ""),
+                })
+        if supplement_rows:
+            sup_df = pd.DataFrame(supplement_rows)
+            if prev_year in history:
+                history[prev_year] = pd.concat([history[prev_year], sup_df], ignore_index=True)
+            else:
+                history[prev_year] = sup_df
+            logger.info(f"  補充 {len(supplement_rows)} 檔新上市股票去年同月資料")
+
     # 分析
     new_highs = find_revenue_new_highs(history, year)
 
