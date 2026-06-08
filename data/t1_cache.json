@@ -62240,16 +62240,26 @@
         "year": 2023,
         "month": 5,
         "revenue": 54022000.0
+      },
+      {
+        "t_date": "2026-06-01",
+        "t_close": 136.0,
+        "t1_date": "2026-06-02",
+        "t1_close": 138.0,
+        "t1_pct": 1.47,
+        "year": 2026,
+        "month": 5,
+        "revenue": 90609000.0
       }
     ],
-    "avg_t1": -1.26,
-    "median_t1": 1.03,
+    "avg_t1": -0.58,
+    "median_t1": 1.47,
     "max_t1": 2.03,
     "min_t1": -6.85,
-    "hit_rate": 66.7,
-    "count": 3,
+    "hit_rate": 75.0,
+    "count": 4,
     "typical_filing_day": 1,
-    "cached_at": "2026-06-01T13:41:49.865250",
+    "cached_at": "2026-06-08T17:25:47.361126",
     "stock_name": "長聖",
     "market": "otc",
     "current_filing_date": "2026-06-01"
@@ -62266,16 +62276,26 @@
         "year": 2022,
         "month": 5,
         "revenue": 674655000.0
+      },
+      {
+        "t_date": "2026-06-01",
+        "t_close": 408.0,
+        "t1_date": "2026-06-02",
+        "t1_close": 371.0,
+        "t1_pct": -9.07,
+        "year": 2026,
+        "month": 5,
+        "revenue": 1070802000.0
       }
     ],
-    "avg_t1": 0.88,
+    "avg_t1": -4.09,
     "median_t1": 0.88,
     "max_t1": 0.88,
-    "min_t1": 0.88,
-    "hit_rate": 100.0,
-    "count": 1,
+    "min_t1": -9.07,
+    "hit_rate": 50.0,
+    "count": 2,
     "typical_filing_day": 1,
-    "cached_at": "2026-06-01T13:41:50.689949",
+    "cached_at": "2026-06-08T17:25:51.186112",
     "stock_name": "德律",
     "market": "sii",
     "current_filing_date": "2026-06-01"
@@ -62312,16 +62332,26 @@
         "year": 2023,
         "month": 5,
         "revenue": 702948000.0
+      },
+      {
+        "t_date": "2026-06-01",
+        "t_close": 69.9,
+        "t1_date": "2026-06-02",
+        "t1_close": 68.7,
+        "t1_pct": -1.72,
+        "year": 2026,
+        "month": 5,
+        "revenue": 1065547000.0
       }
     ],
-    "avg_t1": 2.63,
+    "avg_t1": 1.54,
     "median_t1": 0.0,
     "max_t1": 9.86,
     "min_t1": -1.97,
-    "hit_rate": 33.3,
-    "count": 3,
+    "hit_rate": 25.0,
+    "count": 4,
     "typical_filing_day": 1,
-    "cached_at": "2026-06-01T13:41:52.961506",
+    "cached_at": "2026-06-08T17:25:54.738283",
     "stock_name": "毅嘉",
     "market": "sii",
     "current_filing_date": "2026-06-01"
@@ -62358,16 +62388,26 @@
         "year": 2023,
         "month": 5,
         "revenue": 512432000.0
+      },
+      {
+        "t_date": "2026-06-01",
+        "t_close": 172.5,
+        "t1_date": "2026-06-02",
+        "t1_close": 164.0,
+        "t1_pct": -4.93,
+        "year": 2026,
+        "month": 5,
+        "revenue": 592379000.0
       }
     ],
-    "avg_t1": 1.3,
+    "avg_t1": -0.25,
     "median_t1": -0.22,
     "max_t1": 5.07,
-    "min_t1": -0.94,
-    "hit_rate": 33.3,
-    "count": 3,
+    "min_t1": -4.93,
+    "hit_rate": 25.0,
+    "count": 4,
     "typical_filing_day": 1,
-    "cached_at": "2026-06-01T13:41:54.965386",
+    "cached_at": "2026-06-08T17:25:57.652941",
     "stock_name": "迅得",
     "market": "sii",
     "current_filing_date": "2026-06-01"
@@ -76809,5 +76849,51 @@
     "stock_name": "濟生",
     "market": "otc",
     "current_filing_date": "2026-06-08"
+  },
+  "8210_5": {
+    "stock_id": "8210",
+    "historical_highs": [
+      {
+        "t_date": "2022-06-09",
+        "t_close": 64.95,
+        "t1_date": "2022-06-10",
+        "t1_close": 64.14,
+        "t1_pct": -1.25,
+        "year": 2022,
+        "month": 5,
+        "revenue": 947127000.0
+      },
+      {
+        "t_date": "2024-06-07",
+        "t_close": 300.17,
+        "t1_date": "2024-06-11",
+        "t1_close": 290.0,
+        "t1_pct": -3.39,
+        "year": 2024,
+        "month": 5,
+        "revenue": 1247753000.0
+      },
+      {
+        "t_date": "2025-06-09",
+        "t_close": 330.52,
+        "t1_date": "2025-06-10",
+        "t1_close": 359.58,
+        "t1_pct": 8.79,
+        "year": 2025,
+        "month": 5,
+        "revenue": 1833198000.0
+      }
+    ],
+    "avg_t1": 1.38,
+    "median_t1": -1.25,
+    "max_t1": 8.79,
+    "min_t1": -3.39,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 9,
+    "cached_at": "2026-06-08T17:25:43.187152",
+    "stock_name": "勤誠",
+    "market": "sii",
+    "current_filing_date": "2026-06-09"
   }
 }
