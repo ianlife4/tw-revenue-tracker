@@ -1165,7 +1165,7 @@ footer {
             </div>
             <a class="nav-btn" href="2026_03.html" title="下個月">後一月 &#9654;</a>
         </div>
-        <div class="update-time">2026-06-08 22:25 更新</div>
+        <div class="update-time">2026-06-09 15:36 更新</div>
         <div style="margin-top:12px"><a href="index.html" style="color:#58a6ff;text-decoration:none;font-size:0.85rem;padding:4px 12px;border:1px solid #30363d;border-radius:6px;">← 即時申報</a></div>
         
     </header>
@@ -205087,9 +205087,16 @@ document.querySelectorAll('.view-btn').forEach(btn => {
     const filterCheckbox = document.getElementById('growthFilter');
     if (!filterCheckbox) return;
 
+    function isCardTrulyVisible(card) {
+        // 同時滿足：未被 growth-filter 隱藏 + 未被 date-filter 隱藏 + 未被 search 隱藏
+        if (card.classList.contains('growth-filtered')) return false;
+        if (card.getAttribute('data-date-hidden')) return false;
+        if (card.getAttribute('data-search-hidden')) return false;
+        return true;
+    }
+
     function applyGrowthFilter() {
         const onlyPositive = filterCheckbox.checked;
-        // 對所有 stock-card 套用 .growth-filtered class
         document.querySelectorAll('.stock-card').forEach(card => {
             const yoy = parseFloat(card.dataset.yoy || '0');
             const mom = parseFloat(card.dataset.mom || '0');
@@ -205100,11 +205107,11 @@ document.querySelectorAll('.view-btn').forEach(btn => {
             }
         });
 
-        // 更新各市場/總計 tab-count（只算未被篩掉的）
+        // 更新各市場 tab-count（合併考慮所有篩選）
         function countVisible(panelId) {
             const panel = document.getElementById(panelId);
             if (!panel) return 0;
-            return panel.querySelectorAll('.stock-card:not(.growth-filtered)').length;
+            return Array.from(panel.querySelectorAll('.stock-card')).filter(isCardTrulyVisible).length;
         }
         const counts = {
             all: countVisible('panel-all'),
@@ -205123,19 +205130,20 @@ document.querySelectorAll('.view-btn').forEach(btn => {
             }
         });
 
-        // 隱藏空的產業區塊
+        // 隱藏空的產業區塊 + 更新產業計數
         document.querySelectorAll('.industry-section').forEach(sec => {
             const grid = sec.querySelector('.stock-grid');
             if (!grid) return;
-            const visible = grid.querySelectorAll('.stock-card:not(.growth-filtered)').length;
-            sec.style.display = (onlyPositive && visible === 0) ? 'none' : '';
-            // 更新產業 count
+            const visible = Array.from(grid.querySelectorAll('.stock-card')).filter(isCardTrulyVisible).length;
+            sec.style.display = visible === 0 ? 'none' : '';
             const cntSpan = sec.querySelector('.industry-count');
-            if (cntSpan && onlyPositive) {
-                cntSpan.textContent = visible + '檔';
-            } else if (cntSpan) {
-                const total = grid.querySelectorAll('.stock-card').length;
-                cntSpan.textContent = total + '檔';
+            if (cntSpan) {
+                if (onlyPositive) {
+                    cntSpan.textContent = visible + '檔';
+                } else {
+                    const total = grid.querySelectorAll('.stock-card').length;
+                    cntSpan.textContent = total + '檔';
+                }
             }
         });
 
@@ -205151,6 +205159,15 @@ document.querySelectorAll('.view-btn').forEach(btn => {
     }
 
     filterCheckbox.addEventListener('change', applyGrowthFilter);
+
+    // 當日期篩選變更時，也要重新跑成長篩選 (重整 section visibility & counts)
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.date-pill')) {
+            setTimeout(applyGrowthFilter, 50);
+        }
+    });
+
+    window._applyGrowthFilter = applyGrowthFilter;
 })();
 
 // ===== 排序 (點 compact 表頭欄位) + 日期篩選 =====
