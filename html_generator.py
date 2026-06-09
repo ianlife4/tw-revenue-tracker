@@ -745,13 +745,33 @@ body.sort-mode .stock-grid {{
     display: none;
 }}
 
-/* ===== YoY+MoM 都正篩選 ===== */
-.stock-card.growth-filtered {{
-    display: none !important;
+/* ===== 篩選按鈕 (YoY+MoM/股票期貨/CB 等) ===== */
+.chip-filter {{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 6px 12px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #8b949e;
+    user-select: none;
+    transition: all 0.15s;
+}}
+.chip-filter:hover {{
+    background: rgba(88,166,255,0.08);
+}}
+.chip-filter.active {{
+    border-color: #58a6ff;
+    color: #58a6ff;
+    background: rgba(88,166,255,0.06);
 }}
 
-.growth-filter:hover {{
-    background: rgba(88,166,255,0.08);
+.stock-card.growth-filtered,
+.stock-card.futures-filtered,
+.stock-card.cb-filtered {{
+    display: none !important;
 }}
 
 /* ===== 檢視模式切換 ===== */
@@ -1218,10 +1238,18 @@ footer {{
     <!-- 工具列 -->
     <div class="toolbar">
         {date_filter_html}
-        <div class="filter-toggle" style="display:flex;gap:8px;align-items:center;">
-            <label class="growth-filter" style="display:flex;align-items:center;gap:6px;cursor:pointer;padding:6px 12px;border:1px solid #30363d;border-radius:6px;font-size:0.85rem;color:#8b949e;">
+        <div class="filter-toggle" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <label class="growth-filter chip-filter" data-filter="growth">
                 <input type="checkbox" id="growthFilter" style="cursor:pointer;">
                 <span>YoY+MoM 都正</span>
+            </label>
+            <label class="chip-filter" data-filter="futures">
+                <input type="checkbox" id="futuresFilter" style="cursor:pointer;">
+                <span>有股票期貨</span>
+            </label>
+            <label class="chip-filter" data-filter="cb">
+                <input type="checkbox" id="cbFilter" style="cursor:pointer;">
+                <span>有發可轉債</span>
             </label>
         </div>
         <div class="view-toggle">
@@ -1292,32 +1320,65 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
     }});
 }});
 
-// ===== YoY+MoM 都正成長 篩選 =====
+// ===== 統一篩選 (YoY+MoM 都正 / 股票期貨 / 可轉債) =====
 (function() {{
-    const filterCheckbox = document.getElementById('growthFilter');
-    if (!filterCheckbox) return;
+    const growthCb = document.getElementById('growthFilter');
+    const futuresCb = document.getElementById('futuresFilter');
+    const cbCb = document.getElementById('cbFilter');
+    if (!growthCb && !futuresCb && !cbCb) return;
 
     function isCardTrulyVisible(card) {{
-        // 同時滿足：未被 growth-filter 隱藏 + 未被 date-filter 隱藏 + 未被 search 隱藏
         if (card.classList.contains('growth-filtered')) return false;
+        if (card.classList.contains('futures-filtered')) return false;
+        if (card.classList.contains('cb-filtered')) return false;
         if (card.getAttribute('data-date-hidden')) return false;
         if (card.getAttribute('data-search-hidden')) return false;
         return true;
     }}
 
-    function applyGrowthFilter() {{
-        const onlyPositive = filterCheckbox.checked;
+    function applyAllFilters() {{
+        const wantGrowth = growthCb && growthCb.checked;
+        const wantFutures = futuresCb && futuresCb.checked;
+        const wantCb = cbCb && cbCb.checked;
+
         document.querySelectorAll('.stock-card').forEach(card => {{
-            const yoy = parseFloat(card.dataset.yoy || '0');
-            const mom = parseFloat(card.dataset.mom || '0');
-            if (onlyPositive && (yoy <= 0 || mom <= 0 || isNaN(yoy) || isNaN(mom))) {{
-                card.classList.add('growth-filtered');
+            // YoY+MoM 篩選
+            if (wantGrowth) {{
+                const yoy = parseFloat(card.dataset.yoy || '0');
+                const mom = parseFloat(card.dataset.mom || '0');
+                if (yoy <= 0 || mom <= 0 || isNaN(yoy) || isNaN(mom)) {{
+                    card.classList.add('growth-filtered');
+                }} else {{
+                    card.classList.remove('growth-filtered');
+                }}
             }} else {{
                 card.classList.remove('growth-filtered');
             }}
+
+            // 股票期貨篩選
+            if (wantFutures) {{
+                if (card.dataset.hasFutures !== '1') {{
+                    card.classList.add('futures-filtered');
+                }} else {{
+                    card.classList.remove('futures-filtered');
+                }}
+            }} else {{
+                card.classList.remove('futures-filtered');
+            }}
+
+            // 可轉債篩選
+            if (wantCb) {{
+                if (card.dataset.hasCb !== '1') {{
+                    card.classList.add('cb-filtered');
+                }} else {{
+                    card.classList.remove('cb-filtered');
+                }}
+            }} else {{
+                card.classList.remove('cb-filtered');
+            }}
         }});
 
-        // 更新各市場 tab-count（合併考慮所有篩選）
+        // 更新各市場 tab-count
         function countVisible(panelId) {{
             const panel = document.getElementById(panelId);
             if (!panel) return 0;
@@ -1341,6 +1402,7 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
         }});
 
         // 隱藏空的產業區塊 + 更新產業計數
+        const anyFilter = wantGrowth || wantFutures || wantCb;
         document.querySelectorAll('.industry-section').forEach(sec => {{
             const grid = sec.querySelector('.stock-grid');
             if (!grid) return;
@@ -1348,7 +1410,7 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
             sec.style.display = visible === 0 ? 'none' : '';
             const cntSpan = sec.querySelector('.industry-count');
             if (cntSpan) {{
-                if (onlyPositive) {{
+                if (anyFilter) {{
                     cntSpan.textContent = visible + '檔';
                 }} else {{
                     const total = grid.querySelectorAll('.stock-card').length;
@@ -1358,26 +1420,29 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
         }});
 
         // 視覺反饋
-        const label = filterCheckbox.closest('.growth-filter');
-        if (onlyPositive) {{
-            label.style.borderColor = '#58a6ff';
-            label.style.color = '#58a6ff';
-        }} else {{
-            label.style.borderColor = '#30363d';
-            label.style.color = '#8b949e';
-        }}
+        [
+            [growthCb, wantGrowth],
+            [futuresCb, wantFutures],
+            [cbCb, wantCb],
+        ].forEach(([cb, on]) => {{
+            if (!cb) return;
+            const label = cb.closest('.chip-filter');
+            if (label) label.classList.toggle('active', on);
+        }});
     }}
 
-    filterCheckbox.addEventListener('change', applyGrowthFilter);
+    [growthCb, futuresCb, cbCb].forEach(cb => {{
+        if (cb) cb.addEventListener('change', applyAllFilters);
+    }});
 
-    // 當日期篩選變更時，也要重新跑成長篩選 (重整 section visibility & counts)
+    // 日期篩選變更時，重新跑篩選
     document.addEventListener('click', function(e) {{
         if (e.target.closest('.date-pill')) {{
-            setTimeout(applyGrowthFilter, 50);
+            setTimeout(applyAllFilters, 50);
         }}
     }});
 
-    window._applyGrowthFilter = applyGrowthFilter;
+    window._applyAllFilters = applyAllFilters;
 }})();
 
 // ===== 排序 (點 compact 表頭欄位) + 日期篩選 =====
@@ -1759,7 +1824,7 @@ INDUSTRY_SECTION_TEMPLATE = """
     </div>"""
 
 STOCK_CARD_TEMPLATE = """
-            <div class="stock-card" data-sid="{stock_id}" data-sname="{stock_name}" data-market="{market}" data-rev="{revenue_raw}" data-yoy="{yoy_raw}" data-mom="{mom_raw}" data-exceed="{exceed_raw}" data-date="{publish_date}" data-filing-date="{filing_date}" data-industry="{industry}">
+            <div class="stock-card" data-sid="{stock_id}" data-sname="{stock_name}" data-market="{market}" data-rev="{revenue_raw}" data-yoy="{yoy_raw}" data-mom="{mom_raw}" data-exceed="{exceed_raw}" data-date="{publish_date}" data-filing-date="{filing_date}" data-industry="{industry}" data-has-futures="{has_futures}" data-has-cb="{has_cb}">
                 <div class="top-row">
                     <div class="stock-info">
                         <span class="stock-name">{stock_name}</span>
@@ -1914,8 +1979,31 @@ def _get_external_urls(sid: str, market: str, rev_year: int, rev_month: int) -> 
     return revenue_url, goodinfo_url, verify_url
 
 
+def _load_id_set(filename: str) -> set:
+    """從 data/ 載入股票代號清單檔"""
+    import os as _os
+    path = _os.path.join(_os.path.dirname(__file__), "data", filename)
+    if not _os.path.exists(path):
+        return set()
+    try:
+        with open(path, encoding="utf-8") as f:
+            return {ln.strip() for ln in f if ln.strip()}
+    except Exception:
+        return set()
+
+
+_FUTURES_IDS = None
+_CB_IDS = None
+
+
 def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0) -> str:
     """為一組股票 DataFrame 生成卡片 HTML"""
+    global _FUTURES_IDS, _CB_IDS
+    if _FUTURES_IDS is None:
+        _FUTURES_IDS = _load_id_set("stock_futures.txt")
+    if _CB_IDS is None:
+        _CB_IDS = _load_id_set("cb_issuers.txt")
+
     cards = ""
     for _, row in df.iterrows():
         yoy = row.get("yoy_pct", 0)
@@ -2027,6 +2115,8 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
             date_row_html=date_row_html,
             filing_date=filing_short,
             industry=row.get("industry", ""),
+            has_futures="1" if sid in _FUTURES_IDS else "0",
+            has_cb="1" if sid in _CB_IDS else "0",
             yoy_display=f"{yoy_val:+.2f}%" if yoy_val != 0 else "N/A",
             yoy_class="" if yoy_val >= 0 else "negative",
             mom_display=f"{mom_val:+.2f}%" if mom_val != 0 else "N/A",
