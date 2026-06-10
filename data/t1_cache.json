@@ -92005,5 +92005,31 @@
     "stock_name": "路易莎咖啡",
     "market": "emerging",
     "current_filing_date": "2026-06-10"
+  },
+  "6999_5": {
+    "stock_id": "6999",
+    "historical_highs": [
+      {
+        "t_date": "2026-06-09",
+        "t_close": 30.0,
+        "t1_date": "2026-06-10",
+        "t1_close": 30.0,
+        "t1_pct": 0.0,
+        "year": 2026,
+        "month": 5,
+        "revenue": 11133000.0
+      }
+    ],
+    "avg_t1": 0.0,
+    "median_t1": 0.0,
+    "max_t1": 0.0,
+    "min_t1": 0.0,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 9,
+    "cached_at": "2026-06-10T18:34:38.772070",
+    "stock_name": "瀚醫生技",
+    "market": "emerging",
+    "current_filing_date": "2026-06-09"
   }
 }
