@@ -5,12 +5,14 @@ on:
     branches: [main]
     paths: ['.github/workflows/monitor.yml']
   schedule:
-    # 每月 1~12 日，重要時段更新 (UTC+8 → UTC 需減 8)
+    # 申報密集期 (每月 1~12 日)：每天 11 次密集更新
     # 台灣 06:00,08:30,10:00,12:00,14:00,15:00,16:00,18:00,20:00,22:00,24:00
     - cron: '0 2,4,6,7,8,10,12,14,16,22 1-12 * *'
     - cron: '30 0 1-12 * *'
+    # 非申報期 (13~31 日)：每天 3 次基本更新 (晚到申報、修正)
+    # 台灣 08:00, 14:00, 20:00
+    - cron: '0 0,6,12 13-31 * *'
     # 每天 TW 06:30 跑 batch_scrape backfill 補完整月資料
-    # UTC 22:30 (前一天) = 台灣隔天 06:30
     - cron: '30 22 * * *'
   workflow_dispatch:
 
@@ -105,3 +107,11 @@ jobs:
       - name: Deploy to GitHub Pages
         if: steps.commit.outputs.changed == 'true'
         uses: actions/deploy-pages@v4
+
+      # === 監督檢查 (每次跑完都做，異常發 TG 告警) ===
+      - name: Health supervisor
+        if: always()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python supervisor.py --tg
