@@ -306,9 +306,29 @@
       "first_seen": "07-02 18:12",
       "market": "otc",
       "stock_name": "合一"
+    },
+    "6844": {
+      "first_seen": "07-03 01:52",
+      "market": "otc",
+      "stock_name": "諾貝兒"
+    },
+    "5867": {
+      "first_seen": "07-03 01:52",
+      "market": "pub",
+      "stock_name": "康和期"
+    },
+    "5225": {
+      "first_seen": "07-03 01:52",
+      "market": "sii",
+      "stock_name": "東科-KY"
+    },
+    "3168": {
+      "first_seen": "07-03 01:52",
+      "market": "sii",
+      "stock_name": "眾福科"
     }
   },
-  "last_check": "07-02 22:10:48",
-  "last_new_filing": "07-02 18:12:01",
-  "total_filed": 61
+  "last_check": "07-03 01:52:57",
+  "last_new_filing": "07-03 01:52:57",
+  "total_filed": 65
 }
