@@ -101573,5 +101573,179 @@
     "stock_name": "台灣高鐵",
     "market": "sii",
     "current_filing_date": "2026-07-03"
+  },
+  "2241_6": {
+    "stock_id": "2241",
+    "historical_highs": [
+      {
+        "t_date": "2021-07-02",
+        "t_close": 55.34,
+        "t1_date": "2021-07-05",
+        "t1_close": 57.66,
+        "t1_pct": 4.2,
+        "year": 2021,
+        "month": 6,
+        "revenue": 96028000.0
+      }
+    ],
+    "avg_t1": 4.2,
+    "median_t1": 4.2,
+    "max_t1": 4.2,
+    "min_t1": 4.2,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 3,
+    "cached_at": "2026-07-03T15:54:19.446500",
+    "stock_name": "艾姆勒",
+    "market": "sii",
+    "current_filing_date": "2026-07-03"
+  },
+  "3028_6": {
+    "stock_id": "3028",
+    "historical_highs": [
+      {
+        "t_date": "2021-07-02",
+        "t_close": 19.42,
+        "t1_date": "2021-07-05",
+        "t1_close": 19.61,
+        "t1_pct": 1.01,
+        "year": 2021,
+        "month": 6,
+        "revenue": 3447853000.0
+      },
+      {
+        "t_date": "2022-07-01",
+        "t_close": 22.26,
+        "t1_date": "2022-07-04",
+        "t1_close": 22.36,
+        "t1_pct": 0.47,
+        "year": 2022,
+        "month": 6,
+        "revenue": 3554997000.0
+      },
+      {
+        "t_date": "2025-07-03",
+        "t_close": 31.02,
+        "t1_date": "2025-07-04",
+        "t1_close": 30.75,
+        "t1_pct": -0.87,
+        "year": 2025,
+        "month": 6,
+        "revenue": 3611629000.0
+      }
+    ],
+    "avg_t1": 0.2,
+    "median_t1": 0.47,
+    "max_t1": 1.01,
+    "min_t1": -0.87,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 3,
+    "cached_at": "2026-07-03T15:54:21.411141",
+    "stock_name": "增你強",
+    "market": "sii",
+    "current_filing_date": "2026-07-03"
+  },
+  "1727_6": {
+    "stock_id": "1727",
+    "historical_highs": [
+      {
+        "t_date": "2021-07-02",
+        "t_close": 14.63,
+        "t1_date": "2021-07-05",
+        "t1_close": 14.58,
+        "t1_pct": -0.32,
+        "year": 2021,
+        "month": 6,
+        "revenue": 154334000.0
+      },
+      {
+        "t_date": "2022-07-01",
+        "t_close": 28.65,
+        "t1_date": "2022-07-04",
+        "t1_close": 29.51,
+        "t1_pct": 3.0,
+        "year": 2022,
+        "month": 6,
+        "revenue": 178553000.0
+      },
+      {
+        "t_date": "2025-07-03",
+        "t_close": 21.97,
+        "t1_date": "2025-07-04",
+        "t1_close": 22.81,
+        "t1_pct": 3.8,
+        "year": 2025,
+        "month": 6,
+        "revenue": 188205000.0
+      }
+    ],
+    "avg_t1": 2.16,
+    "median_t1": 3.0,
+    "max_t1": 3.8,
+    "min_t1": -0.32,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 3,
+    "cached_at": "2026-07-03T15:54:23.746544",
+    "stock_name": "中華化",
+    "market": "sii",
+    "current_filing_date": "2026-07-03"
+  },
+  "2439_6": {
+    "stock_id": "2439",
+    "historical_highs": [
+      {
+        "t_date": "2021-07-02",
+        "t_close": 81.82,
+        "t1_date": "2021-07-05",
+        "t1_close": 82.6,
+        "t1_pct": 0.95,
+        "year": 2021,
+        "month": 6,
+        "revenue": 2595484000.0
+      },
+      {
+        "t_date": "2022-07-01",
+        "t_close": 59.35,
+        "t1_date": "2022-07-04",
+        "t1_close": 58.45,
+        "t1_pct": -1.53,
+        "year": 2022,
+        "month": 6,
+        "revenue": 3033457000.0
+      },
+      {
+        "t_date": "2024-07-03",
+        "t_close": 125.91,
+        "t1_date": "2024-07-04",
+        "t1_close": 130.91,
+        "t1_pct": 3.97,
+        "year": 2024,
+        "month": 6,
+        "revenue": 3265801000.0
+      },
+      {
+        "t_date": "2025-07-03",
+        "t_close": 107.83,
+        "t1_date": "2025-07-04",
+        "t1_close": 104.08,
+        "t1_pct": -3.48,
+        "year": 2025,
+        "month": 6,
+        "revenue": 3454770000.0
+      }
+    ],
+    "avg_t1": -0.02,
+    "median_t1": 0.95,
+    "max_t1": 3.97,
+    "min_t1": -3.48,
+    "hit_rate": 50.0,
+    "count": 4,
+    "typical_filing_day": 3,
+    "cached_at": "2026-07-03T15:54:27.514929",
+    "stock_name": "美律",
+    "market": "sii",
+    "current_filing_date": "2026-07-03"
   }
 }
