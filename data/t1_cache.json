@@ -101875,5 +101875,51 @@
     "stock_name": "鴻準",
     "market": "sii",
     "current_filing_date": "2026-07-05"
+  },
+  "2317_6": {
+    "stock_id": "2317",
+    "historical_highs": [
+      {
+        "t_date": "2021-07-05",
+        "t_close": 93.52,
+        "t1_date": "2021-07-06",
+        "t1_close": 93.12,
+        "t1_pct": -0.43,
+        "year": 2021,
+        "month": 6,
+        "revenue": 401616787000.0
+      },
+      {
+        "t_date": "2022-07-05",
+        "t_close": 89.33,
+        "t1_date": "2022-07-06",
+        "t1_close": 87.59,
+        "t1_pct": -1.95,
+        "year": 2022,
+        "month": 6,
+        "revenue": 526195533000.0
+      },
+      {
+        "t_date": "2025-07-04",
+        "t_close": 156.34,
+        "t1_date": "2025-07-07",
+        "t1_close": 156.34,
+        "t1_pct": 0.0,
+        "year": 2025,
+        "month": 6,
+        "revenue": 540236697000.0
+      }
+    ],
+    "avg_t1": -0.79,
+    "median_t1": -0.43,
+    "max_t1": 0.0,
+    "min_t1": -1.95,
+    "hit_rate": 0.0,
+    "count": 3,
+    "typical_filing_day": 5,
+    "cached_at": "2026-07-05T09:44:18.689358",
+    "stock_name": "鴻海",
+    "market": "sii",
+    "current_filing_date": "2026-07-05"
   }
 }
