@@ -101793,5 +101793,87 @@
     "stock_name": "正淩",
     "market": "otc",
     "current_filing_date": "2026-07-04"
+  },
+  "6446_6": {
+    "stock_id": "6446",
+    "historical_highs": [
+      {
+        "t_date": "2022-07-05",
+        "t_close": 470.61,
+        "t1_date": "2022-07-06",
+        "t1_close": 435.54,
+        "t1_pct": -7.45,
+        "year": 2022,
+        "month": 6,
+        "revenue": 276669000.0
+      },
+      {
+        "t_date": "2023-07-05",
+        "t_close": 311.12,
+        "t1_date": "2023-07-06",
+        "t1_close": 321.46,
+        "t1_pct": 3.32,
+        "year": 2023,
+        "month": 6,
+        "revenue": 509165000.0
+      },
+      {
+        "t_date": "2024-07-05",
+        "t_close": 509.83,
+        "t1_date": "2024-07-08",
+        "t1_close": 518.83,
+        "t1_pct": 1.76,
+        "year": 2024,
+        "month": 6,
+        "revenue": 848423000.0
+      },
+      {
+        "t_date": "2025-07-04",
+        "t_close": 486.46,
+        "t1_date": "2025-07-07",
+        "t1_close": 475.67,
+        "t1_pct": -2.22,
+        "year": 2025,
+        "month": 6,
+        "revenue": 1197041000.0
+      }
+    ],
+    "avg_t1": -1.15,
+    "median_t1": 1.76,
+    "max_t1": 3.32,
+    "min_t1": -7.45,
+    "hit_rate": 50.0,
+    "count": 4,
+    "typical_filing_day": 5,
+    "cached_at": "2026-07-05T04:37:47.078607",
+    "stock_name": "藥華藥",
+    "market": "sii",
+    "current_filing_date": "2026-07-05"
+  },
+  "2354_6": {
+    "stock_id": "2354",
+    "historical_highs": [
+      {
+        "t_date": "2025-07-04",
+        "t_close": 61.38,
+        "t1_date": "2025-07-07",
+        "t1_close": 61.28,
+        "t1_pct": -0.16,
+        "year": 2025,
+        "month": 6,
+        "revenue": 13604963000.0
+      }
+    ],
+    "avg_t1": -0.16,
+    "median_t1": -0.16,
+    "max_t1": -0.16,
+    "min_t1": -0.16,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 5,
+    "cached_at": "2026-07-05T04:37:48.074890",
+    "stock_name": "鴻準",
+    "market": "sii",
+    "current_filing_date": "2026-07-05"
   }
 }
