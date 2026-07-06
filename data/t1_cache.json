@@ -106185,5 +106185,77 @@
     "stock_name": "立衛",
     "market": "otc",
     "current_filing_date": "2026-07-06"
+  },
+  "9928_6": {
+    "stock_id": "9928",
+    "historical_highs": [
+      {
+        "t_date": "2022-07-06",
+        "t_close": 16.0,
+        "t1_date": "2022-07-07",
+        "t1_close": 16.0,
+        "t1_pct": 0.0,
+        "year": 2022,
+        "month": 6,
+        "revenue": 69775000.0
+      },
+      {
+        "t_date": "2023-07-06",
+        "t_close": 18.75,
+        "t1_date": "2023-07-07",
+        "t1_close": 18.7,
+        "t1_pct": -0.27,
+        "year": 2023,
+        "month": 6,
+        "revenue": 89189000.0
+      }
+    ],
+    "avg_t1": -0.14,
+    "median_t1": 0.0,
+    "max_t1": 0.0,
+    "min_t1": -0.27,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 6,
+    "cached_at": "2026-07-06T15:41:28.349502",
+    "stock_name": "中視",
+    "market": "sii",
+    "current_filing_date": "2026-07-06"
+  },
+  "8930_6": {
+    "stock_id": "8930",
+    "historical_highs": [
+      {
+        "t_date": "2021-07-06",
+        "t_close": 15.21,
+        "t1_date": "2021-07-07",
+        "t1_close": 14.84,
+        "t1_pct": -2.43,
+        "year": 2021,
+        "month": 6,
+        "revenue": 108643000.0
+      },
+      {
+        "t_date": "2023-07-06",
+        "t_close": 17.82,
+        "t1_date": "2023-07-07",
+        "t1_close": 18.84,
+        "t1_pct": 5.73,
+        "year": 2023,
+        "month": 6,
+        "revenue": 125391000.0
+      }
+    ],
+    "avg_t1": 1.65,
+    "median_t1": 5.73,
+    "max_t1": 5.73,
+    "min_t1": -2.43,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 6,
+    "cached_at": "2026-07-06T15:41:33.025213",
+    "stock_name": "青鋼",
+    "market": "otc",
+    "current_filing_date": "2026-07-06"
   }
 }
