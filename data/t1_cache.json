@@ -109941,5 +109941,31 @@
     "stock_name": "寶島科",
     "market": "otc",
     "current_filing_date": "2026-07-07"
+  },
+  "7761_6": {
+    "stock_id": "7761",
+    "historical_highs": [
+      {
+        "t_date": "2026-07-07",
+        "t_close": NaN,
+        "t1_date": "2026-07-08",
+        "t1_close": NaN,
+        "t1_pct": NaN,
+        "year": 2026,
+        "month": 6,
+        "revenue": 26374000.0
+      }
+    ],
+    "avg_t1": NaN,
+    "median_t1": NaN,
+    "max_t1": NaN,
+    "min_t1": NaN,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 7,
+    "cached_at": "2026-07-07T18:04:12.727722",
+    "stock_name": "三大未來",
+    "market": "emerging",
+    "current_filing_date": "2026-07-07"
   }
 }
