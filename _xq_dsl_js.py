@@ -273,7 +273,8 @@ EXPORT_JS = (
 EXPORT_BUTTON_HTML = (
     '<button class="export-btn" id="exportXqCsv" type="button" '
     'title="匯出當前篩選結果為 XQ 原生 .dsl 檔（組合名「營收」，匯入 XQ 會取代同名商品組合，不會 append 累積重複）">'
-    '&#128229; 匯出 XQ .dsl<span class="count-badge" id="exportCount"></span></button>'
+    '&#128229; 匯出 XQ .dsl<span class="count-badge" id="exportCount"></span>'
+    '<span style="font-size:0.62rem;opacity:0.55;margin-left:4px;">v3</span></button>'
 )
 
 # .export-btn 樣式 — html_generator 模板內已有;patch 既有檔若缺則補
