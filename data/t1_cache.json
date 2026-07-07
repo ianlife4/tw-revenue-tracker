@@ -109715,5 +109715,231 @@
     "stock_name": "達勝",
     "market": "emerging",
     "current_filing_date": "2026-07-07"
+  },
+  "8047_6": {
+    "stock_id": "8047",
+    "historical_highs": [
+      {
+        "t_date": "2021-07-07",
+        "t_close": 11.58,
+        "t1_date": "2021-07-08",
+        "t1_close": 10.99,
+        "t1_pct": -5.02,
+        "year": 2021,
+        "month": 6,
+        "revenue": 58526000.0
+      }
+    ],
+    "avg_t1": -5.02,
+    "median_t1": -5.02,
+    "max_t1": -5.02,
+    "min_t1": -5.02,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 7,
+    "cached_at": "2026-07-07T14:45:40.821430",
+    "stock_name": "星雲",
+    "market": "otc",
+    "current_filing_date": "2026-07-07"
+  },
+  "2942_6": {
+    "stock_id": "2942",
+    "historical_highs": [
+      {
+        "t_date": "2023-07-07",
+        "t_close": 39.11,
+        "t1_date": "2023-07-10",
+        "t1_close": 40.97,
+        "t1_pct": 4.75,
+        "year": 2023,
+        "month": 6,
+        "revenue": 106768000.0
+      }
+    ],
+    "avg_t1": 4.75,
+    "median_t1": 4.75,
+    "max_t1": 4.75,
+    "min_t1": 4.75,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 7,
+    "cached_at": "2026-07-07T14:45:49.384212",
+    "stock_name": "京站",
+    "market": "emerging",
+    "current_filing_date": "2026-07-07"
+  },
+  "4439_6": {
+    "stock_id": "4439",
+    "historical_highs": [
+      {
+        "t_date": "2021-07-07",
+        "t_close": 113.17,
+        "t1_date": "2021-07-08",
+        "t1_close": 113.17,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 6,
+        "revenue": 605513000.0
+      },
+      {
+        "t_date": "2022-07-07",
+        "t_close": 98.3,
+        "t1_date": "2022-07-08",
+        "t1_close": 98.66,
+        "t1_pct": 0.36,
+        "year": 2022,
+        "month": 6,
+        "revenue": 660904000.0
+      },
+      {
+        "t_date": "2025-07-07",
+        "t_close": 95.28,
+        "t1_date": "2025-07-08",
+        "t1_close": 92.45,
+        "t1_pct": -2.98,
+        "year": 2025,
+        "month": 6,
+        "revenue": 671225000.0
+      }
+    ],
+    "avg_t1": -0.87,
+    "median_t1": 0.0,
+    "max_t1": 0.36,
+    "min_t1": -2.98,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 7,
+    "cached_at": "2026-07-07T14:45:53.638052",
+    "stock_name": "冠星-KY",
+    "market": "sii",
+    "current_filing_date": "2026-07-07"
+  },
+  "6493_6": {
+    "stock_id": "6493",
+    "historical_highs": [
+      {
+        "t_date": "2021-07-07",
+        "t_close": 23.54,
+        "t1_date": "2021-07-08",
+        "t1_close": 23.68,
+        "t1_pct": 0.58,
+        "year": 2021,
+        "month": 6,
+        "revenue": 26059000.0
+      },
+      {
+        "t_date": "2022-07-07",
+        "t_close": 20.34,
+        "t1_date": "2022-07-08",
+        "t1_close": 20.02,
+        "t1_pct": -1.57,
+        "year": 2022,
+        "month": 6,
+        "revenue": 35526000.0
+      }
+    ],
+    "avg_t1": -0.5,
+    "median_t1": 0.58,
+    "max_t1": 0.58,
+    "min_t1": -1.57,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 7,
+    "cached_at": "2026-07-07T14:45:56.875801",
+    "stock_name": "雷虎生",
+    "market": "emerging",
+    "current_filing_date": "2026-07-07"
+  },
+  "6599_6": {
+    "stock_id": "6599",
+    "historical_highs": [
+      {
+        "t_date": "2021-07-07",
+        "t_close": 17.99,
+        "t1_date": "2021-07-08",
+        "t1_close": 17.99,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 6,
+        "revenue": 68153000.0
+      },
+      {
+        "t_date": "2022-07-07",
+        "t_close": 24.69,
+        "t1_date": "2022-07-08",
+        "t1_close": 24.53,
+        "t1_pct": -0.66,
+        "year": 2022,
+        "month": 6,
+        "revenue": 83187000.0
+      },
+      {
+        "t_date": "2024-07-05",
+        "t_close": 34.59,
+        "t1_date": "2024-07-08",
+        "t1_close": 36.35,
+        "t1_pct": 5.11,
+        "year": 2024,
+        "month": 6,
+        "revenue": 114610000.0
+      }
+    ],
+    "avg_t1": 1.48,
+    "median_t1": 0.0,
+    "max_t1": 5.11,
+    "min_t1": -0.66,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 7,
+    "cached_at": "2026-07-07T14:45:59.496809",
+    "stock_name": "普達系統",
+    "market": "emerging",
+    "current_filing_date": "2026-07-07"
+  },
+  "5312_6": {
+    "stock_id": "5312",
+    "historical_highs": [
+      {
+        "t_date": "2023-07-07",
+        "t_close": 67.55,
+        "t1_date": "2023-07-10",
+        "t1_close": 70.26,
+        "t1_pct": 4.01,
+        "year": 2023,
+        "month": 6,
+        "revenue": 316073000.0
+      },
+      {
+        "t_date": "2024-07-05",
+        "t_close": 88.53,
+        "t1_date": "2024-07-08",
+        "t1_close": 88.62,
+        "t1_pct": 0.1,
+        "year": 2024,
+        "month": 6,
+        "revenue": 322060000.0
+      },
+      {
+        "t_date": "2025-07-07",
+        "t_close": 129.18,
+        "t1_date": "2025-07-08",
+        "t1_close": 129.18,
+        "t1_pct": 0.0,
+        "year": 2025,
+        "month": 6,
+        "revenue": 331975000.0
+      }
+    ],
+    "avg_t1": 1.37,
+    "median_t1": 0.1,
+    "max_t1": 4.01,
+    "min_t1": 0.0,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 7,
+    "cached_at": "2026-07-07T14:46:05.890902",
+    "stock_name": "寶島科",
+    "market": "otc",
+    "current_filing_date": "2026-07-07"
   }
 }
