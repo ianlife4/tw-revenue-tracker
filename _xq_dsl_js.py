@@ -178,8 +178,14 @@ EXPORT_JS = (
         var list = [];
         for (var i = 0; i < cards.length; i++) {
             var c = cards[i];
-            // 過濾掉被 display:none 隱藏的卡片
+            // 過濾掉被 inline display:none 隱藏的卡片 (date filter / search)
             if (c.style.display === 'none') continue;
+            // 過濾掉被 filter class 隱藏的卡片 (YoY+MoM / 股票期貨 / 可轉債 / 日期屬性)
+            if (c.classList.contains('growth-filtered')) continue;
+            if (c.classList.contains('futures-filtered')) continue;
+            if (c.classList.contains('cb-filtered')) continue;
+            if (c.getAttribute('data-date-hidden')) continue;
+            if (c.getAttribute('data-search-hidden')) continue;
             // 過濾掉父層產業區塊被隱藏的卡片
             var section = c.closest('.industry-section');
             if (section && section.style.display === 'none') continue;
@@ -252,6 +258,13 @@ EXPORT_JS = (
             setTimeout(updateCount, 60);
         });
     }
+    // chip filter (YoY+MoM / 股期 / CB) 變動時更新
+    ['growthFilter', 'futuresFilter', 'cbFilter'].forEach(function(id) {
+        var cb = document.getElementById(id);
+        if (cb) cb.addEventListener('change', function() {
+            setTimeout(updateCount, 60);
+        });
+    });
 })();
 """
 )
