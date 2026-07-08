@@ -115929,5 +115929,51 @@
     "stock_name": "安勤",
     "market": "otc",
     "current_filing_date": "2026-07-08"
+  },
+  "4991_6": {
+    "stock_id": "4991",
+    "historical_highs": [
+      {
+        "t_date": "2022-07-08",
+        "t_close": 38.0,
+        "t1_date": "2022-07-11",
+        "t1_close": 36.45,
+        "t1_pct": -4.08,
+        "year": 2022,
+        "month": 6,
+        "revenue": 162201000.0
+      },
+      {
+        "t_date": "2023-07-07",
+        "t_close": 35.05,
+        "t1_date": "2023-07-10",
+        "t1_close": 35.95,
+        "t1_pct": 2.57,
+        "year": 2023,
+        "month": 6,
+        "revenue": 188983000.0
+      },
+      {
+        "t_date": "2025-07-09",
+        "t_close": 142.5,
+        "t1_date": "2025-07-10",
+        "t1_close": 156.5,
+        "t1_pct": 9.82,
+        "year": 2025,
+        "month": 6,
+        "revenue": 210345000.0
+      }
+    ],
+    "avg_t1": 2.77,
+    "median_t1": 2.57,
+    "max_t1": 9.82,
+    "min_t1": -4.08,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 9,
+    "cached_at": "2026-07-08T23:12:11.398257",
+    "stock_name": "環宇-KY",
+    "market": "otc",
+    "current_filing_date": "2026-07-09"
   }
 }
