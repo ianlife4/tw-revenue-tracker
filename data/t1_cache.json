@@ -115847,5 +115847,87 @@
     "stock_name": "優群",
     "market": "otc",
     "current_filing_date": "2026-07-08"
+  },
+  "3432_6": {
+    "stock_id": "3432",
+    "historical_highs": [
+      {
+        "t_date": "2021-07-08",
+        "t_close": 24.01,
+        "t1_date": "2021-07-09",
+        "t1_close": 24.28,
+        "t1_pct": 1.09,
+        "year": 2021,
+        "month": 6,
+        "revenue": 4349000.0
+      },
+      {
+        "t_date": "2025-07-08",
+        "t_close": 14.8,
+        "t1_date": "2025-07-09",
+        "t1_close": 14.3,
+        "t1_pct": -3.38,
+        "year": 2025,
+        "month": 6,
+        "revenue": 16046000.0
+      }
+    ],
+    "avg_t1": -1.15,
+    "median_t1": 1.09,
+    "max_t1": 1.09,
+    "min_t1": -3.38,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 8,
+    "cached_at": "2026-07-08T14:24:10.949392",
+    "stock_name": "台端",
+    "market": "sii",
+    "current_filing_date": "2026-07-08"
+  },
+  "3479_6": {
+    "stock_id": "3479",
+    "historical_highs": [
+      {
+        "t_date": "2021-07-08",
+        "t_close": 43.37,
+        "t1_date": "2021-07-09",
+        "t1_close": 43.05,
+        "t1_pct": -0.73,
+        "year": 2021,
+        "month": 6,
+        "revenue": 377862000.0
+      },
+      {
+        "t_date": "2022-07-08",
+        "t_close": 54.81,
+        "t1_date": "2022-07-11",
+        "t1_close": 52.81,
+        "t1_pct": -3.65,
+        "year": 2022,
+        "month": 6,
+        "revenue": 669928000.0
+      },
+      {
+        "t_date": "2025-07-08",
+        "t_close": 89.39,
+        "t1_date": "2025-07-09",
+        "t1_close": 90.16,
+        "t1_pct": 0.87,
+        "year": 2025,
+        "month": 6,
+        "revenue": 690503000.0
+      }
+    ],
+    "avg_t1": -1.17,
+    "median_t1": -0.73,
+    "max_t1": 0.87,
+    "min_t1": -3.65,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 8,
+    "cached_at": "2026-07-08T14:24:16.435739",
+    "stock_name": "安勤",
+    "market": "otc",
+    "current_filing_date": "2026-07-08"
   }
 }
