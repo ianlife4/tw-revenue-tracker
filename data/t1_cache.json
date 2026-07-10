@@ -102036,16 +102036,26 @@
         "year": 2021,
         "month": 6,
         "revenue": 96028000.0
+      },
+      {
+        "t_date": "2026-07-03",
+        "t_close": 47.6,
+        "t1_date": "2026-07-06",
+        "t1_close": 46.35,
+        "t1_pct": -2.63,
+        "year": 2026,
+        "month": 6,
+        "revenue": 96393000.0
       }
     ],
-    "avg_t1": 4.2,
+    "avg_t1": 0.79,
     "median_t1": 4.2,
     "max_t1": 4.2,
-    "min_t1": 4.2,
-    "hit_rate": 100.0,
-    "count": 1,
+    "min_t1": -2.63,
+    "hit_rate": 50.0,
+    "count": 2,
     "typical_filing_day": 3,
-    "cached_at": "2026-07-03T15:54:19.446500",
+    "cached_at": "2026-07-10T17:51:12.575350",
     "stock_name": "艾姆勒",
     "market": "sii",
     "current_filing_date": "2026-07-03"
@@ -102082,16 +102092,26 @@
         "year": 2025,
         "month": 6,
         "revenue": 3611629000.0
+      },
+      {
+        "t_date": "2026-07-03",
+        "t_close": 82.0,
+        "t1_date": "2026-07-06",
+        "t1_close": 80.1,
+        "t1_pct": -2.32,
+        "year": 2026,
+        "month": 6,
+        "revenue": 5981740000.0
       }
     ],
-    "avg_t1": 0.2,
+    "avg_t1": -0.43,
     "median_t1": 0.47,
     "max_t1": 1.01,
-    "min_t1": -0.87,
-    "hit_rate": 66.7,
-    "count": 3,
+    "min_t1": -2.32,
+    "hit_rate": 50.0,
+    "count": 4,
     "typical_filing_day": 3,
-    "cached_at": "2026-07-03T15:54:21.411141",
+    "cached_at": "2026-07-10T17:51:22.030110",
     "stock_name": "增你強",
     "market": "sii",
     "current_filing_date": "2026-07-03"
@@ -102128,16 +102148,26 @@
         "year": 2025,
         "month": 6,
         "revenue": 188205000.0
+      },
+      {
+        "t_date": "2026-07-03",
+        "t_close": 92.7,
+        "t1_date": "2026-07-06",
+        "t1_close": 101.5,
+        "t1_pct": 9.49,
+        "year": 2026,
+        "month": 6,
+        "revenue": 224411000.0
       }
     ],
-    "avg_t1": 2.16,
-    "median_t1": 3.0,
-    "max_t1": 3.8,
+    "avg_t1": 3.99,
+    "median_t1": 3.8,
+    "max_t1": 9.49,
     "min_t1": -0.32,
-    "hit_rate": 66.7,
-    "count": 3,
+    "hit_rate": 75.0,
+    "count": 4,
     "typical_filing_day": 3,
-    "cached_at": "2026-07-03T15:54:23.746544",
+    "cached_at": "2026-07-10T17:51:49.123753",
     "stock_name": "中華化",
     "market": "sii",
     "current_filing_date": "2026-07-03"
@@ -102184,16 +102214,26 @@
         "year": 2025,
         "month": 6,
         "revenue": 3454770000.0
+      },
+      {
+        "t_date": "2026-07-03",
+        "t_close": 92.2,
+        "t1_date": "2026-07-06",
+        "t1_close": 91.8,
+        "t1_pct": -0.43,
+        "year": 2026,
+        "month": 6,
+        "revenue": 3459919000.0
       }
     ],
-    "avg_t1": -0.02,
-    "median_t1": 0.95,
+    "avg_t1": -0.1,
+    "median_t1": -0.43,
     "max_t1": 3.97,
     "min_t1": -3.48,
-    "hit_rate": 50.0,
-    "count": 4,
+    "hit_rate": 40.0,
+    "count": 5,
     "typical_filing_day": 3,
-    "cached_at": "2026-07-03T15:54:27.514929",
+    "cached_at": "2026-07-10T17:52:15.925195",
     "stock_name": "美律",
     "market": "sii",
     "current_filing_date": "2026-07-03"
@@ -127347,5 +127387,67 @@
     "stock_name": "世德",
     "market": "otc",
     "current_filing_date": "2026-07-10"
+  },
+  "6217_6": {
+    "stock_id": "6217",
+    "historical_highs": [
+      {
+        "t_date": "2021-07-09",
+        "t_close": 33.19,
+        "t1_date": "2021-07-12",
+        "t1_close": 33.67,
+        "t1_pct": 1.43,
+        "year": 2021,
+        "month": 6,
+        "revenue": 233810000.0
+      },
+      {
+        "t_date": "2022-07-11",
+        "t_close": 54.55,
+        "t1_date": "2022-07-12",
+        "t1_close": 50.29,
+        "t1_pct": -7.8,
+        "year": 2022,
+        "month": 6,
+        "revenue": 329675000.0
+      }
+    ],
+    "avg_t1": -3.19,
+    "median_t1": 1.43,
+    "max_t1": 1.43,
+    "min_t1": -7.8,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 11,
+    "cached_at": "2026-07-10T17:51:29.332161",
+    "stock_name": "中探針",
+    "market": "otc",
+    "current_filing_date": "2026-07-11"
+  },
+  "4442_6": {
+    "stock_id": "4442",
+    "historical_highs": [
+      {
+        "t_date": "2025-07-11",
+        "t_close": 44.24,
+        "t1_date": "2025-07-14",
+        "t1_close": 42.56,
+        "t1_pct": -3.8,
+        "year": 2025,
+        "month": 6,
+        "revenue": 122694000.0
+      }
+    ],
+    "avg_t1": -3.8,
+    "median_t1": -3.8,
+    "max_t1": -3.8,
+    "min_t1": -3.8,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 11,
+    "cached_at": "2026-07-10T17:51:33.046214",
+    "stock_name": "竣邦-KY",
+    "market": "otc",
+    "current_filing_date": "2026-07-11"
   }
 }
