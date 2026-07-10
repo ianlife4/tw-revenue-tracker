@@ -125941,5 +125941,83 @@
     "stock_name": "歐買尬",
     "market": "otc",
     "current_filing_date": "2026-07-10"
+  },
+  "6618_6": {
+    "stock_id": "6618",
+    "historical_highs": [
+      {
+        "t_date": "2023-07-10",
+        "t_close": 18.16,
+        "t1_date": "2023-07-11",
+        "t1_close": 18.16,
+        "t1_pct": 0.0,
+        "year": 2023,
+        "month": 6,
+        "revenue": 6297000.0
+      }
+    ],
+    "avg_t1": 0.0,
+    "median_t1": 0.0,
+    "max_t1": 0.0,
+    "min_t1": 0.0,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-07-10T06:09:27.720474",
+    "stock_name": "永虹先進",
+    "market": "emerging",
+    "current_filing_date": "2026-07-10"
+  },
+  "6225_6": {
+    "stock_id": "6225",
+    "historical_highs": [
+      {
+        "t_date": "2023-07-10",
+        "t_close": 9.26,
+        "t1_date": "2023-07-11",
+        "t1_close": 9.17,
+        "t1_pct": -0.97,
+        "year": 2023,
+        "month": 6,
+        "revenue": 4351000.0
+      }
+    ],
+    "avg_t1": -0.97,
+    "median_t1": -0.97,
+    "max_t1": -0.97,
+    "min_t1": -0.97,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-07-10T06:09:28.575797",
+    "stock_name": "天瀚",
+    "market": "sii",
+    "current_filing_date": "2026-07-10"
+  },
+  "2756_6": {
+    "stock_id": "2756",
+    "historical_highs": [
+      {
+        "t_date": "2025-07-10",
+        "t_close": 110.63,
+        "t1_date": "2025-07-11",
+        "t1_close": 106.8,
+        "t1_pct": -3.46,
+        "year": 2025,
+        "month": 6,
+        "revenue": 105311000.0
+      }
+    ],
+    "avg_t1": -3.46,
+    "median_t1": -3.46,
+    "max_t1": -3.46,
+    "min_t1": -3.46,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-07-10T06:09:52.502471",
+    "stock_name": "聯發國際",
+    "market": "otc",
+    "current_filing_date": "2026-07-10"
   }
 }
