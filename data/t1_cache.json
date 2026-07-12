@@ -128409,5 +128409,51 @@
     "stock_name": "承啟",
     "market": "sii",
     "current_filing_date": "2026-07-12"
+  },
+  "4916_6": {
+    "stock_id": "4916",
+    "historical_highs": [
+      {
+        "t_date": "2021-07-12",
+        "t_close": 24.67,
+        "t1_date": "2021-07-13",
+        "t1_close": 25.22,
+        "t1_pct": 2.27,
+        "year": 2021,
+        "month": 6,
+        "revenue": 240752000.0
+      },
+      {
+        "t_date": "2022-07-12",
+        "t_close": 20.77,
+        "t1_date": "2022-07-13",
+        "t1_close": 21.77,
+        "t1_pct": 4.82,
+        "year": 2022,
+        "month": 6,
+        "revenue": 276271000.0
+      },
+      {
+        "t_date": "2023-07-12",
+        "t_close": 40.42,
+        "t1_date": "2023-07-13",
+        "t1_close": 39.29,
+        "t1_pct": -2.79,
+        "year": 2023,
+        "month": 6,
+        "revenue": 326477000.0
+      }
+    ],
+    "avg_t1": 1.43,
+    "median_t1": 2.27,
+    "max_t1": 4.82,
+    "min_t1": -2.79,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 12,
+    "cached_at": "2026-07-12T13:36:19.390361",
+    "stock_name": "事欣科",
+    "market": "sii",
+    "current_filing_date": "2026-07-12"
   }
 }
