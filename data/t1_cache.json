@@ -102355,7 +102355,7 @@
     "hit_rate": 60.0,
     "count": 5,
     "typical_filing_day": 5,
-    "cached_at": "2026-07-12T05:33:41.771580",
+    "cached_at": "2026-07-19T08:22:11.842646",
     "stock_name": "藥華藥",
     "market": "sii",
     "current_filing_date": "2026-07-05"
@@ -102391,7 +102391,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 5,
-    "cached_at": "2026-07-12T05:33:53.794189",
+    "cached_at": "2026-07-19T08:22:51.082858",
     "stock_name": "鴻準",
     "market": "sii",
     "current_filing_date": "2026-07-05"
@@ -134376,16 +134376,26 @@
         "year": 2022,
         "month": 6,
         "revenue": 563954000.0
+      },
+      {
+        "t_date": "2026-07-10",
+        "t_close": 40.05,
+        "t1_date": "2026-07-13",
+        "t1_close": 44.05,
+        "t1_pct": 9.99,
+        "year": 2026,
+        "month": 6,
+        "revenue": 2408356000.0
       }
     ],
-    "avg_t1": -0.63,
+    "avg_t1": 2.91,
     "median_t1": 0.0,
-    "max_t1": 0.0,
+    "max_t1": 9.99,
     "min_t1": -1.26,
-    "hit_rate": 0.0,
-    "count": 2,
+    "hit_rate": 33.3,
+    "count": 3,
     "typical_filing_day": 12,
-    "cached_at": "2026-07-12T05:33:30.613805",
+    "cached_at": "2026-07-19T08:21:43.607740",
     "stock_name": "承啟",
     "market": "sii",
     "current_filing_date": "2026-07-12"
