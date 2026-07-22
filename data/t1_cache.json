@@ -99845,7 +99845,7 @@
     "hit_rate": 80.0,
     "count": 5,
     "typical_filing_day": 1,
-    "cached_at": "2026-07-15T13:49:45.845912",
+    "cached_at": "2026-07-22T14:02:18.269964",
     "stock_name": "毅嘉",
     "market": "sii",
     "current_filing_date": "2026-07-01"
@@ -99911,7 +99911,7 @@
     "hit_rate": 20.0,
     "count": 5,
     "typical_filing_day": 1,
-    "cached_at": "2026-07-15T13:50:25.500422",
+    "cached_at": "2026-07-22T14:03:08.576440",
     "stock_name": "長聖",
     "market": "otc",
     "current_filing_date": "2026-07-01"
@@ -99947,7 +99947,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 1,
-    "cached_at": "2026-07-15T13:51:10.531904",
+    "cached_at": "2026-07-22T14:04:15.154053",
     "stock_name": "康科特",
     "market": "emerging",
     "current_filing_date": "2026-07-01"
@@ -100003,7 +100003,7 @@
     "hit_rate": 75.0,
     "count": 4,
     "typical_filing_day": 1,
-    "cached_at": "2026-07-15T13:52:03.254388",
+    "cached_at": "2026-07-22T14:05:31.787511",
     "stock_name": "德律",
     "market": "sii",
     "current_filing_date": "2026-07-01"
@@ -112887,7 +112887,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:04.039937",
+    "cached_at": "2026-07-22T13:57:07.994386",
     "stock_name": "聯友金屬-創",
     "market": "tib",
     "current_filing_date": "2026-07-08"
@@ -112923,7 +112923,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:05.299144",
+    "cached_at": "2026-07-22T13:57:10.086379",
     "stock_name": "麗臺",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -112959,7 +112959,7 @@
     "hit_rate": 0.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:08.347015",
+    "cached_at": "2026-07-22T13:57:16.005136",
     "stock_name": "擎亞",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -112995,7 +112995,7 @@
     "hit_rate": 100.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:20.914908",
+    "cached_at": "2026-07-22T13:57:34.297480",
     "stock_name": "和詮",
     "market": "emerging",
     "current_filing_date": "2026-07-08"
@@ -113041,7 +113041,7 @@
     "hit_rate": 33.3,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:23.013870",
+    "cached_at": "2026-07-22T13:57:38.003731",
     "stock_name": "慧友",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -113097,7 +113097,7 @@
     "hit_rate": 25.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:32.051962",
+    "cached_at": "2026-07-22T13:57:51.702873",
     "stock_name": "浩鼎",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -113133,7 +113133,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:34.097083",
+    "cached_at": "2026-07-22T13:57:53.867859",
     "stock_name": "鐳洋科技",
     "market": "emerging",
     "current_filing_date": "2026-07-08"
@@ -113179,7 +113179,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:47.239034",
+    "cached_at": "2026-07-22T13:58:18.330500",
     "stock_name": "志聖",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -113235,7 +113235,7 @@
     "hit_rate": 25.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:50.457308",
+    "cached_at": "2026-07-22T13:58:21.974945",
     "stock_name": "鼎基",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -113291,7 +113291,7 @@
     "hit_rate": 75.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:59.533299",
+    "cached_at": "2026-07-22T13:58:32.438715",
     "stock_name": "萬潤",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -113301,9 +113301,9 @@
     "historical_highs": [
       {
         "t_date": "2021-07-08",
-        "t_close": 39.73,
+        "t_close": 32.52,
         "t1_date": "2021-07-09",
-        "t1_close": 39.88,
+        "t1_close": 32.64,
         "t1_pct": 0.39,
         "year": 2021,
         "month": 6,
@@ -113311,9 +113311,9 @@
       },
       {
         "t_date": "2022-07-08",
-        "t_close": 39.7,
+        "t_close": 32.54,
         "t1_date": "2022-07-11",
-        "t1_close": 39.52,
+        "t1_close": 32.4,
         "t1_pct": -0.43,
         "year": 2022,
         "month": 6,
@@ -113321,9 +113321,9 @@
       },
       {
         "t_date": "2026-07-08",
-        "t_close": 106.5,
+        "t_close": 88.59,
         "t1_date": "2026-07-09",
-        "t1_close": 108.0,
+        "t1_close": 89.84,
         "t1_pct": 1.41,
         "year": 2026,
         "month": 6,
@@ -113337,7 +113337,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:02.030858",
+    "cached_at": "2026-07-22T13:58:35.265591",
     "stock_name": "元大期貨",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -113383,7 +113383,7 @@
     "hit_rate": 100.0,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:08.075000",
+    "cached_at": "2026-07-22T13:58:43.748058",
     "stock_name": "神達",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -113439,7 +113439,7 @@
     "hit_rate": 100.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:13.775599",
+    "cached_at": "2026-07-22T13:58:50.421756",
     "stock_name": "精誠",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -113505,7 +113505,7 @@
     "hit_rate": 100.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:19.450384",
+    "cached_at": "2026-07-22T13:58:57.693230",
     "stock_name": "鑫聯大投控",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -113541,7 +113541,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:25.181537",
+    "cached_at": "2026-07-22T13:59:04.883681",
     "stock_name": "知識科技",
     "market": "emerging",
     "current_filing_date": "2026-07-08"
@@ -113607,7 +113607,7 @@
     "hit_rate": 80.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:28.555076",
+    "cached_at": "2026-07-22T13:59:07.822239",
     "stock_name": "技嘉",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -113643,7 +113643,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:33.874916",
+    "cached_at": "2026-07-22T13:59:14.492080",
     "stock_name": "竑騰",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -113679,7 +113679,7 @@
     "hit_rate": 100.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:35.621373",
+    "cached_at": "2026-07-22T13:59:17.427649",
     "stock_name": "天二科技",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -113715,7 +113715,7 @@
     "hit_rate": 100.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:46.721086",
+    "cached_at": "2026-07-22T13:59:34.479554",
     "stock_name": "英業達",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -113781,7 +113781,7 @@
     "hit_rate": 20.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:50.362935",
+    "cached_at": "2026-07-22T13:59:39.265091",
     "stock_name": "精確",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -113827,7 +113827,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:53.201653",
+    "cached_at": "2026-07-22T13:59:43.363371",
     "stock_name": "緯創",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -113863,7 +113863,7 @@
     "hit_rate": 100.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:55.237778",
+    "cached_at": "2026-07-22T13:59:45.681583",
     "stock_name": "金山電",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -113899,7 +113899,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:56.960297",
+    "cached_at": "2026-07-22T13:59:47.438678",
     "stock_name": "年程",
     "market": "emerging",
     "current_filing_date": "2026-07-08"
@@ -113945,7 +113945,7 @@
     "hit_rate": 100.0,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:06.900502",
+    "cached_at": "2026-07-22T14:00:01.493149",
     "stock_name": "興勤",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -113981,7 +113981,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:11.983686",
+    "cached_at": "2026-07-22T14:00:08.230833",
     "stock_name": "磐儀",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -114017,7 +114017,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:16.672849",
+    "cached_at": "2026-07-22T14:00:14.020915",
     "stock_name": "杭特",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -114073,7 +114073,7 @@
     "hit_rate": 25.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:19.485302",
+    "cached_at": "2026-07-22T14:00:18.313449",
     "stock_name": "訊芯-KY",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -114139,7 +114139,7 @@
     "hit_rate": 80.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:22.814268",
+    "cached_at": "2026-07-22T14:00:22.559767",
     "stock_name": "亞力",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -114195,7 +114195,7 @@
     "hit_rate": 25.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:32.226323",
+    "cached_at": "2026-07-22T14:00:35.944173",
     "stock_name": "台航",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -114231,7 +114231,7 @@
     "hit_rate": 100.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:33.854156",
+    "cached_at": "2026-07-22T14:00:38.090254",
     "stock_name": "雙喜",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -114277,7 +114277,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:39.877153",
+    "cached_at": "2026-07-22T14:00:48.517726",
     "stock_name": "大國鋼",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -114323,7 +114323,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:42.476907",
+    "cached_at": "2026-07-22T14:00:51.108052",
     "stock_name": "欣興",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -114333,9 +114333,9 @@
     "historical_highs": [
       {
         "t_date": "2021-07-08",
-        "t_close": 35.19,
+        "t_close": 33.11,
         "t1_date": "2021-07-09",
-        "t1_close": 34.61,
+        "t1_close": 32.56,
         "t1_pct": -1.65,
         "year": 2021,
         "month": 6,
@@ -114343,9 +114343,9 @@
       },
       {
         "t_date": "2022-07-08",
-        "t_close": 35.59,
+        "t_close": 33.48,
         "t1_date": "2022-07-11",
-        "t1_close": 35.63,
+        "t1_close": 33.52,
         "t1_pct": 0.12,
         "year": 2022,
         "month": 6,
@@ -114353,9 +114353,9 @@
       },
       {
         "t_date": "2026-07-08",
-        "t_close": 34.0,
+        "t_close": 31.99,
         "t1_date": "2026-07-09",
-        "t1_close": 34.3,
+        "t1_close": 32.27,
         "t1_pct": 0.88,
         "year": 2026,
         "month": 6,
@@ -114369,7 +114369,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:44.782696",
+    "cached_at": "2026-07-22T14:00:54.562176",
     "stock_name": "強信-KY",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -114405,7 +114405,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:49.234936",
+    "cached_at": "2026-07-22T14:01:02.414311",
     "stock_name": "天方能源",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -114451,7 +114451,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:57.533603",
+    "cached_at": "2026-07-22T14:01:14.573271",
     "stock_name": "全球傳動",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -114517,7 +114517,7 @@
     "hit_rate": 20.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:01.119156",
+    "cached_at": "2026-07-22T14:01:20.884276",
     "stock_name": "奈米醫材",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -114563,7 +114563,7 @@
     "hit_rate": 100.0,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:05.775267",
+    "cached_at": "2026-07-22T14:01:27.076078",
     "stock_name": "宏致",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -114609,7 +114609,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:07.954875",
+    "cached_at": "2026-07-22T14:01:29.624804",
     "stock_name": "緯穎",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -114655,7 +114655,7 @@
     "hit_rate": 100.0,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:09.747648",
+    "cached_at": "2026-07-22T14:01:31.556354",
     "stock_name": "凡甲",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -114711,7 +114711,7 @@
     "hit_rate": 75.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:13.402490",
+    "cached_at": "2026-07-22T14:01:36.385115",
     "stock_name": "及成",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -114767,7 +114767,7 @@
     "hit_rate": 50.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:21.108913",
+    "cached_at": "2026-07-22T14:01:45.662603",
     "stock_name": "神基",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -114813,7 +114813,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:25.068258",
+    "cached_at": "2026-07-22T14:01:50.669264",
     "stock_name": "堡達",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -114859,7 +114859,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:27.069573",
+    "cached_at": "2026-07-22T14:01:53.085145",
     "stock_name": "固緯",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -114895,7 +114895,7 @@
     "hit_rate": 100.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:28.508971",
+    "cached_at": "2026-07-22T14:01:54.966296",
     "stock_name": "AMAX-KY",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -114905,9 +114905,9 @@
     "historical_highs": [
       {
         "t_date": "2021-07-08",
-        "t_close": 53.56,
+        "t_close": 51.12,
         "t1_date": "2021-07-09",
-        "t1_close": 53.94,
+        "t1_close": 51.48,
         "t1_pct": 0.71,
         "year": 2021,
         "month": 6,
@@ -114915,9 +114915,9 @@
       },
       {
         "t_date": "2022-07-08",
-        "t_close": 73.19,
+        "t_close": 69.85,
         "t1_date": "2022-07-11",
-        "t1_close": 72.95,
+        "t1_close": 69.62,
         "t1_pct": -0.33,
         "year": 2022,
         "month": 6,
@@ -114925,9 +114925,9 @@
       },
       {
         "t_date": "2026-07-08",
-        "t_close": 134.5,
+        "t_close": 128.36,
         "t1_date": "2026-07-09",
-        "t1_close": 131.5,
+        "t1_close": 125.5,
         "t1_pct": -2.23,
         "year": 2026,
         "month": 6,
@@ -114941,7 +114941,7 @@
     "hit_rate": 33.3,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:30.850882",
+    "cached_at": "2026-07-22T14:01:57.232985",
     "stock_name": "飛捷",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -114977,7 +114977,7 @@
     "hit_rate": 0.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:32.592979",
+    "cached_at": "2026-07-22T14:01:59.936138",
     "stock_name": "華新科",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -115033,7 +115033,7 @@
     "hit_rate": 75.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:42.451928",
+    "cached_at": "2026-07-22T14:02:13.851898",
     "stock_name": "達亞",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -115089,7 +115089,7 @@
     "hit_rate": 75.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:53.451149",
+    "cached_at": "2026-07-22T14:02:27.863149",
     "stock_name": "勝一",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -115135,7 +115135,7 @@
     "hit_rate": 100.0,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:55.739058",
+    "cached_at": "2026-07-22T14:02:30.864278",
     "stock_name": "正道",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -115181,7 +115181,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:02.068139",
+    "cached_at": "2026-07-22T14:02:39.061281",
     "stock_name": "佳能",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -115217,7 +115217,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:05.364658",
+    "cached_at": "2026-07-22T14:02:43.935636",
     "stock_name": "瑞鼎",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -115273,7 +115273,7 @@
     "hit_rate": 50.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:11.270608",
+    "cached_at": "2026-07-22T14:02:50.928645",
     "stock_name": "漢田生技",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -115339,7 +115339,7 @@
     "hit_rate": 60.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:14.878785",
+    "cached_at": "2026-07-22T14:02:55.684069",
     "stock_name": "嘉澤",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -115375,7 +115375,7 @@
     "hit_rate": 0.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:16.265275",
+    "cached_at": "2026-07-22T14:02:57.319968",
     "stock_name": "隆中",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -115441,7 +115441,7 @@
     "hit_rate": 20.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:22.077854",
+    "cached_at": "2026-07-22T14:03:04.521840",
     "stock_name": "神腦",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -115497,7 +115497,7 @@
     "hit_rate": 50.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:32.694380",
+    "cached_at": "2026-07-22T14:03:20.625998",
     "stock_name": "豪勉",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -115563,7 +115563,7 @@
     "hit_rate": 60.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:35.775373",
+    "cached_at": "2026-07-22T14:03:24.731230",
     "stock_name": "喬山",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -115609,7 +115609,7 @@
     "hit_rate": 0.0,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:37.809956",
+    "cached_at": "2026-07-22T14:03:27.701004",
     "stock_name": "綠界科技*",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -115639,9 +115639,9 @@
       },
       {
         "t_date": "2024-07-08",
-        "t_close": 142.5,
+        "t_close": 125.03,
         "t1_date": "2024-07-09",
-        "t1_close": 143.5,
+        "t1_close": 125.91,
         "t1_pct": 0.7,
         "year": 2024,
         "month": 6,
@@ -115665,7 +115665,7 @@
     "hit_rate": 50.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:42.357138",
+    "cached_at": "2026-07-22T14:03:33.153151",
     "stock_name": "華立",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -115675,9 +115675,9 @@
     "historical_highs": [
       {
         "t_date": "2022-07-08",
-        "t_close": 43.87,
+        "t_close": 42.17,
         "t1_date": "2022-07-11",
-        "t1_close": 43.95,
+        "t1_close": 42.26,
         "t1_pct": 0.2,
         "year": 2022,
         "month": 6,
@@ -115685,9 +115685,9 @@
       },
       {
         "t_date": "2023-07-07",
-        "t_close": 59.26,
+        "t_close": 56.96,
         "t1_date": "2023-07-10",
-        "t1_close": 58.89,
+        "t1_close": 56.62,
         "t1_pct": -0.61,
         "year": 2023,
         "month": 6,
@@ -115695,9 +115695,9 @@
       },
       {
         "t_date": "2026-07-08",
-        "t_close": 55.2,
+        "t_close": 53.07,
         "t1_date": "2026-07-09",
-        "t1_close": 55.4,
+        "t1_close": 53.26,
         "t1_pct": 0.36,
         "year": 2026,
         "month": 6,
@@ -115711,7 +115711,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:44.124991",
+    "cached_at": "2026-07-22T14:03:35.943169",
     "stock_name": "全國",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -115787,7 +115787,7 @@
     "hit_rate": 33.3,
     "count": 6,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:50.218994",
+    "cached_at": "2026-07-22T14:03:43.889373",
     "stock_name": "常廣",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -115843,7 +115843,7 @@
     "hit_rate": 0.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:53.520382",
+    "cached_at": "2026-07-22T14:03:48.414939",
     "stock_name": "南寶",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -115851,16 +115851,6 @@
   "3587_6": {
     "stock_id": "3587",
     "historical_highs": [
-      {
-        "t_date": "2021-07-08",
-        "t_close": 104.88,
-        "t1_date": "2021-07-09",
-        "t1_close": 103.66,
-        "t1_pct": -1.16,
-        "year": 2021,
-        "month": 6,
-        "revenue": 281963000.0
-      },
       {
         "t_date": "2022-07-08",
         "t_close": 98.06,
@@ -115893,9 +115883,9 @@
       },
       {
         "t_date": "2025-07-08",
-        "t_close": 158.5,
+        "t_close": 153.1,
         "t1_date": "2025-07-09",
-        "t1_close": 170.5,
+        "t1_close": 164.69,
         "t1_pct": 7.57,
         "year": 2025,
         "month": 6,
@@ -115912,14 +115902,14 @@
         "revenue": 558424000.0
       }
     ],
-    "avg_t1": 1.93,
+    "avg_t1": 2.55,
     "median_t1": 1.05,
     "max_t1": 7.57,
     "min_t1": -1.74,
-    "hit_rate": 50.0,
-    "count": 6,
+    "hit_rate": 60.0,
+    "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:02.803558",
+    "cached_at": "2026-07-22T14:04:03.470255",
     "stock_name": "閎康",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -115975,7 +115965,7 @@
     "hit_rate": 50.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:05.421951",
+    "cached_at": "2026-07-22T14:04:08.269504",
     "stock_name": "建新國際",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -116021,7 +116011,7 @@
     "hit_rate": 33.3,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:09.217494",
+    "cached_at": "2026-07-22T14:04:13.157616",
     "stock_name": "精成科",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -116077,7 +116067,7 @@
     "hit_rate": 75.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:13.349591",
+    "cached_at": "2026-07-22T14:04:18.510624",
     "stock_name": "德麥",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -116143,7 +116133,7 @@
     "hit_rate": 60.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:17.334155",
+    "cached_at": "2026-07-22T14:04:23.570021",
     "stock_name": "彰銀",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -116153,9 +116143,9 @@
     "historical_highs": [
       {
         "t_date": "2021-07-08",
-        "t_close": 14.4,
+        "t_close": 14.28,
         "t1_date": "2021-07-09",
-        "t1_close": 14.49,
+        "t1_close": 14.38,
         "t1_pct": 0.66,
         "year": 2021,
         "month": 6,
@@ -116163,9 +116153,9 @@
       },
       {
         "t_date": "2022-07-08",
-        "t_close": 15.73,
+        "t_close": 15.6,
         "t1_date": "2022-07-11",
-        "t1_close": 15.68,
+        "t1_close": 15.56,
         "t1_pct": -0.3,
         "year": 2022,
         "month": 6,
@@ -116173,9 +116163,9 @@
       },
       {
         "t_date": "2023-07-07",
-        "t_close": 15.21,
+        "t_close": 15.09,
         "t1_date": "2023-07-10",
-        "t1_close": 15.6,
+        "t1_close": 15.48,
         "t1_pct": 2.61,
         "year": 2023,
         "month": 6,
@@ -116183,9 +116173,9 @@
       },
       {
         "t_date": "2024-07-08",
-        "t_close": 14.61,
+        "t_close": 14.5,
         "t1_date": "2024-07-09",
-        "t1_close": 14.61,
+        "t1_close": 14.5,
         "t1_pct": 0.0,
         "year": 2024,
         "month": 6,
@@ -116193,9 +116183,9 @@
       },
       {
         "t_date": "2025-07-08",
-        "t_close": 13.0,
+        "t_close": 12.9,
         "t1_date": "2025-07-09",
-        "t1_close": 12.85,
+        "t1_close": 12.75,
         "t1_pct": -1.15,
         "year": 2025,
         "month": 6,
@@ -116203,9 +116193,9 @@
       },
       {
         "t_date": "2026-07-08",
-        "t_close": 12.4,
+        "t_close": 12.3,
         "t1_date": "2026-07-09",
-        "t1_close": 12.4,
+        "t1_close": 12.3,
         "t1_pct": 0.0,
         "year": 2026,
         "month": 6,
@@ -116219,7 +116209,7 @@
     "hit_rate": 33.3,
     "count": 6,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:22.253101",
+    "cached_at": "2026-07-22T14:04:31.778176",
     "stock_name": "福貞-KY",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -116265,7 +116255,7 @@
     "hit_rate": 33.3,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:24.819047",
+    "cached_at": "2026-07-22T14:04:35.556573",
     "stock_name": "關貿",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -116341,7 +116331,7 @@
     "hit_rate": 50.0,
     "count": 6,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:33.175337",
+    "cached_at": "2026-07-22T14:04:47.709628",
     "stock_name": "朋程",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -116387,7 +116377,7 @@
     "hit_rate": 33.3,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:38.609409",
+    "cached_at": "2026-07-22T14:04:55.793059",
     "stock_name": "愛派司",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -116433,7 +116423,7 @@
     "hit_rate": 33.3,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:41.575079",
+    "cached_at": "2026-07-22T14:05:01.140979",
     "stock_name": "中連",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -116489,7 +116479,7 @@
     "hit_rate": 50.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:45.021387",
+    "cached_at": "2026-07-22T14:05:06.008600",
     "stock_name": "中保科",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -116545,7 +116535,7 @@
     "hit_rate": 25.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:47.982700",
+    "cached_at": "2026-07-22T14:05:09.737823",
     "stock_name": "永新-KY",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -116611,7 +116601,7 @@
     "hit_rate": 20.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:55.251178",
+    "cached_at": "2026-07-22T14:05:20.810795",
     "stock_name": "中纖",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -116667,7 +116657,7 @@
     "hit_rate": 25.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:57.859593",
+    "cached_at": "2026-07-22T14:05:25.035260",
     "stock_name": "大將",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -116723,7 +116713,7 @@
     "hit_rate": 25.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:52:00.791943",
+    "cached_at": "2026-07-22T14:05:27.939842",
     "stock_name": "穩得",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -116769,7 +116759,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:52:05.263769",
+    "cached_at": "2026-07-22T14:05:34.206168",
     "stock_name": "均華",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -116779,9 +116769,9 @@
     "historical_highs": [
       {
         "t_date": "2021-07-08",
-        "t_close": 31.85,
+        "t_close": 21.11,
         "t1_date": "2021-07-09",
-        "t1_close": 31.37,
+        "t1_close": 20.79,
         "t1_pct": -1.5,
         "year": 2021,
         "month": 6,
@@ -116789,9 +116779,9 @@
       },
       {
         "t_date": "2025-07-08",
-        "t_close": 63.25,
+        "t_close": 41.92,
         "t1_date": "2025-07-09",
-        "t1_close": 63.78,
+        "t1_close": 42.26,
         "t1_pct": 0.83,
         "year": 2025,
         "month": 6,
@@ -116799,9 +116789,9 @@
       },
       {
         "t_date": "2026-07-08",
-        "t_close": 412.5,
+        "t_close": 273.36,
         "t1_date": "2026-07-09",
-        "t1_close": 371.5,
+        "t1_close": 246.19,
         "t1_pct": -9.94,
         "year": 2026,
         "month": 6,
@@ -116815,7 +116805,7 @@
     "hit_rate": 33.3,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:07.138340",
+    "cached_at": "2026-07-22T13:57:12.582214",
     "stock_name": "青雲",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -116881,7 +116871,7 @@
     "hit_rate": 60.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:11.776447",
+    "cached_at": "2026-07-22T13:57:20.797637",
     "stock_name": "群聯",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -116947,7 +116937,7 @@
     "hit_rate": 20.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:16.149792",
+    "cached_at": "2026-07-22T13:57:26.437573",
     "stock_name": "三圓",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -116983,7 +116973,7 @@
     "hit_rate": 100.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:19.539413",
+    "cached_at": "2026-07-22T13:57:32.459207",
     "stock_name": "順藥",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -117019,7 +117009,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:25.016482",
+    "cached_at": "2026-07-22T13:57:40.729793",
     "stock_name": "千附",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -117095,7 +117085,7 @@
     "hit_rate": 66.7,
     "count": 6,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:29.430859",
+    "cached_at": "2026-07-22T13:57:48.751271",
     "stock_name": "愛爾達-創",
     "market": "tib",
     "current_filing_date": "2026-07-08"
@@ -117105,9 +117095,9 @@
     "historical_highs": [
       {
         "t_date": "2023-07-07",
-        "t_close": 8.32,
+        "t_close": 7.72,
         "t1_date": "2023-07-10",
-        "t1_close": 8.3,
+        "t1_close": 7.7,
         "t1_pct": -0.22,
         "year": 2023,
         "month": 6,
@@ -117115,9 +117105,9 @@
       },
       {
         "t_date": "2026-07-08",
-        "t_close": 11.25,
+        "t_close": 10.44,
         "t1_date": "2026-07-09",
-        "t1_close": 11.45,
+        "t1_close": 10.62,
         "t1_pct": 1.78,
         "year": 2026,
         "month": 6,
@@ -117131,7 +117121,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:37.554324",
+    "cached_at": "2026-07-22T13:58:00.801272",
     "stock_name": "日勝生",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -117177,7 +117167,7 @@
     "hit_rate": 0.0,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:41.824584",
+    "cached_at": "2026-07-22T13:58:08.358605",
     "stock_name": "康普",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -117213,7 +117203,7 @@
     "hit_rate": 0.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:45.286919",
+    "cached_at": "2026-07-22T13:58:14.928965",
     "stock_name": "浩泰",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -117269,7 +117259,7 @@
     "hit_rate": 25.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:53.035085",
+    "cached_at": "2026-07-22T13:58:24.883616",
     "stock_name": "昇達科",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -117335,7 +117325,7 @@
     "hit_rate": 20.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:46:55.851482",
+    "cached_at": "2026-07-22T13:58:28.939612",
     "stock_name": "東浦",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -117371,7 +117361,7 @@
     "hit_rate": 100.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:02.948782",
+    "cached_at": "2026-07-22T13:58:37.087501",
     "stock_name": "大世科",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -117427,7 +117417,7 @@
     "hit_rate": 75.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:05.907461",
+    "cached_at": "2026-07-22T13:58:41.353416",
     "stock_name": "啟碁",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -117493,7 +117483,7 @@
     "hit_rate": 40.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:11.269446",
+    "cached_at": "2026-07-22T13:58:47.331502",
     "stock_name": "金像電",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -117539,7 +117529,7 @@
     "hit_rate": 33.3,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:15.435794",
+    "cached_at": "2026-07-22T13:58:52.674594",
     "stock_name": "台鎔科技",
     "market": "emerging",
     "current_filing_date": "2026-07-08"
@@ -117595,7 +117585,7 @@
     "hit_rate": 50.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:21.914658",
+    "cached_at": "2026-07-22T13:59:00.863590",
     "stock_name": "豐祥-KY",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -117631,7 +117621,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:23.645019",
+    "cached_at": "2026-07-22T13:59:03.287394",
     "stock_name": "千附精密",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -117707,7 +117697,7 @@
     "hit_rate": 66.7,
     "count": 6,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:32.614023",
+    "cached_at": "2026-07-22T13:59:12.687144",
     "stock_name": "友霖",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -117773,7 +117763,7 @@
     "hit_rate": 60.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:38.958987",
+    "cached_at": "2026-07-22T13:59:21.476641",
     "stock_name": "華德動能",
     "market": "emerging",
     "current_filing_date": "2026-07-08"
@@ -117849,7 +117839,7 @@
     "hit_rate": 50.0,
     "count": 6,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:42.384372",
+    "cached_at": "2026-07-22T13:59:28.730704",
     "stock_name": "旺矽",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -117895,7 +117885,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:47:44.911865",
+    "cached_at": "2026-07-22T13:59:31.997630",
     "stock_name": "精星",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -117971,7 +117961,7 @@
     "hit_rate": 16.7,
     "count": 6,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:00.314381",
+    "cached_at": "2026-07-22T13:59:52.232691",
     "stock_name": "永豐金",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -118017,7 +118007,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:02.137591",
+    "cached_at": "2026-07-22T13:59:54.683223",
     "stock_name": "岱稜",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -118063,7 +118053,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:04.093798",
+    "cached_at": "2026-07-22T13:59:57.228160",
     "stock_name": "協益",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -118073,9 +118063,9 @@
     "historical_highs": [
       {
         "t_date": "2022-07-08",
-        "t_close": 229.01,
+        "t_close": 219.11,
         "t1_date": "2022-07-11",
-        "t1_close": 230.85,
+        "t1_close": 220.88,
         "t1_pct": 0.81,
         "year": 2022,
         "month": 6,
@@ -118083,9 +118073,9 @@
       },
       {
         "t_date": "2024-07-08",
-        "t_close": 283.29,
+        "t_close": 271.06,
         "t1_date": "2024-07-09",
-        "t1_close": 272.23,
+        "t1_close": 260.47,
         "t1_pct": -3.9,
         "year": 2024,
         "month": 6,
@@ -118093,9 +118083,9 @@
       },
       {
         "t_date": "2026-07-08",
-        "t_close": 207.0,
+        "t_close": 198.06,
         "t1_date": "2026-07-09",
-        "t1_close": 208.0,
+        "t1_close": 199.02,
         "t1_pct": 0.48,
         "year": 2026,
         "month": 6,
@@ -118109,7 +118099,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:09.230513",
+    "cached_at": "2026-07-22T14:00:05.019788",
     "stock_name": "視陽",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -118145,7 +118135,7 @@
     "hit_rate": 100.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:10.491003",
+    "cached_at": "2026-07-22T14:00:06.622492",
     "stock_name": "衛司特",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -118191,7 +118181,7 @@
     "hit_rate": 0.0,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:13.467491",
+    "cached_at": "2026-07-22T14:00:10.152478",
     "stock_name": "大成鋼",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -118237,7 +118227,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:15.575481",
+    "cached_at": "2026-07-22T14:00:12.655312",
     "stock_name": "威潤",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -118293,7 +118283,7 @@
     "hit_rate": 50.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:25.331986",
+    "cached_at": "2026-07-22T14:00:25.790301",
     "stock_name": "國巨*",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -118349,7 +118339,7 @@
     "hit_rate": 50.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:27.830121",
+    "cached_at": "2026-07-22T14:00:29.268543",
     "stock_name": "長盛",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -118405,7 +118395,7 @@
     "hit_rate": 75.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:30.217408",
+    "cached_at": "2026-07-22T14:00:32.647861",
     "stock_name": "晶達",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -118481,7 +118471,7 @@
     "hit_rate": 50.0,
     "count": 6,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:37.668723",
+    "cached_at": "2026-07-22T14:00:42.793215",
     "stock_name": "緯致",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -118547,7 +118537,7 @@
     "hit_rate": 40.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:47.236531",
+    "cached_at": "2026-07-22T14:00:58.997358",
     "stock_name": "泰創工程",
     "market": "emerging",
     "current_filing_date": "2026-07-08"
@@ -118613,7 +118603,7 @@
     "hit_rate": 40.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:53.007440",
+    "cached_at": "2026-07-22T14:01:07.542797",
     "stock_name": "億泰",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -118626,7 +118616,7 @@
         "t_close": 47.34,
         "t1_date": "2022-07-11",
         "t1_close": 43.81,
-        "t1_pct": -7.46,
+        "t1_pct": -7.47,
         "year": 2022,
         "month": 6,
         "revenue": 33967000.0
@@ -118665,11 +118655,11 @@
     "avg_t1": -2.5,
     "median_t1": -0.89,
     "max_t1": 0.66,
-    "min_t1": -7.46,
+    "min_t1": -7.47,
     "hit_rate": 25.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:48:55.699522",
+    "cached_at": "2026-07-22T14:01:10.987650",
     "stock_name": "金鼎科",
     "market": "emerging",
     "current_filing_date": "2026-07-08"
@@ -118725,7 +118715,7 @@
     "hit_rate": 50.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:03.835391",
+    "cached_at": "2026-07-22T14:01:24.278122",
     "stock_name": "德微",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -118761,7 +118751,7 @@
     "hit_rate": 100.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:11.284842",
+    "cached_at": "2026-07-22T14:01:33.177862",
     "stock_name": "華豫寧",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -118781,9 +118771,9 @@
       },
       {
         "t_date": "2022-07-08",
-        "t_close": 128.0,
+        "t_close": 102.72,
         "t1_date": "2022-07-11",
-        "t1_close": 140.5,
+        "t1_close": 112.75,
         "t1_pct": 9.77,
         "year": 2022,
         "month": 6,
@@ -118827,7 +118817,7 @@
     "hit_rate": 80.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:18.446218",
+    "cached_at": "2026-07-22T14:01:42.706061",
     "stock_name": "上洋",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -118873,7 +118863,7 @@
     "hit_rate": 0.0,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:22.817594",
+    "cached_at": "2026-07-22T14:01:48.106993",
     "stock_name": "安碁",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -118929,7 +118919,7 @@
     "hit_rate": 50.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:34.745175",
+    "cached_at": "2026-07-22T14:02:03.564931",
     "stock_name": "建榮",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -118985,7 +118975,7 @@
     "hit_rate": 50.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:37.251139",
+    "cached_at": "2026-07-22T14:02:07.086358",
     "stock_name": "德淵",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -119031,7 +119021,7 @@
     "hit_rate": 33.3,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:49.863476",
+    "cached_at": "2026-07-22T14:02:21.977030",
     "stock_name": "巧新",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -119087,7 +119077,7 @@
     "hit_rate": 100.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:49:58.061314",
+    "cached_at": "2026-07-22T14:02:33.799002",
     "stock_name": "達欣工",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -119133,7 +119123,7 @@
     "hit_rate": 0.0,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:03.668466",
+    "cached_at": "2026-07-22T14:02:41.202052",
     "stock_name": "青松健康",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -119199,7 +119189,7 @@
     "hit_rate": 20.0,
     "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:08.429390",
+    "cached_at": "2026-07-22T14:02:47.556505",
     "stock_name": "晶瑞光",
     "market": "emerging",
     "current_filing_date": "2026-07-08"
@@ -119209,9 +119199,9 @@
     "historical_highs": [
       {
         "t_date": "2021-07-08",
-        "t_close": 54.44,
+        "t_close": 53.14,
         "t1_date": "2021-07-09",
-        "t1_close": 53.96,
+        "t1_close": 52.67,
         "t1_pct": -0.88,
         "year": 2021,
         "month": 6,
@@ -119219,9 +119209,9 @@
       },
       {
         "t_date": "2022-07-08",
-        "t_close": 50.96,
+        "t_close": 49.74,
         "t1_date": "2022-07-11",
-        "t1_close": 51.31,
+        "t1_close": 50.08,
         "t1_pct": 0.7,
         "year": 2022,
         "month": 6,
@@ -119229,9 +119219,9 @@
       },
       {
         "t_date": "2024-07-08",
-        "t_close": 348.78,
+        "t_close": 340.43,
         "t1_date": "2024-07-09",
-        "t1_close": 383.46,
+        "t1_close": 374.28,
         "t1_pct": 9.94,
         "year": 2024,
         "month": 6,
@@ -119239,9 +119229,9 @@
       },
       {
         "t_date": "2026-07-08",
-        "t_close": 270.0,
+        "t_close": 263.53,
         "t1_date": "2026-07-09",
-        "t1_close": 264.0,
+        "t1_close": 257.68,
         "t1_pct": -2.22,
         "year": 2026,
         "month": 6,
@@ -119255,7 +119245,7 @@
     "hit_rate": 50.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:18.772459",
+    "cached_at": "2026-07-22T14:03:00.747236",
     "stock_name": "系微",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -119291,7 +119281,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:28.352169",
+    "cached_at": "2026-07-22T14:03:13.013970",
     "stock_name": "耀億",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -119337,7 +119327,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:30.046983",
+    "cached_at": "2026-07-22T14:03:16.325610",
     "stock_name": "怡和國際",
     "market": "emerging",
     "current_filing_date": "2026-07-08"
@@ -119347,9 +119337,9 @@
     "historical_highs": [
       {
         "t_date": "2021-07-08",
-        "t_close": 22.55,
+        "t_close": 21.13,
         "t1_date": "2021-07-09",
-        "t1_close": 21.98,
+        "t1_close": 20.6,
         "t1_pct": -2.51,
         "year": 2021,
         "month": 6,
@@ -119357,9 +119347,9 @@
       },
       {
         "t_date": "2024-07-08",
-        "t_close": 36.29,
+        "t_close": 34.01,
         "t1_date": "2024-07-09",
-        "t1_close": 38.03,
+        "t1_close": 35.64,
         "t1_pct": 4.79,
         "year": 2024,
         "month": 6,
@@ -119367,9 +119357,9 @@
       },
       {
         "t_date": "2026-07-08",
-        "t_close": 33.95,
+        "t_close": 31.81,
         "t1_date": "2026-07-09",
-        "t1_close": 34.05,
+        "t1_close": 31.91,
         "t1_pct": 0.29,
         "year": 2026,
         "month": 6,
@@ -119383,7 +119373,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:46.258963",
+    "cached_at": "2026-07-22T14:03:38.965726",
     "stock_name": "華榮",
     "market": "sii",
     "current_filing_date": "2026-07-08"
@@ -119439,7 +119429,7 @@
     "hit_rate": 0.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:56.210251",
+    "cached_at": "2026-07-22T14:03:51.370994",
     "stock_name": "洛碁",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -119475,7 +119465,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:50:57.740783",
+    "cached_at": "2026-07-22T14:03:53.118039",
     "stock_name": "沈氏",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -119521,7 +119511,7 @@
     "hit_rate": 0.0,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:28.934770",
+    "cached_at": "2026-07-22T14:04:42.245603",
     "stock_name": "白紗科",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -119577,7 +119567,7 @@
     "hit_rate": 50.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:36.448591",
+    "cached_at": "2026-07-22T14:04:51.945921",
     "stock_name": "正德",
     "market": "otc",
     "current_filing_date": "2026-07-08"
@@ -119633,7 +119623,7 @@
     "hit_rate": 25.0,
     "count": 4,
     "typical_filing_day": 8,
-    "cached_at": "2026-07-15T13:51:50.596376",
+    "cached_at": "2026-07-22T14:05:12.935770",
     "stock_name": "優群",
     "market": "otc",
     "current_filing_date": "2026-07-08"
