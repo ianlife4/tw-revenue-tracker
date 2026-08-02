@@ -3,582 +3,1140 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>營收即時追蹤 - 2026/07</title>
+<title>營收創同期新高 - 2026/07</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background: #0d1117;
     color: #e6edf3;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif;
     line-height: 1.6;
     min-height: 100vh;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* ===== Header ===== */
 header {
     text-align: center;
-    padding: 30px 20px 20px;
+    padding: 40px 20px 30px;
 }
 
 header h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 8px;
 }
 
-.period-info {
+header .subtitle {
     color: #8b949e;
     font-size: 0.95rem;
-    margin-bottom: 4px;
 }
 
-.period-info .highlight {
-    color: #58a6ff;
-    font-weight: 600;
-}
-
-.monitor-status {
-    font-size: 0.85rem;
-    color: #6e7681;
-}
-
-.monitor-status .status-active {
-    color: #3fb950;
-}
-
-.stats-bar {
+header .date-nav {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 30px;
-    margin: 20px 0;
-    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 16px;
 }
 
-.stat-item {
-    text-align: center;
-}
-
-.stat-item .stat-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #f85149;
-}
-
-.stat-item .stat-label {
-    font-size: 0.8rem;
-    color: #8b949e;
-}
-
-/* ===== 預警清單 ===== */
-.prefiling-section {
-    margin: 20px 0;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    border: 1px solid #f0883e44;
-    border-radius: 10px;
-    padding: 16px 20px;
-}
-
-.pf-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.pf-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #f0883e;
-}
-
-.pf-summary {
-    font-size: 0.8rem;
-    color: #8b949e;
-}
-
-.pf-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.pf-card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 10px 14px;
-    background: #0d1117cc;
-    border-left: 3px solid #f0883e;
-    border-radius: 6px;
-    flex-wrap: wrap;
-}
-
-.pf-card-filed {
-    border-left-color: #3fb950;
-    opacity: 0.7;
-}
-
-.pf-left {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    min-width: 180px;
-}
-
-.pf-sid {
-    font-weight: 700;
-    color: #58a6ff;
-    font-size: 0.95rem;
-    min-width: 45px;
-}
-
-.pf-name {
-    color: #e6edf3;
-    font-size: 0.9rem;
-}
-
-.pf-badge {
-    font-size: 0.7rem;
-    padding: 1px 6px;
-    border-radius: 4px;
+header .date-info {
+    font-size: 1.3rem;
     font-weight: 600;
+    color: #58a6ff;
 }
 
-.pf-filed {
-    background: #3fb95033;
-    color: #3fb950;
-}
-
-.pf-pending {
-    background: #f0883e33;
-    color: #f0883e;
-}
-
-.pf-mid {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-width: 220px;
-}
-
-.pf-avg {
-    color: #f85149;
-    font-size: 0.9rem;
-}
-
-.pf-avg strong {
-    font-size: 1rem;
-}
-
-.pf-hit {
-    color: #8b949e;
-    font-size: 0.8rem;
-}
-
-.pf-count {
-    color: #6e7681;
-    font-size: 0.75rem;
-}
-
-.pf-right {
-    flex: 1;
-}
-
-.pf-msg {
-    color: #8b949e;
-    font-size: 0.78rem;
-}
-
-/* ===== 搜尋 + 篩選 ===== */
-.filter-bar {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin: 20px 0;
-    padding: 12px 16px;
-    background: #161b22;
-    border: 1px solid #21262d;
-    border-radius: 8px;
-}
-
-.filter-group {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.filter-group label {
-    font-size: 0.8rem;
-    color: #8b949e;
-}
-
-.filter-group input[type="checkbox"] {
-    accent-color: #58a6ff;
-}
-
-.filter-group input[type="number"] {
-    width: 60px;
-    padding: 4px 8px;
-    font-size: 0.8rem;
-    color: #e6edf3;
-    background: #0d1117;
-    border: 1px solid #30363d;
-    border-radius: 4px;
-    text-align: center;
-}
-
-.filter-group select {
-    padding: 4px 8px;
-    font-size: 0.8rem;
-    color: #e6edf3;
-    background: #0d1117;
-    border: 1px solid #30363d;
-    border-radius: 4px;
-}
-
-.search-input {
-    flex: 1;
-    min-width: 160px;
-    padding: 6px 12px;
-    font-size: 0.85rem;
-    color: #e6edf3;
-    background: #0d1117;
-    border: 1px solid #30363d;
-    border-radius: 6px;
-    outline: none;
-}
-
-.search-input:focus {
-    border-color: #58a6ff;
-}
-
-.search-input::placeholder {
-    color: #6e7681;
-}
-
-.filter-count {
-    font-size: 0.8rem;
-    color: #8b949e;
-}
-
-/* ===== 導航 ===== */
-.nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.nav-link {
+.nav-btn {
     color: #8b949e;
     text-decoration: none;
-    font-size: 0.85rem;
-    padding: 4px 12px;
+    font-size: 0.9rem;
+    padding: 6px 16px;
     border: 1px solid #30363d;
     border-radius: 6px;
     transition: all 0.2s;
 }
 
-.nav-link:hover {
+.nav-btn:hover {
     color: #58a6ff;
     border-color: #58a6ff;
-}
-
-.nav-link.active {
-    color: #58a6ff;
-    border-color: #58a6ff;
-    background: #58a6ff15;
-}
-
-/* ===== 表格 ===== */
-.table-wrapper {
-    overflow-x: auto;
-    border: 1px solid #21262d;
-    border-radius: 8px;
     background: #161b22;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.85rem;
+/* Month Picker */
+.month-picker-wrap {
+    position: relative;
+    display: inline-block;
 }
-
-thead th {
-    padding: 10px 14px;
-    text-align: left;
-    font-size: 0.78rem;
-    color: #8b949e;
+.month-picker-btn {
+    font-size: 1.3rem;
     font-weight: 600;
-    border-bottom: 2px solid #21262d;
-    white-space: nowrap;
+    color: #58a6ff;
     cursor: pointer;
+    padding: 4px 12px;
+    border-radius: 6px;
+    transition: background 0.2s;
     user-select: none;
-    transition: color 0.2s;
-    position: sticky;
-    top: 0;
-    background: #161b22;
-    z-index: 5;
+}
+.month-picker-btn:hover {
+    background: rgba(88,166,255,0.1);
+}
+.month-picker-btn::after {
+    content: " ▾";
+    font-size: 0.8rem;
+}
+.month-dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1c2128;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 12px;
+    z-index: 999;
+    min-width: 220px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.month-dropdown.show {
+    display: block;
+}
+.month-dropdown-year {
+    color: #8b949e;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 8px 4px;
+    border-bottom: 1px solid #21262d;
+    margin-bottom: 4px;
+}
+.month-dropdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+}
+.month-dropdown-item {
+    display: block;
+    padding: 6px 4px;
+    text-align: center;
+    color: #c9d1d9;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    transition: all 0.15s;
+}
+.month-dropdown-item:hover {
+    background: rgba(88,166,255,0.15);
+    color: #58a6ff;
+}
+.month-dropdown-item.active {
+    background: #58a6ff;
+    color: #0d1117;
+    font-weight: 600;
+}
+.month-dropdown-item.disabled {
+    color: #30363d;
+    pointer-events: none;
 }
 
-thead th:hover {
+header .update-time {
+    color: #6e7681;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+
+.summary {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0 30px;
+    flex-wrap: wrap;
+}
+
+.summary-item {
+    text-align: center;
+}
+
+.summary-item .number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f85149;
+}
+
+.summary-item .label {
+    font-size: 0.85rem;
+    color: #8b949e;
+}
+
+/* ===== 市場分頁 Tab ===== */
+.market-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 0 0 30px;
+    border-bottom: 2px solid #21262d;
+    flex-wrap: wrap;
+}
+
+.market-tab {
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #8b949e;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.market-tab:hover {
     color: #e6edf3;
+    background: #161b22;
 }
 
-thead th.sort-active {
+.market-tab.active {
     color: #58a6ff;
     border-bottom-color: #58a6ff;
 }
 
-thead th .sort-arrow {
-    font-size: 0.6rem;
-    margin-left: 3px;
-    opacity: 0.4;
-}
-
-thead th.sort-active .sort-arrow {
-    opacity: 1;
-}
-
-.col-rev, .col-pct {
-    text-align: right;
-    padding-right: 14px;
-}
-
-thead th.col-rev, thead th.col-pct {
-    text-align: right;
-}
-
-tbody tr {
-    cursor: pointer;
-    transition: background 0.12s;
-}
-
-tbody tr:hover {
-    background: rgba(88,166,255,0.08);
-}
-
-tbody tr:nth-child(even) {
-    background: rgba(22,27,34,0.5);
-}
-
-tbody tr:nth-child(even):hover {
-    background: rgba(88,166,255,0.08);
-}
-
-tbody tr.new-filing {
-    background: rgba(88,166,255,0.12);
-}
-
-tbody td {
-    padding: 9px 14px;
-    border-bottom: 1px solid #21262d10;
-    white-space: nowrap;
-}
-
-.col-id {
-    font-family: "Consolas", "Monaco", monospace;
-    font-weight: 600;
-    color: #58a6ff;
-}
-
-.col-name {
+.market-tab .tab-count {
+    display: inline-block;
+    background: #21262d;
+    color: #8b949e;
+    border-radius: 10px;
+    padding: 1px 8px;
+    font-size: 0.75rem;
+    margin-left: 6px;
     font-weight: 500;
 }
 
-.col-seen {
-    color: #8b949e;
-    font-family: "Consolas", "Monaco", monospace;
-    font-size: 0.78rem;
-}
-
-.col-rev {
-    font-family: "Consolas", "Monaco", monospace;
-    font-weight: 700;
-    color: #f85149;
-    font-size: 0.9rem;
-}
-
-.col-pct {
-    font-family: "Consolas", "Monaco", monospace;
-}
-
-.market-badge {
-    font-size: 0.65rem;
-    color: #6e7681;
-    background: #21262d;
-    padding: 1px 5px;
-    border-radius: 3px;
-    margin-left: 4px;
-}
-
-/* ===== 展開明細 ===== */
-.detail-row td {
-    padding: 16px;
-    background: #0d1117;
-    border-bottom: 2px solid #21262d;
-}
-
-.detail-content {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.detail-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.detail-header a {
+.market-tab.active .tab-count {
+    background: #58a6ff33;
     color: #58a6ff;
-    text-decoration: none;
-    font-size: 0.85rem;
+}
+
+.market-panel {
+    display: none;
+}
+
+.market-panel.active {
+    display: block;
+}
+
+/* ===== 產業區塊 ===== */
+.industry-section {
+    background: #161b22;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    border: 1px solid #21262d;
+}
+
+.industry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: #1c2128;
+    border-bottom: 1px solid #21262d;
+}
+
+.industry-header h2 {
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
-.detail-header a:hover {
-    text-decoration: underline;
-}
-
-.detail-links {
-    display: flex;
-    gap: 8px;
-}
-
-.detail-links a {
-    padding: 4px 10px;
-    font-size: 0.75rem;
+.industry-count {
     color: #8b949e;
-    background: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.2s;
+    font-size: 0.9rem;
 }
 
-.detail-links a:hover {
-    color: #58a6ff;
+.stock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 12px;
+    padding: 16px;
+}
+
+.stock-card {
+    background: #0d1117;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    padding: 16px;
+    transition: border-color 0.2s;
+}
+
+.stock-card:hover {
     border-color: #58a6ff;
 }
 
-.remark-box {
+.stock-card .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.stock-info {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.stock-name {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.stock-id {
+    color: #8b949e;
+    font-size: 0.85rem;
+}
+
+.revenue-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #f85149;
+}
+
+.stock-card .pct-change {
+    color: #f85149;
+    font-size: 0.85rem;
+}
+
+.stock-card .pct-change.negative {
+    color: #3fb950;
+}
+
+.stock-card .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.stock-card .revenue-label {
+    color: #8b949e;
+    font-size: 0.8rem;
+}
+
+.tag {
+    display: inline-block;
+    background: #f8514922;
+    color: #f85149;
+    border: 1px solid #f8514944;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.exceed-tag {
+    background: #f0883e22;
+    color: #f0883e;
+    border-color: #f0883e44;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ===== 備註 ===== */
+.remark-row {
+    margin-top: 8px;
     padding: 6px 10px;
     background: #1c2128;
     border-left: 3px solid #f0883e;
     border-radius: 0 4px 4px 0;
     font-size: 0.78rem;
     color: #d2a8ff;
+    line-height: 1.5;
 }
 
-/* ===== 歷史表格 ===== */
-.history-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 8px;
-    font-size: 0.8rem;
+.remark-icon {
+    color: #f0883e;
+    margin-right: 4px;
 }
 
-.history-table th {
-    padding: 6px 12px;
-    text-align: right;
+/* ===== T+1 歷史表現 ===== */
+.t1-box {
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: #1c2128;
+    border-left: 3px solid #58a6ff;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.78rem;
+}
+
+.t1-title {
+    color: #58a6ff;
     font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.t1-stats {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+}
+
+.t1-stats span {
     color: #8b949e;
-    border-bottom: 1px solid #21262d;
-    cursor: default;
 }
 
-.history-table th:first-child {
-    text-align: left;
+.t1-detail {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #21262d;
 }
 
-.history-table td {
-    padding: 5px 12px;
-    text-align: right;
+.t1-item {
     font-family: "Consolas", "Monaco", monospace;
-    border-bottom: 1px solid #21262d10;
-}
-
-.history-table td:first-child {
-    text-align: left;
+    font-size: 0.72rem;
     color: #8b949e;
+    background: #0d1117;
+    padding: 1px 6px;
+    border-radius: 3px;
 }
 
-/* ===== 柱狀圖 ===== */
+/* (推播提醒已停用) */
+
+.alert-card .alert-msg {
+    font-size: 0.78rem;
+    color: #8b949e;
+    flex: 1;
+}
+
+.card-links {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #21262d;
+}
+
+.card-link {
+    flex: 1;
+    text-align: center;
+    padding: 5px 8px;
+    font-size: 0.75rem;
+    color: #8b949e;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.card-link:hover {
+    color: #58a6ff;
+    border-color: #58a6ff;
+}
+
+/* ===== 柱狀圖 (MoM 雙柱) ===== */
+.chart-toggle {
+    margin-top: 10px;
+    border-top: 1px solid #21262d;
+}
+
+.chart-toggle summary {
+    cursor: pointer;
+    padding: 8px 0 4px;
+    font-size: 0.8rem;
+    color: #58a6ff;
+    user-select: none;
+    list-style: none;
+}
+
+.chart-toggle summary::-webkit-details-marker {
+    display: none;
+}
+
+.chart-toggle summary::before {
+    content: "\25B6  ";
+    font-size: 0.65rem;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+.chart-toggle[open] summary::before {
+    transform: rotate(90deg);
+}
+
 .mini-chart {
     display: flex;
     align-items: flex-end;
     gap: 2px;
-    height: 100px;
-    padding: 8px 0;
+    padding: 12px 2px 4px;
+    height: 160px;
 }
 
-.chart-bar-single {
+.chart-group {
     flex: 1;
-    min-width: 4px;
-    max-width: 16px;
-    border-radius: 2px 2px 0 0;
-    background: #6e7681;
-    min-height: 2px;
-    transition: background 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    min-width: 0;
 }
 
-.chart-bar-single.current {
+.chart-bars-pair {
+    display: flex;
+    align-items: flex-end;
+    gap: 1px;
+    flex: 1;
+    width: 100%;
+    justify-content: center;
+}
+
+.chart-bar {
+    width: 45%;
+    max-width: 14px;
+    border-radius: 2px 2px 0 0;
+    transition: height 0.3s;
+    min-height: 2px;
+}
+
+.chart-bar.prev {
+    background: #58a6ff;
+}
+
+.chart-bar.curr {
     background: #f0883e;
 }
 
-.chart-bar-single:hover {
+.chart-bar.curr.is-target {
+    background: #f0883e;
+    box-shadow: 0 0 4px #f0883e88;
+}
+
+.chart-month-label {
+    font-size: 0.55rem;
+    color: #6e7681;
+    margin-top: 3px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.chart-month-label.is-target {
+    color: #f0883e;
+    font-weight: 600;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 8px;
+    padding-bottom: 4px;
+}
+
+.chart-legend span {
+    font-size: 0.7rem;
+    color: #8b949e;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.legend-dot.prev { background: #58a6ff; }
+.legend-dot.curr { background: #f0883e; }
+
+/* ===== 柱狀圖 Tooltip ===== */
+.chart-tooltip {
+    position: absolute;
+    background: #1c2128;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    color: #e6edf3;
+    pointer-events: none;
+    z-index: 100;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    line-height: 1.6;
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+
+.chart-tooltip.visible {
+    opacity: 1;
+}
+
+.chart-tooltip .tt-month {
+    font-weight: 600;
+    color: #58a6ff;
+    margin-bottom: 2px;
+}
+
+.chart-tooltip .tt-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.chart-tooltip .tt-label {
+    color: #8b949e;
+}
+
+.chart-tooltip .tt-val {
+    font-weight: 600;
+}
+
+.chart-tooltip .tt-val.prev { color: #58a6ff; }
+.chart-tooltip .tt-val.curr { color: #f0883e; }
+.chart-tooltip .tt-val.yoy-pos { color: #f85149; }
+.chart-tooltip .tt-val.yoy-neg { color: #3fb950; }
+
+.mini-chart {
+    position: relative;
+}
+
+.chart-group {
+    cursor: pointer;
+}
+
+.chart-group:hover .chart-bar.prev {
     background: #79bbff;
 }
 
-.chart-labels {
+.chart-group:hover .chart-bar.curr {
+    background: #f5a664;
+}
+
+/* ===== 日期篩選 + 工具列 ===== */
+.toolbar {
     display: flex;
-    gap: 2px;
-    font-size: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.date-filter {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.date-filter .date-label {
+    color: #6e7681;
+    font-size: 0.8rem;
+    margin-right: 4px;
+}
+
+.date-pill {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    color: #8b949e;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.date-pill:hover {
+    color: #e6edf3;
+    border-color: #8b949e;
+}
+
+.date-pill.active {
+    color: #f0883e;
+    border-color: #f0883e;
+    background: #f0883e15;
+}
+
+/* 排序模式下隱藏產業分組標題 */
+body.sort-mode .industry-header {
+    display: none;
+}
+
+body.sort-mode .industry-section {
+    background: transparent;
+    border: none;
+    margin-bottom: 0;
+}
+
+body.sort-mode .stock-grid {
+    padding: 0;
+}
+
+/* ===== 搜尋列 ===== */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    max-width: 480px;
+    padding: 10px 16px 10px 40px;
+    font-size: 0.95rem;
+    color: #e6edf3;
+    background: #161b22 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%238b949e' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242.156a5 5 0 1 1 0-10 5 5 0 0 1 0 10z'/%3E%3C/svg%3E") no-repeat 12px center;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-bar input::placeholder {
     color: #6e7681;
 }
 
-.chart-labels span {
-    flex: 1;
+.search-bar input:focus {
+    border-color: #58a6ff;
+    background-color: #0d1117;
+}
+
+.search-result-info {
     text-align: center;
-    min-width: 4px;
-    max-width: 16px;
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin: -10px 0 16px;
+    display: none;
+}
+
+/* ===== 篩選按鈕 (YoY+MoM/股票期貨/CB 等) ===== */
+.chip-filter {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 6px 12px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #8b949e;
+    user-select: none;
+    transition: all 0.15s;
+}
+.chip-filter:hover {
+    background: rgba(88,166,255,0.08);
+}
+.chip-filter.active {
+    border-color: #58a6ff;
+    color: #58a6ff;
+    background: rgba(88,166,255,0.06);
+}
+
+.stock-card.growth-filtered,
+.stock-card.futures-filtered,
+.stock-card.cb-filtered {
+    display: none !important;
+}
+
+/* ===== 檢視模式切換 ===== */
+.view-toggle {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    gap: 4px;
+}
+
+.view-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    color: #8b949e;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.view-btn:hover {
+    color: #e6edf3;
+    border-color: #8b949e;
+}
+
+.view-btn.active {
+    color: #58a6ff;
+    border-color: #58a6ff;
+    background: #58a6ff15;
+}
+
+/* ===== XQ 自選股匯出按鈕 ===== */
+.export-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    color: #56d364;
+    background: #161b22;
+    border: 1px solid #56d36450;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    margin-right: 8px;
+    font-family: inherit;
+}
+
+.export-btn:hover {
+    color: #fff;
+    border-color: #56d364;
+    background: #56d36420;
+}
+
+.export-btn:active {
+    transform: translateY(1px);
+}
+
+.export-btn .count-badge {
+    color: #8b949e;
+    margin-left: 4px;
+    font-size: 0.7rem;
+}
+
+/* ===== 精簡模式 (表格風格) ===== */
+body.compact .stock-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    padding: 0;
+}
+
+body.compact .stock-card {
+    display: table-row;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+body.compact .stock-card:hover {
+    background: rgba(88,166,255,0.08);
+    border-color: transparent;
+}
+
+body.compact .stock-card .top-row {
+    display: contents;
+}
+
+/* 申報日 cell — 只在 compact 模式顯示 */
+.filing-cell {
+    display: none;
+}
+body.compact .filing-cell {
+    display: table-cell;
+    padding: 8px 10px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #58a6ff;
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body.compact .stock-info {
+    display: table-cell;
+    padding: 8px 12px;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body.compact .stock-name {
+    font-size: 0.88rem;
+    color: #58a6ff;
+}
+
+body.compact .stock-id {
+    font-size: 0.75rem;
+    color: #6e7681;
+    margin-left: 6px;
+}
+
+body.compact .revenue-value {
+    display: table-cell;
+    padding: 8px 12px;
+    vertical-align: middle;
+    text-align: right;
+    font-size: 0.95rem;
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body.compact .stock-card .detail-row {
+    display: none;
+}
+
+body.compact .stock-card .detail-row:nth-child(4),
+body.compact .stock-card .detail-row:nth-child(5),
+body.compact .stock-card .detail-row:nth-child(6) {
+    display: table-cell;
+    padding: 8px 10px;
+    vertical-align: middle;
+    text-align: right;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body.compact .stock-card .detail-row .revenue-label {
+    display: none;
+}
+
+body.compact .pct-change {
+    font-size: 0.85rem;
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+}
+
+body.compact .exceed-tag {
+    font-size: 0.8rem;
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+body.compact .tag {
+    display: none;
+}
+
+body.compact .card-links {
+    display: none;
+}
+
+body.compact .chart-toggle {
+    display: none;
+}
+
+/* compact: 備註作為表格欄位顯示 */
+body.compact .remark-row {
+    display: table-cell !important;
+    padding: 4px 10px;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 0.72rem;
+    color: #c9d1d9;
+    width: 34%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 0;
+    background: transparent !important;
+    border-left: none !important;
+    border-radius: 0 !important;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+body.compact .remark-row .remark-icon {
+    display: none;
+}
+
+/* compact: 隱藏 T+1 */
+body.compact .t1-box {
+    display: none;
+}
+
+body.compact .t1-detail {
+    gap: 4px;
+    margin-top: 2px;
+    padding-top: 2px;
+}
+
+body.compact .t1-item {
+    font-size: 0.65rem;
+    padding: 0px 4px;
+}
+
+/* compact 展開狀態 */
+body.compact .stock-card.expanded {
+    display: table-row;
+    background: #161b22;
+}
+
+body.compact .stock-card.expanded + .expanded-detail {
+    display: table-row;
+}
+
+.expanded-detail {
+    display: none;
+}
+
+/* 展開行內的元素恢復顯示 */
+.expanded-detail-row .chart-toggle {
+    display: block !important;
+}
+
+.expanded-detail-row .t1-box {
+    display: block !important;
+    max-width: 100%;
+    background: #1c2128;
+    border-left: 3px solid #58a6ff;
+    border-radius: 0 4px 4px 0;
+    padding: 8px 10px;
+}
+
+.expanded-detail-row .remark-row {
+    display: block !important;
+}
+
+.expanded-detail-row .card-links {
+    display: flex !important;
+}
+
+body.compact .industry-header {
+    padding: 10px 16px;
+}
+
+body.compact .industry-header h2 {
+    font-size: 0.95rem;
+}
+
+/* compact 表頭列 (可點排序) */
+.compact-header {
+    display: none;
+}
+
+body.compact .compact-header {
+    display: table-row;
+    font-size: 0.72rem;
+    color: #6e7681;
+    font-weight: 600;
+    background: #161b22;
+}
+
+body.compact .compact-header .ch-col {
+    display: table-cell;
+    padding: 8px 12px;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s;
+    white-space: nowrap;
+    border-bottom: 2px solid #21262d;
+    vertical-align: middle;
+}
+
+body.compact .compact-header .ch-name { width: 14%; }
+body.compact .compact-header .ch-filing { width: 8%; text-align: center; }
+body.compact .compact-header .ch-rev { width: 13%; }
+body.compact .compact-header .ch-yoy { width: 11%; }
+body.compact .compact-header .ch-mom { width: 11%; }
+body.compact .compact-header .ch-exceed { width: 11%; }
+body.compact .compact-header .ch-remark { width: 32%; text-align: left; padding-left: 10px; }
+
+body.compact .compact-header .ch-col:not(.ch-name):not(.ch-remark) {
+    text-align: right;
+    padding-right: 10px;
+}
+
+body.compact .compact-header .ch-col:hover {
+    color: #e6edf3;
+}
+
+body.compact .compact-header .ch-col.sort-active {
+    color: #58a6ff;
+    border-bottom-color: #58a6ff;
+}
+
+body.compact .compact-header .ch-col .sort-arrow {
+    font-size: 0.6rem;
+    margin-left: 2px;
+    opacity: 0.4;
+}
+
+body.compact .compact-header .ch-col.sort-active .sort-arrow {
+    opacity: 1;
+}
+
+/* 行間交替色 (compact-header 是第一個子元素，stock-card 從第二個開始) */
+body.compact .stock-card:nth-child(odd) {
+    background: rgba(22,27,34,0.5);
+}
+
+body.compact .stock-card:nth-child(odd):hover {
+    background: rgba(88,166,255,0.08);
+}
+
+@media (max-width: 768px) {
+    body.compact .stock-info {
+        padding: 6px 8px;
+    }
+    body.compact .revenue-value {
+        padding: 6px 8px;
+        font-size: 0.82rem;
+    }
+    body.compact .stock-card .detail-row:nth-child(4),
+    body.compact .stock-card .detail-row:nth-child(5),
+    body.compact .stock-card .detail-row:nth-child(6) {
+        padding: 6px 6px;
+    }
+    body.compact .pct-change {
+        font-size: 0.78rem;
+    }
+    body.compact .compact-header .ch-col {
+        padding: 6px 8px;
+        font-size: 0.65rem;
+    }
+    /* 行動版隱藏申報日欄省空間 */
+    body.compact .filing-cell,
+    body.compact .compact-header .ch-filing {
+        display: none;
+    }
+    body.compact .compact-header .ch-name { width: 18%; }
+    body.compact .compact-header .ch-rev { width: 14%; }
+    body.compact .compact-header .ch-yoy { width: 12%; }
+    body.compact .compact-header .ch-mom { width: 12%; }
+    body.compact .compact-header .ch-exceed { width: 12%; }
+    body.compact .compact-header .ch-remark { width: 32%; }
+}
+
+.empty-msg {
+    text-align: center;
+    color: #8b949e;
+    padding: 60px 20px;
+    font-size: 1rem;
 }
 
 footer {
     text-align: center;
-    padding: 30px 20px;
+    padding: 40px 20px;
     color: #6e7681;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
 }
 
 @media (max-width: 768px) {
-    .filter-bar {
-        flex-direction: column;
-        align-items: stretch;
+    .stock-grid {
+        grid-template-columns: 1fr;
     }
-    .filter-group {
-        flex-wrap: wrap;
+    header h1 {
+        font-size: 1.5rem;
     }
-    table {
-        font-size: 0.78rem;
-    }
-    thead th, tbody td {
-        padding: 7px 8px;
-    }
-    .market-badge {
-        display: none;
+    .market-tab {
+        padding: 10px 14px;
+        font-size: 0.85rem;
     }
 }
 </style>
@@ -586,355 +1144,2153 @@ footer {
 <body>
 <div class="container">
     <header>
-        <h1>營收即時追蹤</h1>
-        <div class="period-info">
-            營收期間：<span class="highlight">2026/07</span> |
-            已申報 <span class="highlight">4</span> 家
+        <h1>營收創同期新高</h1>
+        <div class="subtitle">自動比對公開資訊觀測站每月營收資料，篩選創近 5 年同期新高股票</div>
+        <div class="date-nav">
+            <a class="nav-btn" href="2026_06.html" title="上個月">&#9664; 前一月</a>
+            <div class="month-picker-wrap">
+                <span class="month-picker-btn" id="monthPickerBtn">2026/07</span>
+                <div class="month-dropdown" id="monthDropdown">
+                    <div class="month-dropdown-year">2026</div>
+<div class="month-dropdown-grid">
+<a class="month-dropdown-item" href="2026_01.html">1月</a>
+<a class="month-dropdown-item" href="2026_02.html">2月</a>
+<a class="month-dropdown-item" href="2026_03.html">3月</a>
+<a class="month-dropdown-item" href="2026_04.html">4月</a>
+<a class="month-dropdown-item" href="2026_05.html">5月</a>
+<a class="month-dropdown-item" href="2026_06.html">6月</a>
+<a class="month-dropdown-item active" href="2026_07.html">7月</a>
+<span class="month-dropdown-item disabled">8月</span>
+<span class="month-dropdown-item disabled">9月</span>
+<span class="month-dropdown-item disabled">10月</span>
+<span class="month-dropdown-item disabled">11月</span>
+<span class="month-dropdown-item disabled">12月</span>
+</div>
+<div class="month-dropdown-year">2025</div>
+<div class="month-dropdown-grid">
+<span class="month-dropdown-item disabled">1月</span>
+<span class="month-dropdown-item disabled">2月</span>
+<a class="month-dropdown-item" href="2025_03.html">3月</a>
+<a class="month-dropdown-item" href="2025_04.html">4月</a>
+<a class="month-dropdown-item" href="2025_05.html">5月</a>
+<a class="month-dropdown-item" href="2025_06.html">6月</a>
+<a class="month-dropdown-item" href="2025_07.html">7月</a>
+<a class="month-dropdown-item" href="2025_08.html">8月</a>
+<a class="month-dropdown-item" href="2025_09.html">9月</a>
+<a class="month-dropdown-item" href="2025_10.html">10月</a>
+<a class="month-dropdown-item" href="2025_11.html">11月</a>
+<a class="month-dropdown-item" href="2025_12.html">12月</a>
+</div>
+                </div>
+            </div>
+            <a class="nav-btn" href="2026_08.html" title="下個月">後一月 &#9654;</a>
         </div>
-        <div class="monitor-status">
-            最新申報：08-02 16:28:50 ·
-            <span class="status-active">偵測中 ✓</span>
-            · 最後偵測：08-03 06:59:03
-        </div>
+        <div class="update-time">2026-08-03 06:59 更新</div>
+        <div style="margin-top:12px"><a href="index.html" style="color:#58a6ff;text-decoration:none;font-size:0.85rem;padding:4px 12px;border:1px solid #30363d;border-radius:6px;">← 即時申報</a></div>
+        <div style="background:#2d1b00;border:1px solid #6e4000;border-radius:8px;padding:10px 16px;margin:12px auto;max-width:700px;text-align:center;color:#f0b040;font-size:0.9rem;">⚠ 申報進行中（已申報 4 家），資料尚未完整，僅供參考</div>
     </header>
 
-    <div class="nav-links">
-        <a href="index.html" class="nav-link active">即時申報</a>
-        <a href="2026_07.html" class="nav-link">歷史月報</a>
+    <div class="summary">
+        <div class="summary-item">
+            <div class="number">4</div>
+            <div class="label">創同期新高</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">4</div>
+            <div class="label">上市</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">0</div>
+            <div class="label">上櫃</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">0</div>
+            <div class="label">創新板</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">0</div>
+            <div class="label">興櫃</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">0</div>
+            <div class="label">公發</div>
+        </div>
+        <div class="summary-item">
+            <div class="number">4</div>
+            <div class="label">產業別</div>
+        </div>
+    </div>
+
+    <!-- 市場分頁 -->
+    <div class="market-tabs">
+        <div class="market-tab active" data-market="all">全部 <span class="tab-count">4</span></div>
+        <div class="market-tab" data-market="sii">上市 <span class="tab-count">4</span></div>
+        <div class="market-tab" data-market="otc">上櫃 <span class="tab-count">0</span></div>
+        <div class="market-tab" data-market="tib">創新板 <span class="tab-count">0</span></div>
+        <div class="market-tab" data-market="emerging">興櫃 <span class="tab-count">0</span></div>
+        <div class="market-tab" data-market="pub">公發 <span class="tab-count">0</span></div>
+    </div>
+
+    <!-- 搜尋 -->
+    <div class="search-bar">
+        <input type="text" id="stockSearch" placeholder="搜尋股票代號或名稱 (例: 2330 或 台積電)" autocomplete="off">
+    </div>
+    <div class="search-result-info" id="searchResultInfo"></div>
+
+    <!-- 工具列 -->
+    <div class="toolbar">
+        <div class="date-filter">
+            <span class="date-label">📅 申報日</span>
+            <div class="date-pill active" data-date="all">全部</div>
+            <div class="date-pill" data-date="8/2">8/2 <span style="font-size:0.65rem;color:#6e7681">(4)</span></div>
+            
+        </div>
+        <div class="filter-toggle" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <label class="growth-filter chip-filter" data-filter="growth">
+                <input type="checkbox" id="growthFilter" style="cursor:pointer;">
+                <span>YoY+MoM 都正</span>
+            </label>
+            <label class="chip-filter" data-filter="futures">
+                <input type="checkbox" id="futuresFilter" style="cursor:pointer;">
+                <span>有股票期貨</span>
+            </label>
+            <label class="chip-filter" data-filter="cb">
+                <input type="checkbox" id="cbFilter" style="cursor:pointer;">
+                <span>有發可轉債</span>
+            </label>
+        </div>
+        <div class="view-toggle">
+            <button class="export-btn" id="exportXqCsv" type="button" title="匯出當前篩選結果為 XQ 原生 .dsl 檔（組合名「營收」，匯入 XQ 會取代同名商品組合，不會 append 累積重複）">&#128229; 匯出 XQ .dsl<span class="count-badge" id="exportCount"></span><span style="font-size:0.62rem;opacity:0.55;margin-left:4px;">v3</span></button>
+            <div class="view-btn active" data-view="normal">&#9638; 標準</div>
+            <div class="view-btn" data-view="compact">&#9776; 精簡</div>
+        </div>
     </div>
 
     
 
-    <div class="filter-bar">
-        <input type="text" class="search-input" id="searchInput"
-               placeholder="搜尋代號或名稱" autocomplete="off">
-        <div class="filter-group">
-            <input type="checkbox" id="filterYoy">
-            <label for="filterYoy">YoY</label>
-            <select id="filterYoyDir"><option value=">">&gt;</option><option value="<">&lt;</option></select>
-            <input type="number" id="filterYoyVal" value="30">
-            <label>%</label>
+    <!-- 全部面板 -->
+    <div class="market-panel active" id="panel-all">
+        
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>生技醫療業</h2>
+            <span class="industry-count">1檔</span>
         </div>
-        <div class="filter-group">
-            <input type="checkbox" id="filterMom">
-            <label for="filterMom">MoM</label>
-            <select id="filterMomDir"><option value=">">&gt;</option><option value="<">&lt;</option></select>
-            <input type="number" id="filterMomVal" value="20">
-            <label>%</label>
-        </div>
-        <span class="filter-count" id="filterCount"></span>
-    </div>
-
-    <div class="table-wrapper">
-        <table id="mainTable">
-            <thead>
-                <tr>
-                    <th data-sort="sid" class="col-id">代號 <span class="sort-arrow">▲</span></th>
-                    <th data-sort="name">名稱 <span class="sort-arrow">▲</span></th>
-                    <th data-sort="seen" class="sort-active">偵測時間 <span class="sort-arrow">▼</span></th>
-                    <th data-sort="rev" class="col-rev">營收(M) <span class="sort-arrow">▲</span></th>
-                    <th data-sort="mom" class="col-pct">MoM% <span class="sort-arrow">▲</span></th>
-                    <th data-sort="yoy" class="col-pct">YoY% <span class="sort-arrow">▲</span></th>
-                    <th data-sort="ytd" class="col-pct">累計YoY% <span class="sort-arrow">▲</span></th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
+        <div class="stock-grid">
+            <div class="compact-header">
+                <span class="ch-col ch-name">股票</span>
+                <span class="ch-col ch-filing">申報日</span>
+                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-remark">備註</span>
+            </div>
+            
+            <div class="stock-card" data-sid="6491" data-sname="晶碩" data-market="sii" data-rev="745591000.0" data-yoy="17.417569697838235" data-mom="2.9871609815391627" data-exceed="17.42" data-date="" data-filing-date="8/2" data-industry="生技醫療業" data-has-futures="0" data-has-cb="0">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">晶碩</span>
+                        <span class="stock-id">6491</span>
+                    </div>
+                    <div class="filing-cell">8/2</div>
+                    <div class="revenue-value">7.5億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">申報時間</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">08-02 16:28</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+17.42%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+2.99%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+17.4%</span>
+                </div>
+                <div class="remark-row"></div>
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (4次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#3fb950">-5.6%</b></span>
+                        <span>最高 <b style="color:#f85149">+2.9%</b></span>
+                        <span>正報酬率 <b>25%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2021/07 <b style="color:#3fb950">-9.9%</b></span><span class="t1-item">2022/07 <b style="color:#3fb950">-6.6%</b></span><span class="t1-item">2023/07 <b style="color:#f85149">+2.9%</b></span><span class="t1-item">2024/07 <b style="color:#3fb950">-8.7%</b></span></div></div>
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6491" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6491" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_6491.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
                 
-        <tr class="stock-row" data-sid="2402" data-sname="毅嘉" data-rev="1166674000.0"
-            data-yoy="24.01504328452132" data-mom="2.806149648977952" data-ytd="17.28330754793035"
-            data-seen="08-02 16:28" data-market="sii"
-            data-chart='[{"year": 2024, "month": 9, "revenue": 870663000.0}, {"year": 2024, "month": 10, "revenue": 865963000.0}, {"year": 2024, "month": 12, "revenue": 791757000.0}, {"year": 2025, "month": 1, "revenue": 793961000.0}, {"year": 2024, "month": 11, "revenue": 857898000.0}, {"year": 2025, "month": 2, "revenue": 749482000.0}, {"year": 2024, "month": 2, "revenue": 632740000.0}, {"year": 2024, "month": 3, "revenue": 684470000.0}, {"year": 2023, "month": 11, "revenue": 753142000.0}, {"year": 2024, "month": 1, "revenue": 682231000.0}, {"year": 2023, "month": 12, "revenue": 691870000.0}, {"year": 2024, "month": 6, "revenue": 854372000.0}, {"year": 2022, "month": 3, "revenue": 640160000.0}, {"year": 2024, "month": 8, "revenue": 892629000.0}, {"year": 2024, "month": 4, "revenue": 750949000.0}, {"year": 2024, "month": 5, "revenue": 777840000.0}, {"year": 2022, "month": 4, "revenue": 551831000.0}, {"year": 2022, "month": 11, "revenue": 764036000.0}, {"year": 2026, "month": 1, "revenue": 973685000.0}, {"year": 2026, "month": 2, "revenue": 829047000.0}, {"year": 2025, "month": 5, "revenue": 938145000.0}, {"year": 2021, "month": 4, "revenue": 543979000.0}, {"year": 2024, "month": 7, "revenue": 867790000.0}, {"year": 2023, "month": 10, "revenue": 750880000.0}, {"year": 2025, "month": 6, "revenue": 932475000.0}, {"year": 2025, "month": 7, "revenue": 940752000.0}, {"year": 2025, "month": 3, "revenue": 895388000.0}, {"year": 2025, "month": 4, "revenue": 929651000.0}, {"year": 2025, "month": 11, "revenue": 871529000.0}, {"year": 2025, "month": 12, "revenue": 912232000.0}, {"year": 2025, "month": 9, "revenue": 987975000.0}, {"year": 2025, "month": 8, "revenue": 956315000.0}, {"year": 2025, "month": 10, "revenue": 941070000.0}, {"year": 2021, "month": 5, "revenue": 559379000.0}, {"year": 2021, "month": 7, "revenue": 558712000.0}, {"year": 2021, "month": 6, "revenue": 543471000.0}, {"year": 2021, "month": 3, "revenue": 539899000.0}, {"year": 2021, "month": 10, "revenue": 526857000.0}, {"year": 2021, "month": 12, "revenue": 539192000.0}, {"year": 2021, "month": 11, "revenue": 544117000.0}, {"year": 2021, "month": 8, "revenue": 545468000.0}, {"year": 2021, "month": 9, "revenue": 505797000.0}, {"year": 2020, "month": 6, "revenue": 331444000.0}, {"year": 2020, "month": 7, "revenue": 426346000.0}, {"year": 2020, "month": 4, "revenue": 425864000.0}, {"year": 2020, "month": 3, "revenue": 511528000.0}, {"year": 2020, "month": 5, "revenue": 301665000.0}, {"year": 2020, "month": 11, "revenue": 605210000.0}, {"year": 2021, "month": 1, "revenue": 568689000.0}, {"year": 2020, "month": 12, "revenue": 555278000.0}, {"year": 2020, "month": 9, "revenue": 637721000.0}, {"year": 2020, "month": 8, "revenue": 480357000.0}, {"year": 2020, "month": 10, "revenue": 610697000.0}, {"year": 2023, "month": 3, "revenue": 725229000.0}, {"year": 2023, "month": 4, "revenue": 674782000.0}, {"year": 2023, "month": 1, "revenue": 604289000.0}, {"year": 2023, "month": 2, "revenue": 593451000.0}, {"year": 2023, "month": 8, "revenue": 794886000.0}, {"year": 2021, "month": 2, "revenue": 503017000.0}, {"year": 2023, "month": 9, "revenue": 799507000.0}, {"year": 2023, "month": 6, "revenue": 695330000.0}, {"year": 2023, "month": 5, "revenue": 702948000.0}, {"year": 2023, "month": 7, "revenue": 776515000.0}, {"year": 2022, "month": 6, "revenue": 568393000.0}, {"year": 2022, "month": 5, "revenue": 564451000.0}, {"year": 2022, "month": 1, "revenue": 592276000.0}, {"year": 2022, "month": 2, "revenue": 519604000.0}, {"year": 2022, "month": 9, "revenue": 778752000.0}, {"year": 2022, "month": 12, "revenue": 618101000.0}, {"year": 2022, "month": 10, "revenue": 753760000.0}, {"year": 2022, "month": 7, "revenue": 600851000.0}, {"year": 2022, "month": 8, "revenue": 701975000.0}, {"year": 2026, "month": 3, "revenue": 1016239000.0}, {"year": 2026, "month": 4, "revenue": 1070894000.0}, {"year": 2026, "month": 5, "revenue": 1065547000.0}, {"year": 2026, "month": 6, "revenue": 1134829000.0}]'>
-            <td class="col-id">2402</td>
-            <td class="col-name">毅嘉 <span class="market-badge">上市</span></td>
-            <td class="col-seen">08-02 16:28</td>
-            <td class="col-rev">1,166.7</td>
-            <td class="col-pct"><span style="color:#f85149">2.81%</span></td>
-            <td class="col-pct"><span style="color:#f85149">24.02%</span></td>
-            <td class="col-pct"><span style="color:#f85149">17.28%</span></td>
-        </tr>
-        <tr class="stock-row" data-sid="3004" data-sname="豐達科" data-rev="494286000.0"
-            data-yoy="53.03493307821629" data-mom="-0.6522206656469647" data-ytd="37.31355708857018"
-            data-seen="08-02 16:28" data-market="sii" data-remark="主要係客戶需求增加所致"
-            data-chart='[{"year": 2024, "month": 9, "revenue": 284080000.0}, {"year": 2024, "month": 10, "revenue": 287348000.0}, {"year": 2024, "month": 12, "revenue": 338968000.0}, {"year": 2025, "month": 1, "revenue": 288103000.0}, {"year": 2025, "month": 2, "revenue": 302583000.0}, {"year": 2024, "month": 11, "revenue": 305809000.0}, {"year": 2024, "month": 2, "revenue": 247263000.0}, {"year": 2024, "month": 1, "revenue": 287435000.0}, {"year": 2024, "month": 3, "revenue": 300362000.0}, {"year": 2023, "month": 11, "revenue": 279784000.0}, {"year": 2023, "month": 12, "revenue": 306150000.0}, {"year": 2024, "month": 6, "revenue": 277826000.0}, {"year": 2024, "month": 8, "revenue": 278993000.0}, {"year": 2024, "month": 4, "revenue": 295066000.0}, {"year": 2024, "month": 5, "revenue": 293430000.0}, {"year": 2022, "month": 4, "revenue": 121758000.0}, {"year": 2022, "month": 3, "revenue": 147198000.0}, {"year": 2022, "month": 11, "revenue": 214410000.0}, {"year": 2026, "month": 1, "revenue": 389473000.0}, {"year": 2026, "month": 2, "revenue": 361844000.0}, {"year": 2025, "month": 5, "revenue": 300413000.0}, {"year": 2021, "month": 4, "revenue": 89725000.0}, {"year": 2023, "month": 10, "revenue": 277839000.0}, {"year": 2024, "month": 7, "revenue": 305139000.0}, {"year": 2025, "month": 6, "revenue": 339481000.0}, {"year": 2025, "month": 7, "revenue": 322989000.0}, {"year": 2025, "month": 3, "revenue": 345169000.0}, {"year": 2025, "month": 4, "revenue": 347527000.0}, {"year": 2025, "month": 11, "revenue": 375963000.0}, {"year": 2025, "month": 12, "revenue": 405435000.0}, {"year": 2025, "month": 9, "revenue": 342559000.0}, {"year": 2025, "month": 8, "revenue": 324270000.0}, {"year": 2025, "month": 10, "revenue": 360546000.0}, {"year": 2021, "month": 5, "revenue": 107407000.0}, {"year": 2021, "month": 6, "revenue": 113975000.0}, {"year": 2021, "month": 7, "revenue": 107263000.0}, {"year": 2021, "month": 2, "revenue": 99727000.0}, {"year": 2021, "month": 1, "revenue": 105170000.0}, {"year": 2021, "month": 3, "revenue": 126895000.0}, {"year": 2021, "month": 10, "revenue": 135361000.0}, {"year": 2021, "month": 12, "revenue": 175598000.0}, {"year": 2021, "month": 11, "revenue": 113771000.0}, {"year": 2021, "month": 8, "revenue": 118411000.0}, {"year": 2021, "month": 9, "revenue": 132902000.0}, {"year": 2020, "month": 6, "revenue": 130524000.0}, {"year": 2020, "month": 7, "revenue": 110750000.0}, {"year": 2020, "month": 4, "revenue": 145974000.0}, {"year": 2020, "month": 3, "revenue": 215721000.0}, {"year": 2020, "month": 5, "revenue": 115790000.0}, {"year": 2020, "month": 11, "revenue": 102561000.0}, {"year": 2020, "month": 12, "revenue": 159675000.0}, {"year": 2020, "month": 9, "revenue": 85263000.0}, {"year": 2020, "month": 8, "revenue": 117802000.0}, {"year": 2020, "month": 10, "revenue": 82026000.0}, {"year": 2023, "month": 3, "revenue": 263184000.0}, {"year": 2023, "month": 4, "revenue": 231592000.0}, {"year": 2023, "month": 1, "revenue": 207402000.0}, {"year": 2023, "month": 2, "revenue": 225892000.0}, {"year": 2023, "month": 8, "revenue": 280473000.0}, {"year": 2023, "month": 9, "revenue": 250459000.0}, {"year": 2023, "month": 6, "revenue": 247274000.0}, {"year": 2023, "month": 5, "revenue": 234238000.0}, {"year": 2023, "month": 7, "revenue": 266336000.0}, {"year": 2022, "month": 6, "revenue": 180475000.0}, {"year": 2022, "month": 5, "revenue": 194937000.0}, {"year": 2022, "month": 1, "revenue": 142391000.0}, {"year": 2022, "month": 2, "revenue": 135038000.0}, {"year": 2022, "month": 9, "revenue": 197985000.0}, {"year": 2022, "month": 10, "revenue": 214330000.0}, {"year": 2022, "month": 12, "revenue": 253889000.0}, {"year": 2022, "month": 7, "revenue": 181311000.0}, {"year": 2022, "month": 8, "revenue": 209199000.0}, {"year": 2026, "month": 3, "revenue": 452769000.0}, {"year": 2026, "month": 4, "revenue": 419391000.0}, {"year": 2026, "month": 5, "revenue": 469131000.0}, {"year": 2026, "month": 6, "revenue": 497531000.0}]'>
-            <td class="col-id">3004</td>
-            <td class="col-name">豐達科 <span class="market-badge">上市</span></td>
-            <td class="col-seen">08-02 16:28</td>
-            <td class="col-rev">494.3</td>
-            <td class="col-pct"><span style="color:#3fb950">-0.65%</span></td>
-            <td class="col-pct"><span style="color:#f85149">53.03%</span></td>
-            <td class="col-pct"><span style="color:#f85149">37.31%</span></td>
-        </tr>
-        <tr class="stock-row" data-sid="6235" data-sname="華孚" data-rev="550108000.0"
-            data-yoy="1.923379782742016" data-mom="2.320356079332928" data-ytd="2.301956709373552"
-            data-seen="08-02 16:28" data-market="sii"
-            data-chart='[{"year": 2024, "month": 10, "revenue": 382878000.0}, {"year": 2024, "month": 9, "revenue": 419239000.0}, {"year": 2025, "month": 2, "revenue": 468457000.0}, {"year": 2025, "month": 1, "revenue": 393222000.0}, {"year": 2024, "month": 12, "revenue": 390593000.0}, {"year": 2024, "month": 11, "revenue": 454828000.0}, {"year": 2024, "month": 1, "revenue": 530188000.0}, {"year": 2024, "month": 3, "revenue": 556363000.0}, {"year": 2024, "month": 2, "revenue": 474555000.0}, {"year": 2023, "month": 11, "revenue": 500051000.0}, {"year": 2023, "month": 12, "revenue": 524077000.0}, {"year": 2024, "month": 6, "revenue": 512713000.0}, {"year": 2024, "month": 8, "revenue": 468074000.0}, {"year": 2024, "month": 4, "revenue": 589966000.0}, {"year": 2024, "month": 5, "revenue": 553820000.0}, {"year": 2022, "month": 4, "revenue": 266758000.0}, {"year": 2022, "month": 3, "revenue": 341787000.0}, {"year": 2022, "month": 11, "revenue": 397748000.0}, {"year": 2025, "month": 12, "revenue": 582785000.0}, {"year": 2026, "month": 1, "revenue": 622022000.0}, {"year": 2025, "month": 5, "revenue": 532151000.0}, {"year": 2021, "month": 4, "revenue": 209501000.0}, {"year": 2026, "month": 2, "revenue": 464861000.0}, {"year": 2023, "month": 10, "revenue": 531373000.0}, {"year": 2024, "month": 7, "revenue": 480274000.0}, {"year": 2025, "month": 6, "revenue": 559815000.0}, {"year": 2025, "month": 3, "revenue": 590167000.0}, {"year": 2025, "month": 7, "revenue": 539727000.0}, {"year": 2025, "month": 4, "revenue": 598459000.0}, {"year": 2025, "month": 11, "revenue": 594508000.0}, {"year": 2025, "month": 8, "revenue": 501809000.0}, {"year": 2025, "month": 10, "revenue": 594954000.0}, {"year": 2025, "month": 9, "revenue": 659994000.0}, {"year": 2021, "month": 5, "revenue": 230958000.0}, {"year": 2021, "month": 6, "revenue": 221820000.0}, {"year": 2021, "month": 2, "revenue": 211837000.0}, {"year": 2021, "month": 1, "revenue": 240709000.0}, {"year": 2021, "month": 3, "revenue": 184383000.0}, {"year": 2021, "month": 10, "revenue": 260137000.0}, {"year": 2021, "month": 11, "revenue": 287780000.0}, {"year": 2021, "month": 8, "revenue": 208783000.0}, {"year": 2021, "month": 7, "revenue": 224291000.0}, {"year": 2021, "month": 9, "revenue": 225809000.0}, {"year": 2020, "month": 6, "revenue": 132879000.0}, {"year": 2020, "month": 7, "revenue": 145895000.0}, {"year": 2020, "month": 3, "revenue": 162549000.0}, {"year": 2020, "month": 5, "revenue": 120591000.0}, {"year": 2020, "month": 4, "revenue": 127037000.0}, {"year": 2020, "month": 11, "revenue": 213404000.0}, {"year": 2020, "month": 12, "revenue": 255388000.0}, {"year": 2020, "month": 8, "revenue": 164488000.0}, {"year": 2020, "month": 10, "revenue": 198259000.0}, {"year": 2020, "month": 9, "revenue": 187621000.0}, {"year": 2023, "month": 3, "revenue": 491407000.0}, {"year": 2023, "month": 4, "revenue": 488753000.0}, {"year": 2023, "month": 1, "revenue": 403328000.0}, {"year": 2022, "month": 12, "revenue": 437861000.0}, {"year": 2023, "month": 2, "revenue": 438615000.0}, {"year": 2023, "month": 8, "revenue": 495612000.0}, {"year": 2023, "month": 9, "revenue": 504058000.0}, {"year": 2023, "month": 7, "revenue": 449408000.0}, {"year": 2023, "month": 5, "revenue": 471611000.0}, {"year": 2023, "month": 6, "revenue": 483874000.0}, {"year": 2022, "month": 5, "revenue": 309666000.0}, {"year": 2021, "month": 12, "revenue": 316512000.0}, {"year": 2022, "month": 1, "revenue": 301211000.0}, {"year": 2022, "month": 2, "revenue": 281658000.0}, {"year": 2022, "month": 10, "revenue": 380371000.0}, {"year": 2022, "month": 9, "revenue": 372446000.0}, {"year": 2022, "month": 7, "revenue": 365363000.0}, {"year": 2022, "month": 6, "revenue": 349160000.0}, {"year": 2022, "month": 8, "revenue": 355633000.0}, {"year": 2026, "month": 3, "revenue": 549898000.0}, {"year": 2026, "month": 4, "revenue": 518334000.0}, {"year": 2026, "month": 5, "revenue": 523900000.0}, {"year": 2026, "month": 6, "revenue": 537633000.0}]'>
-            <td class="col-id">6235</td>
-            <td class="col-name">華孚 <span class="market-badge">上市</span></td>
-            <td class="col-seen">08-02 16:28</td>
-            <td class="col-rev">550.1</td>
-            <td class="col-pct"><span style="color:#f85149">2.32%</span></td>
-            <td class="col-pct"><span style="color:#f85149">1.92%</span></td>
-            <td class="col-pct"><span style="color:#f85149">2.30%</span></td>
-        </tr>
-        <tr class="stock-row" data-sid="6491" data-sname="晶碩" data-rev="745591000.0"
-            data-yoy="17.417569697838235" data-mom="2.9871609815391627" data-ytd="23.096985347977743"
-            data-seen="08-02 16:28" data-market="sii"
-            data-chart='[{"year": 2024, "month": 10, "revenue": 596564000.0}, {"year": 2025, "month": 2, "revenue": 525278000.0}, {"year": 2024, "month": 9, "revenue": 577757000.0}, {"year": 2025, "month": 1, "revenue": 501990000.0}, {"year": 2024, "month": 12, "revenue": 619995000.0}, {"year": 2024, "month": 11, "revenue": 578246000.0}, {"year": 2024, "month": 1, "revenue": 567390000.0}, {"year": 2024, "month": 3, "revenue": 591518000.0}, {"year": 2024, "month": 2, "revenue": 566213000.0}, {"year": 2023, "month": 11, "revenue": 759359000.0}, {"year": 2023, "month": 12, "revenue": 568419000.0}, {"year": 2024, "month": 6, "revenue": 509114000.0}, {"year": 2024, "month": 8, "revenue": 568259000.0}, {"year": 2024, "month": 4, "revenue": 516280000.0}, {"year": 2024, "month": 5, "revenue": 612955000.0}, {"year": 2022, "month": 3, "revenue": 516999000.0}, {"year": 2022, "month": 4, "revenue": 482011000.0}, {"year": 2022, "month": 11, "revenue": 610709000.0}, {"year": 2025, "month": 12, "revenue": 624853000.0}, {"year": 2026, "month": 1, "revenue": 659524000.0}, {"year": 2026, "month": 2, "revenue": 556931000.0}, {"year": 2025, "month": 5, "revenue": 523885000.0}, {"year": 2021, "month": 4, "revenue": 478344000.0}, {"year": 2023, "month": 10, "revenue": 709982000.0}, {"year": 2024, "month": 7, "revenue": 513014000.0}, {"year": 2025, "month": 6, "revenue": 540517000.0}, {"year": 2025, "month": 7, "revenue": 634991000.0}, {"year": 2025, "month": 3, "revenue": 566231000.0}, {"year": 2025, "month": 4, "revenue": 562412000.0}, {"year": 2025, "month": 10, "revenue": 701614000.0}, {"year": 2025, "month": 11, "revenue": 603944000.0}, {"year": 2025, "month": 8, "revenue": 631216000.0}, {"year": 2025, "month": 9, "revenue": 622478000.0}, {"year": 2021, "month": 5, "revenue": 443216000.0}, {"year": 2021, "month": 6, "revenue": 459785000.0}, {"year": 2021, "month": 2, "revenue": 309069000.0}, {"year": 2021, "month": 1, "revenue": 412169000.0}, {"year": 2021, "month": 3, "revenue": 424559000.0}, {"year": 2021, "month": 10, "revenue": 519482000.0}, {"year": 2021, "month": 11, "revenue": 581086000.0}, {"year": 2021, "month": 8, "revenue": 476039000.0}, {"year": 2021, "month": 7, "revenue": 432945000.0}, {"year": 2021, "month": 9, "revenue": 604441000.0}, {"year": 2020, "month": 6, "revenue": 291454000.0}, {"year": 2020, "month": 7, "revenue": 278055000.0}, {"year": 2020, "month": 3, "revenue": 248922000.0}, {"year": 2020, "month": 5, "revenue": 292882000.0}, {"year": 2020, "month": 4, "revenue": 251051000.0}, {"year": 2020, "month": 11, "revenue": 534425000.0}, {"year": 2020, "month": 12, "revenue": 458286000.0}, {"year": 2020, "month": 8, "revenue": 349540000.0}, {"year": 2020, "month": 9, "revenue": 380742000.0}, {"year": 2020, "month": 10, "revenue": 420532000.0}, {"year": 2023, "month": 3, "revenue": 517491000.0}, {"year": 2023, "month": 4, "revenue": 506581000.0}, {"year": 2023, "month": 1, "revenue": 498829000.0}, {"year": 2022, "month": 12, "revenue": 515351000.0}, {"year": 2023, "month": 2, "revenue": 443338000.0}, {"year": 2023, "month": 8, "revenue": 590954000.0}, {"year": 2023, "month": 9, "revenue": 590171000.0}, {"year": 2023, "month": 5, "revenue": 552971000.0}, {"year": 2023, "month": 7, "revenue": 496021000.0}, {"year": 2023, "month": 6, "revenue": 555745000.0}, {"year": 2022, "month": 5, "revenue": 428201000.0}, {"year": 2022, "month": 1, "revenue": 480308000.0}, {"year": 2021, "month": 12, "revenue": 453908000.0}, {"year": 2022, "month": 2, "revenue": 491078000.0}, {"year": 2022, "month": 9, "revenue": 677512000.0}, {"year": 2022, "month": 10, "revenue": 650244000.0}, {"year": 2022, "month": 7, "revenue": 457846000.0}, {"year": 2022, "month": 6, "revenue": 504507000.0}, {"year": 2022, "month": 8, "revenue": 506432000.0}, {"year": 2026, "month": 3, "revenue": 669212000.0}, {"year": 2026, "month": 4, "revenue": 674346000.0}, {"year": 2026, "month": 5, "revenue": 716194000.0}, {"year": 2026, "month": 6, "revenue": 723965000.0}]'>
-            <td class="col-id">6491</td>
-            <td class="col-name">晶碩 <span class="market-badge">上市</span></td>
-            <td class="col-seen">08-02 16:28</td>
-            <td class="col-rev">745.6</td>
-            <td class="col-pct"><span style="color:#f85149">2.99%</span></td>
-            <td class="col-pct"><span style="color:#f85149">17.42%</span></td>
-            <td class="col-pct"><span style="color:#f85149">23.10%</span></td>
-        </tr>
-            </tbody>
-        </table>
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/08" data-prev="5.7億" data-curr="6.3億" data-yoy="+11.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:76%"></div>
+                    <div class="chart-bar curr " style="height:85%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="5.8億" data-curr="6.2億" data-yoy="+7.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:77%"></div>
+                    <div class="chart-bar curr " style="height:83%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="6.0億" data-curr="7.0億" data-yoy="+17.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:80%"></div>
+                    <div class="chart-bar curr " style="height:94%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="5.8億" data-curr="6.0億" data-yoy="+4.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:78%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="6.2億" data-curr="6.2億" data-yoy="+0.8%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:83%"></div>
+                    <div class="chart-bar curr " style="height:84%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="5.0億" data-curr="6.6億" data-yoy="+31.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:67%"></div>
+                    <div class="chart-bar curr " style="height:88%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="5.3億" data-curr="5.6億" data-yoy="+6.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:70%"></div>
+                    <div class="chart-bar curr " style="height:75%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="5.7億" data-curr="6.7億" data-yoy="+18.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:76%"></div>
+                    <div class="chart-bar curr " style="height:90%"></div>
+                </div>
+                <span class="chart-month-label ">3</span>
+            </div>
+            <div class="chart-group" data-month="2026/04" data-prev="5.6億" data-curr="6.7億" data-yoy="+19.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:75%"></div>
+                    <div class="chart-bar curr " style="height:90%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2026/05" data-prev="5.2億" data-curr="7.2億" data-yoy="+36.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:70%"></div>
+                    <div class="chart-bar curr " style="height:96%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2026/06" data-prev="5.4億" data-curr="7.2億" data-yoy="+33.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:72%"></div>
+                    <div class="chart-bar curr " style="height:97%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2026/07" data-prev="6.3億" data-curr="7.5億" data-yoy="+17.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:85%"></div>
+                    <div class="chart-bar curr is-target" style="height:100%"></div>
+                </div>
+                <span class="chart-month-label is-target">7</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
     </div>
-</div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>鋼鐵工業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="stock-grid">
+            <div class="compact-header">
+                <span class="ch-col ch-name">股票</span>
+                <span class="ch-col ch-filing">申報日</span>
+                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-remark">備註</span>
+            </div>
+            
+            <div class="stock-card" data-sid="3004" data-sname="豐達科" data-market="sii" data-rev="494286000.0" data-yoy="53.03493307821629" data-mom="-0.6522206656469647" data-exceed="53.03" data-date="" data-filing-date="8/2" data-industry="鋼鐵工業" data-has-futures="0" data-has-cb="0">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">豐達科</span>
+                        <span class="stock-id">3004</span>
+                    </div>
+                    <div class="filing-cell">8/2</div>
+                    <div class="revenue-value">4.9億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">申報時間</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">08-02 16:28</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+53.03%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change negative">-0.65%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+53.0%</span>
+                </div>
+                <div class="remark-row" title="主要係客戶需求增加所致"><span class="remark-icon">&#9432;</span> 主要係客戶需求增加所致</div>
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#f85149">+0.4%</b></span>
+                        <span>最高 <b style="color:#f85149">+9.9%</b></span>
+                        <span>正報酬率 <b>33%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2022/07 <b style="color:#3fb950">-0.2%</b></span><span class="t1-item">2023/07 <b style="color:#f85149">+9.9%</b></span><span class="t1-item">2024/07 <b style="color:#3fb950">-8.4%</b></span></div></div>
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=3004" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=3004" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_3004.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/08" data-prev="2.8億" data-curr="3.2億" data-yoy="+16.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:56%"></div>
+                    <div class="chart-bar curr " style="height:65%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="2.8億" data-curr="3.4億" data-yoy="+20.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:57%"></div>
+                    <div class="chart-bar curr " style="height:69%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="2.9億" data-curr="3.6億" data-yoy="+25.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:58%"></div>
+                    <div class="chart-bar curr " style="height:72%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="3.1億" data-curr="3.8億" data-yoy="+22.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:61%"></div>
+                    <div class="chart-bar curr " style="height:76%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="3.4億" data-curr="4.1億" data-yoy="+19.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:68%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="2.9億" data-curr="3.9億" data-yoy="+35.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:58%"></div>
+                    <div class="chart-bar curr " style="height:78%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="3.0億" data-curr="3.6億" data-yoy="+19.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:61%"></div>
+                    <div class="chart-bar curr " style="height:73%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="3.5億" data-curr="4.5億" data-yoy="+31.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:69%"></div>
+                    <div class="chart-bar curr " style="height:91%"></div>
+                </div>
+                <span class="chart-month-label ">3</span>
+            </div>
+            <div class="chart-group" data-month="2026/04" data-prev="3.5億" data-curr="4.2億" data-yoy="+20.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:70%"></div>
+                    <div class="chart-bar curr " style="height:84%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2026/05" data-prev="3.0億" data-curr="4.7億" data-yoy="+56.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:60%"></div>
+                    <div class="chart-bar curr " style="height:94%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2026/06" data-prev="3.4億" data-curr="5.0億" data-yoy="+46.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:68%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2026/07" data-prev="3.2億" data-curr="4.9億" data-yoy="+53.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:65%"></div>
+                    <div class="chart-bar curr is-target" style="height:99%"></div>
+                </div>
+                <span class="chart-month-label is-target">7</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>電子零組件業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="stock-grid">
+            <div class="compact-header">
+                <span class="ch-col ch-name">股票</span>
+                <span class="ch-col ch-filing">申報日</span>
+                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-remark">備註</span>
+            </div>
+            
+            <div class="stock-card" data-sid="2402" data-sname="毅嘉" data-market="sii" data-rev="1166674000.0" data-yoy="24.01504328452132" data-mom="2.806149648977952" data-exceed="24.02" data-date="" data-filing-date="8/2" data-industry="電子零組件業" data-has-futures="0" data-has-cb="1">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">毅嘉</span>
+                        <span class="stock-id">2402</span>
+                    </div>
+                    <div class="filing-cell">8/2</div>
+                    <div class="revenue-value">11.7億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">申報時間</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">08-02 16:28</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+24.02%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+2.81%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+24.0%</span>
+                </div>
+                <div class="remark-row"></div>
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (4次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#3fb950">-1.9%</b></span>
+                        <span>最高 <b style="color:#f85149">+2.6%</b></span>
+                        <span>正報酬率 <b>25%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2021/07 <b style="color:#f85149">+0.0%</b></span><span class="t1-item">2022/07 <b style="color:#f85149">+0.0%</b></span><span class="t1-item">2023/07 <b style="color:#f85149">+2.6%</b></span><span class="t1-item">2024/07 <b style="color:#3fb950">-10.0%</b></span></div></div>
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=2402" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=2402" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_2402.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/08" data-prev="8.9億" data-curr="9.6億" data-yoy="+7.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:77%"></div>
+                    <div class="chart-bar curr " style="height:82%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="8.7億" data-curr="9.9億" data-yoy="+13.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:75%"></div>
+                    <div class="chart-bar curr " style="height:85%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="8.7億" data-curr="9.4億" data-yoy="+8.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:74%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="8.6億" data-curr="8.7億" data-yoy="+1.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:74%"></div>
+                    <div class="chart-bar curr " style="height:75%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="7.9億" data-curr="9.1億" data-yoy="+15.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:68%"></div>
+                    <div class="chart-bar curr " style="height:78%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="7.9億" data-curr="9.7億" data-yoy="+22.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:68%"></div>
+                    <div class="chart-bar curr " style="height:83%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="7.5億" data-curr="8.3億" data-yoy="+10.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:64%"></div>
+                    <div class="chart-bar curr " style="height:71%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="9.0億" data-curr="10.2億" data-yoy="+13.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:77%"></div>
+                    <div class="chart-bar curr " style="height:87%"></div>
+                </div>
+                <span class="chart-month-label ">3</span>
+            </div>
+            <div class="chart-group" data-month="2026/04" data-prev="9.3億" data-curr="10.7億" data-yoy="+15.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:80%"></div>
+                    <div class="chart-bar curr " style="height:92%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2026/05" data-prev="9.4億" data-curr="10.7億" data-yoy="+13.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:80%"></div>
+                    <div class="chart-bar curr " style="height:91%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2026/06" data-prev="9.3億" data-curr="11.3億" data-yoy="+21.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:80%"></div>
+                    <div class="chart-bar curr " style="height:97%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2026/07" data-prev="9.4億" data-curr="11.7億" data-yoy="+24.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:81%"></div>
+                    <div class="chart-bar curr is-target" style="height:100%"></div>
+                </div>
+                <span class="chart-month-label is-target">7</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>電腦及週邊設備業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="stock-grid">
+            <div class="compact-header">
+                <span class="ch-col ch-name">股票</span>
+                <span class="ch-col ch-filing">申報日</span>
+                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-remark">備註</span>
+            </div>
+            
+            <div class="stock-card" data-sid="6235" data-sname="華孚" data-market="sii" data-rev="550108000.0" data-yoy="1.923379782742016" data-mom="2.320356079332928" data-exceed="1.92" data-date="" data-filing-date="8/2" data-industry="電腦及週邊設備業" data-has-futures="0" data-has-cb="0">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">華孚</span>
+                        <span class="stock-id">6235</span>
+                    </div>
+                    <div class="filing-cell">8/2</div>
+                    <div class="revenue-value">5.5億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">申報時間</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">08-02 16:28</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+1.92%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+2.32%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+1.9%</span>
+                </div>
+                <div class="remark-row"></div>
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (4次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#3fb950">-1.6%</b></span>
+                        <span>最高 <b style="color:#f85149">+6.6%</b></span>
+                        <span>正報酬率 <b>25%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2021/07 <b style="color:#3fb950">-0.3%</b></span><span class="t1-item">2022/07 <b style="color:#3fb950">-2.6%</b></span><span class="t1-item">2023/07 <b style="color:#f85149">+6.6%</b></span><span class="t1-item">2024/07 <b style="color:#3fb950">-10.0%</b></span></div></div>
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6235" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6235" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_6235.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/08" data-prev="4.7億" data-curr="5.0億" data-yoy="+7.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:71%"></div>
+                    <div class="chart-bar curr " style="height:76%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="4.2億" data-curr="6.6億" data-yoy="+57.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:64%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="3.8億" data-curr="5.9億" data-yoy="+55.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:58%"></div>
+                    <div class="chart-bar curr " style="height:90%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="4.5億" data-curr="5.9億" data-yoy="+30.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:69%"></div>
+                    <div class="chart-bar curr " style="height:90%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="3.9億" data-curr="5.8億" data-yoy="+49.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:59%"></div>
+                    <div class="chart-bar curr " style="height:88%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="3.9億" data-curr="6.2億" data-yoy="+58.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:60%"></div>
+                    <div class="chart-bar curr " style="height:94%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="4.7億" data-curr="4.6億" data-yoy="-0.8%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:71%"></div>
+                    <div class="chart-bar curr " style="height:70%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="5.9億" data-curr="5.5億" data-yoy="-6.8%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:89%"></div>
+                    <div class="chart-bar curr " style="height:83%"></div>
+                </div>
+                <span class="chart-month-label ">3</span>
+            </div>
+            <div class="chart-group" data-month="2026/04" data-prev="6.0億" data-curr="5.2億" data-yoy="-13.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:91%"></div>
+                    <div class="chart-bar curr " style="height:79%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2026/05" data-prev="5.3億" data-curr="5.2億" data-yoy="-1.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:81%"></div>
+                    <div class="chart-bar curr " style="height:79%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2026/06" data-prev="5.6億" data-curr="5.4億" data-yoy="-4.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:85%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2026/07" data-prev="5.4億" data-curr="5.5億" data-yoy="+1.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:82%"></div>
+                    <div class="chart-bar curr is-target" style="height:83%"></div>
+                </div>
+                <span class="chart-month-label is-target">7</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    </div>
 
+    <!-- 上市面板 -->
+    <div class="market-panel" id="panel-sii">
+        
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>生技醫療業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="stock-grid">
+            <div class="compact-header">
+                <span class="ch-col ch-name">股票</span>
+                <span class="ch-col ch-filing">申報日</span>
+                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-remark">備註</span>
+            </div>
+            
+            <div class="stock-card" data-sid="6491" data-sname="晶碩" data-market="sii" data-rev="745591000.0" data-yoy="17.417569697838235" data-mom="2.9871609815391627" data-exceed="17.42" data-date="" data-filing-date="8/2" data-industry="生技醫療業" data-has-futures="0" data-has-cb="0">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">晶碩</span>
+                        <span class="stock-id">6491</span>
+                    </div>
+                    <div class="filing-cell">8/2</div>
+                    <div class="revenue-value">7.5億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">申報時間</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">08-02 16:28</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+17.42%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+2.99%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+17.4%</span>
+                </div>
+                <div class="remark-row"></div>
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (4次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#3fb950">-5.6%</b></span>
+                        <span>最高 <b style="color:#f85149">+2.9%</b></span>
+                        <span>正報酬率 <b>25%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2021/07 <b style="color:#3fb950">-9.9%</b></span><span class="t1-item">2022/07 <b style="color:#3fb950">-6.6%</b></span><span class="t1-item">2023/07 <b style="color:#f85149">+2.9%</b></span><span class="t1-item">2024/07 <b style="color:#3fb950">-8.7%</b></span></div></div>
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6491" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6491" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_6491.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/08" data-prev="5.7億" data-curr="6.3億" data-yoy="+11.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:76%"></div>
+                    <div class="chart-bar curr " style="height:85%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="5.8億" data-curr="6.2億" data-yoy="+7.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:77%"></div>
+                    <div class="chart-bar curr " style="height:83%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="6.0億" data-curr="7.0億" data-yoy="+17.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:80%"></div>
+                    <div class="chart-bar curr " style="height:94%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="5.8億" data-curr="6.0億" data-yoy="+4.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:78%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="6.2億" data-curr="6.2億" data-yoy="+0.8%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:83%"></div>
+                    <div class="chart-bar curr " style="height:84%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="5.0億" data-curr="6.6億" data-yoy="+31.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:67%"></div>
+                    <div class="chart-bar curr " style="height:88%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="5.3億" data-curr="5.6億" data-yoy="+6.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:70%"></div>
+                    <div class="chart-bar curr " style="height:75%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="5.7億" data-curr="6.7億" data-yoy="+18.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:76%"></div>
+                    <div class="chart-bar curr " style="height:90%"></div>
+                </div>
+                <span class="chart-month-label ">3</span>
+            </div>
+            <div class="chart-group" data-month="2026/04" data-prev="5.6億" data-curr="6.7億" data-yoy="+19.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:75%"></div>
+                    <div class="chart-bar curr " style="height:90%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2026/05" data-prev="5.2億" data-curr="7.2億" data-yoy="+36.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:70%"></div>
+                    <div class="chart-bar curr " style="height:96%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2026/06" data-prev="5.4億" data-curr="7.2億" data-yoy="+33.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:72%"></div>
+                    <div class="chart-bar curr " style="height:97%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2026/07" data-prev="6.3億" data-curr="7.5億" data-yoy="+17.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:85%"></div>
+                    <div class="chart-bar curr is-target" style="height:100%"></div>
+                </div>
+                <span class="chart-month-label is-target">7</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>鋼鐵工業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="stock-grid">
+            <div class="compact-header">
+                <span class="ch-col ch-name">股票</span>
+                <span class="ch-col ch-filing">申報日</span>
+                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-remark">備註</span>
+            </div>
+            
+            <div class="stock-card" data-sid="3004" data-sname="豐達科" data-market="sii" data-rev="494286000.0" data-yoy="53.03493307821629" data-mom="-0.6522206656469647" data-exceed="53.03" data-date="" data-filing-date="8/2" data-industry="鋼鐵工業" data-has-futures="0" data-has-cb="0">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">豐達科</span>
+                        <span class="stock-id">3004</span>
+                    </div>
+                    <div class="filing-cell">8/2</div>
+                    <div class="revenue-value">4.9億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">申報時間</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">08-02 16:28</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+53.03%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change negative">-0.65%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+53.0%</span>
+                </div>
+                <div class="remark-row" title="主要係客戶需求增加所致"><span class="remark-icon">&#9432;</span> 主要係客戶需求增加所致</div>
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (3次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#f85149">+0.4%</b></span>
+                        <span>最高 <b style="color:#f85149">+9.9%</b></span>
+                        <span>正報酬率 <b>33%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2022/07 <b style="color:#3fb950">-0.2%</b></span><span class="t1-item">2023/07 <b style="color:#f85149">+9.9%</b></span><span class="t1-item">2024/07 <b style="color:#3fb950">-8.4%</b></span></div></div>
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=3004" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=3004" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_3004.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/08" data-prev="2.8億" data-curr="3.2億" data-yoy="+16.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:56%"></div>
+                    <div class="chart-bar curr " style="height:65%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="2.8億" data-curr="3.4億" data-yoy="+20.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:57%"></div>
+                    <div class="chart-bar curr " style="height:69%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="2.9億" data-curr="3.6億" data-yoy="+25.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:58%"></div>
+                    <div class="chart-bar curr " style="height:72%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="3.1億" data-curr="3.8億" data-yoy="+22.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:61%"></div>
+                    <div class="chart-bar curr " style="height:76%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="3.4億" data-curr="4.1億" data-yoy="+19.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:68%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="2.9億" data-curr="3.9億" data-yoy="+35.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:58%"></div>
+                    <div class="chart-bar curr " style="height:78%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="3.0億" data-curr="3.6億" data-yoy="+19.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:61%"></div>
+                    <div class="chart-bar curr " style="height:73%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="3.5億" data-curr="4.5億" data-yoy="+31.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:69%"></div>
+                    <div class="chart-bar curr " style="height:91%"></div>
+                </div>
+                <span class="chart-month-label ">3</span>
+            </div>
+            <div class="chart-group" data-month="2026/04" data-prev="3.5億" data-curr="4.2億" data-yoy="+20.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:70%"></div>
+                    <div class="chart-bar curr " style="height:84%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2026/05" data-prev="3.0億" data-curr="4.7億" data-yoy="+56.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:60%"></div>
+                    <div class="chart-bar curr " style="height:94%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2026/06" data-prev="3.4億" data-curr="5.0億" data-yoy="+46.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:68%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2026/07" data-prev="3.2億" data-curr="4.9億" data-yoy="+53.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:65%"></div>
+                    <div class="chart-bar curr is-target" style="height:99%"></div>
+                </div>
+                <span class="chart-month-label is-target">7</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>電子零組件業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="stock-grid">
+            <div class="compact-header">
+                <span class="ch-col ch-name">股票</span>
+                <span class="ch-col ch-filing">申報日</span>
+                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-remark">備註</span>
+            </div>
+            
+            <div class="stock-card" data-sid="2402" data-sname="毅嘉" data-market="sii" data-rev="1166674000.0" data-yoy="24.01504328452132" data-mom="2.806149648977952" data-exceed="24.02" data-date="" data-filing-date="8/2" data-industry="電子零組件業" data-has-futures="0" data-has-cb="1">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">毅嘉</span>
+                        <span class="stock-id">2402</span>
+                    </div>
+                    <div class="filing-cell">8/2</div>
+                    <div class="revenue-value">11.7億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">申報時間</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">08-02 16:28</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+24.02%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+2.81%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+24.0%</span>
+                </div>
+                <div class="remark-row"></div>
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (4次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#3fb950">-1.9%</b></span>
+                        <span>最高 <b style="color:#f85149">+2.6%</b></span>
+                        <span>正報酬率 <b>25%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2021/07 <b style="color:#f85149">+0.0%</b></span><span class="t1-item">2022/07 <b style="color:#f85149">+0.0%</b></span><span class="t1-item">2023/07 <b style="color:#f85149">+2.6%</b></span><span class="t1-item">2024/07 <b style="color:#3fb950">-10.0%</b></span></div></div>
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=2402" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=2402" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_2402.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/08" data-prev="8.9億" data-curr="9.6億" data-yoy="+7.1%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:77%"></div>
+                    <div class="chart-bar curr " style="height:82%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="8.7億" data-curr="9.9億" data-yoy="+13.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:75%"></div>
+                    <div class="chart-bar curr " style="height:85%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="8.7億" data-curr="9.4億" data-yoy="+8.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:74%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="8.6億" data-curr="8.7億" data-yoy="+1.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:74%"></div>
+                    <div class="chart-bar curr " style="height:75%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="7.9億" data-curr="9.1億" data-yoy="+15.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:68%"></div>
+                    <div class="chart-bar curr " style="height:78%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="7.9億" data-curr="9.7億" data-yoy="+22.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:68%"></div>
+                    <div class="chart-bar curr " style="height:83%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="7.5億" data-curr="8.3億" data-yoy="+10.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:64%"></div>
+                    <div class="chart-bar curr " style="height:71%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="9.0億" data-curr="10.2億" data-yoy="+13.5%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:77%"></div>
+                    <div class="chart-bar curr " style="height:87%"></div>
+                </div>
+                <span class="chart-month-label ">3</span>
+            </div>
+            <div class="chart-group" data-month="2026/04" data-prev="9.3億" data-curr="10.7億" data-yoy="+15.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:80%"></div>
+                    <div class="chart-bar curr " style="height:92%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2026/05" data-prev="9.4億" data-curr="10.7億" data-yoy="+13.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:80%"></div>
+                    <div class="chart-bar curr " style="height:91%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2026/06" data-prev="9.3億" data-curr="11.3億" data-yoy="+21.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:80%"></div>
+                    <div class="chart-bar curr " style="height:97%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2026/07" data-prev="9.4億" data-curr="11.7億" data-yoy="+24.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:81%"></div>
+                    <div class="chart-bar curr is-target" style="height:100%"></div>
+                </div>
+                <span class="chart-month-label is-target">7</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <div class="industry-section">
+        <div class="industry-header">
+            <h2>電腦及週邊設備業</h2>
+            <span class="industry-count">1檔</span>
+        </div>
+        <div class="stock-grid">
+            <div class="compact-header">
+                <span class="ch-col ch-name">股票</span>
+                <span class="ch-col ch-filing">申報日</span>
+                <span class="ch-col ch-rev" data-sort="rev">營收(百萬) <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-yoy" data-sort="yoy">YoY% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-mom" data-sort="mom">MoM% <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-exceed" data-sort="exceed">超越同期 <span class="sort-arrow">▼</span></span>
+                <span class="ch-col ch-remark">備註</span>
+            </div>
+            
+            <div class="stock-card" data-sid="6235" data-sname="華孚" data-market="sii" data-rev="550108000.0" data-yoy="1.923379782742016" data-mom="2.320356079332928" data-exceed="1.92" data-date="" data-filing-date="8/2" data-industry="電腦及週邊設備業" data-has-futures="0" data-has-cb="0">
+                <div class="top-row">
+                    <div class="stock-info">
+                        <span class="stock-name">華孚</span>
+                        <span class="stock-id">6235</span>
+                    </div>
+                    <div class="filing-cell">8/2</div>
+                    <div class="revenue-value">5.5億</div>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">當月營收</span>
+                    <span class="tag">創同期新高</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">申報時間</span>
+                    <span style="color:#58a6ff;font-size:0.85rem;">08-02 16:28</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">年增率</span>
+                    <span class="pct-change ">+1.92%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">月增率</span>
+                    <span class="pct-change ">+2.32%</span>
+                </div>
+                <div class="detail-row">
+                    <span class="revenue-label">超越歷史同期</span>
+                    <span class="exceed-tag">+1.9%</span>
+                </div>
+                <div class="remark-row"></div>
+                <div class="t1-box">
+                    <div class="t1-title">📊 T+1 歷史表現 (4次創新高)</div>
+                    <div class="t1-stats">
+                        <span>平均 <b style="color:#3fb950">-1.6%</b></span>
+                        <span>最高 <b style="color:#f85149">+6.6%</b></span>
+                        <span>正報酬率 <b>25%</b></span>
+                    </div><div class="t1-detail"><span class="t1-item">2021/07 <b style="color:#3fb950">-0.3%</b></span><span class="t1-item">2022/07 <b style="color:#3fb950">-2.6%</b></span><span class="t1-item">2023/07 <b style="color:#f85149">+6.6%</b></span><span class="t1-item">2024/07 <b style="color:#3fb950">-10.0%</b></span></div></div>
+                <div class="card-links">
+                    <a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=6235" target="_blank" class="card-link">營收公告</a>
+                    <a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=6235" target="_blank" class="card-link">基本資料</a>
+                    <a href="https://concords.moneydj.com/z/zc/zca/zca_6235.djhtm" target="_blank" class="card-link">查證</a>
+                </div>
+                
+                <details class="chart-toggle">
+                    <summary>近 12 個月營收走勢</summary>
+                    <div class="mini-chart">
+            <div class="chart-group" data-month="2025/08" data-prev="4.7億" data-curr="5.0億" data-yoy="+7.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:71%"></div>
+                    <div class="chart-bar curr " style="height:76%"></div>
+                </div>
+                <span class="chart-month-label ">8</span>
+            </div>
+            <div class="chart-group" data-month="2025/09" data-prev="4.2億" data-curr="6.6億" data-yoy="+57.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:64%"></div>
+                    <div class="chart-bar curr " style="height:100%"></div>
+                </div>
+                <span class="chart-month-label ">9</span>
+            </div>
+            <div class="chart-group" data-month="2025/10" data-prev="3.8億" data-curr="5.9億" data-yoy="+55.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:58%"></div>
+                    <div class="chart-bar curr " style="height:90%"></div>
+                </div>
+                <span class="chart-month-label ">10</span>
+            </div>
+            <div class="chart-group" data-month="2025/11" data-prev="4.5億" data-curr="5.9億" data-yoy="+30.7%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:69%"></div>
+                    <div class="chart-bar curr " style="height:90%"></div>
+                </div>
+                <span class="chart-month-label ">11</span>
+            </div>
+            <div class="chart-group" data-month="2025/12" data-prev="3.9億" data-curr="5.8億" data-yoy="+49.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:59%"></div>
+                    <div class="chart-bar curr " style="height:88%"></div>
+                </div>
+                <span class="chart-month-label ">12</span>
+            </div>
+            <div class="chart-group" data-month="2026/01" data-prev="3.9億" data-curr="6.2億" data-yoy="+58.2%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:60%"></div>
+                    <div class="chart-bar curr " style="height:94%"></div>
+                </div>
+                <span class="chart-month-label ">1</span>
+            </div>
+            <div class="chart-group" data-month="2026/02" data-prev="4.7億" data-curr="4.6億" data-yoy="-0.8%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:71%"></div>
+                    <div class="chart-bar curr " style="height:70%"></div>
+                </div>
+                <span class="chart-month-label ">2</span>
+            </div>
+            <div class="chart-group" data-month="2026/03" data-prev="5.9億" data-curr="5.5億" data-yoy="-6.8%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:89%"></div>
+                    <div class="chart-bar curr " style="height:83%"></div>
+                </div>
+                <span class="chart-month-label ">3</span>
+            </div>
+            <div class="chart-group" data-month="2026/04" data-prev="6.0億" data-curr="5.2億" data-yoy="-13.4%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:91%"></div>
+                    <div class="chart-bar curr " style="height:79%"></div>
+                </div>
+                <span class="chart-month-label ">4</span>
+            </div>
+            <div class="chart-group" data-month="2026/05" data-prev="5.3億" data-curr="5.2億" data-yoy="-1.6%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:81%"></div>
+                    <div class="chart-bar curr " style="height:79%"></div>
+                </div>
+                <span class="chart-month-label ">5</span>
+            </div>
+            <div class="chart-group" data-month="2026/06" data-prev="5.6億" data-curr="5.4億" data-yoy="-4.0%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:85%"></div>
+                    <div class="chart-bar curr " style="height:81%"></div>
+                </div>
+                <span class="chart-month-label ">6</span>
+            </div>
+            <div class="chart-group" data-month="2026/07" data-prev="5.4億" data-curr="5.5億" data-yoy="+1.9%">
+                <div class="chart-bars-pair">
+                    <div class="chart-bar prev" style="height:82%"></div>
+                    <div class="chart-bar curr is-target" style="height:83%"></div>
+                </div>
+                <span class="chart-month-label is-target">7</span>
+            </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot prev"></i>前期</span>
+                        <span><i class="legend-dot curr"></i>本期</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- 上櫃面板 -->
+    <div class="market-panel" id="panel-otc">
+        <p class="empty-msg">本分類無資料</p>
+    </div>
+
+    <!-- 創新板面板 -->
+    <div class="market-panel" id="panel-tib">
+        <p class="empty-msg">本分類無資料</p>
+    </div>
+
+    <!-- 興櫃面板 -->
+    <div class="market-panel" id="panel-emerging">
+        <p class="empty-msg">本分類無資料</p>
+    </div>
+
+    <!-- 公發面板 -->
+    <div class="market-panel" id="panel-pub">
+        <p class="empty-msg">本分類無資料</p>
+    </div>
+
+</div>
 <footer>
-    資料來源：公開資訊觀測站 (MOPS) | 系統每 5 分鐘偵測 | 僅供參考，不構成投資建議<br>
-    最後更新：2026-08-03 06:59:22
+    資料來源：公開資訊觀測站 (MOPS) / FinMind | 僅供參考，不構成投資建議
 </footer>
 
 <script>
-// ===== 排序 =====
-(function() {
-    const table = document.getElementById('mainTable');
-    const tbody = document.getElementById('tableBody');
-    const headers = table.querySelectorAll('thead th[data-sort]');
-    let currentSort = 'seen';
-    let sortAsc = false;
-
-    const sortMap = {
-        sid: r => r.dataset.sid,
-        name: r => r.dataset.sname,
-        seen: r => r.dataset.seen,
-        rev: r => parseFloat(r.dataset.rev) || 0,
-        mom: r => parseFloat(r.dataset.mom) || -9999,
-        yoy: r => parseFloat(r.dataset.yoy) || -9999,
-        ytd: r => parseFloat(r.dataset.ytd) || -9999,
-    };
-
-    headers.forEach(th => {
-        th.addEventListener('click', () => {
-            const key = th.dataset.sort;
-            if (currentSort === key) {
-                sortAsc = !sortAsc;
-            } else {
-                currentSort = key;
-                sortAsc = (key === 'sid' || key === 'name');
-            }
-
-            headers.forEach(h => {
-                h.classList.remove('sort-active');
-                h.querySelector('.sort-arrow').textContent = '▲';
-            });
-            th.classList.add('sort-active');
-            th.querySelector('.sort-arrow').textContent = sortAsc ? '▲' : '▼';
-
-            doSort();
-        });
+// 市場分頁切換
+document.querySelectorAll('.market-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.market-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.market-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('panel-' + tab.dataset.market).classList.add('active');
     });
+});
 
-    function doSort() {
-        const rows = Array.from(tbody.querySelectorAll('.stock-row'));
-        const fn = sortMap[currentSort];
-        if (!fn) return;
+// 檢視模式切換 (標準 / 精簡)
+document.querySelectorAll('.view-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (btn.dataset.view === 'compact') {
+            document.body.classList.add('compact');
+        } else {
+            document.body.classList.remove('compact');
+        }
+    });
+});
 
-        rows.sort((a, b) => {
-            let va = fn(a), vb = fn(b);
-            if (typeof va === 'string') {
-                return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
-            }
-            return sortAsc ? (va - vb) : (vb - va);
-        });
-
-        rows.forEach(r => tbody.appendChild(r));
-    }
-    window._doSort = doSort;
-})();
-
-// ===== 搜尋 + 篩選 =====
+// ===== 統一篩選 (YoY+MoM 都正 / 股票期貨 / 可轉債) =====
 (function() {
-    const searchInput = document.getElementById('searchInput');
-    const filterYoy = document.getElementById('filterYoy');
-    const filterYoyDir = document.getElementById('filterYoyDir');
-    const filterYoyVal = document.getElementById('filterYoyVal');
-    const filterMom = document.getElementById('filterMom');
-    const filterMomDir = document.getElementById('filterMomDir');
-    const filterMomVal = document.getElementById('filterMomVal');
-    const filterCount = document.getElementById('filterCount');
+    const growthCb = document.getElementById('growthFilter');
+    const futuresCb = document.getElementById('futuresFilter');
+    const cbCb = document.getElementById('cbFilter');
+    if (!growthCb && !futuresCb && !cbCb) return;
 
-    function applyFilters() {
-        const q = searchInput.value.trim().toLowerCase();
-        const yoyOn = filterYoy.checked;
-        const yoyDir = filterYoyDir.value;
-        const yoyTh = parseFloat(filterYoyVal.value) || 0;
-        const momOn = filterMom.checked;
-        const momDir = filterMomDir.value;
-        const momTh = parseFloat(filterMomVal.value) || 0;
-
-        const rows = document.querySelectorAll('.stock-row');
-        let shown = 0;
-
-        rows.forEach(row => {
-            let show = true;
-
-            // 搜尋
-            if (q) {
-                const sid = (row.dataset.sid || '').toLowerCase();
-                const sname = (row.dataset.sname || '').toLowerCase();
-                if (!sid.includes(q) && !sname.includes(q)) show = false;
-            }
-
-            // YoY 篩選
-            if (show && yoyOn) {
-                const yoy = parseFloat(row.dataset.yoy) || 0;
-                if (yoyDir === '>' && yoy <= yoyTh) show = false;
-                if (yoyDir === '<' && yoy >= yoyTh) show = false;
-            }
-
-            // MoM 篩選
-            if (show && momOn) {
-                const mom = parseFloat(row.dataset.mom) || 0;
-                if (momDir === '>' && mom <= momTh) show = false;
-                if (momDir === '<' && mom >= momTh) show = false;
-            }
-
-            row.style.display = show ? '' : 'none';
-            if (show) shown++;
-        });
-
-        filterCount.textContent = shown + ' / ' + rows.length + ' 筆';
+    function isCardTrulyVisible(card) {
+        if (card.classList.contains('growth-filtered')) return false;
+        if (card.classList.contains('futures-filtered')) return false;
+        if (card.classList.contains('cb-filtered')) return false;
+        if (card.getAttribute('data-date-hidden')) return false;
+        if (card.getAttribute('data-search-hidden')) return false;
+        return true;
     }
 
-    searchInput.addEventListener('input', applyFilters);
-    [filterYoy, filterMom].forEach(cb => cb.addEventListener('change', applyFilters));
-    [filterYoyDir, filterMomDir].forEach(sel => sel.addEventListener('change', applyFilters));
-    [filterYoyVal, filterMomVal].forEach(inp => inp.addEventListener('input', applyFilters));
+    function applyAllFilters() {
+        const wantGrowth = growthCb && growthCb.checked;
+        const wantFutures = futuresCb && futuresCb.checked;
+        const wantCb = cbCb && cbCb.checked;
 
-    // 初始顯示
-    applyFilters();
-})();
+        document.querySelectorAll('.stock-card').forEach(card => {
+            // YoY+MoM 篩選
+            if (wantGrowth) {
+                const yoy = parseFloat(card.dataset.yoy || '0');
+                const mom = parseFloat(card.dataset.mom || '0');
+                if (yoy <= 0 || mom <= 0 || isNaN(yoy) || isNaN(mom)) {
+                    card.classList.add('growth-filtered');
+                } else {
+                    card.classList.remove('growth-filtered');
+                }
+            } else {
+                card.classList.remove('growth-filtered');
+            }
 
-// ===== 點擊展開 =====
-(function() {
-    const tbody = document.getElementById('tableBody');
-    let expandedRow = null;
-    let detailRow = null;
+            // 股票期貨篩選
+            if (wantFutures) {
+                if (card.dataset.hasFutures !== '1') {
+                    card.classList.add('futures-filtered');
+                } else {
+                    card.classList.remove('futures-filtered');
+                }
+            } else {
+                card.classList.remove('futures-filtered');
+            }
 
-    tbody.addEventListener('click', function(e) {
-        if (e.target.closest('a')) return;
-        const row = e.target.closest('.stock-row');
-        if (!row) return;
+            // 可轉債篩選
+            if (wantCb) {
+                if (card.dataset.hasCb !== '1') {
+                    card.classList.add('cb-filtered');
+                } else {
+                    card.classList.remove('cb-filtered');
+                }
+            } else {
+                card.classList.remove('cb-filtered');
+            }
+        });
 
-        // 關閉舊的
-        if (detailRow) {
-            detailRow.remove();
-            detailRow = null;
+        // 更新各市場 tab-count
+        function countVisible(panelId) {
+            const panel = document.getElementById(panelId);
+            if (!panel) return 0;
+            return Array.from(panel.querySelectorAll('.stock-card')).filter(isCardTrulyVisible).length;
         }
-        if (expandedRow === row) {
-            expandedRow = null;
-            return;
-        }
-        expandedRow = row;
+        const counts = {
+            all: countVisible('panel-all'),
+            sii: countVisible('panel-sii'),
+            otc: countVisible('panel-otc'),
+            tib: countVisible('panel-tib'),
+            emerging: countVisible('panel-emerging'),
+            pub: countVisible('panel-pub'),
+        };
+        document.querySelectorAll('.market-tab').forEach(tab => {
+            const mkt = tab.dataset.market;
+            const cnt = counts[mkt];
+            if (cnt !== undefined) {
+                const span = tab.querySelector('.tab-count');
+                if (span) span.textContent = cnt;
+            }
+        });
 
-        const sid = row.dataset.sid;
-        const sname = row.dataset.sname;
-        const remark = row.dataset.remark || '';
-        const chartData = row.dataset.chart || '[]';
-
-        // 建立明細行
-        const tr = document.createElement('tr');
-        tr.className = 'detail-row';
-        const td = document.createElement('td');
-        td.colSpan = 7;
-
-        let html = '<div class="detail-content">';
-
-        // 標題 + 連結
-        html += '<div class="detail-header">';
-        html += '<a href="https://goodinfo.tw/tw/ShowK_ChartFlow.asp?RPT_CAT=IM_MONTH&STOCK_ID=' + sid + '" target="_blank">' + sid + ' ' + sname + ' 歷史營收</a>';
-        html += '<div class="detail-links">';
-        html += '<a href="https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=' + sid + '" target="_blank">基本資料</a>';
-        html += '<a href="https://concords.moneydj.com/z/zc/zca/zca_' + sid + '.djhtm" target="_blank">查證</a>';
-        html += '</div></div>';
-
-        // 備註
-        if (remark) {
-            html += '<div class="remark-box">ℹ ' + remark + '</div>';
-        }
-
-        // 圖表 + 歷史表格
-        try {
-            const data = JSON.parse(chartData);
-            if (data.length > 0) {
-                // 依 year, month 排序
-                data.sort((a, b) => a.year * 100 + a.month - b.year * 100 - b.month);
-                const maxRev = Math.max(...data.map(d => d.revenue));
-
-                if (maxRev > 0) {
-                    // 柱狀圖
-                    html += '<div class="mini-chart">';
-                    data.forEach(d => {
-                        const h = Math.max((d.revenue / maxRev) * 100, 2);
-                        const isCurrent = (d.year === 2026 && d.month === 7);
-                        const cls = isCurrent ? 'chart-bar-single current' : 'chart-bar-single';
-                        const title = d.year + '/' + d.month + ': ' + (d.revenue / 1000000).toFixed(1) + 'M';
-                        html += '<div class="' + cls + '" style="height:' + h + '%" title="' + title + '"></div>';
-                    });
-                    html += '</div>';
-
-                    // 月份標籤
-                    html += '<div class="chart-labels">';
-                    data.forEach(d => {
-                        const yr = d.month === 1 ? d.year : '';
-                        html += '<span>' + (yr || d.month) + '</span>';
-                    });
-                    html += '</div>';
-
-                    // 歷史表格 (最近12個月)
-                    const recent = data.slice(-12).reverse();
-                    html += '<table class="history-table"><thead><tr>';
-                    html += '<th>年月</th><th>營收(百萬)</th><th>MoM%</th><th>YoY%</th>';
-                    html += '</tr></thead><tbody>';
-                    for (let i = 0; i < recent.length; i++) {
-                        const d = recent[i];
-                        const revM = (d.revenue / 1000000).toFixed(1);
-                        // 計算 MoM
-                        const prevIdx = data.indexOf(d) - 1;
-                        let momStr = '-';
-                        if (prevIdx >= 0 && data[prevIdx].revenue > 0) {
-                            const momV = ((d.revenue - data[prevIdx].revenue) / data[prevIdx].revenue * 100);
-                            const mColor = momV >= 0 ? '#f85149' : '#3fb950';
-                            momStr = '<span style="color:' + mColor + '">' + momV.toFixed(1) + '%</span>';
-                        }
-                        // 計算 YoY
-                        let yoyStr = '-';
-                        const sameMonthPrev = data.find(x => x.year === d.year - 1 && x.month === d.month);
-                        if (sameMonthPrev && sameMonthPrev.revenue > 0) {
-                            const yoyV = ((d.revenue - sameMonthPrev.revenue) / sameMonthPrev.revenue * 100);
-                            const yColor = yoyV >= 0 ? '#f85149' : '#3fb950';
-                            yoyStr = '<span style="color:' + yColor + '">' + yoyV.toFixed(1) + '%</span>';
-                        }
-                        html += '<tr><td>' + d.year + '/' + String(d.month).padStart(2, '0') + '</td>';
-                        html += '<td style="font-family:Consolas,monospace">' + parseFloat(revM).toLocaleString('en', {minimumFractionDigits:1}) + '</td>';
-                        html += '<td>' + momStr + '</td><td>' + yoyStr + '</td></tr>';
-                    }
-                    html += '</tbody></table>';
+        // 隱藏空的產業區塊 + 更新產業計數
+        const anyFilter = wantGrowth || wantFutures || wantCb;
+        document.querySelectorAll('.industry-section').forEach(sec => {
+            const grid = sec.querySelector('.stock-grid');
+            if (!grid) return;
+            const visible = Array.from(grid.querySelectorAll('.stock-card')).filter(isCardTrulyVisible).length;
+            sec.style.display = visible === 0 ? 'none' : '';
+            const cntSpan = sec.querySelector('.industry-count');
+            if (cntSpan) {
+                if (anyFilter) {
+                    cntSpan.textContent = visible + '檔';
+                } else {
+                    const total = grid.querySelectorAll('.stock-card').length;
+                    cntSpan.textContent = total + '檔';
                 }
             }
-        } catch(err) {}
+        });
 
-        html += '</div>';
+        // 視覺反饋
+        [
+            [growthCb, wantGrowth],
+            [futuresCb, wantFutures],
+            [cbCb, wantCb],
+        ].forEach(([cb, on]) => {
+            if (!cb) return;
+            const label = cb.closest('.chip-filter');
+            if (label) label.classList.toggle('active', on);
+        });
+    }
+
+    [growthCb, futuresCb, cbCb].forEach(cb => {
+        if (cb) cb.addEventListener('change', applyAllFilters);
+    });
+
+    // 日期篩選變更時，重新跑篩選
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.date-pill')) {
+            setTimeout(applyAllFilters, 50);
+        }
+    });
+
+    window._applyAllFilters = applyAllFilters;
+})();
+
+// ===== 排序 (點 compact 表頭欄位) + 日期篩選 =====
+(function() {
+    let currentSort = null;
+    let sortAsc = false;
+    const attrMap = { rev: 'data-rev', yoy: 'data-yoy', mom: 'data-mom', exceed: 'data-exceed' };
+
+    // 點擊 compact 表頭排序
+    document.addEventListener('click', function(e) {
+        const col = e.target.closest('.ch-col[data-sort]');
+        if (!col) return;
+
+        const sortKey = col.dataset.sort;
+        if (currentSort === sortKey) {
+            sortAsc = !sortAsc;
+        } else {
+            currentSort = sortKey;
+            sortAsc = false;
+        }
+
+        // 更新所有表頭的箭頭顯示
+        document.querySelectorAll('.ch-col[data-sort]').forEach(c => {
+            c.classList.remove('sort-active');
+            const arrow = c.querySelector('.sort-arrow');
+            if (arrow) arrow.textContent = '▼';
+        });
+        // 點到的那欄 + 同 data-sort 的所有表頭都高亮
+        document.querySelectorAll('.ch-col[data-sort="' + sortKey + '"]').forEach(c => {
+            c.classList.add('sort-active');
+            const arrow = c.querySelector('.sort-arrow');
+            if (arrow) arrow.textContent = sortAsc ? '▲' : '▼';
+        });
+
+        doSort(sortKey, sortAsc);
+    });
+
+    function doSort(sortKey, asc) {
+        const attr = attrMap[sortKey];
+        if (!attr) return;
+
+        document.body.classList.add('sort-mode');
+
+        // 對當前可見的 panel 排序
+        document.querySelectorAll('.market-panel').forEach(panel => {
+            const grids = panel.querySelectorAll('.stock-grid');
+            grids.forEach(grid => {
+                const cards = Array.from(grid.querySelectorAll('.stock-card'));
+                if (cards.length === 0) return;
+
+                cards.sort((a, b) => {
+                    const va = parseFloat(a.getAttribute(attr));
+                    const vb = parseFloat(b.getAttribute(attr));
+                    const na = isNaN(va) ? -Infinity : va;
+                    const nb = isNaN(vb) ? -Infinity : vb;
+                    return asc ? (na - nb) : (nb - na);
+                });
+
+                cards.forEach(c => grid.appendChild(c));
+            });
+        });
+
+        applyDateFilter();
+        applySearch();
+    }
+
+    // ===== 日期篩選 =====
+    let currentDate = 'all';
+
+    document.addEventListener('click', function(e) {
+        const pill = e.target.closest('.date-pill');
+        if (!pill) return;
+
+        document.querySelectorAll('.date-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentDate = pill.dataset.date;
+        applyDateFilter();
+    });
+
+    function applyDateFilter() {
+        const cards = document.querySelectorAll('.stock-card');
+        cards.forEach(card => {
+            if (currentDate === 'all') {
+                card.removeAttribute('data-date-hidden');
+                if (!card.getAttribute('data-search-hidden')) {
+                    card.style.display = '';
+                }
+            } else {
+                const cardDate = card.dataset.filingDate || card.dataset.date || '';
+                if (cardDate === currentDate || cardDate.startsWith(currentDate)) {
+                    card.removeAttribute('data-date-hidden');
+                    if (!card.getAttribute('data-search-hidden')) {
+                        card.style.display = '';
+                    }
+                } else {
+                    card.setAttribute('data-date-hidden', '1');
+                    card.style.display = 'none';
+                }
+            }
+        });
+        updateSectionVisibility();
+    }
+
+    function updateSectionVisibility() {
+        document.querySelectorAll('.industry-section').forEach(section => {
+            const visible = section.querySelectorAll('.stock-card:not([style*="display: none"])');
+            section.style.display = visible.length > 0 ? '' : 'none';
+        });
+    }
+
+    function applySearch() {
+        const input = document.getElementById('stockSearch');
+        if (input && input.value.trim()) {
+            input.dispatchEvent(new Event('input'));
+        }
+    }
+
+    window._applyDateFilter = applyDateFilter;
+})();
+
+// ===== 精簡模式點擊展開卡片 =====
+(function() {
+    let expandedRow = null;
+
+    document.addEventListener('click', function(e) {
+        if (!document.body.classList.contains('compact')) return;
+        if (e.target.closest('a') || e.target.closest('summary') || e.target.closest('.ch-col')) return;
+
+        const card = e.target.closest('.stock-card');
+        if (!card) return;
+
+        // 移除之前的展開行
+        const oldDetail = document.querySelector('.expanded-detail-row');
+        if (oldDetail) {
+            oldDetail.remove();
+            if (expandedRow === card) {
+                card.classList.remove('expanded');
+                expandedRow = null;
+                return;
+            }
+        }
+        if (expandedRow) expandedRow.classList.remove('expanded');
+
+        // 建立展開行
+        card.classList.add('expanded');
+        expandedRow = card;
+
+        const detail = document.createElement('tr');
+        detail.className = 'expanded-detail-row';
+        const td = document.createElement('td');
+        td.colSpan = 6;
+        td.style.padding = '12px 16px';
+        td.style.background = '#161b22';
+        td.style.borderTop = '1px solid #21262d';
+        td.style.borderBottom = '1px solid #21262d';
+
+        // 複製原始卡片的詳細內容
+        const chart = card.querySelector('.chart-toggle');
+        const links = card.querySelector('.card-links');
+
+        let html = '';
+        if (links) {
+            html += '<div style="display:flex;gap:8px;margin-bottom:10px">';
+            links.querySelectorAll('a').forEach(a => {
+                html += '<a href="' + a.href + '" target="_blank" class="card-link">' + a.textContent + '</a>';
+            });
+            html += '</div>';
+        }
+        if (chart) html += chart.outerHTML;
+
         td.innerHTML = html;
-        tr.appendChild(td);
-        row.parentNode.insertBefore(tr, row.nextSibling);
-        detailRow = tr;
+        detail.appendChild(td);
+
+        // 插入到卡片後面
+        card.parentNode.insertBefore(detail, card.nextSibling);
+
+        // 開啟 details
+        const det = detail.querySelector('details');
+        if (det) det.open = true;
     });
 })();
+
+// 個股搜尋
+(function() {
+    const searchInput = document.getElementById('stockSearch');
+    const searchInfo = document.getElementById('searchResultInfo');
+    let debounceTimer;
+
+    searchInput.addEventListener('input', function() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => filterCards(this.value.trim()), 150);
+    });
+
+    // 按 Esc 清除搜尋
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            this.value = '';
+            filterCards('');
+            this.blur();
+        }
+    });
+
+    function filterCards(query) {
+        const cards = document.querySelectorAll('.stock-card');
+        const sections = document.querySelectorAll('.industry-section');
+
+        if (!query) {
+            // 清除搜尋
+            cards.forEach(c => {
+                c.removeAttribute('data-search-hidden');
+                if (!c.getAttribute('data-date-hidden')) {
+                    c.style.display = '';
+                }
+            });
+            sections.forEach(s => s.style.display = '');
+            searchInfo.style.display = 'none';
+            if (window._applyDateFilter) window._applyDateFilter();
+            return;
+        }
+
+        const q = query.toLowerCase();
+        let matchCount = 0;
+
+        cards.forEach(card => {
+            const sid = (card.dataset.sid || '').toLowerCase();
+            const sname = (card.dataset.sname || '').toLowerCase();
+            const match = sid.includes(q) || sname.includes(q);
+            if (match) {
+                card.removeAttribute('data-search-hidden');
+                if (!card.getAttribute('data-date-hidden')) {
+                    card.style.display = '';
+                    matchCount++;
+                }
+            } else {
+                card.setAttribute('data-search-hidden', '1');
+                card.style.display = 'none';
+            }
+        });
+
+        // 隱藏空的產業區塊
+        sections.forEach(section => {
+            const visibleCards = section.querySelectorAll('.stock-card:not([style*="display: none"])');
+            section.style.display = visibleCards.length > 0 ? '' : 'none';
+        });
+
+        // 顯示搜尋結果數
+        searchInfo.style.display = 'block';
+        if (matchCount > 0) {
+            searchInfo.textContent = '找到 ' + matchCount + ' 檔符合「' + query + '」';
+            searchInfo.style.color = '#8b949e';
+        } else {
+            searchInfo.textContent = '找不到「' + query + '」相關股票';
+            searchInfo.style.color = '#f85149';
+        }
+    }
+})();
+
+// 柱狀圖 Tooltip (hover + touch)
+(function() {
+    const tooltip = document.createElement('div');
+    tooltip.className = 'chart-tooltip';
+    document.body.appendChild(tooltip);
+
+    let activeGroup = null;
+
+    function showTooltip(group, x, y) {
+        const month = group.dataset.month || '';
+        const prev = group.dataset.prev || 'N/A';
+        const curr = group.dataset.curr || 'N/A';
+        const yoy = group.dataset.yoy || 'N/A';
+
+        const yoyNum = parseFloat(yoy);
+        const yoyClass = isNaN(yoyNum) ? '' : (yoyNum >= 0 ? 'yoy-pos' : 'yoy-neg');
+
+        tooltip.innerHTML =
+            '<div class="tt-month">' + month + '</div>' +
+            '<div class="tt-row"><span class="tt-label">本期</span><span class="tt-val curr">' + curr + '</span></div>' +
+            '<div class="tt-row"><span class="tt-label">前期</span><span class="tt-val prev">' + prev + '</span></div>' +
+            '<div class="tt-row"><span class="tt-label">年增</span><span class="tt-val ' + yoyClass + '">' + yoy + '</span></div>';
+
+        // 定位: 優先顯示在上方
+        tooltip.style.display = 'block';
+        tooltip.classList.add('visible');
+
+        const rect = group.getBoundingClientRect();
+        const ttRect = tooltip.getBoundingClientRect();
+        let left = rect.left + rect.width / 2 - ttRect.width / 2;
+        let top = rect.top - ttRect.height - 8;
+
+        // 邊界修正
+        if (left < 4) left = 4;
+        if (left + ttRect.width > window.innerWidth - 4) left = window.innerWidth - ttRect.width - 4;
+        if (top < 4) top = rect.bottom + 8;
+
+        tooltip.style.left = left + window.scrollX + 'px';
+        tooltip.style.top = top + window.scrollY + 'px';
+
+        activeGroup = group;
+    }
+
+    function hideTooltip() {
+        tooltip.classList.remove('visible');
+        activeGroup = null;
+    }
+
+    // Desktop: hover
+    document.addEventListener('mouseover', function(e) {
+        const group = e.target.closest('.chart-group');
+        if (group) {
+            showTooltip(group);
+        }
+    });
+
+    document.addEventListener('mouseout', function(e) {
+        const group = e.target.closest('.chart-group');
+        if (group) {
+            const related = e.relatedTarget;
+            if (!group.contains(related)) {
+                hideTooltip();
+            }
+        }
+    });
+
+    // Mobile: touch
+    document.addEventListener('touchstart', function(e) {
+        const group = e.target.closest('.chart-group');
+        if (group) {
+            e.preventDefault();
+            if (activeGroup === group) {
+                hideTooltip();
+            } else {
+                showTooltip(group);
+            }
+        } else if (!e.target.closest('.chart-tooltip')) {
+            hideTooltip();
+        }
+    }, { passive: false });
+})();
+
+// Month Picker
+(function() {
+    var btn = document.getElementById('monthPickerBtn');
+    var dd = document.getElementById('monthDropdown');
+    if (!btn || !dd) return;
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dd.classList.toggle('show');
+    });
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.month-picker-wrap')) {
+            dd.classList.remove('show');
+        }
+    });
+})();
+
+
+// XQ 自選股 .dsl 匯出 (XQ 原生 CFB/OLE2,組合名「營收」)
+// xq-export-v2: 興櫃(emerging)字尾 .TE / 公發(pub)不匯出 / 其餘 .TW
+// 取「當前可見」股票 — 尊重市場 tab + 日期 pill + 搜尋
+// .dsl 匯入 XQ 會「取代」同名商品組合,不像 CSV 是 append 累積重複
+(function() {
+    var btn = document.getElementById('exportXqCsv');
+    var countBadge = document.getElementById('exportCount');
+    if (!btn) return;
+
+    function getVisibleStocks() {
+        var panel = document.querySelector('.market-panel.active');
+        if (!panel) return [];
+        var activeMarket = (panel.id || '').replace('panel-', '') || 'all';
+        var cards = panel.querySelectorAll('.stock-card');
+        var seen = {};
+        var list = [];
+        for (var i = 0; i < cards.length; i++) {
+            var c = cards[i];
+            // 過濾掉被 inline display:none 隱藏的卡片 (date filter / search)
+            if (c.style.display === 'none') continue;
+            // 過濾掉被 filter class 隱藏的卡片 (YoY+MoM / 股票期貨 / 可轉債 / 日期屬性)
+            if (c.classList.contains('growth-filtered')) continue;
+            if (c.classList.contains('futures-filtered')) continue;
+            if (c.classList.contains('cb-filtered')) continue;
+            if (c.getAttribute('data-date-hidden')) continue;
+            if (c.getAttribute('data-search-hidden')) continue;
+            // 過濾掉父層產業區塊被隱藏的卡片
+            var section = c.closest('.industry-section');
+            if (section && section.style.display === 'none') continue;
+            var sid = (c.dataset.sid || '').trim();
+            var sname = (c.dataset.sname || '').trim();
+            if (!sid || seen[sid]) continue;
+            // 市場: 優先卡片自身 data-market;舊檔無此屬性時,非「全部」面板退回當前面板
+            var market = (c.dataset.market || '').trim();
+            if (!market && activeMarket !== 'all') market = activeMarket;
+            // 公發 (pub) 不匯出
+            if (market === 'pub') continue;
+            seen[sid] = 1;
+            // 興櫃 (emerging) 用 .TE,其餘 (上市/上櫃/創新板) 用 .TW
+            var suffix = (market === 'emerging') ? '.TE' : '.TW';
+            list.push({ sid: sid, sname: sname, suffix: suffix });
+        }
+        return list;
+    }
+
+    function getActiveMarketLabel() {
+        var panel = document.querySelector('.market-panel.active');
+        if (!panel) return 'all';
+        return (panel.id || '').replace('panel-', '') || 'all';
+    }
+
+    function todayTw() {
+        var d = new Date(Date.now() + 8 * 3600 * 1000);
+        return d.toISOString().slice(0, 10);
+    }
+
+    function updateCount() {
+        if (!countBadge) return;
+        var n = getVisibleStocks().length;
+        countBadge.textContent = n > 0 ? '(' + n + ')' : '';
+    }
+
+// ---- XQ .dsl (CFB / OLE2) builder ----
+var SEC = 512, MINI = 64, MINI_CUTOFF = 4096;
+var FREE = 0xFFFFFFFF, EOC = 0xFFFFFFFE, FATSECT = 0xFFFFFFFD;
+// 「營收」Big5 = C0 E7 A6 AC (TextEncoder 不支援 Big5,直接寫死)
+var GROUP_BIG5 = new Uint8Array([0xC0, 0xE7, 0xA6, 0xAC]);
+
+function asciiBytes(s){
+  var o = new Uint8Array(s.length);
+  for (var i = 0; i < s.length; i++) o[i] = s.charCodeAt(i) & 0xFF;
+  return o;
+}
+function concatBytes(arrs){
+  var total = 0;
+  for (var i = 0; i < arrs.length; i++) total += arrs[i].length;
+  var out = new Uint8Array(total), off = 0;
+  for (var j = 0; j < arrs.length; j++) { out.set(arrs[j], off); off += arrs[j].length; }
+  return out;
+}
+function newGuid(){
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) return crypto.randomUUID().toUpperCase();
+  var hex = '0123456789ABCDEF', g = '';
+  for (var i = 0; i < 32; i++) g += hex[Math.floor(Math.random()*16)];
+  return g.slice(0,8)+'-'+g.slice(8,12)+'-'+g.slice(12,16)+'-'+g.slice(16,20)+'-'+g.slice(20,32);
+}
+function writeDirEntry(view, bytes, off, name, etype, color, left, right, child, startSec, size){
+  // UTF-16-LE name + null terminator, in first 64 bytes
+  var nameLen = (name.length + 1) * 2;
+  for (var i = 0; i < name.length; i++) {
+    var c = name.charCodeAt(i);
+    bytes[off + i*2] = c & 0xFF;
+    bytes[off + i*2 + 1] = (c >> 8) & 0xFF;
+  }
+  view.setUint16(off + 64, nameLen, true);
+  bytes[off + 66] = etype;
+  bytes[off + 67] = color;
+  view.setInt32(off + 68, left, true);
+  view.setInt32(off + 72, right, true);
+  view.setInt32(off + 76, child, true);
+  // CLSID (80-95), state (96-99), times (100-115): all zero, already
+  view.setUint32(off + 116, startSec >>> 0, true);
+  view.setUint32(off + 120, size >>> 0, true);  // lower 32
+  view.setUint32(off + 124, 0, true);           // upper 32 (v3 unused)
+}
+function buildXqDsl(stocks){
+  // FileContentSymbolList_0 content: "1," + GUID + ";" + big5(組合名) + ",{code}.TW,..."
+  var guid = newGuid();
+  var head = asciiBytes('1,' + guid + ';');
+  // 字尾: 興櫃 .TE / 其餘 .TW (由呼叫端在 s.suffix 帶入)
+  var tailStr = ',' + stocks.map(function(s){ return s.code + (s.suffix || '.TW'); }).join(',');
+  var tail = asciiBytes(tailStr);
+  var fcsl = concatBytes([head, GROUP_BIG5, tail]);
+  var fcslLen = fcsl.length;
+  var fcslInMini = fcslLen < MINI_CUTOFF;
+
+  // Mini sectors used: _SSHeader_ (1) + FileHeadFileCount (1) + FCSL (if mini)
+  var fcslMiniSecs = fcslInMini ? Math.ceil(fcslLen / MINI) : 0;
+  var miniSecs = 2 + fcslMiniSecs;
+  var miniStreamBytes = miniSecs * MINI;
+  var miniStreamRegular = Math.ceil(miniStreamBytes / SEC);
+
+  var fcslRegularSecs = fcslInMini ? 0 : Math.ceil(fcslLen / SEC);
+  var miniStreamFirstSec = 3;
+  var fcslFirstSec = fcslInMini ? -1 : miniStreamFirstSec + miniStreamRegular;
+  var totalSecs = 3 + miniStreamRegular + fcslRegularSecs;
+  var fileSize = (1 + totalSecs) * SEC;
+
+  var buf = new Uint8Array(fileSize);
+  var view = new DataView(buf.buffer);
+
+  // --- Header (0..511) ---
+  buf.set([0xD0,0xCF,0x11,0xE0,0xA1,0xB1,0x1A,0xE1], 0);
+  view.setUint16(24, 0x003E, true);
+  view.setUint16(26, 0x0003, true);
+  view.setUint16(28, 0xFFFE, true);
+  view.setUint16(30, 9, true);
+  view.setUint16(32, 6, true);
+  view.setUint32(40, 0, true);
+  view.setUint32(44, 1, true);                // num_fat_sectors
+  view.setUint32(48, 1, true);                // first_dir_sector
+  view.setUint32(56, MINI_CUTOFF, true);
+  view.setUint32(60, 2, true);                // first_mini_fat_sector
+  view.setUint32(64, 1, true);                // num_mini_fat_sectors
+  view.setUint32(68, FREE, true);             // no DIFAT
+  view.setUint32(76, 0, true);                // DIFAT[0] = FAT at sector 0
+  for (var k = 1; k < 109; k++) view.setUint32(76 + k*4, FREE, true);
+
+  // --- FAT (sector 0 -> file 0x200) ---
+  var fatOff = SEC;
+  for (var i = 0; i < 128; i++) view.setUint32(fatOff + i*4, FREE, true);
+  view.setUint32(fatOff + 0*4, FATSECT, true);
+  view.setUint32(fatOff + 1*4, EOC, true);
+  view.setUint32(fatOff + 2*4, EOC, true);
+  for (var i2 = 0; i2 < miniStreamRegular; i2++) {
+    var cur = 3 + i2;
+    view.setUint32(fatOff + cur*4, i2 === miniStreamRegular - 1 ? EOC : cur + 1, true);
+  }
+  if (!fcslInMini) {
+    for (var i3 = 0; i3 < fcslRegularSecs; i3++) {
+      var c2 = fcslFirstSec + i3;
+      view.setUint32(fatOff + c2*4, i3 === fcslRegularSecs - 1 ? EOC : c2 + 1, true);
+    }
+  }
+
+  // --- Directory (sector 1 -> file 0x400) ---
+  var dirOff = SEC * 2;
+  // BST: Root.child = idx 2 (FileHeadFileCount), L = _SSHeader_(1), R = FCSL(3)
+  writeDirEntry(view, buf, dirOff + 0*128, 'Root Entry', 5, 0, -1, -1, 2, miniStreamFirstSec, miniSecs * MINI);
+  writeDirEntry(view, buf, dirOff + 1*128, '_SSHeader_', 2, 0, -1, -1, -1, 0, 36);
+  writeDirEntry(view, buf, dirOff + 2*128, 'FileHeadFileCount', 2, 1, 1, 3, -1, 1, 4);
+  var fcslStart = fcslInMini ? 2 : fcslFirstSec;
+  writeDirEntry(view, buf, dirOff + 3*128, 'FileContentSymbolList_0', 2, 0, -1, -1, -1, fcslStart, fcslLen);
+
+  // --- Mini FAT (sector 2 -> file 0x600) ---
+  var mfatOff = SEC * 3;
+  for (var m = 0; m < 128; m++) view.setUint32(mfatOff + m*4, FREE, true);
+  view.setUint32(mfatOff + 0*4, EOC, true);
+  view.setUint32(mfatOff + 1*4, EOC, true);
+  if (fcslInMini) {
+    for (var n = 0; n < fcslMiniSecs; n++) {
+      var mc = 2 + n;
+      view.setUint32(mfatOff + mc*4, n === fcslMiniSecs - 1 ? EOC : mc + 1, true);
+    }
+  }
+
+  // --- Mini stream (regular sector 3+) ---
+  var miniStreamOff = SEC * (1 + miniStreamFirstSec);
+  // _SSHeader_ at mini sec 0: 00 00 00 00 Test + zeros (36B)
+  buf[miniStreamOff + 4] = 0x54; buf[miniStreamOff + 5] = 0x65;
+  buf[miniStreamOff + 6] = 0x73; buf[miniStreamOff + 7] = 0x74;
+  // FileHeadFileCount at mini sec 1: uint32 LE = 1
+  buf[miniStreamOff + MINI] = 1;
+  // FCSL at mini sec 2+ if mini
+  if (fcslInMini) buf.set(fcsl, miniStreamOff + 2 * MINI);
+
+  // --- FCSL regular sectors ---
+  if (!fcslInMini) buf.set(fcsl, SEC * (1 + fcslFirstSec));
+
+  return buf;
+}
+
+    btn.addEventListener('click', function() {
+        var stocks = getVisibleStocks();
+        if (stocks.length === 0) {
+            alert('目前沒有可匯出的股票（請確認分頁與篩選條件）');
+            return;
+        }
+        var dslStocks = stocks.map(function(s) { return { code: s.sid, suffix: s.suffix }; });
+        var dsl = buildXqDsl(dslStocks);
+        var blob = new Blob([dsl], { type: 'application/octet-stream' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'XQ自選股_營收_' + getActiveMarketLabel() + '_' + todayTw() + '.dsl';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function() { URL.revokeObjectURL(url); }, 100);
+    });
+
+    // 初次計算
+    updateCount();
+
+    // filter 變動時即時更新數量
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.market-tab') || e.target.closest('.date-pill')) {
+            setTimeout(updateCount, 60);
+        }
+    });
+    var search = document.getElementById('stockSearch');
+    if (search) {
+        search.addEventListener('input', function() {
+            setTimeout(updateCount, 60);
+        });
+    }
+    // chip filter (YoY+MoM / 股期 / CB) 變動時更新
+    ['growthFilter', 'futuresFilter', 'cbFilter'].forEach(function(id) {
+        var cb = document.getElementById(id);
+        if (cb) cb.addEventListener('change', function() {
+            setTimeout(updateCount, 60);
+        });
+    });
+})();
+
 </script>
 </body>
 </html>
