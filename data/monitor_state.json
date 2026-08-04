@@ -136,9 +136,24 @@
       "first_seen": "08-03 20:56",
       "market": "pub",
       "stock_name": "友合生化"
+    },
+    "6580": {
+      "first_seen": "08-04 11:45",
+      "market": "emerging",
+      "stock_name": "台睿"
+    },
+    "1435": {
+      "first_seen": "08-04 11:45",
+      "market": "sii",
+      "stock_name": "中福"
+    },
+    "6634": {
+      "first_seen": "08-04 11:45",
+      "market": "emerging",
+      "stock_name": "欣耀"
     }
   },
-  "last_check": "08-04 07:05:45",
-  "last_new_filing": "08-03 20:56:35",
-  "total_filed": 27
+  "last_check": "08-04 11:45:54",
+  "last_new_filing": "08-04 11:45:54",
+  "total_filed": 30
 }

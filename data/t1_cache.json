@@ -138991,5 +138991,31 @@
     "stock_name": "華上生醫",
     "market": "emerging",
     "current_filing_date": "2026-08-03"
+  },
+  "6510_7": {
+    "stock_id": "6510",
+    "historical_highs": [
+      {
+        "t_date": "2026-08-03",
+        "t_close": 2655.0,
+        "t1_date": "2026-08-04",
+        "t1_close": 2720.0,
+        "t1_pct": 2.45,
+        "year": 2026,
+        "month": 7,
+        "revenue": 614606000.0
+      }
+    ],
+    "avg_t1": 2.45,
+    "median_t1": 2.45,
+    "max_t1": 2.45,
+    "min_t1": 2.45,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 3,
+    "cached_at": "2026-08-04T03:46:00.002275",
+    "stock_name": "精測",
+    "market": "otc",
+    "current_filing_date": "2026-08-03"
   }
 }
