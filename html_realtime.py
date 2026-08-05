@@ -33,13 +33,13 @@ def _fmt_revenue_million(val) -> str:
 def _pct_html(val, reverse=False) -> str:
     """百分比 HTML (紅正綠負)"""
     if pd.isna(val) or val == 0:
-        return '<span style="color:#6e7681">-</span>'
+        return '<span style="color:#5b6779">-</span>'
     v = float(val)
     if v > 0:
-        color = "#f85149"
+        color = "#f06d8a"
         return f'<span style="color:{color}">{v:.2f}%</span>'
     else:
-        color = "#3fb950"
+        color = "#4dd4ac"
         return f'<span style="color:{color}">{v:.2f}%</span>'
 
 
@@ -203,8 +203,8 @@ REALTIME_TEMPLATE = """<!DOCTYPE html>
 * {{ margin: 0; padding: 0; box-sizing: border-box; }}
 
 body {{
-    background: #0d1117;
-    color: #e6edf3;
+    background: #0a0e17;
+    color: #e6ecf5;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
     line-height: 1.6;
     min-height: 100vh;
@@ -229,23 +229,23 @@ header h1 {{
 }}
 
 .period-info {{
-    color: #8b949e;
+    color: #8a96aa;
     font-size: 0.95rem;
     margin-bottom: 4px;
 }}
 
 .period-info .highlight {{
-    color: #58a6ff;
+    color: #5fa8ff;
     font-weight: 600;
 }}
 
 .monitor-status {{
     font-size: 0.85rem;
-    color: #6e7681;
+    color: #5b6779;
 }}
 
 .monitor-status .status-active {{
-    color: #3fb950;
+    color: #4dd4ac;
 }}
 
 .stats-bar {{
@@ -263,19 +263,19 @@ header h1 {{
 .stat-item .stat-value {{
     font-size: 1.5rem;
     font-weight: 700;
-    color: #f85149;
+    color: #f06d8a;
 }}
 
 .stat-item .stat-label {{
     font-size: 0.8rem;
-    color: #8b949e;
+    color: #8a96aa;
 }}
 
 /* ===== 預警清單 ===== */
 .prefiling-section {{
     margin: 20px 0;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    border: 1px solid #f0883e44;
+    border: 1px solid #ff8c4244;
     border-radius: 10px;
     padding: 16px 20px;
 }}
@@ -292,12 +292,12 @@ header h1 {{
 .pf-title {{
     font-size: 1rem;
     font-weight: 700;
-    color: #f0883e;
+    color: #ff8c42;
 }}
 
 .pf-summary {{
     font-size: 0.8rem;
-    color: #8b949e;
+    color: #8a96aa;
 }}
 
 .pf-cards {{
@@ -311,14 +311,14 @@ header h1 {{
     align-items: center;
     gap: 16px;
     padding: 10px 14px;
-    background: #0d1117cc;
-    border-left: 3px solid #f0883e;
+    background: #0a0e17cc;
+    border-left: 3px solid #ff8c42;
     border-radius: 6px;
     flex-wrap: wrap;
 }}
 
 .pf-card-filed {{
-    border-left-color: #3fb950;
+    border-left-color: #4dd4ac;
     opacity: 0.7;
 }}
 
@@ -331,13 +331,13 @@ header h1 {{
 
 .pf-sid {{
     font-weight: 700;
-    color: #58a6ff;
+    color: #5fa8ff;
     font-size: 0.95rem;
     min-width: 45px;
 }}
 
 .pf-name {{
-    color: #e6edf3;
+    color: #e6ecf5;
     font-size: 0.9rem;
 }}
 
@@ -349,13 +349,13 @@ header h1 {{
 }}
 
 .pf-filed {{
-    background: #3fb95033;
-    color: #3fb950;
+    background: #4dd4ac33;
+    color: #4dd4ac;
 }}
 
 .pf-pending {{
-    background: #f0883e33;
-    color: #f0883e;
+    background: #ff8c4233;
+    color: #ff8c42;
 }}
 
 .pf-mid {{
@@ -366,7 +366,7 @@ header h1 {{
 }}
 
 .pf-avg {{
-    color: #f85149;
+    color: #f06d8a;
     font-size: 0.9rem;
 }}
 
@@ -375,12 +375,12 @@ header h1 {{
 }}
 
 .pf-hit {{
-    color: #8b949e;
+    color: #8a96aa;
     font-size: 0.8rem;
 }}
 
 .pf-count {{
-    color: #6e7681;
+    color: #5b6779;
     font-size: 0.75rem;
 }}
 
@@ -389,7 +389,7 @@ header h1 {{
 }}
 
 .pf-msg {{
-    color: #8b949e;
+    color: #8a96aa;
     font-size: 0.78rem;
 }}
 
@@ -401,8 +401,8 @@ header h1 {{
     flex-wrap: wrap;
     margin: 20px 0;
     padding: 12px 16px;
-    background: #161b22;
-    border: 1px solid #21262d;
+    background: #11161f;
+    border: 1px solid #161c28;
     border-radius: 8px;
 }}
 
@@ -414,20 +414,20 @@ header h1 {{
 
 .filter-group label {{
     font-size: 0.8rem;
-    color: #8b949e;
+    color: #8a96aa;
 }}
 
 .filter-group input[type="checkbox"] {{
-    accent-color: #58a6ff;
+    accent-color: #5fa8ff;
 }}
 
 .filter-group input[type="number"] {{
     width: 60px;
     padding: 4px 8px;
     font-size: 0.8rem;
-    color: #e6edf3;
-    background: #0d1117;
-    border: 1px solid #30363d;
+    color: #e6ecf5;
+    background: #0a0e17;
+    border: 1px solid #1d2632;
     border-radius: 4px;
     text-align: center;
 }}
@@ -435,9 +435,9 @@ header h1 {{
 .filter-group select {{
     padding: 4px 8px;
     font-size: 0.8rem;
-    color: #e6edf3;
-    background: #0d1117;
-    border: 1px solid #30363d;
+    color: #e6ecf5;
+    background: #0a0e17;
+    border: 1px solid #1d2632;
     border-radius: 4px;
 }}
 
@@ -446,24 +446,24 @@ header h1 {{
     min-width: 160px;
     padding: 6px 12px;
     font-size: 0.85rem;
-    color: #e6edf3;
-    background: #0d1117;
-    border: 1px solid #30363d;
+    color: #e6ecf5;
+    background: #0a0e17;
+    border: 1px solid #1d2632;
     border-radius: 6px;
     outline: none;
 }}
 
 .search-input:focus {{
-    border-color: #58a6ff;
+    border-color: #5fa8ff;
 }}
 
 .search-input::placeholder {{
-    color: #6e7681;
+    color: #5b6779;
 }}
 
 .filter-count {{
     font-size: 0.8rem;
-    color: #8b949e;
+    color: #8a96aa;
 }}
 
 /* ===== 導航 ===== */
@@ -475,32 +475,32 @@ header h1 {{
 }}
 
 .nav-link {{
-    color: #8b949e;
+    color: #8a96aa;
     text-decoration: none;
     font-size: 0.85rem;
     padding: 4px 12px;
-    border: 1px solid #30363d;
+    border: 1px solid #1d2632;
     border-radius: 6px;
     transition: all 0.2s;
 }}
 
 .nav-link:hover {{
-    color: #58a6ff;
-    border-color: #58a6ff;
+    color: #5fa8ff;
+    border-color: #5fa8ff;
 }}
 
 .nav-link.active {{
-    color: #58a6ff;
-    border-color: #58a6ff;
-    background: #58a6ff15;
+    color: #5fa8ff;
+    border-color: #5fa8ff;
+    background: #5fa8ff15;
 }}
 
 /* ===== 表格 ===== */
 .table-wrapper {{
     overflow-x: auto;
-    border: 1px solid #21262d;
+    border: 1px solid #161c28;
     border-radius: 8px;
-    background: #161b22;
+    background: #11161f;
 }}
 
 table {{
@@ -513,26 +513,26 @@ thead th {{
     padding: 10px 14px;
     text-align: left;
     font-size: 0.78rem;
-    color: #8b949e;
+    color: #8a96aa;
     font-weight: 600;
-    border-bottom: 2px solid #21262d;
+    border-bottom: 2px solid #161c28;
     white-space: nowrap;
     cursor: pointer;
     user-select: none;
     transition: color 0.2s;
     position: sticky;
     top: 0;
-    background: #161b22;
+    background: #11161f;
     z-index: 5;
 }}
 
 thead th:hover {{
-    color: #e6edf3;
+    color: #e6ecf5;
 }}
 
 thead th.sort-active {{
-    color: #58a6ff;
-    border-bottom-color: #58a6ff;
+    color: #5fa8ff;
+    border-bottom-color: #5fa8ff;
 }}
 
 thead th .sort-arrow {{
@@ -560,31 +560,31 @@ tbody tr {{
 }}
 
 tbody tr:hover {{
-    background: rgba(88,166,255,0.08);
+    background: rgba(95,168,255,0.08);
 }}
 
 tbody tr:nth-child(even) {{
-    background: rgba(22,27,34,0.5);
+    background: rgba(17,22,31,0.5);
 }}
 
 tbody tr:nth-child(even):hover {{
-    background: rgba(88,166,255,0.08);
+    background: rgba(95,168,255,0.08);
 }}
 
 tbody tr.new-filing {{
-    background: rgba(88,166,255,0.12);
+    background: rgba(95,168,255,0.12);
 }}
 
 tbody td {{
     padding: 9px 14px;
-    border-bottom: 1px solid #21262d10;
+    border-bottom: 1px solid #161c2810;
     white-space: nowrap;
 }}
 
 .col-id {{
     font-family: "Consolas", "Monaco", monospace;
     font-weight: 600;
-    color: #58a6ff;
+    color: #5fa8ff;
 }}
 
 .col-name {{
@@ -592,7 +592,7 @@ tbody td {{
 }}
 
 .col-seen {{
-    color: #8b949e;
+    color: #8a96aa;
     font-family: "Consolas", "Monaco", monospace;
     font-size: 0.78rem;
 }}
@@ -600,7 +600,7 @@ tbody td {{
 .col-rev {{
     font-family: "Consolas", "Monaco", monospace;
     font-weight: 700;
-    color: #f85149;
+    color: #f06d8a;
     font-size: 0.9rem;
 }}
 
@@ -610,8 +610,8 @@ tbody td {{
 
 .market-badge {{
     font-size: 0.65rem;
-    color: #6e7681;
-    background: #21262d;
+    color: #5b6779;
+    background: #161c28;
     padding: 1px 5px;
     border-radius: 3px;
     margin-left: 4px;
@@ -620,8 +620,8 @@ tbody td {{
 /* ===== 展開明細 ===== */
 .detail-row td {{
     padding: 16px;
-    background: #0d1117;
-    border-bottom: 2px solid #21262d;
+    background: #0a0e17;
+    border-bottom: 2px solid #161c28;
 }}
 
 .detail-content {{
@@ -637,7 +637,7 @@ tbody td {{
 }}
 
 .detail-header a {{
-    color: #58a6ff;
+    color: #5fa8ff;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
@@ -655,26 +655,26 @@ tbody td {{
 .detail-links a {{
     padding: 4px 10px;
     font-size: 0.75rem;
-    color: #8b949e;
-    background: #161b22;
-    border: 1px solid #30363d;
+    color: #8a96aa;
+    background: #11161f;
+    border: 1px solid #1d2632;
     border-radius: 4px;
     text-decoration: none;
     transition: all 0.2s;
 }}
 
 .detail-links a:hover {{
-    color: #58a6ff;
-    border-color: #58a6ff;
+    color: #5fa8ff;
+    border-color: #5fa8ff;
 }}
 
 .remark-box {{
     padding: 6px 10px;
-    background: #1c2128;
-    border-left: 3px solid #f0883e;
+    background: #161c28;
+    border-left: 3px solid #ff8c42;
     border-radius: 0 4px 4px 0;
     font-size: 0.78rem;
-    color: #d2a8ff;
+    color: #a487f7;
 }}
 
 /* ===== 歷史表格 ===== */
@@ -689,8 +689,8 @@ tbody td {{
     padding: 6px 12px;
     text-align: right;
     font-weight: 600;
-    color: #8b949e;
-    border-bottom: 1px solid #21262d;
+    color: #8a96aa;
+    border-bottom: 1px solid #161c28;
     cursor: default;
 }}
 
@@ -702,12 +702,12 @@ tbody td {{
     padding: 5px 12px;
     text-align: right;
     font-family: "Consolas", "Monaco", monospace;
-    border-bottom: 1px solid #21262d10;
+    border-bottom: 1px solid #161c2810;
 }}
 
 .history-table td:first-child {{
     text-align: left;
-    color: #8b949e;
+    color: #8a96aa;
 }}
 
 /* ===== 柱狀圖 ===== */
@@ -724,24 +724,24 @@ tbody td {{
     min-width: 4px;
     max-width: 16px;
     border-radius: 2px 2px 0 0;
-    background: #6e7681;
+    background: #5b6779;
     min-height: 2px;
     transition: background 0.2s;
 }}
 
 .chart-bar-single.current {{
-    background: #f0883e;
+    background: #ff8c42;
 }}
 
 .chart-bar-single:hover {{
-    background: #79bbff;
+    background: #7cb8ff;
 }}
 
 .chart-labels {{
     display: flex;
     gap: 2px;
     font-size: 0.5rem;
-    color: #6e7681;
+    color: #5b6779;
 }}
 
 .chart-labels span {{
@@ -754,7 +754,7 @@ tbody td {{
 footer {{
     text-align: center;
     padding: 30px 20px;
-    color: #6e7681;
+    color: #5b6779;
     font-size: 0.75rem;
 }}
 
@@ -1055,7 +1055,7 @@ footer {{
                         let momStr = '-';
                         if (prevIdx >= 0 && data[prevIdx].revenue > 0) {{
                             const momV = ((d.revenue - data[prevIdx].revenue) / data[prevIdx].revenue * 100);
-                            const mColor = momV >= 0 ? '#f85149' : '#3fb950';
+                            const mColor = momV >= 0 ? '#f06d8a' : '#4dd4ac';
                             momStr = '<span style="color:' + mColor + '">' + momV.toFixed(1) + '%</span>';
                         }}
                         // 計算 YoY
@@ -1063,7 +1063,7 @@ footer {{
                         const sameMonthPrev = data.find(x => x.year === d.year - 1 && x.month === d.month);
                         if (sameMonthPrev && sameMonthPrev.revenue > 0) {{
                             const yoyV = ((d.revenue - sameMonthPrev.revenue) / sameMonthPrev.revenue * 100);
-                            const yColor = yoyV >= 0 ? '#f85149' : '#3fb950';
+                            const yColor = yoyV >= 0 ? '#f06d8a' : '#4dd4ac';
                             yoyStr = '<span style="color:' + yColor + '">' + yoyV.toFixed(1) + '%</span>';
                         }}
                         html += '<tr><td>' + d.year + '/' + String(d.month).padStart(2, '0') + '</td>';

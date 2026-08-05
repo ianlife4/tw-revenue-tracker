@@ -35,8 +35,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 * {{ margin: 0; padding: 0; box-sizing: border-box; }}
 
 body {{
-    background: #0d1117;
-    color: #e6edf3;
+    background: #0a0e17;
+    color: #e6ecf5;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif;
     line-height: 1.6;
     min-height: 100vh;
@@ -60,7 +60,7 @@ header h1 {{
 }}
 
 header .subtitle {{
-    color: #8b949e;
+    color: #8a96aa;
     font-size: 0.95rem;
 }}
 
@@ -75,23 +75,23 @@ header .date-nav {{
 header .date-info {{
     font-size: 1.3rem;
     font-weight: 600;
-    color: #58a6ff;
+    color: #5fa8ff;
 }}
 
 .nav-btn {{
-    color: #8b949e;
+    color: #8a96aa;
     text-decoration: none;
     font-size: 0.9rem;
     padding: 6px 16px;
-    border: 1px solid #30363d;
+    border: 1px solid #1d2632;
     border-radius: 6px;
     transition: all 0.2s;
 }}
 
 .nav-btn:hover {{
-    color: #58a6ff;
-    border-color: #58a6ff;
-    background: #161b22;
+    color: #5fa8ff;
+    border-color: #5fa8ff;
+    background: #11161f;
 }}
 
 /* Month Picker */
@@ -102,7 +102,7 @@ header .date-info {{
 .month-picker-btn {{
     font-size: 1.3rem;
     font-weight: 600;
-    color: #58a6ff;
+    color: #5fa8ff;
     cursor: pointer;
     padding: 4px 12px;
     border-radius: 6px;
@@ -110,7 +110,7 @@ header .date-info {{
     user-select: none;
 }}
 .month-picker-btn:hover {{
-    background: rgba(88,166,255,0.1);
+    background: rgba(95,168,255,0.1);
 }}
 .month-picker-btn::after {{
     content: " ▾";
@@ -122,8 +122,8 @@ header .date-info {{
     top: 110%;
     left: 50%;
     transform: translateX(-50%);
-    background: #1c2128;
-    border: 1px solid #30363d;
+    background: #161c28;
+    border: 1px solid #1d2632;
     border-radius: 10px;
     padding: 12px;
     z-index: 999;
@@ -134,11 +134,11 @@ header .date-info {{
     display: block;
 }}
 .month-dropdown-year {{
-    color: #8b949e;
+    color: #8a96aa;
     font-size: 0.8rem;
     font-weight: 600;
     padding: 6px 8px 4px;
-    border-bottom: 1px solid #21262d;
+    border-bottom: 1px solid #161c28;
     margin-bottom: 4px;
 }}
 .month-dropdown-grid {{
@@ -150,28 +150,28 @@ header .date-info {{
     display: block;
     padding: 6px 4px;
     text-align: center;
-    color: #c9d1d9;
+    color: #e6ecf5;
     text-decoration: none;
     border-radius: 6px;
     font-size: 0.85rem;
     transition: all 0.15s;
 }}
 .month-dropdown-item:hover {{
-    background: rgba(88,166,255,0.15);
-    color: #58a6ff;
+    background: rgba(95,168,255,0.15);
+    color: #5fa8ff;
 }}
 .month-dropdown-item.active {{
-    background: #58a6ff;
-    color: #0d1117;
+    background: #5fa8ff;
+    color: #0a0e17;
     font-weight: 600;
 }}
 .month-dropdown-item.disabled {{
-    color: #30363d;
+    color: #1d2632;
     pointer-events: none;
 }}
 
 header .update-time {{
-    color: #6e7681;
+    color: #5b6779;
     font-size: 0.8rem;
     margin-top: 4px;
 }}
@@ -191,12 +191,12 @@ header .update-time {{
 .summary-item .number {{
     font-size: 2rem;
     font-weight: 700;
-    color: #f85149;
+    color: #f06d8a;
 }}
 
 .summary-item .label {{
     font-size: 0.85rem;
-    color: #8b949e;
+    color: #8a96aa;
 }}
 
 /* ===== 市場分頁 Tab ===== */
@@ -205,7 +205,7 @@ header .update-time {{
     justify-content: center;
     gap: 0;
     margin: 0 0 30px;
-    border-bottom: 2px solid #21262d;
+    border-bottom: 2px solid #161c28;
     flex-wrap: wrap;
 }}
 
@@ -214,26 +214,26 @@ header .update-time {{
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    color: #8b949e;
+    color: #8a96aa;
     border-bottom: 3px solid transparent;
     transition: all 0.2s;
     user-select: none;
 }}
 
 .market-tab:hover {{
-    color: #e6edf3;
-    background: #161b22;
+    color: #e6ecf5;
+    background: #11161f;
 }}
 
 .market-tab.active {{
-    color: #58a6ff;
-    border-bottom-color: #58a6ff;
+    color: #5fa8ff;
+    border-bottom-color: #5fa8ff;
 }}
 
 .market-tab .tab-count {{
     display: inline-block;
-    background: #21262d;
-    color: #8b949e;
+    background: #161c28;
+    color: #8a96aa;
     border-radius: 10px;
     padding: 1px 8px;
     font-size: 0.75rem;
@@ -242,8 +242,8 @@ header .update-time {{
 }}
 
 .market-tab.active .tab-count {{
-    background: #58a6ff33;
-    color: #58a6ff;
+    background: #5fa8ff33;
+    color: #5fa8ff;
 }}
 
 .market-panel {{
@@ -256,11 +256,11 @@ header .update-time {{
 
 /* ===== 產業區塊 ===== */
 .industry-section {{
-    background: #161b22;
+    background: #11161f;
     border-radius: 12px;
     margin-bottom: 24px;
     overflow: hidden;
-    border: 1px solid #21262d;
+    border: 1px solid #161c28;
 }}
 
 .industry-header {{
@@ -268,8 +268,8 @@ header .update-time {{
     justify-content: space-between;
     align-items: center;
     padding: 16px 24px;
-    background: #1c2128;
-    border-bottom: 1px solid #21262d;
+    background: #161c28;
+    border-bottom: 1px solid #161c28;
 }}
 
 .industry-header h2 {{
@@ -278,7 +278,7 @@ header .update-time {{
 }}
 
 .industry-count {{
-    color: #8b949e;
+    color: #8a96aa;
     font-size: 0.9rem;
 }}
 
@@ -290,15 +290,15 @@ header .update-time {{
 }}
 
 .stock-card {{
-    background: #0d1117;
-    border: 1px solid #21262d;
+    background: #0a0e17;
+    border: 1px solid #161c28;
     border-radius: 8px;
     padding: 16px;
     transition: border-color 0.2s;
 }}
 
 .stock-card:hover {{
-    border-color: #58a6ff;
+    border-color: #5fa8ff;
 }}
 
 .stock-card .top-row {{
@@ -320,23 +320,23 @@ header .update-time {{
 }}
 
 .stock-id {{
-    color: #8b949e;
+    color: #8a96aa;
     font-size: 0.85rem;
 }}
 
 .revenue-value {{
     font-size: 1.3rem;
     font-weight: 700;
-    color: #f85149;
+    color: #f06d8a;
 }}
 
 .stock-card .pct-change {{
-    color: #f85149;
+    color: #f06d8a;
     font-size: 0.85rem;
 }}
 
 .stock-card .pct-change.negative {{
-    color: #3fb950;
+    color: #4dd4ac;
 }}
 
 .stock-card .detail-row {{
@@ -347,15 +347,15 @@ header .update-time {{
 }}
 
 .stock-card .revenue-label {{
-    color: #8b949e;
+    color: #8a96aa;
     font-size: 0.8rem;
 }}
 
 .tag {{
     display: inline-block;
-    background: #f8514922;
-    color: #f85149;
-    border: 1px solid #f8514944;
+    background: #f06d8a22;
+    color: #f06d8a;
+    border: 1px solid #f06d8a44;
     border-radius: 4px;
     padding: 2px 8px;
     font-size: 0.75rem;
@@ -363,9 +363,9 @@ header .update-time {{
 }}
 
 .exceed-tag {{
-    background: #f0883e22;
-    color: #f0883e;
-    border-color: #f0883e44;
+    background: #ff8c4222;
+    color: #ff8c42;
+    border-color: #ff8c4244;
     font-size: 0.75rem;
     padding: 2px 6px;
     border-radius: 4px;
@@ -375,16 +375,16 @@ header .update-time {{
 .remark-row {{
     margin-top: 8px;
     padding: 6px 10px;
-    background: #1c2128;
-    border-left: 3px solid #f0883e;
+    background: #161c28;
+    border-left: 3px solid #ff8c42;
     border-radius: 0 4px 4px 0;
     font-size: 0.78rem;
-    color: #d2a8ff;
+    color: #a487f7;
     line-height: 1.5;
 }}
 
 .remark-icon {{
-    color: #f0883e;
+    color: #ff8c42;
     margin-right: 4px;
 }}
 
@@ -392,14 +392,14 @@ header .update-time {{
 .t1-box {{
     margin-top: 10px;
     padding: 8px 10px;
-    background: #1c2128;
-    border-left: 3px solid #58a6ff;
+    background: #161c28;
+    border-left: 3px solid #5fa8ff;
     border-radius: 0 4px 4px 0;
     font-size: 0.78rem;
 }}
 
 .t1-title {{
-    color: #58a6ff;
+    color: #5fa8ff;
     font-weight: 600;
     margin-bottom: 4px;
 }}
@@ -412,7 +412,7 @@ header .update-time {{
 }}
 
 .t1-stats span {{
-    color: #8b949e;
+    color: #8a96aa;
 }}
 
 .t1-detail {{
@@ -421,14 +421,14 @@ header .update-time {{
     flex-wrap: wrap;
     margin-top: 4px;
     padding-top: 4px;
-    border-top: 1px solid #21262d;
+    border-top: 1px solid #161c28;
 }}
 
 .t1-item {{
     font-family: "Consolas", "Monaco", monospace;
     font-size: 0.72rem;
-    color: #8b949e;
-    background: #0d1117;
+    color: #8a96aa;
+    background: #0a0e17;
     padding: 1px 6px;
     border-radius: 3px;
 }}
@@ -437,7 +437,7 @@ header .update-time {{
 
 .alert-card .alert-msg {{
     font-size: 0.78rem;
-    color: #8b949e;
+    color: #8a96aa;
     flex: 1;
 }}
 
@@ -446,7 +446,7 @@ header .update-time {{
     gap: 8px;
     margin-top: 10px;
     padding-top: 10px;
-    border-top: 1px solid #21262d;
+    border-top: 1px solid #161c28;
 }}
 
 .card-link {{
@@ -454,30 +454,30 @@ header .update-time {{
     text-align: center;
     padding: 5px 8px;
     font-size: 0.75rem;
-    color: #8b949e;
-    background: #161b22;
-    border: 1px solid #30363d;
+    color: #8a96aa;
+    background: #11161f;
+    border: 1px solid #1d2632;
     border-radius: 4px;
     text-decoration: none;
     transition: all 0.2s;
 }}
 
 .card-link:hover {{
-    color: #58a6ff;
-    border-color: #58a6ff;
+    color: #5fa8ff;
+    border-color: #5fa8ff;
 }}
 
 /* ===== 柱狀圖 (MoM 雙柱) ===== */
 .chart-toggle {{
     margin-top: 10px;
-    border-top: 1px solid #21262d;
+    border-top: 1px solid #161c28;
 }}
 
 .chart-toggle summary {{
     cursor: pointer;
     padding: 8px 0 4px;
     font-size: 0.8rem;
-    color: #58a6ff;
+    color: #5fa8ff;
     user-select: none;
     list-style: none;
 }}
@@ -532,28 +532,28 @@ header .update-time {{
 }}
 
 .chart-bar.prev {{
-    background: #58a6ff;
+    background: #5fa8ff;
 }}
 
 .chart-bar.curr {{
-    background: #f0883e;
+    background: #ff8c42;
 }}
 
 .chart-bar.curr.is-target {{
-    background: #f0883e;
-    box-shadow: 0 0 4px #f0883e88;
+    background: #ff8c42;
+    box-shadow: 0 0 4px #ff8c4288;
 }}
 
 .chart-month-label {{
     font-size: 0.55rem;
-    color: #6e7681;
+    color: #5b6779;
     margin-top: 3px;
     white-space: nowrap;
     text-align: center;
 }}
 
 .chart-month-label.is-target {{
-    color: #f0883e;
+    color: #ff8c42;
     font-weight: 600;
 }}
 
@@ -567,7 +567,7 @@ header .update-time {{
 
 .chart-legend span {{
     font-size: 0.7rem;
-    color: #8b949e;
+    color: #8a96aa;
     display: flex;
     align-items: center;
     gap: 4px;
@@ -580,18 +580,18 @@ header .update-time {{
     display: inline-block;
 }}
 
-.legend-dot.prev {{ background: #58a6ff; }}
-.legend-dot.curr {{ background: #f0883e; }}
+.legend-dot.prev {{ background: #5fa8ff; }}
+.legend-dot.curr {{ background: #ff8c42; }}
 
 /* ===== 柱狀圖 Tooltip ===== */
 .chart-tooltip {{
     position: absolute;
-    background: #1c2128;
-    border: 1px solid #30363d;
+    background: #161c28;
+    border: 1px solid #1d2632;
     border-radius: 6px;
     padding: 8px 12px;
     font-size: 0.75rem;
-    color: #e6edf3;
+    color: #e6ecf5;
     pointer-events: none;
     z-index: 100;
     white-space: nowrap;
@@ -607,7 +607,7 @@ header .update-time {{
 
 .chart-tooltip .tt-month {{
     font-weight: 600;
-    color: #58a6ff;
+    color: #5fa8ff;
     margin-bottom: 2px;
 }}
 
@@ -618,17 +618,17 @@ header .update-time {{
 }}
 
 .chart-tooltip .tt-label {{
-    color: #8b949e;
+    color: #8a96aa;
 }}
 
 .chart-tooltip .tt-val {{
     font-weight: 600;
 }}
 
-.chart-tooltip .tt-val.prev {{ color: #58a6ff; }}
-.chart-tooltip .tt-val.curr {{ color: #f0883e; }}
-.chart-tooltip .tt-val.yoy-pos {{ color: #f85149; }}
-.chart-tooltip .tt-val.yoy-neg {{ color: #3fb950; }}
+.chart-tooltip .tt-val.prev {{ color: #5fa8ff; }}
+.chart-tooltip .tt-val.curr {{ color: #ff8c42; }}
+.chart-tooltip .tt-val.yoy-pos {{ color: #f06d8a; }}
+.chart-tooltip .tt-val.yoy-neg {{ color: #4dd4ac; }}
 
 .mini-chart {{
     position: relative;
@@ -639,11 +639,11 @@ header .update-time {{
 }}
 
 .chart-group:hover .chart-bar.prev {{
-    background: #79bbff;
+    background: #7cb8ff;
 }}
 
 .chart-group:hover .chart-bar.curr {{
-    background: #f5a664;
+    background: #ffa15e;
 }}
 
 /* ===== 日期篩選 + 工具列 ===== */
@@ -664,7 +664,7 @@ header .update-time {{
 }}
 
 .date-filter .date-label {{
-    color: #6e7681;
+    color: #5b6779;
     font-size: 0.8rem;
     margin-right: 4px;
 }}
@@ -672,9 +672,9 @@ header .update-time {{
 .date-pill {{
     padding: 4px 10px;
     font-size: 0.75rem;
-    color: #8b949e;
-    background: #161b22;
-    border: 1px solid #30363d;
+    color: #8a96aa;
+    background: #11161f;
+    border: 1px solid #1d2632;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.2s;
@@ -683,14 +683,14 @@ header .update-time {{
 }}
 
 .date-pill:hover {{
-    color: #e6edf3;
-    border-color: #8b949e;
+    color: #e6ecf5;
+    border-color: #8a96aa;
 }}
 
 .date-pill.active {{
-    color: #f0883e;
-    border-color: #f0883e;
-    background: #f0883e15;
+    color: #ff8c42;
+    border-color: #ff8c42;
+    background: #ff8c4215;
 }}
 
 /* 排序模式下隱藏產業分組標題 */
@@ -720,26 +720,26 @@ body.sort-mode .stock-grid {{
     max-width: 480px;
     padding: 10px 16px 10px 40px;
     font-size: 0.95rem;
-    color: #e6edf3;
-    background: #161b22 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%238b949e' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242.156a5 5 0 1 1 0-10 5 5 0 0 1 0 10z'/%3E%3C/svg%3E") no-repeat 12px center;
-    border: 1px solid #30363d;
+    color: #e6ecf5;
+    background: #11161f url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%238b949e' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242.156a5 5 0 1 1 0-10 5 5 0 0 1 0 10z'/%3E%3C/svg%3E") no-repeat 12px center;
+    border: 1px solid #1d2632;
     border-radius: 8px;
     outline: none;
     transition: border-color 0.2s;
 }}
 
 .search-bar input::placeholder {{
-    color: #6e7681;
+    color: #5b6779;
 }}
 
 .search-bar input:focus {{
-    border-color: #58a6ff;
-    background-color: #0d1117;
+    border-color: #5fa8ff;
+    background-color: #0a0e17;
 }}
 
 .search-result-info {{
     text-align: center;
-    color: #8b949e;
+    color: #8a96aa;
     font-size: 0.85rem;
     margin: -10px 0 16px;
     display: none;
@@ -752,20 +752,20 @@ body.sort-mode .stock-grid {{
     gap: 6px;
     cursor: pointer;
     padding: 6px 12px;
-    border: 1px solid #30363d;
+    border: 1px solid #1d2632;
     border-radius: 6px;
     font-size: 0.85rem;
-    color: #8b949e;
+    color: #8a96aa;
     user-select: none;
     transition: all 0.15s;
 }}
 .chip-filter:hover {{
-    background: rgba(88,166,255,0.08);
+    background: rgba(95,168,255,0.08);
 }}
 .chip-filter.active {{
-    border-color: #58a6ff;
-    color: #58a6ff;
-    background: rgba(88,166,255,0.06);
+    border-color: #5fa8ff;
+    color: #5fa8ff;
+    background: rgba(95,168,255,0.06);
 }}
 
 .stock-card.growth-filtered,
@@ -785,9 +785,9 @@ body.sort-mode .stock-grid {{
 .view-btn {{
     padding: 6px 14px;
     font-size: 0.8rem;
-    color: #8b949e;
-    background: #161b22;
-    border: 1px solid #30363d;
+    color: #8a96aa;
+    background: #11161f;
+    border: 1px solid #1d2632;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s;
@@ -795,23 +795,23 @@ body.sort-mode .stock-grid {{
 }}
 
 .view-btn:hover {{
-    color: #e6edf3;
-    border-color: #8b949e;
+    color: #e6ecf5;
+    border-color: #8a96aa;
 }}
 
 .view-btn.active {{
-    color: #58a6ff;
-    border-color: #58a6ff;
-    background: #58a6ff15;
+    color: #5fa8ff;
+    border-color: #5fa8ff;
+    background: #5fa8ff15;
 }}
 
 /* ===== XQ 自選股匯出按鈕 ===== */
 .export-btn {{
     padding: 6px 14px;
     font-size: 0.8rem;
-    color: #56d364;
-    background: #161b22;
-    border: 1px solid #56d36450;
+    color: #5fe0bc;
+    background: #11161f;
+    border: 1px solid #5fe0bc50;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s;
@@ -822,8 +822,8 @@ body.sort-mode .stock-grid {{
 
 .export-btn:hover {{
     color: #fff;
-    border-color: #56d364;
-    background: #56d36420;
+    border-color: #5fe0bc;
+    background: #5fe0bc20;
 }}
 
 .export-btn:active {{
@@ -831,7 +831,7 @@ body.sort-mode .stock-grid {{
 }}
 
 .export-btn .count-badge {{
-    color: #8b949e;
+    color: #8a96aa;
     margin-left: 4px;
     font-size: 0.7rem;
 }}
@@ -856,7 +856,7 @@ body.compact .stock-card {{
 }}
 
 body.compact .stock-card:hover {{
-    background: rgba(88,166,255,0.08);
+    background: rgba(95,168,255,0.08);
     border-color: transparent;
 }}
 
@@ -874,7 +874,7 @@ body.compact .filing-cell {{
     vertical-align: middle;
     text-align: center;
     font-size: 0.8rem;
-    color: #58a6ff;
+    color: #5fa8ff;
     font-family: "Consolas", "Monaco", "Courier New", monospace;
     white-space: nowrap;
     overflow: hidden;
@@ -892,12 +892,12 @@ body.compact .stock-info {{
 
 body.compact .stock-name {{
     font-size: 0.88rem;
-    color: #58a6ff;
+    color: #5fa8ff;
 }}
 
 body.compact .stock-id {{
     font-size: 0.75rem;
-    color: #6e7681;
+    color: #5b6779;
     margin-left: 6px;
 }}
 
@@ -966,7 +966,7 @@ body.compact .remark-row {{
     vertical-align: middle;
     text-align: left;
     font-size: 0.72rem;
-    color: #c9d1d9;
+    color: #e6ecf5;
     width: 34%;
     white-space: nowrap;
     overflow: hidden;
@@ -1001,7 +1001,7 @@ body.compact .t1-item {{
 /* compact 展開狀態 */
 body.compact .stock-card.expanded {{
     display: table-row;
-    background: #161b22;
+    background: #11161f;
 }}
 
 body.compact .stock-card.expanded + .expanded-detail {{
@@ -1020,8 +1020,8 @@ body.compact .stock-card.expanded + .expanded-detail {{
 .expanded-detail-row .t1-box {{
     display: block !important;
     max-width: 100%;
-    background: #1c2128;
-    border-left: 3px solid #58a6ff;
+    background: #161c28;
+    border-left: 3px solid #5fa8ff;
     border-radius: 0 4px 4px 0;
     padding: 8px 10px;
 }}
@@ -1050,9 +1050,9 @@ body.compact .industry-header h2 {{
 body.compact .compact-header {{
     display: table-row;
     font-size: 0.72rem;
-    color: #6e7681;
+    color: #5b6779;
     font-weight: 600;
-    background: #161b22;
+    background: #11161f;
 }}
 
 body.compact .compact-header .ch-col {{
@@ -1062,7 +1062,7 @@ body.compact .compact-header .ch-col {{
     user-select: none;
     transition: color 0.2s;
     white-space: nowrap;
-    border-bottom: 2px solid #21262d;
+    border-bottom: 2px solid #161c28;
     vertical-align: middle;
 }}
 
@@ -1080,12 +1080,12 @@ body.compact .compact-header .ch-col:not(.ch-name):not(.ch-remark) {{
 }}
 
 body.compact .compact-header .ch-col:hover {{
-    color: #e6edf3;
+    color: #e6ecf5;
 }}
 
 body.compact .compact-header .ch-col.sort-active {{
-    color: #58a6ff;
-    border-bottom-color: #58a6ff;
+    color: #5fa8ff;
+    border-bottom-color: #5fa8ff;
 }}
 
 body.compact .compact-header .ch-col .sort-arrow {{
@@ -1100,11 +1100,11 @@ body.compact .compact-header .ch-col.sort-active .sort-arrow {{
 
 /* 行間交替色 (compact-header 是第一個子元素，stock-card 從第二個開始) */
 body.compact .stock-card:nth-child(odd) {{
-    background: rgba(22,27,34,0.5);
+    background: rgba(17,22,31,0.5);
 }}
 
 body.compact .stock-card:nth-child(odd):hover {{
-    background: rgba(88,166,255,0.08);
+    background: rgba(95,168,255,0.08);
 }}
 
 @media (max-width: 768px) {{
@@ -1142,7 +1142,7 @@ body.compact .stock-card:nth-child(odd):hover {{
 
 .empty-msg {{
     text-align: center;
-    color: #8b949e;
+    color: #8a96aa;
     padding: 60px 20px;
     font-size: 1rem;
 }}
@@ -1150,7 +1150,7 @@ body.compact .stock-card:nth-child(odd):hover {{
 footer {{
     text-align: center;
     padding: 40px 20px;
-    color: #6e7681;
+    color: #5b6779;
     font-size: 0.8rem;
 }}
 
@@ -1184,7 +1184,7 @@ footer {{
             <a class="nav-btn" href="{next_month_file}" title="下個月">後一月 &#9654;</a>
         </div>
         <div class="update-time">{update_time} 更新</div>
-        <div style="margin-top:12px"><a href="index.html" style="color:#58a6ff;text-decoration:none;font-size:0.85rem;padding:4px 12px;border:1px solid #30363d;border-radius:6px;">← 即時申報</a></div>
+        <div style="margin-top:12px"><a href="index.html" style="color:#5fa8ff;text-decoration:none;font-size:0.85rem;padding:4px 12px;border:1px solid #1d2632;border-radius:6px;">← 即時申報</a></div>
         {incomplete_banner}
     </header>
 
@@ -1595,9 +1595,9 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
         const td = document.createElement('td');
         td.colSpan = 6;
         td.style.padding = '12px 16px';
-        td.style.background = '#161b22';
-        td.style.borderTop = '1px solid #21262d';
-        td.style.borderBottom = '1px solid #21262d';
+        td.style.background = '#11161f';
+        td.style.borderTop = '1px solid #161c28';
+        td.style.borderBottom = '1px solid #161c28';
 
         // 複製原始卡片的詳細內容
         const chart = card.querySelector('.chart-toggle');
@@ -1692,10 +1692,10 @@ document.querySelectorAll('.view-btn').forEach(btn => {{
         searchInfo.style.display = 'block';
         if (matchCount > 0) {{
             searchInfo.textContent = '找到 ' + matchCount + ' 檔符合「' + query + '」';
-            searchInfo.style.color = '#8b949e';
+            searchInfo.style.color = '#8a96aa';
         }} else {{
             searchInfo.textContent = '找不到「' + query + '」相關股票';
-            searchInfo.style.color = '#f85149';
+            searchInfo.style.color = '#f06d8a';
         }}
     }}
 }})();
@@ -2067,7 +2067,7 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
         if filing_display:
             date_row_html = f"""<div class="detail-row">
                     <span class="revenue-label">申報時間</span>
-                    <span style="color:#58a6ff;font-size:0.85rem;">{filing_display}</span>
+                    <span style="color:#5fa8ff;font-size:0.85rem;">{filing_display}</span>
                 </div>"""
 
         # T+1 歷史表現
@@ -2077,12 +2077,12 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
             t1_avg = float(row.get("t1_avg", 0))
             t1_hit = float(row.get("t1_hit_rate", 0))
             t1_max = float(row.get("t1_max", 0))
-            avg_color = "#f85149" if t1_avg >= 0 else "#3fb950"
+            avg_color = "#f06d8a" if t1_avg >= 0 else "#4dd4ac"
             t1_html = f'''<div class="t1-box">
                     <div class="t1-title">📊 T+1 歷史表現 ({t1_count}次創新高)</div>
                     <div class="t1-stats">
                         <span>平均 <b style="color:{avg_color}">{t1_avg:+.1f}%</b></span>
-                        <span>最高 <b style="color:#f85149">{t1_max:+.1f}%</b></span>
+                        <span>最高 <b style="color:#f06d8a">{t1_max:+.1f}%</b></span>
                         <span>正報酬率 <b>{t1_hit:.0f}%</b></span>
                     </div>'''
             # 歷史明細
@@ -2093,7 +2093,7 @@ def _build_cards(df: pd.DataFrame, current_year: int = 0, current_month: int = 0
                     t1_html += '<div class="t1-detail">'
                     for d in details:
                         pct = d.get("t1_pct", 0)
-                        color = "#f85149" if pct >= 0 else "#3fb950"
+                        color = "#f06d8a" if pct >= 0 else "#4dd4ac"
                         t1_html += (f'<span class="t1-item">'
                                     f'{d.get("year")}/{d.get("month"):02d} '
                                     f'<b style="color:{color}">{pct:+.1f}%</b></span>')
@@ -2181,7 +2181,7 @@ def _build_date_pills(df: pd.DataFrame) -> str:
                 display = f"{m}/{d}"
         except (ValueError, IndexError):
             pass
-        pills += f'<div class="date-pill" data-date="{display}">{display} <span style="font-size:0.65rem;color:#6e7681">({count})</span></div>\n            '
+        pills += f'<div class="date-pill" data-date="{display}">{display} <span style="font-size:0.65rem;color:#5b6779">({count})</span></div>\n            '
 
     return pills
 
