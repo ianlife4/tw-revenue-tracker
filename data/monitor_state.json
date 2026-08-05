@@ -1346,9 +1346,24 @@
       "first_seen": "08-05 20:01",
       "market": "otc",
       "stock_name": "匯鑽科"
+    },
+    "7888": {
+      "first_seen": "08-06 00:02",
+      "market": "emerging",
+      "stock_name": "麗寶新藥"
+    },
+    "6531": {
+      "first_seen": "08-06 00:02",
+      "market": "sii",
+      "stock_name": "愛普*"
+    },
+    "2352": {
+      "first_seen": "08-06 00:02",
+      "market": "sii",
+      "stock_name": "佳世達"
     }
   },
-  "last_check": "08-05 20:01:35",
-  "last_new_filing": "08-05 20:01:35",
-  "total_filed": 269
+  "last_check": "08-06 00:02:30",
+  "last_new_filing": "08-06 00:02:30",
+  "total_filed": 272
 }
