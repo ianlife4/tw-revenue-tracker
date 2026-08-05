@@ -501,9 +501,44 @@
       "first_seen": "08-05 11:42",
       "market": "sii",
       "stock_name": "美吾華"
+    },
+    "560": {
+      "first_seen": "08-05 13:18",
+      "market": "pub",
+      "stock_name": "永興"
+    },
+    "8968": {
+      "first_seen": "08-05 13:18",
+      "market": "pub",
+      "stock_name": "陽明山"
+    },
+    "646": {
+      "first_seen": "08-05 13:18",
+      "market": "pub",
+      "stock_name": "大昌證券"
+    },
+    "849": {
+      "first_seen": "08-05 13:18",
+      "market": "pub",
+      "stock_name": "京城證券"
+    },
+    "6171": {
+      "first_seen": "08-05 13:18",
+      "market": "otc",
+      "stock_name": "大城地產"
+    },
+    "511": {
+      "first_seen": "08-05 13:18",
+      "market": "pub",
+      "stock_name": "富隆"
+    },
+    "3066": {
+      "first_seen": "08-05 13:18",
+      "market": "otc",
+      "stock_name": "李洲"
     }
   },
-  "last_check": "08-05 11:42:10",
-  "last_new_filing": "08-05 11:42:10",
-  "total_filed": 100
+  "last_check": "08-05 13:18:38",
+  "last_new_filing": "08-05 13:18:38",
+  "total_filed": 107
 }
