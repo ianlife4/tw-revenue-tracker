@@ -147401,5 +147401,41 @@
     "stock_name": "瀚醫生技",
     "market": "emerging",
     "current_filing_date": "2026-08-07"
+  },
+  "5601_7": {
+    "stock_id": "5601",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-05",
+        "t_close": 34.93,
+        "t1_date": "2022-08-08",
+        "t1_close": 34.93,
+        "t1_pct": 0.0,
+        "year": 2022,
+        "month": 7,
+        "revenue": 7415000.0
+      },
+      {
+        "t_date": "2024-08-07",
+        "t_close": 34.42,
+        "t1_date": "2024-08-08",
+        "t1_close": 35.16,
+        "t1_pct": 2.13,
+        "year": 2024,
+        "month": 7,
+        "revenue": 7628000.0
+      }
+    ],
+    "avg_t1": 1.06,
+    "median_t1": 2.13,
+    "max_t1": 2.13,
+    "min_t1": 0.0,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 7,
+    "cached_at": "2026-08-07T04:28:32.965045",
+    "stock_name": "台聯櫃",
+    "market": "otc",
+    "current_filing_date": "2026-08-07"
   }
 }
