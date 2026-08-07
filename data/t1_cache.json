@@ -157385,5 +157385,107 @@
     "stock_name": "長亨",
     "market": "emerging",
     "current_filing_date": "2026-08-07"
+  },
+  "6217_7": {
+    "stock_id": "6217",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-06",
+        "t_close": 36.59,
+        "t1_date": "2021-08-09",
+        "t1_close": 35.39,
+        "t1_pct": -3.27,
+        "year": 2021,
+        "month": 7,
+        "revenue": 264557000.0
+      },
+      {
+        "t_date": "2022-08-08",
+        "t_close": 57.89,
+        "t1_date": "2022-08-09",
+        "t1_close": 57.11,
+        "t1_pct": -1.33,
+        "year": 2022,
+        "month": 7,
+        "revenue": 304349000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 31.65,
+        "t1_date": "2025-08-11",
+        "t1_close": 34.8,
+        "t1_pct": 9.95,
+        "year": 2025,
+        "month": 7,
+        "revenue": 329937000.0
+      }
+    ],
+    "avg_t1": 1.78,
+    "median_t1": -1.33,
+    "max_t1": 9.95,
+    "min_t1": -3.27,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 8,
+    "cached_at": "2026-08-07T16:57:28.111456",
+    "stock_name": "中探針",
+    "market": "otc",
+    "current_filing_date": "2026-08-08"
+  },
+  "7556_7": {
+    "stock_id": "7556",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-06",
+        "t_close": 86.14,
+        "t1_date": "2021-08-09",
+        "t1_close": 84.79,
+        "t1_pct": -1.57,
+        "year": 2021,
+        "month": 7,
+        "revenue": 41304000.0
+      },
+      {
+        "t_date": "2023-08-08",
+        "t_close": 84.85,
+        "t1_date": "2023-08-09",
+        "t1_close": 84.85,
+        "t1_pct": 0.0,
+        "year": 2023,
+        "month": 7,
+        "revenue": 41893000.0
+      },
+      {
+        "t_date": "2024-08-08",
+        "t_close": 98.6,
+        "t1_date": "2024-08-09",
+        "t1_close": 108.2,
+        "t1_pct": 9.73,
+        "year": 2024,
+        "month": 7,
+        "revenue": 58295000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 168.16,
+        "t1_date": "2025-08-11",
+        "t1_close": 167.69,
+        "t1_pct": -0.28,
+        "year": 2025,
+        "month": 7,
+        "revenue": 64939000.0
+      }
+    ],
+    "avg_t1": 1.97,
+    "median_t1": 0.0,
+    "max_t1": 9.73,
+    "min_t1": -1.57,
+    "hit_rate": 25.0,
+    "count": 4,
+    "typical_filing_day": 8,
+    "cached_at": "2026-08-07T16:57:39.453816",
+    "stock_name": "意德士科技",
+    "market": "otc",
+    "current_filing_date": "2026-08-08"
   }
 }
