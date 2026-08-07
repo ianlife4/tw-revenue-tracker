@@ -157339,5 +157339,51 @@
     "stock_name": "長佳智能",
     "market": "otc",
     "current_filing_date": "2026-08-07"
+  },
+  "4546_7": {
+    "stock_id": "4546",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-05",
+        "t_close": 59.53,
+        "t1_date": "2022-08-08",
+        "t1_close": 57.09,
+        "t1_pct": -4.1,
+        "year": 2022,
+        "month": 7,
+        "revenue": 69138000.0
+      },
+      {
+        "t_date": "2023-08-07",
+        "t_close": 87.93,
+        "t1_date": "2023-08-08",
+        "t1_close": 88.81,
+        "t1_pct": 1.0,
+        "year": 2023,
+        "month": 7,
+        "revenue": 99337000.0
+      },
+      {
+        "t_date": "2025-08-07",
+        "t_close": 90.14,
+        "t1_date": "2025-08-08",
+        "t1_close": 102.35,
+        "t1_pct": 13.54,
+        "year": 2025,
+        "month": 7,
+        "revenue": 212435000.0
+      }
+    ],
+    "avg_t1": 3.48,
+    "median_t1": 1.0,
+    "max_t1": 13.54,
+    "min_t1": -4.1,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 7,
+    "cached_at": "2026-08-07T14:57:05.321356",
+    "stock_name": "長亨",
+    "market": "emerging",
+    "current_filing_date": "2026-08-07"
   }
 }
