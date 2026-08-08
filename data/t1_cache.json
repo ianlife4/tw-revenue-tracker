@@ -157825,5 +157825,41 @@
     "stock_name": "德麥",
     "market": "otc",
     "current_filing_date": "2026-08-08"
+  },
+  "6689_7": {
+    "stock_id": "6689",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-06",
+        "t_close": 310.98,
+        "t1_date": "2021-08-09",
+        "t1_close": 305.9,
+        "t1_pct": -1.63,
+        "year": 2021,
+        "month": 7,
+        "revenue": 824201000.0
+      },
+      {
+        "t_date": "2024-08-08",
+        "t_close": 87.92,
+        "t1_date": "2024-08-09",
+        "t1_close": 90.65,
+        "t1_pct": 3.11,
+        "year": 2024,
+        "month": 7,
+        "revenue": 1136171000.0
+      }
+    ],
+    "avg_t1": 0.74,
+    "median_t1": 3.11,
+    "max_t1": 3.11,
+    "min_t1": -1.63,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 8,
+    "cached_at": "2026-08-08T14:35:50.509063",
+    "stock_name": "伊雲谷",
+    "market": "sii",
+    "current_filing_date": "2026-08-08"
   }
 }
