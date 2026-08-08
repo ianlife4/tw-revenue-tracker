@@ -7041,9 +7041,19 @@
       "first_seen": "08-08 15:55",
       "market": "otc",
       "stock_name": "富榮綱"
+    },
+    "6787": {
+      "first_seen": "08-08 18:37",
+      "market": "emerging",
+      "stock_name": "晶瑞光"
+    },
+    "2711": {
+      "first_seen": "08-08 18:37",
+      "market": "pub",
+      "stock_name": "凱撒飯店"
     }
   },
-  "last_check": "08-08 16:46:46",
-  "last_new_filing": "08-08 15:55:12",
-  "total_filed": 1391
+  "last_check": "08-08 18:37:40",
+  "last_new_filing": "08-08 18:37:40",
+  "total_filed": 1393
 }
