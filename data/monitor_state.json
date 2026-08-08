@@ -7016,9 +7016,29 @@
       "first_seen": "08-08 11:36",
       "market": "sii",
       "stock_name": "南港"
+    },
+    "6982": {
+      "first_seen": "08-08 13:00",
+      "market": "otc",
+      "stock_name": "大井泵浦"
+    },
+    "6266": {
+      "first_seen": "08-08 13:00",
+      "market": "otc",
+      "stock_name": "泰詠"
+    },
+    "7566": {
+      "first_seen": "08-08 13:00",
+      "market": "emerging",
+      "stock_name": "亞果遊艇"
+    },
+    "6185": {
+      "first_seen": "08-08 13:00",
+      "market": "otc",
+      "stock_name": "幃翔"
     }
   },
-  "last_check": "08-08 11:36:32",
-  "last_new_filing": "08-08 11:36:32",
-  "total_filed": 1386
+  "last_check": "08-08 13:00:35",
+  "last_new_filing": "08-08 13:00:35",
+  "total_filed": 1390
 }

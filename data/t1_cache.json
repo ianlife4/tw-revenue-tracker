@@ -157743,5 +157743,31 @@
     "stock_name": "立弘",
     "market": "otc",
     "current_filing_date": "2026-08-08"
+  },
+  "6982_7": {
+    "stock_id": "6982",
+    "historical_highs": [
+      {
+        "t_date": "2024-08-08",
+        "t_close": 66.77,
+        "t1_date": "2024-08-09",
+        "t1_close": 67.99,
+        "t1_pct": 1.82,
+        "year": 2024,
+        "month": 7,
+        "revenue": 126867000.0
+      }
+    ],
+    "avg_t1": 1.82,
+    "median_t1": 1.82,
+    "max_t1": 1.82,
+    "min_t1": 1.82,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 8,
+    "cached_at": "2026-08-08T05:01:33.269049",
+    "stock_name": "大井泵浦",
+    "market": "otc",
+    "current_filing_date": "2026-08-08"
   }
 }
