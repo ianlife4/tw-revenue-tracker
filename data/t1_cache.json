@@ -157861,5 +157861,41 @@
     "stock_name": "伊雲谷",
     "market": "sii",
     "current_filing_date": "2026-08-08"
+  },
+  "3131_7": {
+    "stock_id": "3131",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-09",
+        "t_close": 364.07,
+        "t1_date": "2021-08-10",
+        "t1_close": 361.91,
+        "t1_pct": -0.59,
+        "year": 2021,
+        "month": 7,
+        "revenue": 346626000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 1409.07,
+        "t1_date": "2025-08-11",
+        "t1_close": 1423.8,
+        "t1_pct": 1.05,
+        "year": 2025,
+        "month": 7,
+        "revenue": 556771000.0
+      }
+    ],
+    "avg_t1": 0.23,
+    "median_t1": 1.05,
+    "max_t1": 1.05,
+    "min_t1": -0.59,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 9,
+    "cached_at": "2026-08-09T03:47:25.500363",
+    "stock_name": "弘塑",
+    "market": "otc",
+    "current_filing_date": "2026-08-09"
   }
 }
