@@ -157953,5 +157953,51 @@
     "stock_name": "泰福-KY",
     "market": "sii",
     "current_filing_date": "2026-08-09"
+  },
+  "6870_7": {
+    "stock_id": "6870",
+    "historical_highs": [
+      {
+        "t_date": "2023-08-09",
+        "t_close": 149.99,
+        "t1_date": "2023-08-10",
+        "t1_close": 150.8,
+        "t1_pct": 0.54,
+        "year": 2023,
+        "month": 7,
+        "revenue": 47754000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 190.54,
+        "t1_date": "2024-08-12",
+        "t1_close": 183.12,
+        "t1_pct": -3.9,
+        "year": 2024,
+        "month": 7,
+        "revenue": 48867000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 176.03,
+        "t1_date": "2025-08-11",
+        "t1_close": 186.18,
+        "t1_pct": 5.76,
+        "year": 2025,
+        "month": 7,
+        "revenue": 66505000.0
+      }
+    ],
+    "avg_t1": 0.8,
+    "median_t1": 0.54,
+    "max_t1": 5.76,
+    "min_t1": -3.9,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 9,
+    "cached_at": "2026-08-09T10:38:55.476073",
+    "stock_name": "騰雲",
+    "market": "otc",
+    "current_filing_date": "2026-08-09"
   }
 }
