@@ -157999,5 +157999,51 @@
     "stock_name": "騰雲",
     "market": "otc",
     "current_filing_date": "2026-08-09"
+  },
+  "2237_7": {
+    "stock_id": "2237",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 35.7,
+        "t1_date": "2021-08-11",
+        "t1_close": 36.0,
+        "t1_pct": 0.84,
+        "year": 2021,
+        "month": 7,
+        "revenue": 59024000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 37.0,
+        "t1_date": "2022-08-11",
+        "t1_close": 37.15,
+        "t1_pct": 0.41,
+        "year": 2022,
+        "month": 7,
+        "revenue": 144268000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 36.0,
+        "t1_date": "2023-08-11",
+        "t1_close": 36.5,
+        "t1_pct": 1.39,
+        "year": 2023,
+        "month": 7,
+        "revenue": 155169000.0
+      }
+    ],
+    "avg_t1": 0.88,
+    "median_t1": 0.84,
+    "max_t1": 1.39,
+    "min_t1": 0.41,
+    "hit_rate": 100.0,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-09T16:40:22.570406",
+    "stock_name": "華德動能",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
   }
 }
