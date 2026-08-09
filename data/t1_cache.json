@@ -157897,5 +157897,61 @@
     "stock_name": "弘塑",
     "market": "otc",
     "current_filing_date": "2026-08-09"
+  },
+  "6541_7": {
+    "stock_id": "6541",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-09",
+        "t_close": 141.03,
+        "t1_date": "2022-08-10",
+        "t1_close": 138.97,
+        "t1_pct": -1.46,
+        "year": 2022,
+        "month": 7,
+        "revenue": 571000.0
+      },
+      {
+        "t_date": "2023-08-09",
+        "t_close": 64.1,
+        "t1_date": "2023-08-10",
+        "t1_close": 68.3,
+        "t1_pct": 6.55,
+        "year": 2023,
+        "month": 7,
+        "revenue": 4253000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 50.9,
+        "t1_date": "2024-08-12",
+        "t1_close": 51.2,
+        "t1_pct": 0.59,
+        "year": 2024,
+        "month": 7,
+        "revenue": 8011000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 53.3,
+        "t1_date": "2025-08-11",
+        "t1_close": 51.5,
+        "t1_pct": -3.38,
+        "year": 2025,
+        "month": 7,
+        "revenue": 16881000.0
+      }
+    ],
+    "avg_t1": 0.57,
+    "median_t1": 0.59,
+    "max_t1": 6.55,
+    "min_t1": -3.38,
+    "hit_rate": 50.0,
+    "count": 4,
+    "typical_filing_day": 9,
+    "cached_at": "2026-08-09T07:02:05.162724",
+    "stock_name": "泰福-KY",
+    "market": "sii",
+    "current_filing_date": "2026-08-09"
   }
 }
