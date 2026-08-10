@@ -165641,5 +165641,4519 @@
     "stock_name": "杏一",
     "market": "otc",
     "current_filing_date": "2026-08-10"
+  },
+  "4113_7": {
+    "stock_id": "4113",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 12.75,
+        "t1_date": "2021-08-11",
+        "t1_close": 12.66,
+        "t1_pct": -0.71,
+        "year": 2021,
+        "month": 7,
+        "revenue": 216857000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 43.33,
+        "t1_date": "2024-08-12",
+        "t1_close": 46.37,
+        "t1_pct": 7.0,
+        "year": 2024,
+        "month": 7,
+        "revenue": 407716000.0
+      }
+    ],
+    "avg_t1": 3.15,
+    "median_t1": 7.0,
+    "max_t1": 7.0,
+    "min_t1": -0.71,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:04.033826",
+    "stock_name": "聯上",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "4416_7": {
+    "stock_id": "4416",
+    "historical_highs": [
+      {
+        "t_date": "2023-08-10",
+        "t_close": 64.56,
+        "t1_date": "2023-08-11",
+        "t1_close": 62.61,
+        "t1_pct": -3.02,
+        "year": 2023,
+        "month": 7,
+        "revenue": 8488000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 83.21,
+        "t1_date": "2024-08-12",
+        "t1_close": 84.45,
+        "t1_pct": 1.5,
+        "year": 2024,
+        "month": 7,
+        "revenue": 8717000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 58.3,
+        "t1_date": "2025-08-11",
+        "t1_close": 58.99,
+        "t1_pct": 1.18,
+        "year": 2025,
+        "month": 7,
+        "revenue": 9236000.0
+      }
+    ],
+    "avg_t1": -0.11,
+    "median_t1": 1.18,
+    "max_t1": 1.5,
+    "min_t1": -3.02,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:06.081831",
+    "stock_name": "三圓",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "7702_7": {
+    "stock_id": "7702",
+    "historical_highs": [
+      {
+        "t_date": "2025-08-08",
+        "t_close": 48.28,
+        "t1_date": "2025-08-11",
+        "t1_close": 47.3,
+        "t1_pct": -2.04,
+        "year": 2025,
+        "month": 7,
+        "revenue": 23337000.0
+      }
+    ],
+    "avg_t1": -2.04,
+    "median_t1": -2.04,
+    "max_t1": -2.04,
+    "min_t1": -2.04,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:07.346931",
+    "stock_name": "前端風電",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "3498_7": {
+    "stock_id": "3498",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 24.16,
+        "t1_date": "2022-08-11",
+        "t1_close": 26.56,
+        "t1_pct": 9.92,
+        "year": 2022,
+        "month": 7,
+        "revenue": 183633000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 35.1,
+        "t1_date": "2023-08-11",
+        "t1_close": 36.0,
+        "t1_pct": 2.56,
+        "year": 2023,
+        "month": 7,
+        "revenue": 264742000.0
+      }
+    ],
+    "avg_t1": 6.24,
+    "median_t1": 9.92,
+    "max_t1": 9.92,
+    "min_t1": 2.56,
+    "hit_rate": 100.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:08.986093",
+    "stock_name": "陽程",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "5351_7": {
+    "stock_id": "5351",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 43.34,
+        "t1_date": "2021-08-11",
+        "t1_close": 40.3,
+        "t1_pct": -7.02,
+        "year": 2021,
+        "month": 7,
+        "revenue": 516044000.0
+      }
+    ],
+    "avg_t1": -7.02,
+    "median_t1": -7.02,
+    "max_t1": -7.02,
+    "min_t1": -7.02,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:09.827841",
+    "stock_name": "鈺創",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "6419_7": {
+    "stock_id": "6419",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 18.1,
+        "t1_date": "2021-08-11",
+        "t1_close": 17.89,
+        "t1_pct": -1.15,
+        "year": 2021,
+        "month": 7,
+        "revenue": 28466000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 127.57,
+        "t1_date": "2024-08-12",
+        "t1_close": 132.83,
+        "t1_pct": 4.12,
+        "year": 2024,
+        "month": 7,
+        "revenue": 61003000.0
+      }
+    ],
+    "avg_t1": 1.49,
+    "median_t1": 4.12,
+    "max_t1": 4.12,
+    "min_t1": -1.15,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:11.329823",
+    "stock_name": "京晨科",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "6748_7": {
+    "stock_id": "6748",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 19.25,
+        "t1_date": "2022-08-11",
+        "t1_close": 19.7,
+        "t1_pct": 2.34,
+        "year": 2022,
+        "month": 7,
+        "revenue": 1638000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 40.1,
+        "t1_date": "2023-08-11",
+        "t1_close": 39.85,
+        "t1_pct": -0.62,
+        "year": 2023,
+        "month": 7,
+        "revenue": 1862000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 25.5,
+        "t1_date": "2024-08-12",
+        "t1_close": 25.5,
+        "t1_pct": 0.0,
+        "year": 2024,
+        "month": 7,
+        "revenue": 3816000.0
+      }
+    ],
+    "avg_t1": 0.57,
+    "median_t1": 0.0,
+    "max_t1": 2.34,
+    "min_t1": -0.62,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:13.984766",
+    "stock_name": "亞果生醫",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "4573_7": {
+    "stock_id": "4573",
+    "historical_highs": [
+      {
+        "t_date": "2024-08-09",
+        "t_close": 40.55,
+        "t1_date": "2024-08-12",
+        "t1_close": 40.05,
+        "t1_pct": -1.23,
+        "year": 2024,
+        "month": 7,
+        "revenue": 65388000.0
+      }
+    ],
+    "avg_t1": -1.23,
+    "median_t1": -1.23,
+    "max_t1": -1.23,
+    "min_t1": -1.23,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:14.892689",
+    "stock_name": "高明鐵",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "1271_7": {
+    "stock_id": "1271",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 43.93,
+        "t1_date": "2021-08-11",
+        "t1_close": 42.86,
+        "t1_pct": -2.43,
+        "year": 2021,
+        "month": 7,
+        "revenue": 37883000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 48.56,
+        "t1_date": "2022-08-11",
+        "t1_close": 48.38,
+        "t1_pct": -0.36,
+        "year": 2022,
+        "month": 7,
+        "revenue": 39942000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 85.84,
+        "t1_date": "2024-08-12",
+        "t1_close": 85.75,
+        "t1_pct": -0.11,
+        "year": 2024,
+        "month": 7,
+        "revenue": 70580000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 74.69,
+        "t1_date": "2025-08-11",
+        "t1_close": 77.16,
+        "t1_pct": 3.3,
+        "year": 2025,
+        "month": 7,
+        "revenue": 85556000.0
+      }
+    ],
+    "avg_t1": 0.1,
+    "median_t1": -0.11,
+    "max_t1": 3.3,
+    "min_t1": -2.43,
+    "hit_rate": 25.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:17.305796",
+    "stock_name": "晨暉生技",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "6425_7": {
+    "stock_id": "6425",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 20.49,
+        "t1_date": "2021-08-11",
+        "t1_close": 20.31,
+        "t1_pct": -0.87,
+        "year": 2021,
+        "month": 7,
+        "revenue": 84924000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 54.61,
+        "t1_date": "2024-08-12",
+        "t1_close": 57.6,
+        "t1_pct": 5.48,
+        "year": 2024,
+        "month": 7,
+        "revenue": 137472000.0
+      }
+    ],
+    "avg_t1": 2.31,
+    "median_t1": 5.48,
+    "max_t1": 5.48,
+    "min_t1": -0.87,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:18.675782",
+    "stock_name": "易發",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "8487_7": {
+    "stock_id": "8487",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 11.9,
+        "t1_date": "2021-08-11",
+        "t1_close": 11.69,
+        "t1_pct": -1.78,
+        "year": 2021,
+        "month": 7,
+        "revenue": 239192000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 58.63,
+        "t1_date": "2024-08-12",
+        "t1_close": 58.78,
+        "t1_pct": 0.26,
+        "year": 2024,
+        "month": 7,
+        "revenue": 242154000.0
+      }
+    ],
+    "avg_t1": -0.76,
+    "median_t1": 0.26,
+    "max_t1": 0.26,
+    "min_t1": -1.78,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:19.874892",
+    "stock_name": "愛爾達-創",
+    "market": "tib",
+    "current_filing_date": "2026-08-10"
+  },
+  "3135_7": {
+    "stock_id": "3135",
+    "historical_highs": [
+      {
+        "t_date": "2025-08-08",
+        "t_close": 31.58,
+        "t1_date": "2025-08-11",
+        "t1_close": 30.79,
+        "t1_pct": -2.48,
+        "year": 2025,
+        "month": 7,
+        "revenue": 646389000.0
+      }
+    ],
+    "avg_t1": -2.48,
+    "median_t1": -2.48,
+    "max_t1": -2.48,
+    "min_t1": -2.48,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:20.835164",
+    "stock_name": "凌航",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "2438_7": {
+    "stock_id": "2438",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 11.7,
+        "t1_date": "2021-08-11",
+        "t1_close": 11.65,
+        "t1_pct": -0.43,
+        "year": 2021,
+        "month": 7,
+        "revenue": 28431000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 60.5,
+        "t1_date": "2024-08-12",
+        "t1_close": 59.6,
+        "t1_pct": -1.49,
+        "year": 2024,
+        "month": 7,
+        "revenue": 31044000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 26.65,
+        "t1_date": "2025-08-11",
+        "t1_close": 26.8,
+        "t1_pct": 0.56,
+        "year": 2025,
+        "month": 7,
+        "revenue": 48290000.0
+      }
+    ],
+    "avg_t1": -0.45,
+    "median_t1": -0.43,
+    "max_t1": 0.56,
+    "min_t1": -1.49,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:23.300590",
+    "stock_name": "翔耀",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "3661_7": {
+    "stock_id": "3661",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 548.39,
+        "t1_date": "2021-08-11",
+        "t1_close": 549.35,
+        "t1_pct": 0.17,
+        "year": 2021,
+        "month": 7,
+        "revenue": 812533000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 595.48,
+        "t1_date": "2022-08-11",
+        "t1_close": 642.69,
+        "t1_pct": 7.93,
+        "year": 2022,
+        "month": 7,
+        "revenue": 950674000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 1819.78,
+        "t1_date": "2023-08-11",
+        "t1_close": 1775.87,
+        "t1_pct": -2.41,
+        "year": 2023,
+        "month": 7,
+        "revenue": 2255324000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 2197.22,
+        "t1_date": "2024-08-12",
+        "t1_close": 2211.93,
+        "t1_pct": 0.67,
+        "year": 2024,
+        "month": 7,
+        "revenue": 4878490000.0
+      }
+    ],
+    "avg_t1": 1.59,
+    "median_t1": 0.67,
+    "max_t1": 7.93,
+    "min_t1": -2.41,
+    "hit_rate": 75.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:26.260950",
+    "stock_name": "世芯-KY",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "6819_7": {
+    "stock_id": "6819",
+    "historical_highs": [
+      {
+        "t_date": "2023-08-10",
+        "t_close": 24.25,
+        "t1_date": "2023-08-11",
+        "t1_close": 24.2,
+        "t1_pct": -0.21,
+        "year": 2023,
+        "month": 7,
+        "revenue": 22563000.0
+      }
+    ],
+    "avg_t1": -0.21,
+    "median_t1": -0.21,
+    "max_t1": -0.21,
+    "min_t1": -0.21,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:27.423472",
+    "stock_name": "眾智",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "7725_7": {
+    "stock_id": "7725",
+    "historical_highs": [
+      {
+        "t_date": "2025-08-08",
+        "t_close": 23.6,
+        "t1_date": "2025-08-11",
+        "t1_close": 24.45,
+        "t1_pct": 3.57,
+        "year": 2025,
+        "month": 7,
+        "revenue": 5218000.0
+      }
+    ],
+    "avg_t1": 3.57,
+    "median_t1": 3.57,
+    "max_t1": 3.57,
+    "min_t1": 3.57,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:28.511729",
+    "stock_name": "列特博",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "8087_7": {
+    "stock_id": "8087",
+    "historical_highs": [
+      {
+        "t_date": "2023-08-10",
+        "t_close": 45.48,
+        "t1_date": "2023-08-11",
+        "t1_close": 44.87,
+        "t1_pct": -1.33,
+        "year": 2023,
+        "month": 7,
+        "revenue": 15416000.0
+      }
+    ],
+    "avg_t1": -1.33,
+    "median_t1": -1.33,
+    "max_t1": -1.33,
+    "min_t1": -1.33,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:30.321003",
+    "stock_name": "麗升能源",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "6820_7": {
+    "stock_id": "6820",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 18.62,
+        "t1_date": "2022-08-11",
+        "t1_close": 18.21,
+        "t1_pct": -2.21,
+        "year": 2022,
+        "month": 7,
+        "revenue": 71096000.0
+      }
+    ],
+    "avg_t1": -2.21,
+    "median_t1": -2.21,
+    "max_t1": -2.21,
+    "min_t1": -2.21,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:32.086651",
+    "stock_name": "連訊",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "1316_7": {
+    "stock_id": "1316",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 12.06,
+        "t1_date": "2021-08-11",
+        "t1_close": 12.26,
+        "t1_pct": 1.66,
+        "year": 2021,
+        "month": 7,
+        "revenue": 81525000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 15.31,
+        "t1_date": "2022-08-11",
+        "t1_close": 15.31,
+        "t1_pct": 0.0,
+        "year": 2022,
+        "month": 7,
+        "revenue": 356587000.0
+      }
+    ],
+    "avg_t1": 0.83,
+    "median_t1": 1.66,
+    "max_t1": 1.66,
+    "min_t1": 0.0,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:33.812793",
+    "stock_name": "上曜",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "6707_7": {
+    "stock_id": "6707",
+    "historical_highs": [
+      {
+        "t_date": "2023-08-10",
+        "t_close": 16.24,
+        "t1_date": "2023-08-11",
+        "t1_close": 16.63,
+        "t1_pct": 2.38,
+        "year": 2023,
+        "month": 7,
+        "revenue": 887604000.0
+      }
+    ],
+    "avg_t1": 2.38,
+    "median_t1": 2.38,
+    "max_t1": 2.38,
+    "min_t1": 2.38,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:35.376365",
+    "stock_name": "富基電通",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "6023_7": {
+    "stock_id": "6023",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 32.81,
+        "t1_date": "2021-08-11",
+        "t1_close": 32.78,
+        "t1_pct": -0.1,
+        "year": 2021,
+        "month": 7,
+        "revenue": 365117000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 66.59,
+        "t1_date": "2024-08-12",
+        "t1_close": 67.45,
+        "t1_pct": 1.28,
+        "year": 2024,
+        "month": 7,
+        "revenue": 411718000.0
+      }
+    ],
+    "avg_t1": 0.59,
+    "median_t1": 1.28,
+    "max_t1": 1.28,
+    "min_t1": -0.1,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:36.797326",
+    "stock_name": "元大期貨",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "6517_7": {
+    "stock_id": "6517",
+    "historical_highs": [
+      {
+        "t_date": "2023-08-10",
+        "t_close": 75.13,
+        "t1_date": "2023-08-11",
+        "t1_close": 75.32,
+        "t1_pct": 0.25,
+        "year": 2023,
+        "month": 7,
+        "revenue": 48688000.0
+      }
+    ],
+    "avg_t1": 0.25,
+    "median_t1": 0.25,
+    "max_t1": 0.25,
+    "min_t1": 0.25,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:37.670520",
+    "stock_name": "保勝光學",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "5355_7": {
+    "stock_id": "5355",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 7.74,
+        "t1_date": "2021-08-11",
+        "t1_close": 7.6,
+        "t1_pct": -1.81,
+        "year": 2021,
+        "month": 7,
+        "revenue": 67655000.0
+      }
+    ],
+    "avg_t1": -1.81,
+    "median_t1": -1.81,
+    "max_t1": -1.81,
+    "min_t1": -1.81,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:38.340200",
+    "stock_name": "佳總",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "3702_7": {
+    "stock_id": "3702",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 41.63,
+        "t1_date": "2021-08-11",
+        "t1_close": 39.11,
+        "t1_pct": -6.06,
+        "year": 2021,
+        "month": 7,
+        "revenue": 59168492000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 79.9,
+        "t1_date": "2024-08-12",
+        "t1_close": 82.49,
+        "t1_pct": 3.23,
+        "year": 2024,
+        "month": 7,
+        "revenue": 68545930000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 67.0,
+        "t1_date": "2025-08-11",
+        "t1_close": 66.7,
+        "t1_pct": -0.45,
+        "year": 2025,
+        "month": 7,
+        "revenue": 76556706000.0
+      }
+    ],
+    "avg_t1": -1.09,
+    "median_t1": -0.45,
+    "max_t1": 3.23,
+    "min_t1": -6.06,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:40.632848",
+    "stock_name": "大聯大",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "8928_7": {
+    "stock_id": "8928",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 28.61,
+        "t1_date": "2021-08-11",
+        "t1_close": 28.5,
+        "t1_pct": -0.4,
+        "year": 2021,
+        "month": 7,
+        "revenue": 248878000.0
+      }
+    ],
+    "avg_t1": -0.4,
+    "median_t1": -0.4,
+    "max_t1": -0.4,
+    "min_t1": -0.4,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:41.404630",
+    "stock_name": "鉅明",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "1709_7": {
+    "stock_id": "1709",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 20.07,
+        "t1_date": "2022-08-11",
+        "t1_close": 20.19,
+        "t1_pct": 0.6,
+        "year": 2022,
+        "month": 7,
+        "revenue": 868527000.0
+      }
+    ],
+    "avg_t1": 0.6,
+    "median_t1": 0.6,
+    "max_t1": 0.6,
+    "min_t1": 0.6,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:42.015957",
+    "stock_name": "和益",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "3229_7": {
+    "stock_id": "3229",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 19.39,
+        "t1_date": "2021-08-11",
+        "t1_close": 18.52,
+        "t1_pct": -4.48,
+        "year": 2021,
+        "month": 7,
+        "revenue": 40785000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 29.0,
+        "t1_date": "2022-08-11",
+        "t1_close": 26.1,
+        "t1_pct": -10.0,
+        "year": 2022,
+        "month": 7,
+        "revenue": 92877000.0
+      }
+    ],
+    "avg_t1": -7.24,
+    "median_t1": -4.48,
+    "max_t1": -4.48,
+    "min_t1": -10.0,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:43.075095",
+    "stock_name": "晟鈦",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "5267_7": {
+    "stock_id": "5267",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 27.92,
+        "t1_date": "2021-08-11",
+        "t1_close": 28.28,
+        "t1_pct": 1.3,
+        "year": 2021,
+        "month": 7,
+        "revenue": 30689000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 24.71,
+        "t1_date": "2022-08-11",
+        "t1_close": 26.52,
+        "t1_pct": 7.31,
+        "year": 2022,
+        "month": 7,
+        "revenue": 47235000.0
+      }
+    ],
+    "avg_t1": 4.3,
+    "median_t1": 7.31,
+    "max_t1": 7.31,
+    "min_t1": 1.3,
+    "hit_rate": 100.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:44.624951",
+    "stock_name": "龍翩",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "1416_7": {
+    "stock_id": "1416",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 8.04,
+        "t1_date": "2021-08-11",
+        "t1_close": 8.0,
+        "t1_pct": -0.5,
+        "year": 2021,
+        "month": 7,
+        "revenue": 19722000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 8.67,
+        "t1_date": "2022-08-11",
+        "t1_close": 8.88,
+        "t1_pct": 2.42,
+        "year": 2022,
+        "month": 7,
+        "revenue": 22451000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 9.18,
+        "t1_date": "2023-08-11",
+        "t1_close": 9.14,
+        "t1_pct": -0.48,
+        "year": 2023,
+        "month": 7,
+        "revenue": 23230000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 10.37,
+        "t1_date": "2024-08-12",
+        "t1_close": 10.55,
+        "t1_pct": 1.75,
+        "year": 2024,
+        "month": 7,
+        "revenue": 29409000.0
+      }
+    ],
+    "avg_t1": 0.8,
+    "median_t1": 1.75,
+    "max_t1": 2.42,
+    "min_t1": -0.5,
+    "hit_rate": 50.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:47.219087",
+    "stock_name": "廣豐",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "2236_7": {
+    "stock_id": "2236",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 20.07,
+        "t1_date": "2021-08-11",
+        "t1_close": 20.11,
+        "t1_pct": 0.19,
+        "year": 2021,
+        "month": 7,
+        "revenue": 99620000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 19.63,
+        "t1_date": "2022-08-11",
+        "t1_close": 19.72,
+        "t1_pct": 0.47,
+        "year": 2022,
+        "month": 7,
+        "revenue": 103839000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 56.46,
+        "t1_date": "2023-08-11",
+        "t1_close": 58.59,
+        "t1_pct": 3.78,
+        "year": 2023,
+        "month": 7,
+        "revenue": 160782000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 98.81,
+        "t1_date": "2025-08-11",
+        "t1_close": 99.29,
+        "t1_pct": 0.49,
+        "year": 2025,
+        "month": 7,
+        "revenue": 751624000.0
+      }
+    ],
+    "avg_t1": 1.23,
+    "median_t1": 0.49,
+    "max_t1": 3.78,
+    "min_t1": 0.19,
+    "hit_rate": 100.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:49.301280",
+    "stock_name": "百達-KY",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "4114_7": {
+    "stock_id": "4114",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 21.21,
+        "t1_date": "2022-08-11",
+        "t1_close": 21.02,
+        "t1_pct": -0.9,
+        "year": 2022,
+        "month": 7,
+        "revenue": 354587000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 28.24,
+        "t1_date": "2023-08-11",
+        "t1_close": 27.67,
+        "t1_pct": -2.03,
+        "year": 2023,
+        "month": 7,
+        "revenue": 421153000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 29.39,
+        "t1_date": "2024-08-12",
+        "t1_close": 29.47,
+        "t1_pct": 0.27,
+        "year": 2024,
+        "month": 7,
+        "revenue": 489048000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 34.54,
+        "t1_date": "2025-08-11",
+        "t1_close": 35.03,
+        "t1_pct": 1.43,
+        "year": 2025,
+        "month": 7,
+        "revenue": 495473000.0
+      }
+    ],
+    "avg_t1": -0.31,
+    "median_t1": 0.27,
+    "max_t1": 1.43,
+    "min_t1": -2.03,
+    "hit_rate": 50.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:51.986551",
+    "stock_name": "健喬",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "2248_7": {
+    "stock_id": "2248",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 18.28,
+        "t1_date": "2021-08-11",
+        "t1_close": 18.28,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 7,
+        "revenue": 74525000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 15.33,
+        "t1_date": "2022-08-11",
+        "t1_close": 15.33,
+        "t1_pct": 0.0,
+        "year": 2022,
+        "month": 7,
+        "revenue": 90121000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 23.38,
+        "t1_date": "2023-08-11",
+        "t1_close": 23.38,
+        "t1_pct": 0.0,
+        "year": 2023,
+        "month": 7,
+        "revenue": 127633000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 44.02,
+        "t1_date": "2024-08-12",
+        "t1_close": 46.39,
+        "t1_pct": 5.38,
+        "year": 2024,
+        "month": 7,
+        "revenue": 184788000.0
+      }
+    ],
+    "avg_t1": 1.34,
+    "median_t1": 0.0,
+    "max_t1": 5.38,
+    "min_t1": 0.0,
+    "hit_rate": 25.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:54.649515",
+    "stock_name": "華勝-KY",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "6415_7": {
+    "stock_id": "6415",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 966.32,
+        "t1_date": "2021-08-11",
+        "t1_close": 966.32,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 7,
+        "revenue": 1898617000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 545.99,
+        "t1_date": "2022-08-11",
+        "t1_close": 571.25,
+        "t1_pct": 4.63,
+        "year": 2022,
+        "month": 7,
+        "revenue": 2080677000.0
+      }
+    ],
+    "avg_t1": 2.31,
+    "median_t1": 4.63,
+    "max_t1": 4.63,
+    "min_t1": 0.0,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:55.955633",
+    "stock_name": "矽力*-KY",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "3044_7": {
+    "stock_id": "3044",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 91.7,
+        "t1_date": "2021-08-11",
+        "t1_close": 91.7,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 7,
+        "revenue": 5343537000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 86.7,
+        "t1_date": "2022-08-11",
+        "t1_close": 87.12,
+        "t1_pct": 0.49,
+        "year": 2022,
+        "month": 7,
+        "revenue": 5758566000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 176.41,
+        "t1_date": "2024-08-12",
+        "t1_close": 181.55,
+        "t1_pct": 2.91,
+        "year": 2024,
+        "month": 7,
+        "revenue": 5874641000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 303.61,
+        "t1_date": "2025-08-11",
+        "t1_close": 319.66,
+        "t1_pct": 5.29,
+        "year": 2025,
+        "month": 7,
+        "revenue": 6274073000.0
+      }
+    ],
+    "avg_t1": 2.17,
+    "median_t1": 2.91,
+    "max_t1": 5.29,
+    "min_t1": 0.0,
+    "hit_rate": 75.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:28:58.743460",
+    "stock_name": "健鼎",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "2357_7": {
+    "stock_id": "2357",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 228.02,
+        "t1_date": "2021-08-11",
+        "t1_close": 230.51,
+        "t1_pct": 1.1,
+        "year": 2021,
+        "month": 7,
+        "revenue": 37573755000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 451.64,
+        "t1_date": "2024-08-12",
+        "t1_close": 446.28,
+        "t1_pct": -1.19,
+        "year": 2024,
+        "month": 7,
+        "revenue": 47328857000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 639.2,
+        "t1_date": "2025-08-11",
+        "t1_close": 622.28,
+        "t1_pct": -2.65,
+        "year": 2025,
+        "month": 7,
+        "revenue": 54871158000.0
+      }
+    ],
+    "avg_t1": -0.91,
+    "median_t1": -1.19,
+    "max_t1": 1.1,
+    "min_t1": -2.65,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:01.008666",
+    "stock_name": "華碩",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "5288_7": {
+    "stock_id": "5288",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 120.96,
+        "t1_date": "2021-08-11",
+        "t1_close": 119.37,
+        "t1_pct": -1.32,
+        "year": 2021,
+        "month": 7,
+        "revenue": 509854000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 126.79,
+        "t1_date": "2022-08-11",
+        "t1_close": 129.24,
+        "t1_pct": 1.94,
+        "year": 2022,
+        "month": 7,
+        "revenue": 668347000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 186.27,
+        "t1_date": "2024-08-12",
+        "t1_close": 186.27,
+        "t1_pct": 0.0,
+        "year": 2024,
+        "month": 7,
+        "revenue": 687903000.0
+      }
+    ],
+    "avg_t1": 0.21,
+    "median_t1": 0.0,
+    "max_t1": 1.94,
+    "min_t1": -1.32,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:02.857767",
+    "stock_name": "豐祥-KY",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "4908_7": {
+    "stock_id": "4908",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 24.33,
+        "t1_date": "2021-08-11",
+        "t1_close": 23.42,
+        "t1_pct": -3.74,
+        "year": 2021,
+        "month": 7,
+        "revenue": 71596000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 32.48,
+        "t1_date": "2022-08-11",
+        "t1_close": 32.14,
+        "t1_pct": -1.06,
+        "year": 2022,
+        "month": 7,
+        "revenue": 73547000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 46.03,
+        "t1_date": "2023-08-11",
+        "t1_close": 46.56,
+        "t1_pct": 1.17,
+        "year": 2023,
+        "month": 7,
+        "revenue": 80405000.0
+      }
+    ],
+    "avg_t1": -1.21,
+    "median_t1": -1.06,
+    "max_t1": 1.17,
+    "min_t1": -3.74,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:04.407216",
+    "stock_name": "前鼎",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "2327_7": {
+    "stock_id": "2327",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 121.54,
+        "t1_date": "2021-08-11",
+        "t1_close": 122.0,
+        "t1_pct": 0.38,
+        "year": 2021,
+        "month": 7,
+        "revenue": 9771285000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 75.73,
+        "t1_date": "2022-08-11",
+        "t1_close": 77.51,
+        "t1_pct": 2.35,
+        "year": 2022,
+        "month": 7,
+        "revenue": 10410213000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 144.83,
+        "t1_date": "2024-08-12",
+        "t1_close": 146.02,
+        "t1_pct": 0.83,
+        "year": 2024,
+        "month": 7,
+        "revenue": 11005022000.0
+      }
+    ],
+    "avg_t1": 1.19,
+    "median_t1": 0.83,
+    "max_t1": 2.35,
+    "min_t1": 0.38,
+    "hit_rate": 100.0,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:06.426875",
+    "stock_name": "國巨*",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "2890_7": {
+    "stock_id": "2890",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 10.11,
+        "t1_date": "2021-08-11",
+        "t1_close": 10.11,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 7,
+        "revenue": 4649607000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 13.4,
+        "t1_date": "2022-08-11",
+        "t1_close": 13.64,
+        "t1_pct": 1.78,
+        "year": 2022,
+        "month": 7,
+        "revenue": 4728509000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 15.11,
+        "t1_date": "2023-08-11",
+        "t1_close": 15.15,
+        "t1_pct": 0.28,
+        "year": 2023,
+        "month": 7,
+        "revenue": 5403903000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 22.01,
+        "t1_date": "2024-08-12",
+        "t1_close": 22.43,
+        "t1_pct": 1.91,
+        "year": 2024,
+        "month": 7,
+        "revenue": 6330359000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 23.23,
+        "t1_date": "2025-08-11",
+        "t1_close": 23.18,
+        "t1_pct": -0.19,
+        "year": 2025,
+        "month": 7,
+        "revenue": 6579115000.0
+      }
+    ],
+    "avg_t1": 0.76,
+    "median_t1": 0.28,
+    "max_t1": 1.91,
+    "min_t1": -0.19,
+    "hit_rate": 60.0,
+    "count": 5,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:10.208926",
+    "stock_name": "永豐金",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "6163_7": {
+    "stock_id": "6163",
+    "historical_highs": [
+      {
+        "t_date": "2025-08-08",
+        "t_close": 22.23,
+        "t1_date": "2025-08-11",
+        "t1_close": 23.02,
+        "t1_pct": 3.52,
+        "year": 2025,
+        "month": 7,
+        "revenue": 527417000.0
+      }
+    ],
+    "avg_t1": 3.52,
+    "median_t1": 3.52,
+    "max_t1": 3.52,
+    "min_t1": 3.52,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:10.912226",
+    "stock_name": "華電網",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "6156_7": {
+    "stock_id": "6156",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 14.23,
+        "t1_date": "2021-08-11",
+        "t1_close": 13.98,
+        "t1_pct": -1.76,
+        "year": 2021,
+        "month": 7,
+        "revenue": 414619000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 23.64,
+        "t1_date": "2024-08-12",
+        "t1_close": 24.75,
+        "t1_pct": 4.7,
+        "year": 2024,
+        "month": 7,
+        "revenue": 419665000.0
+      }
+    ],
+    "avg_t1": 1.47,
+    "median_t1": 4.7,
+    "max_t1": 4.7,
+    "min_t1": -1.76,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:12.174693",
+    "stock_name": "松上",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "4728_7": {
+    "stock_id": "4728",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 139.92,
+        "t1_date": "2022-08-11",
+        "t1_close": 143.96,
+        "t1_pct": 2.88,
+        "year": 2022,
+        "month": 7,
+        "revenue": 105317000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 177.53,
+        "t1_date": "2023-08-11",
+        "t1_close": 175.67,
+        "t1_pct": -1.05,
+        "year": 2023,
+        "month": 7,
+        "revenue": 149972000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 269.95,
+        "t1_date": "2024-08-12",
+        "t1_close": 274.79,
+        "t1_pct": 1.8,
+        "year": 2024,
+        "month": 7,
+        "revenue": 160209000.0
+      }
+    ],
+    "avg_t1": 1.21,
+    "median_t1": 1.8,
+    "max_t1": 2.88,
+    "min_t1": -1.05,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:14.126863",
+    "stock_name": "雙美",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "6442_7": {
+    "stock_id": "6442",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 29.79,
+        "t1_date": "2021-08-11",
+        "t1_close": 29.96,
+        "t1_pct": 0.59,
+        "year": 2021,
+        "month": 7,
+        "revenue": 252472000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 55.96,
+        "t1_date": "2022-08-11",
+        "t1_close": 56.79,
+        "t1_pct": 1.49,
+        "year": 2022,
+        "month": 7,
+        "revenue": 352830000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 333.09,
+        "t1_date": "2024-08-12",
+        "t1_close": 366.16,
+        "t1_pct": 9.93,
+        "year": 2024,
+        "month": 7,
+        "revenue": 546113000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 606.76,
+        "t1_date": "2025-08-11",
+        "t1_close": 642.45,
+        "t1_pct": 5.88,
+        "year": 2025,
+        "month": 7,
+        "revenue": 823662000.0
+      }
+    ],
+    "avg_t1": 4.47,
+    "median_t1": 5.88,
+    "max_t1": 9.93,
+    "min_t1": 0.59,
+    "hit_rate": 100.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:16.524456",
+    "stock_name": "光聖",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "5548_7": {
+    "stock_id": "5548",
+    "historical_highs": [
+      {
+        "t_date": "2023-08-10",
+        "t_close": 15.15,
+        "t1_date": "2023-08-11",
+        "t1_close": 15.11,
+        "t1_pct": -0.24,
+        "year": 2023,
+        "month": 7,
+        "revenue": 179778000.0
+      }
+    ],
+    "avg_t1": -0.24,
+    "median_t1": -0.24,
+    "max_t1": -0.24,
+    "min_t1": -0.24,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:17.289315",
+    "stock_name": "安倉",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "4946_7": {
+    "stock_id": "4946",
+    "historical_highs": [
+      {
+        "t_date": "2025-08-08",
+        "t_close": 128.0,
+        "t1_date": "2025-08-11",
+        "t1_close": 133.0,
+        "t1_pct": 3.91,
+        "year": 2025,
+        "month": 7,
+        "revenue": 23736000.0
+      }
+    ],
+    "avg_t1": 3.91,
+    "median_t1": 3.91,
+    "max_t1": 3.91,
+    "min_t1": 3.91,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:18.349303",
+    "stock_name": "辣椒",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "2308_7": {
+    "stock_id": "2308",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 253.2,
+        "t1_date": "2021-08-11",
+        "t1_close": 255.03,
+        "t1_pct": 0.72,
+        "year": 2021,
+        "month": 7,
+        "revenue": 26377260000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 253.65,
+        "t1_date": "2022-08-11",
+        "t1_close": 254.12,
+        "t1_pct": 0.18,
+        "year": 2022,
+        "month": 7,
+        "revenue": 34141054000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 337.28,
+        "t1_date": "2023-08-11",
+        "t1_close": 342.56,
+        "t1_pct": 1.56,
+        "year": 2023,
+        "month": 7,
+        "revenue": 35973872000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 378.75,
+        "t1_date": "2024-08-12",
+        "t1_close": 389.99,
+        "t1_pct": 2.97,
+        "year": 2024,
+        "month": 7,
+        "revenue": 37339042000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 633.69,
+        "t1_date": "2025-08-11",
+        "t1_close": 634.68,
+        "t1_pct": 0.16,
+        "year": 2025,
+        "month": 7,
+        "revenue": 45397038000.0
+      }
+    ],
+    "avg_t1": 1.12,
+    "median_t1": 0.72,
+    "max_t1": 2.97,
+    "min_t1": 0.16,
+    "hit_rate": 100.0,
+    "count": 5,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:21.262434",
+    "stock_name": "台達電",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "5356_7": {
+    "stock_id": "5356",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 19.36,
+        "t1_date": "2021-08-11",
+        "t1_close": 19.18,
+        "t1_pct": -0.93,
+        "year": 2021,
+        "month": 7,
+        "revenue": 364188000.0
+      }
+    ],
+    "avg_t1": -0.93,
+    "median_t1": -0.93,
+    "max_t1": -0.93,
+    "min_t1": -0.93,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:21.938027",
+    "stock_name": "協益",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "6786_7": {
+    "stock_id": "6786",
+    "historical_highs": [
+      {
+        "t_date": "2025-08-08",
+        "t_close": 31.95,
+        "t1_date": "2025-08-11",
+        "t1_close": 32.45,
+        "t1_pct": 1.56,
+        "year": 2025,
+        "month": 7,
+        "revenue": 7254000.0
+      }
+    ],
+    "avg_t1": 1.56,
+    "median_t1": 1.56,
+    "max_t1": 1.56,
+    "min_t1": 1.56,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:22.592606",
+    "stock_name": "芯測",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "3520_7": {
+    "stock_id": "3520",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 11.96,
+        "t1_date": "2021-08-11",
+        "t1_close": 12.24,
+        "t1_pct": 2.34,
+        "year": 2021,
+        "month": 7,
+        "revenue": 126829000.0
+      }
+    ],
+    "avg_t1": 2.34,
+    "median_t1": 2.34,
+    "max_t1": 2.34,
+    "min_t1": 2.34,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:24.032321",
+    "stock_name": "華盈",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "3711_7": {
+    "stock_id": "3711",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 97.03,
+        "t1_date": "2021-08-11",
+        "t1_close": 97.42,
+        "t1_pct": 0.4,
+        "year": 2021,
+        "month": 7,
+        "revenue": 46479676000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 74.73,
+        "t1_date": "2022-08-11",
+        "t1_close": 76.88,
+        "t1_pct": 2.87,
+        "year": 2022,
+        "month": 7,
+        "revenue": 58167105000.0
+      }
+    ],
+    "avg_t1": 1.64,
+    "median_t1": 2.87,
+    "max_t1": 2.87,
+    "min_t1": 0.4,
+    "hit_rate": 100.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:25.456507",
+    "stock_name": "日月光投控",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "6753_7": {
+    "stock_id": "6753",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 24.5,
+        "t1_date": "2021-08-11",
+        "t1_close": 24.5,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 7,
+        "revenue": 197277000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 53.81,
+        "t1_date": "2022-08-11",
+        "t1_close": 53.66,
+        "t1_pct": -0.28,
+        "year": 2022,
+        "month": 7,
+        "revenue": 354191000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 107.57,
+        "t1_date": "2025-08-11",
+        "t1_close": 111.53,
+        "t1_pct": 3.69,
+        "year": 2025,
+        "month": 7,
+        "revenue": 364919000.0
+      }
+    ],
+    "avg_t1": 1.14,
+    "median_t1": 0.0,
+    "max_t1": 3.69,
+    "min_t1": -0.28,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:27.039077",
+    "stock_name": "龍德造船",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "5328_7": {
+    "stock_id": "5328",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 15.54,
+        "t1_date": "2021-08-11",
+        "t1_close": 15.95,
+        "t1_pct": 2.67,
+        "year": 2021,
+        "month": 7,
+        "revenue": 94634000.0
+      }
+    ],
+    "avg_t1": 2.67,
+    "median_t1": 2.67,
+    "max_t1": 2.67,
+    "min_t1": 2.67,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:27.641318",
+    "stock_name": "華容",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "2492_7": {
+    "stock_id": "2492",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 168.12,
+        "t1_date": "2021-08-11",
+        "t1_close": 165.57,
+        "t1_pct": -1.52,
+        "year": 2021,
+        "month": 7,
+        "revenue": 3862886000.0
+      }
+    ],
+    "avg_t1": -1.52,
+    "median_t1": -1.52,
+    "max_t1": -1.52,
+    "min_t1": -1.52,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:28.550223",
+    "stock_name": "華新科",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "6997_7": {
+    "stock_id": "6997",
+    "historical_highs": [
+      {
+        "t_date": "2025-08-08",
+        "t_close": 93.99,
+        "t1_date": "2025-08-11",
+        "t1_close": 93.99,
+        "t1_pct": 0.0,
+        "year": 2025,
+        "month": 7,
+        "revenue": 356805000.0
+      }
+    ],
+    "avg_t1": 0.0,
+    "median_t1": 0.0,
+    "max_t1": 0.0,
+    "min_t1": 0.0,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:29.403370",
+    "stock_name": "博弘",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "2211_7": {
+    "stock_id": "2211",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 38.16,
+        "t1_date": "2021-08-11",
+        "t1_close": 37.74,
+        "t1_pct": -1.11,
+        "year": 2021,
+        "month": 7,
+        "revenue": 1017164000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 54.45,
+        "t1_date": "2023-08-11",
+        "t1_close": 55.2,
+        "t1_pct": 1.38,
+        "year": 2023,
+        "month": 7,
+        "revenue": 1116549000.0
+      }
+    ],
+    "avg_t1": 0.13,
+    "median_t1": 1.38,
+    "max_t1": 1.38,
+    "min_t1": -1.11,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:30.932934",
+    "stock_name": "長榮鋼",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "6727_7": {
+    "stock_id": "6727",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 67.93,
+        "t1_date": "2021-08-11",
+        "t1_close": 61.19,
+        "t1_pct": -9.92,
+        "year": 2021,
+        "month": 7,
+        "revenue": 126522000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 62.5,
+        "t1_date": "2022-08-11",
+        "t1_close": 64.24,
+        "t1_pct": 2.78,
+        "year": 2022,
+        "month": 7,
+        "revenue": 177067000.0
+      }
+    ],
+    "avg_t1": -3.57,
+    "median_t1": 2.78,
+    "max_t1": 2.78,
+    "min_t1": -9.92,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:32.638163",
+    "stock_name": "亞泰金屬",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "1293_7": {
+    "stock_id": "1293",
+    "historical_highs": [
+      {
+        "t_date": "2023-08-10",
+        "t_close": 27.29,
+        "t1_date": "2023-08-11",
+        "t1_close": 26.63,
+        "t1_pct": -2.41,
+        "year": 2023,
+        "month": 7,
+        "revenue": 58945000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 24.85,
+        "t1_date": "2024-08-12",
+        "t1_close": 24.85,
+        "t1_pct": 0.0,
+        "year": 2024,
+        "month": 7,
+        "revenue": 72406000.0
+      }
+    ],
+    "avg_t1": -1.21,
+    "median_t1": 0.0,
+    "max_t1": 0.0,
+    "min_t1": -2.41,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:34.228483",
+    "stock_name": "利統",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "2359_7": {
+    "stock_id": "2359",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 27.61,
+        "t1_date": "2022-08-11",
+        "t1_close": 25.92,
+        "t1_pct": -6.1,
+        "year": 2022,
+        "month": 7,
+        "revenue": 311140000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 34.86,
+        "t1_date": "2023-08-11",
+        "t1_close": 36.47,
+        "t1_pct": 4.62,
+        "year": 2023,
+        "month": 7,
+        "revenue": 334374000.0
+      }
+    ],
+    "avg_t1": -0.74,
+    "median_t1": 4.62,
+    "max_t1": 4.62,
+    "min_t1": -6.1,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:36.254592",
+    "stock_name": "所羅門",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "4905_7": {
+    "stock_id": "4905",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 48.65,
+        "t1_date": "2022-08-11",
+        "t1_close": 48.65,
+        "t1_pct": 0.0,
+        "year": 2022,
+        "month": 7,
+        "revenue": 12664000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 69.39,
+        "t1_date": "2023-08-11",
+        "t1_close": 72.14,
+        "t1_pct": 3.95,
+        "year": 2023,
+        "month": 7,
+        "revenue": 14384000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 91.43,
+        "t1_date": "2024-08-12",
+        "t1_close": 90.67,
+        "t1_pct": -0.84,
+        "year": 2024,
+        "month": 7,
+        "revenue": 58891000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 64.0,
+        "t1_date": "2025-08-11",
+        "t1_close": 62.0,
+        "t1_pct": -3.12,
+        "year": 2025,
+        "month": 7,
+        "revenue": 76905000.0
+      }
+    ],
+    "avg_t1": -0.0,
+    "median_t1": 0.0,
+    "max_t1": 3.95,
+    "min_t1": -3.12,
+    "hit_rate": 25.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:38.944753",
+    "stock_name": "台聯電",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "7747_7": {
+    "stock_id": "7747",
+    "historical_highs": [
+      {
+        "t_date": "2024-08-09",
+        "t_close": 121.34,
+        "t1_date": "2024-08-12",
+        "t1_close": 120.91,
+        "t1_pct": -0.36,
+        "year": 2024,
+        "month": 7,
+        "revenue": 131866000.0
+      }
+    ],
+    "avg_t1": -0.36,
+    "median_t1": -0.36,
+    "max_t1": -0.36,
+    "min_t1": -0.36,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:39.824685",
+    "stock_name": "昕奇雲端",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "4109_7": {
+    "stock_id": "4109",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 14.19,
+        "t1_date": "2022-08-11",
+        "t1_close": 14.19,
+        "t1_pct": 0.0,
+        "year": 2022,
+        "month": 7,
+        "revenue": 26589000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 13.14,
+        "t1_date": "2023-08-11",
+        "t1_close": 13.14,
+        "t1_pct": 0.0,
+        "year": 2023,
+        "month": 7,
+        "revenue": 29365000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 28.86,
+        "t1_date": "2024-08-12",
+        "t1_close": 27.43,
+        "t1_pct": -4.97,
+        "year": 2024,
+        "month": 7,
+        "revenue": 30568000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 14.99,
+        "t1_date": "2025-08-11",
+        "t1_close": 15.04,
+        "t1_pct": 0.32,
+        "year": 2025,
+        "month": 7,
+        "revenue": 36548000.0
+      }
+    ],
+    "avg_t1": -1.16,
+    "median_t1": 0.0,
+    "max_t1": 0.32,
+    "min_t1": -4.97,
+    "hit_rate": 25.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:42.543424",
+    "stock_name": "加捷生醫",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "7578_7": {
+    "stock_id": "7578",
+    "historical_highs": [
+      {
+        "t_date": "2023-08-10",
+        "t_close": 28.44,
+        "t1_date": "2023-08-11",
+        "t1_close": 28.74,
+        "t1_pct": 1.04,
+        "year": 2023,
+        "month": 7,
+        "revenue": 34393000.0
+      }
+    ],
+    "avg_t1": 1.04,
+    "median_t1": 1.04,
+    "max_t1": 1.04,
+    "min_t1": 1.04,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:43.046907",
+    "stock_name": "利百景",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "2949_7": {
+    "stock_id": "2949",
+    "historical_highs": [
+      {
+        "t_date": "2024-08-09",
+        "t_close": 63.84,
+        "t1_date": "2024-08-12",
+        "t1_close": 63.69,
+        "t1_pct": -0.24,
+        "year": 2024,
+        "month": 7,
+        "revenue": 332864000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 66.95,
+        "t1_date": "2025-08-11",
+        "t1_close": 66.95,
+        "t1_pct": 0.0,
+        "year": 2025,
+        "month": 7,
+        "revenue": 400910000.0
+      }
+    ],
+    "avg_t1": -0.12,
+    "median_t1": 0.0,
+    "max_t1": 0.0,
+    "min_t1": -0.24,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:44.121048",
+    "stock_name": "欣新網",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "2427_7": {
+    "stock_id": "2427",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 9.34,
+        "t1_date": "2021-08-11",
+        "t1_close": 9.17,
+        "t1_pct": -1.83,
+        "year": 2021,
+        "month": 7,
+        "revenue": 285759000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 30.59,
+        "t1_date": "2025-08-11",
+        "t1_close": 28.31,
+        "t1_pct": -7.45,
+        "year": 2025,
+        "month": 7,
+        "revenue": 292534000.0
+      }
+    ],
+    "avg_t1": -4.64,
+    "median_t1": -1.83,
+    "max_t1": -1.83,
+    "min_t1": -7.45,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:45.928664",
+    "stock_name": "三商電",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "3303_7": {
+    "stock_id": "3303",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 23.9,
+        "t1_date": "2022-08-11",
+        "t1_close": 24.42,
+        "t1_pct": 2.17,
+        "year": 2022,
+        "month": 7,
+        "revenue": 251631000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 44.4,
+        "t1_date": "2024-08-12",
+        "t1_close": 48.79,
+        "t1_pct": 9.88,
+        "year": 2024,
+        "month": 7,
+        "revenue": 272564000.0
+      }
+    ],
+    "avg_t1": 6.03,
+    "median_t1": 9.88,
+    "max_t1": 9.88,
+    "min_t1": 2.17,
+    "hit_rate": 100.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:47.235866",
+    "stock_name": "岱稜",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "2481_7": {
+    "stock_id": "2481",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 85.79,
+        "t1_date": "2021-08-11",
+        "t1_close": 82.9,
+        "t1_pct": -3.37,
+        "year": 2021,
+        "month": 7,
+        "revenue": 1218631000.0
+      }
+    ],
+    "avg_t1": -3.37,
+    "median_t1": -3.37,
+    "max_t1": -3.37,
+    "min_t1": -3.37,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:48.016783",
+    "stock_name": "強茂",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "6664_7": {
+    "stock_id": "6664",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 57.06,
+        "t1_date": "2021-08-11",
+        "t1_close": 53.1,
+        "t1_pct": -6.95,
+        "year": 2021,
+        "month": 7,
+        "revenue": 155815000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 69.69,
+        "t1_date": "2022-08-11",
+        "t1_close": 70.55,
+        "t1_pct": 1.23,
+        "year": 2022,
+        "month": 7,
+        "revenue": 194729000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 119.62,
+        "t1_date": "2023-08-11",
+        "t1_close": 119.16,
+        "t1_pct": -0.38,
+        "year": 2023,
+        "month": 7,
+        "revenue": 211988000.0
+      }
+    ],
+    "avg_t1": -2.03,
+    "median_t1": -0.38,
+    "max_t1": 1.23,
+    "min_t1": -6.95,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:50.380743",
+    "stock_name": "群翊",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "3570_7": {
+    "stock_id": "3570",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 53.05,
+        "t1_date": "2021-08-11",
+        "t1_close": 53.28,
+        "t1_pct": 0.43,
+        "year": 2021,
+        "month": 7,
+        "revenue": 105031000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 71.25,
+        "t1_date": "2022-08-11",
+        "t1_close": 69.78,
+        "t1_pct": -2.06,
+        "year": 2022,
+        "month": 7,
+        "revenue": 111688000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 111.68,
+        "t1_date": "2023-08-11",
+        "t1_close": 109.53,
+        "t1_pct": -1.93,
+        "year": 2023,
+        "month": 7,
+        "revenue": 124489000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 141.66,
+        "t1_date": "2024-08-12",
+        "t1_close": 140.3,
+        "t1_pct": -0.96,
+        "year": 2024,
+        "month": 7,
+        "revenue": 162097000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 193.7,
+        "t1_date": "2025-08-11",
+        "t1_close": 194.17,
+        "t1_pct": 0.24,
+        "year": 2025,
+        "month": 7,
+        "revenue": 180969000.0
+      }
+    ],
+    "avg_t1": -0.86,
+    "median_t1": -0.96,
+    "max_t1": 0.43,
+    "min_t1": -2.06,
+    "hit_rate": 40.0,
+    "count": 5,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:53.931903",
+    "stock_name": "大塚",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "7590_7": {
+    "stock_id": "7590",
+    "historical_highs": [
+      {
+        "t_date": "2023-08-10",
+        "t_close": 25.58,
+        "t1_date": "2023-08-11",
+        "t1_close": 25.0,
+        "t1_pct": -2.25,
+        "year": 2023,
+        "month": 7,
+        "revenue": 39023000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 26.73,
+        "t1_date": "2024-08-12",
+        "t1_close": 27.87,
+        "t1_pct": 4.3,
+        "year": 2024,
+        "month": 7,
+        "revenue": 51849000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 20.2,
+        "t1_date": "2025-08-11",
+        "t1_close": 19.95,
+        "t1_pct": -1.24,
+        "year": 2025,
+        "month": 7,
+        "revenue": 228576000.0
+      }
+    ],
+    "avg_t1": 0.27,
+    "median_t1": -1.24,
+    "max_t1": 4.3,
+    "min_t1": -2.25,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:55.517233",
+    "stock_name": "怡和國際",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "6757_7": {
+    "stock_id": "6757",
+    "historical_highs": [
+      {
+        "t_date": "2023-08-10",
+        "t_close": 41.49,
+        "t1_date": "2023-08-11",
+        "t1_close": 40.29,
+        "t1_pct": -2.9,
+        "year": 2023,
+        "month": 7,
+        "revenue": 1263840000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 45.05,
+        "t1_date": "2024-08-12",
+        "t1_close": 45.14,
+        "t1_pct": 0.2,
+        "year": 2024,
+        "month": 7,
+        "revenue": 1626725000.0
+      }
+    ],
+    "avg_t1": -1.35,
+    "median_t1": 0.2,
+    "max_t1": 0.2,
+    "min_t1": -2.9,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:29:57.550764",
+    "stock_name": "台灣虎航",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "5258_7": {
+    "stock_id": "5258",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 18.5,
+        "t1_date": "2021-08-11",
+        "t1_close": 18.04,
+        "t1_pct": -2.45,
+        "year": 2021,
+        "month": 7,
+        "revenue": 326731000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 56.35,
+        "t1_date": "2022-08-11",
+        "t1_close": 56.35,
+        "t1_pct": 0.0,
+        "year": 2022,
+        "month": 7,
+        "revenue": 616095000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 106.02,
+        "t1_date": "2023-08-11",
+        "t1_close": 95.68,
+        "t1_pct": -9.76,
+        "year": 2023,
+        "month": 7,
+        "revenue": 657750000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 105.25,
+        "t1_date": "2024-08-12",
+        "t1_close": 108.89,
+        "t1_pct": 3.46,
+        "year": 2024,
+        "month": 7,
+        "revenue": 702173000.0
+      }
+    ],
+    "avg_t1": -2.19,
+    "median_t1": 0.0,
+    "max_t1": 3.46,
+    "min_t1": -9.76,
+    "hit_rate": 25.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:00.335235",
+    "stock_name": "虹堡",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "6625_7": {
+    "stock_id": "6625",
+    "historical_highs": [
+      {
+        "t_date": "2023-08-10",
+        "t_close": 69.9,
+        "t1_date": "2023-08-11",
+        "t1_close": 76.89,
+        "t1_pct": 10.0,
+        "year": 2023,
+        "month": 7,
+        "revenue": 296719000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 87.96,
+        "t1_date": "2025-08-11",
+        "t1_close": 83.17,
+        "t1_pct": -5.44,
+        "year": 2025,
+        "month": 7,
+        "revenue": 297121000.0
+      }
+    ],
+    "avg_t1": 2.28,
+    "median_t1": 10.0,
+    "max_t1": 10.0,
+    "min_t1": -5.44,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:01.525224",
+    "stock_name": "必應",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "7713_7": {
+    "stock_id": "7713",
+    "historical_highs": [
+      {
+        "t_date": "2025-08-08",
+        "t_close": 62.51,
+        "t1_date": "2025-08-11",
+        "t1_close": 66.95,
+        "t1_pct": 7.1,
+        "year": 2025,
+        "month": 7,
+        "revenue": 94914000.0
+      }
+    ],
+    "avg_t1": 7.1,
+    "median_t1": 7.1,
+    "max_t1": 7.1,
+    "min_t1": 7.1,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:02.329986",
+    "stock_name": "威力德生醫",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "6832_7": {
+    "stock_id": "6832",
+    "historical_highs": [
+      {
+        "t_date": "2023-08-10",
+        "t_close": 56.39,
+        "t1_date": "2023-08-11",
+        "t1_close": 55.11,
+        "t1_pct": -2.28,
+        "year": 2023,
+        "month": 7,
+        "revenue": 40227000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 51.3,
+        "t1_date": "2024-08-12",
+        "t1_close": 49.78,
+        "t1_pct": -2.98,
+        "year": 2024,
+        "month": 7,
+        "revenue": 40531000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 39.38,
+        "t1_date": "2025-08-11",
+        "t1_close": 39.86,
+        "t1_pct": 1.22,
+        "year": 2025,
+        "month": 7,
+        "revenue": 42149000.0
+      }
+    ],
+    "avg_t1": -1.35,
+    "median_t1": -2.28,
+    "max_t1": 1.22,
+    "min_t1": -2.98,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:04.618928",
+    "stock_name": "金鼎科",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "6959_7": {
+    "stock_id": "6959",
+    "historical_highs": [
+      {
+        "t_date": "2024-08-09",
+        "t_close": 112.68,
+        "t1_date": "2024-08-12",
+        "t1_close": 110.21,
+        "t1_pct": -2.19,
+        "year": 2024,
+        "month": 7,
+        "revenue": 45449000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 74.0,
+        "t1_date": "2025-08-11",
+        "t1_close": 78.5,
+        "t1_pct": 6.08,
+        "year": 2025,
+        "month": 7,
+        "revenue": 54196000.0
+      }
+    ],
+    "avg_t1": 1.95,
+    "median_t1": 6.08,
+    "max_t1": 6.08,
+    "min_t1": -2.19,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:05.894812",
+    "stock_name": "兆捷科技",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "2610_7": {
+    "stock_id": "2610",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 15.17,
+        "t1_date": "2021-08-11",
+        "t1_close": 14.87,
+        "t1_pct": -1.97,
+        "year": 2021,
+        "month": 7,
+        "revenue": 10388342000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 19.27,
+        "t1_date": "2022-08-11",
+        "t1_close": 19.4,
+        "t1_pct": 0.69,
+        "year": 2022,
+        "month": 7,
+        "revenue": 12936378000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 22.63,
+        "t1_date": "2023-08-11",
+        "t1_close": 22.76,
+        "t1_pct": 0.6,
+        "year": 2023,
+        "month": 7,
+        "revenue": 16491568000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 19.51,
+        "t1_date": "2024-08-12",
+        "t1_close": 19.56,
+        "t1_pct": 0.24,
+        "year": 2024,
+        "month": 7,
+        "revenue": 18345343000.0
+      }
+    ],
+    "avg_t1": -0.11,
+    "median_t1": 0.6,
+    "max_t1": 0.69,
+    "min_t1": -1.97,
+    "hit_rate": 75.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:09.069295",
+    "stock_name": "華航",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "6605_7": {
+    "stock_id": "6605",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 65.07,
+        "t1_date": "2022-08-11",
+        "t1_close": 68.2,
+        "t1_pct": 4.82,
+        "year": 2022,
+        "month": 7,
+        "revenue": 1599572000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 218.62,
+        "t1_date": "2024-08-12",
+        "t1_close": 215.44,
+        "t1_pct": -1.45,
+        "year": 2024,
+        "month": 7,
+        "revenue": 1677738000.0
+      }
+    ],
+    "avg_t1": 1.69,
+    "median_t1": 4.82,
+    "max_t1": 4.82,
+    "min_t1": -1.45,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:11.382765",
+    "stock_name": "帝寶",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "5469_7": {
+    "stock_id": "5469",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 38.87,
+        "t1_date": "2021-08-11",
+        "t1_close": 38.14,
+        "t1_pct": -1.89,
+        "year": 2021,
+        "month": 7,
+        "revenue": 4821050000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 65.85,
+        "t1_date": "2025-08-11",
+        "t1_close": 67.6,
+        "t1_pct": 2.65,
+        "year": 2025,
+        "month": 7,
+        "revenue": 5310317000.0
+      }
+    ],
+    "avg_t1": 0.38,
+    "median_t1": 2.65,
+    "max_t1": 2.65,
+    "min_t1": -1.89,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:12.687800",
+    "stock_name": "瀚宇博",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "4747_7": {
+    "stock_id": "4747",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 26.04,
+        "t1_date": "2022-08-11",
+        "t1_close": 25.95,
+        "t1_pct": -0.32,
+        "year": 2022,
+        "month": 7,
+        "revenue": 43840000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 92.53,
+        "t1_date": "2023-08-11",
+        "t1_close": 95.14,
+        "t1_pct": 2.82,
+        "year": 2023,
+        "month": 7,
+        "revenue": 46456000.0
+      }
+    ],
+    "avg_t1": 1.25,
+    "median_t1": 2.82,
+    "max_t1": 2.82,
+    "min_t1": -0.32,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:13.948566",
+    "stock_name": "強生製藥",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "6533_7": {
+    "stock_id": "6533",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 517.02,
+        "t1_date": "2021-08-11",
+        "t1_close": 500.24,
+        "t1_pct": -3.24,
+        "year": 2021,
+        "month": 7,
+        "revenue": 56370000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 249.73,
+        "t1_date": "2022-08-11",
+        "t1_close": 266.18,
+        "t1_pct": 6.59,
+        "year": 2022,
+        "month": 7,
+        "revenue": 68706000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 389.5,
+        "t1_date": "2023-08-11",
+        "t1_close": 412.5,
+        "t1_pct": 5.91,
+        "year": 2023,
+        "month": 7,
+        "revenue": 96536000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 334.0,
+        "t1_date": "2024-08-12",
+        "t1_close": 338.5,
+        "t1_pct": 1.35,
+        "year": 2024,
+        "month": 7,
+        "revenue": 116159000.0
+      }
+    ],
+    "avg_t1": 2.65,
+    "median_t1": 5.91,
+    "max_t1": 6.59,
+    "min_t1": -3.24,
+    "hit_rate": 75.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:16.763325",
+    "stock_name": "晶心科",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "2618_7": {
+    "stock_id": "2618",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 15.9,
+        "t1_date": "2021-08-11",
+        "t1_close": 15.12,
+        "t1_pct": -4.9,
+        "year": 2021,
+        "month": 7,
+        "revenue": 8318797000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 26.45,
+        "t1_date": "2022-08-11",
+        "t1_close": 26.7,
+        "t1_pct": 0.95,
+        "year": 2022,
+        "month": 7,
+        "revenue": 11866739000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 31.21,
+        "t1_date": "2023-08-11",
+        "t1_close": 30.31,
+        "t1_pct": -2.87,
+        "year": 2023,
+        "month": 7,
+        "revenue": 18691487000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 29.79,
+        "t1_date": "2024-08-12",
+        "t1_close": 30.86,
+        "t1_pct": 3.61,
+        "year": 2024,
+        "month": 7,
+        "revenue": 19875395000.0
+      }
+    ],
+    "avg_t1": -0.8,
+    "median_t1": 0.95,
+    "max_t1": 3.61,
+    "min_t1": -4.9,
+    "hit_rate": 50.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:19.863027",
+    "stock_name": "長榮航",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "1402_7": {
+    "stock_id": "1402",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 23.88,
+        "t1_date": "2021-08-11",
+        "t1_close": 23.92,
+        "t1_pct": 0.17,
+        "year": 2021,
+        "month": 7,
+        "revenue": 19058851000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 24.98,
+        "t1_date": "2022-08-11",
+        "t1_close": 25.19,
+        "t1_pct": 0.84,
+        "year": 2022,
+        "month": 7,
+        "revenue": 22144589000.0
+      }
+    ],
+    "avg_t1": 0.51,
+    "median_t1": 0.84,
+    "max_t1": 0.84,
+    "min_t1": 0.17,
+    "hit_rate": 100.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:21.165714",
+    "stock_name": "遠東新",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "4536_7": {
+    "stock_id": "4536",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 129.16,
+        "t1_date": "2022-08-11",
+        "t1_close": 134.0,
+        "t1_pct": 3.75,
+        "year": 2022,
+        "month": 7,
+        "revenue": 865598000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 169.62,
+        "t1_date": "2024-08-12",
+        "t1_close": 170.96,
+        "t1_pct": 0.79,
+        "year": 2024,
+        "month": 7,
+        "revenue": 866103000.0
+      }
+    ],
+    "avg_t1": 2.27,
+    "median_t1": 3.75,
+    "max_t1": 3.75,
+    "min_t1": 0.79,
+    "hit_rate": 100.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:22.308092",
+    "stock_name": "拓凱",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "8416_7": {
+    "stock_id": "8416",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 92.67,
+        "t1_date": "2021-08-11",
+        "t1_close": 91.9,
+        "t1_pct": -0.83,
+        "year": 2021,
+        "month": 7,
+        "revenue": 104366000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 156.26,
+        "t1_date": "2025-08-11",
+        "t1_close": 157.68,
+        "t1_pct": 0.91,
+        "year": 2025,
+        "month": 7,
+        "revenue": 115258000.0
+      }
+    ],
+    "avg_t1": 0.04,
+    "median_t1": 0.91,
+    "max_t1": 0.91,
+    "min_t1": -0.83,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:23.794662",
+    "stock_name": "實威",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "6118_7": {
+    "stock_id": "6118",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 13.35,
+        "t1_date": "2021-08-11",
+        "t1_close": 13.3,
+        "t1_pct": -0.37,
+        "year": 2021,
+        "month": 7,
+        "revenue": 742673000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 46.56,
+        "t1_date": "2022-08-11",
+        "t1_close": 45.77,
+        "t1_pct": -1.71,
+        "year": 2022,
+        "month": 7,
+        "revenue": 915046000.0
+      }
+    ],
+    "avg_t1": -1.04,
+    "median_t1": -0.37,
+    "max_t1": -0.37,
+    "min_t1": -1.71,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:25.852853",
+    "stock_name": "建達",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "4104_7": {
+    "stock_id": "4104",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 44.45,
+        "t1_date": "2022-08-11",
+        "t1_close": 44.86,
+        "t1_pct": 0.93,
+        "year": 2022,
+        "month": 7,
+        "revenue": 562980000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 67.75,
+        "t1_date": "2023-08-11",
+        "t1_close": 67.9,
+        "t1_pct": 0.22,
+        "year": 2023,
+        "month": 7,
+        "revenue": 617997000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 71.84,
+        "t1_date": "2024-08-12",
+        "t1_close": 73.49,
+        "t1_pct": 2.29,
+        "year": 2024,
+        "month": 7,
+        "revenue": 648950000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 77.42,
+        "t1_date": "2025-08-11",
+        "t1_close": 78.14,
+        "t1_pct": 0.93,
+        "year": 2025,
+        "month": 7,
+        "revenue": 713083000.0
+      }
+    ],
+    "avg_t1": 1.09,
+    "median_t1": 0.93,
+    "max_t1": 2.29,
+    "min_t1": 0.22,
+    "hit_rate": 100.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:28.800780",
+    "stock_name": "佳醫",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "8059_7": {
+    "stock_id": "8059",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 9.95,
+        "t1_date": "2021-08-11",
+        "t1_close": 10.0,
+        "t1_pct": 0.5,
+        "year": 2021,
+        "month": 7,
+        "revenue": 187387000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 32.4,
+        "t1_date": "2025-08-11",
+        "t1_close": 30.3,
+        "t1_pct": -6.48,
+        "year": 2025,
+        "month": 7,
+        "revenue": 754704000.0
+      }
+    ],
+    "avg_t1": -2.99,
+    "median_t1": 0.5,
+    "max_t1": 0.5,
+    "min_t1": -6.48,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:30.228533",
+    "stock_name": "凱碩",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "6150_7": {
+    "stock_id": "6150",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 125.49,
+        "t1_date": "2021-08-11",
+        "t1_close": 117.16,
+        "t1_pct": -6.64,
+        "year": 2021,
+        "month": 7,
+        "revenue": 448863000.0
+      }
+    ],
+    "avg_t1": -6.64,
+    "median_t1": -6.64,
+    "max_t1": -6.64,
+    "min_t1": -6.64,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:31.816275",
+    "stock_name": "撼訊",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "1472_7": {
+    "stock_id": "1472",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 29.42,
+        "t1_date": "2021-08-11",
+        "t1_close": 28.96,
+        "t1_pct": -1.55,
+        "year": 2021,
+        "month": 7,
+        "revenue": 38944000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 15.5,
+        "t1_date": "2022-08-11",
+        "t1_close": 15.85,
+        "t1_pct": 2.27,
+        "year": 2022,
+        "month": 7,
+        "revenue": 63099000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 35.62,
+        "t1_date": "2023-08-11",
+        "t1_close": 35.84,
+        "t1_pct": 0.62,
+        "year": 2023,
+        "month": 7,
+        "revenue": 195647000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 85.99,
+        "t1_date": "2025-08-11",
+        "t1_close": 86.46,
+        "t1_pct": 0.54,
+        "year": 2025,
+        "month": 7,
+        "revenue": 308984000.0
+      }
+    ],
+    "avg_t1": 0.47,
+    "median_t1": 0.62,
+    "max_t1": 2.27,
+    "min_t1": -1.55,
+    "hit_rate": 75.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:34.454972",
+    "stock_name": "三洋實業",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "5902_7": {
+    "stock_id": "5902",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 22.74,
+        "t1_date": "2021-08-11",
+        "t1_close": 22.58,
+        "t1_pct": -0.72,
+        "year": 2021,
+        "month": 7,
+        "revenue": 159032000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 29.76,
+        "t1_date": "2022-08-11",
+        "t1_close": 29.76,
+        "t1_pct": 0.0,
+        "year": 2022,
+        "month": 7,
+        "revenue": 182885000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 44.4,
+        "t1_date": "2025-08-11",
+        "t1_close": 44.02,
+        "t1_pct": -0.86,
+        "year": 2025,
+        "month": 7,
+        "revenue": 184803000.0
+      }
+    ],
+    "avg_t1": -0.53,
+    "median_t1": -0.72,
+    "max_t1": 0.0,
+    "min_t1": -0.86,
+    "hit_rate": 0.0,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:36.530327",
+    "stock_name": "德記",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "2207_7": {
+    "stock_id": "2207",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 523.76,
+        "t1_date": "2022-08-11",
+        "t1_close": 536.92,
+        "t1_pct": 2.51,
+        "year": 2022,
+        "month": 7,
+        "revenue": 23535769000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 632.63,
+        "t1_date": "2023-08-11",
+        "t1_close": 648.78,
+        "t1_pct": 2.55,
+        "year": 2023,
+        "month": 7,
+        "revenue": 26547327000.0
+      }
+    ],
+    "avg_t1": 2.53,
+    "median_t1": 2.55,
+    "max_t1": 2.55,
+    "min_t1": 2.51,
+    "hit_rate": 100.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:38.298648",
+    "stock_name": "和泰車",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "7558_7": {
+    "stock_id": "7558",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 55.04,
+        "t1_date": "2021-08-11",
+        "t1_close": 53.5,
+        "t1_pct": -2.79,
+        "year": 2021,
+        "month": 7,
+        "revenue": 44439000.0
+      }
+    ],
+    "avg_t1": -2.79,
+    "median_t1": -2.79,
+    "max_t1": -2.79,
+    "min_t1": -2.79,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:39.171539",
+    "stock_name": "群利科技",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "1503_7": {
+    "stock_id": "1503",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 45.49,
+        "t1_date": "2021-08-11",
+        "t1_close": 45.32,
+        "t1_pct": -0.39,
+        "year": 2021,
+        "month": 7,
+        "revenue": 2189672000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 57.99,
+        "t1_date": "2022-08-11",
+        "t1_close": 58.55,
+        "t1_pct": 0.96,
+        "year": 2022,
+        "month": 7,
+        "revenue": 2353474000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 117.8,
+        "t1_date": "2023-08-11",
+        "t1_close": 118.27,
+        "t1_pct": 0.4,
+        "year": 2023,
+        "month": 7,
+        "revenue": 2470239000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 207.11,
+        "t1_date": "2024-08-12",
+        "t1_close": 216.63,
+        "t1_pct": 4.6,
+        "year": 2024,
+        "month": 7,
+        "revenue": 2597572000.0
+      }
+    ],
+    "avg_t1": 1.39,
+    "median_t1": 0.96,
+    "max_t1": 4.6,
+    "min_t1": -0.39,
+    "hit_rate": 75.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:42.028654",
+    "stock_name": "士電",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "6290_7": {
+    "stock_id": "6290",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 47.33,
+        "t1_date": "2021-08-11",
+        "t1_close": 47.33,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 7,
+        "revenue": 673535000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 105.81,
+        "t1_date": "2025-08-11",
+        "t1_close": 101.42,
+        "t1_pct": -4.15,
+        "year": 2025,
+        "month": 7,
+        "revenue": 788922000.0
+      }
+    ],
+    "avg_t1": -2.08,
+    "median_t1": 0.0,
+    "max_t1": 0.0,
+    "min_t1": -4.15,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:43.547785",
+    "stock_name": "良維",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "7722_7": {
+    "stock_id": "7722",
+    "historical_highs": [
+      {
+        "t_date": "2024-08-09",
+        "t_close": 534.34,
+        "t1_date": "2024-08-12",
+        "t1_close": 536.23,
+        "t1_pct": 0.35,
+        "year": 2024,
+        "month": 7,
+        "revenue": 516766000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 677.14,
+        "t1_date": "2025-08-11",
+        "t1_close": 652.55,
+        "t1_pct": -3.63,
+        "year": 2025,
+        "month": 7,
+        "revenue": 640351000.0
+      }
+    ],
+    "avg_t1": -1.64,
+    "median_t1": 0.35,
+    "max_t1": 0.35,
+    "min_t1": -3.63,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:46.034093",
+    "stock_name": "LINEPAY",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "6666_7": {
+    "stock_id": "6666",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 67.14,
+        "t1_date": "2021-08-11",
+        "t1_close": 66.09,
+        "t1_pct": -1.57,
+        "year": 2021,
+        "month": 7,
+        "revenue": 70673000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 50.37,
+        "t1_date": "2022-08-11",
+        "t1_close": 50.28,
+        "t1_pct": -0.18,
+        "year": 2022,
+        "month": 7,
+        "revenue": 72048000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 67.87,
+        "t1_date": "2023-08-11",
+        "t1_close": 66.01,
+        "t1_pct": -2.73,
+        "year": 2023,
+        "month": 7,
+        "revenue": 74899000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 56.73,
+        "t1_date": "2024-08-12",
+        "t1_close": 57.69,
+        "t1_pct": 1.69,
+        "year": 2024,
+        "month": 7,
+        "revenue": 88534000.0
+      }
+    ],
+    "avg_t1": -0.7,
+    "median_t1": -0.18,
+    "max_t1": 1.69,
+    "min_t1": -2.73,
+    "hit_rate": 25.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:48.949232",
+    "stock_name": "羅麗芬-KY",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "4431_7": {
+    "stock_id": "4431",
+    "historical_highs": [
+      {
+        "t_date": "2024-08-09",
+        "t_close": 21.6,
+        "t1_date": "2024-08-12",
+        "t1_close": 22.5,
+        "t1_pct": 4.17,
+        "year": 2024,
+        "month": 7,
+        "revenue": 163595000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 20.0,
+        "t1_date": "2025-08-11",
+        "t1_close": 20.35,
+        "t1_pct": 1.75,
+        "year": 2025,
+        "month": 7,
+        "revenue": 167112000.0
+      }
+    ],
+    "avg_t1": 2.96,
+    "median_t1": 4.17,
+    "max_t1": 4.17,
+    "min_t1": 1.75,
+    "hit_rate": 100.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:50.680077",
+    "stock_name": "敏成健康",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "6509_7": {
+    "stock_id": "6509",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 52.52,
+        "t1_date": "2021-08-11",
+        "t1_close": 47.27,
+        "t1_pct": -10.0,
+        "year": 2021,
+        "month": 7,
+        "revenue": 366145000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 35.41,
+        "t1_date": "2022-08-11",
+        "t1_close": 35.32,
+        "t1_pct": -0.24,
+        "year": 2022,
+        "month": 7,
+        "revenue": 461396000.0
+      }
+    ],
+    "avg_t1": -5.12,
+    "median_t1": -0.24,
+    "max_t1": -0.24,
+    "min_t1": -10.0,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:52.343863",
+    "stock_name": "聚和",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "7738_7": {
+    "stock_id": "7738",
+    "historical_highs": [
+      {
+        "t_date": "2025-08-08",
+        "t_close": 220.5,
+        "t1_date": "2025-08-11",
+        "t1_close": 224.0,
+        "t1_pct": 1.59,
+        "year": 2025,
+        "month": 7,
+        "revenue": 50374000.0
+      }
+    ],
+    "avg_t1": 1.59,
+    "median_t1": 1.59,
+    "max_t1": 1.59,
+    "min_t1": 1.59,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:55.274798",
+    "stock_name": "東聯互動",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "6818_7": {
+    "stock_id": "6818",
+    "historical_highs": [
+      {
+        "t_date": "2024-08-09",
+        "t_close": 40.29,
+        "t1_date": "2024-08-12",
+        "t1_close": 43.17,
+        "t1_pct": 7.14,
+        "year": 2024,
+        "month": 7,
+        "revenue": 94788000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 48.06,
+        "t1_date": "2025-08-11",
+        "t1_close": 46.93,
+        "t1_pct": -2.36,
+        "year": 2025,
+        "month": 7,
+        "revenue": 97386000.0
+      }
+    ],
+    "avg_t1": 2.39,
+    "median_t1": 7.14,
+    "max_t1": 7.14,
+    "min_t1": -2.36,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:57.212256",
+    "stock_name": "連騰",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
+  },
+  "2762_7": {
+    "stock_id": "2762",
+    "historical_highs": [
+      {
+        "t_date": "2025-08-08",
+        "t_close": 68.12,
+        "t1_date": "2025-08-11",
+        "t1_close": 68.03,
+        "t1_pct": -0.13,
+        "year": 2025,
+        "month": 7,
+        "revenue": 916062000.0
+      }
+    ],
+    "avg_t1": -0.13,
+    "median_t1": -0.13,
+    "max_t1": -0.13,
+    "min_t1": -0.13,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:30:58.040806",
+    "stock_name": "世界健身-KY",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "4173_7": {
+    "stock_id": "4173",
+    "historical_highs": [
+      {
+        "t_date": "2024-08-09",
+        "t_close": 19.04,
+        "t1_date": "2024-08-12",
+        "t1_close": 18.95,
+        "t1_pct": -0.47,
+        "year": 2024,
+        "month": 7,
+        "revenue": 98897000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 21.98,
+        "t1_date": "2025-08-11",
+        "t1_close": 21.74,
+        "t1_pct": -1.08,
+        "year": 2025,
+        "month": 7,
+        "revenue": 115216000.0
+      }
+    ],
+    "avg_t1": -0.78,
+    "median_t1": -0.47,
+    "max_t1": -0.47,
+    "min_t1": -1.08,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:31:00.749458",
+    "stock_name": "久裕",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "6662_7": {
+    "stock_id": "6662",
+    "historical_highs": [
+      {
+        "t_date": "2024-08-09",
+        "t_close": 34.0,
+        "t1_date": "2024-08-12",
+        "t1_close": 33.0,
+        "t1_pct": -2.93,
+        "year": 2024,
+        "month": 7,
+        "revenue": 20140000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 30.97,
+        "t1_date": "2025-08-11",
+        "t1_close": 30.69,
+        "t1_pct": -0.92,
+        "year": 2025,
+        "month": 7,
+        "revenue": 22169000.0
+      }
+    ],
+    "avg_t1": -1.93,
+    "median_t1": -0.92,
+    "max_t1": -0.92,
+    "min_t1": -2.93,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:31:02.460428",
+    "stock_name": "樂斯科",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "2471_7": {
+    "stock_id": "2471",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 17.28,
+        "t1_date": "2021-08-11",
+        "t1_close": 17.04,
+        "t1_pct": -1.39,
+        "year": 2021,
+        "month": 7,
+        "revenue": 78730000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 49.62,
+        "t1_date": "2025-08-11",
+        "t1_close": 47.38,
+        "t1_pct": -4.53,
+        "year": 2025,
+        "month": 7,
+        "revenue": 79054000.0
+      }
+    ],
+    "avg_t1": -2.96,
+    "median_t1": -1.39,
+    "max_t1": -1.39,
+    "min_t1": -4.53,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:31:04.164787",
+    "stock_name": "資通",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "6165_7": {
+    "stock_id": "6165",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 33.78,
+        "t1_date": "2021-08-11",
+        "t1_close": 32.01,
+        "t1_pct": -5.22,
+        "year": 2021,
+        "month": 7,
+        "revenue": 245336000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 37.13,
+        "t1_date": "2024-08-12",
+        "t1_close": 37.38,
+        "t1_pct": 0.67,
+        "year": 2024,
+        "month": 7,
+        "revenue": 248286000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 52.1,
+        "t1_date": "2025-08-11",
+        "t1_close": 53.2,
+        "t1_pct": 2.11,
+        "year": 2025,
+        "month": 7,
+        "revenue": 260100000.0
+      }
+    ],
+    "avg_t1": -0.81,
+    "median_t1": 0.67,
+    "max_t1": 2.11,
+    "min_t1": -5.22,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:31:06.399307",
+    "stock_name": "浪凡",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "8936_7": {
+    "stock_id": "8936",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 19.87,
+        "t1_date": "2021-08-11",
+        "t1_close": 20.0,
+        "t1_pct": 0.67,
+        "year": 2021,
+        "month": 7,
+        "revenue": 423606000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 29.46,
+        "t1_date": "2023-08-11",
+        "t1_close": 29.87,
+        "t1_pct": 1.4,
+        "year": 2023,
+        "month": 7,
+        "revenue": 423755000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 50.45,
+        "t1_date": "2025-08-11",
+        "t1_close": 51.42,
+        "t1_pct": 1.91,
+        "year": 2025,
+        "month": 7,
+        "revenue": 505555000.0
+      }
+    ],
+    "avg_t1": 1.33,
+    "median_t1": 1.4,
+    "max_t1": 1.91,
+    "min_t1": 0.67,
+    "hit_rate": 100.0,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:31:09.043121",
+    "stock_name": "國統",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "5439_7": {
+    "stock_id": "5439",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 55.15,
+        "t1_date": "2021-08-11",
+        "t1_close": 54.9,
+        "t1_pct": -0.46,
+        "year": 2021,
+        "month": 7,
+        "revenue": 313998000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 97.48,
+        "t1_date": "2023-08-11",
+        "t1_close": 92.4,
+        "t1_pct": -5.21,
+        "year": 2023,
+        "month": 7,
+        "revenue": 401781000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 268.25,
+        "t1_date": "2025-08-11",
+        "t1_close": 273.6,
+        "t1_pct": 1.99,
+        "year": 2025,
+        "month": 7,
+        "revenue": 1005270000.0
+      }
+    ],
+    "avg_t1": -1.23,
+    "median_t1": -0.46,
+    "max_t1": 1.99,
+    "min_t1": -5.21,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:31:12.370121",
+    "stock_name": "高技",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "2752_7": {
+    "stock_id": "2752",
+    "historical_highs": [
+      {
+        "t_date": "2022-08-10",
+        "t_close": 110.92,
+        "t1_date": "2022-08-11",
+        "t1_close": 112.01,
+        "t1_pct": 0.98,
+        "year": 2022,
+        "month": 7,
+        "revenue": 238283000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 228.98,
+        "t1_date": "2023-08-11",
+        "t1_close": 228.98,
+        "t1_pct": 0.0,
+        "year": 2023,
+        "month": 7,
+        "revenue": 289484000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 231.61,
+        "t1_date": "2024-08-12",
+        "t1_close": 231.61,
+        "t1_pct": 0.0,
+        "year": 2024,
+        "month": 7,
+        "revenue": 309337000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 191.95,
+        "t1_date": "2025-08-11",
+        "t1_close": 191.48,
+        "t1_pct": -0.24,
+        "year": 2025,
+        "month": 7,
+        "revenue": 349029000.0
+      }
+    ],
+    "avg_t1": 0.18,
+    "median_t1": 0.0,
+    "max_t1": 0.98,
+    "min_t1": -0.24,
+    "hit_rate": 25.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:31:14.729453",
+    "stock_name": "豆府",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "2412_7": {
+    "stock_id": "2412",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 93.95,
+        "t1_date": "2021-08-11",
+        "t1_close": 93.95,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 7,
+        "revenue": 16561392000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 105.02,
+        "t1_date": "2022-08-11",
+        "t1_close": 107.16,
+        "t1_pct": 2.04,
+        "year": 2022,
+        "month": 7,
+        "revenue": 17184646000.0
+      },
+      {
+        "t_date": "2023-08-10",
+        "t_close": 105.23,
+        "t1_date": "2023-08-11",
+        "t1_close": 105.23,
+        "t1_pct": 0.0,
+        "year": 2023,
+        "month": 7,
+        "revenue": 17520419000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 113.09,
+        "t1_date": "2024-08-12",
+        "t1_close": 112.62,
+        "t1_pct": -0.41,
+        "year": 2024,
+        "month": 7,
+        "revenue": 17771401000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 129.01,
+        "t1_date": "2025-08-11",
+        "t1_close": 129.49,
+        "t1_pct": 0.37,
+        "year": 2025,
+        "month": 7,
+        "revenue": 19179026000.0
+      }
+    ],
+    "avg_t1": 0.4,
+    "median_t1": 0.0,
+    "max_t1": 2.04,
+    "min_t1": -0.41,
+    "hit_rate": 40.0,
+    "count": 5,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:31:18.687131",
+    "stock_name": "中華電",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "5536_7": {
+    "stock_id": "5536",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 142.37,
+        "t1_date": "2021-08-11",
+        "t1_close": 141.61,
+        "t1_pct": -0.53,
+        "year": 2021,
+        "month": 7,
+        "revenue": 1552194000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 162.95,
+        "t1_date": "2022-08-11",
+        "t1_close": 163.36,
+        "t1_pct": 0.25,
+        "year": 2022,
+        "month": 7,
+        "revenue": 2809440000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 577.07,
+        "t1_date": "2025-08-11",
+        "t1_close": 589.85,
+        "t1_pct": 2.21,
+        "year": 2025,
+        "month": 7,
+        "revenue": 3757320000.0
+      }
+    ],
+    "avg_t1": 0.64,
+    "median_t1": 0.25,
+    "max_t1": 2.21,
+    "min_t1": -0.53,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:31:20.461220",
+    "stock_name": "聖暉*",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "1580_7": {
+    "stock_id": "1580",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 75.29,
+        "t1_date": "2021-08-11",
+        "t1_close": 74.27,
+        "t1_pct": -1.36,
+        "year": 2021,
+        "month": 7,
+        "revenue": 382475000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 128.85,
+        "t1_date": "2024-08-12",
+        "t1_close": 132.34,
+        "t1_pct": 2.71,
+        "year": 2024,
+        "month": 7,
+        "revenue": 434417000.0
+      }
+    ],
+    "avg_t1": 0.67,
+    "median_t1": 2.71,
+    "max_t1": 2.71,
+    "min_t1": -1.36,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:31:22.084831",
+    "stock_name": "新麥",
+    "market": "otc",
+    "current_filing_date": "2026-08-10"
+  },
+  "2424_7": {
+    "stock_id": "2424",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 21.25,
+        "t1_date": "2021-08-11",
+        "t1_close": 21.25,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 7,
+        "revenue": 1701000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 18.85,
+        "t1_date": "2022-08-11",
+        "t1_close": 20.35,
+        "t1_pct": 7.96,
+        "year": 2022,
+        "month": 7,
+        "revenue": 7629000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 60.5,
+        "t1_date": "2025-08-11",
+        "t1_close": 60.1,
+        "t1_pct": -0.66,
+        "year": 2025,
+        "month": 7,
+        "revenue": 11830000.0
+      }
+    ],
+    "avg_t1": 2.43,
+    "median_t1": 0.0,
+    "max_t1": 7.96,
+    "min_t1": -0.66,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:31:24.176890",
+    "stock_name": "隴華",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "5292_7": {
+    "stock_id": "5292",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 45.58,
+        "t1_date": "2021-08-11",
+        "t1_close": 45.52,
+        "t1_pct": -0.13,
+        "year": 2021,
+        "month": 7,
+        "revenue": 109222000.0
+      },
+      {
+        "t_date": "2022-08-10",
+        "t_close": 37.82,
+        "t1_date": "2022-08-11",
+        "t1_close": 36.74,
+        "t1_pct": -2.85,
+        "year": 2022,
+        "month": 7,
+        "revenue": 124870000.0
+      },
+      {
+        "t_date": "2024-08-09",
+        "t_close": 117.91,
+        "t1_date": "2024-08-12",
+        "t1_close": 120.26,
+        "t1_pct": 1.99,
+        "year": 2024,
+        "month": 7,
+        "revenue": 162409000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 139.75,
+        "t1_date": "2025-08-11",
+        "t1_close": 141.52,
+        "t1_pct": 1.27,
+        "year": 2025,
+        "month": 7,
+        "revenue": 271955000.0
+      }
+    ],
+    "avg_t1": 0.07,
+    "median_t1": 1.27,
+    "max_t1": 1.99,
+    "min_t1": -2.85,
+    "hit_rate": 50.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:31:27.648023",
+    "stock_name": "華懋",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
+  },
+  "9945_7": {
+    "stock_id": "9945",
+    "historical_highs": [
+      {
+        "t_date": "2021-08-10",
+        "t_close": 28.83,
+        "t1_date": "2021-08-11",
+        "t1_close": 29.19,
+        "t1_pct": 1.24,
+        "year": 2021,
+        "month": 7,
+        "revenue": 2925757000.0
+      },
+      {
+        "t_date": "2025-08-08",
+        "t_close": 29.95,
+        "t1_date": "2025-08-11",
+        "t1_close": 30.05,
+        "t1_pct": 0.32,
+        "year": 2025,
+        "month": 7,
+        "revenue": 3255679000.0
+      }
+    ],
+    "avg_t1": 0.78,
+    "median_t1": 1.24,
+    "max_t1": 1.24,
+    "min_t1": 0.32,
+    "hit_rate": 100.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-10T09:31:29.081922",
+    "stock_name": "潤泰新",
+    "market": "sii",
+    "current_filing_date": "2026-08-10"
   }
 }
