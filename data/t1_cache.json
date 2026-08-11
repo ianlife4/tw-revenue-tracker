@@ -140192,16 +140192,26 @@
         "year": 2025,
         "month": 7,
         "revenue": 700303000.0
+      },
+      {
+        "t_date": "2026-08-05",
+        "t_close": 680.0,
+        "t1_date": "2026-08-06",
+        "t1_close": 693.0,
+        "t1_pct": 1.91,
+        "year": 2026,
+        "month": 7,
+        "revenue": 886323000.0
       }
     ],
-    "avg_t1": -0.94,
+    "avg_t1": -0.37,
     "median_t1": -0.19,
-    "max_t1": 0.0,
+    "max_t1": 1.91,
     "min_t1": -2.27,
-    "hit_rate": 0.0,
-    "count": 4,
+    "hit_rate": 20.0,
+    "count": 5,
     "typical_filing_day": 5,
-    "cached_at": "2026-08-04T16:14:05.712248",
+    "cached_at": "2026-08-11T17:01:49.046776",
     "stock_name": "中砂",
     "market": "sii",
     "current_filing_date": "2026-08-05"
@@ -140228,16 +140238,26 @@
         "year": 2024,
         "month": 7,
         "revenue": 79849000.0
+      },
+      {
+        "t_date": "2026-08-05",
+        "t_close": 45.0,
+        "t1_date": "2026-08-06",
+        "t1_close": 46.0,
+        "t1_pct": 2.22,
+        "year": 2026,
+        "month": 7,
+        "revenue": 82127000.0
       }
     ],
-    "avg_t1": -0.27,
+    "avg_t1": 0.56,
     "median_t1": 0.0,
-    "max_t1": 0.0,
+    "max_t1": 2.22,
     "min_t1": -0.54,
-    "hit_rate": 0.0,
-    "count": 2,
+    "hit_rate": 33.3,
+    "count": 3,
     "typical_filing_day": 5,
-    "cached_at": "2026-08-04T16:14:08.266212",
+    "cached_at": "2026-08-11T17:01:55.206663",
     "stock_name": "寶元數控",
     "market": "emerging",
     "current_filing_date": "2026-08-05"
