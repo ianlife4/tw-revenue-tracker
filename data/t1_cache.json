@@ -173701,5 +173701,31 @@
     "stock_name": "三地開發",
     "market": "sii",
     "current_filing_date": "2026-08-10"
+  },
+  "7785_7": {
+    "stock_id": "7785",
+    "historical_highs": [
+      {
+        "t_date": "2026-08-07",
+        "t_close": 27.9,
+        "t1_date": "2026-08-11",
+        "t1_close": 29.0,
+        "t1_pct": 3.94,
+        "year": 2026,
+        "month": 7,
+        "revenue": 271078000.0
+      }
+    ],
+    "avg_t1": 3.94,
+    "median_t1": 3.94,
+    "max_t1": 3.94,
+    "min_t1": 3.94,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-08-11T05:14:39.415851",
+    "stock_name": "北祥科服",
+    "market": "emerging",
+    "current_filing_date": "2026-08-10"
   }
 }
