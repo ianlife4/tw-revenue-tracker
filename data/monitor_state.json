@@ -13111,9 +13111,24 @@
       "first_seen": "08-12 11:03",
       "market": "pub",
       "stock_name": "華南保"
+    },
+    "2832": {
+      "first_seen": "08-12 17:15",
+      "market": "sii",
+      "stock_name": "台產"
+    },
+    "2867": {
+      "first_seen": "08-12 17:15",
+      "market": "sii",
+      "stock_name": "三商壽"
+    },
+    "2905": {
+      "first_seen": "08-12 17:15",
+      "market": "sii",
+      "stock_name": "三商"
     }
   },
-  "last_check": "08-12 15:37:41",
-  "last_new_filing": "08-12 11:03:11",
-  "total_filed": 2604
+  "last_check": "08-12 17:15:11",
+  "last_new_filing": "08-12 17:15:11",
+  "total_filed": 2607
 }
