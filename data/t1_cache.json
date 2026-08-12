@@ -143652,16 +143652,26 @@
         "year": 2021,
         "month": 7,
         "revenue": 755742000.0
+      },
+      {
+        "t_date": "2026-08-06",
+        "t_close": 900.0,
+        "t1_date": "2026-08-07",
+        "t1_close": 951.0,
+        "t1_pct": 5.67,
+        "year": 2026,
+        "month": 7,
+        "revenue": 1103906000.0
       }
     ],
-    "avg_t1": -2.84,
-    "median_t1": -2.84,
-    "max_t1": -2.84,
+    "avg_t1": 1.42,
+    "median_t1": 5.67,
+    "max_t1": 5.67,
     "min_t1": -2.84,
-    "hit_rate": 0.0,
-    "count": 1,
+    "hit_rate": 50.0,
+    "count": 2,
     "typical_filing_day": 6,
-    "cached_at": "2026-08-05T16:02:39.614889",
+    "cached_at": "2026-08-12T17:00:18.276029",
     "stock_name": "愛普*",
     "market": "sii",
     "current_filing_date": "2026-08-06"
