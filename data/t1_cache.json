@@ -162752,16 +162752,26 @@
         "year": 2023,
         "month": 7,
         "revenue": 155169000.0
+      },
+      {
+        "t_date": "2026-08-10",
+        "t_close": 27.0,
+        "t1_date": "2026-08-11",
+        "t1_close": 27.05,
+        "t1_pct": 0.19,
+        "year": 2026,
+        "month": 7,
+        "revenue": 250888000.0
       }
     ],
-    "avg_t1": 0.88,
+    "avg_t1": 0.71,
     "median_t1": 0.84,
     "max_t1": 1.39,
-    "min_t1": 0.41,
+    "min_t1": 0.19,
     "hit_rate": 100.0,
-    "count": 3,
+    "count": 4,
     "typical_filing_day": 10,
-    "cached_at": "2026-08-09T16:40:22.570406",
+    "cached_at": "2026-08-17T01:17:54.329153",
     "stock_name": "華德動能-創",
     "market": "sii",
     "current_filing_date": "2026-08-10"
