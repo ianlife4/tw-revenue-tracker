@@ -179388,16 +179388,26 @@
         "year": 2022,
         "month": 7,
         "revenue": 43324000.0
+      },
+      {
+        "t_date": "2026-08-10",
+        "t_close": 15.55,
+        "t1_date": "2026-08-11",
+        "t1_close": 16.0,
+        "t1_pct": 2.89,
+        "year": 2026,
+        "month": 7,
+        "revenue": 47974000.0
       }
     ],
-    "avg_t1": 1.14,
-    "median_t1": 1.14,
-    "max_t1": 1.14,
+    "avg_t1": 2.02,
+    "median_t1": 2.89,
+    "max_t1": 2.89,
     "min_t1": 1.14,
     "hit_rate": 100.0,
-    "count": 1,
+    "count": 2,
     "typical_filing_day": 10,
-    "cached_at": "2026-08-10T13:17:44.604876",
+    "cached_at": "2026-08-18T01:16:16.445773",
     "stock_name": "勝昱",
     "market": "otc",
     "current_filing_date": "2026-08-10"
@@ -179414,16 +179424,26 @@
         "year": 2023,
         "month": 7,
         "revenue": 137427000.0
+      },
+      {
+        "t_date": "2026-08-10",
+        "t_close": 441.0,
+        "t1_date": "2026-08-11",
+        "t1_close": 450.0,
+        "t1_pct": 2.04,
+        "year": 2026,
+        "month": 7,
+        "revenue": 165627000.0
       }
     ],
-    "avg_t1": -1.86,
-    "median_t1": -1.86,
-    "max_t1": -1.86,
+    "avg_t1": 0.09,
+    "median_t1": 2.04,
+    "max_t1": 2.04,
     "min_t1": -1.86,
-    "hit_rate": 0.0,
-    "count": 1,
+    "hit_rate": 50.0,
+    "count": 2,
     "typical_filing_day": 10,
-    "cached_at": "2026-08-10T13:17:52.014527",
+    "cached_at": "2026-08-18T01:16:24.887198",
     "stock_name": "M31",
     "market": "otc",
     "current_filing_date": "2026-08-10"
@@ -179460,6 +179480,16 @@
         "year": 2025,
         "month": 7,
         "revenue": 256906000.0
+      },
+      {
+        "t_date": "2026-08-10",
+        "t_close": 70.7,
+        "t1_date": "2026-08-11",
+        "t1_close": 70.3,
+        "t1_pct": -0.57,
+        "year": 2026,
+        "month": 7,
+        "revenue": 265278000.0
       }
     ],
     "avg_t1": -0.55,
@@ -179467,9 +179497,9 @@
     "max_t1": 0.0,
     "min_t1": -1.24,
     "hit_rate": 0.0,
-    "count": 3,
+    "count": 4,
     "typical_filing_day": 10,
-    "cached_at": "2026-08-10T13:18:15.675958",
+    "cached_at": "2026-08-18T01:16:54.194522",
     "stock_name": "路易莎咖啡",
     "market": "emerging",
     "current_filing_date": "2026-08-10"
@@ -179495,7 +179525,7 @@
     "hit_rate": 0.0,
     "count": 1,
     "typical_filing_day": 7,
-    "cached_at": "2026-08-10T22:42:20.858853",
+    "cached_at": "2026-08-18T01:16:28.670534",
     "stock_name": "捷博",
     "market": "emerging",
     "current_filing_date": "2026-08-07"
@@ -179521,7 +179551,7 @@
     "hit_rate": 0.0,
     "count": 1,
     "typical_filing_day": 7,
-    "cached_at": "2026-08-10T22:42:24.018894",
+    "cached_at": "2026-08-18T01:16:36.113922",
     "stock_name": "極風雲創",
     "market": "emerging",
     "current_filing_date": "2026-08-07"
@@ -179547,7 +179577,7 @@
     "hit_rate": 0.0,
     "count": 1,
     "typical_filing_day": 7,
-    "cached_at": "2026-08-10T22:42:30.638652",
+    "cached_at": "2026-08-18T01:16:55.442668",
     "stock_name": "樺緯物聯",
     "market": "emerging",
     "current_filing_date": "2026-08-07"
