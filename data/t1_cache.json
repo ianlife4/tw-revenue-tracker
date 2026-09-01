@@ -182213,5 +182213,51 @@
     "stock_name": "康科特",
     "market": "emerging",
     "current_filing_date": "2026-09-01"
+  },
+  "4749_8": {
+    "stock_id": "4749",
+    "historical_highs": [
+      {
+        "t_date": "2022-09-02",
+        "t_close": 254.48,
+        "t1_date": "2022-09-05",
+        "t1_close": 244.83,
+        "t1_pct": -3.8,
+        "year": 2022,
+        "month": 8,
+        "revenue": 204479000.0
+      },
+      {
+        "t_date": "2024-09-02",
+        "t_close": 598.85,
+        "t1_date": "2024-09-03",
+        "t1_close": 597.86,
+        "t1_pct": -0.16,
+        "year": 2024,
+        "month": 8,
+        "revenue": 278970000.0
+      },
+      {
+        "t_date": "2025-09-02",
+        "t_close": 809.93,
+        "t1_date": "2025-09-03",
+        "t1_close": 821.83,
+        "t1_pct": 1.47,
+        "year": 2025,
+        "month": 8,
+        "revenue": 341633000.0
+      }
+    ],
+    "avg_t1": -0.83,
+    "median_t1": -0.16,
+    "max_t1": 1.47,
+    "min_t1": -3.8,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 2,
+    "cached_at": "2026-09-01T23:53:29.595090",
+    "stock_name": "新應材",
+    "market": "otc",
+    "current_filing_date": "2026-09-02"
   }
 }
