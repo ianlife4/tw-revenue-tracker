@@ -1,8 +1,39 @@
 {
   "period_year": 2026,
   "period_month": 8,
-  "stocks": {},
-  "last_check": "09-01 13:23:49",
-  "last_new_filing": "",
-  "total_filed": 0
+  "stocks": {
+    "6717": {
+      "first_seen": "09-01 15:30",
+      "market": "pub",
+      "stock_name": "智慧光"
+    },
+    "3572": {
+      "first_seen": "09-01 15:30",
+      "market": "pub",
+      "stock_name": "宏芯科技"
+    },
+    "5508": {
+      "first_seen": "09-01 15:30",
+      "market": "otc",
+      "stock_name": "永信建"
+    },
+    "6910": {
+      "first_seen": "09-01 15:30",
+      "market": "otc",
+      "stock_name": "德鴻"
+    },
+    "3228": {
+      "first_seen": "09-01 15:30",
+      "market": "otc",
+      "stock_name": "金麗科"
+    },
+    "6712": {
+      "first_seen": "09-01 15:30",
+      "market": "otc",
+      "stock_name": "長聖"
+    }
+  },
+  "last_check": "09-01 15:30:41",
+  "last_new_filing": "09-01 15:30:41",
+  "total_filed": 6
 }

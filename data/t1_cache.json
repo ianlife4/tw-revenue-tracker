@@ -181957,5 +181957,61 @@
     "stock_name": "新產",
     "market": "sii",
     "current_filing_date": "2026-08-17"
+  },
+  "6712_8": {
+    "stock_id": "6712",
+    "historical_highs": [
+      {
+        "t_date": "2021-09-01",
+        "t_close": 174.29,
+        "t1_date": "2021-09-02",
+        "t1_close": 164.26,
+        "t1_pct": -5.76,
+        "year": 2021,
+        "month": 8,
+        "revenue": 48813000.0
+      },
+      {
+        "t_date": "2022-09-01",
+        "t_close": 157.91,
+        "t1_date": "2022-09-02",
+        "t1_close": 164.72,
+        "t1_pct": 4.31,
+        "year": 2022,
+        "month": 8,
+        "revenue": 57021000.0
+      },
+      {
+        "t_date": "2023-09-01",
+        "t_close": 140.56,
+        "t1_date": "2023-09-04",
+        "t1_close": 141.64,
+        "t1_pct": 0.77,
+        "year": 2023,
+        "month": 8,
+        "revenue": 78804000.0
+      },
+      {
+        "t_date": "2025-09-01",
+        "t_close": 144.95,
+        "t1_date": "2025-09-02",
+        "t1_close": 146.81,
+        "t1_pct": 1.28,
+        "year": 2025,
+        "month": 8,
+        "revenue": 90537000.0
+      }
+    ],
+    "avg_t1": 0.15,
+    "median_t1": 1.28,
+    "max_t1": 4.31,
+    "min_t1": -5.76,
+    "hit_rate": 75.0,
+    "count": 4,
+    "typical_filing_day": 1,
+    "cached_at": "2026-09-01T07:31:12.769575",
+    "stock_name": "長聖",
+    "market": "otc",
+    "current_filing_date": "2026-09-01"
   }
 }
