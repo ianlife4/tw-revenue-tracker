@@ -183851,5 +183851,119 @@
     "stock_name": "太醫",
     "market": "otc",
     "current_filing_date": "2026-09-03"
+  },
+  "2511_8": {
+    "stock_id": "2511",
+    "historical_highs": [
+      {
+        "t_date": "2026-09-03",
+        "t_close": 8.34,
+        "t1_date": "2026-09-04",
+        "t1_close": 8.44,
+        "t1_pct": 1.2,
+        "year": 2026,
+        "month": 8,
+        "revenue": 1094091000.0
+      }
+    ],
+    "avg_t1": 1.2,
+    "median_t1": 1.2,
+    "max_t1": 1.2,
+    "min_t1": 1.2,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 3,
+    "cached_at": "2026-09-04T04:50:23.714115",
+    "stock_name": "太子",
+    "market": "sii",
+    "current_filing_date": "2026-09-03"
+  },
+  "8098_8": {
+    "stock_id": "8098",
+    "historical_highs": [
+      {
+        "t_date": "2026-09-03",
+        "t_close": 405.5,
+        "t1_date": "2026-09-04",
+        "t1_close": 422.5,
+        "t1_pct": 4.19,
+        "year": 2026,
+        "month": 8,
+        "revenue": 86339000.0
+      }
+    ],
+    "avg_t1": 4.19,
+    "median_t1": 4.19,
+    "max_t1": 4.19,
+    "min_t1": 4.19,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 3,
+    "cached_at": "2026-09-04T04:50:24.824124",
+    "stock_name": "慶康科技",
+    "market": "emerging",
+    "current_filing_date": "2026-09-03"
+  },
+  "2049_8": {
+    "stock_id": "2049",
+    "historical_highs": [
+      {
+        "t_date": "2021-09-03",
+        "t_close": 295.87,
+        "t1_date": "2021-09-06",
+        "t1_close": 288.72,
+        "t1_pct": -2.42,
+        "year": 2021,
+        "month": 8,
+        "revenue": 2529149000.0
+      },
+      {
+        "t_date": "2022-09-02",
+        "t_close": 187.66,
+        "t1_date": "2022-09-05",
+        "t1_close": 184.82,
+        "t1_pct": -1.52,
+        "year": 2022,
+        "month": 8,
+        "revenue": 2627868000.0
+      }
+    ],
+    "avg_t1": -1.97,
+    "median_t1": -1.52,
+    "max_t1": -1.52,
+    "min_t1": -2.42,
+    "hit_rate": 0.0,
+    "count": 2,
+    "typical_filing_day": 4,
+    "cached_at": "2026-09-04T04:50:26.691059",
+    "stock_name": "上銀",
+    "market": "sii",
+    "current_filing_date": "2026-09-04"
+  },
+  "7773_8": {
+    "stock_id": "7773",
+    "historical_highs": [
+      {
+        "t_date": "2026-09-03",
+        "t_close": 34.65,
+        "t1_date": "2026-09-04",
+        "t1_close": 33.5,
+        "t1_pct": -3.32,
+        "year": 2026,
+        "month": 8,
+        "revenue": 3821000.0
+      }
+    ],
+    "avg_t1": -3.32,
+    "median_t1": -3.32,
+    "max_t1": -3.32,
+    "min_t1": -3.32,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 3,
+    "cached_at": "2026-09-04T04:50:28.350007",
+    "stock_name": "富禾生醫",
+    "market": "emerging",
+    "current_filing_date": "2026-09-03"
   }
 }
