@@ -1581,9 +1581,19 @@
       "first_seen": "09-05 14:48",
       "market": "otc",
       "stock_name": "聯寶"
+    },
+    "2258": {
+      "first_seen": "09-05 19:11",
+      "market": "tib",
+      "stock_name": "鴻華先進-創"
+    },
+    "2317": {
+      "first_seen": "09-05 19:11",
+      "market": "sii",
+      "stock_name": "鴻海"
     }
   },
-  "last_check": "09-05 14:48:40",
-  "last_new_filing": "09-05 14:48:40",
-  "total_filed": 316
+  "last_check": "09-05 19:11:30",
+  "last_new_filing": "09-05 19:11:30",
+  "total_filed": 318
 }

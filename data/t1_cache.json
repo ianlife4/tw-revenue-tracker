@@ -186695,5 +186695,77 @@
     "stock_name": "鴻準",
     "market": "sii",
     "current_filing_date": "2026-09-05"
+  },
+  "2258_8": {
+    "stock_id": "2258",
+    "historical_highs": [
+      {
+        "t_date": "2024-09-05",
+        "t_close": 39.7,
+        "t1_date": "2024-09-06",
+        "t1_close": 40.25,
+        "t1_pct": 1.39,
+        "year": 2024,
+        "month": 8,
+        "revenue": 739406000.0
+      }
+    ],
+    "avg_t1": 1.39,
+    "median_t1": 1.39,
+    "max_t1": 1.39,
+    "min_t1": 1.39,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 5,
+    "cached_at": "2026-09-05T11:11:43.111951",
+    "stock_name": "鴻華先進-創",
+    "market": "tib",
+    "current_filing_date": "2026-09-05"
+  },
+  "2317_8": {
+    "stock_id": "2317",
+    "historical_highs": [
+      {
+        "t_date": "2022-09-05",
+        "t_close": 94.12,
+        "t1_date": "2022-09-06",
+        "t1_close": 94.56,
+        "t1_pct": 0.46,
+        "year": 2022,
+        "month": 8,
+        "revenue": 448906316000.0
+      },
+      {
+        "t_date": "2024-09-05",
+        "t_close": 163.98,
+        "t1_date": "2024-09-06",
+        "t1_close": 165.39,
+        "t1_pct": 0.86,
+        "year": 2024,
+        "month": 8,
+        "revenue": 548311941000.0
+      },
+      {
+        "t_date": "2025-09-05",
+        "t_close": 199.07,
+        "t1_date": "2025-09-08",
+        "t1_close": 197.62,
+        "t1_pct": -0.73,
+        "year": 2025,
+        "month": 8,
+        "revenue": 606512275000.0
+      }
+    ],
+    "avg_t1": 0.2,
+    "median_t1": 0.46,
+    "max_t1": 0.86,
+    "min_t1": -0.73,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 5,
+    "cached_at": "2026-09-05T11:11:46.872892",
+    "stock_name": "鴻海",
+    "market": "sii",
+    "current_filing_date": "2026-09-05"
   }
 }
