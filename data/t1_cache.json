@@ -186813,5 +186813,51 @@
     "stock_name": "研揚",
     "market": "sii",
     "current_filing_date": "2026-09-06"
+  },
+  "6449_8": {
+    "stock_id": "6449",
+    "historical_highs": [
+      {
+        "t_date": "2023-09-06",
+        "t_close": 67.66,
+        "t1_date": "2023-09-07",
+        "t1_close": 67.75,
+        "t1_pct": 0.14,
+        "year": 2023,
+        "month": 8,
+        "revenue": 288197000.0
+      },
+      {
+        "t_date": "2024-09-06",
+        "t_close": 155.62,
+        "t1_date": "2024-09-09",
+        "t1_close": 152.27,
+        "t1_pct": -2.15,
+        "year": 2024,
+        "month": 8,
+        "revenue": 306453000.0
+      },
+      {
+        "t_date": "2025-09-05",
+        "t_close": 172.29,
+        "t1_date": "2025-09-08",
+        "t1_close": 172.79,
+        "t1_pct": 0.29,
+        "year": 2025,
+        "month": 8,
+        "revenue": 382565000.0
+      }
+    ],
+    "avg_t1": -0.57,
+    "median_t1": 0.14,
+    "max_t1": 0.29,
+    "min_t1": -2.15,
+    "hit_rate": 66.7,
+    "count": 3,
+    "typical_filing_day": 6,
+    "cached_at": "2026-09-06T15:11:50.777251",
+    "stock_name": "鈺邦",
+    "market": "sii",
+    "current_filing_date": "2026-09-06"
   }
 }
