@@ -192737,5 +192737,77 @@
     "stock_name": "智易",
     "market": "sii",
     "current_filing_date": "2026-09-07"
+  },
+  "6884_8": {
+    "stock_id": "6884",
+    "historical_highs": [
+      {
+        "t_date": "2023-09-08",
+        "t_close": 50.25,
+        "t1_date": "2023-09-11",
+        "t1_close": 50.8,
+        "t1_pct": 1.09,
+        "year": 2023,
+        "month": 8,
+        "revenue": 78799000.0
+      },
+      {
+        "t_date": "2024-09-06",
+        "t_close": 58.58,
+        "t1_date": "2024-09-09",
+        "t1_close": 58.58,
+        "t1_pct": 0.0,
+        "year": 2024,
+        "month": 8,
+        "revenue": 109969000.0
+      }
+    ],
+    "avg_t1": 0.55,
+    "median_t1": 1.09,
+    "max_t1": 1.09,
+    "min_t1": 0.0,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 8,
+    "cached_at": "2026-09-07T19:42:52.686277",
+    "stock_name": "海柏特",
+    "market": "otc",
+    "current_filing_date": "2026-09-08"
+  },
+  "3558_8": {
+    "stock_id": "3558",
+    "historical_highs": [
+      {
+        "t_date": "2021-09-08",
+        "t_close": 82.32,
+        "t1_date": "2021-09-09",
+        "t1_close": 83.14,
+        "t1_pct": 0.99,
+        "year": 2021,
+        "month": 8,
+        "revenue": 873747000.0
+      },
+      {
+        "t_date": "2022-09-08",
+        "t_close": 195.49,
+        "t1_date": "2022-09-12",
+        "t1_close": 200.55,
+        "t1_pct": 2.59,
+        "year": 2022,
+        "month": 8,
+        "revenue": 1479508000.0
+      }
+    ],
+    "avg_t1": 1.79,
+    "median_t1": 2.59,
+    "max_t1": 2.59,
+    "min_t1": 0.99,
+    "hit_rate": 100.0,
+    "count": 2,
+    "typical_filing_day": 8,
+    "cached_at": "2026-09-07T19:42:58.011728",
+    "stock_name": "神準",
+    "market": "otc",
+    "current_filing_date": "2026-09-08"
   }
 }
