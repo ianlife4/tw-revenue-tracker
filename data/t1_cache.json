@@ -205447,5 +205447,41 @@
     "stock_name": "中櫃",
     "market": "sii",
     "current_filing_date": "2026-09-09"
+  },
+  "2427_8": {
+    "stock_id": "2427",
+    "historical_highs": [
+      {
+        "t_date": "2022-09-08",
+        "t_close": 11.37,
+        "t1_date": "2022-09-12",
+        "t1_close": 11.42,
+        "t1_pct": 0.4,
+        "year": 2022,
+        "month": 8,
+        "revenue": 256713000.0
+      },
+      {
+        "t_date": "2023-09-08",
+        "t_close": 20.27,
+        "t1_date": "2023-09-11",
+        "t1_close": 22.27,
+        "t1_pct": 9.91,
+        "year": 2023,
+        "month": 8,
+        "revenue": 320063000.0
+      }
+    ],
+    "avg_t1": 5.16,
+    "median_t1": 9.91,
+    "max_t1": 9.91,
+    "min_t1": 0.4,
+    "hit_rate": 100.0,
+    "count": 2,
+    "typical_filing_day": 10,
+    "cached_at": "2026-09-09T17:42:36.279160",
+    "stock_name": "三商電",
+    "market": "sii",
+    "current_filing_date": "2026-09-10"
   }
 }
