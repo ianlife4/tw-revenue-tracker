@@ -187848,16 +187848,26 @@
         "year": 2024,
         "month": 8,
         "revenue": 739406000.0
+      },
+      {
+        "t_date": "2026-09-04",
+        "t_close": 30.3,
+        "t1_date": "2026-09-07",
+        "t1_close": 31.5,
+        "t1_pct": 3.96,
+        "year": 2026,
+        "month": 8,
+        "revenue": 913778000.0
       }
     ],
-    "avg_t1": 1.39,
-    "median_t1": 1.39,
-    "max_t1": 1.39,
+    "avg_t1": 2.67,
+    "median_t1": 3.96,
+    "max_t1": 3.96,
     "min_t1": 1.39,
     "hit_rate": 100.0,
-    "count": 1,
+    "count": 2,
     "typical_filing_day": 5,
-    "cached_at": "2026-09-05T11:11:43.111951",
+    "cached_at": "2026-09-12T11:35:54.769918",
     "stock_name": "鴻華先進-創",
     "market": "tib",
     "current_filing_date": "2026-09-05"
@@ -187894,16 +187904,26 @@
         "year": 2025,
         "month": 8,
         "revenue": 606512275000.0
+      },
+      {
+        "t_date": "2026-09-04",
+        "t_close": 256.0,
+        "t1_date": "2026-09-07",
+        "t1_close": 256.0,
+        "t1_pct": 0.0,
+        "year": 2026,
+        "month": 8,
+        "revenue": 921766023000.0
       }
     ],
-    "avg_t1": 0.2,
+    "avg_t1": 0.15,
     "median_t1": 0.46,
     "max_t1": 0.86,
     "min_t1": -0.73,
-    "hit_rate": 66.7,
-    "count": 3,
+    "hit_rate": 50.0,
+    "count": 4,
     "typical_filing_day": 5,
-    "cached_at": "2026-09-05T11:11:46.872892",
+    "cached_at": "2026-09-12T11:36:07.128148",
     "stock_name": "鴻海",
     "market": "sii",
     "current_filing_date": "2026-09-05"
