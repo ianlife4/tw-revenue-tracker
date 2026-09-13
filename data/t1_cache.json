@@ -187960,16 +187960,26 @@
         "year": 2025,
         "month": 8,
         "revenue": 778105000.0
+      },
+      {
+        "t_date": "2026-09-04",
+        "t_close": 150.5,
+        "t1_date": "2026-09-07",
+        "t1_close": 152.0,
+        "t1_pct": 1.0,
+        "year": 2026,
+        "month": 8,
+        "revenue": 984940000.0
       }
     ],
-    "avg_t1": -1.37,
-    "median_t1": -1.2,
-    "max_t1": 0.16,
+    "avg_t1": -0.78,
+    "median_t1": 0.16,
+    "max_t1": 1.0,
     "min_t1": -3.07,
-    "hit_rate": 33.3,
-    "count": 3,
+    "hit_rate": 50.0,
+    "count": 4,
     "typical_filing_day": 6,
-    "cached_at": "2026-09-06T06:59:30.069056",
+    "cached_at": "2026-09-13T11:14:36.192147",
     "stock_name": "研揚",
     "market": "sii",
     "current_filing_date": "2026-09-06"
