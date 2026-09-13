@@ -188016,16 +188016,26 @@
         "year": 2025,
         "month": 8,
         "revenue": 382565000.0
+      },
+      {
+        "t_date": "2026-09-04",
+        "t_close": 237.5,
+        "t1_date": "2026-09-07",
+        "t1_close": 231.5,
+        "t1_pct": -2.53,
+        "year": 2026,
+        "month": 8,
+        "revenue": 463542000.0
       }
     ],
-    "avg_t1": -0.57,
+    "avg_t1": -1.06,
     "median_t1": 0.14,
     "max_t1": 0.29,
-    "min_t1": -2.15,
-    "hit_rate": 66.7,
-    "count": 3,
+    "min_t1": -2.53,
+    "hit_rate": 50.0,
+    "count": 4,
     "typical_filing_day": 6,
-    "cached_at": "2026-09-06T15:11:50.777251",
+    "cached_at": "2026-09-13T15:45:30.136180",
     "stock_name": "鈺邦",
     "market": "sii",
     "current_filing_date": "2026-09-06"
