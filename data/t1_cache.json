@@ -217183,5 +217183,31 @@
     "stock_name": "台產",
     "market": "sii",
     "current_filing_date": "2026-09-11"
+  },
+  "2885_8": {
+    "stock_id": "2885",
+    "historical_highs": [
+      {
+        "t_date": "2025-09-12",
+        "t_close": 32.32,
+        "t1_date": "2025-09-15",
+        "t1_close": 32.18,
+        "t1_pct": -0.43,
+        "year": 2025,
+        "month": 8,
+        "revenue": 11844543000.0
+      }
+    ],
+    "avg_t1": -0.43,
+    "median_t1": -0.43,
+    "max_t1": -0.43,
+    "min_t1": -0.43,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 14,
+    "cached_at": "2026-09-14T03:46:25.039313",
+    "stock_name": "元大金",
+    "market": "sii",
+    "current_filing_date": "2026-09-14"
   }
 }
