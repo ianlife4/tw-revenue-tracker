@@ -195300,16 +195300,26 @@
         "year": 2024,
         "month": 8,
         "revenue": 109969000.0
+      },
+      {
+        "t_date": "2026-09-08",
+        "t_close": 30.05,
+        "t1_date": "2026-09-09",
+        "t1_close": 30.7,
+        "t1_pct": 2.16,
+        "year": 2026,
+        "month": 8,
+        "revenue": 184914000.0
       }
     ],
-    "avg_t1": 0.55,
+    "avg_t1": 1.08,
     "median_t1": 1.09,
-    "max_t1": 1.09,
+    "max_t1": 2.16,
     "min_t1": 0.0,
-    "hit_rate": 50.0,
-    "count": 2,
+    "hit_rate": 66.7,
+    "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-09-07T19:42:52.686277",
+    "cached_at": "2026-09-15T03:46:55.242214",
     "stock_name": "海柏特",
     "market": "otc",
     "current_filing_date": "2026-09-08"
@@ -195336,16 +195346,26 @@
         "year": 2022,
         "month": 8,
         "revenue": 1479508000.0
+      },
+      {
+        "t_date": "2026-09-08",
+        "t_close": 123.5,
+        "t1_date": "2026-09-09",
+        "t1_close": 121.0,
+        "t1_pct": -2.02,
+        "year": 2026,
+        "month": 8,
+        "revenue": 1599436000.0
       }
     ],
-    "avg_t1": 1.79,
-    "median_t1": 2.59,
+    "avg_t1": 0.52,
+    "median_t1": 0.99,
     "max_t1": 2.59,
-    "min_t1": 0.99,
-    "hit_rate": 100.0,
-    "count": 2,
+    "min_t1": -2.02,
+    "hit_rate": 66.7,
+    "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-09-07T19:42:58.011728",
+    "cached_at": "2026-09-15T03:47:12.373530",
     "stock_name": "神準",
     "market": "otc",
     "current_filing_date": "2026-09-08"
@@ -218727,5 +218747,71 @@
     "stock_name": "台新新光金",
     "market": "sii",
     "current_filing_date": "2026-09-14"
+  },
+  "2816_8": {
+    "stock_id": "2816",
+    "historical_highs": [
+      {
+        "t_date": "2021-09-15",
+        "t_close": 16.71,
+        "t1_date": "2021-09-16",
+        "t1_close": 16.66,
+        "t1_pct": -0.25,
+        "year": 2021,
+        "month": 8,
+        "revenue": 747999000.0
+      },
+      {
+        "t_date": "2022-09-15",
+        "t_close": 14.42,
+        "t1_date": "2022-09-16",
+        "t1_close": 14.42,
+        "t1_pct": 0.0,
+        "year": 2022,
+        "month": 8,
+        "revenue": 758209000.0
+      },
+      {
+        "t_date": "2023-09-15",
+        "t_close": 31.64,
+        "t1_date": "2023-09-18",
+        "t1_close": 30.65,
+        "t1_pct": -3.13,
+        "year": 2023,
+        "month": 8,
+        "revenue": 844191000.0
+      },
+      {
+        "t_date": "2024-09-13",
+        "t_close": 28.84,
+        "t1_date": "2024-09-16",
+        "t1_close": 29.07,
+        "t1_pct": 0.78,
+        "year": 2024,
+        "month": 8,
+        "revenue": 869629000.0
+      },
+      {
+        "t_date": "2025-09-15",
+        "t_close": 25.52,
+        "t1_date": "2025-09-16",
+        "t1_close": 25.37,
+        "t1_pct": -0.56,
+        "year": 2025,
+        "month": 8,
+        "revenue": 983090000.0
+      }
+    ],
+    "avg_t1": -0.63,
+    "median_t1": -0.25,
+    "max_t1": 0.78,
+    "min_t1": -3.13,
+    "hit_rate": 20.0,
+    "count": 5,
+    "typical_filing_day": 15,
+    "cached_at": "2026-09-15T03:47:22.121277",
+    "stock_name": "旺旺保",
+    "market": "sii",
+    "current_filing_date": "2026-09-15"
   }
 }

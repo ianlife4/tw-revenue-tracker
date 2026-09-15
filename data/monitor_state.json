@@ -13216,9 +13216,34 @@
       "first_seen": "09-14 20:00",
       "market": "pub",
       "stock_name": "國泰人壽"
+    },
+    "5859": {
+      "first_seen": "09-15 11:45",
+      "market": "emerging",
+      "stock_name": "遠壽"
+    },
+    "2877": {
+      "first_seen": "09-15 11:45",
+      "market": "pub",
+      "stock_name": "國泰產險"
+    },
+    "5868": {
+      "first_seen": "09-15 11:45",
+      "market": "pub",
+      "stock_name": "臺灣金控"
+    },
+    "2891": {
+      "first_seen": "09-15 11:45",
+      "market": "sii",
+      "stock_name": "中信金"
+    },
+    "2816": {
+      "first_seen": "09-15 11:45",
+      "market": "sii",
+      "stock_name": "旺旺保"
     }
   },
-  "last_check": "09-15 02:03:11",
-  "last_new_filing": "09-14 20:00:38",
-  "total_filed": 2626
+  "last_check": "09-15 11:45:44",
+  "last_new_filing": "09-15 11:45:44",
+  "total_filed": 2631
 }
