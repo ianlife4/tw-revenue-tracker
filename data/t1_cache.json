@@ -182065,7 +182065,7 @@
     "hit_rate": 100.0,
     "count": 3,
     "typical_filing_day": 1,
-    "cached_at": "2026-09-08T17:50:30.320175",
+    "cached_at": "2026-09-16T03:43:16.466146",
     "stock_name": "互動",
     "market": "otc",
     "current_filing_date": "2026-09-01"
@@ -182121,7 +182121,7 @@
     "hit_rate": 50.0,
     "count": 4,
     "typical_filing_day": 1,
-    "cached_at": "2026-09-08T17:50:44.169713",
+    "cached_at": "2026-09-16T03:43:45.567650",
     "stock_name": "德律",
     "market": "sii",
     "current_filing_date": "2026-09-01"
@@ -182187,7 +182187,7 @@
     "hit_rate": 40.0,
     "count": 5,
     "typical_filing_day": 1,
-    "cached_at": "2026-09-08T17:50:51.179430",
+    "cached_at": "2026-09-16T03:43:57.356049",
     "stock_name": "毅嘉",
     "market": "sii",
     "current_filing_date": "2026-09-01"
@@ -182233,7 +182233,7 @@
     "hit_rate": 33.3,
     "count": 3,
     "typical_filing_day": 1,
-    "cached_at": "2026-09-08T17:50:53.484404",
+    "cached_at": "2026-09-16T03:43:59.532261",
     "stock_name": "迅得",
     "market": "sii",
     "current_filing_date": "2026-09-01"
@@ -182269,7 +182269,7 @@
     "hit_rate": 50.0,
     "count": 2,
     "typical_filing_day": 1,
-    "cached_at": "2026-09-08T17:50:55.628544",
+    "cached_at": "2026-09-16T03:44:03.478846",
     "stock_name": "康科特",
     "market": "emerging",
     "current_filing_date": "2026-09-01"
@@ -182325,7 +182325,7 @@
     "hit_rate": 25.0,
     "count": 4,
     "typical_filing_day": 2,
-    "cached_at": "2026-09-08T23:57:15.329153",
+    "cached_at": "2026-09-16T03:43:40.094393",
     "stock_name": "新應材",
     "market": "otc",
     "current_filing_date": "2026-09-02"
@@ -203810,16 +203810,26 @@
         "year": 2025,
         "month": 8,
         "revenue": 180101000.0
+      },
+      {
+        "t_date": "2026-09-09",
+        "t_close": 499.0,
+        "t1_date": "2026-09-10",
+        "t1_close": 488.0,
+        "t1_pct": -2.2,
+        "year": 2026,
+        "month": 8,
+        "revenue": 262258000.0
       }
     ],
-    "avg_t1": -0.29,
+    "avg_t1": -0.77,
     "median_t1": -0.9,
     "max_t1": 3.57,
     "min_t1": -3.55,
-    "hit_rate": 33.3,
-    "count": 3,
+    "hit_rate": 25.0,
+    "count": 4,
     "typical_filing_day": 9,
-    "cached_at": "2026-09-08T23:57:13.171351",
+    "cached_at": "2026-09-16T03:43:36.856904",
     "stock_name": "環宇-KY",
     "market": "otc",
     "current_filing_date": "2026-09-09"
