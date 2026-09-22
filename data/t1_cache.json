@@ -195319,7 +195319,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-09-15T03:46:55.242214",
+    "cached_at": "2026-09-22T11:06:53.927659",
     "stock_name": "海柏特",
     "market": "otc",
     "current_filing_date": "2026-09-08"
@@ -195365,7 +195365,7 @@
     "hit_rate": 66.7,
     "count": 3,
     "typical_filing_day": 8,
-    "cached_at": "2026-09-15T03:47:12.373530",
+    "cached_at": "2026-09-22T11:07:03.952643",
     "stock_name": "神準",
     "market": "otc",
     "current_filing_date": "2026-09-08"
@@ -223830,16 +223830,26 @@
         "year": 2025,
         "month": 8,
         "revenue": 983090000.0
+      },
+      {
+        "t_date": "2026-09-15",
+        "t_close": 39.1,
+        "t1_date": "2026-09-16",
+        "t1_close": 39.65,
+        "t1_pct": 1.41,
+        "year": 2026,
+        "month": 8,
+        "revenue": 1632472000.0
       }
     ],
-    "avg_t1": -0.63,
-    "median_t1": -0.25,
-    "max_t1": 0.78,
+    "avg_t1": -0.29,
+    "median_t1": 0.0,
+    "max_t1": 1.41,
     "min_t1": -3.13,
-    "hit_rate": 20.0,
-    "count": 5,
+    "hit_rate": 33.3,
+    "count": 6,
     "typical_filing_day": 15,
-    "cached_at": "2026-09-15T03:47:22.121277",
+    "cached_at": "2026-09-22T11:07:12.773858",
     "stock_name": "旺旺保",
     "market": "sii",
     "current_filing_date": "2026-09-15"
