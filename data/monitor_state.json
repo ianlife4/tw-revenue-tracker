@@ -386,9 +386,19 @@
       "first_seen": "10-03 00:09",
       "market": "sii",
       "stock_name": "邁達特"
+    },
+    "6510": {
+      "first_seen": "10-03 13:31",
+      "market": "otc",
+      "stock_name": "精測"
+    },
+    "8046": {
+      "first_seen": "10-03 13:31",
+      "market": "sii",
+      "stock_name": "南電"
     }
   },
-  "last_check": "10-03 09:00:05",
-  "last_new_filing": "10-03 00:09:47",
-  "total_filed": 77
+  "last_check": "10-03 13:31:40",
+  "last_new_filing": "10-03 13:31:40",
+  "total_filed": 79
 }

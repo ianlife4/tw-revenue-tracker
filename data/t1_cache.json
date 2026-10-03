@@ -224593,5 +224593,31 @@
     "stock_name": "邁達特",
     "market": "sii",
     "current_filing_date": "2026-10-03"
+  },
+  "6510_9": {
+    "stock_id": "6510",
+    "historical_highs": [
+      {
+        "t_date": "2022-10-03",
+        "t_close": 380.25,
+        "t1_date": "2022-10-04",
+        "t1_close": 399.07,
+        "t1_pct": 4.95,
+        "year": 2022,
+        "month": 9,
+        "revenue": 451113000.0
+      }
+    ],
+    "avg_t1": 4.95,
+    "median_t1": 4.95,
+    "max_t1": 4.95,
+    "min_t1": 4.95,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 3,
+    "cached_at": "2026-10-03T05:31:47.491813",
+    "stock_name": "精測",
+    "market": "otc",
+    "current_filing_date": "2026-10-03"
   }
 }
