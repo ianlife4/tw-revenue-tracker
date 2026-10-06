@@ -2346,9 +2346,29 @@
       "first_seen": "10-06 19:07",
       "market": "pub",
       "stock_name": "高都汽車"
+    },
+    "6036": {
+      "first_seen": "10-07 02:07",
+      "market": "pub",
+      "stock_name": "橘子支付"
+    },
+    "3558": {
+      "first_seen": "10-07 02:07",
+      "market": "otc",
+      "stock_name": "神準"
+    },
+    "7794": {
+      "first_seen": "10-07 02:07",
+      "market": "otc",
+      "stock_name": "宏碁智新"
+    },
+    "6908": {
+      "first_seen": "10-07 02:07",
+      "market": "tib",
+      "stock_name": "宏碁遊戲-創"
     }
   },
-  "last_check": "10-06 19:07:00",
-  "last_new_filing": "10-06 19:07:00",
-  "total_filed": 469
+  "last_check": "10-07 02:07:10",
+  "last_new_filing": "10-07 02:07:10",
+  "total_filed": 473
 }

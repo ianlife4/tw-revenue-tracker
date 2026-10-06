@@ -230915,5 +230915,87 @@
     "stock_name": "華懋",
     "market": "sii",
     "current_filing_date": "2026-10-06"
+  },
+  "3558_9": {
+    "stock_id": "3558",
+    "historical_highs": [
+      {
+        "t_date": "2021-10-07",
+        "t_close": 81.86,
+        "t1_date": "2021-10-08",
+        "t1_close": 81.05,
+        "t1_pct": -1.0,
+        "year": 2021,
+        "month": 9,
+        "revenue": 778321000.0
+      },
+      {
+        "t_date": "2022-10-07",
+        "t_close": 180.77,
+        "t1_date": "2022-10-11",
+        "t1_close": 181.69,
+        "t1_pct": 0.51,
+        "year": 2022,
+        "month": 9,
+        "revenue": 1588934000.0
+      }
+    ],
+    "avg_t1": -0.24,
+    "median_t1": 0.51,
+    "max_t1": 0.51,
+    "min_t1": -1.0,
+    "hit_rate": 50.0,
+    "count": 2,
+    "typical_filing_day": 7,
+    "cached_at": "2026-10-06T18:07:30.396856",
+    "stock_name": "神準",
+    "market": "otc",
+    "current_filing_date": "2026-10-07"
+  },
+  "6908_9": {
+    "stock_id": "6908",
+    "historical_highs": [
+      {
+        "t_date": "2023-10-06",
+        "t_close": 76.52,
+        "t1_date": "2023-10-11",
+        "t1_close": 74.94,
+        "t1_pct": -2.07,
+        "year": 2023,
+        "month": 9,
+        "revenue": 276431000.0
+      },
+      {
+        "t_date": "2024-10-07",
+        "t_close": 63.56,
+        "t1_date": "2024-10-08",
+        "t1_close": 63.56,
+        "t1_pct": 0.0,
+        "year": 2024,
+        "month": 9,
+        "revenue": 276720000.0
+      },
+      {
+        "t_date": "2025-10-07",
+        "t_close": 62.81,
+        "t1_date": "2025-10-08",
+        "t1_close": 60.97,
+        "t1_pct": -2.93,
+        "year": 2025,
+        "month": 9,
+        "revenue": 441464000.0
+      }
+    ],
+    "avg_t1": -1.67,
+    "median_t1": -2.07,
+    "max_t1": 0.0,
+    "min_t1": -2.93,
+    "hit_rate": 0.0,
+    "count": 3,
+    "typical_filing_day": 7,
+    "cached_at": "2026-10-06T18:07:36.915358",
+    "stock_name": "宏碁遊戲-創",
+    "market": "tib",
+    "current_filing_date": "2026-10-07"
   }
 }
