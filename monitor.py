@@ -96,7 +96,9 @@ def fetch_current_month(roc_year: int, month: int, market: str) -> pd.DataFrame:
             )
             if resp.status_code == 200 and len(resp.content) >= 600:
                 resp.encoding = "utf-8-sig"
-                df = pd.read_csv(io.StringIO(resp.text))
+                # dtype=str：否則公發代號 000546 會被 pandas 當整數 → "546"，
+                # 但同欄只要混到非數字就維持 "000546"，同一檔每次跑形式不同
+                df = pd.read_csv(io.StringIO(resp.text), dtype=str)
 
                 # 重命名欄位
                 rename = {}
@@ -113,7 +115,8 @@ def fetch_current_month(roc_year: int, month: int, market: str) -> pd.DataFrame:
                 market_map = {"rotc": "emerging", "pub": "pub"}
                 market_internal = market_map.get(market, market)
                 df["market"] = market_internal
-                df["stock_id"] = df["stock_id"].astype(str).str.strip()
+                # 統一去前導零 (000546 → 546)，與 CSV/state/篩選清單一致
+                df["stock_id"] = df["stock_id"].astype(str).str.strip().str.lstrip("0")
 
                 # 營收轉數值 (千元 → 元)
                 for col in ["revenue", "prev_month_revenue", "prev_year_revenue"]:
@@ -277,6 +280,7 @@ def generate_realtime_html(state: dict, current_df: pd.DataFrame, full_df: pd.Da
 
 
 FILED_COMPLETE_THRESHOLD = 1500  # 超過此數視為申報完成
+COMPARE_YEARS = 5  # 同期新高比對年數 (與 batch_scrape years_back、網頁「近 5 年」一致)
 
 def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: pd.DataFrame = None):
     """生成當期營收創同期新高報表 (歷史月報)"""
@@ -300,8 +304,14 @@ def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: 
         return
 
     # 建立 history dict：同月份各年度資料
+    # 只取近 COMPARE_YEARS 年 — 與網頁標示「近 5 年」及 batch_scrape 一致；
+    # 之前拿 CSV 全部年份(2020 起=6 年)比，會跟 backfill 產出互相覆蓋
     history = {}
-    hist_month = full_df[full_df["revenue_month"] == rev_month]
+    hist_month = full_df[
+        (full_df["revenue_month"] == rev_month)
+        & (full_df["revenue_year"] >= rev_year - COMPARE_YEARS)
+        & (full_df["revenue_year"] < rev_year)
+    ]
     for y in hist_month["revenue_year"].unique():
         year_df = hist_month[hist_month["revenue_year"] == y].copy()
         if not year_df.empty:
@@ -317,16 +327,19 @@ def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: 
     # (新上市/轉市場的股票在歷史 CSV 中可能沒有去年同月資料)
     prev_year = rev_year - 1
     if "prev_year_revenue" in cur.columns:
-        hist_ids = set()
+        # 歷史同月最大營收；沒出現過或全為 0/負值(資料瑕疵、剛轉市場)都視為「無可比基準」
+        hist_max = {}
         for y, df in history.items():
             if isinstance(y, int) and y < rev_year:
-                hist_ids.update(df["stock_id"].unique())
+                for sid, rv in zip(df["stock_id"], df["revenue"]):
+                    if pd.notna(rv):
+                        hist_max[sid] = max(hist_max.get(sid, float("-inf")), float(rv))
 
         supplement_rows = []
         for _, row in cur.iterrows():
             sid = row["stock_id"]
             prev_rev = row.get("prev_year_revenue")
-            if sid not in hist_ids and pd.notna(prev_rev) and prev_rev > 0:
+            if hist_max.get(sid, 0) <= 0 and pd.notna(prev_rev) and prev_rev > 0:
                 supplement_rows.append({
                     "stock_id": sid,
                     "stock_name": row.get("stock_name", ""),
@@ -411,7 +424,7 @@ def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: 
             )
 
     # 生成 HTML
-    html = generate_html(new_highs, rev_year, rev_month, compare_years=5,
+    html = generate_html(new_highs, rev_year, rev_month, compare_years=COMPARE_YEARS,
                          early_alerts=early_alerts,
                          filed_count=filed_count,
                          filed_complete=(filed_count >= FILED_COMPLETE_THRESHOLD))

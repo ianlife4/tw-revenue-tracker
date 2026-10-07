@@ -205,9 +205,11 @@ def check_html_freshness() -> list[Issue]:
     expected_file = OUTPUT_DIR / f"{expected_y}_{expected_m:02d}.html"
 
     if not expected_file.exists():
+        # 換月後前 3 天 MOPS 可能還沒有任何申報 → monitor 不會產檔，屬正常，只警告
+        level = "warn" if now.day <= 3 else "error"
         issues.append(Issue(
-            "error", "html_missing",
-            f"{expected_file.name} 不存在",
+            level, "html_missing",
+            f"{expected_file.name} 不存在" + ("（換月初期，尚無申報）" if level == "warn" else ""),
         ))
         return issues
 

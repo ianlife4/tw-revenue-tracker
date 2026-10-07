@@ -85,7 +85,8 @@ def fetch_mops_monthly(roc_year: int, month: int, market: str = "sii") -> pd.Dat
             return pd.DataFrame()
 
         resp.encoding = "utf-8-sig"
-        df = pd.read_csv(io.StringIO(resp.text))
+        # dtype=str：公發代號 000546 否則會被當整數 → "546"，形式不固定
+        df = pd.read_csv(io.StringIO(resp.text), dtype=str)
 
         # 重命名欄位
         rename = {}
@@ -103,7 +104,8 @@ def fetch_mops_monthly(roc_year: int, month: int, market: str = "sii") -> pd.Dat
         # rotc → emerging (內部統一用 emerging 代表興櫃)
         market_internal = "emerging" if market == "rotc" else market
         df["market"] = market_internal
-        df["stock_id"] = df["stock_id"].astype(str).str.strip()
+        # 統一去前導零 (000546 → 546)，與 monitor.py/CSV/state 一致
+        df["stock_id"] = df["stock_id"].astype(str).str.strip().str.lstrip("0")
         df["date"] = df.get("publish_date", "")
 
         # 營收轉數值 (MOPS 單位: 千元 → 元)
@@ -341,16 +343,20 @@ def generate_month_report(full_df: pd.DataFrame, year: int, month: int, years_ba
     prev_year = year - 1
     cur_year_df = history[year]
     if "prev_year_revenue" in cur_year_df.columns:
-        hist_ids = set()
+        # 歷史同月最大營收；沒出現過或全為 0/負值(資料瑕疵、剛轉市場)都視為「無可比基準」
+        # (與 monitor.py 同邏輯，兩條路徑產出必須一致)
+        hist_max = {}
         for y, df in history.items():
             if isinstance(y, int) and y < year:
-                hist_ids.update(df["stock_id"].unique())
+                for sid, rv in zip(df["stock_id"], df["revenue"]):
+                    if pd.notna(rv):
+                        hist_max[sid] = max(hist_max.get(sid, float("-inf")), float(rv))
 
         supplement_rows = []
         for _, row in cur_year_df.iterrows():
             sid = row["stock_id"]
             prev_rev = row.get("prev_year_revenue")
-            if sid not in hist_ids and pd.notna(prev_rev) and prev_rev > 0:
+            if hist_max.get(sid, 0) <= 0 and pd.notna(prev_rev) and prev_rev > 0:
                 supplement_rows.append({
                     "stock_id": sid,
                     "stock_name": row.get("stock_name", ""),
