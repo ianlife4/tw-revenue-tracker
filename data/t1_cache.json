@@ -250545,5 +250545,31 @@
     "stock_name": "弘塑",
     "market": "otc",
     "current_filing_date": "2026-10-09"
+  },
+  "4573_9": {
+    "stock_id": "4573",
+    "historical_highs": [
+      {
+        "t_date": "2025-10-09",
+        "t_close": 79.9,
+        "t1_date": "2025-10-13",
+        "t1_close": 81.0,
+        "t1_pct": 1.38,
+        "year": 2025,
+        "month": 9,
+        "revenue": 52744000.0
+      }
+    ],
+    "avg_t1": 1.38,
+    "median_t1": 1.38,
+    "max_t1": 1.38,
+    "min_t1": 1.38,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 9,
+    "cached_at": "2026-10-09T06:45:48.929055",
+    "stock_name": "高明鐵",
+    "market": "emerging",
+    "current_filing_date": "2026-10-09"
   }
 }
