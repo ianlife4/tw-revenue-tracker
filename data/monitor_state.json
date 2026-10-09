@@ -10686,9 +10686,29 @@
       "first_seen": "10-09 14:44",
       "market": "emerging",
       "stock_name": "高明鐵"
+    },
+    "8455": {
+      "first_seen": "10-09 17:21",
+      "market": "otc",
+      "stock_name": "大拓-KY"
+    },
+    "6294": {
+      "first_seen": "10-09 17:21",
+      "market": "otc",
+      "stock_name": "智基"
+    },
+    "6177": {
+      "first_seen": "10-09 17:21",
+      "market": "sii",
+      "stock_name": "達麗"
+    },
+    "4582": {
+      "first_seen": "10-09 17:21",
+      "market": "sii",
+      "stock_name": "聚恆-創"
     }
   },
-  "last_check": "10-09 14:44:58",
-  "last_new_filing": "10-09 14:44:58",
-  "total_filed": 2137
+  "last_check": "10-09 17:21:35",
+  "last_new_filing": "10-09 17:21:35",
+  "total_filed": 2141
 }
