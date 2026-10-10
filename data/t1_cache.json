@@ -224806,16 +224806,26 @@
         "year": 2022,
         "month": 9,
         "revenue": 451113000.0
+      },
+      {
+        "t_date": "2026-10-02",
+        "t_close": 3070.0,
+        "t1_date": "2026-10-05",
+        "t1_close": 3105.0,
+        "t1_pct": 1.14,
+        "year": 2026,
+        "month": 9,
+        "revenue": 651760000.0
       }
     ],
-    "avg_t1": 4.95,
+    "avg_t1": 3.04,
     "median_t1": 4.95,
     "max_t1": 4.95,
-    "min_t1": 4.95,
+    "min_t1": 1.14,
     "hit_rate": 100.0,
-    "count": 1,
+    "count": 2,
     "typical_filing_day": 3,
-    "cached_at": "2026-10-03T05:31:47.491813",
+    "cached_at": "2026-10-10T06:25:24.381022",
     "stock_name": "精測",
     "market": "otc",
     "current_filing_date": "2026-10-03"
@@ -250890,6 +250900,98 @@
     "cached_at": "2026-10-10T01:50:49.810268",
     "stock_name": "環宇-KY",
     "market": "otc",
+    "current_filing_date": "2026-10-10"
+  },
+  "3311_9": {
+    "stock_id": "3311",
+    "historical_highs": [
+      {
+        "t_date": "2022-10-07",
+        "t_close": 30.77,
+        "t1_date": "2022-10-11",
+        "t1_close": 30.49,
+        "t1_pct": -0.91,
+        "year": 2022,
+        "month": 9,
+        "revenue": 179665000.0
+      },
+      {
+        "t_date": "2023-10-06",
+        "t_close": 35.49,
+        "t1_date": "2023-10-11",
+        "t1_close": 36.15,
+        "t1_pct": 1.87,
+        "year": 2023,
+        "month": 9,
+        "revenue": 200073000.0
+      },
+      {
+        "t_date": "2024-10-09",
+        "t_close": 36.85,
+        "t1_date": "2024-10-11",
+        "t1_close": 36.8,
+        "t1_pct": -0.13,
+        "year": 2024,
+        "month": 9,
+        "revenue": 224747000.0
+      }
+    ],
+    "avg_t1": 0.28,
+    "median_t1": -0.13,
+    "max_t1": 1.87,
+    "min_t1": -0.91,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-10-10T06:25:12.633304",
+    "stock_name": "閎暉",
+    "market": "sii",
+    "current_filing_date": "2026-10-10"
+  },
+  "4916_9": {
+    "stock_id": "4916",
+    "historical_highs": [
+      {
+        "t_date": "2022-10-07",
+        "t_close": 22.12,
+        "t1_date": "2022-10-11",
+        "t1_close": 21.68,
+        "t1_pct": -1.97,
+        "year": 2022,
+        "month": 9,
+        "revenue": 244238000.0
+      },
+      {
+        "t_date": "2023-10-06",
+        "t_close": 36.54,
+        "t1_date": "2023-10-11",
+        "t1_close": 37.71,
+        "t1_pct": 3.2,
+        "year": 2023,
+        "month": 9,
+        "revenue": 269465000.0
+      },
+      {
+        "t_date": "2025-10-09",
+        "t_close": 58.48,
+        "t1_date": "2025-10-13",
+        "t1_close": 58.28,
+        "t1_pct": -0.34,
+        "year": 2025,
+        "month": 9,
+        "revenue": 350257000.0
+      }
+    ],
+    "avg_t1": 0.3,
+    "median_t1": -0.34,
+    "max_t1": 3.2,
+    "min_t1": -1.97,
+    "hit_rate": 33.3,
+    "count": 3,
+    "typical_filing_day": 10,
+    "cached_at": "2026-10-10T06:25:21.876555",
+    "stock_name": "事欣科",
+    "market": "sii",
     "current_filing_date": "2026-10-10"
   }
 }
