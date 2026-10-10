@@ -250993,5 +250993,31 @@
     "stock_name": "事欣科",
     "market": "sii",
     "current_filing_date": "2026-10-10"
+  },
+  "6265_9": {
+    "stock_id": "6265",
+    "historical_highs": [
+      {
+        "t_date": "2021-10-08",
+        "t_close": 10.45,
+        "t1_date": "2021-10-12",
+        "t1_close": 10.3,
+        "t1_pct": -1.44,
+        "year": 2021,
+        "month": 9,
+        "revenue": 152402000.0
+      }
+    ],
+    "avg_t1": -1.44,
+    "median_t1": -1.44,
+    "max_t1": -1.44,
+    "min_t1": -1.44,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 10,
+    "cached_at": "2026-10-10T08:42:14.587555",
+    "stock_name": "方土昶",
+    "market": "otc",
+    "current_filing_date": "2026-10-10"
   }
 }
