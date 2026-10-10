@@ -10771,9 +10771,19 @@
       "first_seen": "10-10 01:05",
       "market": "otc",
       "stock_name": "先進光"
+    },
+    "9944": {
+      "first_seen": "10-10 09:50",
+      "market": "sii",
+      "stock_name": "新麗"
+    },
+    "4991": {
+      "first_seen": "10-10 09:50",
+      "market": "otc",
+      "stock_name": "環宇-KY"
     }
   },
-  "last_check": "10-10 01:05:14",
-  "last_new_filing": "10-10 01:05:14",
-  "total_filed": 2154
+  "last_check": "10-10 09:50:00",
+  "last_new_filing": "10-10 09:50:00",
+  "total_filed": 2156
 }

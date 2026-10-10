@@ -250835,5 +250835,61 @@
     "stock_name": "鼎炫-KY",
     "market": "sii",
     "current_filing_date": "2026-10-10"
+  },
+  "4991_9": {
+    "stock_id": "4991",
+    "historical_highs": [
+      {
+        "t_date": "2022-10-07",
+        "t_close": 38.05,
+        "t1_date": "2022-10-11",
+        "t1_close": 41.85,
+        "t1_pct": 9.99,
+        "year": 2022,
+        "month": 9,
+        "revenue": 155034000.0
+      },
+      {
+        "t_date": "2023-10-06",
+        "t_close": 33.05,
+        "t1_date": "2023-10-11",
+        "t1_close": 33.25,
+        "t1_pct": 0.61,
+        "year": 2023,
+        "month": 9,
+        "revenue": 159145000.0
+      },
+      {
+        "t_date": "2024-10-09",
+        "t_close": 51.3,
+        "t1_date": "2024-10-11",
+        "t1_close": 55.3,
+        "t1_pct": 7.8,
+        "year": 2024,
+        "month": 9,
+        "revenue": 192531000.0
+      },
+      {
+        "t_date": "2025-10-09",
+        "t_close": 139.5,
+        "t1_date": "2025-10-13",
+        "t1_close": 137.0,
+        "t1_pct": -1.79,
+        "year": 2025,
+        "month": 9,
+        "revenue": 204290000.0
+      }
+    ],
+    "avg_t1": 4.15,
+    "median_t1": 7.8,
+    "max_t1": 9.99,
+    "min_t1": -1.79,
+    "hit_rate": 75.0,
+    "count": 4,
+    "typical_filing_day": 10,
+    "cached_at": "2026-10-10T01:50:49.810268",
+    "stock_name": "環宇-KY",
+    "market": "otc",
+    "current_filing_date": "2026-10-10"
   }
 }
