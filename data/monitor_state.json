@@ -10896,9 +10896,24 @@
       "first_seen": "10-12 00:22",
       "market": "otc",
       "stock_name": "國邑*"
+    },
+    "1323": {
+      "first_seen": "10-12 09:26",
+      "market": "sii",
+      "stock_name": "永裕"
+    },
+    "1536": {
+      "first_seen": "10-12 09:26",
+      "market": "sii",
+      "stock_name": "和大"
+    },
+    "2029": {
+      "first_seen": "10-12 09:26",
+      "market": "sii",
+      "stock_name": "盛餘"
     }
   },
-  "last_check": "10-12 04:28:03",
-  "last_new_filing": "10-12 00:22:24",
-  "total_filed": 2179
+  "last_check": "10-12 09:26:30",
+  "last_new_filing": "10-12 09:26:30",
+  "total_filed": 2182
 }
