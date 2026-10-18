@@ -257532,16 +257532,26 @@
         "year": 2024,
         "month": 9,
         "revenue": 86593000.0
+      },
+      {
+        "t_date": "2026-10-08",
+        "t_close": 58.8,
+        "t1_date": "2026-10-12",
+        "t1_close": 60.5,
+        "t1_pct": 2.89,
+        "year": 2026,
+        "month": 9,
+        "revenue": 446798000.0
       }
     ],
-    "avg_t1": 0.86,
+    "avg_t1": 1.54,
     "median_t1": 1.95,
-    "max_t1": 1.95,
+    "max_t1": 2.89,
     "min_t1": -0.23,
-    "hit_rate": 50.0,
-    "count": 2,
+    "hit_rate": 66.7,
+    "count": 3,
     "typical_filing_day": 11,
-    "cached_at": "2026-10-11T06:29:03.366818",
+    "cached_at": "2026-10-18T11:22:54.732607",
     "stock_name": "晨暉生技",
     "market": "emerging",
     "current_filing_date": "2026-10-11"
