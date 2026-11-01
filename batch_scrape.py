@@ -410,7 +410,7 @@ def generate_month_report(full_df: pd.DataFrame, year: int, month: int, years_ba
             sid = str(row["stock_id"])
             fs = stocks_state.get(sid, {}).get("first_seen", "")
             if fs:
-                new_highs.at[idx, "first_seen"] = fs
+                new_highs.loc[idx, "first_seen"] = fs
 
     # MOPS 已有 yoy/mom，但 analyzer 也會計算，用 MOPS 的回填空值
     cur_df = full_df[

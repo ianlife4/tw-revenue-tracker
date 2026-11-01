@@ -94,6 +94,12 @@ header .date-info {{
     background: #11161f;
 }}
 
+.nav-btn.disabled {{
+    opacity: 0.35;
+    pointer-events: none;
+    cursor: default;
+}}
+
 /* Month Picker */
 .month-picker-wrap {{
     position: relative;
@@ -1181,7 +1187,7 @@ footer {{
                     {month_picker_html}
                 </div>
             </div>
-            <a class="nav-btn" href="{next_month_file}" title="下個月">後一月 &#9654;</a>
+            <a class="nav-btn" id="nextMonthBtn" href="{next_month_file}" title="下個月">後一月 &#9654;</a>
         </div>
         <div class="update-time">{update_time} 更新</div>
         <div style="margin-top:12px"><a href="index.html" style="color:#5fa8ff;text-decoration:none;font-size:0.85rem;padding:4px 12px;border:1px solid #1d2632;border-radius:6px;">← 即時申報</a></div>
@@ -1297,6 +1303,19 @@ footer {{
 </footer>
 
 <script>
+// 「後一月」：最新月份的下一個月還沒產檔 (月初尚無申報) → 停用按鈕，不要點進 404
+(function() {{
+    var b = document.getElementById('nextMonthBtn');
+    if (!b) return;
+    fetch(b.getAttribute('href'), {{ method: 'HEAD', cache: 'no-store' }}).then(function(r) {{
+        if (!r.ok) {{
+            b.classList.add('disabled');
+            b.removeAttribute('href');
+            b.title = '下個月尚無申報資料';
+        }}
+    }}).catch(function() {{}});
+}})();
+
 // 市場分頁切換
 document.querySelectorAll('.market-tab').forEach(tab => {{
     tab.addEventListener('click', () => {{

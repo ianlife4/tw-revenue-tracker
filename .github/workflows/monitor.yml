@@ -67,9 +67,10 @@ jobs:
           # 補近 2 個月資料 (batch_scrape 內已自動 force refresh 最近 2 月)
           python batch_scrape.py $REPORT_YEAR $REPORT_MONTH 2
 
+      # backfill 班也要跑 monitor：否則 backfill 若被 GitHub 延後跨過月初，
+      # state 會停在上個期間 → supervisor 判 period 不對齊 (2026-11-01 紅燈)
       - name: Run monitor
         id: monitor
-        if: github.event.schedule != '37 22 * * *'
         run: python monitor.py
 
       - name: Diagnose failure (doctor)

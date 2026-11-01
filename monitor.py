@@ -376,7 +376,7 @@ def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: 
         for idx, row in new_highs.iterrows():
             sid = str(row["stock_id"])
             fs = stocks_state.get(sid, {}).get("first_seen", "")
-            new_highs.at[idx, "first_seen"] = fs
+            new_highs.loc[idx, "first_seen"] = fs
 
         # 把歷史資料寫入 monthly_json (供柱狀圖)
         import json as _json
@@ -396,7 +396,7 @@ def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: 
                         "month": int(r["revenue_month"]),
                         "revenue": float(r["revenue"]),
                     })
-            new_highs.at[idx, "monthly_json"] = _json.dumps(records[-24:], ensure_ascii=False)
+            new_highs.loc[idx, "monthly_json"] = _json.dumps(records[-24:], ensure_ascii=False)
 
     # T+1 歷史分析
     t1_results = []
@@ -415,11 +415,11 @@ def generate_period_high_report(state: dict, current_df: pd.DataFrame, full_df: 
         for idx, row in new_highs.iterrows():
             sid = row["stock_id"]
             t1 = t1_map.get(sid, {})
-            new_highs.at[idx, "t1_avg"] = t1.get("avg_t1", None)
-            new_highs.at[idx, "t1_hit_rate"] = t1.get("hit_rate", None)
-            new_highs.at[idx, "t1_count"] = t1.get("count", 0)
-            new_highs.at[idx, "t1_max"] = t1.get("max_t1", None)
-            new_highs.at[idx, "t1_detail_json"] = _json.dumps(
+            new_highs.loc[idx, "t1_avg"] = t1.get("avg_t1", None)
+            new_highs.loc[idx, "t1_hit_rate"] = t1.get("hit_rate", None)
+            new_highs.loc[idx, "t1_count"] = t1.get("count", 0)
+            new_highs.loc[idx, "t1_max"] = t1.get("max_t1", None)
+            new_highs.loc[idx, "t1_detail_json"] = _json.dumps(
                 t1.get("historical_highs", []), ensure_ascii=False
             )
 
