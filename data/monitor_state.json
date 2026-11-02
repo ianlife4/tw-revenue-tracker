@@ -1,8 +1,29 @@
 {
   "period_year": 2026,
   "period_month": 10,
-  "stocks": {},
-  "last_check": "11-02 09:49:14",
-  "last_new_filing": "",
-  "total_filed": 0
+  "stocks": {
+    "6717": {
+      "first_seen": "11-02 14:51",
+      "market": "pub",
+      "stock_name": "智慧光"
+    },
+    "2402": {
+      "first_seen": "11-02 14:51",
+      "market": "sii",
+      "stock_name": "毅嘉"
+    },
+    "6235": {
+      "first_seen": "11-02 14:51",
+      "market": "sii",
+      "stock_name": "華孚"
+    },
+    "3572": {
+      "first_seen": "11-02 14:51",
+      "market": "pub",
+      "stock_name": "宏芯科技"
+    }
+  },
+  "last_check": "11-02 14:51:45",
+  "last_new_filing": "11-02 14:51:45",
+  "total_filed": 4
 }
