@@ -267123,5 +267123,71 @@
     "stock_name": "長聖",
     "market": "otc",
     "current_filing_date": "2026-11-02"
+  },
+  "3004_10": {
+    "stock_id": "3004",
+    "historical_highs": [
+      {
+        "t_date": "2021-11-03",
+        "t_close": 54.17,
+        "t1_date": "2021-11-04",
+        "t1_close": 56.09,
+        "t1_pct": 3.54,
+        "year": 2021,
+        "month": 10,
+        "revenue": 135361000.0
+      },
+      {
+        "t_date": "2022-11-03",
+        "t_close": 56.18,
+        "t1_date": "2022-11-04",
+        "t1_close": 56.27,
+        "t1_pct": 0.16,
+        "year": 2022,
+        "month": 10,
+        "revenue": 214330000.0
+      },
+      {
+        "t_date": "2023-11-03",
+        "t_close": 81.61,
+        "t1_date": "2023-11-06",
+        "t1_close": 82.53,
+        "t1_pct": 1.13,
+        "year": 2023,
+        "month": 10,
+        "revenue": 277839000.0
+      },
+      {
+        "t_date": "2024-11-01",
+        "t_close": 80.54,
+        "t1_date": "2024-11-04",
+        "t1_close": 81.11,
+        "t1_pct": 0.71,
+        "year": 2024,
+        "month": 10,
+        "revenue": 287348000.0
+      },
+      {
+        "t_date": "2025-11-03",
+        "t_close": 107.01,
+        "t1_date": "2025-11-04",
+        "t1_close": 107.99,
+        "t1_pct": 0.91,
+        "year": 2025,
+        "month": 10,
+        "revenue": 360546000.0
+      }
+    ],
+    "avg_t1": 1.29,
+    "median_t1": 0.91,
+    "max_t1": 3.54,
+    "min_t1": 0.16,
+    "hit_rate": 100.0,
+    "count": 5,
+    "typical_filing_day": 3,
+    "cached_at": "2026-11-02T20:26:20.552196",
+    "stock_name": "豐達科",
+    "market": "sii",
+    "current_filing_date": "2026-11-03"
   }
 }

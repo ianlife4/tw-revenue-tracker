@@ -81,9 +81,39 @@
       "first_seen": "11-02 17:41",
       "market": "emerging",
       "stock_name": "康科特"
+    },
+    "6910": {
+      "first_seen": "11-03 04:26",
+      "market": "otc",
+      "stock_name": "德鴻"
+    },
+    "6158": {
+      "first_seen": "11-03 04:26",
+      "market": "otc",
+      "stock_name": "禾昌"
+    },
+    "6580": {
+      "first_seen": "11-03 04:26",
+      "market": "emerging",
+      "stock_name": "台睿"
+    },
+    "6538": {
+      "first_seen": "11-03 04:26",
+      "market": "otc",
+      "stock_name": "倉和"
+    },
+    "6772": {
+      "first_seen": "11-03 04:26",
+      "market": "pub",
+      "stock_name": "錫安生技"
+    },
+    "3004": {
+      "first_seen": "11-03 04:26",
+      "market": "sii",
+      "stock_name": "豐達科"
     }
   },
-  "last_check": "11-02 17:41:21",
-  "last_new_filing": "11-02 17:41:21",
-  "total_filed": 16
+  "last_check": "11-03 04:26:11",
+  "last_new_filing": "11-03 04:26:11",
+  "total_filed": 22
 }
