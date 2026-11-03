@@ -356,9 +356,29 @@
       "first_seen": "11-03 20:07",
       "market": "otc",
       "stock_name": "合一"
+    },
+    "3097": {
+      "first_seen": "11-04 03:40",
+      "market": "emerging",
+      "stock_name": "拍檔"
+    },
+    "6926": {
+      "first_seen": "11-04 03:40",
+      "market": "emerging",
+      "stock_name": "聖安生醫"
+    },
+    "4586": {
+      "first_seen": "11-04 03:40",
+      "market": "pub",
+      "stock_name": "能海電能"
+    },
+    "5867": {
+      "first_seen": "11-04 03:40",
+      "market": "pub",
+      "stock_name": "康和期"
     }
   },
-  "last_check": "11-03 20:07:09",
-  "last_new_filing": "11-03 20:07:09",
-  "total_filed": 71
+  "last_check": "11-04 03:40:10",
+  "last_new_filing": "11-04 03:40:10",
+  "total_filed": 75
 }

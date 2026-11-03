@@ -267927,5 +267927,61 @@
     "stock_name": "明基醫",
     "market": "otc",
     "current_filing_date": "2026-11-03"
+  },
+  "3097_10": {
+    "stock_id": "3097",
+    "historical_highs": [
+      {
+        "t_date": "2021-11-04",
+        "t_close": 15.16,
+        "t1_date": "2021-11-05",
+        "t1_close": 15.37,
+        "t1_pct": 1.38,
+        "year": 2021,
+        "month": 10,
+        "revenue": 230009000.0
+      },
+      {
+        "t_date": "2022-11-04",
+        "t_close": 17.35,
+        "t1_date": "2022-11-07",
+        "t1_close": 17.52,
+        "t1_pct": 1.0,
+        "year": 2022,
+        "month": 10,
+        "revenue": 237442000.0
+      },
+      {
+        "t_date": "2023-11-03",
+        "t_close": 24.32,
+        "t1_date": "2023-11-06",
+        "t1_close": 24.98,
+        "t1_pct": 2.75,
+        "year": 2023,
+        "month": 10,
+        "revenue": 302133000.0
+      },
+      {
+        "t_date": "2025-11-04",
+        "t_close": 23.09,
+        "t1_date": "2025-11-05",
+        "t1_close": 23.58,
+        "t1_pct": 2.08,
+        "year": 2025,
+        "month": 10,
+        "revenue": 335298000.0
+      }
+    ],
+    "avg_t1": 1.8,
+    "median_t1": 2.08,
+    "max_t1": 2.75,
+    "min_t1": 1.0,
+    "hit_rate": 100.0,
+    "count": 4,
+    "typical_filing_day": 4,
+    "cached_at": "2026-11-03T19:40:20.126602",
+    "stock_name": "拍檔",
+    "market": "emerging",
+    "current_filing_date": "2026-11-04"
   }
 }
