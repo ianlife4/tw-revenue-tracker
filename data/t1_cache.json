@@ -268931,5 +268931,31 @@
     "stock_name": "安碁資訊",
     "market": "otc",
     "current_filing_date": "2026-11-05"
+  },
+  "7796_10": {
+    "stock_id": "7796",
+    "historical_highs": [
+      {
+        "t_date": "2026-11-04",
+        "t_close": 55.0,
+        "t1_date": "2026-11-05",
+        "t1_close": 54.5,
+        "t1_pct": -0.91,
+        "year": 2026,
+        "month": 10,
+        "revenue": 12910000.0
+      }
+    ],
+    "avg_t1": -0.91,
+    "median_t1": -0.91,
+    "max_t1": -0.91,
+    "min_t1": -0.91,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 4,
+    "cached_at": "2026-11-05T02:37:33.362732",
+    "stock_name": "擷發科",
+    "market": "emerging",
+    "current_filing_date": "2026-11-04"
   }
 }

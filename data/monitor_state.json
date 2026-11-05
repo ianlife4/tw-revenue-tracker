@@ -761,9 +761,34 @@
       "first_seen": "11-05 03:56",
       "market": "otc",
       "stock_name": "鏵友益"
+    },
+    "1745": {
+      "first_seen": "11-05 10:36",
+      "market": "pub",
+      "stock_name": "欣嘉公司"
+    },
+    "616": {
+      "first_seen": "11-05 10:36",
+      "market": "pub",
+      "stock_name": "中信證券"
+    },
+    "8409": {
+      "first_seen": "11-05 10:36",
+      "market": "otc",
+      "stock_name": "商之器"
+    },
+    "7893": {
+      "first_seen": "11-05 10:36",
+      "market": "emerging",
+      "stock_name": "睿信"
+    },
+    "8983": {
+      "first_seen": "11-05 10:36",
+      "market": "pub",
+      "stock_name": "豐盟有線"
     }
   },
-  "last_check": "11-05 03:56:42",
-  "last_new_filing": "11-05 03:56:42",
-  "total_filed": 152
+  "last_check": "11-05 10:36:48",
+  "last_new_filing": "11-05 10:36:48",
+  "total_filed": 157
 }
