@@ -268957,5 +268957,31 @@
     "stock_name": "擷發科",
     "market": "emerging",
     "current_filing_date": "2026-11-04"
+  },
+  "1256_10": {
+    "stock_id": "1256",
+    "historical_highs": [
+      {
+        "t_date": "2026-11-04",
+        "t_close": 163.0,
+        "t1_date": "2026-11-05",
+        "t1_close": 164.0,
+        "t1_pct": 0.61,
+        "year": 2026,
+        "month": 10,
+        "revenue": 319269000.0
+      }
+    ],
+    "avg_t1": 0.61,
+    "median_t1": 0.61,
+    "max_t1": 0.61,
+    "min_t1": 0.61,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 4,
+    "cached_at": "2026-11-05T02:46:23.171559",
+    "stock_name": "鮮活果汁-KY",
+    "market": "sii",
+    "current_filing_date": "2026-11-04"
   }
 }
