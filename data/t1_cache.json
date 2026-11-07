@@ -279181,5 +279181,213 @@
     "stock_name": "詠勝昌*",
     "market": "emerging",
     "current_filing_date": "2026-11-06"
+  },
+  "3054_10": {
+    "stock_id": "3054",
+    "historical_highs": [
+      {
+        "t_date": "2026-11-05",
+        "t_close": 55.9,
+        "t1_date": "2026-11-06",
+        "t1_close": 53.9,
+        "t1_pct": -3.58,
+        "year": 2026,
+        "month": 10,
+        "revenue": 41258000.0
+      }
+    ],
+    "avg_t1": -3.58,
+    "median_t1": -3.58,
+    "max_t1": -3.58,
+    "min_t1": -3.58,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 5,
+    "cached_at": "2026-11-07T02:20:47.106985",
+    "stock_name": "立萬利",
+    "market": "sii",
+    "current_filing_date": "2026-11-05"
+  },
+  "2101_10": {
+    "stock_id": "2101",
+    "historical_highs": [
+      {
+        "t_date": "2026-11-05",
+        "t_close": 27.8,
+        "t1_date": "2026-11-06",
+        "t1_close": 27.4,
+        "t1_pct": -1.44,
+        "year": 2026,
+        "month": 10,
+        "revenue": 3110199000.0
+      }
+    ],
+    "avg_t1": -1.44,
+    "median_t1": -1.44,
+    "max_t1": -1.44,
+    "min_t1": -1.44,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 5,
+    "cached_at": "2026-11-07T02:20:47.673236",
+    "stock_name": "南港",
+    "market": "sii",
+    "current_filing_date": "2026-11-05"
+  },
+  "7758_10": {
+    "stock_id": "7758",
+    "historical_highs": [
+      {
+        "t_date": "2026-11-05",
+        "t_close": 25.5,
+        "t1_date": "2026-11-06",
+        "t1_close": 27.05,
+        "t1_pct": 6.08,
+        "year": 2026,
+        "month": 10,
+        "revenue": 29728000.0
+      }
+    ],
+    "avg_t1": 6.08,
+    "median_t1": 6.08,
+    "max_t1": 6.08,
+    "min_t1": 6.08,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 5,
+    "cached_at": "2026-11-07T02:20:48.528133",
+    "stock_name": "睿騰能源",
+    "market": "emerging",
+    "current_filing_date": "2026-11-05"
+  },
+  "7873_10": {
+    "stock_id": "7873",
+    "historical_highs": [
+      {
+        "t_date": "2026-11-05",
+        "t_close": 116.5,
+        "t1_date": "2026-11-06",
+        "t1_close": 105.0,
+        "t1_pct": -9.87,
+        "year": 2026,
+        "month": 10,
+        "revenue": 153221000.0
+      }
+    ],
+    "avg_t1": -9.87,
+    "median_t1": -9.87,
+    "max_t1": -9.87,
+    "min_t1": -9.87,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 5,
+    "cached_at": "2026-11-07T02:20:54.200564",
+    "stock_name": "瑞峰",
+    "market": "emerging",
+    "current_filing_date": "2026-11-05"
+  },
+  "7822_10": {
+    "stock_id": "7822",
+    "historical_highs": [
+      {
+        "t_date": "2026-11-05",
+        "t_close": 622.0,
+        "t1_date": "2026-11-06",
+        "t1_close": 572.0,
+        "t1_pct": -8.04,
+        "year": 2026,
+        "month": 10,
+        "revenue": 316939000.0
+      }
+    ],
+    "avg_t1": -8.04,
+    "median_t1": -8.04,
+    "max_t1": -8.04,
+    "min_t1": -8.04,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 5,
+    "cached_at": "2026-11-07T02:21:04.180525",
+    "stock_name": "倍利科",
+    "market": "sii",
+    "current_filing_date": "2026-11-05"
+  },
+  "6862_10": {
+    "stock_id": "6862",
+    "historical_highs": [
+      {
+        "t_date": "2026-11-05",
+        "t_close": 116.0,
+        "t1_date": "2026-11-06",
+        "t1_close": 110.0,
+        "t1_pct": -5.17,
+        "year": 2026,
+        "month": 10,
+        "revenue": 221343000.0
+      }
+    ],
+    "avg_t1": -5.17,
+    "median_t1": -5.17,
+    "max_t1": -5.17,
+    "min_t1": -5.17,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 5,
+    "cached_at": "2026-11-07T02:21:05.145196",
+    "stock_name": "三集瑞-KY",
+    "market": "sii",
+    "current_filing_date": "2026-11-05"
+  },
+  "7863_10": {
+    "stock_id": "7863",
+    "historical_highs": [
+      {
+        "t_date": "2026-11-05",
+        "t_close": 54.5,
+        "t1_date": "2026-11-06",
+        "t1_close": 55.0,
+        "t1_pct": 0.92,
+        "year": 2026,
+        "month": 10,
+        "revenue": 37333000.0
+      }
+    ],
+    "avg_t1": 0.92,
+    "median_t1": 0.92,
+    "max_t1": 0.92,
+    "min_t1": 0.92,
+    "hit_rate": 100.0,
+    "count": 1,
+    "typical_filing_day": 5,
+    "cached_at": "2026-11-07T02:21:06.353162",
+    "stock_name": "中科物流",
+    "market": "emerging",
+    "current_filing_date": "2026-11-05"
+  },
+  "3717_10": {
+    "stock_id": "3717",
+    "historical_highs": [
+      {
+        "t_date": "2026-11-05",
+        "t_close": 23.85,
+        "t1_date": "2026-11-06",
+        "t1_close": 22.95,
+        "t1_pct": -3.77,
+        "year": 2026,
+        "month": 10,
+        "revenue": 587497000.0
+      }
+    ],
+    "avg_t1": -3.77,
+    "median_t1": -3.77,
+    "max_t1": -3.77,
+    "min_t1": -3.77,
+    "hit_rate": 0.0,
+    "count": 1,
+    "typical_filing_day": 5,
+    "cached_at": "2026-11-07T02:21:20.506677",
+    "stock_name": "聯嘉投控",
+    "market": "sii",
+    "current_filing_date": "2026-11-05"
   }
 }
