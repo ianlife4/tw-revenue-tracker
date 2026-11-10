@@ -268230,16 +268230,26 @@
         "year": 2025,
         "month": 10,
         "revenue": 335298000.0
+      },
+      {
+        "t_date": "2026-11-04",
+        "t_close": 23.35,
+        "t1_date": "2026-11-05",
+        "t1_close": 23.4,
+        "t1_pct": 0.21,
+        "year": 2026,
+        "month": 10,
+        "revenue": 403232000.0
       }
     ],
-    "avg_t1": 1.8,
-    "median_t1": 2.08,
+    "avg_t1": 1.48,
+    "median_t1": 1.38,
     "max_t1": 2.75,
-    "min_t1": 1.0,
+    "min_t1": 0.21,
     "hit_rate": 100.0,
-    "count": 4,
+    "count": 5,
     "typical_filing_day": 4,
-    "cached_at": "2026-11-03T19:40:20.126602",
+    "cached_at": "2026-11-10T20:56:33.203458",
     "stock_name": "拍檔",
     "market": "emerging",
     "current_filing_date": "2026-11-04"
