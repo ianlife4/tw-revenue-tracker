@@ -13166,9 +13166,19 @@
       "first_seen": "11-12 11:10",
       "market": "sii",
       "stock_name": "中信金"
+    },
+    "2876": {
+      "first_seen": "11-12 20:59",
+      "market": "pub",
+      "stock_name": "宏泰人壽"
+    },
+    "6025": {
+      "first_seen": "11-12 20:59",
+      "market": "pub",
+      "stock_name": "臺銀人壽"
     }
   },
-  "last_check": "11-12 15:44:56",
-  "last_new_filing": "11-12 11:10:22",
-  "total_filed": 2633
+  "last_check": "11-12 20:59:35",
+  "last_new_filing": "11-12 20:59:35",
+  "total_filed": 2635
 }
