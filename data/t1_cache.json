@@ -282462,16 +282462,26 @@
         "year": 2025,
         "month": 10,
         "revenue": 405522000.0
+      },
+      {
+        "t_date": "2026-11-06",
+        "t_close": 65.3,
+        "t1_date": "2026-11-09",
+        "t1_close": 71.8,
+        "t1_pct": 9.95,
+        "year": 2026,
+        "month": 10,
+        "revenue": 603700000.0
       }
     ],
-    "avg_t1": -3.31,
-    "median_t1": -3.31,
-    "max_t1": -3.31,
+    "avg_t1": 3.32,
+    "median_t1": 9.95,
+    "max_t1": 9.95,
     "min_t1": -3.31,
-    "hit_rate": 0.0,
-    "count": 1,
+    "hit_rate": 50.0,
+    "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-11-07T16:34:09.972869",
+    "cached_at": "2026-11-14T18:18:50.911212",
     "stock_name": "今國光",
     "market": "sii",
     "current_filing_date": "2026-11-08"
@@ -303645,7 +303655,7 @@
     "typical_filing_day": 10,
     "cached_at": "2026-11-11T02:17:19.992443",
     "stock_name": "騏億鑫",
-    "market": "emerging",
+    "market": "otc",
     "current_filing_date": "2026-11-10"
   },
   "7730_10": {
