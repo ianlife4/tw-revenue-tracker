@@ -282732,16 +282732,26 @@
         "year": 2025,
         "month": 10,
         "revenue": 16451489000.0
+      },
+      {
+        "t_date": "2026-11-06",
+        "t_close": 2310.0,
+        "t1_date": "2026-11-09",
+        "t1_close": 2540.0,
+        "t1_pct": 9.96,
+        "year": 2026,
+        "month": 10,
+        "revenue": 22102758000.0
       }
     ],
-    "avg_t1": 3.53,
-    "median_t1": 1.89,
-    "max_t1": 8.83,
+    "avg_t1": 4.6,
+    "median_t1": 5.8,
+    "max_t1": 9.96,
     "min_t1": 0.0,
-    "hit_rate": 80.0,
-    "count": 5,
+    "hit_rate": 83.3,
+    "count": 6,
     "typical_filing_day": 8,
-    "cached_at": "2026-11-08T06:44:08.736303",
+    "cached_at": "2026-11-15T06:49:13.057500",
     "stock_name": "奇鋐",
     "market": "sii",
     "current_filing_date": "2026-11-08"
@@ -282751,7 +282761,7 @@
     "historical_highs": [
       {
         "t_date": "2021-11-08",
-        "t_close": 234.26,
+        "t_close": 234.25,
         "t1_date": "2021-11-09",
         "t1_close": 235.05,
         "t1_pct": 0.34,
@@ -282788,16 +282798,26 @@
         "year": 2024,
         "month": 10,
         "revenue": 519130000.0
+      },
+      {
+        "t_date": "2026-11-06",
+        "t_close": 235.0,
+        "t1_date": "2026-11-09",
+        "t1_close": 240.5,
+        "t1_pct": 2.34,
+        "year": 2026,
+        "month": 10,
+        "revenue": 535806000.0
       }
     ],
-    "avg_t1": 0.74,
+    "avg_t1": 1.06,
     "median_t1": 0.69,
-    "max_t1": 1.43,
+    "max_t1": 2.34,
     "min_t1": 0.34,
     "hit_rate": 100.0,
-    "count": 4,
+    "count": 5,
     "typical_filing_day": 8,
-    "cached_at": "2026-11-08T06:44:26.900257",
+    "cached_at": "2026-11-15T06:49:48.103416",
     "stock_name": "德麥",
     "market": "otc",
     "current_filing_date": "2026-11-08"
@@ -282814,16 +282834,26 @@
         "year": 2025,
         "month": 10,
         "revenue": 652732000.0
+      },
+      {
+        "t_date": "2026-11-06",
+        "t_close": 79.6,
+        "t1_date": "2026-11-09",
+        "t1_close": 84.2,
+        "t1_pct": 5.78,
+        "year": 2026,
+        "month": 10,
+        "revenue": 682457000.0
       }
     ],
-    "avg_t1": 10.0,
+    "avg_t1": 7.89,
     "median_t1": 10.0,
     "max_t1": 10.0,
-    "min_t1": 10.0,
+    "min_t1": 5.78,
     "hit_rate": 100.0,
-    "count": 1,
+    "count": 2,
     "typical_filing_day": 8,
-    "cached_at": "2026-11-08T06:44:27.854877",
+    "cached_at": "2026-11-15T06:49:49.556220",
     "stock_name": "聯德控股-KY",
     "market": "sii",
     "current_filing_date": "2026-11-08"
