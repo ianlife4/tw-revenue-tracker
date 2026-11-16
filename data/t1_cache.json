@@ -305277,5 +305277,71 @@
     "stock_name": "旺旺保",
     "market": "sii",
     "current_filing_date": "2026-11-14"
+  },
+  "2850_10": {
+    "stock_id": "2850",
+    "historical_highs": [
+      {
+        "t_date": "2021-11-16",
+        "t_close": 36.79,
+        "t1_date": "2021-11-17",
+        "t1_close": 36.79,
+        "t1_pct": 0.0,
+        "year": 2021,
+        "month": 10,
+        "revenue": 1531407000.0
+      },
+      {
+        "t_date": "2022-11-16",
+        "t_close": 37.25,
+        "t1_date": "2022-11-17",
+        "t1_close": 37.73,
+        "t1_pct": 1.29,
+        "year": 2022,
+        "month": 10,
+        "revenue": 1639207000.0
+      },
+      {
+        "t_date": "2023-11-16",
+        "t_close": 58.02,
+        "t1_date": "2023-11-17",
+        "t1_close": 58.28,
+        "t1_pct": 0.43,
+        "year": 2023,
+        "month": 10,
+        "revenue": 1660596000.0
+      },
+      {
+        "t_date": "2024-11-15",
+        "t_close": 87.87,
+        "t1_date": "2024-11-18",
+        "t1_close": 88.49,
+        "t1_pct": 0.7,
+        "year": 2024,
+        "month": 10,
+        "revenue": 1752373000.0
+      },
+      {
+        "t_date": "2025-11-14",
+        "t_close": 110.3,
+        "t1_date": "2025-11-17",
+        "t1_close": 110.78,
+        "t1_pct": 0.43,
+        "year": 2025,
+        "month": 10,
+        "revenue": 1800404000.0
+      }
+    ],
+    "avg_t1": 0.57,
+    "median_t1": 0.43,
+    "max_t1": 1.29,
+    "min_t1": 0.0,
+    "hit_rate": 80.0,
+    "count": 5,
+    "typical_filing_day": 16,
+    "cached_at": "2026-11-16T06:48:26.086139",
+    "stock_name": "新產",
+    "market": "sii",
+    "current_filing_date": "2026-11-16"
   }
 }
