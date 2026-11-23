@@ -310010,16 +310010,26 @@
         "year": 2025,
         "month": 10,
         "revenue": 1800404000.0
+      },
+      {
+        "t_date": "2026-11-16",
+        "t_close": 164.5,
+        "t1_date": "2026-11-17",
+        "t1_close": 163.0,
+        "t1_pct": -0.91,
+        "year": 2026,
+        "month": 10,
+        "revenue": 2424699000.0
       }
     ],
-    "avg_t1": 0.57,
+    "avg_t1": 0.32,
     "median_t1": 0.43,
     "max_t1": 1.29,
-    "min_t1": 0.0,
-    "hit_rate": 80.0,
-    "count": 5,
+    "min_t1": -0.91,
+    "hit_rate": 66.7,
+    "count": 6,
     "typical_filing_day": 16,
-    "cached_at": "2026-11-16T06:48:26.086139",
+    "cached_at": "2026-11-23T07:55:19.127062",
     "stock_name": "新產",
     "market": "sii",
     "current_filing_date": "2026-11-16"
