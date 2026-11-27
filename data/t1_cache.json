@@ -274123,7 +274123,7 @@
     "hit_rate": 33.3,
     "count": 3,
     "typical_filing_day": 6,
-    "cached_at": "2026-11-20T03:46:10.272866",
+    "cached_at": "2026-11-27T04:33:30.641070",
     "stock_name": "海柏特",
     "market": "otc",
     "current_filing_date": "2026-11-06"
@@ -274133,9 +274133,9 @@
     "historical_highs": [
       {
         "t_date": "2021-11-05",
-        "t_close": 8.7,
+        "t_close": 38.7,
         "t1_date": "2021-11-08",
-        "t1_close": 8.22,
+        "t1_close": 36.57,
         "t1_pct": -5.52,
         "year": 2021,
         "month": 10,
@@ -274143,9 +274143,9 @@
       },
       {
         "t_date": "2024-11-06",
-        "t_close": 6.56,
+        "t_close": 29.18,
         "t1_date": "2024-11-07",
-        "t1_close": 6.83,
+        "t1_close": 30.38,
         "t1_pct": 4.12,
         "year": 2024,
         "month": 10,
@@ -274153,9 +274153,9 @@
       },
       {
         "t_date": "2026-11-06",
-        "t_close": 5.93,
+        "t_close": 26.38,
         "t1_date": "2026-11-09",
-        "t1_close": 5.9,
+        "t1_close": 26.25,
         "t1_pct": -0.51,
         "year": 2026,
         "month": 10,
@@ -274169,7 +274169,7 @@
     "hit_rate": 33.3,
     "count": 3,
     "typical_filing_day": 6,
-    "cached_at": "2026-11-20T03:46:21.187713",
+    "cached_at": "2026-11-27T04:33:39.544104",
     "stock_name": "大同精化",
     "market": "emerging",
     "current_filing_date": "2026-11-06"
@@ -274215,7 +274215,7 @@
     "hit_rate": 100.0,
     "count": 3,
     "typical_filing_day": 6,
-    "cached_at": "2026-11-20T03:46:26.554520",
+    "cached_at": "2026-11-27T04:33:44.283772",
     "stock_name": "瑞昱",
     "market": "sii",
     "current_filing_date": "2026-11-06"
@@ -274251,7 +274251,7 @@
     "hit_rate": 100.0,
     "count": 2,
     "typical_filing_day": 6,
-    "cached_at": "2026-11-20T03:46:29.680062",
+    "cached_at": "2026-11-27T04:33:47.605064",
     "stock_name": "實威",
     "market": "otc",
     "current_filing_date": "2026-11-06"
@@ -274277,7 +274277,7 @@
     "hit_rate": 0.0,
     "count": 1,
     "typical_filing_day": 5,
-    "cached_at": "2026-11-20T03:46:27.597237",
+    "cached_at": "2026-11-27T04:33:45.418379",
     "stock_name": "宏碁智新",
     "market": "otc",
     "current_filing_date": "2026-11-05"
